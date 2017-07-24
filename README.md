@@ -12,6 +12,10 @@ As usual please start by forking this repo.
 
 You'll create an app that summarises the news.
 
+### Guidance
+
+Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+
 ## Project overview
 
 Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
