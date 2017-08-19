@@ -9,9 +9,6 @@
   }
 
   GuardianController.prototype = {
-    changeContent: function() {
-      this.element.innerHTML = "123455678"
-    },
     makeAPIRequest: function() {
       this.request.open("GET", politicsHeadlinesURL);
       this.request.send();
@@ -22,7 +19,6 @@
     },
     setupAPIListener: function() {
       var self = this;
-      // var response = exampleResponse;
       this.request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           var response = JSON.parse(this.response);

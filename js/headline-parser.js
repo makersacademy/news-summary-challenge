@@ -5,7 +5,7 @@
     extractHeadlines: function(response) {
       var articles = response.response.results;
       return articles.map(function(article) {
-        return article.webTitle;
+        return { headline: article.webTitle, url: article.webUrl };
       });
     }
   }

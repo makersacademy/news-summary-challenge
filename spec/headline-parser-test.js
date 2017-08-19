@@ -8,7 +8,7 @@ describe("headline parser", function() {
 
   it("extracts headlines from a JSON string", function() {
     headlineParser.extractHeadlines(exampleResponse).forEach(function(extractedHeadline, index) {
-      assert.isTrue(extractedHeadline === headlines[index]);
+      assert.isTrue(extractedHeadline.headline === headlines[index].headline);
     });
   });
 })

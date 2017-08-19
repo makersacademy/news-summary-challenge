@@ -4,7 +4,7 @@ describe("Guardian Controller", function() {
   var mockRequest = new MockObject('request', ['open', 'send']);
   mockRequest.readyState = 4;
   mockRequest.status = 200;
-  mockRequest.response = JSON.stringify("exampleURL");
+  mockRequest.response = JSON.stringify("example");
 
   var headlineViewMock = new MockObject('headlineView', ['returnHTML']);
   headlineViewMock.returnHTML().returnValue(HTMLString)
