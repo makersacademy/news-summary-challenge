@@ -2,13 +2,11 @@
 
 This is a single page app that grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
 
-### Technologies
+### ChallengeNote
+This challenge is still in progress, I had some issue to finish the rendering of a single article.
+For this project, I decided to use one function NewsSummaryModel which stores and render the Title/image of each articles. The body of each articles is stored as well in the function, with a display value of none.
+To render a single article, I decided to trigger the display value of the body with a button on each article, using getElementsByTagName with a callback function on each article. However I had some issue trying to access the 'node' array returned by the function. I would like to review this issue during this week. 
 
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
 
 ### Setup instruction
 ```
