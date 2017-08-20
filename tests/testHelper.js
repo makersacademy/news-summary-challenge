@@ -1,16 +1,16 @@
-// Story Model
+// StoryModelMock
 (function(exports) {
   "use strict";
 
   var id = 0;
 
-  function StoryMock(text, title, url) {
+  function StoryModelMock(text, title, url) {
     this._text = text;
     this._title = title;
     this._url = url;
   }
 
-  StoryMock.prototype = {
+  StoryModelMock.prototype = {
     text: function() {
       return this._text;
     },
@@ -25,5 +25,26 @@
     }
   };
 
-  exports.StoryMock = StoryMock;
+  exports.StoryModelMock = StoryModelMock;
+})(this);
+
+// StoryListModelMock
+(function(exports) {
+  "use strict";
+
+  function StoryListModelMock(storymodel) {
+    this._stories = [];
+    this._storymodel = storymodel;
+  }
+
+  StoryListModelMock.prototype = {
+    all: function() {
+      return this._stories;
+    },
+    create: function(text, title, url) {
+      this._stories.push(new this._storymodel(text, title, url));
+    }
+  };
+
+  exports.StoryListModelMock = StoryListModelMock;
 })(this);
