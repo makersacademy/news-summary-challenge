@@ -1,11 +1,15 @@
 (function(exports) {
   "use strict";
 
-  function StoryController(element, storyList, storyViewModel, storyListViewModel) {
+  function StoryController(element, storyList, storyViewModel, storyListViewModel, storyGrabberModel, xhttp) {
+    this._results = [];
     this._element = element;
     this._storyList = storyList;
     this._storyViewModel = storyViewModel;
     this._storyListViewModel = storyListViewModel;
+    this._xhttp = xhttp;
+    this._storyGrabber = new storyGrabberModel(this._xhttp, this);
+    this._storyGrabber.ready();
     this._storyListView = new this._storyListViewModel(this._storyList);
     this.eventListener();
   }
@@ -29,6 +33,19 @@
           self.display();
         }
       });
+    },
+    grabStories: function() {
+      this._storyGrabber.grabStories();
+    },
+    populateStories: function() {
+      var self = this;
+      JSON.parse(self._results).response.results.forEach(function(story) {
+        var text = story.webTitle;
+        var title = story.webTitle;
+        var url = story.webUrll;
+        self._storyList.create(text, title, url);
+      });
+      self.display();
     }
   };
 
