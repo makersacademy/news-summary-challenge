@@ -9,24 +9,18 @@ request.onload = function() {
   var response = request.response.response;
 
   function NewsSummaryModel(){
-    this.response = request.response.response.results;
-    this.SummaryList = [];
+    this.results = response.results;
   }
 
   NewsSummaryModel.prototype = {
     createSummaryList: function(){
-      for(var i = 0; i < this.response.length; i++){
-        this.SummaryList.push(this.response[i]);
-      }
-    },
-    displaySummaryList: function(){
-      for(var i = 0; i < this.SummaryList.length; i++) {
+      for(var i = 0; i < this.results.length; i++) {
         var button = document.createElement('BUTTON');
         var title = document.createTextNode(response.results[i].webTitle);
         var body = document.createTextNode(response.results[i].fields.bodyText);
         var div = document.createElement('div');
         var image = document.createElement("IMG").setAttribute("src", response.results[i].fields.thumbnail);
-        button.className= i;
+        button.className = i;
         button.appendChild(image);
         section.appendChild(button).appendChild(div).appendChild(title);
       }
@@ -35,8 +29,6 @@ request.onload = function() {
 
 
   var news = new NewsSummaryModel();
-  console.log(news.SummaryList);
   news.createSummaryList();
   news.displaySummaryList();
-  console.log(news.SummaryList);
 };
