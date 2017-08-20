@@ -2,12 +2,13 @@
 	function ApiCall(api) {
 		this.xml = new XMLHttpRequest();
 		this.api = api
-		this.response = ""
+		this.responseArray = ""
 	}
 	ApiCall.prototype.getContent = function() {
 		this.xml.open("Get", this.api, false);
 		this.xml.send();
-		this.response = JSON.parse(this.xml.response)
+		var response = JSON.parse(this.xml.response)
+		this.responseArray = response.response.results
 	};
 	exports.ApiCall = ApiCall;
 })(this);
