@@ -6,16 +6,19 @@ describe("Guardian Controller", function() {
   mockRequest.status = 200;
   mockRequest.response = JSON.stringify("example");
 
+  var mockArticleCollection = new MockObject('articleCollection', ['createArticle']);
+
   var headlineViewMock = new MockObject('headlineView', ['returnHTML']);
   headlineViewMock.returnHTML().returnValue(HTMLString)
 
   var headlineParserMock = new MockObject('headlineParser', []);
   guardianController = new GuardianController(mockElement,
+                                              mockArticleCollection,
                                               headlineViewMock,
                                               headlineParserMock,
                                               mockRequest);
 
-  it("accepts a requester to carry out the API calls", function() {
+  it("accepts a request to carry out the API calls", function() {
     assert.isTrue(guardianController.request === mockRequest);
   });
 

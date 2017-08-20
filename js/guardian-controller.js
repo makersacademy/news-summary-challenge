@@ -1,8 +1,9 @@
 (function(exports) {
   var politicsHeadlinesURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics"
 
-  function GuardianController(element, headlineView, headlineParser, request) {
+  function GuardianController(element, articleCollection, headlineView, headlineParser, request) {
     this.element = element;
+    this.articleCollection = articleCollection;
     this.headlineView = headlineView;
     this.headlineParser = headlineParser;
     this.request = request;
@@ -15,6 +16,7 @@
     },
     fakeAPIRequest: function() {
       var headlines = this.headlineView.returnHTML(exampleResponse);
+      console.log(exampleResponse.response)
       this.element.innerHTML = headlines;
     },
     setupAPIListener: function() {

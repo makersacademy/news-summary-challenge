@@ -1,9 +1,15 @@
 describe("headline parser", function() {
+  var mockArticleCreateCount = 0;
+  function MockArticle() {
+    mockArticleCreateCount++;
+  };
 
-  var headlineParser = new HeadlineParser();
+  var mockArticleCollection = new MockObject('articleCollection', ['createArticle']);
 
-  it("can be initialized", function() {
-    assert.isTrue(headlineParser instanceof HeadlineParser);
+  var headlineParser = new HeadlineParser(mockArticleCollection);
+
+  it("is initialized with an article collection", function() {
+    assert.isTrue(headlineParser.articleCollection === mockArticleCollection);
   });
 
   it("extracts headlines from a JSON string", function() {
@@ -11,4 +17,4 @@ describe("headline parser", function() {
       assert.isTrue(extractedHeadline.headline === headlines[index].headline);
     });
   });
-})
+});
