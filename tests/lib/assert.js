@@ -1,9 +1,9 @@
 var assert = {
-  isTrue: function(assertionToCheck) {
+  isTrue: function(assertionToCheck, description) {
     if (!assertionToCheck) {
-      document.getElementById("tests").innerHTML += ("<ul>🔴 failed: " + assertionToCheck + " is not truthy</ul><br>");
+      document.getElementById("tests").innerHTML += ("<ul><li><em>🔴 " + description + " </em>failed! </li></ul><br>");
     } else {
-      document.getElementById("tests").innerHTML += ("<ul>✅ completed successfully!" + "</ul><br>");
+      document.getElementById("tests").innerHTML += ("<ul><li><em>✅ " + description + " </em>completed successfully!" + "</li></ul><br>");
     }
   }
 };
