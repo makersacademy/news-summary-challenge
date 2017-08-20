@@ -1,3 +1,5 @@
+'use strict';
+
 (function(exports) {
   function ArticleCollection(articleConstructor) {
     this._articles = [];

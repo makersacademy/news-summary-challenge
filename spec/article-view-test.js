@@ -1,3 +1,5 @@
+'use strict';
+
 describe("Article View", function() {
   var mockArticle, HTMLString, articleView;
 

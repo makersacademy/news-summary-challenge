@@ -1,3 +1,5 @@
+'use strict';
+
 (function(exports) {
   var aylienAPI = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url="
 
@@ -15,8 +17,7 @@
       this.windowObject.addEventListener("hashchange", function(event) {
         if(!location.hash.includes("articles")) { return; }
         var article = self.articleCollection.getArticleById(self.getArticleId());
-        // self.prepareAPICall(article);
-        self.fakeAPICall(article);
+        self.prepareAPICall(article);
       })
     },
     getArticleId: function() {
@@ -32,11 +33,6 @@
       this.setupAPIListener(article);
       this.currentRequest.open("GET", aylienAPI + article.url());
       this.currentRequest.send()
-    },
-    fakeAPICall: function() {
-      var article = this.articleCollection.articles()[2];
-      this.articleCollection.articles()[2].addSummary(exampleAylienResponse.text);
-      this.updateElement(this.articleView.returnHTML(article));
     },
     setupAPIListener: function(article) {
       var self = this;

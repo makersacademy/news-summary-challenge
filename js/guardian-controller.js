@@ -1,3 +1,5 @@
+'use strict';
+
 (function(exports) {
   var newsSummaryAPI = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl="
   var politicsHeadlinesURL = "http://content.guardianapis.com/politics"
@@ -20,11 +22,6 @@
     makeAPIRequest: function() {
       this.request.open("GET", newsSummaryAPI + politicsHeadlinesURL);
       this.request.send();
-    },
-    fakeAPIRequest: function() {
-      fakeResponse = this.headlineParser.extractArticles(JSON.stringify(exampleResponse))
-      var headlines = this.headlineView.returnHTML(fakeResponse);
-      this.element.innerHTML = headlines;
     },
     setupAPIListener: function() {
       var self = this;

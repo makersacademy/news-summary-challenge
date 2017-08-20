@@ -1,5 +1,7 @@
+'use strict';
+
 describe("Article", function() {
-  var headline, url, publicationDate, article;
+  var headline, url, publicationDate, article, secondArticle;
 
   headline = "Example headline";
   url = "www.example.com";

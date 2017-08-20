@@ -1,26 +1,31 @@
+'use strict';
+
 (function() {
-  var request = new XMLHttpRequest();
-  var element = document.getElementById('app');
-  var articleCollection = new ArticleCollection(Article);
-  var headlineParser = new HeadlineParser(articleCollection);
-  var headlineView = new HeadlineView(headlineParser);
-  var guardianController = new GuardianController(window,
+  var request, element, articleCollection, headlineParser;
+  var headlineView, guardianController, requestConstructor;
+  var aylienController;
+
+  request = new XMLHttpRequest();
+  element = document.getElementById('app');
+  articleCollection = new ArticleCollection(Article);
+  headlineParser = new HeadlineParser(articleCollection);
+  headlineView = new HeadlineView(headlineParser);
+  guardianController = new GuardianController(window,
                                                   element,
                                                   articleCollection,
                                                   headlineView,
                                                   headlineParser,
                                                   request);
 
-  var requestConstructor = XMLHttpRequest;
-  var articleView = new ArticleView();
-  var aylienController = new AylienController(window,
+  requestConstructor = XMLHttpRequest;
+  articleView = new ArticleView();
+  aylienController = new AylienController(window,
                                               element,
                                               articleCollection,
                                               articleView,
                                               requestConstructor);
   guardianController.setupAPIListener();
   guardianController.setupHashListener();
-  // guardianController.makeAPIRequest();
-  guardianController.fakeAPIRequest();
+  guardianController.makeAPIRequest();
   aylienController.setupHashListener();
 })();

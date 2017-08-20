@@ -1,3 +1,5 @@
+'use strict';
+
 describe("Aylien controller", function() {
   var mockElement, mockWindow, mockArticleCollection;
   var mockArticleView, HTMLString, mockArticle;

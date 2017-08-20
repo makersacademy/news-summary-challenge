@@ -1,3 +1,5 @@
+'use strict';
+
 (function(exports) {
   var id = 0;
   function Article(headline, url, publicationDate) {

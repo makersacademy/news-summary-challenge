@@ -1,3 +1,5 @@
+'use strict';
+
 describe("Article collection", function() {
   var headline, url, publicationDate, article;
 

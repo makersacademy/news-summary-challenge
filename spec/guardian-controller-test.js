@@ -1,18 +1,24 @@
+'use strict';
+
 describe("Guardian Controller", function() {
-  var mockElement = {};
-  var mockWindow = new MockObject('window', ['addEventListener'])
-  var HTMLString = "<div>An HTML string</div>";
-  var mockRequest = new MockObject('request', ['open', 'send']);
+  var mockElement, mockWindow, HTMLString, mockRequest;
+  var mockArticleCollection, headlineViewMock;
+  var guardianController, headlineParserMock;
+
+  mockElement = {};
+  mockWindow = new MockObject('window', ['addEventListener'])
+  HTMLString = "<div>An HTML string</div>";
+  mockRequest = new MockObject('request', ['open', 'send']);
   mockRequest.readyState = 4;
   mockRequest.status = 200;
   mockRequest.response = JSON.stringify("example");
 
-  var mockArticleCollection = new MockObject('articleCollection', ['createArticle']);
+  mockArticleCollection = new MockObject('articleCollection', ['createArticle']);
 
-  var headlineViewMock = new MockObject('headlineView', ['returnHTML']);
+  headlineViewMock = new MockObject('headlineView', ['returnHTML']);
   headlineViewMock.returnHTML().returnValue(HTMLString)
 
-  var headlineParserMock = new MockObject('headlineParser', ['extractArticles']);
+  headlineParserMock = new MockObject('headlineParser', ['extractArticles']);
   guardianController = new GuardianController(mockWindow,
                                               mockElement,
                                               mockArticleCollection,

@@ -1,3 +1,5 @@
+'use strict';
+
 describe("Headline view", function() {
 
   var mockArticle_0 = new MockObject('article', ['id', 'headline', 'url'])
