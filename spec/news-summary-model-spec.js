@@ -12,22 +12,15 @@
     };
 
     var newsSummaryModel = new NewsSummaryModel();
-    
-    it("creates a new note", function(){
+
+    it("creates the summary of news list", function(){
       newsSummaryModel.createNote("0", newsModelMock);
       assert.isTrue(newsModel.title() === "TestNews");
     });
 
-    // it("stores a note", function(){
-    //   newsSummaryModel.storeNote(note1);
-    //   return expect(noteManager.noteList()).toInclude(note1);
-    // });
-    //
-    // it("returns the content of a specific note", function(){
-    //   newsSummaryModel.createNote("First note");
-    //   newsSummaryModel.createNote("Second note");
-    //   newsSummaryModel.createNote("Third note");
-    //   return expect(newsSummaryModel.getNote(1).displayContent()).toEqual("Second note");
-    // });
+    it("display the summary of news list", function(){
+      newsSummaryModel.createNote("0", newsModelMock);
+      assert.isTrue(newsModel.title() === "TestNews");
+    });
   });
 })();
