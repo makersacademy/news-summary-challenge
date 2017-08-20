@@ -11,9 +11,11 @@ describe("Headline view", function() {
   mockArticle_1.url().returnValue('www.example.com')
 
   var HTMLString = ["<h1>Headlines</h1><div id='headlines'>",
+                      "<div class='image'><img src='' alt='political picture'></div>",
                       "<h2><a href='#/articles/0'>" + 'exampleHeadline_0',
                         "</a> - <a href='www.example.com",
                           "' target='_blank'>Go to full link</a></h2>",
+                      "<div class='image'><img src='' alt='political picture'></div>",
                       "<h2><a href='#/articles/1'>" + 'exampleHeadline_1',
                         "</a> - <a href='www.example.com",
                           "' target='_blank'>Go to full link</a></h2>",

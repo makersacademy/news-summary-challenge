@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+.image {
+  border: 2px solid black;
+  height: 200px;
+}
+
+.article-text {
+  white-space: pre-wrap;
+}
+
+#app {
+  width: 600px;
+}
+
+h1, h2 {
+  margin-bottom: 50px;
+  font-size: 2em;
+}
+
+p {
+  font-size: 2em;
+}

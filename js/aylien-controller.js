@@ -15,8 +15,8 @@
       this.windowObject.addEventListener("hashchange", function(event) {
         if(!location.hash.includes("articles")) { return; }
         var article = self.articleCollection.getArticleById(self.getArticleId());
-        self.prepareAPICall(article);
-        // self.fakeAPICall(article);
+        // self.prepareAPICall(article);
+        self.fakeAPICall(article);
       })
     },
     getArticleId: function() {

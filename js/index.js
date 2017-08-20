@@ -20,7 +20,7 @@
                                               requestConstructor);
   guardianController.setupAPIListener();
   guardianController.setupHashListener();
-  guardianController.makeAPIRequest();
-  // guardianController.fakeAPIRequest();
+  // guardianController.makeAPIRequest();
+  guardianController.fakeAPIRequest();
   aylienController.setupHashListener();
 })();

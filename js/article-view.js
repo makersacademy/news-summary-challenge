@@ -4,7 +4,7 @@
   ArticleView.prototype = {
     returnHTML: function(article) {
       return ["<h1>" + article.headline() + "</h1>",
-              "<div id='article-text'><p>",
+              "<div class='article-text'><p>",
               article.summary(),
               "</p></div>"].join("");
     }

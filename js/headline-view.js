@@ -4,7 +4,7 @@
   HeadlineView.prototype = {
     returnHTML: function(articles) {
       var headlines = articles.map(function(article, index) {
-        return ["<h2>",
+        return ["<div class='image'><img src='' alt='political picture'></div><h2>",
                   "<a href='#/articles/" + article.id() + "'>",
                   article.headline(),
                   "</a> - ",
