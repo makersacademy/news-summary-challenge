@@ -16,7 +16,6 @@
     },
     fakeAPIRequest: function() {
       var headlines = this.headlineView.returnHTML(exampleResponse);
-      console.log(exampleResponse.response)
       this.element.innerHTML = headlines;
     },
     setupAPIListener: function() {

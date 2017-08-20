@@ -4,15 +4,15 @@
   }
 
   HeadlineParser.prototype = {
-    extractHeadlines: function(response) {
-      var articles = response.response.results;
+    extractArticles: function(response) {
       var self = this;
-      return articles.map(function(article) {
+      var articles = response.response.results;
+      articles.forEach(function(article) {
         self.articleCollection.createArticle(article.webTitle,
                                              article.webUrl,
                                              article.webPublicationDate);
-        return { headline: article.webTitle, url: article.webUrl };
       });
+      return this.articleCollection.articles();
     }
   }
 

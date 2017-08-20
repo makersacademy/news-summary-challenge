@@ -5,17 +5,17 @@
 
   HeadlineView.prototype = {
     returnHTML: function(response) {
-      var headlines = this.parser.extractHeadlines(response).map(function(article) {
-        return ["<li><div>",
-                  article.headline,
-                  " - " + "<a href='",
-                  article.url,
-                  "' target='_blank'>",
+      var headlines = this.parser.extractArticles(response).map(function(article, index) {
+        return ["<h2>",
+                  "<a href='#/articles/" + article.id() + "'>",
+                  article.headline(),
+                  "</a> - ",
+                  "<a href='" + article.url() + "' target='_blank'>",
                   "Go to full link</a>",
-                  "</div></li>"
+                  "</h2>"
                 ].join("");
       }).join("");
-      return "<ul>" + headlines + "</ul>";
+      return "<h1>Headlines</h1><div id='headlines'>" + headlines + "</div>";
     }
   };
 

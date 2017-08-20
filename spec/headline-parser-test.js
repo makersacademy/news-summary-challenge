@@ -4,7 +4,11 @@ describe("headline parser", function() {
     mockArticleCreateCount++;
   };
 
-  var mockArticleCollection = new MockObject('articleCollection', ['createArticle']);
+  var mockArticleCollection = new MockObject('articleCollection',
+                                             ['createArticle',
+                                              'getArticleById',
+                                              'articles']);
+  mockArticleCollection.getArticleById().returnValue(new MockArticle);
 
   var headlineParser = new HeadlineParser(mockArticleCollection);
 
@@ -12,9 +16,12 @@ describe("headline parser", function() {
     assert.isTrue(headlineParser.articleCollection === mockArticleCollection);
   });
 
-  it("extracts headlines from a JSON string", function() {
-    headlineParser.extractHeadlines(exampleResponse).forEach(function(extractedHeadline, index) {
-      assert.isTrue(extractedHeadline.headline === headlines[index].headline);
-    });
+  headlineParser.extractArticles(exampleResponse);
+  it("asks article collection to create new articles based off parsed JSON", function() {
+    assert.isTrue(mockArticleCollection.createArticleCallCount === 5);
+  });
+  it("returns ", function() {
+
+    assert.isTrue(mockArticleCollection.createArticleCallCount === 5);
   });
 });

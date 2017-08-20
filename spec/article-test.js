@@ -5,7 +5,14 @@ describe("Article", function() {
   url = "www.example.com";
   publicationDate = "2017-08-18";
   article = new Article(headline, url, publicationDate);
+  secondArticle = new Article(headline, url, publicationDate);
 
+  it("is initialized with an ID which increments for each article", function() {
+    assert.isTrue(article.id() === 0)
+  });
+  it("is initialized with an ID which increments for each article", function() {
+    assert.isTrue(secondArticle.id() === 1)
+  });
   it("is initialized with a headline", function() {
     assert.isTrue(article.headline() === "Example headline");
   });

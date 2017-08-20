@@ -21,7 +21,10 @@
       this.lastCaller = mockFunction;
       this[methodProperty(mockFunction, "CallCount")]++
       this[methodProperty(mockFunction, "Arguments")] = arguments;
-      return this[methodProperty(mockFunction, "ReturnValue")] || this;
+      var returnValue = this[methodProperty(mockFunction, "ReturnValue")]
+      if (returnValue === undefined || null) {
+        return this;
+      } else { return returnValue; }
     }
   }
 

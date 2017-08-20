@@ -4,12 +4,16 @@ describe("Article collection", function() {
   headline = "Example headline";
   url = "www.example.com";
   publicationDate = "2017-08-18";
-  article = new Article(headline, url, publicationDate);
 
   var mockArticleCreateCount = 0;
+
   function MockArticle() {
     mockArticleCreateCount++;
   };
+
+  MockArticle.prototype = {
+    headline: function() { return "Example headline" }
+  }
 
   var articleCollection = new ArticleCollection(MockArticle);
 
@@ -22,6 +26,11 @@ describe("Article collection", function() {
     assert.isTrue(mockArticleCreateCount === 1);
   });
   it("adds article to its array", function() {
+    assert.isTrue(articleCollection.articles().length === 1);
+  });
+
+  articleCollection.createArticle(headline, url, publicationDate);
+  it("doesn't allow duplicate articles", function() {
     assert.isTrue(articleCollection.articles().length === 1);
   });
 });
