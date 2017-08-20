@@ -21,11 +21,7 @@ describe("Headline view", function() {
 
   var headlineParserMock = new MockObject('headlineParser', ['extractArticles']);
   headlineParserMock.extractArticles().returnValue([mockArticle_0, mockArticle_1]);
-  var headlineView = new HeadlineView(headlineParserMock);
-
-  it("is initialized with a headline parser", function() {
-    assert.isTrue(headlineView.parser = headlineParserMock);
-  });
+  var headlineView = new HeadlineView();
 
   it("returns an HTML string from the parsed content of guardian API", function() {
     assert.isTrue(headlineView.returnHTML(headlineParserMock.extractArticles()) === HTMLString);

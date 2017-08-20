@@ -6,12 +6,15 @@
   HeadlineParser.prototype = {
     extractArticles: function(response) {
       var self = this;
-      var articles = response.response.results;
+      var articles = JSON.parse(response).response.results;
       articles.forEach(function(article) {
         self.articleCollection.createArticle(article.webTitle,
                                              article.webUrl,
                                              article.webPublicationDate);
       });
+      return this.returnArticles();
+    },
+    returnArticles: function() {
       return this.articleCollection.articles();
     }
   }

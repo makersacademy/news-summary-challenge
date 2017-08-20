@@ -19,6 +19,12 @@
     },
     id: function() {
       return this._id;
+    },
+    addSummary: function(content) {
+      this._summary = content;
+    },
+    summary: function() {
+      return this._summary;
     }
   };
 

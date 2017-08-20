@@ -1,5 +1,6 @@
 describe("Guardian Controller", function() {
   var mockElement = {};
+  var mockWindow = new MockObject('window', ['addEventListener'])
   var HTMLString = "<div>An HTML string</div>";
   var mockRequest = new MockObject('request', ['open', 'send']);
   mockRequest.readyState = 4;
@@ -11,12 +12,21 @@ describe("Guardian Controller", function() {
   var headlineViewMock = new MockObject('headlineView', ['returnHTML']);
   headlineViewMock.returnHTML().returnValue(HTMLString)
 
-  var headlineParserMock = new MockObject('headlineParser', []);
-  guardianController = new GuardianController(mockElement,
+  var headlineParserMock = new MockObject('headlineParser', ['extractArticles']);
+  guardianController = new GuardianController(mockWindow,
+                                              mockElement,
                                               mockArticleCollection,
                                               headlineViewMock,
                                               headlineParserMock,
                                               mockRequest);
+
+  guardianController.setupHashListener()
+  it("sets up the listener", function() {
+    assert.isTrue(mockWindow.addEventListenerCallCount === 1);
+  });
+  it("asks it to listen for a hashchange", function() {
+    assert.isTrue(mockWindow.addEventListenerArguments[0] === "hashchange");
+  });
 
   it("accepts a request to carry out the API calls", function() {
     assert.isTrue(guardianController.request === mockRequest);

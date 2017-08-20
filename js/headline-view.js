@@ -1,11 +1,9 @@
 (function(exports) {
-  function HeadlineView(headlineParser) {
-    this.parser = headlineParser;
-  }
+  function HeadlineView(headlineParser) {}
 
   HeadlineView.prototype = {
-    returnHTML: function(response) {
-      var headlines = this.parser.extractArticles(response).map(function(article, index) {
+    returnHTML: function(articles) {
+      var headlines = articles.map(function(article, index) {
         return ["<h2>",
                   "<a href='#/articles/" + article.id() + "'>",
                   article.headline(),
