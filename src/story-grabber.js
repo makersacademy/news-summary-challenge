@@ -1,7 +1,7 @@
 (function(exports) {
   "use strict";
 
-  var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/technology?show-fields=body,thumbnail";
+  var url = "https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/technology?show-fields=body,thumbnail";
 
   function StoryGrabber(xhttp, controller) {
     this._xhttp = xhttp;
