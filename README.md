@@ -11,16 +11,16 @@ The creation of The Headlines was test-driven without the use of an existing tes
 git clone https://github.com/SaphMB/news-summary-challenge
 
 # Install Node.js if you do not have it installed already
-brew install node
+$ brew install node
 
 # Install the dependencies
-npm install
+$ npm install
 
 # Start the server
-npm start
+$ npm start
 
 # Visit the route
-local host....
+$ local host....
 ```
 
 ## Testing
