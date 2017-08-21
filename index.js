@@ -30,6 +30,6 @@ window.addEventListener("load", function() {
   //     storyView.displayStory();
   //   }
   // }
-console.log("here")
+
   requestToGuardianApi();
 });
