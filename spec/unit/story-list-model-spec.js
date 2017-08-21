@@ -21,11 +21,12 @@ test.describe("StoryListModel", function() {
   });
 
   test.it("creates a new story", function() {
-    storyListModel.create(newsObject)
+    storyListModel.create(newsObject);
     assert.isEqual(storyListModel.stories().length, 1);
   });
 
-  test.it("creates a note", function() {
+  test.it("creates a story", function() {
+    // storyListModel.create(newsObject);
     assert.isTrue(typeof(storyListModel.create(newsObject)) === typeof(new Story(newsObject)));
   });
 

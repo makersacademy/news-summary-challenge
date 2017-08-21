@@ -3,6 +3,7 @@
     this._element = element
     this._storyListModel = new StoryListModel();
     this._storyListView = new StoryListView();
+    this._singleStoryView = new SingleStoryView();
   }
 
   StoryController.prototype = {
@@ -16,6 +17,9 @@
         var storyList = this._storyListModel.stories();
         this._element.innerHTML = this._storyListView.toHtml(storyList);
       },
+      displayStory: function(story) {
+        this._singleStoryView.toHtml(story);
+      }
 
     };
 

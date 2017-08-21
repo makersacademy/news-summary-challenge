@@ -23,13 +23,11 @@ window.addEventListener("load", function() {
 
   }
 
-  // function createStory(resultsArray) {
-  //   for(i=0; i < resultsArray.length; i++) {
-  //     var story = new Story(resultsArray[i]);
-  //     var storyView = new StoryView(story);
-  //     storyView.displayStory();
-  //   }
-  // }
-
   requestToGuardianApi();
 });
+//
+// document.getElementById('summary-button').addEventListener("click", function(event) {
+//   console.log(event);
+//   textAreaContent = event.target.elements["0"].value;
+//   noteController.createNote(textAreaContent);
+// });
