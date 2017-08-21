@@ -7,6 +7,8 @@ describe('Headlines view', function() {
 	})
 
 	it('prints the story headlines', function() {
-		assert.truthy(headlinesView.printHeadlines().includes("<h3>Dina Asher-Smith ready to graduate to higher level after London 														success</h3>"))
+		// console.log(headlinesView.stories.find(item => item.id === "tv-and-radio/2017/aug/21/bake-off-paul-hollywood-prue-leith-nadia-khomami-rock-hard-brownies"))
+		assert.truthy(headlinesView.printHeadlines().includes("<h3>Bricking it: Bake Off judges reject Guardian reporter's rock-hard brownies</h3>"))
 	})
+
 });

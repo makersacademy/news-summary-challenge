@@ -6,6 +6,6 @@ describe('Headline controller', function() {
 
 	it('updates the page html', function() {
 		headlineController.updateHTML();
-		assert.truthy(headlineController.element.innerHTML.includes("<h3>Dina Asher-Smith ready to graduate to higher level after London 														success</h3>"));
+		assert.truthy(headlineController.element.innerHTML.includes("<h3>Bricking it: Bake Off judges reject Guardian reporter's rock-hard brownies</h3>"));
 	})
 });
