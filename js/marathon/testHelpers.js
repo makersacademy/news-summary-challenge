@@ -58,3 +58,26 @@
 	}
 	exports.MockApiCall = MockApiCall;
 })(this);
+
+(function(exports) {
+	function MockElement() {
+		this.innerHTML = ""
+	}
+	exports.MockElement = MockElement;
+})(this);
+
+(function(exports) {
+	function MockHeadlinesView(apiCall) {
+		this.apiCall = apiCall;
+		this.stories = apiCall.responseArray
+	}
+	MockHeadlinesView.prototype.printHeadlines = function() {
+		var htmlString = "<ul>"
+		this.stories.forEach(function(story) {
+			htmlString += ("<li><h3>" + story.webTitle + "</h3></li>")
+		})
+		htmlString += "</ul>"
+		return htmlString
+	};
+	exports.MockHeadlinesView = MockHeadlinesView;
+})(this);
