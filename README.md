@@ -1,4 +1,6 @@
-## Challenge
+## Vanilla News
+
+https://vanillajsnews.herokuapp.com/
 
 This app will grab all the technology headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show the article.
 
