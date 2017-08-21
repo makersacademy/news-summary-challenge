@@ -17,16 +17,6 @@ function () {
   }
 );
 
-describe("Story .id",
-function () {
-    var text = "This is a news story summary";
-    var story = new Story(text);
-    assert.isTrue(story.id() === 0, "First story id is 0");
-    var story2 = new Story(text);
-    assert.isTrue(story2.id() === 1, "Second story id is 1");
-  }
-);
-
 describe("Story .url",
 function () {
     var description = "Story can add and return an image url";

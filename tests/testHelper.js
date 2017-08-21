@@ -4,10 +4,11 @@
 
   var id = 0;
 
-  function StoryModelMock(text, title, url) {
+  function StoryModelMock(text, title, url, id) {
     this._text = text;
     this._title = title;
     this._url = url;
+    this._id = id;
   }
 
   StoryModelMock.prototype = {
@@ -18,7 +19,7 @@
       return this._title;
     },
     id: function() {
-      return id ++;
+      return this._id;
     },
     url: function() {
       return this._url;
@@ -35,6 +36,7 @@
   function StoryListModelMock(storymodel) {
     this._stories = [];
     this._storymodel = storymodel;
+    this._idincrementor = 0;
   }
 
   StoryListModelMock.prototype = {
@@ -42,7 +44,9 @@
       return this._stories;
     },
     create: function(text, title, url) {
-      this._stories.push(new this._storymodel(text, title, url));
+      var id = this._idincrementor;
+      this._stories.push(new this._storymodel(text, title, url, id));
+      this._idincrementor ++;
     }
   };
 
