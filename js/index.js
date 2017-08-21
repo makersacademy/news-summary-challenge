@@ -2,8 +2,8 @@
 
 (function() {
   var request, element, articleCollection, headlineParser;
-  var headlineView, guardianController, requestConstructor;
-  var aylienController;
+  var headlineView, articleView, requestConstructor;
+  var aylienController, guardianController;
 
   request = new XMLHttpRequest();
   element = document.getElementById('app');
