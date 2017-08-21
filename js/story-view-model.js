@@ -15,5 +15,9 @@
 		return "<h2>" + this.title + "</h2>"
 	}
 
+	StoryView.prototype.printId = function() {
+		return this.id
+	}
+
 	exports.StoryView = StoryView
 })(this);
