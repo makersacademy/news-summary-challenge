@@ -8,6 +8,9 @@ describe("headline parser", function() {
   function MockArticle() {
     mockArticleCreateCount++;
   };
+  MockArticle.prototype = {
+    fields: {}
+  }
 
   mockArticleCollection = new MockObject('articleCollection',
                                              ['createArticle',

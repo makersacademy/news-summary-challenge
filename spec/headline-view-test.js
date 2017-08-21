@@ -2,15 +2,18 @@
 
 describe("Headline view", function() {
 
-  var mockArticle_0 = new MockObject('article', ['id', 'headline', 'url'])
+  var mockArticle_0 = new MockObject('article', ['id', 'headline', 'url', 'thumbnail'])
   mockArticle_0.id().returnValue(0)
   mockArticle_0.headline().returnValue('exampleHeadline_0')
   mockArticle_0.url().returnValue('www.example.com')
+  mockArticle_0.thumbnail().returnValue('')
 
-  var mockArticle_1 = new MockObject('article', ['id', 'headline', 'url'])
+  var mockArticle_1 = new MockObject('article', ['id', 'headline', 'url', 'thumbnail'])
   mockArticle_1.id().returnValue(1)
   mockArticle_1.headline().returnValue('exampleHeadline_1')
   mockArticle_1.url().returnValue('www.example.com')
+  mockArticle_1.thumbnail().returnValue('')
+
 
   var HTMLString = ["<h1>Headlines</h1><div id='headlines'>",
                       "<div class='image'><img src='' alt='political picture'></div>",
