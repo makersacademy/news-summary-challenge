@@ -38,7 +38,10 @@ img {
     user-select: none;
     outline: none;
     width: 100%;
-    max-width: 438px;
+}
+
+.thumbnail {
+  max-width: 500px;
 }
 
 area:focus{
@@ -52,6 +55,7 @@ area:focus{
     border: none;
     color: white;
     padding: 15px 32px;
+    margin-bottom: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -87,11 +91,13 @@ h2 {
 }
 
 h3 {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
+  -webkit-margin-before: 0;
 }
 
 h4 {
   font-size: 1.125rem;
+
 }
 
 h5 {
