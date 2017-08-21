@@ -2,10 +2,11 @@
 
 (function(exports) {
   var id = 0;
-  function Article(headline, url, publicationDate) {
+  function Article(headline, url, publicationDate, thumbnail) {
     this._headline = headline;
     this._url = url;
     this._publicationDate = publicationDate;
+    this._thumbnail = thumbnail;
     this._id = id;
     id++;
   }
@@ -18,6 +19,9 @@
     },
     publicationDate: function() {
       return this._publicationDate;
+    },
+    thumbnail: function() {
+      return this._thumbnail;
     },
     id: function() {
       return this._id;

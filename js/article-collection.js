@@ -7,9 +7,9 @@
   }
 
   ArticleCollection.prototype = {
-    createArticle: function(headline, url, publicationDate) {
+    createArticle: function(headline, url, publicationDate, thumbnail) {
       if(this.articleExists(headline)) { return; }
-      var article = new this._articleConstructor(headline, url, publicationDate)
+      var article = new this._articleConstructor(headline, url, publicationDate, thumbnail)
       this._articles.push(article);
     },
     articles: function() {

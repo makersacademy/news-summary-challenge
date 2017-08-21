@@ -1,8 +1,8 @@
 'use strict';
 
 (function(exports) {
-  var newsSummaryAPI = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl="
-  var politicsHeadlinesURL = "http://content.guardianapis.com/politics"
+  var newsSummaryAPI = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=";
+  var politicsHeadlinesURL = "http://content.guardianapis.com/politics?show-fields=thumbnail";
 
   function GuardianController(windowObject,
                               element,

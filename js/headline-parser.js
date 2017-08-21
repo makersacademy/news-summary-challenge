@@ -12,7 +12,8 @@
       articles.forEach(function(article) {
         self.articleCollection.createArticle(article.webTitle,
                                              article.webUrl,
-                                             article.webPublicationDate);
+                                             article.webPublicationDate,
+                                             article.fields.thumbnail);
       });
       return this.returnArticles();
     },

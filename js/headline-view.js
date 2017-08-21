@@ -1,12 +1,13 @@
 'use strict';
 
 (function(exports) {
-  function HeadlineView(headlineParser) {}
+  function HeadlineView() {}
 
   HeadlineView.prototype = {
     returnHTML: function(articles) {
       var headlines = articles.map(function(article, index) {
-        return ["<div class='image'><img src='' alt='political picture'></div><h2>",
+        return ["<div class='image'><img src='" + article.thumbnail(),
+                  "' alt='political picture'></div><h2>",
                   "<a href='#/articles/" + article.id() + "'>",
                   article.headline(),
                   "</a> - ",
