@@ -40,11 +40,12 @@
     populateStories: function() {
       var self = this;
       JSON.parse(self._results).response.results.forEach(function(story) {
-        var text = story.webTitle;
+        var text = story.fields.body;
         var title = story.webTitle;
-        var url = story.webUrll;
+        var url = story.fields.thumbnail;
         self._storyList.create(text, title, url);
       });
+      console.log(self);
       self.display();
     }
   };

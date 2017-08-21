@@ -7,10 +7,11 @@
 
   StoryView.prototype = {
     toHtml: function() {
+      var backButton = "<a class='button' href=#story/all>BACK</a><br>";
       var imageHtml = "<img src='" + this._story.url() + "'></br>";
       var titleHtml = "<h2>" + this._story.title() + "</h2></br>";
       var textHtml = "<p>" + this._story.text() + "</p></br>";
-      var html = "<div id='story'>" + imageHtml + titleHtml + textHtml + "</div>";
+      var html = backButton + "<div id='story'>" + imageHtml + titleHtml + textHtml + "</div>";
       return html;
     }
   };

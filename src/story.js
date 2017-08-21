@@ -1,12 +1,11 @@
 (function(exports) {
   "use strict";
 
-  var id = 0;
-
-  function Story(text, title, url) {
+  function Story(text, title, url, id) {
     this._text = text;
     this._title = title;
     this._url = url;
+    this._id = id;
   }
 
   Story.prototype = {
@@ -17,7 +16,7 @@
       return this._title;
     },
     id: function() {
-      return id ++;
+      return this._id;
     },
     url: function() {
       return this._url;
