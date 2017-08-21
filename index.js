@@ -1,5 +1,4 @@
 window.addEventListener("load", function() {
-
   function requestToGuardianApi() {
     var url = "https://content.guardianapis.com/search?show-fields=body,thumbnail&api-key=test"
     var xhttp = new XMLHttpRequest();
@@ -12,19 +11,25 @@ window.addEventListener("load", function() {
     xhttp.open("GET",url, true);
     xhttp.send();
   }
+  var element = document.getElementById("stories");
+  var storyController = new StoryController(element)
 
   function getResponse(responseObject) {
     var resultsArray = responseObject.response.results;
-    createStory(resultsArray);
-  }
 
-  function createStory(resultsArray) {
     for(i=0; i < resultsArray.length; i++) {
-      var story = new Story(resultsArray[i]);
-      var storyView = new StoryView(story);
-      storyView.displayStory();
+      storyController.createStory(resultsArray[i]);
     }
+
   }
 
+  // function createStory(resultsArray) {
+  //   for(i=0; i < resultsArray.length; i++) {
+  //     var story = new Story(resultsArray[i]);
+  //     var storyView = new StoryView(story);
+  //     storyView.displayStory();
+  //   }
+  // }
+console.log("here")
   requestToGuardianApi();
 });

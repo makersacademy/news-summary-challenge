@@ -13,17 +13,18 @@ test.describe("StoryListView", function() {
      }
    }
 
-  var story = new Story(newsObject);
-  var storyView = new StoryView(story);
+  var storyListModel = new StoryListModel(Story);
+  storyListModel.create(newsObject);
+  var storyListView = new StoryListView(storyListModel);
 
-  test.it("has a story", function() {
-    assert.isEqual(storyView._story, story);
+  test.it("to html method returns string to html", function() {
+    var expectedString = "<ul><li><div><img src=https://media.guim.co.uk/74b2f90d9fb371b96c758b7755f9d6d5b06d4b81/0_103_3155_1894/500.jpg><a href=https://www.theguardian.com/media/2017/aug/17/game-of-thrones-secrets-revealed-as-hbo-twitter-accounts-hacked>Game of Thrones secrets revealed as HBO Twitter accounts hacked</a></div></li></ul>";
+    array = storyListModel.stories();
+    console.log(expectedString);
+    console.log(storyListView.toHtml(array));
+    assert.isTrue(storyListView.toHtml(array) === expectedString);
   });
 
-  // test.it("converts each story to html", function() {
-  //   var expectedOutput = "<section><img src=https://media.guim.co.uk/74b2f90d9fb371b96c758b7755f9d6d5b06d4b81/0_103_3155_1894/500.jpg><br><a href=https://www.theguardian.com/media/2017/aug/17/game-of-thrones-secrets-revealed-as-hbo-twitter-accounts-hacked>Game of Thrones secrets revealed as HBO Twitter accounts hacked</a><br></section>"
-  //   console.log(storyView.toHtml());
-  //   assert.isEqual(storyView.toHtml(), expectedOutput);
-  // });
+
 
 });

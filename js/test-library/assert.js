@@ -10,6 +10,12 @@
       if(actual !== expected) {
         throw new Error("Expected:" + actual + " to equal " + expected);
       }
+    },
+
+    toInclude: function(expected) {
+      if(!this.includes(expected)) {
+        throw new Error("Expected:" + actual + " to include" + expected);
+      }
     }
   };
   exports.assert = assert;

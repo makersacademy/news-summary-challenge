@@ -7,7 +7,7 @@
   StoryView.prototype.toHtml = function() {
     var newSection = document.createElement("section");
     var storyImage = "<img src=" + this._story.image() + ">" ;
-    var storySummary = "<button onclick= loadSummary()" + ">View article summary</button>";
+    var storySummary = "<button onclick= requestToAylienApi(" +"'" +this._story.webUrl()+ "'"+ ")" + ">View article summary</button>";
     var storyHeadline = "<br>" + "<a href=" + this._story.webUrl() + ">" + this._story.headline() + "</a>"  + "<br>";
     newSection.innerHTML += storyImage + storySummary + storyHeadline;
     return newSection;
