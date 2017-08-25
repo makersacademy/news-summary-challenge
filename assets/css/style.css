@@ -1,0 +1,48 @@
+body {
+  margin: 0px
+}
+
+h1 {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Alegreya', serif;
+  margin-top: 20px;
+}
+
+div#headlines {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  overflow: auto;
+  justify-content: space-around;
+}
+
+div#headline {
+  height: 650px;
+  text-align: center;
+  overflow: auto;
+  justify-content: space-between;
+}
+
+div.article {
+  margin: 10px;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+}
+
+div.body {
+  max-height: 350px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 17px;
+  padding: 10px
+}
+::-webkit-scrollbar {
+    display: none;
+}
