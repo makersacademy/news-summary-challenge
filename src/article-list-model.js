@@ -5,8 +5,8 @@
    }
 
    ArticleList.prototype = {
-    createArticle: function(title, url, date, thumbnail) {
-      var article = new this.article(title, url, date, thumbnail);
+    createArticle: function(title, url, date, thumbnail, summary) {
+      var article = new this.article(title, url, date, thumbnail, summary);
       this.list.push(article);
     },
     displayList: function() {

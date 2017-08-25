@@ -1,8 +1,10 @@
 (function(exports){
-  function ArticleModel(title, url, date){
+  function ArticleModel(title, url, date, thumbnail, summary){
     this._title = title;
     this._url = url;
     this._date = date;
+    this._thumbnail = thumbnail;
+    this._summary = summary;
   }
 
   ArticleModel.prototype = {
@@ -14,6 +16,12 @@
     },
     displayDate: function(){
       return this._date;
+    },
+    displayThumbnail: function(){
+      return this._thumbnail;
+    },
+    displaySummary: function(){
+      return this._summary;
     }
   };
   exports.ArticleModel = ArticleModel;
