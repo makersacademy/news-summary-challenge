@@ -7,7 +7,6 @@
         document.getElementById("tests").innerHTML += (" <b><ul>👩‍⚕️<span style='color:green;'>  The test has passed, you are amazing!</span></ul></b>");
       }
     }
-  
    };
   var describe = function(description, test) {
       document.getElementById("tests").innerHTML += "<br></br><b><span style='font-size:20px;'>" + description + ":</span></b>";
@@ -16,7 +15,6 @@
 
   var it = function(description, test) {
     document.getElementById("tests").innerHTML += "<br>&nbsp;&nbsp; - " + description;
-
     test();
   };
 

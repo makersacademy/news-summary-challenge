@@ -8,8 +8,9 @@
   }
 
   HeadlineList.prototype.addHeadlines = function(apiResponse) {
+    var self = this;
     apiResponse.forEach(function(headline) {
-      this.list.push(headline.webTitle);
+      self.list.push(headline.webTitle);
   })
 }
 
