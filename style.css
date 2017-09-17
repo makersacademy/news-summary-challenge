@@ -21,7 +21,6 @@ h1 {
 }
 
 h2 {
-  color: #ffffff;
   font-family: "Lato", sans-serif;
   font-size: 40px;
   font-weight: 300;
@@ -40,7 +39,7 @@ p {
 
 
 a {
-  color: whitesmoke;
+  color: darkred;
   text-decoration: underline;
 }
 
@@ -76,7 +75,7 @@ li a {
   -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
   transition: font-size 0.3s ease, background-color 0.3s ease;
   /*display: block;*/
-  width: 200px;
+  max-width: 200px;
 }
 
 li a:hover {
@@ -85,7 +84,7 @@ li a:hover {
 
 .date {
   background: #fe921f;
-  color: #ffffff;
+  color: black;
   display: inline-block;
   font-family: "Lato", sans-serif;
   font-size: 12px;
@@ -99,23 +98,23 @@ li a:hover {
 
 header {
   padding: 1em;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: #005689;
   clear: left;
   text-align: center;
   margin: 0px;
 }
 
 body {
-  background-color: #070921;
-  color: white;
+  background-color: white;
+  color: black;
   align-content: center;
   align-items: center;
-  color: white;
+  color: black;
   font-family: Lucida Sans;
-  background: #070000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #070000, #4c0001, #070000); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #070000, #4c0001, #070000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: white; /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to right, #070000, #4c0001, #070000); !* Chrome 10-25, Safari 5.1-6 *!*/
+  /*background: linear-gradient(to right, #070000, #4c0001, #070000); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
 }
 
 li {
@@ -196,4 +195,9 @@ li {
   max-width:1000px;
   margin: auto;
   border: 1px dotted white;
+}
+
+.summaryButton {
+  color: darkgreen;
+  text-shadow: 0px 0px;
 }

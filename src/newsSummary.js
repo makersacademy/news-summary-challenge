@@ -73,7 +73,7 @@ function renderHTML(data, int, incrementValue = increment) {
         var link = data.response.results[i].webUrl;
         htmlString += '<li> <a href=' + link + ' id=article' + articleCounter + ' class="center">'+ data.response.results[i].webTitle +' </a>';
         htmlString += '<br>';
-        htmlString += '<button id="article' + articleCounter + '" value="' + link + '" class="button articleButton center"><span>Summary</span></button></li>';;
+        htmlString += '<button id="article' + articleCounter + '" value="' + link + '" class="button articleButton summaryButton"><span>Summary</span></button></li>';;
         articleCounter += 1;
     }
     return htmlString;
