@@ -37,9 +37,8 @@ p {
   margin: 0;
 }
 
-
 a {
-  color: darkred;
+  color: #cc2b12;
   text-decoration: underline;
 }
 
@@ -48,7 +47,6 @@ a:hover {
 }
 
 div {
-
 }
 
 ul {
@@ -65,7 +63,6 @@ li {
 li:last-child {
   border: none;
 }
-
 
 li a {
   text-decoration: none;
@@ -103,6 +100,8 @@ header {
   clear: left;
   text-align: center;
   margin: 0px;
+  width: 100%;
+  top: 0;
 }
 
 body {
@@ -187,17 +186,26 @@ li {
 .summary {
   padding: 1px;
   margin: 1px;
-  color: whitesmoke;
+  color: black;
   font-family: "Lato", sans-serif;
 }
 
 .summaryField {
-  max-width:1000px;
+  max-width: 700px;
   margin: auto;
-  border: 1px dotted white;
+  border: 1px dotted grey;
 }
 
 .summaryButton {
   color: darkgreen;
   text-shadow: 0px 0px;
+}
+
+.red-bar {
+  background-color: #cc2b12;
+  padding: 20px;
+  position: static;
+  bottom: 0;
+  width: 100%;
+  height: 10px; /* Height of the footer */
 }

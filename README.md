@@ -1,44 +1,37 @@
 # News Summary challenge
-
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
-
 How to run the app
 -----------------
-Clone the repo, install the packages and run the server using http-server. For example:
+All you have to do is clone the repo and run the server using a service like 'http-server'. To clone the server:
+
 ````
 $ git clone git@github.com:stephengeller/news-summary-challenge.git
-$ cd bowling-challenge
-$ npm install
-$ nodemon
+$ cd news-summary-challenge
+
 ````
-You can also access the app on [Heroku](http://bowlinggame-sg.herokuapp.com/) (but beware, bugs!).  
 
 Technologies used
 ----------------
-  - TDD: Jasmine, Mocha, Chai, ZombieJS, TravisCI, ESLint
-  - Server: ExpressJS, Nodemon, Heroku
-  - Design: CSS, HTML, Bootstrap
-  - Views: EJS
-  
+  - TDD: Custom-built library, run using 'run()' in the Chrome Dev Tools
+  - Server: http-server
+  - Design: CSS, HTML
+  - Views: HTML
+  - Functionality: Javascript
+
+  Difficulties
+  ---------
+  The unique difficulty of this challenge was due to not being able to use any library for our single-page app development. This meant I was not allowed to use familiar JavaScript testing frameworks (such as Jasmine, Mocha / Chai) nor server-side tools and packages that would make development more efficient.
 
 Approach to solving the challenge
 ---------
-This challenge was a result of two weekends of work, which was divided into Javascript (week one) and ExpressJS (week two). After struggling with bowling logic, I used [this tutorial](https://www.youtube.com/watch?v=-qA_MjNmpVU&t=37s)as a reference to drive my model creation. 
+As I had no testing framework available, I first developed some simple functions to act as a bare-bones true/false testers for functionality. This allowed me to pass Boolean statements checking whether elements were on the page, what type of elements they were and what kind of purpose they had. For most of the project, this proved useful for basic tests.
 
-I subsequently developed a basic UI with JQuery, but decided to re-create it using ExpressJS and EJS pages. This was because I wanted to make thorough feature tests using Zombie, Mocha and Chai, but still kept my unit tests in the file using Jasmine.
+However, problems emerged when trying to test asynchronous behavior, which was normally made easy when using Mocha / Chat and ZombieJS. Unfortunately, these issues were not able to be resolved during the weekend challenge, and so some tests would fail despite the actual thing being tested being successful.
 
-Once all the desired elements were rendered and interactive in the 'play' view - and edge cases were addressed - I refined the layouts to make them more user-friendly, such as removing buttons that would be invalid to be pressed (like bowling a 8 after a 4 as there are only 6 left).
-
-Difficulties
----------
-The main difficulties in this challenge were translating concepts and functionality from other MVC models (like Sinatra) to ExpressJS, as well as learning how to use CSS and Bootstrap for the first time.
+The program itself was developed using basic JavaScript, having elements created and pushed into other elements (like list items within an unordered list) in this newsSummary.js file. Counters were used to dictate how many article titles were rendered on the page, and buttons were used to render more. The Guardian's API was used to source articles and their appropriate details (such as their url and title), and Aylien API was used to summarize each story.
 
 Future Developments
 ------------------
-  1. Formatting frames into actual bowling frames
-  2. Rendering multiple games at once
-  3. Saving totals / frames to a database
+  1. Adding relevant images to each story
+  2. More styling (css)
+  3. Improve the testing framework to test asynchronous behaviour
+  4. Explore more available information provided by the Guardian API
