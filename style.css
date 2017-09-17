@@ -40,12 +40,12 @@ p {
 
 
 a {
-  color: palevioletred;
+  color: whitesmoke;
   text-decoration: underline;
 }
 
 a:hover {
-  color: #ffffff;
+  color: cornflowerblue;
 }
 
 div {
@@ -60,7 +60,7 @@ ul {
 
 li {
   font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-  border-bottom: 1px solid #ccc;
+  /*border-bottom: 1px solid #ccc;*/
 }
 
 li:last-child {
@@ -180,7 +180,20 @@ li {
   margin: 20px;
 }
 
-.full-note {
+.articleButton {
+  color: mediumspringgreen;
+  background-color: transparent;
+}
+
+.summary {
+  padding: 1px;
+  margin: 1px;
+  color: whitesmoke;
+  font-family: "Lato", sans-serif;
+}
+
+.summaryField {
+  max-width:500px;
+  margin: auto;
   border: 1px dotted white;
-  display: inline-block;
 }

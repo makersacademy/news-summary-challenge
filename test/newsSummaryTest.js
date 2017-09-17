@@ -4,23 +4,22 @@ var test = function() {
     var textField = document.getElementById('textField');
     var testResult = document.getElementById('testResult');
     var main = document.getElementById("main");
-    var getNews = document.getElementById("getNews");
+    var refreshNews = document.getElementById("refreshNews");
     var articleList = document.getElementById("articleList");
     var articleListItems = document.getElementById("articleList").getElementsByTagName("li");
-    var fiveMoreButton = document.getElementById("fiveMore");
+    var threeMoreButton = document.getElementById("threeMore");
+    var summaryButton = document.getElementById("summaryButton");
+    var increment = 3;
 
     var success = function () {
         console.log("%cTest passed", 'color:green');
-        // testResult.insertAdjacentHTML("beforeend", '<li style="color: green"> Test passed! </li>');
     };
 
     var fail = function (method) {
         console.log("%c" + method, 'color:red')
-        // testResult.insertAdjacentHTML("beforeend", '<li style="color: red"> Test failed! </li>');
     };
 
     var reset = function() {
-        // blogList.innerHTML = ''
     };
 
     var testIfTrue = function(argument) {
@@ -33,16 +32,16 @@ var test = function() {
     };
 
     var pageSuccess = function() {
-        testIfTrue(main.innerHTML.includes('Guardian News Summary'))
+        testIfTrue(main.innerHTML.includes('Guardian Headlines'))
     };
 
     var hasANewsfeedButton = function() {
-        testIfTrue(getNews);
+        testIfTrue(refreshNews);
     };
 
     var newsFeedHasTopFiveItems = function() {
         var articleListItems = document.getElementById("articleList").getElementsByTagName("li");
-        testIfTrue(articleListItems.length === 5);
+        testIfTrue(articleListItems.length === increment);
     };
 
     var eachItemIsAList = function() {
@@ -50,15 +49,24 @@ var test = function() {
         testIfTrue(articleListItems[0].innerHTML.includes('<a href='))
     };
 
-    var linkGoesToGuardian = function() {
+    var linkGoesToGuardianSite = function() {
         testIfTrue(articleListItems[0].innerHTML.includes('<a href="https://www.theguardian.com/'))
     };
 
-    var clickFiveMore = function() {
-        testIfTrue(articleListItems.length === 5);
-        fiveMoreButton.click();
-        testIfTrue(articleListItems.length === 10);
+    var clickThreeMore = function() {
+        testIfTrue(articleListItems.length === increment);
+        threeMoreButton.click();
+        articleListItems = document.getElementById("articleList").getElementsByTagName("li");
+        testIfTrue(articleListItems.length === 6);
     };
+
+    var summaryButtonExits = function() {
+        testIfTrue(summaryButton)
+    };
+
+    var getNewsSummary = function() {
+        summaryButton.click();
+    }
 
 
 
@@ -67,25 +75,13 @@ var test = function() {
         hasANewsfeedButton();
         newsFeedHasTopFiveItems();
         eachItemIsAList();
-        linkGoesToGuardian();
-        clickFiveMore()
+        linkGoesToGuardianSite();
+        clickThreeMore();
+        summaryButtonExits()
     };
-
 
     runTests()
 
 };
 
-var runTestIfLoaded = function() {
-    if (document.readyState === 'complete') {
-        test();
-    } else {
-        console.log('not loaded');
-    }
-};
-
-window.onLoad = function() {
-    runTestIfLoaded();
-};
-
-window.onLoad();
+// location.reload();

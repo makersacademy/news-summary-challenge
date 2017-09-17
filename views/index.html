@@ -1,8 +1,8 @@
 <div id="main">
     <header>
 
-        <title class="title">News Summary</title>
-        <h1>Guardian News Summary</h1>
+        <title class="title">Guardian Headlines</title>
+        <h1>Guardian Headlines</h1>
 
         <link rel="stylesheet" type="text/css" href="../style.css">
 
@@ -13,14 +13,16 @@
 
     <div style="text-align: center">
 
-        <div id="full-note" class="full-note" style="display: none;"></div>
 
-        <h2 style="padding-top: 50px">Newsfeed</h2>
+        <h2 style="padding-top: 50px" id="topOfPageTitle">Top Headlines</h2>
 
         <ol id='articleList' class="center"></ol>
+        <div id="summaryField" class="center summaryField" style="display:;"></div>
 
-        <button id="fiveMore" class="button"><span>Five More Stories</span></button>
-        <button id="getNews" class="button"><span>Refresh Newsfeed</span></button>
+
+        <button id="threeMore" class="button"><span>Three More Stories</span></button>
+        <button id="refreshNews" class="button"><span>Refresh Newsfeed</span></button>
+        <button id="backToNews" class="button" style="display: none"><span>Back to Headlines</span></button>
 
         <script src="../src/newsSummary.js"></script>
         <script src="../test/newsSummaryTest.js"></script>
