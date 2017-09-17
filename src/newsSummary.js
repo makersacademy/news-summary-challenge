@@ -3,7 +3,7 @@ var summaryField = document.getElementById('summaryField');
 var refreshNews = document.getElementById('refreshNews');
 var threeMoreButton = document.getElementById('threeMore');
 var backToNews = document.getElementById('backToNews');
-var topOfPageTitle = document.getElementById('topOfPagetitle');
+var topOfPageTitle = document.getElementById('topOfPageTitle');
 
 var counter = 0;
 var articleCounter = 1;
@@ -42,28 +42,35 @@ refreshNews.addEventListener('click', function() {
 });
 
 articleList.addEventListener('click', function(e) {
-    console.log(e.target);
+    console.log(e.path[2])
     if (e.path[0].innerHTML === 'Summary') {
         getNewsSummary(e.path[1].value);
         hideElement(true, articleList);
         hideElement(true, threeMoreButton);
         hideElement(true, refreshNews);
         unhideElement(true, backToNews);
+        topOfPageTitle.innerHTML = e.path[2].innerHTML
     }
 });
 
+function summaryButton(id) {
+    return document.getElementById(id)
+}
+
 backToNews.addEventListener('click', function() {
-    articleList.style.display = '';
-    threeMoreButton.style.display = '';
-    refreshNews.style.display = '';
-    backToNews.style.display = 'none';
-    summaryField.innerHTML = ''
+    unhideElement(true, articleList);
+    unhideElement(true, threeMoreButton);
+    unhideElement(true, refreshNews);
+    hideElement(true, backToNews);
+    summaryField.innerHTML = '';
+    topOfPageTitle.innerHTML = 'Top Headlines'
+
 });
 
 function renderHTML(data, int, incrementValue = increment) {
     var htmlString = '';
     for (i = int; i < (int + incrementValue); i++) {
-        var link = data.response.results[i].webUrl
+        var link = data.response.results[i].webUrl;
         htmlString += '<li> <a href=' + link + ' id=article' + articleCounter + ' class="center">'+ data.response.results[i].webTitle +' </a>';
         htmlString += '<br>';
         htmlString += '<button id="article' + articleCounter + '" value="' + link + '" class="button articleButton center"><span>Summary</span></button></li>';;
@@ -83,9 +90,6 @@ function renderHTMLSummary(data) {
         htmlString += data.text
     }
     htmlString += '</p>';
-
-    console.log(htmlString);
-    console.log('htmlString above');
     return htmlString;
 }
 
