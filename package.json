@@ -1,0 +1,23 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "Weekend task assigned by [Kay Lovelace](https://github.com/neoeno), [Makers Academy](http://www.makersacademy.com/).",
+  "main": "test-outputter.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nick-otter/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nick-otter/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/nick-otter/news-summary-challenge#readme"
+}
