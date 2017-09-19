@@ -1,0 +1,22 @@
+{
+  "name": "news-app",
+  "version": "1.0.0",
+  "description": "* Challenge time: 5 hours",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elizabethcsw/news-app.git"
+  },
+  "author": "Elizabeth Chan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elizabethcsw/news-app/issues"
+  },
+  "homepage": "https://github.com/elizabethcsw/news-app#readme",
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
