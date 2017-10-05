@@ -1,0 +1,22 @@
+body {
+  font-family: "Calibri", sans-serif;
+}
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#passing-assertion {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  color: green;
+}
+
+#failing-assertion {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  color: red;
+}
