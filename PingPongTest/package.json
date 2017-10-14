@@ -1,0 +1,26 @@
+{
+  "name": "pingpongtest",
+  "version": "1.0.2",
+  "description": "a super-lightweight testing library for unit testing pure javascript models.",
+  "main": "src/PingPongTest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ComaToastUK/PingPongTest.git"
+  },
+  "keywords": [
+    "Javascript",
+    "Test",
+    "Testing",
+    "Mocks",
+    "PingPong"
+  ],
+  "author": "James Stubbs, Rory Hodgson, Zoe Hopkins, Mengchen Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ComaToastUK/PingPongTest/issues"
+  },
+  "homepage": "https://github.com/ComaToastUK/PingPongTest#readme"
+}
