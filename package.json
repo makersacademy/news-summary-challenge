@@ -18,5 +18,8 @@
   "homepage": "https://github.com/etiennemustow/news-summary-challenge#readme",
   "dependencies": {
     "http-server": "^0.10.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
   }
 }
