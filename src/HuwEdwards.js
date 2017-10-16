@@ -3,9 +3,9 @@
     this.list = [];
   }
 
-  HuwEdwards.prototype.headlinesList = function() {
+  HuwEdwards.prototype.headlinesList = function(list) {
     var headlinesHTML = ["<ul class='list_of_headlines'>"];
-    var newsItems = this.list;
+    var newsItems = list;
     newsItems.forEach(function(newsItem, index) {
       headlinesHTML.push(
         "<a href='#$" + index + "'>" +

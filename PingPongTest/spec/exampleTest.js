@@ -1,11 +1,13 @@
 (function(exports) {
-  function exampleTest() {
-    var exampleTest = new PingPongSpec(); // Create a new instance of the test class
-    var exampleModel = new ExampleModel(); // This is the object you want to test
-    exampleTest.it("should test returnValue"); // Write what you want to test as an arg
-    exampleTest.expect(exampleModel.returnValue("string")); // Input the method you want to test as an arg
-    exampleTest.expectToEqual("string"); // Input the expected output as an arg
+  function testingNewsGrabber() {
+    var firstTest = new PingPongSpec(); // Create a new instance of the test class
+    var newsGrabber = new NewsGrabber('http://echo.jsontest.com/LightYagami/Kira/L/LLawliet'); // This is the object you want to test
+    firstTest.it("should record the responseText of a call"); // Write what you want to test as an arg
+    newsGrabber.apiCallRecord()
+    console.log(newsGrabber.apiCallRecorded)
+    firstTest.expect(newsGrabber.parseCall()); // Input the method you want to test as an arg
+    firstTest.expectToEqual('b'); // Input the expected output as an arg
   }
 
-  exampleTest(); //call your testMethod here
+  testingNewsGrabber(); //call your testMethod here
 })(this);
