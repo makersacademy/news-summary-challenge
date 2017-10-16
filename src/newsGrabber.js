@@ -11,7 +11,7 @@
 
     xhr.open('GET', this.targetSite, true);
 
-    xhr.responseType = 'text';
+      xhr.responseType = 'text';
 
     xhr.onload = function () {
     if (xhr.readyState === xhr.DONE) {

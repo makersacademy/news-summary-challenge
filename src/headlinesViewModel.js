@@ -4,7 +4,8 @@
 
 
 HeadlinesViewModel.prototype.formatHeadlines = function(initializedNewsgrabber){
-  newsgrabber.headlines
+  for
+  initializedNewsgrabber.headlines
 }
 
 
