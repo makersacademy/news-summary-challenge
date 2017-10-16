@@ -1,0 +1,19 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "Create an app that summarises the news.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunali1/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunali1/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/sunali1/news-summary-challenge#readme"
+}

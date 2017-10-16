@@ -32,6 +32,7 @@ Own testing framework written.
 You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
 Run http-server to serve your index.html.
 Go to http://localhost:8080/ in a browser to view your index.html page.
+https://www.npmjs.com/package/http-server
 
 
 > The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
