@@ -1,0 +1,29 @@
+{
+  "name": "single-page-notes-app",
+  "version": "1.0.0",
+  "description": "basic",
+  "main": "createNote.js",
+  "dependencies": {
+
+    "http": "0.0.0",
+    "mysql": "^2.15.0"
+
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  },
+  "scripts": {
+    "build": "browserify ./node_modules/http-server/bin/http-server -o bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ComaToastUK/Single-Page-Notes-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ComaToastUK/Single-Page-Notes-App/issues"
+  },
+  "homepage": "https://github.com/ComaToastUK/Single-Page-Notes-App#readme"
+}
