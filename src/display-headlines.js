@@ -1,0 +1,3 @@
+function displayHeadlines() {
+  var contentArray = []
+}
