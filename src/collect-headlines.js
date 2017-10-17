@@ -1,12 +1,13 @@
 (function headlineRequest() {
   httpRequest = new XMLHttpRequest();
 
+  var url = "https://content.guardianapis.com/search?api-key=a1f65ba3-b410-4f5e-814e-dbfec51b9634"
   if (!httpRequest) {
     alert('Giving up :( Cannot create an XMLHTTP instance');
     return false;
   }
   httpRequest.onreadystatechange = alertContents;
-  httpRequest.open('GET', "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json");
+  httpRequest.open('GET', url);
   httpRequest.send();
 
 
@@ -14,6 +15,11 @@ function alertContents() {
   if (httpRequest.readyState === XMLHttpRequest.DONE) {
     if (httpRequest.status === 200) {
       console.log(httpRequest.responseText);
+      var data = httpRequest.responseText
+      var parseddata = JSON.parse(data)
+      console.log(parseddata.response.results)
+      var contentArray = parseddata.response.results
+      // document.getElementById('app').innerHTML = parseddata.response.results
     } else {
       alert('There was a problem with the request.');
     }
