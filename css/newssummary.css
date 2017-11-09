@@ -1,0 +1,21 @@
+#title {
+  color: #FFFAFA;
+  text-align: center;
+  background-color: #B22222;
+  padding: 15px 0px;
+  font-size: 24px;
+}
+
+#show-top-stories {
+  float: right;
+  font-family:sans-serif;
+  font-size: 20px;
+  padding: 10px;
+}
+
+#top-story-1 {
+  float: left;
+  font-family: sans-serif;
+  font-size: 18px;
+  padding: 5px,
+}
