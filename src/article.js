@@ -8,6 +8,8 @@
       return _text;
     };
     return { showArticle: showArticle };
-  };
 
+
+  };
+  exports.Article = Article;
 })(this);
