@@ -1,19 +1,19 @@
 'use strict';
 
-describe('news', function () {
+describe('list model', function () {
 
   var mockAPI = {
-    search: function() {
+    search: function () {
       return 'id: type: sectionId: sectionName: webPublicationDate: webTitle: webUrl: apiUrl:isHosted: pillarId: pillarName';
     }
-  }
+  };
 
-  var news = new News(mockAPI);
+  var list = new List(mockAPI);
   
   describe('fetchHeadlines', function () {
     
     it('fetches all current headlines', function () {
-      expect(news.fetchHeadlines()).toInclude('id: type: sectionId: sectionName: webPublicationDate: webTitle: webUrl: apiUrl:isHosted: pillarId: pillarName');
+      expect(list.fetchHeadlines()).toInclude('id: type: sectionId: sectionName: webPublicationDate: webTitle: webUrl: apiUrl:isHosted: pillarId: pillarName');
     });
 
   });

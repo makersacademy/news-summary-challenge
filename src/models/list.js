@@ -2,11 +2,11 @@
 
 (function (exports) {
 
-  exports.News = function (guardianAPI) {
+  exports.List = function (API) {
 
     function fetchHeadlines() {
       var today = new Date().toISOString().slice(0, 10);
-      var results = guardianAPI.search({
+      var results = API.search({
         'from-date': today
       });
       return results;
