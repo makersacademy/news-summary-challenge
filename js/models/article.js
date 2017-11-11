@@ -1,12 +1,12 @@
 'use strict';
 
 (function (exports) {
-  exports.Article = function () {
+  exports.Article = function (headline, summary, url, image) {
     
-    _headline = '10 Ways To Have A Healthier Christmas!'
-    _summary = 'Christmas is notoriously a time to indulge, but don’t let this be the green light to overindulge! You can still enjoy all the festivities of the season and get through the Christmas period without too much impact on your health and waistline. Try our top 10 tips for a healthier Christmas.'
-    _url = 'https://www.realbuzz.com/activities-interests/topics/festive-health-fitness/article/10-ways-to-a-healthier-christmas/'
-    _image = 'https://s3-eu-west-1.amazonaws.com/rb-cms/rbv5/production/uploads/cover_images/30d7070bbc7a7a40e0aaa7f2a275c599139a/i1080x475.jpg'
+    _headline = headline;
+    _summary = summary;
+    _url = url;
+    _image = image;
 
     function showHeadline() {
       return _headline;
@@ -30,7 +30,7 @@
       showUrlToFullStory: showUrlToFullStory,
       featureImage: featureImage
     };
-    
+
     var _headline, _summary, _url, _image
   };
 })(this);
