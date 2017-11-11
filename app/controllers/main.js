@@ -21,7 +21,7 @@
 
     function updatePromoListModel(results) {
       results.forEach(function(result) {
-        _promoListModel.addArticle(new ArticleModel(result.webTitle));
+        _promoListModel.addArticle(new ArticleModel(result.webTitle, result.webUrl));
       });
       displayPromoList();
     }

@@ -3,9 +3,9 @@
 
   var mockPromoListModel = {
     addArticleCalledCount: 0,
-    articleHeadlines: [],
+    articles: [],
     addArticle: function(article) {
-      this.articleHeadlines.push(article);
+      this.articles.push(article);
       this.addArticleCalledCount++;
     }
   }
@@ -71,7 +71,18 @@
   (function() {
     console.log(" it delivers the correct headlines to the model");
     ["headline one", "headline two", "headline three"].forEach(function(headline, index) {
-      assert.isTrue(mockPromoListModel.articleHeadlines[index].headline === headline);
+      assert.isTrue(mockPromoListModel.articles[index].headline === headline);
+    });
+  })();
+
+  (function() {
+    console.log(" it delivers the correct urls to the model");
+    [
+      "https://www.theguardian.com/sport/live/2017/nov/11/australia-v-england-womens-ashes-test-match-day-three-live",
+      "https://www.theguardian.com/sport/2017/nov/11/kevin-brown-warrington-england-world-cup-chance",
+      "https://www.theguardian.com/books/2017/nov/11/writing-day-antonia-fraser-forced-to-learn-typing"
+    ].forEach(function(url, index) {
+      assert.isTrue(mockPromoListModel.articles[index].url === url);
     });
   })();
 
