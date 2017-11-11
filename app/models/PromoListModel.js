@@ -1,6 +1,6 @@
 (function(exports) {
 
-  exports.PromoList = function() {
+  exports.PromoListModel = function() {
     var _articles = [];
 
     var articles = function() {
@@ -8,7 +8,7 @@
     }
 
     var addArticle = function(article) {
-      _articles.push(article); 
+      _articles.push(article);
     }
 
     return {

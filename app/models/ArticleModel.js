@@ -1,7 +1,7 @@
 (function(exports) {
 
-  exports.Article = function(headline) {
+  exports.ArticleModel = function(headline) {
     return { "headline": headline };
   };
-  
+
 })(this);
