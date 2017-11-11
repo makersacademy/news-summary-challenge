@@ -1,27 +1,24 @@
 'use strict';
 
 (function (exports) {
-  exports.Article = function (headline, summary, url, image) {
-    
-    _headline = headline;
-    _summary = summary;
-    _url = url;
-    _image = image;
+  exports.Article = function (headline, url) {
+    headline = headline;
+    url = url;
 
     function showHeadline() {
-      return _headline;
+      return headline;
     }
 
     function showSummary() {
-      return _summary;
+      return summary;
     }
 
     function showUrlToFullStory() {
-      return _url;
+      return url;
     }
 
     function featureImage() {
-      return _image;
+      return image;
     }
 
     return {
@@ -31,6 +28,6 @@
       featureImage: featureImage
     };
 
-    var _headline, _summary, _url, _image
+    var headline, url
   };
 })(this);

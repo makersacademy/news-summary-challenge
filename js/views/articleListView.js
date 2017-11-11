@@ -2,15 +2,19 @@
 
 (function (exports) {
   exports.ArticleListView = function (articleList) {
-
     articles = articleList.allArticles();
 
     function allHeadlinesHTML() {
-      html = '<div id="headlines"><ul>';
-      articles.map((article, index) => {
-        html += '<li id="' + index + '">' + article.showHeadline() + '</li>'
-      })
-      return html + '</ul></div>'
+      html = '<div><ul>';
+      articles.map((article) => {
+        html += '<li><div><p id="headlines">' + article.showHeadline() + '</p>'
+        + '<p><a href="' + _allUrlsHTML(article) + '">Click To Read</a></p></div></li>'
+      });
+      return html + "</ul></div>";
+    }
+
+    function _allUrlsHTML(article) {
+      return article.showUrlToFullStory()
     }
 
     return {

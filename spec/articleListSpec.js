@@ -14,7 +14,7 @@ aWholeNewWorld('ArticleList', function () {
   })
 
   it('creates and stores articles', function () {
-    articleList.addArticle(headline, summary, url, image)
+    articleList.addArticle(headline, url)
     wish(articleList.allArticles().length).toEqual(1)
   })
 

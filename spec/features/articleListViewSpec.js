@@ -1,6 +1,6 @@
 'use strict';
 
-aWholeNewWorld('ArticleList', function () {
+aWholeNewWorld('ArticleListView', function () {
 
   headline = 'Headline';
   summary = 'Summary';
@@ -11,8 +11,8 @@ aWholeNewWorld('ArticleList', function () {
   articleList.addArticle(headline, summary, url, image);
   articleListView = new ArticleListView(articleList);
 
-  it('is created with an empty array', function () {
-    wish(articleListView.allHeadlinesHTML()).toEqual('<div id="headlines"><ul><li id="0">Headline</li></ul></div>');
+  it('can return a string of html to display all articles with links to the full story', function () {
+    wish(articleListView.allHeadlinesHTML()).toEqual('<div><ul><li><div><p id="headlines">Headline</p><p><a href="Summary">Click To Read</a></p></div></li></ul></div>');
   });
 
   var headline, summary, url, image, articleList, articleListView;
