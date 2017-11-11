@@ -31,13 +31,13 @@
 
     function updateArticleList(articles) {
       articles.map((article) => {
-        articleList.addArticle(article.webTitle, article.webUrl, article.fields)
+        articleList.addArticle(article.webTitle, article.webUrl, article.fields.thumbnail)
       })
-      _showCurrentArticleList()
+      showCurrentArticleList()
     }
 
-    function _showCurrentArticleList() {
-      html = articleListView.allHeadlinesHTML();
+    function showCurrentArticleList() {
+      html = articleListView.allArticlesHTML();
       document.getElementById("app").innerHTML = html
     }
 

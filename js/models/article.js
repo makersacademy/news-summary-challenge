@@ -1,9 +1,10 @@
 'use strict';
 
 (function (exports) {
-  exports.Article = function (headline, url) {
+  exports.Article = function (headline, url, image) {
     headline = headline;
     url = url;
+    image = image;
 
     function showHeadline() {
       return headline;
@@ -28,6 +29,6 @@
       featureImage: featureImage
     };
 
-    var headline, url
+    var headline, url, image
   };
 })(this);

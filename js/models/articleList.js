@@ -9,8 +9,8 @@
       return articles;
     }
 
-    function addArticle(headline, url) {
-      article = new Article(headline, url)
+    function addArticle(headline, url, image) {
+      article = new Article(headline, url, image)
       articles.push(article);
     }
     return {
