@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 var executeAfterFetchingData = function () {
   var titles = guardianParser.getTitles();
   var urls = guardianParser.getUrls();
@@ -27,40 +25,31 @@ var executeAfterFetchingData = function () {
 
 
 
+  function displayArticleListener() {
+    window.addEventListener("hashchange", displayClickedArticle);
+  };
 
-  makeUrlChangeShowAnimalForCurrentPage();
-  
-        function makeUrlChangeShowAnimalForCurrentPage() {
-          window.addEventListener("hashchange", showAnimalForCurrentPage);
-        };
-  
-        function showAnimalForCurrentPage() {
-          showAnimal(getAnimalFromUrl(window.location));
-        };
-  
-        function getAnimalFromUrl(location) {
-          return location.hash.split("#")[1];
-        };
-  
-        function showAnimal(animal) {
-          var clickedArticle = articles.getArticleByIndex(animal);
-          var singleArticleView = new ArticleView(clickedArticle, animal);
-          console.log(singleArticleView);
-          
-          document
-            .getElementById("description")
-            .innerHTML = singleArticleView.renderWholeArticle();
-        };
+  function displayClickedArticle() {
+    var articleId = window.location.hash.split("#")[1];
 
+    var clickedArticle = articles.getArticleByIndex(articleId);
+    var singleArticleView = new ArticleView(clickedArticle, articleId);
+    console.log(singleArticleView);
 
+    document
+      .getElementById("description")
+      .innerHTML = singleArticleView.renderWholeArticle();
+    var link = document.getElementById("title" + articleId);
+    link.click();
+  }
 
-
-
+  displayArticleListener();
 
 }
 
-//this must be changed to 
-// guardianParser.parseJsonFromUrl("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics?show-fields=all", executeAfterFetchingData );
-/*************/
 var guardianParser = new JsonParser();
-guardianParser.parseJsonFromVar(jsonP, executeAfterFetchingData);
+//this must be changed to 
+guardianParser.parseJsonFromUrl("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics?show-fields=all", executeAfterFetchingData );
+/*************/
+
+// guardianParser.parseJsonFromVar(jsonP, executeAfterFetchingData);
