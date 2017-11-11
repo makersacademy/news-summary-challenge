@@ -13,6 +13,10 @@
       return "<h3><a href='#"+_index+"'>"+_article.getTitle()+"</a></h3>";
     }
 
+    var _createHTMLforBody = function(){
+      return "<div class='article-body'>"+_article.getBody()+"</div>";
+    }
+
     var _createHTMLforDescription = function(){
       return _article.extractDescription() + "<a href='#"+_index+"'>read more</a>";
     }
@@ -20,8 +24,13 @@
     var renderArticle = function(){
       return "<div class='article'>"+_createHTMLforThumbnail() + _createHTMLforTitle() + _createHTMLforDescription() +"</div>";
     }
+
+    var renderWholeArticle = function(){
+      return "<h2>"+ _createHTMLforTitle() +"</h2>" +_createHTMLforBody();
+    }
     // console.log(renderArticle());
-    return {renderArticle:renderArticle}
+    return {renderArticle:renderArticle,
+      renderWholeArticle:renderWholeArticle}
   }
 
 })(this);
