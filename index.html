@@ -4,6 +4,35 @@
     <link href="public/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+    <div id="wrapper">
+
+      <section>
+        <ul id="list"></ul>
+      </section>
+
+    </div>
+
+    <!-- load guradian API -->
+    <script src="src/API/guardianAPI.js"></script>
+
+    <!-- load source files -->
+    <script src="src/models/listModel.js"></script>
+    <script src="src/views/listView.js"></script>
+    <script src="src/controllers/listController.js"></script>
+
+    <!-- bootstrap controllers -->
+    <script>
     
+    'use strict';
+
+      var listModel = new ListModel(guardianAPI);
+      var listController = new ListController({
+        containerId: 'list',
+        ListView: ListView,
+        listModel: listModel     
+      });
+
+    </script>
+
   </body>
 </html>

@@ -24,8 +24,8 @@
     }
 
     function getItem(id) {
-      var index = id - 1;
-      return articles[index];
+      id--;
+      return articles[id];
     }
 
     return {

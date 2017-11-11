@@ -17,7 +17,7 @@ describe('list view', function () {
   
   describe('listItemToHTML', function () {
     
-    it('renders the HTML for an article summary', function () {
+    it('generates the HTML for an list item', function () {
       var listView = new ListView(list);
       expect(listView.listItemToHTML(1)).toInclude('testWebTitle');
     });
