@@ -1,6 +1,6 @@
 (function(exports) {
 
-  HeadlinesView = function(headlinesList = new headlinesList) {
+  HeadlinesView = function(headlinesList = new HeadlinesList) {
     this._headlinesList = headlinesList
   }
 
