@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=News+Cycle');
 
 body {
-  background-color: rgb(240, 240, 240);
+  background-color: #E9E8E3;
   font-family: 'News Cycle', sans-serif;
 }
 
 h1 {
+  background-color: #0F7BAC;
   font-size: 8em;
   font-family: 'News Cycle', sans-serif;
   text-align: center;
-  color: rgb(24, 144, 243);
+  color: white;
   margin-top: 0;
   margin-bottom: 0
 }
@@ -32,5 +33,13 @@ li {
 
 a {
   text-decoration: none;
-  color: rgb(24, 144, 243)
+  color: #0F7BAC;
+}
+
+a:hover {
+  color:  rgb(23, 172, 231)
+}
+
+img {
+  border-radius: 12px
 }
