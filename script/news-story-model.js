@@ -1,9 +1,9 @@
 (function(exports) {
 
-  function NewsStoryModel () {
-    this._headline = "Headline 1";
-    this._summary = "Summary 1";
-    this._imgURL = "IMG URL 1";
+  function NewsStoryModel (headline, summary, imgURL) {
+    this._headline = headline;
+    this._summary = summary;
+    this._imgURL = imgURL;
   }
 
   NewsStoryModel.prototype = {

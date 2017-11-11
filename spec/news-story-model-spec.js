@@ -1,4 +1,4 @@
-var newsStory = new NewsStoryModel();
+var newsStory = new NewsStoryModel("Headline1", "Summary1", "IMG URL1");
 
 describe('News Story Model',
   assert('getHeadline() returns news story headline', function() {
