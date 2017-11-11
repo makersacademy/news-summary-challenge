@@ -13,4 +13,8 @@ aWholeNewWorld('Article', function () {
   it('has a link to the full story', function () {
     wish(article.showUrlToFullStory()).toEqual('https://www.realbuzz.com/activities-interests/topics/festive-health-fitness/article/10-ways-to-a-healthier-christmas/')
   })
+
+  it('has a picture attached to the story', function () {
+    wish(article.featureImage()).toEqual('https://s3-eu-west-1.amazonaws.com/rb-cms/rbv5/production/uploads/cover_images/30d7070bbc7a7a40e0aaa7f2a275c599139a/i1080x475.jpg')
+  })
 })
