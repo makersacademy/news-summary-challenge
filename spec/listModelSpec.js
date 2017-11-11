@@ -33,7 +33,7 @@ describe('list model', function () {
     
     it('fetches all current headlines', function () {
       list.fetchHeadlines()
-      expect(list.getArticle(1).webTitle).toEqual("testArticle");
+      expect(list.getItem(1).webTitle).toEqual("testArticle");
     });
 
   });
@@ -42,7 +42,7 @@ describe('list model', function () {
     
     it('return an article from the list', function () {
       list.fetchHeadlines()
-      expect(list.getArticle(2).webTitle).toEqual("testArticle2");
+      expect(list.getItem(2).webTitle).toEqual("testArticle2");
     });
 
   });

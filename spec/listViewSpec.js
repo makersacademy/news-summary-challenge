@@ -3,7 +3,7 @@
 describe('list view', function () {
 
   var list = {
-    getArticle: function() {
+    getItem: function() {
       return {
         id: "sport/live/2017/nov/11/wrnational-live",
         webTitle: "testWebTitle",

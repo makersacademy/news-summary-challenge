@@ -7,9 +7,9 @@
     var list = listModel;
     
     function listItemToHTML(id) {
-      var article = list.getArticle(id)
-      var title = article.webTitle;
-      var thumbnail = article.fields.thumbnail;
+      var item= list.getItem(id)
+      var title = item.webTitle;
+      var thumbnail = item.fields.thumbnail;
       return [
         '<li>',
           '<article>',

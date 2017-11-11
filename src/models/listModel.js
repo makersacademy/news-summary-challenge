@@ -23,14 +23,14 @@
       articles = parseAPIResponse(response);
     }
 
-    function getArticle(id) {
+    function getItem(id) {
       var index = id - 1;
       return articles[index];
     }
 
     return {
       fetchHeadlines: fetchHeadlines,
-      getArticle: getArticle
+      getItem: getItem
     }
 
   }
