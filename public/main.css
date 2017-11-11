@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=News+Cycle');
+
+body {
+  background-color: rgb(240, 240, 240);
+  font-family: 'News Cycle', sans-serif;
+}
+
+h1 {
+  font-size: 8em;
+  font-family: 'News Cycle', sans-serif;
+  text-align: center;
+  color: rgb(24, 144, 243);
+  margin-top: 0;
+  margin-bottom: 0
+}
+
+h2 {
+  font-size: 3em; 
+  text-align: center;
+  color: rgb(54, 54, 54);
+  margin-top: 0
+}
+
+ul {
+  margin-left: 10px;
+  list-style-image: url('../images/news-icon.png')
+}
+
+li {
+  font-size: 1.2em;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(24, 144, 243)
+}
