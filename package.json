@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/lucyborthwick/news-summary-challenge/issues"
   },
-  "homepage": "https://github.com/lucyborthwick/news-summary-challenge#readme"
+  "homepage": "https://github.com/lucyborthwick/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
 }
