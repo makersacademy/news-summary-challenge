@@ -12,5 +12,5 @@ spike.describe('StoryListModel', function() {
     spike.it('initializes StoryListModel', function() {
         assert.isTrue(storyListModel instanceof StoryListModel);
     });
-    
+
 });
