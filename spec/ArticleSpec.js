@@ -7,5 +7,4 @@
     assert.isTrue(article.headline === "Al Gore: 'I tried my best' but Trump can't be educated on climate change");
   })();
 
-  
 })();
