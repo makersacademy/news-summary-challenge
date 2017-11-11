@@ -3,25 +3,32 @@
 describe('list controller', function () {
 
   var listController;
+
   var mockAPI = {
-    search: function () {
-      return {
-        response: {
-          results: [
-            {
+    search: function (params, callback, id = '') {
+      if (id === '') {
+        callback({
+          response: {
+            results: [
+              {
+                id: "sport/live/2017/nov/11/wrnational-live",
+                webTitle: "testArticle",
+                webUrl: "httpve",
+              },
+            ]
+          }
+        })
+      } else {
+        callback({
+          response: {
+            content: {
               id: "sport/live/2017/nov/11/wrnational-live",
               webTitle: "testArticle",
               webUrl: "httpve",
               fields: { thumbnail: 'http://lorempixel.com/500/300' }
-            },
-            {
-              id: "second Article",
-              webTitle: "testArticle2",
-              webUrl: "http...URL",
-              fields: { thumbnail: 'http://lorempixel.com/500/300' }
-            },
-          ]
-        }
+            }
+          }
+        });
       }
     }
   };

@@ -4,31 +4,34 @@
   
   var url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/';
 
-  function parseQueryParams(options) {
-    var params = [];
-    Object.keys(options).forEach(function (key) {
-      params.push(key + '=' + options[key]);
+  function parseQueryParams(params) {
+    var query = [];
+    Object.keys(params).forEach(function (key) {
+      query.push(key + '=' + params[key]);
     })
-    return params.join('&');
+    return query.join('&');
   }
   
-  function search(options) {
+  function search(params, callback, id = '') {
     
-    var params = 'search?' + parseQueryParams(options);
+    var queryString = parseQueryParams(params);
     var xhr = new XMLHttpRequest();
 
-    xhr.open('GET', url + params, false);
+    if (id) var id = id + '?';
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        callback(xhr.response);
+      }
+      else {
+        alert('Request failed.  Returned status of ' + xhr.status);
+      }
+    };
+    
+    xhr.open('GET', url + id + queryString);
     xhr.responseType = "json";
-    // xhr.onreadystatechange = function () {
-    //   if (xhr.status === 200) {
-    //     return xhr.responseText;
-    //   }
-    //   else {
-    //     alert('Request failed.  Returned status of ' + xhr.status);
-    //   }
-    // };
     xhr.send();
-    return xhr.response;
+
   };
 
   exports.guardianAPI = {
