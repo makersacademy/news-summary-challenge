@@ -6,4 +6,13 @@
   };
 
     testArticleIsCreated();
+
+
+  function theArticleReturnsAString() {
+    var article = new Article('news story');
+    assert.isTrue(article.getArticleText() === 'news story' )
+  }
+
+    theArticleReturnsAString();
+
 })(this);
