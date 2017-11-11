@@ -5,24 +5,33 @@
     articleList = new ArticleList;
     articleListView = new ArticleListView(articleList);
 
-    makersDomain = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=';
-    url = 'http://content.guardianapis.com/search?';
+    makersDomain = 'http://news-summary-api.herokuapp.com/';
+    guardianAPIRequest = 'guardian?apiRequestUrl='
+    url = 'http://content.guardianapis.com/search?'
+    allFields = 'show-fields=all';
 
+    // function loadContent() {
+    //   xhttp = new XMLHttpRequest();
+    //   xhttp.onreadystatechange = function () {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //       articles = JSON.parse(this.responseText).response.results;
+    //       updateArticleList(articles)
+    //     };
+    //   };
+    //   xhttp.open("GET", makersDomain + guardianAPIRequest + url + allFields, true);
+    //   xhttp.send()
+    // }
+
+    //Using whilst building app to avoid maxing out API Requests
     function loadContent() {
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          articles = JSON.parse(this.responseText).response.results;
-          updateArticleList(articles)
-        };
-      };
-      xhttp.open("GET", makersDomain + url, true);
-      xhttp.send()
+      articles = articlesJSON.response.results
+      console.log(articles)
+      updateArticleList(articles)
     }
 
     function updateArticleList(articles) {
       articles.map((article) => {
-        articleList.addArticle(article.webTitle, article.webUrl)
+        articleList.addArticle(article.webTitle, article.webUrl, article.fields)
       })
       _showCurrentArticleList()
     }
@@ -36,6 +45,6 @@
       loadContent: loadContent
     }
 
-    var articleList, articleListView, makersDomain, url, xhttp, articles, html;
+    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html;
   }
 })(this);
