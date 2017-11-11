@@ -11,10 +11,11 @@
 
 (function (exports) {
   function describe(description, assertion) {
-    console.log(description);
+    console.log("");
+    console.log(description + " >>>");
 
     for (var assertionIndex = 1; assertionIndex < arguments.length; assertionIndex++) {
-      console.log(arguments[assertionIndex]);
+      console.log("   " + arguments[assertionIndex]);
     }
   }
   exports.describe = describe;

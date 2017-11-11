@@ -1,4 +1,4 @@
-describe('testFramework_spec',
+describe('test-framework-spec',
   assert("assert passes for true assertion",
     ("PASSED: 0 === 0" === assert("0 === 0", 0 === 0))
   ),
