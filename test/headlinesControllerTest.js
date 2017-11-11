@@ -1,6 +1,5 @@
 (function(exports) {
   var mockHeadline = "Theresa May quits"
-
   var mockHeadlineView = {
     toHTML: function() {
       return "<ul><li><div>" + mockHeadline + "</div></li></ul>"
