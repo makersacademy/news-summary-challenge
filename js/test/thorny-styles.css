@@ -1,0 +1,39 @@
+.it{
+  padding-top: 10px;
+  padding-left: 30px;
+  font-size: 1.3em;
+  background-color: rgb(175, 175, 175);
+}
+.toEqual{
+  padding-top: 3px;
+padding-left: 50px;
+background-color: rgb(175, 252, 213);
+
+}
+
+
+.toBeTypeOf{
+  padding-top: 3px;
+  padding-left: 50px;
+  background-color: rgb(175, 252, 213);
+}
+
+.describe{
+  padding-left:5px;
+  padding-top: 5px;
+  font-size: 1.5em;
+  background-color: rgb(175, 175, 175);
+  
+}
+
+.error {
+  color: white;
+  background-color: red;
+}
+
+body {
+  padding-top: 50px;
+  max-width: 800px;
+  font-family: Courier New, Courier, monospace;
+  margin: auto;
+}
