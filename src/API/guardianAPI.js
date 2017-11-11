@@ -18,7 +18,7 @@
     var xhr = new XMLHttpRequest();
 
     xhr.open('GET', url + params, false);
-    console.log(url + params);
+    xhr.responseType = "json";
     // xhr.onreadystatechange = function () {
     //   if (xhr.status === 200) {
     //     return xhr.responseText;
@@ -28,7 +28,7 @@
     //   }
     // };
     xhr.send();
-    return xhr.responseText;
+    return xhr.response;
   };
 
   exports.guardianAPI = {
