@@ -1,6 +1,6 @@
 'use strict';
 
-(function (exports) {
+;(function (exports) {
 
   exports.ListModel = function (API) {
 
@@ -9,7 +9,8 @@
     function fetchHeadlines() {
       var today = new Date().toISOString().slice(0, 10);
       var response = API.search({
-        'from-date': today
+        'from-date': today,
+        'show-fields': "thumbnail"
       });
       saveResults(response);
     }

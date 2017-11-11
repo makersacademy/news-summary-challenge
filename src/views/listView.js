@@ -1,19 +1,31 @@
 'use strict';
 
-(function (exports) {
+;(function (exports) {
 
   exports.ListView = function (listModel) {
 
     var list = listModel;
     
-    function renderListItem(id) {
-      var title = list.getArticle(1).webTitle;
-      return '<li><article>' + title + '</article></li>'
+    function listItemToHTML(id) {
+      var article = list.getArticle(id)
+      var title = article.webTitle;
+      var thumbnail = article.fields.thumbnail;
+      return [
+        '<li>',
+          '<article>',
+            '<figure>',
+              '<img src=' + thumbnail + '>',
+            '</figure>',
+            '<p>' + title + '</p>',
+          '</article>',
+        '</li >'
+      ].join('');
     }
 
     return {
-      renderListItem: renderListItem
+      listItemToHTML: listItemToHTML
     }
+
   };
 
 })(this);

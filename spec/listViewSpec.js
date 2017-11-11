@@ -8,15 +8,18 @@ describe('list view', function () {
         id: "sport/live/2017/nov/11/wrnational-live",
         webTitle: "testWebTitle",
         webUrl: "httpve",
+        fields: {
+          thumbnail: "thumbnailURL"
+        }
       }
     }
   };
   
-  describe('renderList', function () {
+  describe('listItemToHTML', function () {
     
     it('renders the HTML for an article summary', function () {
       var listView = new ListView(list);
-      expect(listView.renderListItem(1)).toInclude('testWebTitle');
+      expect(listView.listItemToHTML(1)).toInclude('testWebTitle');
     });
   
   });
