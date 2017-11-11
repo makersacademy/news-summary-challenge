@@ -1,0 +1,22 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "News Reader App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonsanders101/news-summary-challenge.git"
+  },
+  "author": "Jon Sanders",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonsanders101/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/jonsanders101/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}
