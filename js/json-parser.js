@@ -16,17 +16,19 @@
       }
     }
 
-    var parseJsonFromUrl = function (url) {
+    var parseJsonFromUrl = function (url, callback) {
       fetch(url).then(res => res.json()).then((out) => {
+        
         _iterateThroughJason(out);
-        console.log('Checkout this JSON! ', out);
+        callback();
       }).catch(err => {
         throw err
       });
     }
 
-    var parseJsonFromVar = function (out) {
+    var parseJsonFromVar = function (out, callback) {
       _iterateThroughJason(out);
+      callback();
     }
 
     var getUrls = function () {

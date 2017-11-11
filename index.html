@@ -2,24 +2,26 @@
 <html>
 
   <head>
-
+    
   </head>
-
+  
   <body>
 
+    
     <div id="titles"></div>
     <div id="description"></div>
-
-
-    <script type="text/javascript" src="notes-on-api/politics.js"></script>
-    <script>
-      console.log(jsonP);
-
-      console.log(jsonP.response.results[0].webUrl);
-      console.log(jsonP.response.results[0].webTitle);
-      console.log(jsonP.response.results[0].fields.body);
-      console.log(jsonP.response.results[0].fields.thumbnail);
-    </script>
+      <!-- for testing perposes only -->
+      <script src="notes-on-api/politics.js"></script>
+      <!----------------------------- -->
+      <script src="js/article-model.js"></script>
+      <script src="js/article-list-model.js"></script>
+      <script src="js/json-parser.js"></script>
+    
+      <script src="js/article-view.js"></script>
+      <script src="js/article-list-view.js"></script>
+    
+      <script src="js/index.js"></script>
+  
   </body>
-
-</html>
+  
+  </html>

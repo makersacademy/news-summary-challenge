@@ -8,13 +8,17 @@
       _articleList.push(article);
     }
 
-    var returnArticleByIndex = function(index){
+    var getArticleByIndex = function(index){
       return _articleList[index];
     }
 
+    var getNumberOfArticles = function(){
+      return _articleList.length;
+    }
 
     return { addArticle:addArticle, 
-            returnArticleByIndex:returnArticleByIndex};
+            getArticleByIndex:getArticleByIndex,
+            getNumberOfArticles:getNumberOfArticles};
   }
 
 })(this);

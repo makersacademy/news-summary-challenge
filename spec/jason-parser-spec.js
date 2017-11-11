@@ -5,7 +5,7 @@ showOff("JsonParser", function(){
   //jsonP is the json object stored in politics.js
 
   theThingy(".parseJasonFromVar should take a json stored and extract the fields", function(){
-    myParser.parseJsonFromVar(jsonP);
+    myParser.parseJsonFromVar(jsonP,function(){});
     hope(myParser.getUrls().length).toEqual(10);
     hope(myParser.getBodies().length).toEqual(10);
     hope(myParser.getTitles().length).toEqual(10);
@@ -13,7 +13,7 @@ showOff("JsonParser", function(){
   });
 
   // theThingy(".parseJasonFromUrl should take json from an api", function(){
-  //   myParser.parseJsonFromUrl("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics?show-fields=all");
+  //   myParser.parseJsonFromUrl("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics?show-fields=all", function(){});
   //   hope(myParser.getUrls().length).toEqual(10);
   //   hope(myParser.getBodies().length).toEqual(10);
   //   hope(myParser.getTitles().length).toEqual(10);

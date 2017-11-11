@@ -41,8 +41,11 @@
 
     var extractDescription = function(){
       var firstParagraphRE = /<p>(.*?)<\/p>/y;
-      return _body.match(firstParagraphRE)[0];
-
+      var matches = _body.match(firstParagraphRE);
+      if (matches !== null){
+        return matches[0];
+      } 
+        return "<p>No description available...</p>"
     }
  
     return {  setTitle:setTitle,
