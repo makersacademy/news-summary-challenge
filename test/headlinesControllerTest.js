@@ -8,21 +8,17 @@
   }
 
   var mockHeadlineController = {
-    getView: function() {
-      return mockHeadlineView
-    },
     displayHeadlines: function() {
       var element = document.getElementById("allHeadlines")
-      var currentView = this.getView();
-      element.innerHTML = currentView.toHTML();
+      element.innerHTML = mockHeadlineView.toHTML();
     }
   }
 
   function testsDisplayHeadlines() {
     console.log("Headlines are displayed")
     mockHeadlineController.displayHeadlines();
-    var div = document.getElementById("allHeadlines");
-    assert.isTrue(div.innerHTML === "<ul><li><div>" + mockHeadline + "</div></li></ul>");
+    var element = document.getElementById("allHeadlines");
+    assert.isTrue(element.innerHTML === "<ul><li><div>" + mockHeadline + "</div></li></ul>");
   };
 
   runTests = function() {
