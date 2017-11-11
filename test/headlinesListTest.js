@@ -6,5 +6,10 @@
     console.log("It returns a list of headlines");
     assert.isTrue(Array.isArray(headlinesList.returnHeadlines()));
   };
-  testsReturnAllHeadlines();
+
+  runTests = function() {
+    testsReturnAllHeadlines();
+  };
+
+  runTests();
 })(this);
