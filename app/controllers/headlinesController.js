@@ -5,14 +5,14 @@
     this._view = new HeadlinesView(this._list);
   };
 
-  HeadlineController.prototype.getView = function() {
+  HeadlineController.prototype.renderView = function() {
     return this._view;
   };
 
   HeadlineController.prototype.displayHeadlines = function() {
     var element = document.getElementById("allHeadlines")
-    var currentView = this.getView();
-    element.innerHTML = currentView.toHTML();
+    var pageView = this.renderView();
+    element.innerHTML = pageView.toHTML();
   };
 
   exports.HeadlineController = HeadlineController
