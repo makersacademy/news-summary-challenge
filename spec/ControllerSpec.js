@@ -4,8 +4,8 @@
   var mockPromoListModel = {
     addArticleCalledCount: 0,
     articleHeadlines: [],
-    addArticle: function(headline) {
-      this.articleHeadlines.push(headline);
+    addArticle: function(article) {
+      this.articleHeadlines.push(article);
       this.addArticleCalledCount++;
     }
   }
@@ -71,7 +71,7 @@
   (function() {
     console.log(" it delivers the correct headlines to the model");
     ["headline one", "headline two", "headline three"].forEach(function(headline, index) {
-      assert.isTrue(mockPromoListModel.articleHeadlines[index] === headline);
+      assert.isTrue(mockPromoListModel.articleHeadlines[index].headline === headline);
     });
   })();
 
