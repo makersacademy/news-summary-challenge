@@ -1,9 +1,11 @@
 (function(exports) {
 
-  exports.Controller = function(promoListView) {
-    var promoListViewHtml = promoListView.toHtml();
+  exports.Controller = function(PromoListModel, PromoListView) {
+    var _promoListModel = new PromoListModel();
+    var _promoListView = new PromoListView(_promoListModel);
+    var promoListViewHtml = _promoListView.toHtml();
     document.getElementById("app")
-      .innerHTML = promoListViewHtml; 
+      .innerHTML = promoListViewHtml;
     return {
     };
   };

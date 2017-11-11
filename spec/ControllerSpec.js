@@ -1,7 +1,13 @@
 (function() {
   console.log("Testing Controller: ");
 
-  var mockArticleListView = {
+  var mockPromoListModel = {}
+
+  var MockPromoListModel = function() {
+    return mockPromoListModel;
+  }
+
+  var mockPromoListView = {
     toHtmlCalledCount: 0,
     toHtml: function() {
       this.toHtmlCalledCount++;
@@ -9,17 +15,27 @@
     }
   }
 
-  var controller = new Controller(mockArticleListView);
+  var MockPromoListView = function(promoListModel) {
+    mockPromoListView.promoListModel = promoListModel;
+    return mockPromoListView;
+  }
+
+  var controller = new Controller(MockPromoListModel, MockPromoListView);
 
   (function() {
-    console.log(" it calls articleListView.toHtml on instantiation");
-    assert.isTrue(mockArticleListView.toHtmlCalledCount === 1);
+    console.log(" it delivers an instance of PromoListModel to PromoListView on instantiation");
+    assert.isTrue(mockPromoListView.promoListModel === mockPromoListModel);
   })();
 
   (function() {
-    console.log(" it renders the articleListView html in the app div");
+    console.log(" it calls promoListView.toHtml on instantiation");
+    assert.isTrue(mockPromoListView.toHtmlCalledCount === 1);
+  })();
+
+  (function() {
+    console.log(" it renders the prmoListView html in the app div");
     var appDiv = document.getElementById("app");
-    assert.isTrue(appDiv.innerHTML === mockArticleListView.toHtml());
+    assert.isTrue(appDiv.innerHTML === mockPromoListView.toHtml());
   })();
 
 })();
