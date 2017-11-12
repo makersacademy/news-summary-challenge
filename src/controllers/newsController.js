@@ -39,6 +39,7 @@
 
     function attachEventListeners() {
       window.addEventListener('hashchange', hashChange)
+      window.addEventListener('scroll', scrolledToBottom)
     };
 
     function hashChange() {
@@ -47,6 +48,13 @@
       } else {
         renderSummary(getArticleIdFromUrl(window.location));
       };
+    };
+
+    function scrolledToBottom() {
+      var wrapper = document.getElementById('wrapper');
+      if (wrapper.getBoundingClientRect().bottom == window.innerHeight) {
+          renderRow();
+      }
     };
 
     function numberOfStackedArticles() {

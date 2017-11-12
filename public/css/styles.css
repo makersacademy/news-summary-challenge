@@ -1,11 +1,15 @@
 body {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  color: #fff;
+  background-position: fixed;
+  background-color: grey;
+  margin: 0;
 }
 
 #wrapper {
   width: 99vw;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
 }
 
