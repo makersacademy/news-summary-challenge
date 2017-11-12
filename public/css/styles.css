@@ -1,9 +1,10 @@
 body {
+  font-family: 'Montserrat Alternates', sans-serif;    
   width: 100vw;
   height: 100%;
   color: #fff;
   background-position: fixed;
-  background-color: grey;
+  background-color: rgb(62, 60, 60);
   margin: 0;
 }
 
@@ -16,24 +17,57 @@ body {
 ul {
   list-style: none;
   padding: 0;
+  text-align: center;
 }
 
 li {
   display: inline-block;
   box-sizing: border-box;
-  border: 3px solid red;
+  background-color: white;
+  border: none;
   max-width: 500px;
   min-width: 300px;
   height: 400px;
   margin: 20px;
   overflow: hidden;
+  box-shadow: 0 0 5px black;
 }
 
-article {
+li:hover {
+  box-shadow: 0 0 5px white;  
+}
+
+li:active {
+  transform: translateY(2px);
+}
+
+li p {
+  height: 25%;
+  margin: 0;
+  text-decoration: none;
+  color: rgb(62, 60, 60);
+  font-size: 20px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 500%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.article {
   width: 100%;
   height: 100%;
 }
 
-article figure {
+.article figure {
   margin: 0;
+  height: 75%;
+}
+
+.article img {
+  box-sizing: border-box;
+  border-bottom: 2px solid rgb(62, 60, 60);
 }
