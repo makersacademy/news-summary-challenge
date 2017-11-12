@@ -13,9 +13,7 @@
       story.getHeadline() +
       '</a><img id="image' + index +'" src="' +
       story.getImgUrl() +
-      '"><div id="summary' + index +'">' +
-      story.getSummary() +
-      '</div>';
+      '">';
     }).join("");
   };
 
