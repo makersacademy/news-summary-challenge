@@ -57,7 +57,7 @@
 
     function scrolledToBottom() {
       var wrapper = document.getElementById('wrapper');
-      if (wrapper.getBoundingClientRect().bottom == window.innerHeight) {
+      if (wrapper.getBoundingClientRect().bottom == (window.innerHeight)) {
           renderRow();
       }
     };

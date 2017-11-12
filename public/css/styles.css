@@ -6,9 +6,11 @@ body {
   background-position: fixed;
   background-color: rgb(62, 60, 60);
   margin: 0;
+  text-align: center;
 }
 
 #wrapper {
+  padding-top: 50px;
   width: 99vw;
   height: 100%;
   margin: 0 auto;
@@ -16,8 +18,10 @@ body {
 
 ul {
   list-style: none;
+  display: inline;
+  overflow: auto;
   padding: 0;
-  text-align: center;
+  text-align: left;
 }
 
 li {
@@ -34,7 +38,7 @@ li {
 }
 
 .fade li {
-  transition: all 1s ease-out;
+  transition: opacity 1s ease-out;
   opacity: 0;
   height: 400px;
 }
@@ -42,10 +46,6 @@ li {
 .fade li.show {
   opacity: 1;
 }
-
-/* li.show {
-  height: 400px;
-} */
 
 li:hover {
   box-shadow: 0 0 5px white;  
