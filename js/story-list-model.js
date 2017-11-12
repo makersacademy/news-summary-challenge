@@ -15,7 +15,6 @@
             this._storyModels.push(storyModel);
             return storyModel;
         }
-
     };
 
     exports.StoryListModel = StoryListModel
