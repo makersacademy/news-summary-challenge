@@ -14,14 +14,14 @@
           }
         }
       };
-      _httpRequest.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search", true);
+      _httpRequest.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=all", true);
       _httpRequest.send();
     };
     doRequest();
 
     function updatePromoListModel(results) {
       results.forEach(function(result) {
-        _promoListModel.addArticle(new ArticleModel(result.webTitle, result.webUrl));
+        _promoListModel.addArticle(new ArticleModel(result.webTitle, result.webUrl, result.fields.body));
       });
       displayPromoList();
     }
