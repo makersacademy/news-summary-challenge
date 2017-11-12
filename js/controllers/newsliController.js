@@ -28,23 +28,45 @@
       updateArticleList(articles)
     }
 
+    function showSingleArticle() {
+      links = document.getElementsByTagName("IMG")
+      linksArray = Array.prototype.slice.call(links)
+      linksArray.map((link) => {
+        link.addEventListener('click', function () {
+          hideArticlesView()
+          showArticle(link)
+        });
+      });
+    };
+
     function updateArticleList(articles) {
       articles.map((article) => {
-        console.log(article.fields.body)
         articleList.addArticle(article.webTitle, article.webUrl, article.fields.thumbnail, article.fields.body)
       })
       showCurrentArticleList()
     }
 
+    function hideArticlesView() {
+      var articlesView = document.getElementById("articles-view")
+      articlesView.style.display = 'none';
+    }
+
+    function showArticle(link) {
+      articleView = articleListView.singleArticleHTML(link)
+      var singleArticleView = document.getElementById("single-article-view")
+      singleArticleView.innerHTML = articleView
+    }
+
     function showCurrentArticleList() {
       html = articleListView.allArticlesHTML();
-      document.getElementById("app").innerHTML = html
+      document.getElementById("articles-view").innerHTML = html
     }
 
     return {
-      loadContent: loadContent
+      loadContent: loadContent,
+      showSingleArticle: showSingleArticle
     }
 
-    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html;
+    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html, links, linksArray, articleView;
   }
 })(this);

@@ -5,7 +5,8 @@
   var newsliController = new NewsliController(ArticleList, ArticleListView);
 
   window.addEventListener('load', function() {
-    newsliController.loadContent()
+    newsliController.loadContent();
+    newsliController.showSingleArticle()
   })
 
 })();
