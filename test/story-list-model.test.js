@@ -13,9 +13,18 @@ spike.describe('StoryListModel', function() {
         assert.isTrue(storyListModel instanceof StoryListModel);
     });
 
-    spike.it("should have no stories when instantiated", function() {
-        assert.isEmpty(new StoryListModel().all());
+    spike.describe('#allStories', function() {
+        spike.it("should have no stories when instantiated", function() {
+            assert.isEmpty(new StoryListModel().allStories());
+        });
     });
 
-
+    spike.describe('#addStory', function() {
+        spike.it("should return some stories after creating them", function() {
+            var StoryModelMock = stub({});
+            var storyListModel = new StoryListModel(StoryModelMock);
+            storyListModel.addStory("Breaking News");
+            assert.isTrue(storyListModel.allStories().length === 1);
+        });
+    });
 });
