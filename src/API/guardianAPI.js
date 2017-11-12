@@ -27,6 +27,7 @@
         alert('Request failed.  Returned status of ' + xhr.status);
       }
     };
+    
     xhr.open('GET', request);
     xhr.responseType = "json";
     xhr.send();
@@ -35,6 +36,6 @@
 
   exports.guardianAPI = {
     search: search
-  }
+  };
   
 })(this);

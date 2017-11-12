@@ -46,8 +46,7 @@ describe('list model', function () {
     it('fetches all current headlines', function () {
       list.fetchArticle(function (mockData) {
         expect(mockData.webTitle).toEqual("testArticle");
-      })
-      
+      });     
     });
 
   });
