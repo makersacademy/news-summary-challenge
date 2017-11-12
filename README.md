@@ -11,7 +11,7 @@ A single page application that displays images and headlines for three news stor
 * APIs: [Guardian newspaper API](http://open-platform.theguardian.com/documentation/), [Aylien text summary API](http://docs.aylien.com/docs/summarize)
 
 ## Directory Structure
-
+```
 |-- news-summary-challenge
     |-- README.md
     |-- index.html
@@ -38,6 +38,7 @@ A single page application that displays images and headlines for three news stor
     |   |-- index.css
     |-- unfinished
         |-- api-request.js
+```
 
 ## Instructions
 
