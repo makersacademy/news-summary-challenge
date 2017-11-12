@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="PingPong/src/css/styles.css">
+  </head>
+  <body>
+    
+    <header>
+      <p id="header">PingPong</p>
+      <p id="test-info">
+        <span id='total'></span>
+        <span id='failed'></span>      
+      </p>
+    </header>
+
+    <section id="spec-runner"></section>
+    
+    <div id="test" class="hidden"></div>
+
+    <!-- framework -->
+    <script src="PingPong/src/lib/framework.js"></script>
+    <script src="PingPong/src/lib/describe.js"></script>
+    <script src="PingPong/src/lib/it.js"></script>
+    <script src="PingPong/src/lib/expect.js"></script>
+    <script src="PingPong/src/lib/helpers.js"></script>    
+
+    <!-- source files -->
+    <script src="public/src/models/listModel.js"></script>
+    <script src="public/src/models/summaryModel.js"></script>    
+    <script src="public/src/views/listView.js"></script>    
+    <script src="public/src/views/summaryView.js"></script>    
+    <script src="public/src/controllers/newsController.js"></script>    
+    <!-- <script src="src/API/guardianAPI.js"></script>     -->
+
+    <!-- specs -->
+    <script src="spec/summaryModelSpec.js"></script>    
+    <script src="spec/listModelSpec.js"></script>
+    <script src="spec/listViewSpec.js"></script>    
+    <script src="spec/summaryViewSpec.js"></script>    
+    <script src="spec/newsControllerSpec.js"></script>
+    
+  </body>
+
+</html>

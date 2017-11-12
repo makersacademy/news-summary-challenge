@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Roboto" rel="stylesheet">      
+    <link href="public/css/styles.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsSummary</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      
+      <section>
+        <ul id="list" class="fade"></ul>
+      </section>
+
+    </div>
+
+    <!-- load guradian API -->
+    <script src="src/API/guardianAPI.js"></script>
+    <script src="src/API/aylienAPI.js"></script>
+
+    <!-- load source files -->
+    <script src="src/models/listModel.js"></script>
+    <script src="src/models/summaryModel.js"></script>
+    <script src="src/views/listView.js"></script>
+    <script src="src/views/summaryView.js"></script>
+    <script src="src/controllers/newsController.js"></script>
+
+    <!-- bootstrap controllers -->
+    <script>
+    
+    'use strict';
+
+    var newsController = new NewsController({
+      containerId: 'list',
+      listModel: new ListModel(guardianAPI),
+      summaryModel: new SummaryModel(aylienAPI)   
+    });
+    
+    //bootstrap event listeners & home page
+    newsController.attachEventListeners()
+    newsController.renderPage();
+
+    </script>
+
+  </body>
+</html>

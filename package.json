@@ -1,0 +1,23 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "News Summary Challenege ------",
+  "main": "index.js",
+  "scripts": {
+    "test": "open specRunner.html",
+    "start": "node_modules/http-server/bin/http-server -p 4000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ainsleybc/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ainsleybc/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/ainsleybc/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}
