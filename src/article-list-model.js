@@ -2,18 +2,14 @@
 
   exports.ArticleList = function() {
 
-    var _list = [];
+    // var getArticleHeadlines = function(articles) {
+    //   var headlines = document.getElementById('headlines');
+    //   headlines.textContent = articles.results.headlines
+    // };
 
-    var getArticleList = function () {
-      return _list;
-    };
-
-    return {
-
-      _list: _list,
-      getArticleList: getArticleList
-
-    };
+    // return {
+    //   getArticleHeadline: getArticleHeadline
+    // };
 
   };
 
