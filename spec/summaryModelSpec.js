@@ -1,6 +1,6 @@
 'use strict';
 
-describe('summary controller', function () {
+describe('summary model', function () {
 
   var summary;
 
@@ -23,7 +23,7 @@ describe('summary controller', function () {
     summary = new SummaryModel(mockAPI);
   })
 
-  describe('summary model', function () {
+  describe('fetchSummary', function () {
 
     it('fetches a text summary for an article', function () {
       summary.fetchSummary(mockItem, function (article) {
