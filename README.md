@@ -1,18 +1,29 @@
-PingPong
+News Summary Challenege
 ------
 
-A simple Javascript testing framework & library modelled after Jasmine.
-
-This was forked from the original, encapsulating project to publish independantly
-
-Features
------
-
+Challenge
+------
+A responsive single page app that fetches & summarises the latest news headlines, written and tested in pure vanailla JS.
 
 Usage
 -----
+
+### Install
 ```
-
-
-
+npm install
+```
+### Run Server
+```
+npm start
  ```
+
+ ### Use App
+
+ visit `localhost:4000` in your browser
+
+
+### Run Tests
+
+```
+npm test
+```
