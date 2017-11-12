@@ -49,7 +49,7 @@ h1 {
 h2 {
   font-size: 3em;
   text-align: center;
-  color: rgb(54, 54, 54);
+  color: rgb(79, 80, 81);
   margin-top: 0;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
@@ -69,7 +69,7 @@ li {
 
 a {
   text-decoration: none;
-  color: #0F7BAC;
+  color: rgb(172, 15, 75);
 }
 
 a:hover {
@@ -92,4 +92,8 @@ img#logo {
 
 div#single-article-view {
   margin-left: 10px;
+}
+
+p#headlines {
+  color: #0F7BAC;
 }
