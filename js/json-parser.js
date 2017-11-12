@@ -7,7 +7,7 @@
     var _body = [];
     var _thumbnail = [];
 
-    var _iterateThroughJason = function (out) {
+    var _iterateThroughJson = function (out) {
       for (var i = 0; i < out.response.results.length; i++) {
         _url[i] = out.response.results[i].webUrl;
         _title[i] = out.response.results[i].webTitle;
@@ -19,7 +19,7 @@
     var parseJsonFromUrl = function (url, callback) {
       fetch(url).then(res => res.json()).then((out) => {
         
-        _iterateThroughJason(out);
+        _iterateThroughJson(out);
         callback();
       }).catch(err => {
         throw err
@@ -27,7 +27,7 @@
     }
 
     var parseJsonFromVar = function (out, callback) {
-      _iterateThroughJason(out);
+      _iterateThroughJson(out);
       callback();
     }
 

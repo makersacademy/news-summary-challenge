@@ -26,7 +26,7 @@
     }
 
     var renderWholeArticle = function () {
-      return "<div id='" + _index + "'><h2>" + _createHTMLforTitle() + "</h2>" + _createHTMLforBody() + "</div><a href='#titles'>Back to Top</a>";
+      return "<div id='" + _index + "'>" + _createHTMLforTitle() + _createHTMLforBody() + "</div><a href='#titles'>Back to Top</a>";
     }
     // console.log(renderArticle());
     return {
