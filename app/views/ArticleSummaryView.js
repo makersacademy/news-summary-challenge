@@ -11,6 +11,7 @@
       console.log(_article.summary());
       return [
         "<div>",
+          "<img src='" + _article.imageUrl() + "' />",
           "<h2>" + _article.headline + "</h2>",
           _article.summary(),
         "</div>"].join("");

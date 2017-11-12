@@ -21,7 +21,7 @@
 
     function updatePromoListModel(results) {
       results.forEach(function(result) {
-        _promoListModel.addArticle(new ArticleModel(result.webTitle, result.webUrl, result.fields.body));
+        _promoListModel.addArticle(new ArticleModel(result.webTitle, result.webUrl, result.fields.body, result.fields.main));
       });
       displayPromoList();
     }
@@ -35,14 +35,12 @@
     function showArticleSummary() {
       var articleId = getArticleIdFromUrl();
       if (articleId) {
-        console.log(articleId);
         var article = _promoListModel.getArticleById(articleId);
-        console.log(article);
         var articleSummaryView = new ArticleSummaryView(article);
         document.getElementById("app")
           .innerHTML = articleSummaryView.toHtml();
       } else {
-        displayPromoList(); 
+        displayPromoList();
       }
     };
 
