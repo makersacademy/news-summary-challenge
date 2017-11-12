@@ -2,7 +2,7 @@
 
 ;(function (exports) {
 
-  exports.ListModel = function (API, listController) {
+  exports.ListModel = function (API) {
 
     var _pageNumber = 1;
     var _articleIndex = 0;
