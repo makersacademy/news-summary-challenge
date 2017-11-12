@@ -14,10 +14,10 @@
   
   function search(params, callback, id = '') {
     
-    var queryString = parseQueryParams(params);
-    var xhr = new XMLHttpRequest();
-
     if (id) var id = id + '?';
+    
+    var xhr = new XMLHttpRequest();
+    var request = url + id + parseQueryParams(params);
 
     xhr.onload = function () {
       if (xhr.status === 200) {
@@ -27,8 +27,7 @@
         alert('Request failed.  Returned status of ' + xhr.status);
       }
     };
-    console.log(url + id + queryString)
-    xhr.open('GET', url + id + queryString);
+    xhr.open('GET', request);
     xhr.responseType = "json";
     xhr.send();
 

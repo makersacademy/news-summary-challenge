@@ -7,15 +7,15 @@
     var _pageNumber = 1;
     var _articleIndex = 0;
     var fetchedArticles = [];
-    var showListItem;
+    var showListItemCallBack;
 
     function fetchArticle(callback) {
-      showListItem = callback      
+      showListItemCallBack = callback;
       fetchPage();
     };
 
     function fetchPage() {
-      var response = API.search({
+      API.search({
         'search?page': pageNumber()
       }, fetchThumbnail);
     };
@@ -31,7 +31,7 @@
     function responseHandler(response) {
       var article = parseAPIResponse(response);
       fetchedArticles.push(article);
-      showListItem(article);
+      showListItemCallBack(article);
     };
 
     function parseAPIResponse(json) {
