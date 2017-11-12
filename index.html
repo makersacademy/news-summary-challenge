@@ -33,9 +33,11 @@
     var newsController = new NewsController({
       containerId: 'list',
       listModel: new ListModel(guardianAPI),
-      summaryModel: new SummaryModel(guardianAPI)   
+      summaryModel: new SummaryModel(aylienAPI)   
     });
-
+    
+    //bootstrap event listeners & home page
+    newsController.attachEventListeners()
     newsController.renderPage();
 
     </script>
