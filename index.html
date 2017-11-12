@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="public/style.css" rel="stylesheet" type="text/css">
+    <link href="public/css/styles.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsSummary</title>
   </head>
   <body>
     <div id="wrapper">
@@ -34,7 +36,7 @@
 
       listModel.fetchArticles();
       setTimeout(function(){
-        listController.showListItem();
+        listController.renderPage();
       }, 1000)
 
     </script>

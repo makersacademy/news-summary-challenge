@@ -13,7 +13,7 @@
       var thumbnail = item.fields.thumbnail;
       return [
         '<li>',
-          '<article>',
+          '<article class="article">',
             '<figure>',
               '<img src=' + thumbnail + '>',
             '</figure>',
