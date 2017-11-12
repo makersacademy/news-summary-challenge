@@ -11,9 +11,16 @@
       _articles.push(article);
     }
 
+    var getArticleById = function(id) {
+      return _articles.filter(function(article) {
+        return article.id() === parseInt(id);
+      })[0];
+    }
+
     return {
       articles: articles,
-      addArticle: addArticle
+      addArticle: addArticle,
+      getArticleById: getArticleById
     };
   };
 

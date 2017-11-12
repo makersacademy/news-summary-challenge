@@ -2,6 +2,14 @@
   console.log("Testing Article model: ");
 
   (function() {
+    console.log(" it gets an id");
+    var articleModelOne = new ArticleModel();
+    var articleModelTwo = new ArticleModel();
+    assert.isTrue(articleModelOne.id() === 0);
+    assert.isTrue(articleModelTwo.id() === 1);
+  })();
+
+  (function() {
     console.log(" it can be instantiated with a headline");
     var articleModel = new ArticleModel("Al Gore: 'I tried my best' but Trump can't be educated on climate change");
     assert.isTrue(articleModel.headline === "Al Gore: 'I tried my best' but Trump can't be educated on climate change");

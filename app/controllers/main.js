@@ -31,6 +31,29 @@
       document.getElementById("app")
         .innerHTML = promoListViewHtml;
     };
+
+    function showArticleSummary() {
+      var articleId = getArticleIdFromUrl();
+      if (articleId) {
+        console.log(articleId);
+        var article = _promoListModel.getArticleById(articleId);
+        console.log(article);
+        var articleSummaryView = new ArticleSummaryView(article);
+        document.getElementById("app")
+          .innerHTML = articleSummaryView.toHtml();
+      } else {
+        displayPromoList(); 
+      }
+    };
+
+    var getArticleIdFromUrl = function() {
+      return window.location.hash.split("#articles/")[1];
+    };
+
+    function makeUrlChangeShowNote() {
+      window.addEventListener("hashchange", showArticleSummary);
+    };
+    makeUrlChangeShowNote();
   };
 
 })(this);
