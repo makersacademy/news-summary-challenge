@@ -14,7 +14,7 @@
           }
         }
       };
-      _httpRequest.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=all", true);
+      _httpRequest.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics?show-fields=all", true);
       _httpRequest.send();
     };
     doRequest();

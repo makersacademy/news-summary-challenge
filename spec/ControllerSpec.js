@@ -95,7 +95,7 @@
     assert.isTrue(mockRequestInstance.openCalledCount === 1);
     assert.isTrue(mockRequestInstance.methodCalled === "GET");
     assert.isTrue(mockRequestInstance.asynchronousBoolean === true);
-    assert.isTrue(mockRequestInstance.location === "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=all");
+    assert.isTrue(mockRequestInstance.location === "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics?show-fields=all");
     assert.isTrue(mockRequestInstance.sendCalledCount === 1);
   })();
 
