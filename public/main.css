@@ -60,7 +60,8 @@ h2 {
 
 ul {
   margin-left: 10px;
-  max-width: 500px;
+  margin-right: 40px;
+  max-width: 95%;
   list-style-image: url('../images/news-icon.png')
 }
 
@@ -80,5 +81,9 @@ a:hover {
 
 img {
   border-radius: 12px;
-  min-width: 95%
+  min-width: 100%
+}
+
+div#single-article-view {
+  margin-left: 40px;
 }
