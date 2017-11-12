@@ -55,17 +55,19 @@ h2 {
 
 #title {
   text-align: right;
-  position: absolute;
+  position: fixed;
   right: 0;
   padding-top: 10px;
   padding-right: 20px
 }
 
 #banner {
+  margin-top: 0;
   padding-left: 10px;
   padding-bottom: 5px;
+  position: fixed;
   width: 100%;
-  height: 30px;
+  height: 55px;
   background-color: white;
 }
 
@@ -84,4 +86,8 @@ h2 {
 
 #spec-runner {
   width: 800px
+}
+
+#test-display {
+  margin-top: 60px
 }
