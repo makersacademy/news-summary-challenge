@@ -33,8 +33,9 @@
       linksArray = Array.prototype.slice.call(links)
       linksArray.map((link) => {
         link.addEventListener('click', function () {
-          hideArticlesView()
-          showArticle(link)
+          hideArticlesView();
+          showArticle(link);
+          returnToArticlesView()
         });
       });
     };
@@ -47,7 +48,17 @@
     }
 
     function hideArticlesView() {
-      var articlesView = document.getElementById("articles-view")
+      articlesView = document.getElementById("articles-view");
+      articlesView.style.display = 'none';
+    }
+
+    function showArticlesView() {
+      articlesView = document.getElementById("articles-view");
+      articlesView.style.display = 'block';
+    }
+
+    function hideSingleArticleView() {
+      singleArticleView = document.getElementById("single-article-view");
       articlesView.style.display = 'none';
     }
 
@@ -62,11 +73,19 @@
       document.getElementById("articles-view").innerHTML = html
     }
 
+    function returnToArticlesView() {
+      header = document.getElementById("header")
+      header.addEventListener('click', function() {
+        hideSingleArticleView()
+        showArticlesView()
+      });
+    };
+
     return {
       loadContent: loadContent,
-      showSingleArticle: showSingleArticle
+      showSingleArticle: showSingleArticle,
     }
 
-    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html, links, linksArray, articleView;
+    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html, links, linksArray, articleView, articlesView, singleArticleView, header;
   }
 })(this);
