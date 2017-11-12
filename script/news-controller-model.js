@@ -1,7 +1,8 @@
 (function(exports) {
-  function NewsControllerModel (NewsListModel, NewsListViewModel) {
-    this._newsList = new NewsListModel();
+  function NewsControllerModel (NewsListModel, NewsListViewModel, element) {
+    this._newsList = new NewsListModel(NewsStoryModel);
     this._newsListView = new NewsListViewModel(this._newsList);
+    this.renderHTML(element);
   }
 
   NewsControllerModel.prototype.getNewsList = function () {

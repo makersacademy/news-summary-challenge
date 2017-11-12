@@ -4,8 +4,8 @@ function mockNewsListModel () {
 function mockNewsListView (newsList) {
   return { toHTML: function () {return "<div></div>";}};
 }
-var newsController = new NewsControllerModel(mockNewsListModel, mockNewsListView);
 var mockDiv = document.createElement("div");
+var newsController = new NewsControllerModel(mockNewsListModel, mockNewsListView, mockDiv);
 
 describe('News controller models',
   assert('initializes with a news list', function() {
@@ -17,7 +17,6 @@ describe('News controller models',
 );
 describe('renderHTML',
   assert('inserts HTML into index', function() {
-    newsController.renderHTML(mockDiv);
     return (mockDiv.innerHTML === "<div></div>");
   }())
 );
