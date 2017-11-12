@@ -3,10 +3,6 @@
   exports.ArticleSummaryView = function(articleModel) {
     var _article = articleModel;
 
-    var article = function() {
-      return _article;
-    }
-
     var toHtml = function() {
       console.log(_article.summary());
       return [
@@ -18,7 +14,6 @@
     }
 
     return {
-      article: article,
       toHtml: toHtml
     };
   };

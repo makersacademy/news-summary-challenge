@@ -14,11 +14,6 @@
   var articleSummaryView = new ArticleSummaryView(mockArticle);
 
   (function() {
-    console.log(" it can be instantiated with an article");
-    assert.isTrue(articleSummaryView.article() === mockArticle);
-  })();
-
-  (function() {
     console.log(" it returns the correct html");
     var expectedHtml = [
       "<div>",

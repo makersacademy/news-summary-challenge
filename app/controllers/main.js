@@ -48,10 +48,10 @@
       return window.location.hash.split("#articles/")[1];
     };
 
-    function makeUrlChangeShowNote() {
+    function makeUrlChangeShowArticleSummary() {
       window.addEventListener("hashchange", showArticleSummary);
     };
-    makeUrlChangeShowNote();
+    makeUrlChangeShowArticleSummary();
   };
 
 })(this);

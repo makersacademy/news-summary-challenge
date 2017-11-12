@@ -3,11 +3,11 @@
   var articleCounter = 0;
 
   exports.ArticleModel = function(headline, url, body, main) {
-    var _body = body;
     var _id = articleCounter;
     articleCounter++;
+    
     var storyBody = document.createElement("div");
-    storyBody.innerHTML = _body;
+    storyBody.innerHTML = body;
     var storyMain = document.createElement("div");
     storyMain.innerHTML = main;
 
