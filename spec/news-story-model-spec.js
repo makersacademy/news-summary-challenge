@@ -11,5 +11,8 @@ describe('News Story Model',
   ),
   assert('getImgURL() returns URL for that story', function() {
     return (newsStory.getImgURL() === "IMG URL 1");
+  }),
+  assert('getImgURL() returns URL for that story', function() {
+    return (newsStory.getImgURL() === "IMG URL 1");
   })
 );

@@ -19,5 +19,13 @@
     }).join("");
   };
 
+  NewsListViewModel.prototype.singleStoryHTML = function (id) {
+    var story = this.getNewsList().getNewsStories()[parseInt(id)];
+    return '<img id="image' + id +'" src="' + story.getImgUrl() + '">' +
+      '<h2 id="headline' + id +'">' + story.getHeadline() + '</h2>' +
+      '<div id="summary' + id +'">' + story.getSummary() + '</div>' +
+      '<a href="/">Back</a>';
+  };
+
   exports.NewsListViewModel = NewsListViewModel;
 }(this));
