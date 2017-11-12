@@ -1,10 +1,12 @@
 'use strict';
 
-(function() {
+(function () {
 
-  var newsliController = new NewsliController(ArticleList, ArticleListView);
+  newsliController = new NewsliController(ArticleList, ArticleListView, ArticleView);
 
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
     newsliController.loadContent();
   })
+
+  var newsliController
 })();

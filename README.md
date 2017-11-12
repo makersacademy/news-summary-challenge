@@ -1,7 +1,7 @@
 # News Summary challenge
 
 <p align='center' width="200px">
-<img src='images/example.gif'>
+<img src='images/newsli.gif'>
 </p>
 
 ## User Stories

@@ -1,9 +1,10 @@
 'use strict';
 
 (function (exports) {
-  exports.NewsliController = function (ArticleList, ArticleListView) {
+  exports.NewsliController = function (ArticleList, ArticleListView, ArticleView) {
     articleList = new ArticleList;
-    articleListView = new ArticleListView(articleList);
+    articleListView = new ArticleListView(articleList)
+    articleView = new ArticleView;
 
     makersDomain = 'http://news-summary-api.herokuapp.com/';
     guardianAPIRequest = 'guardian?apiRequestUrl='
@@ -24,7 +25,7 @@
     //   xhttp.send()
     // }
 
-    // Use during development of app to avoid maxing out API Requests
+    //Use during development of app to avoid maxing out API Requests
     function loadContent() {
       articles = articlesJSON.response.results
       updateArticleList(articles)
@@ -66,8 +67,9 @@
     }
 
     function showArticle(link) {
-      articleView = articleListView.singleArticleHTML(link)
-      var singleArticleView = document.getElementById("single-article-view")
+      articleObject = articleListView.returnSingleArticle(link)
+      articleView = articleView.articleHTML(articleObject)
+      singleArticleView = document.getElementById("single-article-view")
       singleArticleView.innerHTML = articleView
     }
 
@@ -89,6 +91,6 @@
       showSingleArticle: showSingleArticle,
     }
 
-    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html, links, linksArray, articleView, articlesView, singleArticleView, header;
+    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html, links, linksArray, articleView, articlesView, singleArticleView, header, articleObject;
   }
 })(this);
