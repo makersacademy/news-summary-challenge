@@ -1,7 +1,7 @@
 
 (function(exports) {
-  function NewsListModel (newsStory = NewsStoryModel) {
-    this._newsStories = [new newsStory(), new newsStory(), new newsStory()];
+  function NewsListModel (NewsStoryModel) {
+    this._newsStories = [new NewsStoryModel(), new NewsStoryModel(), new NewsStoryModel()];
   }
 
   NewsListModel.prototype.getNewsStories = function () {
