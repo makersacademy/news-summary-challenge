@@ -2,6 +2,14 @@
 
 describe('list model', function () {
 
+  var mockData = {
+    content: {
+      id: "sport/live/2017/nov/11/wrnational-live",
+      webTitle: "testArticle",
+      webUrl: "httpve",
+    }
+  }
+  
   var mockAPI = {
     search: function (params, callback, id = '') {
       if (id === '') {
@@ -23,13 +31,7 @@ describe('list model', function () {
         })
       } else {
         callback({
-          response: {
-            content: {
-              id: "sport/live/2017/nov/11/wrnational-live",
-              webTitle: "testArticle",
-              webUrl: "httpve",
-            }
-          }
+          response: mockData
         });
       }
     }
@@ -47,6 +49,16 @@ describe('list model', function () {
       list.fetchArticle(function (mockData) {
         expect(mockData.webTitle).toEqual("testArticle");
       });     
+    });
+
+  });
+
+  describe('getArticleById', function() {
+
+    it('returns an article mathcing the Id', function () {
+      list.fetchArticle(function (mockData) {
+        expect(list.getArticleById('sport/live/2017/nov/11/wrnational-live')).toEqual(mockData);
+      });
     });
 
   });

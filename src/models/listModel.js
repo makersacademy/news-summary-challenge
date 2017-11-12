@@ -43,8 +43,15 @@
       return _pageNumber;      
     };
 
+    function getArticleById(articleId) {
+      return fetchedArticles.find(function (article) {
+        return article.id === articleId;
+      });
+    }
+
     return {
       fetchArticle: fetchArticle,
+      getArticleById: getArticleById
     };
 
   };
