@@ -28,6 +28,7 @@
     function loadContent() {
       articles = articlesJSON.response.results
       updateArticleList(articles)
+      showSingleArticle()
     }
 
     function showSingleArticle() {
