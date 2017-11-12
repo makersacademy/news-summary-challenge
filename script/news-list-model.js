@@ -1,4 +1,3 @@
-console.log('loaded');
 
 (function(exports) {
   function NewsListModel (newsStory = NewsStoryModel) {
