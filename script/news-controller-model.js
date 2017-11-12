@@ -12,5 +12,9 @@
     return this._newsListView;
   };
 
+  NewsControllerModel.prototype.renderHTML = function (element) {
+    element.innerHTML = this.getNewsListView().toHTML();
+  };
+
   exports.NewsControllerModel = NewsControllerModel;
 }(this));
