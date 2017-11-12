@@ -11,11 +11,10 @@
   };
 
 StoryData.prototype.webTitlesUlArray = function(){
-  var webTitles = this._getWebTitles();
-  var ulArray = webTitles.map(function(webtitle, index){
-    return "<li id=" + index + "><div>" + webtitle + "</div></li>";
+  var ulArray = this._getWebTitles().map(function(webtitle, index){
+    return "<a href=#" + index + ">" + webtitle + "</a><br>";
   });
-  return "<ul>" + ulArray.join('') + "</ul>";
+  return  ulArray.join('');
 };
 
   StoryData.prototype.getWebUrlAtIndex = function(index){

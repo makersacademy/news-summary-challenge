@@ -15,22 +15,22 @@
   var storyController = new StoryController();
   storyController.htmlInserter();
 
-makeUrlChangeShowNoteForCurrentPage();
+makeUrlChangeShowStoryForCurrentPage();
 
-function makeUrlChangeShowNoteForCurrentPage(){
-  window.addEventListener("hashchange", showNotesForCurrentPage);
+function makeUrlChangeShowStoryForCurrentPage(){
+  window.addEventListener("hashchange", showStoriesForCurrentPage);
 }
 
-function showNotesForCurrentPage(){
-  showNote(getNoteFromUrl(window.location));
+function showStoriesForCurrentPage(){
+  showStory(getStoryFromUrl(window.location));
 }
 
-function getNoteFromUrl(location){
+function getStoryFromUrl(location){
   return location.hash.split("#")[1];
 }
 
-function showNote(note) {
+function showStory(story) {
   document
-    .getElementById("note")
-    .innerHTML = noteController.noteList.returnNoteTextByIndex(note);
+    .getElementById("story")
+    .innerHTML = storyController._storyData.getWebUrlAtIndex(story);
 }

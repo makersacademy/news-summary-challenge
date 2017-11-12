@@ -8,7 +8,7 @@
 
   function viewWebTitlesUlArray() {
     var storyData = new StoryData();
-    assert.isTrue(storyData.webTitlesUlArray() === "<ul><li id=0><div>The Inner Life of Animals by Peter Wohlleben</div></li><li id=1><div>The Unexpected Truth About Animals by Lucy Cooke</div></li><li id=2><div>Stonehenge builders feasted on animals brought from Scotland</div></li><li id=3><div>Party animals: why 50 is the new 21</div></li><li id=4><div>Farm animals can eat insects and algae to prevent deforestation</div></li><li id=5><div>Fresh concerns over Cumbrian zoo where 500 animals died</div></li><li id=6><div>How animals birds manage in hurricanes? | Notes and queries</div></li><li id=7><div>An oasis of orchids, animals and architecture in Medellan, Colombia</div></li><li id=8><div>Are 'peticures' fake nails for animals ever a good idea?</div></li><li id=9><div>Bestiality: which animals are most at risk</div></li></ul>");
+    assert.isTrue(storyData.webTitlesUlArray() === "<a href=#0>The Inner Life of Animals by Peter Wohlleben</a><br><a href=#1>The Unexpected Truth About Animals by Lucy Cooke</a><br><a href=#2>Stonehenge builders feasted on animals brought from Scotland</a><br><a href=#3>Party animals: why 50 is the new 21</a><br><a href=#4>Farm animals can eat insects and algae to prevent deforestation</a><br><a href=#5>Fresh concerns over Cumbrian zoo where 500 animals died</a><br><a href=#6>How animals birds manage in hurricanes? | Notes and queries</a><br><a href=#7>An oasis of orchids, animals and architecture in Medellan, Colombia</a><br><a href=#8>Are 'peticures' fake nails for animals ever a good idea?</a><br><a href=#9>Bestiality: which animals are most at risk</a><br>");
   }
 
   viewWebTitlesUlArray();
