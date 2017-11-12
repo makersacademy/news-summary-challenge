@@ -14,8 +14,6 @@ describe('list view', function () {
   var summary = {
     "sentences": ["this is a summary"]
   }
-
-  var listView = new ListView();
   
   describe('listItemToHTML', function () {
     

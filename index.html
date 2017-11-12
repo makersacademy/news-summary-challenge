@@ -32,8 +32,8 @@
 
     var newsController = new NewsController({
       containerId: 'list',
-      ListView: ListView,
-      listModel: new ListModel(guardianAPI)   
+      listModel: new ListModel(guardianAPI),
+      summaryModel: new SummaryModel(guardianAPI)   
     });
 
     newsController.renderPage();

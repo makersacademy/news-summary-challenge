@@ -12,8 +12,6 @@ describe('summary view', function () {
       summary: { "sentences": ["this is a summary"] }
     };
 
-    var summaryView = new SummaryView();
-
     it('generates the HTML for an article summary', function () {
       expect(summaryView.articleSummaryToHTML(item)).toEqual('<article id="articleSummary"><figure><img src=thumbnailURL></figure><h1>testWebTitle</h1><p>this is a summary</p></article>');
     });
