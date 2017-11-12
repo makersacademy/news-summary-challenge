@@ -27,11 +27,25 @@ li {
   border: none;
   max-width: 500px;
   min-width: 300px;
-  height: 400px;
+  height: 0;
   margin: 20px;
   overflow: hidden;
   box-shadow: 0 0 5px black;
 }
+
+.fade li {
+  transition: all 1s ease-out;
+  opacity: 0;
+  height: 400px;
+}
+
+.fade li.show {
+  opacity: 1;
+}
+
+/* li.show {
+  height: 400px;
+} */
 
 li:hover {
   box-shadow: 0 0 5px white;  

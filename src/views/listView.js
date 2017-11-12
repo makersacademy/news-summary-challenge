@@ -7,7 +7,6 @@
     var thumbnail = listItem.fields.thumbnail;
     var id = listItem.id;
     return [
-      '<li>',
         '<a href="#' + id + '">',
           '<article class="article">',
             '<figure>',
@@ -15,8 +14,7 @@
             '</figure>',
             '<p>' + title + '</p>',
           '</article>',
-        '</a>',
-      '</li>'
+        '</a>'
     ].join('');
 
   }

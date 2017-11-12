@@ -30,7 +30,12 @@
     };
 
     function showListItem(item) {
-      container.innerHTML += listView.listItemToHTML(item);
+      var newLI = document.createElement('li');
+      newLI.innerHTML = listView.listItemToHTML(item);
+      container.appendChild(newLI);
+      setTimeout(function() {
+        newLI.className = "show";
+      }, 30);
     };
 
     function showSummary(article) {
