@@ -13,7 +13,7 @@ describe('summary view', function () {
     };
 
     it('generates the HTML for an article summary', function () {
-      expect(summaryView.articleSummaryToHTML(item)).toEqual('<article id="articleSummary"><figure><img src=thumbnailURL></figure><h1>testWebTitle</h1><p>this is a summary</p></article>');
+      expect(summaryView.articleSummaryToHTML(item)).toEqual('<article id="article-summary"><figure><img src=thumbnailURL></figure><h1>testWebTitle</h1><p>this is a summary</p></article>');
     });
 
   });

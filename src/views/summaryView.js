@@ -7,7 +7,7 @@
     var thumbnail = item.fields.thumbnail;
     var sentences = item.summary.sentences;
     return [
-        '<article id="articleSummary">',
+        '<article id="article-summary">',
           '<figure>',
             '<img src=' + thumbnail + '>',
           '</figure>',

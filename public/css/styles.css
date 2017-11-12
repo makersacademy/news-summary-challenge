@@ -85,3 +85,29 @@ a {
   box-sizing: border-box;
   border-bottom: 2px solid rgb(62, 60, 60);
 }
+
+#article-summary {
+  background-color: white;
+  max-width: 1000px;
+  min-width: 500px;
+  height: 80vh;
+  margin: 0 auto;
+  color: rgb(62, 60, 60);
+  box-shadow: 0 0 5px black;  
+}
+
+#article-summary figure {
+  margin: 0;
+}
+
+#article-summary h1, p {
+  width: 50%;
+  float: left;
+}
+
+#article-summary img {
+  float: left;
+  box-sizing: border-box;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
