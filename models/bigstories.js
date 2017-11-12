@@ -1,4 +1,8 @@
 const ul = document.getElementById('news-headlines'); // Get the list where we will place our authors
+
+ul.className += "container-fluid";
+
+
 const url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk?show-editors-picks=true&show-fields=thumbnail'; // Get 10 random users
 
 // https://randomuser.me/api/?results=10
@@ -24,19 +28,24 @@ fetch(url)
 
       let li = createNode('li'),
         img = createNode('img'),
-      span = createNode('span');
+        span = createNode('span'),
+        spanSummary = createNode('span');
 
-      let webHeadLine = `${article.webTitle} `;
-      let webUrl = `${article.webUrl} `;
-      let linkArticle = anchor(webUrl, webHeadLine);
-
-      console.log(linkArticle);
+      let webHeadLine = `${article.webTitle} `,
+        webUrl = `${article.webUrl} `,
+        linkArticle = anchor(webUrl, webHeadLine);
 
       span.innerHTML = linkArticle;
+      spanSummary.innerHTML = "heySomethingHere";
 
-      append(li, img);
+      li.className += "row";
+      span.className += "col-lg-12 col-xs-12 col-sm-12  ";
+      spanSummary.className += "col-lg-12 col-xs-12 col-sm-12  ";
+
       append(li, span);
+      append(li, spanSummary);
       append(ul, li);
+
     })
   })
   .catch(function(error) {
