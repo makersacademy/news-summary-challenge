@@ -10,11 +10,16 @@ describe('list view', function () {
       thumbnail: "thumbnailURL"
     }
   };
+
+  var summary = {
+    "sentences": ["this is a summary"]
+  }
+
+  var listView = new ListView();
   
   describe('listItemToHTML', function () {
     
     it('generates the HTML for an list item', function () {
-      var listView = new ListView();
       expect(listView.listItemToHTML(item)).toEqual('<li><article class="article"><figure><img src=thumbnailURL></figure><p>testWebTitle</p></article></li >');
     });
   
