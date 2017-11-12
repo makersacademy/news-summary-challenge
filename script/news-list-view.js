@@ -24,7 +24,7 @@
     return '<img id="image' + id +'" src="' + story.getImgUrl() + '">' +
       '<h2 id="headline' + id +'">' + story.getHeadline() + '</h2>' +
       '<div id="summary' + id +'">' + story.getSummary() + '</div>' +
-      '<a href="/">Back</a>';
+      '<a id="back" href="/">Back</a>';
   };
 
   exports.NewsListViewModel = NewsListViewModel;
