@@ -2,7 +2,7 @@
 
 ;(function (exports) {
   
-  exports.ListController = function (options) {
+  exports.NewsController = function (options) {
 
     var container = document.getElementById(options.containerId);
     var listModel = options.listModel;

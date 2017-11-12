@@ -1,8 +1,8 @@
 'use strict';
 
-describe('list controller', function () {
+describe('newsController', function () {
 
-  var listController;
+  var newsController;
 
   var mockAPI = {
     search: function (params, callback, id = '') {
@@ -42,7 +42,7 @@ describe('list controller', function () {
 
     var listModel = new ListModel(mockAPI);
     
-    listController = new ListController({
+    newsController = new NewsController({
       containerId: 'test',
       ListView: ListView,
       listModel: listModel
@@ -50,10 +50,10 @@ describe('list controller', function () {
 
   });
 
-  describe('renderListItem', function () {
+  describe('renderRow', function () {
 
-    it('renders a list item on the page', function () {
-      listController.renderRow();
+    it('renders a row of list items on the page', function () {
+      newsController.renderRow();
       var container = document.getElementById('test');
       expect(container.innerHTML).toInclude('testArticle');
     });
