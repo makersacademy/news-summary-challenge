@@ -47,7 +47,7 @@
       return fetchedArticles.find(function (article) {
         return article.id === articleId;
       });
-    }
+    };
 
     return {
       fetchArticle: fetchArticle,
