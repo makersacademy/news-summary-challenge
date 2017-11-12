@@ -6,7 +6,7 @@ var Stories = function() {
 Stories.prototype.getAPI = function() {
   var self = this;
   var xhr = new XMLHttpRequest();
-  var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=uk&api-key=test";
+  var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/?q=uk&show-fields=body";
 
   xhr.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {

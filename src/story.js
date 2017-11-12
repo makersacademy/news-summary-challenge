@@ -1,20 +1,27 @@
-var Story = function(storyHash) {
+(function(exports)  {
+  function Story() {
   this._headline = storyHash.webTitle;
-  this.webUrl = storyHash.webUrl
+  this.webUrl = storyHash.webUrl;
+  this._thumbnail = storyHash.fields.thumbnail;
 };
 
-Story.prototype.showHeadline = function() {
+Story.prototype.showHeadline() {
   return this._headline;
 };
 
-
-Story.prototype.summarise = function() {
+  Story.prototype.summarise() {
   var xhr = new XMLHttpRequest();
   var url = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarise?url=" + this.webUrl ;
+  xhr.open('GET', url, false);
+  xhr.send();
+  var text = JSON.parse(xhr.responseText);
+  console.log(text);
+};
 
-console.log(url);
-xhr.open('GET', url, false);
-xhr.send();
-var text = JSON.parse(xhr.responseText);
-console.log(text);
-}
+Story.prototype.showThumbnail() {
+  return this._thumbnail;
+};
+
+exports.Story = Story;
+
+})(this);
