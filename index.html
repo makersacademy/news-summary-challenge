@@ -32,6 +32,11 @@
         listModel: listModel     
       });
 
+      listModel.fetchArticles();
+      setTimeout(function(){
+        listController.showListItem();
+      }, 1000)
+
     </script>
 
   </body>

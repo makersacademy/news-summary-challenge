@@ -41,10 +41,10 @@ describe('list model', function () {
     list = new ListModel(mockAPI);
   })
 
-  describe('fetchHeadlines', function () {
+  describe('fetchArticles', function () {
     
     it('fetches all current headlines', function () {
-      list.fetchHeadlines()
+      list.fetchArticles()
       expect(list.getItem(1).webTitle).toInclude("testArticle");
     });
 
@@ -53,7 +53,7 @@ describe('list model', function () {
   describe('getArticle', function () {
     
     it('return an article from the list', function () {
-      list.fetchHeadlines()
+      list.fetchArticles()
       expect(list.getItem(2).webTitle).toEqual("testArticle");
     });
 

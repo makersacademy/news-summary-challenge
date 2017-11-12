@@ -11,7 +11,7 @@
 
     function showListItem() {
       counter++;
-      container.innerHTML += (listView.listItemToHTML(counter));
+      container.innerHTML += ((listView.listItemToHTML(counter) || ''));
     }
   
     return {

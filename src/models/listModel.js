@@ -5,11 +5,13 @@
   exports.ListModel = function (API) {
 
     var articles = [];
+    var pageNumber = 1;
 
-    function fetchHeadlines() {
+    function fetchArticles() {
       var today = new Date().toISOString().slice(0, 10);
       var response = API.search({
-        'search?from-date': today
+        'search?from-date': today,
+        'page': pageNumber
       }, fetchThumbnails);
     }
 
@@ -33,10 +35,17 @@
     function getItem(id) {
       id--;
       return articles[id];
+      fetchMoreArticlesIfLastItem(id);
+    }
+
+    function fetchMoreArticlesIfLastItem(id) {
+      if (articles[id]) return;
+      pageNumber++;
+      fetchArticles();
     }
 
     return {
-      fetchHeadlines: fetchHeadlines,
+      fetchArticles: fetchArticles,
       getItem: getItem
     }
 

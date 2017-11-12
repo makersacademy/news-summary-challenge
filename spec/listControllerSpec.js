@@ -36,7 +36,7 @@ describe('list controller', function () {
   beforeEach(function () {
 
     var listModel = new ListModel(mockAPI);
-    listModel.fetchHeadlines();
+    listModel.fetchArticles();
     
     listController = new ListController({
       containerId: 'test',
