@@ -9,9 +9,9 @@
 
   NewsListViewModel.prototype.toHTML = function () {
     return this._newsList.getNewsStories().map(function (story, index) {
-      return '<h2 id="headline' + index +'">' +
+      return '<a id="headline' + index +'" href="/#/story/' + index +'">' +
       story.getHeadline() +
-      '</h2><img id="image' + index +'" src="' +
+      '</a><img id="image' + index +'" src="' +
       story.getImgUrl() +
       '"><div id="summary' + index +'">' +
       story.getSummary() +
