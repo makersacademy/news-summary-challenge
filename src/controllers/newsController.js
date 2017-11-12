@@ -70,7 +70,7 @@
     
     function numberOfAdjacentArticles() {
       var articles = document.getElementsByClassName('article');
-      if (!articles[0]) return (window.innerWidth / 500);
+      if (!articles[0]) return Math.floor(window.innerWidth / 540);
       return (window.innerWidth / articles[0].offsetWidth);
     };
     
