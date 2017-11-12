@@ -1,7 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=News+Cycle');
+
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 body {
@@ -17,26 +31,31 @@ h1 {
   color: white;
   margin-top: 0;
   margin-bottom: 0;
-
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-      -moz-animation: fadein 2s; /* Firefox < 16 */
-      -ms-animation: fadein 2s; /* Internet Explorer */
-        -o-animation: fadein 2s; /* Opera < 12.1 */
-          animation: fadein 2s;
-
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 2s;
+  /* Internet Explorer */
+  -o-animation: fadein 2s;
+  /* Opera < 12.1 */
+  animation: fadein 2s;
 }
 
 h2 {
-  font-size: 3em; 
+  font-size: 3em;
   text-align: center;
   color: rgb(54, 54, 54);
   margin-top: 0;
-
-  -webkit-animation: fadein 6s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 6s; /* Firefox < 16 */
-  -ms-animation: fadein 6s; /* Internet Explorer */
-    -o-animation: fadein 6s; /* Opera < 12.1 */
-      animation: fadein 6s;
+  -webkit-animation: fadein 6s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 6s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 6s;
+  /* Internet Explorer */
+  -o-animation: fadein 6s;
+  /* Opera < 12.1 */
+  animation: fadein 6s;
 }
 
 ul {
@@ -47,6 +66,7 @@ ul {
 
 li {
   font-size: 1.2em;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 a {
@@ -55,7 +75,7 @@ a {
 }
 
 a:hover {
-  color:  rgb(23, 172, 231)
+  color: rgb(23, 172, 231)
 }
 
 img {
