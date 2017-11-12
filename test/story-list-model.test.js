@@ -13,4 +13,9 @@ spike.describe('StoryListModel', function() {
         assert.isTrue(storyListModel instanceof StoryListModel);
     });
 
+    spike.it("should have no stories when instantiated", function() {
+        assert.isEmpty(new StoryListModel().all());
+    });
+
+
 });

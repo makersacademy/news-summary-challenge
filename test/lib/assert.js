@@ -11,7 +11,7 @@ function isArray(assertionToCheck) {
 }
 
 function isEmpty(assertionToCheck) {
-    if (!assertionToCheck.length === 0 || assertionToCheck) {
+    if (assertionToCheck.length !== 0 || !assertionToCheck) {
         throw new Error("Assertion Failed: " + assertionToCheck + " is not empty");
     }
 }
