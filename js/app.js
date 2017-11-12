@@ -6,7 +6,5 @@
 
   window.addEventListener('load', function() {
     newsliController.loadContent();
-    newsliController.showSingleArticle();
   })
-
 })();

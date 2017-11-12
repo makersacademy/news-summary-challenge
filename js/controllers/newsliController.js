@@ -10,23 +10,25 @@
     url = 'http://content.guardianapis.com/search?'
     allFields = 'show-fields=all';
 
-    // function loadContent() {
-    //   xhttp = new XMLHttpRequest();
-    //   xhttp.onreadystatechange = function () {
-    //     if (this.readyState == 4 && this.status == 200) {
-    //       articles = JSON.parse(this.responseText).response.results;
-    //       updateArticleList(articles)
-    //     };
-    //   };
-    //   xhttp.open("GET", makersDomain + guardianAPIRequest + url + allFields, true);
-    //   xhttp.send()
-    // }
-
-    //Using whilst building app to avoid maxing out API Requests
+    //Comment out during development of app to avoid maxing out API Requests
     function loadContent() {
-      articles = articlesJSON.response.results
-      updateArticleList(articles)
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          articles = JSON.parse(this.responseText).response.results;
+          updateArticleList(articles)
+          showSingleArticle()
+        };
+      };
+      xhttp.open("GET", makersDomain + guardianAPIRequest + url + allFields, true);
+      xhttp.send()
     }
+
+    //Use during development of app to avoid maxing out API Requests
+    // function loadContent() {
+    //   articles = articlesJSON.response.results
+    //   updateArticleList(articles)
+    // }
 
     function showSingleArticle() {
       links = document.getElementsByTagName("IMG")
