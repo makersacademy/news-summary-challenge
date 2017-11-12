@@ -15,6 +15,11 @@ describe('list controller', function () {
                 webTitle: "testArticle",
                 webUrl: "httpve",
               },
+              {
+                id: "sport/live/2017/nov/11/wrnational-live",
+                webTitle: "testArticle",
+                webUrl: "httpve",
+              },
             ]
           }
         })

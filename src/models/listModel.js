@@ -4,30 +4,31 @@
 
   exports.ListModel = function (API, listController) {
 
-    var pageNumber = 1;
+    var _pageNumber = 1;
+    var _articleIndex = 0;
     var fetchedArticles = [];
     var showListItem;
 
     function fetchArticle(callback) {
-      showListItem = callback
-      var today = new Date().toISOString().slice(0, 10);
+      showListItem = callback      
+      fetchPage();
+    };
+
+    function fetchPage() {
       var response = API.search({
-        'search?from-date': today,
-        'order-by': "newest",
-        'page': pageNumber,
-        'page-size': "1"
+        'search?page': pageNumber()
       }, fetchThumbnail);
-      pageNumber++;
     };
 
     function fetchThumbnail(response) {
-      var id = parseAPIResponse(response)[0].id;
+      var id = parseAPIResponse(response)[_articleIndex].id;
       API.search({
         'show-fields': "thumbnail"
-      }, fetchSummary, id);
+      }, responseHandler, id);
+      _articleIndex++;
     };
 
-    function fetchSummary(response) {
+    function responseHandler(response) {
       var article = parseAPIResponse(response);
       fetchedArticles.push(article);
       showListItem(article);
@@ -37,6 +38,10 @@
       return (json.response.results || json.response.content);
     };
 
+    function pageNumber() {
+      if (_articleIndex === 9) _pageNumber++;
+      return _pageNumber;      
+    };
 
     return {
       fetchArticle: fetchArticle,
