@@ -25,13 +25,13 @@
     //Using whilst building app to avoid maxing out API Requests
     function loadContent() {
       articles = articlesJSON.response.results
-      console.log(articles)
       updateArticleList(articles)
     }
 
     function updateArticleList(articles) {
       articles.map((article) => {
-        articleList.addArticle(article.webTitle, article.webUrl, article.fields.thumbnail)
+        console.log(article.fields.body)
+        articleList.addArticle(article.webTitle, article.webUrl, article.fields.thumbnail, article.fields.body)
       })
       showCurrentArticleList()
     }

@@ -3,9 +3,9 @@
 aWholeNewWorld('ArticleList', function () {
 
   headline = 'Headline'
-  summary = 'Summary'
-  url = 'url'
-  image = 'image'
+  body = '<div><p>I\'m the first paragraph</p> <p>I\'m the second paragraph</p></div>'
+  url = 'Url'
+  image = 'Image'
 
   articleList = new ArticleList();
 
@@ -14,9 +14,15 @@ aWholeNewWorld('ArticleList', function () {
   })
 
   it('creates and stores articles', function () {
-    articleList.addArticle(headline, url)
+    articleList.addArticle(headline, url, image, body)
     wish(articleList.allArticles().length).toEqual(1)
   })
 
-  var articleList, headline, summary, url, image
+  it('summarizes the body of an article into the first paragraph', function () {
+    body = '<div><p>I\'m the first paragraph</p> <p>I\'m the second paragraph</p></div>'
+    articleList.addArticle(headline, url, image, body)
+    wish(articleList.allArticles().shift().showSummary()).toEqual('<p>I\'m the first paragraph</p>')
+  })
+
+  var articleList, headline, body, url, image, body
 })

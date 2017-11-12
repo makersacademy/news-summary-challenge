@@ -1,10 +1,11 @@
 'use strict';
 
 (function (exports) {
-  exports.Article = function (headline, url, image) {
+  exports.Article = function (headline, url, image, summary) {
     headline = headline;
     url = url;
     image = image;
+    summary = summary;
 
     function showHeadline() {
       return headline;
@@ -24,11 +25,11 @@
 
     return {
       showHeadline: showHeadline,
-      showSummary:  showSummary,
+      showSummary: showSummary,
       showUrlToFullStory: showUrlToFullStory,
       featureImage: featureImage
     };
 
-    var headline, url, image
+    var headline, url, image, summary
   };
 })(this);
