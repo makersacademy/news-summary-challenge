@@ -19,10 +19,6 @@ describe('summary controller', function () {
     }
   };
 
-  function showSummary(response) {
-    return response;
-  }
-
   beforeEach(function () {
     summary = new SummaryModel(mockAPI);
   })
