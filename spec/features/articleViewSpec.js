@@ -15,7 +15,5 @@ aWholeNewWorld('ArticleView', function () {
     wish(articleView.articleHTML(article)).toEqual('<div><p id="headlines">Headline</p><img src="Image"><br><p id="summary"> I\'m the first paragraph</p><br><p><a href="Url">Click To Read Full Story</a></p></div>');
   });
 
-  
-
   var article, headline, summary, url, image, articleView;
 });

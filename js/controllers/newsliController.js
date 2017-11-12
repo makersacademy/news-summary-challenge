@@ -67,9 +67,9 @@
     }
 
     function showArticle(link) {
-      var articleObject = articleListView.returnSingleArticle(link)
+      articleObject = articleListView.returnSingleArticle(link)
       articleView = articleView.articleHTML(articleObject)
-      var singleArticleView = document.getElementById("single-article-view")
+      singleArticleView = document.getElementById("single-article-view")
       singleArticleView.innerHTML = articleView
     }
 
@@ -91,6 +91,6 @@
       showSingleArticle: showSingleArticle,
     }
 
-    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, article, html, links, linksArray, articleView, articlesView, singleArticleView, header;
+    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html, links, linksArray, articleView, articlesView, singleArticleView, header, articleObject;
   }
 })(this);

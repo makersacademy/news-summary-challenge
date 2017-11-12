@@ -15,7 +15,5 @@ aWholeNewWorld('ArticleListView', function () {
     wish(articleListView.allArticlesHTML()).toEqual('<div><ul><li><div><p id="headlines">Headline</p><img src="Image"><br><p><a href="Url">Click To Read Full Story</a></p></div></li></ul></div>');
   });
 
-  
-
   var headline, body, url, image, articleList, articleListView;
 });
