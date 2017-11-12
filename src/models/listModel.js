@@ -39,9 +39,14 @@
     };
 
     function pageNumber() {
-      if (_articleIndex === 9) _pageNumber++;
+      if (_articleIndex > 9) nextPage();
       return _pageNumber;      
     };
+
+    function nextPage() {
+      _pageNumber++;
+      _articleIndex = 0;
+    }
 
     function getArticleById(articleId) {
       return fetchedArticles.find(function (article) {
