@@ -41,20 +41,13 @@ describe('list model', function () {
     list = new ListModel(mockAPI);
   })
 
-  describe('fetchArticles', function () {
+  describe('fetchArticle', function () {
     
     it('fetches all current headlines', function () {
-      list.fetchArticles()
-      expect(list.getItem(1).webTitle).toInclude("testArticle");
-    });
-
-  });
-
-  describe('getArticle', function () {
-    
-    it('return an article from the list', function () {
-      list.fetchArticles()
-      expect(list.getItem(2).webTitle).toEqual("testArticle");
+      list.fetchArticle(function (mockData) {
+        expect(mockData.webTitle).toEqual("testArticle");
+      })
+      
     });
 
   });

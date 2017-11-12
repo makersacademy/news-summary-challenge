@@ -27,7 +27,7 @@
         alert('Request failed.  Returned status of ' + xhr.status);
       }
     };
-    
+    console.log(url + id + queryString)
     xhr.open('GET', url + id + queryString);
     xhr.responseType = "json";
     xhr.send();

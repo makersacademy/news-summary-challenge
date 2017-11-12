@@ -27,17 +27,13 @@
     
     'use strict';
 
-      var listModel = new ListModel(guardianAPI);
-      var listController = new ListController({
-        containerId: 'list',
-        ListView: ListView,
-        listModel: listModel     
-      });
+    var listController = new ListController({
+      containerId: 'list',
+      ListView: ListView,
+      listModel: new ListModel(guardianAPI)   
+    });
 
-      listModel.fetchArticles();
-      setTimeout(function(){
-        listController.renderPage();
-      }, 1000)
+    listController.renderPage();
 
     </script>
 

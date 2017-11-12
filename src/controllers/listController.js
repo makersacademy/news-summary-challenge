@@ -9,18 +9,15 @@
     var listView = new options.ListView(listModel);
     var counter = 0;
 
-    function showListItem() {
+    function showListItem(item) {
       counter++;
-      container.innerHTML += ((listView.listItemToHTML(counter) || ''));
+      container.innerHTML += ((listView.listItemToHTML(item) || ''));
     }
 
-    function stackedArticleHeight() {
+    function numberOfStackedArticles() {
       var articles = document.getElementsByClassName('article');
-      var height = 0;
-      for (var i = 0; i < articles.length; i++) {
-        height += (articles[i].offsetHeight);
-      }
-      return (height / numberOfAdjacentArticles());
+      if (!articles[0]) return ( window.innerHeight / 400);
+      return Math.ceil((window.innerHeight/ articles[0].offsetHeight));
     }
 
     function numberOfAdjacentArticles() {
@@ -30,22 +27,25 @@
     }
 
     function renderPage() {
-      var pageHeight = window.innerHeight;
-      var height = stackedArticleHeight();
-      while ( height < pageHeight ) {
+      var stackCount = numberOfStackedArticles();
+      for (var i = 0; i < stackCount; i++) {
+        console.log(i);
         renderRow();
-        height = stackedArticleHeight();
+        stackCount = numberOfStackedArticles();
       }
     }
 
     function renderRow() {
-      var widthCount = numberOfAdjacentArticles();      
-      for (var i = 0; i < widthCount; i++) { showListItem() };
+      var widthCount = Math.floor(numberOfAdjacentArticles()); 
+      for (var i = 0; i < widthCount; i++) {
+        console.log(widthCount)
+        listModel.fetchArticle(showListItem);
+      };
     }
   
     return {
-      showListItem: showListItem,
-      renderPage: renderPage
+      renderPage: renderPage,
+      renderRow: renderRow
     }
 
   }

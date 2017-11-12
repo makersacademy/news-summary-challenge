@@ -20,6 +20,7 @@ li {
   border: 3px solid red;
   max-width: 500px;
   min-width: 300px;
+  height: 400px;
   margin: 20px;
   overflow: hidden;
 }

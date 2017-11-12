@@ -2,51 +2,40 @@
 
 ;(function (exports) {
 
-  exports.ListModel = function (API) {
+  exports.ListModel = function (API, listController) {
 
-    var articles = [];
     var pageNumber = 1;
+    var showListItem;
 
-    function fetchArticles() {
+    function fetchArticle(callback) {
+      showListItem = callback
       var today = new Date().toISOString().slice(0, 10);
       var response = API.search({
         'search?from-date': today,
-        'page': pageNumber
-      }, fetchThumbnails);
+        'order-by': "newest",
+        'page': pageNumber,
+        'page-size': "1"
+      }, fetchThumbnail);
+      pageNumber++;
     }
 
-    function fetchThumbnails(response) {
-      var list = parseAPIResponse(response);
-      list.forEach(function (article) {
+    function fetchThumbnail(response) {
+      var id = parseAPIResponse(response)[0].id;
         API.search({
           'show-fields': "thumbnail"
-        }, saveResults, article.id)
-      })
+        }, passToController, id)
     }
 
     function parseAPIResponse(json) {
       return (json.response.results || json.response.content);
     }
 
-    function saveResults(response) {
-      articles.push(parseAPIResponse(response));
-    }
-
-    function getItem(id) {
-      id--;
-      return articles[id];
-      fetchMoreArticlesIfLastItem(id);
-    }
-
-    function fetchMoreArticlesIfLastItem(id) {
-      if (articles[id]) return;
-      pageNumber++;
-      fetchArticles();
+    function passToController(response) {
+      showListItem(parseAPIResponse(response));
     }
 
     return {
-      fetchArticles: fetchArticles,
-      getItem: getItem
+      fetchArticle: fetchArticle,
     }
 
   }

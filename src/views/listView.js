@@ -2,15 +2,11 @@
 
 ;(function (exports) {
 
-  exports.ListView = function (listModel) {
+  exports.ListView = function () {
 
-    var list = listModel;
-    
-    function listItemToHTML(id) {
-      if (!list.getItem(id)) return;
-      var item = list.getItem(id)
-      var title = item.webTitle;
-      var thumbnail = item.fields.thumbnail;
+    function listItemToHTML(listItem) {
+      var title = listItem.webTitle;
+      var thumbnail = listItem.fields.thumbnail;
       return [
         '<li>',
           '<article class="article">',
@@ -21,6 +17,7 @@
           '</article>',
         '</li >'
       ].join('');
+
     }
 
     return {

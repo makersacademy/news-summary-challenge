@@ -2,24 +2,20 @@
 
 describe('list view', function () {
 
-  var list = {
-    getItem: function() {
-      return {
-        id: "sport/live/2017/nov/11/wrnational-live",
-        webTitle: "testWebTitle",
-        webUrl: "httpve",
-        fields: {
-          thumbnail: "thumbnailURL"
-        }
-      }
+  var item = {
+    id: "sport/live/2017/nov/11/wrnational-live",
+    webTitle: "testWebTitle",
+    webUrl: "httpve",
+    fields: {
+      thumbnail: "thumbnailURL"
     }
   };
   
   describe('listItemToHTML', function () {
     
     it('generates the HTML for an list item', function () {
-      var listView = new ListView(list);
-      expect(listView.listItemToHTML(1)).toInclude('testWebTitle');
+      var listView = new ListView();
+      expect(listView.listItemToHTML(item)).toEqual('<li><article class="article"><figure><img src=thumbnailURL></figure><p>testWebTitle</p></article></li >');
     });
   
   });

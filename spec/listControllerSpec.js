@@ -36,7 +36,7 @@ describe('list controller', function () {
   beforeEach(function () {
 
     var listModel = new ListModel(mockAPI);
-    listModel.fetchArticles();
+    // listModel.fetchArticle();
     
     listController = new ListController({
       containerId: 'test',
@@ -49,7 +49,7 @@ describe('list controller', function () {
   describe('renderListItem', function () {
 
     it('renders a list item on the page', function () {
-      listController.showListItem();
+      listController.renderRow();
       var container = document.getElementById('test');
       expect(container.innerHTML).toInclude('testArticle');
     });
