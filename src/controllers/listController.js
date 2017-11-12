@@ -11,7 +11,7 @@
 
     function showListItem(item) {
       counter++;
-      container.innerHTML += ((listView.listItemToHTML(item) || ''));
+      container.innerHTML += listView.listItemToHTML(item);
     }
 
     function numberOfStackedArticles() {
@@ -29,7 +29,6 @@
     function renderPage() {
       var stackCount = numberOfStackedArticles();
       for (var i = 0; i < stackCount; i++) {
-        console.log(i);
         renderRow();
         stackCount = numberOfStackedArticles();
       }
@@ -38,7 +37,6 @@
     function renderRow() {
       var widthCount = Math.floor(numberOfAdjacentArticles()); 
       for (var i = 0; i < widthCount; i++) {
-        console.log(widthCount)
         listModel.fetchArticle(showListItem);
       };
     }

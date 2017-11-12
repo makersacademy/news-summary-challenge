@@ -5,6 +5,7 @@
   exports.ListModel = function (API, listController) {
 
     var pageNumber = 1;
+    var fetchedArticles = [];
     var showListItem;
 
     function fetchArticle(callback) {
@@ -17,27 +18,30 @@
         'page-size': "1"
       }, fetchThumbnail);
       pageNumber++;
-    }
+    };
 
     function fetchThumbnail(response) {
       var id = parseAPIResponse(response)[0].id;
-        API.search({
-          'show-fields': "thumbnail"
-        }, passToController, id)
-    }
+      API.search({
+        'show-fields': "thumbnail"
+      }, fetchSummary, id);
+    };
+
+    function fetchSummary(response) {
+      var article = parseAPIResponse(response);
+      fetchedArticles.push(article);
+      showListItem(article);
+    };
 
     function parseAPIResponse(json) {
       return (json.response.results || json.response.content);
-    }
+    };
 
-    function passToController(response) {
-      showListItem(parseAPIResponse(response));
-    }
 
     return {
       fetchArticle: fetchArticle,
-    }
+    };
 
-  }
+  };
 
 })(this);
