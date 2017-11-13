@@ -6,46 +6,42 @@
     articleListView = new ArticleListView(articleList)
     articleView = new ArticleView;
 
+    articlesContainer = document.getElementById("articles-view");
+    articleContainer = document.getElementById("single-article-view");
+    imageNodes = document.getElementsByTagName("IMG")
+
     makersDomain = 'http://news-summary-api.herokuapp.com/';
     guardianAPIRequest = 'guardian?apiRequestUrl='
     url = 'http://content.guardianapis.com/search?'
     allFields = 'show-fields=all';
 
-    //Comment out during development of app to avoid maxing out API Requests
-    // function loadContent() {
-    //   xhttp = new XMLHttpRequest();
-    //   xhttp.onreadystatechange = function () {
-    //     if (this.readyState == 4 && this.status == 200) {
-    //       articles = JSON.parse(this.responseText).response.results;
-    //       updateArticleList(articles)
-    //       showSingleArticle()
-    //     };
-    //   };
-    //   xhttp.open("GET", makersDomain + guardianAPIRequest + url + allFields, true);
-    //   xhttp.send()
-    // }
-
-    //Use during development of app to avoid maxing out API Requests
     function loadContent() {
-      articles = articlesJSON.response.results
-      updateArticleList(articles)
-      showSingleArticle()
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          articles = JSON.parse(this.responseText).response.results;
+          updateArticleList(articles)
+          showSingleArticle()
+        };
+      };
+      xhttp.open("GET", makersDomain + guardianAPIRequest + url + allFields, true);
+      xhttp.send()
     }
 
     function showSingleArticle() {
-      links = document.getElementsByTagName("IMG")
-      linksArray = [].slice.call(links)
-      linksArray.map((link) => {
-        link.addEventListener('click', toggleArticleView.bind(link));
+      imageArray = [].slice.call(imageNodes)
+      imageArray.map((imageNode) => {
+        imageNode.addEventListener('click', toggleArticleView.bind(imageNode));
       });
     };
 
     function toggleArticleView() {
-      hideArticlesView();
+      hideArticlesContainer();
       showArticle(this);
-      returnToArticlesView()
+      returnToArticlesEventListener()
     }
 
+    //forEach?
     function updateArticleList(articles) {
       articles.map((article) => {
         articleList.addArticle(article.webTitle, article.webUrl, article.fields.thumbnail, article.fields.body)
@@ -53,26 +49,11 @@
       showCurrentArticleList()
     }
 
-    function hideArticlesView() {
-      articlesView = document.getElementById("articles-view");
-      articlesView.style.display = 'none';
-    }
-
-    function showArticlesView() {
-      articlesView = document.getElementById("articles-view");
-      articlesView.style.display = 'block';
-    }
-
-    function hideSingleArticleView() {
-      singleArticleView = document.getElementById("single-article-view");
-      articlesView.style.display = 'none';
-    }
-
     function showArticle(link) {
+      showSingleArticleContainer()
       articleObject = articleListView.returnSingleArticle(link)
-      articleView = articleView.articleHTML(articleObject)
-      singleArticleView = document.getElementById("single-article-view")
-      singleArticleView.innerHTML = articleView
+      articleHTML = articleView.articleHTML(articleObject)
+      articleContainer.innerHTML = articleHTML
     }
 
     function showCurrentArticleList() {
@@ -80,19 +61,36 @@
       document.getElementById("articles-view").innerHTML = html
     }
 
-    function returnToArticlesView() {
+    function returnToArticlesEventListener() {
       header = document.getElementById("header")
       header.addEventListener('click', function() {
-        hideSingleArticleView()
-        showArticlesView()
+        hideSingleArticleContainer()
+        showArticlesContainer()
+
       });
     };
+
+    function hideArticlesContainer() {;
+      articlesContainer.style.display = 'none';
+    }
+
+    function showArticlesContainer() {
+      articlesContainer.style.display = 'block';
+    }
+
+    function hideSingleArticleContainer() {
+      articleContainer.style.display = 'none';
+    }
+
+    function showSingleArticleContainer() {
+      articleContainer.style.display = 'block';
+    }
 
     return {
       loadContent: loadContent,
       showSingleArticle: showSingleArticle,
     }
 
-    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html, links, linksArray, articleView, articlesView, singleArticleView, header, articleObject;
+    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html, imageNodes, imageArray, articleView, articlesContainer, articleContainer, header, articleObject, articleHTML;
   }
 })(this);
