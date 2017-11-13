@@ -30,7 +30,7 @@
 
     function showSingleArticle() {
       imageArray = [].slice.call(imageNodes)
-      imageArray.map((imageNode) => {
+      imageArray.forEach((imageNode) => {
         imageNode.addEventListener('click', toggleArticleView.bind(imageNode));
       });
     };
@@ -41,9 +41,8 @@
       returnToArticlesEventListener()
     }
 
-    //forEach?
     function updateArticleList(articles) {
-      articles.map((article) => {
+      articles.forEach((article) => {
         articleList.addArticle(article.webTitle, article.webUrl, article.fields.thumbnail, article.fields.body)
       })
       showCurrentArticleList()
@@ -64,9 +63,8 @@
     function returnToArticlesEventListener() {
       header = document.getElementById("header")
       header.addEventListener('click', function() {
-        hideSingleArticleContainer()
-        showArticlesContainer()
-
+        hideSingleArticleContainer();
+        showArticlesContainer();
       });
     };
 
