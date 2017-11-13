@@ -3,7 +3,7 @@
 
   exports.ArticleSummaryController = function(promoListModel, promoListView) {
     var _promoListModel = promoListModel;
-    var _promoListView = _promoListView;
+    var _promoListView = promoListView;
     var _listController = new ListController(_promoListView);
 
     function showArticleSummary() {
@@ -20,6 +20,10 @@
 
     var getArticleIdFromUrl = function() {
       return window.location.hash.split("#articles/")[1];
+    };
+
+    return {
+      showArticleSummary: showArticleSummary
     };
 
   };
