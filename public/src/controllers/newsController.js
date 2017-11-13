@@ -20,33 +20,42 @@
     function renderRow() {
       var widthCount = Math.floor(numberOfAdjacentArticles());
       for (var i = 0; i < widthCount; i++) {
-        listModel.fetchArticle(showListItem);
+        renderItem();
       };
+    };
+
+    function renderItem() {
+      var newLI = document.createElement('li');
+      var text = document.createTextNode('loading...');
+      newLI.appendChild(text);
+      container.appendChild(newLI);
+      listModel.fetchArticle(showListItem);
     };
 
     function renderSummary(articleId) {
       var article = listModel.getArticleById(articleId);
+      container.innerHTML = '';
       summaryModel.fetchSummary(article, showSummary)
     };
 
     function showListItem(item) {
-      var newLI = document.createElement('li');
-      newLI.innerHTML = listView.listItemToHTML(item);
-      container.appendChild(newLI);
+      var li = nextEmptyLi();
+      li.innerHTML = listView.listItemToHTML(item);
+      container.appendChild(li);
       setTimeout(function() {
-        newLI.className = "show";
+        li.className = "show";
       }, 30);
     };
-
+    
     function showSummary(article) {
       container.innerHTML = summaryView.articleSummaryToHTML(article);
     };
-
+    
     function attachEventListeners() {
       window.addEventListener('hashchange', hashChange)
       window.addEventListener('scroll', scrolledToBottom)
     };
-
+    
     function hashChange() {
       if (window.location.hash === '') {
         renderPage();
@@ -54,14 +63,21 @@
         renderSummary(getArticleIdFromUrl(window.location));
       };
     };
-
+    
     function scrolledToBottom() {
       var wrapper = document.getElementById('wrapper');
       if (wrapper.getBoundingClientRect().bottom == (window.innerHeight)) {
-          renderRow();
+        renderRow();
       }
     };
-
+    
+    function nextEmptyLi() {
+      var listElements = [].slice.call(document.querySelectorAll('li'));
+      return listElements.find(function (li) {
+        return li.innerHTML === 'loading...';
+      });
+    };
+    
     function numberOfStackedArticles() {
       var articles = document.getElementsByClassName('article');
       if (!articles[0]) return (window.innerHeight / 400);
