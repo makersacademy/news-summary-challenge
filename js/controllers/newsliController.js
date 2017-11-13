@@ -9,6 +9,7 @@
     articlesContainer = document.getElementById("articles-view");
     articleContainer = document.getElementById("single-article-view");
     imageNodes = document.getElementsByTagName("IMG")
+    backButton = "<button id='back' type='button'>Back<button>"
 
     makersDomain = 'http://news-summary-api.herokuapp.com/';
     guardianAPIRequest = 'guardian?apiRequestUrl='
@@ -52,16 +53,17 @@
       showSingleArticleContainer()
       articleObject = articleListView.returnSingleArticle(link)
       articleHTML = articleView.articleHTML(articleObject)
+      articleHTML += backButton
       articleContainer.innerHTML = articleHTML
     }
 
     function showCurrentArticleList() {
       html = articleListView.allArticlesHTML();
-      document.getElementById("articles-view").innerHTML = html
+      articlesContainer.innerHTML = html
     }
 
     function returnToArticlesEventListener() {
-      header = document.getElementById("header")
+      header = document.getElementById("back")
       header.addEventListener('click', function() {
         hideSingleArticleContainer();
         showArticlesContainer();
@@ -89,6 +91,6 @@
       showSingleArticle: showSingleArticle,
     }
 
-    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html, imageNodes, imageArray, articleView, articlesContainer, articleContainer, header, articleObject, articleHTML;
+    var articleList, articleListView, makersDomain, guardianAPIRequest, url, allFields, xhttp, articles, html, imageNodes, imageArray, articleView,  articlesContainer, articleContainer, header, articleObject,             articleHTML, backButton;
   }
 })(this);

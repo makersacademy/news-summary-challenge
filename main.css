@@ -11,7 +11,7 @@
 
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
   100% {
     transform: translateX(0);
@@ -96,4 +96,19 @@ div#single-article-view {
 
 p#headlines {
   color: #0F7BAC;
+}
+
+button {
+  font-size: 3em;
+  color: #0F7BAC;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding-right: 10px;
+  padding-bottom: 10px
+}
+
+button:active {
+  color: rgb(172, 15, 75);
+  outline: none
 }
