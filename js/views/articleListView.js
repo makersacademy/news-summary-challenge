@@ -16,7 +16,7 @@
 
     function returnSingleArticle(imageNode) {
       singleArticle
-      articles.map((article) => {
+      articles.forEach((article) => {
         if (imageNode.outerHTML.search(article.featureImage()) === 10) {
           singleArticle = article
         };

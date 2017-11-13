@@ -4,7 +4,6 @@
   exports.ArticleView = function () {
 
     function articleHTML(article) {
-      console.log(article)
       html = '<div><p id="headlines">' + article.showHeadline() + '</p>' +
         '<img src="' + article.featureImage() + '"><br>' +
         '<p id="summary"> ' + article.showSummary() + '</p><br>' +
