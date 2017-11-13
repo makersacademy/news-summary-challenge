@@ -45,6 +45,13 @@ function expect(testvalue) {
     };
   };
 
+  function toBeLessThan(actualvalue) {
+    if(testvalue >= actualvalue){
+      errorMessage = ` - Expected ${testvalue} to be less than ${actualvalue}.`
+      runErrorProcess(errorMessage);
+    };
+  };
+
   function toThrowError(actualvalue) {
     if (typeof actualvalue != 'function') {
       throw new Error('Actual value is not a Function');

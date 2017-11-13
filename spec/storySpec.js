@@ -1,5 +1,3 @@
-
-
 describe("Getting story from API", function() {
 
   var storyHash = {
@@ -16,12 +14,22 @@ describe("Getting story from API", function() {
   };
 
   var story = new Story(storyHash);
+  console.log(story);
 
   it('has a headline', function() {
-    expect(story.showHeadline()).toEqual("Daily Express owner said to be mounting bid to take over National Lottery")
+    expect(story.getHeadline()).toEqual("Daily Express owner said to be mounting bid to take over National Lottery")
   });
   it('has a thumbnail', function() {
     expect(story.showThumbnail()).toEqual("https://media.guim.co.uk/7f5503043c6fb78baeebad4240083d48b235fbee/0_69_3000_1800/500.jpg")
   });
+
+  it('has a webUrl', function(){
+    expect(story.showWebUrl()).toEqual("https://www.theguardian.com/uk-news/2017/nov/12/daily-express-owner-said-to-be-mounting-bid-to-take-over-national-lottery")
+  });
+
+  it('is able to summarise a story', function(){
+    expect(story.summarise()).toBeLessThan(250)
+  });
+
 
 })

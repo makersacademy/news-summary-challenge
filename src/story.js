@@ -1,26 +1,40 @@
-(function(exports)  {
-  function Story() {
-  this._headline = storyHash.webTitle;
-  this.webUrl = storyHash.webUrl;
-  this._thumbnail = storyHash.fields.thumbnail;
-};
+;(function(exports)  {
 
-Story.prototype.showHeadline() {
+function Story(storyHash) {
+  this._headline = storyHash.webTitle;
+  this._webUrl = storyHash.webUrl;
+  this._thumbnail = storyHash.fields.thumbnail;
+  this._aylienAPI = "https://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarise?url=";
+
+}
+
+Story.prototype.getHeadline = function() {
   return this._headline;
 };
 
-  Story.prototype.summarise() {
-  var xhr = new XMLHttpRequest();
-  var url = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarise?url=" + this.webUrl ;
-  xhr.open('GET', url, false);
+  Story.prototype.summarise = function() {
+    var xhr = new XMLHttpRequest();
+    console.log("url :" + this._webUrl);
+    var url = "https://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarise?url=" + this.showWebUrl() ;
+    console.log(url);
+    xhr.onload = function() {
+        if (this.status == 200) {
+          console.log("HELLO");
+           console.log(JSON.parse(xhr.responseText));
+        }
+    };
+
+  xhr.open('GET', url, true);
   xhr.send();
-  var text = JSON.parse(xhr.responseText);
-  console.log(text);
 };
 
-Story.prototype.showThumbnail() {
+Story.prototype.showThumbnail = function() {
   return this._thumbnail;
 };
+
+Story.prototype.showWebUrl = function() {
+  return this._webUrl;
+}
 
 exports.Story = Story;
 

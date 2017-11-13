@@ -1,51 +1,35 @@
-var Stories = function() {
-  this._stories = "";
-  this.storyObjects = [];
-};
+"use strict";
 
-Stories.prototype.getAPI = function() {
+;(function(exports) {
+ function Stories() {
+  this._storyObjects = [];
+  // this._guardianUrl = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/?q=uk&show-fields=body";
+  this._guardianUrl = "https://content.guardianapis.com/search?show-fields=body&api-key=301c8978-6b59-4980-9593-5c8d085394e7"
+
   var self = this;
-  var xhr = new XMLHttpRequest();
-  var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/?q=uk&show-fields=body";
 
-  xhr.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-         self._stories = JSON.parse(xhr.responseText).response.results;
-         console.log(self._stories);
-         console.log(self._stories[0]);
-      }
+  var resultsCallback =  function(results){
+    var headlinesElement = document.getElementById("headlines");
+    for(var i = 0; i < results.length; i++){
+      var story = new Story(results[i]);
+      self._storyObjects.push(story);
+
+      var html = '<li class="news" id="news-' + i + '">' + story.getHeadline() + '</li>';
+      console.log("This is the result: " + html);
+
+      headlinesElement.innerHtml += html;
+      console.log(headlinesElement.innerHtml);
+    };
   };
 
-  xhr.open('GET', url, true);
-  xhr.send()
+  var errorCallback = function(errorString){
+    console.log(errorString);
+  };
+
+  guardianAPI(this._guardianUrl, resultsCallback, errorCallback);
+
 };
 
-Stories.prototype.createStoryObjects = function() {
-  for(var i = 0; i < this._stories.length; i++){
-    console.log(this._stories[i]);
-    console.log(new Story(this._stories[i]));
-    var story = new Story(this._stories[i]);
-    this.storyObjects.push(story);
-    console.log(story);
-  }
 
-  console.log(this.storyObjects);
-};
-
-// 1. Create index.html with an empty div for articles to go into
-// 2. Create App.js JS object
-// - pageLoad --> the two functions at the start should be stories.getapi(guardianurl)
-// and stories.createStoryObjects()
-// - another method called createPage - for loop looping through storyObjects
-// `<html>
-// <h1 id=${article + i}>${stories.storyObjects[i].headline}</h1>
-// </html>`
-//
-// var app = function(stories = new Stories() ) {
-//   stories.getapi(guardianURL)
-//   stories.createStoryObjects() ==> returns an array of story objects you can access
-//   that now need to be converted into html strings  that you can output to page
-//
-// }
-//
-// 3. Event listeners = what happens when you click each article
+exports.Stories = Stories;
+})(this);
