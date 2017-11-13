@@ -2,7 +2,7 @@
 
 ## Challenge
     
-I struggled with this weekends challenge and my understanding of all the working pieces. I ended last week with a broken testing framework so Saturday was spent fixing the problems. 
+I struggled with this weekends challenge and my understanding of all the working pieces. I ended the week with a broken testing framework so Saturday was spent fixing the problems. 
 My framework was not ordered and had been made to interact more with the browsers console and did not actually work in the terminal console.
     
 With my testing framwork fixed I was able to get the start of an application up and running with testing. Even though the application is not completed and is missing the API requests I feel I now have a much better understanding on how this works.
