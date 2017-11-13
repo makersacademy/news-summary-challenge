@@ -34,15 +34,17 @@
 
     function showSingleArticle() {
       links = document.getElementsByTagName("IMG")
-      linksArray = Array.prototype.slice.call(links)
+      linksArray = [].slice.call(links)
       linksArray.map((link) => {
-        link.addEventListener('click', function () {
-          hideArticlesView();
-          showArticle(link);
-          returnToArticlesView()
-        });
+        link.addEventListener('click', toggleArticleView.bind(link));
       });
     };
+
+    function toggleArticleView() {
+      hideArticlesView();
+      showArticle(this);
+      returnToArticlesView()
+    }
 
     function updateArticleList(articles) {
       articles.map((article) => {
