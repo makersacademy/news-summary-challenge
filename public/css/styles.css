@@ -51,6 +51,11 @@ li article {
   background-color: white;
 }
 
+.show {
+  min-width: 300px;
+  max-width: 500px;
+}
+
 li:hover {
   box-shadow: 0 0 5px white;  
 }
