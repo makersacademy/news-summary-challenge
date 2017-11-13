@@ -5,7 +5,6 @@
     // console.log(list.returnHeadlines());
     var request = new XMLHttpRequest();
       request.open('GET', ("https://content.guardianapis.com/search?q=economy&api-key=test"));
-      //5d478b85-06aa-4888-95e3-d407910c480c ainsleys api key
       request.send();
 
     request.onreadystatechange = runRequest;
