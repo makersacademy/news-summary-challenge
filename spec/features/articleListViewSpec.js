@@ -12,7 +12,7 @@ aWholeNewWorld('ArticleListView', function () {
   articleListView = new ArticleListView(articleList);
 
   it('can return a string of html to display all articles with links to the full story', function () {
-    wish(articleListView.allArticlesHTML()).toEqual('<div><ul><li><div><p id="headlines">Headline</p><img src="Image"><br><p><a href="Url">Click To Read Full Story</a></p></div></li></ul></div>');
+    wish(articleListView.allArticlesHTML()).toEqual('<div><article><p id="headlines">Headline</p><img src="Image"><br><p><a href="Url">Click To Read Full Story</a></p></article></div>');
   });
 
   var headline, body, url, image, articleList, articleListView;
