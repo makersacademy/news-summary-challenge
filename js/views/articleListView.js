@@ -5,13 +5,13 @@
     articles = articleList.allArticles();
 
     function allArticlesHTML() {
-      html = '<div><ul>';
+      html = '<div>';
       articles.map((article) => {
-        html += '<li><div><p id="headlines">' + headlineHTML(article) + '</p>'
+        html += '<article><p id="headlines">' + headlineHTML(article) + '</p>'
         + '<img src="' + imagesHTML(article) + '"><br>'
-        + '<p><a href="' + urlHTML(article) + '">Click To Read Full Story</a></p></div></li>'
+        + '<p><a href="' + urlHTML(article) + '">Click To Read Full Story</a></p></article>'
       });
-      return html + "</ul></div>";
+      return html + "</div>";
     }
 
     function returnSingleArticle(imageNode) {

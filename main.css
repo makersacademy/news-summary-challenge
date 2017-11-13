@@ -30,6 +30,7 @@
 body {
   background-color: #E9E8E3;
   font-family: 'News Cycle', sans-serif;
+  margin: 0;
 }
 
 h1 {
@@ -77,8 +78,8 @@ a:hover {
 }
 
 img {
-  border-radius: 12px;
-  min-width: 100%
+  /* border-radius: 12px; */
+  min-width: 100%;
 }
 
 img#logo {
@@ -91,10 +92,11 @@ img#logo {
 }
 
 div#single-article-view {
-  margin-left: 10px;
+  margin: 0;
 }
 
 p#headlines {
+  padding-left: 10px;
   color: #0F7BAC;
 }
 
