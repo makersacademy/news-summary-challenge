@@ -1,10 +1,30 @@
 # News Summary challenge
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+## Challenge
+    
+I struggled with this weekends challenge and my understanding of all the working pieces. I ended last week with a broken testing framework so Saturday was spent fixing the problems. 
+My framework was not ordered and had been made to interact more with the browsers console and did not actually work in the terminal console.
+    
+With my testing framwork fixed I was able to get the start of an application up and running with testing. Even though the application is not completed and is missing the API requests I feel I now have a much better understanding on how this works.
+    
+I would have liked to have completed the api requests maybye moving this to it's own controller.
+    
+
+## Install
+
+    $ npm install
+
+## Run server
+
+    $ npm start
+
+## Use app
+
+Go to `http://localhost:3000` in your web browser.
+
+## Run tests
+
+    $ npm test
 
 ## Challenge
 
