@@ -1,7 +1,6 @@
-'use strict';
-
 (function() {
+  'use strict';
 
-  var controller = new Controller(PromoListModel, PromoListView); 
+  var controller = new Controller(PromoListModel, PromoListView);
 
 })();

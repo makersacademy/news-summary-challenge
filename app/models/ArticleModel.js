@@ -5,7 +5,7 @@
   exports.ArticleModel = function(headline, url, body, main) {
     var _id = articleCounter;
     articleCounter++;
-    
+
     var storyBody = document.createElement("div");
     storyBody.innerHTML = body;
     var storyMain = document.createElement("div");

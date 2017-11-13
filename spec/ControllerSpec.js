@@ -8,24 +8,24 @@
       this.articles.push(article);
       this.addArticleCalledCount++;
     }
-  }
+  };
 
   var MockPromoListModel = function() {
     return mockPromoListModel;
-  }
+  };
 
   var mockPromoListView = {
     toHtmlCalledCount: 0,
     toHtml: function() {
       this.toHtmlCalledCount++;
-      return "<div>Litany of fascinating article headlines</div>"
+      return "<div>Litany of fascinating article headlines</div>";
     }
-  }
+  };
 
   var MockPromoListView = function(promoListModel) {
     mockPromoListView.promoListModel = promoListModel;
     return mockPromoListView;
-  }
+  };
 
   var mockRequestInstance = {
     openCalledCount: 0,
