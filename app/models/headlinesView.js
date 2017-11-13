@@ -9,7 +9,7 @@
     var html = "<ul>"
     headlines.forEach(function(headline) {
       html += "<li><div>" + headline + "</div></li>"
-    });
+    }); //for the headline to be a hyperlink you need to add a href tag and figure out how that works
     return html += "</ul>"
   };
 
