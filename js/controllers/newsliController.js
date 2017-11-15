@@ -9,7 +9,6 @@
     articlesContainer = document.getElementById("articles-view");
     articleContainer = document.getElementById("single-article-view");
     imageNodes = document.getElementsByTagName("IMG")
-    backButton = "<button id='back' type='button'>Back<button>"
 
     makersDomain = 'http://news-summary-api.herokuapp.com/';
     guardianAPIRequest = 'guardian?apiRequestUrl='
@@ -53,7 +52,7 @@
       showSingleArticleContainer()
       articleObject = articleListView.returnSingleArticle(link)
       articleHTML = articleView.articleHTML(articleObject)
-      articleHTML += backButton
+      articleHTML += "<button id='back' type='button'>Back<button>"
       articleContainer.innerHTML = articleHTML
     }
 

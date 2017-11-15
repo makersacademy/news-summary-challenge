@@ -2,10 +2,6 @@
 
 (function (exports) {
   exports.Article = function (headline, url, image, summary) {
-    // headline = headline;
-    // url = url;
-    // image = image;
-    // summary = summary;
 
     function showHeadline() {
       return headline;
@@ -29,7 +25,5 @@
       showUrlToFullStory: showUrlToFullStory,
       featureImage: featureImage
     };
-
-    var headline, url, image, summary
   };
 })(this);

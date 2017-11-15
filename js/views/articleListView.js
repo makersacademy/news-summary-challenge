@@ -5,11 +5,10 @@
     articles = articleList.allArticles();
 
     function allArticlesHTML() {
-      html = '<div>';
+      html = '<div id ="articles">';
       articles.map((article) => {
         html += '<article><p id="headlines">' + headlineHTML(article) + '</p>'
-        + '<img src="' + imagesHTML(article) + '"><br>'
-        + '<p><a href="' + urlHTML(article) + '">Click To Read Full Story</a></p></article>'
+        + '<img src="' + imagesHTML(article) + '"></article>'
       });
       return html + "</div>";
     }

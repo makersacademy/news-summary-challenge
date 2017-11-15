@@ -48,28 +48,17 @@ h1 {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 3.9em;
   text-align: center;
+  background-color: white;
   color: rgb(79, 80, 81);
   margin-top: 0;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
-ul {
-  margin-left: 10px;
-  margin-right: 40px;
-  max-width: 95%;
-  list-style-image: url('./images/news-icon.png')
-}
-
-li {
-  font-size: 1.2em;
-  /* animation: 1s ease-out 0s 1 slideInFromLeft; */
-}
-
-
 a {
   text-decoration: none;
+  padding-left: 10px;
   color: rgb(172, 15, 75);
 }
 
@@ -78,12 +67,10 @@ a:hover {
 }
 
 img {
-  /* border-radius: 12px; */
   min-width: 100%;
 }
 
 img#logo {
-  padding-right: 20px;
   max-width: 10%;
   height: auto;
   width: auto\9;
@@ -95,7 +82,7 @@ div#single-article-view {
   margin: 0;
 }
 
-p#headlines {
+p#headlines, div#summary {
   padding-left: 10px;
   color: #0F7BAC;
 }
@@ -106,6 +93,8 @@ button {
   position: fixed;
   bottom: 0;
   right: 0;
+  background-color: #E9E8E3;
+  border: none;
   padding-right: 10px;
   padding-bottom: 10px
 }
@@ -113,4 +102,8 @@ button {
 button:active {
   color: rgb(172, 15, 75);
   outline: none
+}
+
+article {
+  padding-bottom: 10px
 }

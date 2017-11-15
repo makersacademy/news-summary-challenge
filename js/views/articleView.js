@@ -6,8 +6,8 @@
     function articleHTML(article) {
       html = '<div><p id="headlines">' + article.showHeadline() + '</p>' +
         '<img src="' + article.featureImage() + '"><br>' +
-        '<p id="summary"> ' + article.showSummary() + '</p><br>' +
-        '<p><a href="' + article.showUrlToFullStory() + '">Click To Read Full Story</a></p></div>';
+        '<div id="summary"> ' + article.showSummary() + '</div><br>' +
+        '<a href="' + article.showUrlToFullStory() + '">Click To Read Full Story</a></div>';
       return html
     }
 
