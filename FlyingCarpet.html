@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="./js/test/main.css">
+</head>
+
+<body>
+  <div id="banner">
+    <h1>Aladdin
+      <span style="font-size:16px; color:rgb(55, 55, 55)"> The testing framework</span>
+    </h1>
+  </div>
+  <div id="block">
+
+    <div id="title">
+      <img class="flying-carpet" src="https://media.giphy.com/media/yXBqba0Zx8S4/giphy.gif">
+    </div>
+
+    <div id="test-display"></div>
+
+    <div id="footer">
+      <span style='color:white;'>&copy</span> David Halewood
+      <span style='color:white;'>2017</span>
+    </div>
+
+  </div>
+
+  <!-- testing library -->
+  <script src="./js/test/aladdin.js"></script>
+  <script src="./js/test/aladdinDisplay.js"></script>
+
+  <!-- source code -->
+  <script src='./js/models/article.js'></script>
+  <script src='./js/views/articleView.js'></script>
+  <script src='./js/models/articleList.js'></script>
+  <script src='./js/views/articleListView.js'></script>
+
+  <!-- test code -->
+  <script src='./spec/articleSpec.js'></script>
+  <script src='./spec/articleListSpec.js'></script>
+  <script src='./spec/features/articleListViewSpec.js'></script>
+  <script src='./spec/features/articleViewSpec.js'></script>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "Newsli",
+  "version": "1.0.0",
+  "description": "News Summary App",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haletothewood/Newsli.git"
+  },
+  "author": "David Halewood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haletothewood/Newsli/issues"
+  },
+  "homepage": "https://github.com/haletothewood/Newsli#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}

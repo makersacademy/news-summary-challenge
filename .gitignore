@@ -1,0 +1,7 @@
+spike/app.js
+spike/guardianAPI.js
+spike/newsliController.js
+spike
+.DS_Store
+node_modules/
+package-lock.json

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Karma:300');
+
+body {
+  margin: auto;
+  background: linear-gradient(135deg, #5d5d5d 0%,#000000 100%,#2c2c2c);
+  font-family: 'Karma', serif;
+}
+
+h1 {
+  color: rgb(59, 114, 234);
+}
+
+h2 {
+  color: rgb(60, 60, 60);
+  font-size: 20px
+}
+
+.toEqual, .toBeArray, .toBeInstanceOf, .toNotBeNull, .toBeNull, .toInclude  {
+  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-left: 55px;
+  background-color: transparent;
+  color: rgb(0, 255, 34)
+}
+
+.describe {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  font-size: 28px;
+  background-color: transparent;
+  color: rgb(59, 114, 234);
+}
+
+.it {
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 3px;
+  font-size: 20px;
+  background-color: transparent;
+  color: white
+}
+
+.error {
+  padding-bottom: 3px;
+  font-size: 14px;
+  background-color: transparent;
+  color: rgb(255, 7, 7);
+}
+
+.flying-carpet {
+  width: 200px;
+  border-radius: 25%
+}
+
+#title {
+  text-align: right;
+  position: fixed;
+  right: 0;
+  padding-top: 10px;
+  padding-right: 20px
+}
+
+#banner {
+  margin-top: 0;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  position: fixed;
+  width: 100%;
+  height: 55px;
+  background-color: white;
+}
+
+#block {
+  width: 100%;
+  display: inline-block;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: rgb(59, 114, 234);
+  padding-right: 20px
+}
+
+#spec-runner {
+  width: 800px
+}
+
+#test-display {
+  margin-top: 60px
+}
