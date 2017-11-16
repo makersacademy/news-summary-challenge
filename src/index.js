@@ -4,16 +4,18 @@
 
   var storiesList;
 
-  window.addEventListener("load", function(){
+  window.addEventListener("load", initialisePage);
+
+  function initialisePage (){
     storiesList = Stories.downloadStories();
     addHeadlines();
     addHeadlineClickListeners();
-  });
+  }
 
   function addHeadlines() {
     var headlinesElement = document.getElementById("headlines");
     for(var i = 0; i < storiesList.length; ++i){
-      var html = '<li class="headline" id="headline-' + i + '">' + storiesList[i].getHeadline() + '</li>';
+      var html = `<div class="headline" id="headline-${i}"><img class="headline-thumbnail" src="${storiesList[i].getThumbnail()}"> ${storiesList[i].getHeadline()}</div>`;
       headlinesElement.innerHTML += html;
     }
   };
