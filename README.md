@@ -120,7 +120,7 @@ curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://conten
 
 Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
 
-### Alyien text summarisation API example
+### Aylien text summarisation API example
 
 **Please stub your tests to avoid exceeding the API rate limit**
 
