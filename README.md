@@ -1,4 +1,6 @@
-# News Summary challenge
+[![Build Status](https://travis-ci.org/haletothewood/Newsli.svg?branch=master)](https://travis-ci.org/haletothewood/Newsli)
+
+# News Summary Challenge
 
 <p align='center' width="200px">
 <img src='images/newsli.gif'>
