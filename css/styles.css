@@ -1,0 +1,38 @@
+body{
+  font-family: 'Slabo 27px', serif;
+  font-size: 1.3em;
+  max-width: 800px;
+  margin:auto;
+}
+
+a{
+  color: rgb(109, 109, 0);
+  text-decoration: none;
+}
+a:hover{
+  background-color: #333;
+  color:#fff;
+}
+
+.article {
+  margin: 10px;
+  padding: 50px;
+  background-color : #ddd;
+  border-radius : 25px;
+}
+
+img{
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: inherit;
+  align: middle;
+  border-radius : 10px;
+}
+
+#description{
+  padding: 50px;
+  background-color : #ddd;
+  border-radius : 25px;
+  
+}
