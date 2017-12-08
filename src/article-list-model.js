@@ -6,13 +6,15 @@
     this.articleClass = article
   }
 
-  ArticleList.prototype.list = function () {
-    return this.list_
-  }
+  ArticleList.prototype = {
+    list: function (){
+      return this.list_
+    },
 
-  ArticleList.prototype.addArticle = function(id, headline, summary, inDepth, image) {
+    addArticle: function(id, headline, summary, inDepth, image) {
       this.articleCount ++
       this.list_.push(new this.articleClass(this.articleCount, headline, summary, inDepth, image))
+    }
   }
 
   exports.ArticleList = ArticleList
