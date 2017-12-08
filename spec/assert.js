@@ -15,9 +15,9 @@ var assert = {
   },
   arrayIncludes: function(array, value) {
     if(!array.includes(value)) {
-      return(`Assertion failed: Array does not include ${value}`)
+      return(`Assertion failed: ${array} does not include ${value}`)
     } else {
-      return(`Assertion passed: Array includes ${value}`)
+      return(`Assertion passed: ${array} includes ${value}`)
     }
   }
 };
