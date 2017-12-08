@@ -1,4 +1,6 @@
 (function() {
+  'use strict';
+  
   var article = new Article('Headline', 'ImageURL', 'Summary', 'ArticleURL');
 
   describe('A new article has an id of zero', function() {

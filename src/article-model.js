@@ -1,4 +1,5 @@
 (function(exports) {
+  'use strict';
 
   var id = 0;
 

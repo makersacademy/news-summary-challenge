@@ -1,4 +1,6 @@
 (function(exports) {
+  'use strict';
+
   function ArticleList(articleModel) {
     this._articles = [];
     this._article = articleModel;
