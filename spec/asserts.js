@@ -5,14 +5,14 @@ var assert = {
     } else{
       console.log(describe)
     }
-  }
+  },
 
   isEqual: function(one, two) {
-  if(one !== two)) {
-    return(`Assertion failed:` + one + `is not equal to` + two );
-  } else {
-    return(`Assertion passed:` + one + `is equal to` + two )
+    if(one !== two) {
+      return(`Assertion failed:` + one + `is not equal to` + two );
+    } else {
+      return(`Assertion passed:` + one + `is equal to` + two )
+    }
   }
-},
 
 }

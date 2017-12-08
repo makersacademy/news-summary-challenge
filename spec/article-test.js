@@ -1,34 +1,33 @@
-(function(exports){
 
-var article = new Article(headline, summary, inDepth, image)
+var article = new Article('id', 'headline', 'summary', 'inDepth', 'image')
+
+  function testId() {
+    var describe = 'article should have id'
+    assert.isTrue(describe, article.id() === 'id');
+  };
 
   function testHeadline() {
-    var article = new Article(headline);
     var describe = 'article should have headline'
-    assert.isTrue(describe, article.headline() === headline);
+    assert.isTrue(describe, article.headline() === 'headline');
   };
 
   function testSummary() {
-    var article = new Article(summary);
-    var describe = 'article should have headline'
-    assert.isTrue(describe, article.headline() === summary);
+    var describe = 'article should have summary'
+    assert.isTrue(describe, article.summary() === 'summary');
   };
 
   function testInDepth() {
-    var article = new Article(inDepth);
-    var describe = 'article should have headline'
-    assert.isTrue(describe, article.headline() === inDepth);
+    var describe = 'article should have inDepth'
+    assert.isTrue(describe, article.inDepth() === 'inDepth');
   };
 
   function testImage() {
-    var article = new Article(image);
-    var describe = 'article should have headline'
-    assert.isTrue(describe, article.headline() === image);
+    var describe = 'article should have image'
+    assert.isTrue(describe, article.image() === 'image');
   };
 
-}
-
-testHeadline();
-testSummary();
+this.testHeadline();
+this.testSummary();
 testInDepth();
 testImage();
+testId();
