@@ -5,10 +5,11 @@
 
   var mainDiv = document.getElementById('app');
 
-  function ArticleController(articleListView, articleList, singleArticleView) {
+  function ArticleController(articleListView, articleList, singleArticleView, xmlHTTPRequest) {
     this._articleList = articleList;
     this._singleArticleView = singleArticleView;
     this._articleListView = articleListView;
+    this._xmlHTTPRequest = xmlHTTPRequest;
   }
 
   ArticleController.prototype.insertHTML = function (hello) {
@@ -33,16 +34,21 @@
 
   ArticleController.prototype.ajaxRequest = function () {
     var that = this;
-    var xhttp = new XMLHttpRequest();
+    var xhttp = new this._xmlHTTPRequest();
     var guardian_endpoint = GUARDIAN_ENDPOINT;
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var results = JSON.parse(this.responseText).response.results;
+        console.log(results);
         results.forEach(function(result) {
-          var secondXhttp = new XMLHttpRequest();
+          var secondXhttp = new that._xmlHTTPRequest();
           var url = result.webUrl;
           var headline = result.webTitle;
-          var image = result.fields.thumbnail;
+          var image;
+          result.fields ? image = result.fields.thumbnail : 'nothings';
+          // if (result.fields) {
+          //   var image = result.fields.thumbnail;
+          // }
 
           var aylien_endpoint = AYLIEN_ENDPOINT + url;
 
@@ -67,6 +73,6 @@
 
 }(this));
 
-var articleController = new ArticleController(ArticleListView, new ArticleList(Article), SingleArticleView);
+var articleController = new ArticleController(ArticleListView, new ArticleList(Article), SingleArticleView, XMLHttpRequest);
 articleController.ajaxRequest();
 articleController.hashChangeListener();
