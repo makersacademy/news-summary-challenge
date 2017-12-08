@@ -4,7 +4,6 @@
     this.articleList_ = articleList
   }
 
-
   ArticleListView.prototype.articleList = function() {
     return this.articleList_
   }
@@ -13,10 +12,8 @@
       this.articleList_.addArticle(id, headline, summary, inDepth, image)
   }
 
-
-
   ArticleListView.prototype.showList = function() {
-      noteArray = this.articleList().list().map(function(note){
+      noteArray = this.articleList_.list().map(function(article){
       return `<ul><li><div><a href="#articles/${article.id()}">${(article.headline())}</a></div></li></ul>`
       })
     return noteArray.join('')
