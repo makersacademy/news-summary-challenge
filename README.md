@@ -41,17 +41,18 @@ I can see all of today's headlines in one place
 
 ```
 As a busy politician
-So I can get full story
-I can click a link to see the news article
+So I can get a few more details about an important story
+I can see a summary of a news article
 
 ```
 
 ```
 As a busy politician
-So I can get a few more details about an important story
-I can see a summary of a news article
+So I can get full story
+I can click a link to see the news article
 
 ```
+
 
 ```
 As a busy politician
