@@ -15,8 +15,5 @@
     }
   }
 
-  // ArticleList.prototype.articles = function () {
-  // };
-
   exports.ArticleList = ArticleList;
 }(this));
