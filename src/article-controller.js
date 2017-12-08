@@ -1,20 +1,72 @@
 (function(exports) {
   'use strict';
 
+  var imageURL = 'https://media.guim.co.uk/b8e342100a4c474f880f1e2731e801515884fcbb/0_297_4635_2781/500.jpg';
+
   var mainDiv = document.getElementById('app');
 
-  function ArticleController(articleListView, articleList) {
+  function ArticleController(articleListView, articleList, singleArticleView) {
     this._articleList = articleList;
-    this._articleList.add('headline', 'image', 'summary', 'articleURL');
-    this._articleList.add('headline2', 'image2', 'summary2', 'articleURL2');
-    this._articleList.add('headline3', 'image3', 'summary3', 'articleURL3');
-    this._articleListView = new articleListView(this._articleList);
+    this._singleArticleView = singleArticleView;
+    this._articleListView = articleListView;
   }
 
-  ArticleController.prototype.insertHTML = function () {
-    mainDiv.innerHTML = this._articleListView.render();
+  ArticleController.prototype.insertHTML = function (hello) {
+    console.log(this._articleList);
+    mainDiv = hello;
+  };
+
+  ArticleController.prototype.hashChangeListener = function () {
+    var that = this;
+    window.addEventListener("hashchange", function() {
+      var id = location.hash.split('/')[1];
+      var singleArticle = that._articleList.articles().filter(function(item) {
+        return item.id() == id;
+      })[0];
+      that.singleArticleInsertHTML(singleArticle);
+    })
+  };
+
+  ArticleController.prototype.singleArticleInsertHTML = function (singleArticle) {
+    mainDiv.innerHTML = new this._singleArticleView(singleArticle).render();
+  };
+
+  ArticleController.prototype.ajaxRequest = function () {
+    var that = this;
+    var xhttp = new XMLHttpRequest();
+    var guardian_endpoint = GUARDIAN_ENDPOINT;
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var results = JSON.parse(this.responseText).response.results;
+        results.forEach(function(result) {
+          var secondXhttp = new XMLHttpRequest();
+          var url = result.webUrl;
+          var headline = result.webTitle;
+          var image = result.fields.thumbnail;
+
+          var aylien_endpoint = AYLIEN_ENDPOINT + url;
+
+          secondXhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var summary = JSON.parse(this.responseText).sentences.join(' ');
+              that._articleList.add(headline, image, summary, url);
+              mainDiv.innerHTML = (new that._articleListView(that._articleList).render());
+            }
+          }
+          secondXhttp.open("GET", aylien_endpoint, true);
+          secondXhttp.send();
+        })
+      }
+    };
+
+    xhttp.open("GET", guardian_endpoint, true);
+    xhttp.send();
   };
 
   exports.ArticleController = ArticleController;
 
 }(this));
+
+var articleController = new ArticleController(ArticleListView, new ArticleList(Article), SingleArticleView);
+articleController.ajaxRequest();
+articleController.hashChangeListener();
