@@ -4,7 +4,7 @@ This app uses the Guardian API to get news articles for the day and the Aylien A
 
 You can only run the app locally once you have replaced the GUARDIAN_ENDPOINT and AYLIEN_ENDPOINT placeholders in the src/article-controller.js file with their respective working urls.
 
-To run the app:
+Clone the repo:
 ```
 $ git clone https://github.com/cazwazacz/news-summary-challenge.git
 ```
