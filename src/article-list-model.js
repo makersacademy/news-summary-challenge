@@ -11,9 +11,9 @@
       return this.list_
     },
 
-    addArticle: function(id, headline, summary, inDepth, image) {
+    addArticle: function(id, headline, summary, url, thumbnail) {
       this.articleCount ++
-      this.list_.push(new this.articleClass(this.articleCount, headline, summary, inDepth, image))
+      this.list_.push(new this.articleClass(this.articleCount, headline, summary, url, thumbnail))
     }
   }
 

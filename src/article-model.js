@@ -1,10 +1,10 @@
 (function(exports){
-  function Article(id, headline, summary, inDepth, image){
+  function Article(id, headline, summary, url, thumbnail){
     this.id_ = id
     this.headline_ = headline
     this.summary_  = summary
-    this.inDepth_ = inDepth
-    this.image_ = image
+    this.url_ = url
+    this.thumbnail_ = thumbnail
   }
 
   Article.prototype = {
@@ -17,11 +17,11 @@
     summary: function (){
       return this.summary_
     },
-    inDepth: function (){
-      return this.inDepth_
+    url: function (){
+      return this.url_
     },
-    image: function (){
-      return this.image_
+    thumbnail: function (){
+      return this.thumbnail_
     }
   }
 

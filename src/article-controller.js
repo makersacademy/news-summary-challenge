@@ -4,8 +4,8 @@
     this.articleListView_ = articleListView
   }
 
-  ArticleController.prototype.addArticle = function(id, headline, summary, inDepth, image){
-    this.articleListView_.articleList_.addArticle(id, headline, summary, inDepth, image)
+  ArticleController.prototype.addArticle = function(id, headline, summary, url, thumbnail){
+    this.articleListView_.articleList_.addArticle(id, headline, summary, url, thumbnail)
   }
 
   ArticleController.prototype.xhttp = function () {
@@ -13,11 +13,12 @@
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        response = JSON.parse(this.responseText).response.results;
-        response.forEach(function(result){
-          // console.log(response);
+        results = JSON.parse(this.responseText).response.results;
+        results.forEach(function(result){
           var headline = result.webTitle
-          self.addArticle(1, headline,1, 1, 1 )
+          var url = result.webUrl
+          console.log(result);
+          self.addArticle(1, headline,1, url, 1 )
         })
       };
     };

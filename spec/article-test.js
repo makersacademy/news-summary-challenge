@@ -1,5 +1,5 @@
 
-var article = new Article('id', 'headline', 'summary', 'inDepth', 'image')
+var article = new Article('id', 'headline', 'summary', 'url', 'thumbnail')
 
   function testId() {
     var describe = 'article should have id'
@@ -16,18 +16,18 @@ var article = new Article('id', 'headline', 'summary', 'inDepth', 'image')
     assert.isTrue(describe, article.summary() === 'summary');
   };
 
-  function testInDepth() {
-    var describe = 'article should have inDepth'
-    assert.isTrue(describe, article.inDepth() === 'inDepth');
+  function testUrl() {
+    var describe = 'article should have url'
+    assert.isTrue(describe, article.url() === 'url');
   };
 
-  function testImage() {
-    var describe = 'article should have image'
-    assert.isTrue(describe, article.image() === 'image');
+  function testThumbnail() {
+    var describe = 'article should have thumbnail'
+    assert.isTrue(describe, article.thumbnail() === 'thumbnail');
   };
 
 testHeadline();
 testSummary();
-testInDepth();
-testImage();
+testUrl();
+testThumbnail();
 testId();
