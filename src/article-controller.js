@@ -45,10 +45,7 @@
           var url = result.webUrl;
           var headline = result.webTitle;
           var image;
-          result.fields ? image = result.fields.thumbnail : 'nothings';
-          // if (result.fields) {
-          //   var image = result.fields.thumbnail;
-          // }
+          result.fields ? image = result.fields.thumbnail : image = 'https://image.ibb.co/c0bv2w/image_unavailable.jpg';
 
           var aylien_endpoint = AYLIEN_ENDPOINT + url;
 
