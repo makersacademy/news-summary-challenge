@@ -11,7 +11,6 @@
 
   describe('An article list can create add new articles', function() {
     articleList.add('Headline', 'ImageURL', 'Summary', 'ArticleURL');
-    console.log(articleList.articles());
     return assert.isTrue(articleList.articles().length === 1);
   })
 
