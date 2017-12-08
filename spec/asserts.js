@@ -7,12 +7,12 @@ var assert = {
     }
   },
 
-  isEqual: function(one, two) {
-    if(one !== two) {
-      return(`Assertion failed:` + one + `is not equal to` + two );
-    } else {
-      return(`Assertion passed:` + one + `is equal to` + two )
-    }
+  isEqual: function(describe, one, two) {
+  if(!(one === two)) {
+    return(`Assertion failed:` + one + `is not equal to` + two );
+  } else {
+    return(`Assertion passed:` + one + `is not equal to` + two )
   }
+}
 
 }

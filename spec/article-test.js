@@ -26,8 +26,8 @@ var article = new Article('id', 'headline', 'summary', 'inDepth', 'image')
     assert.isTrue(describe, article.image() === 'image');
   };
 
-this.testHeadline();
-this.testSummary();
+testHeadline();
+testSummary();
 testInDepth();
 testImage();
 testId();

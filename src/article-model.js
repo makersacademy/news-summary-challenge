@@ -27,4 +27,4 @@
 
   exports.Article = Article
 
-})(this)
+}(this));
