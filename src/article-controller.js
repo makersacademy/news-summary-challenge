@@ -12,11 +12,6 @@
     this._xmlHTTPRequest = xmlHTTPRequest;
   }
 
-  ArticleController.prototype.insertHTML = function (hello) {
-    console.log(this._articleList);
-    mainDiv = hello;
-  };
-
   ArticleController.prototype.hashChangeListener = function () {
     var that = this;
     window.addEventListener("hashchange", function() {
@@ -39,7 +34,6 @@
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var results = JSON.parse(this.responseText).response.results;
-        console.log(results);
         results.forEach(function(result) {
           var secondXhttp = new that._xmlHTTPRequest();
           var url = result.webUrl;
