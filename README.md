@@ -28,6 +28,6 @@ $ node node_modules/http-server/bin/http-server
 To-do
 ---
 - More tests
-- Work on CSS and styling, make it more responsive
+- Work on CSS and styling, make it responsive
 - Add animations
 - Refactor code, patricularly in src/node-controller.js
