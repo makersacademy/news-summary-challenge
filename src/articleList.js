@@ -17,7 +17,14 @@ ArticleList.prototype = {
     return this._articles;
   },
 
-}
+  getArticleById: function(id) {
+    for(var i = 0; i < this._articles.length; i++) {
+      if(this._articles[i].id() === id) {
+        return this._articles[i];
+      }
+    }
+  },
+};
 
 exports.ArticleList = ArticleList;
 })(this);
