@@ -9,6 +9,8 @@
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           var data = JSON.parse(this.responseText)
+          var arr = ["wow", "nice"]
+          console.log(arr[0])
           sort(data);
         }
       }

@@ -1,10 +1,10 @@
-function RenderNews(data = null) {
+function RenderNews(data) {
   this._data = data;
 
   RenderNews.prototype.allNews = function() {
   var htmlString = ""
     var news = this._data
-  console.log(news)
+  console.log('3', news)
     htmlString += `<li><div>${news.response.results[0].webTitle}</div></li>`
     document.getElementById("app").innerHTML = htmlString;
   // this._noteList.list().forEach(function(note){
