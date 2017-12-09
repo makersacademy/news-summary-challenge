@@ -1,5 +1,11 @@
 (function (exports){
 
+var guardianKey = config.GUARDIAN_KEY;
+var aylienKey = config.AYLIEN_KEY;
+var aylienId = config.AYLIEN_ID;
+
+
+
   function ArticleController (articleListView = new ArticleListView, articleView = new ArticleView){
     this.articleListView_ = articleListView
     this.articleView_ = articleView
@@ -21,15 +27,26 @@
       if (this.readyState == 4 && this.status == 200) {
         results = JSON.parse(this.responseText).response.results;
         results.forEach(function(result){
+          xhttpSummary = new XMLHttpRequest();
           var headline = result.webTitle
           var url = result.webUrl
           console.log(result);
           self.addArticle(1, headline,1, url, 1 )
+
+          xhttpSummary.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              results = JSON.parse(this.responseText)
+              console.log(results)
+            }
+          }
+          xhttpSummary.open("GET", "https://api.aylien.com/api/v1/summarize?" + url)
+            // -H "X-AYLIEN-TextAPI-Application-ID: AYLIEN_ID"  \
+            // -H "X-AYLIEN-TextAPI-Application-Key: AYLIEN_KEY", true)
+          xhttpSummary.send()
         })
       };
     };
-    xhttp.open("GET", "https://content.guardianapis.com/search?business&api-key=53f2b43f-aa5f-4910-8a62-d5a63d730359", true);
-    // xhttp.open("GET", "../spec/mock-api.json", true);
+    xhttp.open("GET", "https://content.guardianapis.com/search?business&api-key=" + guardianKey, true);
     xhttp.send()
   }
 
