@@ -24,7 +24,7 @@ var assert = {
   },
 
   isEqual: function(describe, val1, val2){
-    if(val1 !== val2){
+    if(val1 != val2){
       throw new Error("Assertion failed: " + val1 + " is not equal to " + val2)
     } else {
       console.log(describe)
