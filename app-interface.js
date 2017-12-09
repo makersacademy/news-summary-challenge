@@ -1,2 +1,2 @@
-
-var api = new ArticleList();
+var newspaper = new ArticleList();
+newspaper.getData();
