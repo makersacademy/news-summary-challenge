@@ -1,10 +1,10 @@
 'use strict';
 (function(exports) {
 
-  function Article(headline, body, url, date, thumbImage, mainImage) {
+  function Article(headline, content, addr, date, thumbImage, mainImage) {
     this._headline = headline;
-    this._body = body;
-    this._url = url;
+    this._content = content;
+    this._addr = addr;
     this._date = date;
     this._thumbImage = thumbImage;
     this._mainImage = mainImage;
@@ -16,12 +16,12 @@
       return this._headline;
     },
 
-    body: function() {
-      return this._body;
+    content: function() {
+      return this._content;
     },
 
-    url: function() {
-      return this._url;
+    addr: function() {
+      return this._addr;
     },
 
     date: function() {
@@ -39,7 +39,7 @@
     id: function() {
       return this._id;
     },
-  }
+  };
 
   exports.Article = Article;
 })(this);
