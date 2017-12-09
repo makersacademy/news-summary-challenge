@@ -1,0 +1,1 @@
+http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?tag=politics/politics&from-date=2017-11-01
