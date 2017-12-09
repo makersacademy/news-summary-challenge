@@ -39,7 +39,7 @@ var aylienId = config.AYLIEN_ID;
               console.log(results)
             }
           }
-          xhttpSummary.open("GET", "https://api.aylien.com/api/v1/summarize?" + url)
+          xhttpSummary.open("GET", "https://api.aylien.com/api/v1/summarize?" + url + aylienId + aylienKey )
             // -H "X-AYLIEN-TextAPI-Application-ID: AYLIEN_ID"  \
             // -H "X-AYLIEN-TextAPI-Application-Key: AYLIEN_KEY", true)
           xhttpSummary.send()
