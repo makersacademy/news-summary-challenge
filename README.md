@@ -1,5 +1,8 @@
 # News Summary Reader
 
+This project is live [here](http://ten-bell.surge.sh/).
+---
+
 This app uses the Guardian API to get news articles for the day and the Aylien API to summarise those articles and display them on the page. Only HTML, CSS and pure JavaScript is used, no frameworks.
 
 You can only run the app locally once you have replaced the GUARDIAN_ENDPOINT and AYLIEN_ENDPOINT placeholders in the src/article-controller.js file with their respective working urls.
