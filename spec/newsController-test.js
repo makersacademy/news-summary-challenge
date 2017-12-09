@@ -6,7 +6,7 @@ function DoubleApi() {
 }
 
 function Testgetdata() {
-  var controller = new NewsController(new DoubleApi)
+  var controller = new Controller(new DoubleApi)
   var describe = "#getData - Returns api data"
   assert.isEqual(describe, controller.getData(), doubleApiData )
 }

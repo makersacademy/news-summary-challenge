@@ -1,34 +1,29 @@
 (function(exports) {
-  function NewsController(api = new Api) {
-    this._api = api;
+  function Controller(render = new RenderNews) {
+    this._render = render;
 
-    NewsController.prototype.getData = function() {
-       return this._api.data();
+    Controller.prototype.getNews = function() {
+      var guardian = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world"
+      var that = this
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", guardian, true);
+
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var data = JSON.parse(this.responseText)
+          that.render(data.response)
+        }
+      }
+     xhttp.send();
     };
+
+    Controller.prototype.render = function(data) {
+      var renderNews = this._render
+      renderNews.allNews(data);
+    }
   }
-  exports.NewsController = NewsController;
+
+  exports.Controller = Controller;
 })(this);
-
-
-// controller = new NewsController();
-// data       = controller.getData();
-// console.log('wow' , data[0])
-// render     = new RenderNews(data);
-// render.allNews();
-
-var data = []
-controller = new NewsController();
-function mySandwich(callback) {
-  data.push(controller.getData());
-  console.log('1', data)
-
-    console.log('wow', data.length)
-  };
-  callback();
-}
-
-mySandwich(function() {
-  var render     = new RenderNews(data);
-  console.log('2', render._data[0])
-  render.allNews();
-});
+   var controller = new Controller();
+   controller.getNews();

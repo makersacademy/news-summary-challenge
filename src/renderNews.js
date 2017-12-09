@@ -1,20 +1,15 @@
-function RenderNews(data) {
-  this._data = data;
+function RenderNews() {
 
-  RenderNews.prototype.allNews = function() {
-  var htmlString = ""
-    var news = this._data
-  console.log('3', news)
-    htmlString += `<li><div>${news.response.results[0].webTitle}</div></li>`
-    document.getElementById("app").innerHTML = htmlString;
-  // this._noteList.list().forEach(function(note){
-  //   if (note.text().length > 20) {
-  //     htmlString += `<li><div>${note.text().slice(0,20)}...</div></li>`
-  //   } else {
-  //     htmlString += `<li><div>${note.text()}</div></li>`
-  //   }
-  // });
-  // return (`<ul>${htmlString}</ul>`)
-};
+  RenderNews.prototype.allNews = function(data) {
+    var htmlString = ""
+    console.log('3', data.results[1].webTitle)
+
+    for (var i = 0; i < data.results.length; i++){
+      htmlString += `<li><div>${data.results[i].webTitle}</div></li><div><a href="${data.results[i].webUrl}">Original Article</a></div><br />`
+    }
+
+    var final = (`<ul>${htmlString}</ul>`)
+    document.getElementById("app").innerHTML = final;
+
+  };
 }
-// data.response.results[i].webUrl
