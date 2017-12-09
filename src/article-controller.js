@@ -60,6 +60,14 @@
     xhttp.send();
   };
 
+  ArticleController.prototype.useSeedData = function (array) {
+    var that = this;
+    array.forEach(function(article) {
+      that._articleList.add(article._headline, article._image, article._summary, article._articleURL)
+    })
+    mainDiv.innerHTML = (new this._articleListView(this._articleList).render());
+  };
+
   exports.ArticleController = ArticleController;
 
 }(this));
