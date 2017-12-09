@@ -4,19 +4,23 @@
     Api.prototype.data = function () {
       var xhttp = new XMLHttpRequest();
       xhttp.open("GET",  "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world", true);
-      var ApiData = []
+      var headlines = []
 
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           var data = JSON.parse(this.responseText)
-          ApiData.push(data.response.results)
+          sort(data);
         }
       }
+        function sort(data) {
+        for (i = 0; i < 10; i++) {
+          headlines.push(`${data.response.results[i].webTitle}#${data.response.results[i].webUrl}`)
+        }
+      }
+
       xhttp.send();
-      return ApiData;
+      return headlines;
     };
   }
   exports.Api = Api;
 })(this);
-
-// console.log(getApi());
