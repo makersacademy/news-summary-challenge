@@ -1,5 +1,5 @@
 (function (exports) {
-  function List (post) {
+  function List (post = Post) {
     this._list = [];
     this._post = post;
   }
