@@ -8,7 +8,7 @@
     return this.articleList_
   }
 
-  ArticleListView.prototype.showList = function() {
+  ArticleListView.prototype.renderHTML = function() {
       noteArray = this.articleList_.list().map(function(article){
       return `<ul><li><div><a href="#articles/${article.id()}">${(article.headline())}</a></div></li></ul>`
       })
