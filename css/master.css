@@ -60,11 +60,12 @@ h3 {
 
 .nav-background {
   background-color: rgb(33, 101, 150);
-  margin: -10px -5px -2px -5px;
+  margin: -10px -5px 3px -5px;
+  padding: 15px 0 15px 0;
 }
 
 .each-article {
-  padding-bottom: 10px;
+  padding-bottom: 4px;
 }
 
 .each-article h3 {
@@ -91,5 +92,9 @@ footer {
 footer a {
   color: rgb(77, 77, 77);
   text-decoration: underline;
-  /*font-weight: bold;*/
+}
+
+#home-button {
+  padding-left: 10px;
+  color: rgb(247, 247, 247);
 }
