@@ -1,6 +1,7 @@
 'use strict';
 
-function Headline(){
-  this.link = ''
-  this.image = ''
+function Headline(title, date, url ){
+  this.title = title
+  this.date = date
+  this.url = url
 }

@@ -1,0 +1,2 @@
+
+var api = new ArticleList();
