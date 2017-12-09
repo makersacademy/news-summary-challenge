@@ -1,8 +1,9 @@
 (function(exports) {
-  function NewsController() {
+  function NewsController(api = new Api) {
+    this._api = api
 
     NewsController.prototype.getData = function() {
-       console.log(getApi());
+       return api.data();
     };
   }
   exports.NewsController = NewsController;
