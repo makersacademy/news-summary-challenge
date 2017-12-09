@@ -1,0 +1,26 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "Week 7 Weekend Challenge",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/test-runner.js",
+    "start": "node_modules/http-server/bin/http-server . -p 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyrow123/news-summary-challenge.git"
+  },
+  "author": "“Austin <“andyrow123@hotmail.co.uk”>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andyrow123/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/andyrow123/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}
