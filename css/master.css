@@ -12,6 +12,7 @@ body {
   padding-bottom: 4rem;
   min-height: 100%;
   margin: 0;
+  font-family: 'Merriweather', serif;
 }
 
 #app {
@@ -36,16 +37,14 @@ a:hover {
 h2 {
   display: inline;
   color: rgb(247, 247, 247);
+  font-size: 2em;
+  font-weight:900;
 }
 
 h3 {
   text-align: left;
   max-width: 500px;
   margin: 0 auto;
-}
-
-#home-button {
-  float: left;
 }
 
 #header {
@@ -61,7 +60,7 @@ h3 {
 .nav-background {
   background-color: rgb(33, 101, 150);
   margin: -10px -5px 3px -5px;
-  padding: 15px 0 15px 0;
+  padding: 10px 0 5px 0;
 }
 
 .each-article {
@@ -95,6 +94,7 @@ footer a {
 }
 
 #home-button {
-  padding-left: 10px;
+  float: left;
+  padding: 5px 0 0 10px;
   color: rgb(247, 247, 247);
 }
