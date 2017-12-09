@@ -85,16 +85,47 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
+  font-size: 0.8em;
   padding: 1rem;
+  color: rgb(247, 247, 247);
+  background-color: rgb(33, 101, 150);
 }
 
 footer a {
-  color: rgb(77, 77, 77);
-  text-decoration: underline;
+  color: rgb(161, 219, 252);
+}
+
+footer a:visited {
+  color: rgb(161, 219, 252);
+}
+
+#only {
+  color: rgb(161, 219, 252);
 }
 
 #home-button {
   float: left;
   padding: 5px 0 0 10px;
   color: rgb(247, 247, 247);
+}
+
+.single-view-article {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: rgb(242, 242, 242);
+  padding-bottom: 5px;
+}
+
+.single-view-article a {
+  text-decoration: underline;
+}
+
+.single-view-article h3 {
+  padding: 0 5px;
+}
+
+.article-summary {
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 10px 5px 10px 5px;
 }
