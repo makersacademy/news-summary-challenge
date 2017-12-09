@@ -1,10 +1,15 @@
 (function (exports) {
-  function Article (headline, url, thumbnailUrl, api) {
+  function Article (id, headline, url, thumbnailUrl, api) {
+    this.id = id
     this.headline = headline
     this.url = url
     this.thumbnailUrl = thumbnailUrl
     this.api = api
   }
+
+  Article.prototype.getId = function () {
+    return this.id;
+  };
 
   Article.prototype.getHeadline = function () {
     return this.headline;
