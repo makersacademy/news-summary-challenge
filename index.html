@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/master.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>News Reader</title>
+  </head>
+  <body>
+    <div class="nav-background">
+      <div class="nav">
+        <a id="home-button" href="/"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+        <div id="header">
+          <a href="/"><h2><span id="only">only</span>news</h2></a>
+        </div>
+      </div>
+    </div>
+    <div id="app">
+      <img src="assets/ajax-loader.gif" alt="loading...">
+    </div>
+
+    <footer>Made using the <a href="http://open-platform.theguardian.com/">Guardian</a> and <a href="https://aylien.com/">Aylien</a> APIs</footer>
+
+    <script type="text/javascript" src="api-endpoints.js"></script>
+    <script type="text/javascript" src="seed-data.js"></script>
+    <script type="text/javascript" src="src/article-model.js"></script>
+    <script type="text/javascript" src="src/article-list-model.js"></script>
+    <script type="text/javascript" src="src/article-list-view-model.js"></script>
+    <script type="text/javascript" src="src/single-article-view-model.js"></script>
+    <script type="text/javascript" src="src/article-controller.js"></script>
+    <script type="text/javascript" src="src/main-controller.js"></script>
+  </body>
+</html>
