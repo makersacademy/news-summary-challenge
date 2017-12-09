@@ -1,45 +1,50 @@
 
 // mock objects here:
 
-function postDouble (headline, text, id) {
+function PostDouble (headline, text, id) {
   this._headline = headline;
-  this._id = id;
   this._text = text;
+  this._id = id;
 }
-postDouble.prototype = {
-  text: function () {
-    return this._text;
-  },
-  headline: function () {
-    return this._headline;
-  }
+PostDouble.prototype = {
+  text: function () { return this._text; },
+  headline: function () { return this._headline; },
+  id: function () { return this._id; }
 };
 
-function listDouble (array) {
-  this._list = array;
+function ListDouble (array) {
+this._list = array;
 }
-listDouble.prototype.list = function () {
+ListDouble.prototype.list = function () {
   return this._list;
 };
 
 
-
 // describe tests here:
 
-function viewObjectExists () {
+function viewObjectExists() {
   var describe = 'ListView: object exists';
   var view = new View ();
   assert.isTrue(describe, view instanceof View);
 }
 
+function returnsEmptyHtmlHeader() {
+  var describe = 'returns empty headline as HTML';
+  list = new ListDouble ([]);
+  view = new View(list);
+  html = '<ul></ul>';
+  assert.isEqual(describe, view.renderHtml(), html);
+}
 function returnsHtmlHeader() {
   var describe = 'returns headline as HTML href string';
-  view = new View(listDouble);
-  htmlString = '<ul><li><div><a href="#headlines/header1">new post</a></div></li>';
-  assert.isEqual(describe, view.renderHtml(), htmlString);
+  list = new ListDouble ([ new PostDouble('headline', 'text', 'id') ]);
+  view = new View(list);
+  html = '<ul><li><div><a href="#headlines/headline">text</a></div></li></ul>';
+  assert.isEqual(describe, view.renderHtml(), html);
 }
 
 // call functions here:
 
 viewObjectExists();
+returnsEmptyHtmlHeader()
 returnsHtmlHeader();
