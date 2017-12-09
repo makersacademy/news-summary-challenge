@@ -7,8 +7,7 @@
     SingleArticleView,
     XMLHttpRequest
   );
-  // articleController.ajaxRequest();
-  articleController.useSeedData(new SeedForArticleList().seed());
+  articleController.ajaxRequest();
   articleController.hashChangeListener();
 
 }());
