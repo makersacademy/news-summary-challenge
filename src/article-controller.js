@@ -4,11 +4,8 @@ var guardianKey = config.GUARDIAN_KEY;
 var aylienKey = config.AYLIEN_KEY;
 var aylienId = config.AYLIEN_ID;
 
-
-
-  function ArticleController (articleListView = new ArticleListView, articleView = new ArticleView){
+  function ArticleController (articleListView = new ArticleListView){
     this.articleListView_ = articleListView
-    this.articleView_ = articleView
   }
 
   ArticleController.prototype.addArticle = function(id, headline, summary, url, thumbnail){
@@ -20,6 +17,21 @@ var aylienId = config.AYLIEN_ID;
     index.innerHTML = this.articleListView_.renderHTML();
   }
 
+  ArticleController.prototype.singleArticle = function (id) {
+    return this.articleListView_.articleList_.list()[id]
+  }
+
+  ArticleController.prototype.changeOnUrlChange = function () {
+    var self = this;
+    window.addEventListener("hashchange", function(){
+      var id = window.location.hash.split('#')[1]
+      var article = self.singleArticle(id)
+      var singleArticleView = new ArticleView(article)
+      document.getElementById('app').innerHTML = singleArticleView.renderHTML()
+    })
+  }
+
+
   ArticleController.prototype.xhttp = function () {
     var self = this;
     xhttp = new XMLHttpRequest();
@@ -27,22 +39,10 @@ var aylienId = config.AYLIEN_ID;
       if (this.readyState == 4 && this.status == 200) {
         results = JSON.parse(this.responseText).response.results;
         results.forEach(function(result){
-          xhttpSummary = new XMLHttpRequest();
           var headline = result.webTitle
           var url = result.webUrl
           console.log(result);
           self.addArticle(1, headline,1, url, 1 )
-
-          xhttpSummary.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-              results = JSON.parse(this.responseText)
-              console.log(results)
-            }
-          }
-          xhttpSummary.open("GET", "https://api.aylien.com/api/v1/summarize?" + url + aylienId + aylienKey )
-            // -H "X-AYLIEN-TextAPI-Application-ID: AYLIEN_ID"  \
-            // -H "X-AYLIEN-TextAPI-Application-Key: AYLIEN_KEY", true)
-          xhttpSummary.send()
         })
       };
     };
