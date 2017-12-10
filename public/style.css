@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+
+
+body {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/97/Palace_of_Westminster%2C_London_-_Feb_2007.jpg");
+  background-repeat: no-repeat;
+  font-family: 'Playfair Display';
+  color: black;
+  height: 100%;
+}
+
+h2.story-title {
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+div.information {
+  margin: 0.5em;
+}
+
+span.story-date {
+  margin-bottom: 0.5em;
+  float: right;
+}
+
+a.story-link {
+  font-family: 'Oxygen';
+}
+
+div.story {
+  background-color: rgba(200, 200, 200, 0.9);
+  width: 35em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: -2px 2px dimgrey;
+}
+
+div.content {
+  opacity: 1;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0.5em;
+  box-shadow: -2px 2px darkgrey;
+}
+
+div.story-desc {
+  padding: 1em;
+  font-size: 1em;
+  height: 9em;
+  font-family: 'Oxygen';
+  text-align: justify;
+  color: black;
+}
+
+img.story-img {
+  vertical-align: text-top;
+  height: 9em;
+  width: 9em;
+  object-fit: cover;
+  float: left;
+  margin: 1em;
+  border-radius: 5px
+}
+

@@ -1,9 +1,12 @@
 'use strict';
 
 (function(exports) {
-  var storyModule = require('./story');
+  if (typeof(require) !== undefined) {
+    var storyModule = require('./story');
+    var story = storyModule.story;
+  };
 
-  function Stories(storyProto = storyModule.story) {
+  function Stories(storyProto = story) {
     this._storyProto = storyProto;
     this._list = [];
   };

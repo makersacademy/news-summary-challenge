@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Polican</title>
+    <link rel="stylesheet" href="../public/style.css">
+  </head>
+  <body>
+    <div id="main">
+    </div>
+    <script src="../models/story.js"></script>
+    <script src="./storyView.js"></script>
+    <script src="../models/stories.js"></script>
+    <script type="text/javascript">
+      var data = {
+        "date": "2017-12-09T12:22:19Z",
+        "title": "Boris Johnson arrives in Iran to discuss release of Zaghari-Ratcliffe",
+        "link": "https://www.theguardian.com/politics/2017/dec/09/boris-johnson-iran-nazanin-zaghari-ratcliffe",
+        "description": "Michael Gove has said voters will be able to force changes to an EU withdrawal deal at the next election if they do not like it.\n\nThe environment secretary’s comments came as prime minister Theresa May won public backing from both wings of the Tory party after securing an agreement with Brussels to start post-Brexit trade negotiations.\n\nWriting in the Daily Telegraph, Gove said: “The British people will be in control. If the British people dislike the agreement that we have negotiated with the EU, the agreement will allow a future government to diverge.”\n\nHe said that after a transition period, the UK would have “full freedom to diverge from EU law on the single market and customs union”.\n\nFormer Ukip leader Nigel Farage predicted that Tory anger at May’s agreement with European Commission president Jean-Claude Juncker would emerge over the weekend. He told the BBC: “I think that within the next 48 hours you will hear a lot more Conservative voices... saying, actually, they are not happy with what’s happened today.”\n\nProposals allowing the European court of justice a role in overseeing EU citizens’ rights in Britain for eight years after Brexit have worried some Tories. Also of concern is a compromise on the Irish border issue which states that if no trade deal is reached, the UK as a whole will maintain “full alignment” with elements of the EU single market and customs union which support the economy of Ireland and the Good Friday Agreement.\n\nTory former Brexit minister David Jones warned this could “severely handicap” Britain’s ability to enter free trade agreements covering areas such as agriculture with countries outside the EU, including the US.\n\nBut justice minister Dominic Raab said the details of how to deal with the issue of the Irish border had still to be worked out in full.\n\nHe told BBC 2’s Newsnight: “You can call it strategic ambiguity, you can call it constructive ambiguity... what I am admitting to you, very openly, and honestly, is that we have agreed principles, but that the details still need to be ironed out on this very bespoke set of issues around Northern Ireland which can’t be dealt with properly and responsibly outside of the context of the broader negotiation on customs and trade and all of those other things we have said all along.”",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Boris_Johnson_-opening_bell_at_NASDAQ-14Sept2009-3c_cropped.jpg/190px-Boris_Johnson_-opening_bell_at_NASDAQ-14Sept2009-3c_cropped.jpg",
+      };
+      var item = story(data);
+      var view = getStoryView(item);
+      document.querySelector('#main').innerHTML = view.toHTML();
+    </script>
+  </body>
+</html>
