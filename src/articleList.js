@@ -23,8 +23,9 @@ ArticleList.prototype = {
         return this._articles[i];
       }
     }
-  },
-};
+  }
+
+}
 
 exports.ArticleList = ArticleList;
 })(this);
