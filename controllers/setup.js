@@ -13,7 +13,7 @@ var stories = new Stories();
 
 function getJSON(url, callback) {
   var request = new XMLHttpRequest();
-  request.open('GET', url);
+  request.open('GET', url, true);
   request.onreadystatechange = function() {
     if ((this.status >= 200) && (this.readyState == 4)) {
       callback(JSON.parse(this.responseText));
@@ -22,9 +22,10 @@ function getJSON(url, callback) {
   request.send();
 };
 
-function display() {
+function displayAll() {
   var view = getStoriesView(stories);
   document.querySelector('#main').innerHTML = view.toHTML();
+  attachFullScreenListeners();
 };
 
 function getAylienData(query, callback) {
@@ -33,8 +34,8 @@ function getAylienData(query, callback) {
 
 function getUpdateCallback(title) {
   return function(data) {
-    stories.get(title).setDesc(data.text);
-    display();
+    stories.getTitle(title).setDesc(data.text);
+    displayAll();
   };
 };
 
@@ -63,9 +64,9 @@ function jsonToStories(data) {
   return stories;
 }
 
-function displayJSON(data) {
+function displayAllJSON(data) {
   var stories = jsonToStories(data);
-  display();
+  displayAll();
 };
 
-getGuardianData(displayJSON);
+getGuardianData(displayAllJSON);

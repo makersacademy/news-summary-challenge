@@ -2,24 +2,37 @@
 @import url('https://fonts.googleapis.com/css?family=Oxygen');
 
 body {
-  background: url("https://www.electoral-reform.org.uk/wp-content/uploads/2017/05/HOUSE-OF-COMMONS.jpg");
-  background-repeat: no-repeat;
+  background: url("http://localhost:8080/spiration-light.png");
   background-attachment: fixed;
+  background-position: center center;
   font-family: 'Playfair Display';
   color: black;
   height: 100%;
+  margin: 0em;
 }
 
-div.main {
-  margin: 0;
+div#header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: lightgrey;
+  height: 4em;
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  font-family: roboto;
+}
+
+div#main {
+  margin-top; 30px
 }
 
 div.stories {
-  background-color: rgba(100, 100, 100, 0.8);
-  padding: 2em;
-  width: 45em;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 8em;
+  width: 100%;
   margin: 0 auto;
-  height: 100%
+  min-height: 100vh;
 }
 
 h2.story-title {
@@ -40,7 +53,8 @@ span.story-date {
 }
 
 a.story-link {
-  font-family: 'Oxygen';
+  color: steelblue;
+  text-decoration: none;
 }
 
 div.story {
@@ -54,11 +68,17 @@ div.story {
 }
 
 div.content {
-  opacity: 1;
   background-color: white;
   border-radius: 5px;
   padding: 0.5em;
   box-shadow: 1px 2px darkgrey;
+  transition: 1s;
+}
+
+div.content:hover {
+  background-color: aliceblue;
+  box-shadow: 2px 3px dimgrey;
+  transition: 1s;
 }
 
 div.story-desc {
@@ -68,7 +88,14 @@ div.story-desc {
   font-family: 'Oxygen';
   text-align: justify;
   color: black;
+  transition: 0.5s;
 }
+
+div.story-desc:hover {
+  color: cadetblue;
+  transition: 0.5s;
+}
+
 
 img.story-img {
   vertical-align: text-top;
@@ -79,5 +106,13 @@ img.story-img {
   margin: 1em;
   border-radius: 5px;
   box-shadow: 1px 2px dimgrey;
+}
+
+div.full-story {
+  width: 50em;
+}
+
+div.full-content {
+  height: 30em;
 }
 

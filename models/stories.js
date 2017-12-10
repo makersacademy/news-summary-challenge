@@ -23,7 +23,11 @@
     return this._list;
   };
 
-  Stories.prototype.get = function(title) {
+  Stories.prototype.getIndex = function(index) {
+    return this._list[index];
+  };
+
+  Stories.prototype.getTitle = function(title) {
     for (var index = 0; index < this._list.length; index++) {
       var story = this._list[index];
       if (story.title() == title) {

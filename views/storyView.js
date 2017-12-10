@@ -42,6 +42,20 @@
       </div>`;   
   };
 
+  storyView.prototype.toFullPage = function() {
+    return `<div class="full-story story">
+        ${this.title()}
+        <div class="information">
+          ${this.link()}
+          ${this.date()}
+        </div>
+        <div class="content full-content">
+          ${this.img()}${this.desc()}
+        </div>
+      </div>`;   
+  };
+
+
   function getStoryView(story) {
     return new storyView(story);
   };
