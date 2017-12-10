@@ -6,7 +6,6 @@
 
 
 body {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/97/Palace_of_Westminster%2C_London_-_Feb_2007.jpg");
   background-repeat: no-repeat;
   font-family: 'Playfair Display';
   color: black;
@@ -39,7 +38,7 @@ div.story {
   width: 35em;
   padding: 1em;
   border-radius: 5px;
-  box-shadow: -2px 2px dimgrey;
+  box-shadow: 2px 3px dimgrey;
 }
 
 div.content {
@@ -47,7 +46,7 @@ div.content {
   background-color: white;
   border-radius: 5px;
   padding: 0.5em;
-  box-shadow: -2px 2px darkgrey;
+  box-shadow: 1px 2px darkgrey;
 }
 
 div.story-desc {
@@ -66,6 +65,7 @@ img.story-img {
   object-fit: cover;
   float: left;
   margin: 1em;
-  border-radius: 5px
+  border-radius: 5px;
+  box-shadow: 1px 2px dimgrey;
 }
 

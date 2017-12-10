@@ -30,8 +30,7 @@
   };
 
   storyView.prototype.toHTML = function() {
-    return `
-      <div class="story">
+    return `<div class="story">
         ${this.title()}
         <div class="information">
           ${this.link()}
@@ -40,8 +39,7 @@
         <div class="content">
           ${this.img()}${this.desc()}
         </div>
-      </div>
-    `;   
+      </div>`;   
   };
 
   function getStoryView(story) {
