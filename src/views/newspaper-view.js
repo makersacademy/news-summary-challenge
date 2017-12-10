@@ -10,7 +10,7 @@
         `<a href="#${article.getId()}">${article.getHeadline()}</a>` +
         `</div></li>`
     })
-    return resultingString;
+    return `<ul>${resultingString}</ul>`;
 
   };
 

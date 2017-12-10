@@ -16,9 +16,17 @@
 
   <!-- Mock index.html -->
   <div style="display: none;">
-    <ul id="headlines">
+    <h1>Headlines:</h1>
+    <div>
+      <div>
+        <button type="button" id="load-articles">Refresh Headlines</button>
+        <button type="button" id="collapse-articles">Collapse All</button>
+      </div>
+      <div id="headlines">
 
-    </ul>
+      </div>
+
+    </div>
   </div>
 
 </body>
@@ -31,10 +39,10 @@
 <!-- SOURCE -->
 <script src="src/models/article-model.js"></script>
 <script src="src/models/newspaper-model.js"></script>
-<script src="src/models/http-request-controller.js"></script>
 <script src="src/views/newspaper-view.js"></script>
 <script src="src/views/single-article-view.js"></script>
 <script src="src/controllers/newspaper-controller.js"></script>
+<script src="src/controllers/http-request-controller.js"></script>
 
 <!-- SPEC FILES -->
 <script src="spec/article-model-test.js"></script>

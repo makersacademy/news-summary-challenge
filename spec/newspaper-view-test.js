@@ -8,7 +8,7 @@ describe ('convert Articles to HTML', function () {
   it ('testing with 1 article', function () {
     var newspaperView = new NewspaperView()
     newspaperView.newspaper.newArticle('Hello World')
-    var expectedString = '<li><div id="article-1"><a href="#1">Hello World</a></div></li>'
+    var expectedString = '<ul><li><div id="article-1"><a href="#1">Hello World</a></div></li></ul>'
     expect(newspaperView.headlinesToHtml()).toEqual(expectedString)
   })
 
@@ -17,8 +17,8 @@ describe ('convert Articles to HTML', function () {
     newspaperView.newspaper.newArticle('Hi Everybody!')
     newspaperView.newspaper.newArticle('Hi Dr. Nick!')
     var expectedString =
-      '<li><div id="article-1"><a href="#1">Hi Everybody!</a></div></li>' +
-      '<li><div id="article-2"><a href="#2">Hi Dr. Nick!</a></div></li>'
+      '<ul><li><div id="article-1"><a href="#1">Hi Everybody!</a></div></li>' +
+      '<li><div id="article-2"><a href="#2">Hi Dr. Nick!</a></div></li></ul>'
     expect(newspaperView.headlinesToHtml()).toEqual(expectedString)
   })
 })
