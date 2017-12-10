@@ -9,7 +9,7 @@ describe ('Single Article View', function () {
     var article = new Article(1, 'headline', 'url', 'thumbnail', 'api')
     var singleArticleView = new SingleArticleView (article)
     var expectedHtmlString = '<div><h4>headline</h4></div>' +
-      '<div><img src="thumbnail"></div>' +
+      '<div><img src="thumbnail" style="height: 150px;"></div>' +
       '<div><a href="url">See Full Story</a></div><br>'
 
     expect(singleArticleView.convertToHtml()).toEqual(expectedHtmlString)
