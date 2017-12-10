@@ -6,7 +6,8 @@
 
   ArticleView.prototype = {
     renderHTML: function (){
-      return `<ul><li><div><a href="#articles/${article.id()}">${(article.headline())}</a></div></li></ul>`
+      console.log(this.article_)
+      return `<ul><li><div><a${this.article_.headline()}>${(this.article_.headline())}</a></div></li></ul>`
     }
   }
 

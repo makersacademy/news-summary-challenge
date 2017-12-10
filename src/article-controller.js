@@ -24,8 +24,9 @@ var aylienId = config.AYLIEN_ID;
   ArticleController.prototype.changeOnUrlChange = function () {
     var self = this;
     window.addEventListener("hashchange", function(){
-      var id = window.location.hash.split('#')[1]
-      var article = self.singleArticle(id)
+      var articleId = location.hash.split('/')[1]
+      var article = self.singleArticle(articleId)
+    
       var singleArticleView = new ArticleView(article)
       document.getElementById('app').innerHTML = singleArticleView.renderHTML()
     })
@@ -41,8 +42,9 @@ var aylienId = config.AYLIEN_ID;
         results.forEach(function(result){
           var headline = result.webTitle
           var url = result.webUrl
+          var body  = result.body
           console.log(result);
-          self.addArticle(1, headline,1, url, 1 )
+          self.addArticle(1, headline,body, url, 1 )
         })
       };
     };
