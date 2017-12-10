@@ -11,34 +11,34 @@
     request.onload = function() {
       self._data = JSON.parse(request.responseText).response.results
       callback(self._data, self)
-      // self.renderHTML(self.putInElements(self._data))
-      console.log(self._data)
     }
     request.send()
   }
 
-
-  AllNews.prototype.putInElementsRenderHTML = function(data, self) {
-    console.log(this)
-    console.log(self)
-    self.renderHTML(self.putInElements(data))
+  AllNews.prototype.returnArticleWithSameId = function(id) {
+    var final = this._data.find(function(article){
+      return article.id === id
+    });
+    return final
   }
 
-  AllNews.prototype.putInElements = function(data){
-    var titlearr = data.map(function(item){
-      return '<li><div><a href="' + item.webUrl + '">' + item.webTitle + '</a></div></li>'
-    });
-    return "<ul>" + titlearr.join('') + "</ul>"
+  AllNews.prototype.putInElementsRenderHTML = function(data, self) {
+    self.renderHTML(self.putInElements(data))
   }
 
   AllNews.prototype.renderHTML = function(string){
     document.getElementById('newsfeed').innerHTML = string
   }
 
+  // VIEW
+
+  AllNews.prototype.putInElements = function(data){
+    var titlearr = data.map(function(item){
+      return '<li><div><a href="' + item.webUrl + '">'
+        + item.webTitle + '</a><p><a href="#'+ item.id +'">View Summary</a></p></div></li>'
+    });
+    return "<ul>" + titlearr.join('') + "</ul>"
+  }
+
   exports.AllNews = AllNews;
 })(this);
-
-// "http://192.168.0.29:8080/testdata.html"
-
-// allnews = new AllNews()
-// allnews.makeRequest("http://192.168.0.29:8080/testdata.html")
