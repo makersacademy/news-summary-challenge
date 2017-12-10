@@ -8,35 +8,29 @@ var newArticleTitle
 var newArticle
 
 function addArticleToList(){
-    newArticle = document.createElement('div')
-    newArticleTitle = document.createElement('h1')
-    newArticleDate = document.createElement('p')
-    newArticleUrl = document.createElement('p')
   }
 
   function addAll(){
     setTimeout(function(){
       listOfArticles = newspaper.list;
-      for(i = 0; i < listOfArticles.length; i ++){
-        addArticleToList();
-        AddingInformation();
-      };
-    },5000);
+      console.log(listOfArticles)
+      AddingInformation();
+    },3000);
   };
 
   function AddingInformation(){
-    if (listOfArticles){
-      listOfArticles.forEach(function(headline){
-        newsworthy.insertBefore(newArticle, newsworthy.childNodes[0]);
-        newArticle.setAttribute('class', 'article')
-        newArticle.appendChild(newArticleTitle)
-        newArticleTitle.innerHTML = headline.title;
-        newArticle.appendChild(newArticleDate);
-        newArticleDate.innerHTML = headline.date;
-        newArticle.appendChild(newArticleUrl);
-        newArticleUrl.innerHTML = headline.url;
-      });
-    };
+  console.log(listOfArticles.length)
+    listOfArticles.forEach(function(headline){
+      newArticle = document.createElement('div')
+      newsworthy.insertBefore(newArticle, newsworthy.childNodes[0]);        newArticle.setAttribute('class', 'article')
+      newArticleTitle = document.createElement('h1')
+      newArticle.appendChild(newArticleTitle)
+      newArticleTitle.innerHTML = headline.title;        newArticleDate = document.createElement('p')
+      newArticle.appendChild(newArticleDate);
+      newArticleDate.innerHTML = headline.date;              newArticleUrl = document.createElement('p')
+      newArticle.appendChild(newArticleUrl);
+      newArticleUrl.innerHTML = headline.url;
+    });
   };
 
   addAll()
