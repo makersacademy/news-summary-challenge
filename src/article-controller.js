@@ -1,8 +1,6 @@
 (function (exports){
 
 var guardianKey = config.GUARDIAN_KEY;
-var aylienKey = config.AYLIEN_KEY;
-var aylienId = config.AYLIEN_ID;
 
   function ArticleController (articleListView = new ArticleListView){
     this.articleListView_ = articleListView
@@ -13,8 +11,7 @@ var aylienId = config.AYLIEN_ID;
   }
 
   ArticleController.prototype.renderToWindow = function() {
-    var index = document.getElementById('app');
-    index.innerHTML = this.articleListView_.renderHTML();
+    document.getElementById('app').innerHTML = this.articleListView_.renderHTML();
   }
 
   ArticleController.prototype.singleArticle = function (id) {
@@ -26,25 +23,19 @@ var aylienId = config.AYLIEN_ID;
     window.addEventListener("hashchange", function(){
       var articleId = location.hash.split('/')[1]
       var article = self.singleArticle(articleId)
-    
       var singleArticleView = new ArticleView(article)
       document.getElementById('app').innerHTML = singleArticleView.renderHTML()
     })
   }
 
-
-  ArticleController.prototype.xhttp = function () {
+  ArticleController.prototype.xhttpRequest = function () {
     var self = this;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         results = JSON.parse(this.responseText).response.results;
         results.forEach(function(result){
-          var headline = result.webTitle
-          var url = result.webUrl
-          var body  = result.body
-          console.log(result);
-          self.addArticle(1, headline,body, url, 1 )
+          self.addArticle(1, result.webTitle, 1 ,result.webUrl, 1 )
         })
       };
     };
