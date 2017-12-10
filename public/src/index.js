@@ -1,10 +1,11 @@
 "use strict";
 
-function() {
+(function() {
   window.addEventListener("load", function() {
 
   var content = document.getElementById("content");
-  var controller = new Controller()
+  var xhttp = new XMLHttpRequest();
+  var controller = new Controller(content, new ArticleList(), xhttp);
 
   });
-}();
+})();

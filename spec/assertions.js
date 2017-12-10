@@ -5,7 +5,7 @@ var assert = {
         if (!assertionToCheck) {
             throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
         } else {
-          return "true"
+          return "true";
         }
     },
 
@@ -13,7 +13,7 @@ var assert = {
         if (assertionToCheck) {
             throw new Error("Assertion failed: " + assertionToCheck + " is truthy");
         } else {
-          return "true"
+          return "true";
         }
     },
 
@@ -21,7 +21,7 @@ var assert = {
       if(methodCall !== expectedResult) {
         throw new Error(methodCall + "does not return" + expectedResult)
       } else {
-        return "true"
+        return "true";
       }
     },
 };

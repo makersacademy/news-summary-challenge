@@ -3,10 +3,10 @@
 (function(exports) {
   function Article(id, sectionID, title, imageURL) {
    	this._id = id;
-    this._sectionID = sectionID
-   	this._articleTitle = title
-    this._imageURL = imageURL
-  }
+    this._sectionID = sectionID;
+   	this._articleTitle = title;
+    this._imageURL = imageURL;
+  };
 
   Article.prototype.getId = function () {
   	return this._id;
@@ -24,5 +24,5 @@
     return this._imageURL;
   }
 
-  exports.Article = Article
-})(this)
+  exports.Article = Article;
+})(this);
