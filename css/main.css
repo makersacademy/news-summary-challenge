@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 1.5vw/1.5 "Roboto", sans;
+}
+#root {
+  padding: 2vw 10.5vw;
+}
+
+h1 {
+  font-size: 4vw;
+  margin: 0 0 2vw 0;
+}
+
+h2 {
+  font-size: 1.5vw;
+  margin: 1vw 0 0 0;
+}
+
+.thumb {
+  width: 25vw;
+  margin-bottom: 4vw;
+}
+
+.thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.thumb img {
+  width: 100%;
+  display: block;
+}
