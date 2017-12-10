@@ -1,4 +1,3 @@
-
 var data = {
   'img': 'image',
   'desc': 'desc',
