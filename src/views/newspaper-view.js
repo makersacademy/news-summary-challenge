@@ -4,7 +4,7 @@
   }
 
   NewspaperView.prototype.headlinesToHtml = function () {
-    resultingString = ''
+    var resultingString = ''
     this.newspaper.getAllArticles().forEach(function (article) {
       resultingString += `<li><div id="article-${article.getId()}">` +
         `<a href="#${article.getId()}">${article.getHeadline()}</a>` +
