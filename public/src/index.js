@@ -7,5 +7,7 @@
   var xhttp = new XMLHttpRequest();
   var controller = new Controller(content, new ArticleList(), xhttp);
 
+  controller._requestData();
+
   });
 })();
