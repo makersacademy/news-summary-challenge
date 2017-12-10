@@ -9,7 +9,7 @@ describe('renders the text string to the page', function(){
   return assert.isTrue(document.getElementById('newsfeed').innerHTML === "<ul><li><div>West Ham United 1-0 Chelsea: Premier League – as it happened</div></li></ul>")
 });
 
-// TESTS BELOW HERE ARE USING SAME VARIABLE
+// TESTS BELOW HERE ARE USING SAME VARIABLE + ON TIME DELAY
 
 var allNews = new AllNews()
 allNews.makeRequest("http://192.168.0.15:8080/testdata.html", allNews.putInElementsRenderHTML)
@@ -20,8 +20,6 @@ setTimeout(function() {
 
   describe('returns a specific article when passed the relevant id', function() {
     var id = "football/live/2017/dec/09/tottenham-v-stoke-real-madrid-v-sevilla-and-more-clockwatch-live"
-    console.log(allNews._data[0])
-    console.log(allNews.returnArticleWithSameId(id))
     return assert.isTrue(allNews.returnArticleWithSameId(id) === allNews._data[0])
   });
 }, 5000);
