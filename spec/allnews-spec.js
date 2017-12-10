@@ -11,7 +11,7 @@ describe('renders the text string to the page', function(){
 });
 
 var allNews = new AllNews()
-allNews.makeRequest("http://192.168.0.15:8080/testdata.html")
+allNews.makeRequest("http://192.168.0.15:8080/testdata.html", allNews.putInElementsRenderHTML)
 setTimeout(function() {
   describe('checks that data is downloaded from the API', function(){
       return assert.isTrue(allNews._data instanceof Array)
