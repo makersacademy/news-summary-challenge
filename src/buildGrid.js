@@ -1,7 +1,8 @@
 function buildGrid(articles) {
   var root = document.getElementById("root");
-  root.innerHTML = "<h1>Ame News</h1>";
   var thumbs = document.createElement("div");
+  root.innerHTML = "<h1>Ame News</h1>";
+
   root.appendChild(thumbs);
   thumbs.setAttribute("class","thumbs");
   thumbs.setAttribute("id","thumbs");
