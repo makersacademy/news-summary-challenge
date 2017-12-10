@@ -11,6 +11,10 @@
     this._link = data.link;
   };
 
+  Story.prototype.setDesc = function(desc) {
+    this._desc = desc;
+  };
+
   Story.prototype.title = function() {
     return this._title;
   };
