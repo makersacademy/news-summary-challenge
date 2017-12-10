@@ -16,7 +16,7 @@
   ArticleListView.prototype.getListHTML = function() {
     var listHTML = "";
     this.getArticleList().getArticles().forEach(function(article) {
-      listHTML += _addTag((_addTag(article.getArticleTitle(),"a", ` href=#${article.getId()}`)),"li");
+      listHTML += _addTag((_addTag("","img", ` src=${article.getImageURL()}`))+ "<br />" + _addTag(article.getArticleTitle(),"a", ` href=#${article.getId()}`),"li");
     })
     return _addTag(listHTML, "ul");
   };

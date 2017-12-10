@@ -17,6 +17,11 @@
     return this._articleTitle;
   }
 
+  FakeArticle.prototype.getImageURL = function () {
+    return this._imageURL;
+  }
+
+
   function FakeArticleList() {
     this._articles = []
   }
@@ -38,7 +43,7 @@
     var fakeArticleList = new FakeArticleList()
     fakeArticleList.addArticle("test", "test", "test title", "test", FakeArticle)
     var articleListView = new ArticleListView(fakeArticleList)
-    return assert.returns(articleListView.getListHTML(), "<ul><li><a href=#test>test title</a></li></ul>")
+    return assert.returns(articleListView.getListHTML(), "<ul><li><img src=test></img><br /><a href=#test>test title</a></li></ul>")
   })
 
   runner.register(function testGetListHTML2Articles() {
@@ -46,6 +51,6 @@
     fakeArticleList.addArticle("test", "test", "test title", "test", FakeArticle)
     fakeArticleList.addArticle("test2", "test2", "test title2", "test2", FakeArticle)
     var articleListView = new ArticleListView(fakeArticleList)
-    return assert.returns(articleListView.getListHTML(), "<ul><li><a href=#test>test title</a></li><li><a href=#test2>test title2</a></li></ul>")
+    return assert.returns(articleListView.getListHTML(), "<ul><li><img src=test></img><br /><a href=#test>test title</a></li><li><img src=test2></img><br /><a href=#test2>test title2</a></li></ul>")
   })
 })()
