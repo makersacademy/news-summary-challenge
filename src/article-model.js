@@ -17,7 +17,7 @@
     var regex = /<img([\w\W]+?)>/g;
     var imgArray = body.match(regex);
     if (imgArray === null){
-      return "No image Found";
+      return `<img src="images/image-not-found.jpg">`;
     }
     else{
      return imgArray[0];

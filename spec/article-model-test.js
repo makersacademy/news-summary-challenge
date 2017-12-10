@@ -64,7 +64,7 @@ testImage();
 
 function testNoImage(){
   var description = `ArticleModel return "No image Found"`;
-  var assertion = articleTwo.img() === "No image Found";
+  var assertion = articleTwo.img() === `<img src="images/image-not-found.jpg">`;
   assert.isTrue(description, assertion);
 }
 
