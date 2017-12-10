@@ -1,10 +1,11 @@
 "use strict";
 
 (function(exports) {
-  function Article(id, sectionID, title) {
+  function Article(id, sectionID, title, imageURL) {
    	this._id = id;
     this._sectionID = sectionID
    	this._articleTitle = title
+    this._imageURL = imageURL
   }
 
   Article.prototype.getId = function () {
@@ -17,6 +18,10 @@
 
   Article.prototype.getArticleTitle = function () {
     return this._articleTitle;
+  }
+
+  Article.prototype.getImageURL = function () {
+    return this._imageURL;
   }
 
   exports.Article = Article
