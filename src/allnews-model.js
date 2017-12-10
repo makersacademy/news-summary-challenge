@@ -9,16 +9,16 @@
     var self = this
     request.open("GET", url)
     request.onload = function() {
-      var data = JSON.parse(request.responseText).response.results
-      self._data = data
-      elem = document.getElementById('newsfeed')
+      self._data = JSON.parse(request.responseText).response.results
+      self.renderHTML(self.putInElements(self._data))
+      console.log(self._data)
     }
     request.send()
   }
 
   AllNews.prototype.putInElements = function(data){
-    var titlearr = data.response.results.map(function(item){
-      return "<li><div>" + item.webTitle + "</div></li>"
+    var titlearr = data.map(function(item){
+      return '<li><div><a href="' + item.webUrl + '">' + item.webTitle + '</a></div></li>'
     });
     return "<ul>" + titlearr.join('') + "</ul>"
   }
