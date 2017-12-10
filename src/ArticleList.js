@@ -1,3 +1,6 @@
+'use strict';
+
+(function(exports){
 
   function ArticleList(){
     this.list = []
@@ -21,5 +24,8 @@
         });
       };
     };
-  request.send()
- };
+    request.send()
+  };
+
+  exports.ArticleList = ArticleList
+})(this);

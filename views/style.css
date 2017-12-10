@@ -22,3 +22,9 @@ html, body {
   margin-left: 349px;
   position:
 }
+
+.urlbutton {
+  width: 15%;
+  border-top-style: double;
+
+}

@@ -19,7 +19,6 @@ function addArticleToList(){
   };
 
   function AddingInformation(){
-  console.log(listOfArticles.length)
     listOfArticles.forEach(function(headline){
       newArticle = document.createElement('div')
       newsworthy.insertBefore(newArticle, newsworthy.childNodes[0]);
@@ -34,8 +33,10 @@ function addArticleToList(){
       newArticleUrl.setAttribute('type','button')
       newArticleUrl.setAttribute('onclick', `window.location.href='${headline.url}'`)
       newArticleUrl.setAttribute('class', 'urlbutton')
+      newArticleUrl.setAttribute('value', 'Read the article')
       newArticle.appendChild(newArticleUrl);
     });
   };
+
 
   addAll()
