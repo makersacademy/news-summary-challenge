@@ -1,7 +1,6 @@
 
   function ArticleList(){
     this.list = []
-    this.emptyArray = []
   };
 
   ArticleList.prototype.addArticle = function(article){
@@ -18,8 +17,7 @@
       if(this.readyState == 4 && this.status == 200){
         getback = JSON.parse(this.response).response.results
         getback.forEach(function(result){
-          var headline = new Headline(result.webTitle, result.webPublicationDate, result.webUrl);
-          dieu.addArticle(headline)
+          dieu.addArticle(new Headline(result.webTitle, result.webPublicationDate, result.webUrl));
         });
       };
     };
