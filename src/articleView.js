@@ -4,6 +4,8 @@ function getIDFromUrl() {
 
 function hashChangeEventListener(allnews){
   window.addEventListener('hashchange', function() {
+    window.scroll(0,0);
+
     var hash = getIDFromUrl();
     if (hash)
       viewSingleArticle(allnews, hash);
@@ -38,5 +40,10 @@ function addExpandedArticle(article) {
     root.appendChild(newDiv);
   }
 
-  newDiv.innerHTML ="<h3><a href='"+ article.addr() +"' target='_blank'>" + article.headline() + "</a></h3><time>" + article.date() + "</time>" + article.mainImage() +"<article>" + article.content()+"</article>";
+  newDiv.innerHTML ="<h3><a href='"+ article.addr() +"' target='_blank'>" + article.headline() + "</a></h3><time>" + article.date() + "</time>" + article.mainImage() +"<article>" + article.content()+"</article><a id='back' class='back'>×</a>";
+
+  var back = document.getElementById('back');
+  back.addEventListener('click', function() {
+    window.location.hash = "";
+  });
 }

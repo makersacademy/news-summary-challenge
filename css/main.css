@@ -19,9 +19,15 @@ h2 {
   margin: 1vw 0 0 0;
 }
 
+h3 {
+  font-size: 2.5vw;
+  margin: 0;
+}
+
 .thumb {
   width: 25vw;
   margin-bottom: 4vw;
+  cursor: pointer;
 }
 
 .thumbs {
@@ -30,11 +36,38 @@ h2 {
   justify-content: space-between;
 }
 
-.thumb img {
+img {
   width: 100%;
+  height: auto;
   display: block;
 }
 
+
+time {
+  font-size: 1vw;
+  color: #999;
+}
+
+figure {
+  width: 50%;
+  font-size: 1vw;
+  color: #999;
+  margin: 2vw 0;
+}
+
+  figcaption {
+    margin-top: 1vw;
+  }
+
 .expanded {
   width: 60vw;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 3vw;
+  cursor: pointer;
 }
