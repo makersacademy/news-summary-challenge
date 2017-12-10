@@ -19,7 +19,7 @@ ArticleList.prototype = {
 
   getArticleById: function(id) {
     for(var i = 0; i < this._articles.length; i++) {
-      if(this._articles[i].id() === id) {
+      if(this._articles[i]._id === id) {
         return this._articles[i];
       }
     }

@@ -9,27 +9,14 @@
     for(var i = 0; i < interface.length; i++) {
       allnews.save(interface[i].webTitle, interface[i].fields.body, interface[i].webUrl, interface[i].webPublicationDate, interface[i].fields.thumbnail, interface[i].fields.main)
     }
-    console.log(allnews._articles);
     buildGrid(allnews._articles);
+    var hash = getIDFromUrl();
+    if(hash) {
+      viewSingleArticle(allnews, hash);
+    }
+    hashChangeEventListener(allnews);
+
   })
   .catch(function() {
     console.log("Something went wrong!");
   });
-
-  function buildGrid(articles) {
-    var root = document.getElementById("root");
-    root.innerHTML = "<h1>Ame News</h1>";
-    var thumbs = document.createElement("div");
-    root.appendChild(thumbs);
-    thumbs.setAttribute("class","thumbs");
-    thumbs.setAttribute("id","thumbs");
-
-    articles.forEach(function(item, index) {
-      var newDiv = document.createElement("div");
-      newDiv.setAttribute("class","thumb");
-      var divCont = "<img src='" + item.thumbImage() + "' alt=''><h2 data-id='"+ item.id() +"'>" + item.headline() + "</h2>";
-      //headline, content, addr, date, thumbImage, mainImage
-      newDiv.innerHTML = divCont;
-      thumbs.appendChild(newDiv);
-    });
-  }

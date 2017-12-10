@@ -34,3 +34,7 @@ h2 {
   width: 100%;
   display: block;
 }
+
+.expanded {
+  width: 60vw;
+}
