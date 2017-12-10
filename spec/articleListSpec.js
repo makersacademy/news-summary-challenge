@@ -15,13 +15,13 @@
 
   runner.register(function testAddArticleToArrayLength() {
     var articleList = new ArticleList()
-    articleList.addArticle(FakeArticle, "test", "test", "test", "test")
+    articleList.addArticle("test", "test", "test", "test", FakeArticle)
     return assert.returns(articleList.getArticles().length, 1)
   })
 
   runner.register(function testAddArticleToArrayID() {
     var articleList = new ArticleList()
-    articleList.addArticle(FakeArticle, "test", "test", "test", "test")
+    articleList.addArticle("test", "test", "test", "test", FakeArticle)
     return assert.returns(articleList.getArticles()[0].getId(), "test")
   })
 

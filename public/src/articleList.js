@@ -10,7 +10,7 @@
     return this._articles;
   };
 
-  ArticleList.prototype.addArticle = function(constructor = Article, id, sectionID, title, imageURL) {
+  ArticleList.prototype.addArticle = function(id, sectionID, title, imageURL, constructor = Article) {
     this._articles.push(new constructor(id, sectionID, title, imageURL));
   };
 

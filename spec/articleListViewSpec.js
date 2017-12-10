@@ -25,7 +25,7 @@
     return this._articles
   }
 
-  FakeArticleList.prototype.addArticle = function(constructor = Article, id, sectionID, title, imageURL) {
+  FakeArticleList.prototype.addArticle = function(id, sectionID, title, imageURL, constructor = Article) {
     this._articles.push(new constructor(id, sectionID, title, imageURL))
   }
 
@@ -36,15 +36,15 @@
 
   runner.register(function testGetListHTML1Article() {
     var fakeArticleList = new FakeArticleList()
-    fakeArticleList.addArticle(FakeArticle, "test", "test", "test title", "test")
+    fakeArticleList.addArticle("test", "test", "test title", "test", FakeArticle)
     var articleListView = new ArticleListView(fakeArticleList)
     return assert.returns(articleListView.getListHTML(), "<ul><li><a href=#test>test title</a></li></ul>")
   })
 
-  runner.register(function testGetListHTML2Notes() {
+  runner.register(function testGetListHTML2Articles() {
     var fakeArticleList = new FakeArticleList()
-    fakeArticleList.addArticle(FakeArticle, "test", "test", "test title", "test")
-    fakeArticleList.addArticle(FakeArticle, "test2", "test2", "test title2", "test2")
+    fakeArticleList.addArticle("test", "test", "test title", "test", FakeArticle)
+    fakeArticleList.addArticle("test2", "test2", "test title2", "test2", FakeArticle)
     var articleListView = new ArticleListView(fakeArticleList)
     return assert.returns(articleListView.getListHTML(), "<ul><li><a href=#test>test title</a></li><li><a href=#test2>test title2</a></li></ul>")
   })
