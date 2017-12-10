@@ -4,6 +4,10 @@ You'll create an app that summarises the news.Your app will grab all the headlin
 
 ## Approach
 
+I first structured off the week's challenge to get the foundation setup. Once I did that, I then
+started adding in the API and re-edited my code to apply for that. I believe I managed to get halfway
+with getting the api data but haven't executed it fully via callbacks. Will return to this project
+when I have the time to do so.
 
 ## User Stories
 
