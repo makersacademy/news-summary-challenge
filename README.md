@@ -1,15 +1,40 @@
-# News Summary challenge
+# News Summary challenge 📰
 
-You'll create an app that summarises the news.Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
+The objective is to create an app that summarises the news. It aims to grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
 
 ## Approach
 
 I first structured off the week's challenge to get the foundation setup. Once I did that, I then
 started adding in the API and re-edited my code to apply for that. I believe I managed to get halfway
-with getting the api data but haven't executed it fully via callbacks. Will return to this project
-when I have the time to do so.
+with getting the api data but haven't executed it fully via callbacks.
 
-## User Stories
+Will return to this project when I have the time to do so.
+
+
+## How to Use 
+[Although a work in progress, attempt when updated as mostly done.]
+
+Clone the repo.
+```
+git clone https://github.com/thatdania/news-summary-challenge.git
+```
+Then change into the directory 
+```
+cd news-summary-challenge 
+
+```
+Make sure you install node and install npm (i.e make sure you have it) 
+```
+node -v
+npm -v
+```
+
+Run the following code to see it on the page
+```
+node server.js 
+```
+
+## User Stories (for guidance)
 
 Some of these stories will need decomposing if they seem too large.
 
