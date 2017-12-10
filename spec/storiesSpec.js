@@ -13,11 +13,11 @@ describe('Stories', function() {
 
   describe('#add', function() {
     beforeEach(function() {
-      stories.add(1, 2, 3, 4);
+      stories.add({ a: 1 });
     });
 
     it('creates a new story', function() {
-      expect(stories._list).toContain('1,2,3,4');
+      expect(stories._list[0].toString()).toEqual({ a: 1 }.toString());
     });
   });
 

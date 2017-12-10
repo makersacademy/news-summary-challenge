@@ -1,8 +1,17 @@
 'use strict';
 
 (function(exports) {
-  function storiesView(stories) {
+  try {
+    var storyViewModule = require('./storyView');
+    var getStoryView = storyViewModule.getStoryView;
+  }
+  catch(error) {
+    var getStoryView = exports.getStoryView;
+  };
+
+  function storiesView(stories, viewFunc = getStoryView) {
     this._stories = stories;
+    this._viewFunc = viewFunc;
   };
 
   storiesView.prototype._getStories = function() {
@@ -10,16 +19,19 @@
   };
 
   storiesView.prototype._getViews = function() {
-    var array = this._getStories();
-    return array.map(function(s) { return s.toHTML() }).join('');
+    var self = this;
+    var convert = function(s) {
+      return self._viewFunc(s).toHTML()
+    };
+    return this._getStories().map(convert).join('');
   };
 
   storiesView.prototype.toHTML = function() {
     return `<div class="stories">${this._getViews()}</div>`;
   };
 
-  function getStoriesView(story) {
-    return new storiesView(story);
+  function getStoriesView(...args) {
+    return new storiesView(...args);
   };
 
   exports.getStoriesView = getStoriesView;

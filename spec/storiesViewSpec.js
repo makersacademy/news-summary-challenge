@@ -1,6 +1,7 @@
 describe('storyView', function() {
   var storiesModule = require('../views/storiesView');
   var view;
+  var viewFunc;
   var all;
   var story;
   var stories;
@@ -9,7 +10,8 @@ describe('storyView', function() {
     story = createSpyObj('story', { toHTML: 'html' });
     all = [story, story, story];
     stories = createSpyObj('stories', { all: all });
-    view = storiesModule.getStoriesView(stories);
+    viewFunc = function(s) { return s; };
+    view = storiesModule.getStoriesView(stories, viewFunc);
   });
 
   describe('#_getStories', function() {
@@ -26,9 +28,7 @@ describe('storyView', function() {
 
   describe('#toHTML', function() {
     it('puts views inside div', function() {
-      expect(view._getViews()).toEqual('html'.repeat(3));
       expect(view.toHTML()).toEqual('<div class="stories">htmlhtmlhtml</div>')
     });
   });
 });
-    

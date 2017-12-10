@@ -1,9 +1,12 @@
 'use strict';
 
 (function(exports) {
-  if (typeof(require) !== undefined) {
+  try {
     var storyModule = require('./story');
     var story = storyModule.story;
+  }
+  catch(error) {
+    var story = exports.story;
   };
 
   function Stories(storyProto = story) {
@@ -11,8 +14,8 @@
     this._list = [];
   };
 
-  Stories.prototype.add = function(...args) {
-    var story = this._storyProto(...args);
+  Stories.prototype.add = function(data) {
+    var story = this._storyProto(data);
     this._list.push(story);
   };
 

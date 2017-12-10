@@ -2,10 +2,24 @@
 @import url('https://fonts.googleapis.com/css?family=Oxygen');
 
 body {
+  background: url("https://www.electoral-reform.org.uk/wp-content/uploads/2017/05/HOUSE-OF-COMMONS.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Playfair Display';
   color: black;
   height: 100%;
+}
+
+div.main {
+  margin: 0;
+}
+
+div.stories {
+  background-color: rgba(100, 100, 100, 0.8);
+  padding: 2em;
+  width: 45em;
+  margin: 0 auto;
+  height: 100%
 }
 
 h2.story-title {
@@ -35,6 +49,8 @@ div.story {
   padding: 1em;
   border-radius: 5px;
   box-shadow: 2px 3px dimgrey;
+  margin: 0 auto;
+  margin-top: 2em;
 }
 
 div.content {
