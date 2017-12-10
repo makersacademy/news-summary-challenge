@@ -11,3 +11,17 @@
 
   testArticleHeadlineIsEmptyString();
 })(this);
+
+(function(exports) {
+  function testArticleBodyIsEmptyString() {
+    var article = new Article();
+
+    if (article.body !== "") {
+      throw new Error("Body is not an empty string");
+    } else {
+      console.log("Body is an empty string; your test passed");
+    }
+  };
+
+  testArticleBodyIsEmptyString();
+})(this);
