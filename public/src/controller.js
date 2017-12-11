@@ -40,7 +40,7 @@
       this._getContentDiv().innerHTML= articleListView.getListHTML()
     },
 
-    _setupLinkToShowArticle: function(doc = document, currentNoteId = "current-note", NoteViewConstructor = NoteView, page = window) {
+    _setupLinkToShowArticle: function(doc = document, ArticleViewConstructor = ArticleView, page = window) {
 
       var self = this
       var noteText = doc.getElementById(currentNoteId);
