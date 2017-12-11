@@ -129,3 +129,8 @@ footer a:visited {
   text-justify: inter-word;
   padding: 10px 5px 10px 5px;
 }
+
+.view-full-article {
+  display: block;
+  margin-bottom: 5px;
+}
