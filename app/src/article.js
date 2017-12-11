@@ -2,27 +2,23 @@
   function Article() {
     this.headline = "";
     this.body = "";
+    this.datePublished = "";
+    this.summary = "";
   };
 
   exports.Article = Article;
 })(this);
 
 
+var articleBody = new XMLHttpRequest();
+articleBody.open('GET', 'https://content.guardianapis.com/money/2017/dec/11/worst-consumer-service-errors-of-2017?show-blocks=body&api-key=' + apiKey(), true);
 
-
-
-
-
-
-var articleObject = new XMLHttpRequest();
-articleObject.open('GET', 'http://content.guardianapis.com/search?api-key=' + apiKey(), true);
-
-articleObject.onload = function() {
-  if (articleObject.status >= 200 && articleObject.status < 400) {
-    var articleData = JSON.parse(articleObject.responseText);
-    console.log(articleData.response.results[0]);
-    document.querySelector('body').innerHTML = articleData.response.results[0].webUrl;
+articleBody.onload = function() {
+  if (articleBody.status >= 200 && articleBody.status < 400) {
+    var bodyData = JSON.parse(articleBody.responseText);
+    document.querySelector('body').innerHTML = bodyData.response.content.blocks.body[0].bodyHtml;
+    console.log(bodyData);
   }
 }
 
-articleObject.send();
+articleBody.send();

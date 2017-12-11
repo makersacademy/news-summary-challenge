@@ -25,3 +25,31 @@
 
   testArticleBodyIsEmptyString();
 })(this);
+
+(function(exports) {
+  function testDatePublishedIsAnEmptyString() {
+    var article = new Article();
+
+    if (article.datePublished !== "") {
+      throw new Error("Date published is not an empty string");
+    } else {
+      console.log("Date published is an empty string; your test passed");
+    }
+  };
+
+  testDatePublishedIsAnEmptyString();
+})(this);
+
+(function(exports) {
+  function testSummaryIsAnEmptyString() {
+    var article = new Article();
+
+    if (article.summary !== "") {
+      throw new Error("Summary is not an empty string");
+    } else {
+      console.log("Summary is an empty string; your test passed");
+    }
+  };
+
+  testSummaryIsAnEmptyString();
+})(this);
