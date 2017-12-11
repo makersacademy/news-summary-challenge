@@ -23,7 +23,7 @@ function testlistOfOne(){
   var articleListView = new ArticleListView(doubleArticleList);
   var description = "ArticleListView return a list of one article to html";
   articleListView.convert();
-  var assertion = articleListView.toHtml() === `<a href="#article/1"><div id="1"><div class="image"><img src="image1"></div><div class="title">title1</div><div class="summary">first<br>double</div></div></a>`;
+  var assertion = articleListView.toHtml() === `<div id="1"><div class="image"><a href="#article/1"><img src="image1"></a></div><div class="title"><a href="#article/1">title1</a></div><div class="summary">first<br>double</div></div>`;
   assert.isTrue(description, assertion);
 }
 testlistOfOne();
@@ -32,7 +32,7 @@ function testlistOfTwo(){
   var articleListView = new ArticleListView(doubleArticleList);
   var description = "ArticleListView return a list of two article to html";
   articleListView.convert();
-  var assertion = articleListView.toHtml() === `<a href="#article/1"><div id="1"><div class="image"><img src="image1"></div><div class="title">title1</div><div class="summary">first<br>double</div></div></a><a href="#article/1"><div id="1"><div class="image"><img src="image1"></div><div class="title">title1</div><div class="summary">first<br>double</div></div></a>`;
+  var assertion = articleListView.toHtml() === `<div id="1"><div class="image"><a href="#article/1"><img src="image1"></a></div><div class="title"><a href="#article/1">title1</a></div><div class="summary">first<br>double</div></div><div id="1"><div class="image"><a href="#article/1"><img src="image1"></a></div><div class="title"><a href="#article/1">title1</a></div><div class="summary">first<br>double</div></div>`;
   assert.isTrue(description, assertion);
 }
 testlistOfTwo();

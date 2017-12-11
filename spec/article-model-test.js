@@ -1,6 +1,6 @@
 var doubleArticleData = {
 apiUrl : "https://content.guardianapis.com/tv/miranda",
-fields : {body  : `<p>This year felt different. <img src="https://media.jpg" alt="Steve" width="1000" height="710" class="gu-image" /></p>`},
+fields : {body  : `<p>This year felt different. </p>`, thumbnail: `https://media.jpg`},
 webTitle : "Miranda Sawyer’s best radio of 2017",
 webUrl : "https://www.theguardian.com/tv/miranda",
 }
@@ -13,7 +13,7 @@ var doubleArticleSum = {
 
 var doubleArticleDataWithNoImage = {
 apiUrl : "",
-fields : {body  : ``},
+fields : {body  : ``, thumbnail: ""},
 webTitle : "",
 webUrl : "",
 }
@@ -38,25 +38,10 @@ function testTitle(){
 
 testTitle();
 
-function testApiUrl(){
-  var description = "ArticleModel return the api url";
-  var assertion = article.apiUrl() === "https://content.guardianapis.com/tv/miranda";
-  assert.isTrue(description, assertion);
-}
-
-testApiUrl();
-
-function testWebUrl(){
-  var description = "ArticleModel return the web url";
-  var assertion = article.webUrl() === "https://www.theguardian.com/tv/miranda";
-  assert.isTrue(description, assertion);
-}
-
-testWebUrl();
 
 function testImage(){
   var description = `ArticleModel return image tag from the article.`;
-  var assertion = article.img() === `<img src="https://media.jpg" alt="Steve" width="1000" height="710" class="gu-image" />`;
+  var assertion = article.img() === `<img src="https://media.jpg">` ;
   assert.isTrue(description, assertion);
 }
 

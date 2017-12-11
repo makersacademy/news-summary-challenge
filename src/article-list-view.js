@@ -6,14 +6,14 @@
   }
   function renderToHtml(article){
     var content = imgHtml(article)+titleHtml(article)+summaryHtml(article)
-    return `<div id="${article.id()}">${content}</div></a>`
+    return `<div id="${article.id()}">${content}</div>`
   }
 
   function titleHtml(article){
-    return `<a href="#article/${article.id()}"><div class="title">${article.title()}</div></a>`
+    return `<div class="title"><a href="#article/${article.id()}">${article.title()}</a></div>`
   }
   function imgHtml(article){
-    return `<div class="image">${article.img()}</div>`
+    return `<div class="image"><a href="#article/${article.id()}">${article.img()}</a></div>`
   }
 
   function summaryHtml(article){
