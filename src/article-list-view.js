@@ -1,15 +1,16 @@
 (function(exports){
-  function ArticleListView(articleList=[]){
-    this._list = articleList;
-    this._result = ''
+  function ArticleListView(articleList = new ArticleList){
+    this._articleList = articleList
+    this._list = articleList.list();
+    this._result = '';
   }
   function renderToHtml(article){
     var content = imgHtml(article)+titleHtml(article)+summaryHtml(article)
-    return `<a href="#article/${article.id()}"><div id="${article.id()}">${content}</div></a>`
+    return `<div id="${article.id()}">${content}</div></a>`
   }
 
   function titleHtml(article){
-    return `<div class="title">${article.title()}</div>`
+    return `<a href="#article/${article.id()}"><div class="title">${article.title()}</div></a>`
   }
   function imgHtml(article){
     return `<div class="image">${article.img()}</div>`
@@ -27,6 +28,12 @@
 
   ArticleListView.prototype.toHtml = function(){
     return this._result;
+  }
+
+  ArticleListView.prototype.addArticle = function(data, body){
+    this._articleList.add(data, body);
+    this._result = '';
+    this.convert();
   }
 
 

@@ -15,6 +15,7 @@
 
   function image(body){
     var regex = /<img([\w\W]+?)>/g;
+    // var regex = /\<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/g;
     var imgArray = body.match(regex);
     if (imgArray === null){
       return `<img src="images/image-not-found.jpg">`;
