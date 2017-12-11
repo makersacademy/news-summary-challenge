@@ -14,13 +14,15 @@
 
   ArticleController.prototype.hashChangeListener = function () {
     var that = this;
-    window.addEventListener("hashchange", function() {
-      var id = location.hash.split('/')[1];
-      var singleArticle = that._articleList.articles().filter(function(item) {
-        return item.id() == id;
-      })[0];
-      that.singleArticleInsertHTML(singleArticle);
-    })
+    window.addEventListener("hashchange", function() {that._getSingleArticle(that)});
+  };
+
+  ArticleController.prototype._getSingleArticle = function (reference) {
+    var id = location.hash.split('/')[1];
+    var singleArticle = reference._articleList.articles().filter(function(item) {
+      return item.id() == id;
+    })[0];
+    reference.singleArticleInsertHTML(singleArticle);
   };
 
   ArticleController.prototype.singleArticleInsertHTML = function (singleArticle) {
