@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+<title>Test Runner</title>
+
+</head>
+
+<body>
+
+<h1>Test Runner</h1>
+
+  <div>
+    <ol id="tests">
+
+    </ol>
+  </div>
+
+  <!-- Mock index.html -->
+  <div style="display: none;">
+    <h1>Headlines:</h1>
+    <div>
+      <div>
+        <button type="button" id="load-articles">Refresh Headlines</button>
+        <button type="button" id="collapse-articles">Collapse All</button>
+      </div>
+      <div id="headlines">
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+<!-- TEST LIBRARY -->
+<script src="spec/test-library/expect.js"></script>
+<script src="spec/test-library/describe.js"></script>
+<script src="spec/test-library/it.js"></script>
+
+<!-- SOURCE -->
+<script src="src/models/article-model.js"></script>
+<script src="src/models/newspaper-model.js"></script>
+<script src="src/views/newspaper-view.js"></script>
+<script src="src/views/single-article-view.js"></script>
+<script src="src/controllers/newspaper-controller.js"></script>
+<script src="src/controllers/http-request-controller.js"></script>
+
+<!-- SPEC FILES -->
+<script src="spec/article-model-test.js"></script>
+<script src="spec/newspaper-model-test.js"></script>
+<script src="spec/newspaper-view-test.js"></script>
+<script src="spec/newspaper-controller-test.js"></script>
+<script src="spec/single-article-view-test.js"></script>
+<script src="spec/http-request-controller-test.js"></script>
