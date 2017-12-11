@@ -1,0 +1,30 @@
+html, body {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+.header{
+  font-size: 50px;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 18px
+}
+.article {
+  width: 50%;
+  border-color: black;
+  border-style: dashed;
+  text-align: center;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 349px;
+  position:
+}
+
+.urlbutton {
+  width: 15%;
+  border-top-style: double;
+
+}
