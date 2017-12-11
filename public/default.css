@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+body {
+  background: url("http://localhost:8080/spiration-light.png");
+  background-attachment: fixed;
+  background-position: center center;
+  font-family: 'Playfair Display';
+  color: black;
+  height: 100%;
+  margin: 0em;
+}
+
+div#header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: lightgrey;
+  height: 4em;
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  font-family: roboto;
+}
+
+div#main {
+  margin-top; 30px
+}
+
+div.stories {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 8em;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+h2.story-title {
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+div.information {
+  margin: 0.5em;
+}
+
+span.story-date {
+  margin-bottom: 0.5em;
+  float: right;
+}
+
+a.story-link {
+  color: steelblue;
+  text-decoration: none;
+}
+
+div.story {
+  background-color: rgba(200, 200, 200, 0.9);
+  width: 35em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 2px 3px dimgrey;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+div.content {
+  background-color: white;
+  border-radius: 5px;
+  padding: 0.5em;
+  box-shadow: 1px 2px darkgrey;
+  transition: 1s;
+}
+
+div.content:hover {
+  background-color: aliceblue;
+  box-shadow: 2px 3px dimgrey;
+  transition: 1s;
+}
+
+div.story-desc {
+  padding: 1em;
+  font-size: 1em;
+  height: 9em;
+  font-family: 'Oxygen';
+  text-align: justify;
+  color: black;
+  transition: 0.5s;
+}
+
+div.story-desc:hover {
+  color: cadetblue;
+  transition: 0.5s;
+}
+
+
+img.story-img {
+  vertical-align: text-top;
+  height: 9em;
+  width: 9em;
+  object-fit: cover;
+  float: left;
+  margin: 1em;
+  border-radius: 5px;
+  box-shadow: 1px 2px dimgrey;
+}
+
+div.full-story {
+  width: 50em;
+}
+
+div.full-content {
+  height: 30em;
+}
+

@@ -1,0 +1,1 @@
+http://content.guardianapis.com/search?show-fields=thumbnail&section=politics&api-key=7f5fb053-eac8-49d7-a376-e04003f57b52
