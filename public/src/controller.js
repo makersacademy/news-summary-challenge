@@ -26,18 +26,37 @@
         if (this.readyState == 4 && this.status == 200) {
           data = JSON.parse(this.response).response.results
           data.forEach(function(article) {
-            controller._getArticleList().addArticle(article.id, article.sectionId, article.fields.headline, article.fields.thumbnail)
+            controller._getArticleList().addArticle(article.id, article.sectionId, article.fields.headline, article.fields.thumbnail, article.fields.bodyText)
             controller._setView()
           })
         }
       };
-      this._getXhttp().open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=headline,thumbnail", true)
+      this._getXhttp().open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=headline,thumbnail,bodyText", true)
       this._getXhttp().send();
     },
 
     _setView: function() {
       var articleListView = new ArticleListView(this._getArticleList())
       this._getContentDiv().innerHTML= articleListView.getListHTML()
+    },
+
+    _setupLinkToShowArticle: function(doc = document, currentNoteId = "current-note", NoteViewConstructor = NoteView, page = window) {
+
+      var self = this
+      var noteText = doc.getElementById(currentNoteId);
+
+      page.addEventListener("hashchange", function() {
+        _renderNote(NoteViewConstructor, page);
+      });
+
+      function _renderNote(NoteViewConstructor, page) {
+        var noteView = new NoteViewConstructor(self.getNoteList().getNotes()[(_getIdFromUrl(page.location))-1])
+        noteText.innerHTML = `${noteView.getNoteHTML()}`;
+      }
+
+      function _getIdFromUrl(location) {
+        return parseInt(location.hash.split("#")[1])
+      }
     }
 
   };
