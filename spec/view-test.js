@@ -12,13 +12,10 @@ PostDouble.prototype = {
   id: function () { return this._id; }
 };
 
-function ListDouble (array) {
-this._list = array;
-}
+function ListDouble (array) { this._list = array;}
 ListDouble.prototype.list = function () {
   return this._list;
 };
-
 
 // describe tests here:
 

@@ -33,7 +33,7 @@ function returnsAllHeaders () {
   var describe = 'Returns array of list headers';
   var list = new List (postDouble);
   list.addPost('h1', 't1');
-  assert.isTrue(describe, list.headers() === ['h1']);
+  assert.isEqual(describe, list.headers(), ['h1']); 
 }
 
 
@@ -43,4 +43,4 @@ function returnsAllHeaders () {
 listObjectExists();
 addsNewPosts();
 returnsPostObjects();
-// returnsAllHeaders();
+//returnsAllHeaders();
