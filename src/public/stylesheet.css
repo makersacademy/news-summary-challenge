@@ -9,3 +9,12 @@ li {
 a {
   color: #2a2f2f;
 }
+
+table {
+  padding: 10px;
+}
+
+th {
+  height: 30px;
+  width: 150px;
+}
