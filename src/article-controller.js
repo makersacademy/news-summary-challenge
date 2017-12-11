@@ -14,11 +14,18 @@
 
   ArticleController.prototype.hashChangeListener = function () {
     var that = this;
-    window.addEventListener("hashchange", function() {that._getSingleArticle(that)});
+    window.addEventListener("hashchange", function() {that._homeOrSingleView(that)});
   };
 
-  ArticleController.prototype._getSingleArticle = function (reference) {
-    var id = location.hash.split('/')[1];
+  ArticleController.prototype._homeOrSingleView = function (reference) {
+    location.hash === '' ? reference._getAllArticles(reference) : reference._getSingleArticleView(reference, location.hash.split('/')[1]);
+  };
+
+  ArticleController.prototype._getAllArticles = function (reference) {
+    mainDiv.innerHTML = (new reference._articleListView(reference._articleList).render());
+  };
+
+  ArticleController.prototype._getSingleArticleView = function (reference, id) {
     var singleArticle = reference._articleList.articles().filter(function(item) {
       return item.id() == id;
     })[0];
