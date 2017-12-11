@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>TRM News</title>
+    <link rel="stylesheet" href="src/public/stylesheet.css">
   </head>
-  <body>
+  <body background="http://www.onlygfx.com/wp-content/uploads/2015/11/dirty-old-paper-texture-1024x566.jpg">
     <h1>Headlines:</h1>
     <div>
       <div>
@@ -15,6 +16,16 @@
     <div  id="headlines">
 
     </div>
+
+    <div>
+      <table>
+        <tr>
+          <th><button type="button" id="previous-page"> Previous Page </button></th>
+          <th>Page 1</th>
+          <th><button type="button" id="next-page"> Next Page </button></th>
+        </tr>
+      </table>
+    </div>
   </body>
 
   <script src="src/models/article-model.js"></script>
@@ -23,5 +34,6 @@
   <script src="src/views/single-article-view.js"></script>
   <script src="src/controllers/newspaper-controller.js"></script>
   <script src="src/controllers/http-request-controller.js"></script>
+  <script src="api-key.js"></script>
   <script src="start-app.js"></script>
 </html>

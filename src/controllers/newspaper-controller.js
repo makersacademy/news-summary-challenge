@@ -1,6 +1,6 @@
 (function (exports) {
   function NewspaperController (
-    httpRequestController = new HttpRequestController('efef39e2-dd39-49a5-888d-c919db3904e6'),
+    httpRequestController = new HttpRequestController('test'),
     newspaperView = NewspaperView,
     singleArticleView = SingleArticleView) {
 
