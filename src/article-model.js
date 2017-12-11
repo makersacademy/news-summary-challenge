@@ -7,21 +7,18 @@
     this._title = data.webTitle;
     this._apiUrl = data.apiUrl;
     this._webUrl = data.webUrl;
-    this._img = image(data.fields.body);
+    this._img = image(data.fields.thumbnail);
     this._body = body;
 
   }
 
 
-  function image(body){
-    var regex = /<img([\w\W]+?)>/g;
-    // var regex = /\<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/g;
-    var imgArray = body.match(regex);
-    if (imgArray === null){
+  function image(thumbnail){
+    if (thumbnail === ''){
       return `<img src="images/image-not-found.jpg">`;
     }
     else{
-     return imgArray[0];
+     return `<img src="${thumbnail}">`;
    }
   }
   Article.prototype = {
