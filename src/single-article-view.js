@@ -22,6 +22,11 @@
   function urltHtml(article){
     return `<div class="url"><a href="${article.webUrl()}">Full article</a></div>`
   }
+
+  SingleArticleView.prototype.creat = function(article){
+  this._article = article;
+  }
+
   SingleArticleView.prototype.renderHtml = function(){
     return renderToHtml(this._article);
   }

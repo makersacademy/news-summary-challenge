@@ -1,8 +1,8 @@
 (function(exports){
 
-  function ArticleController(articleListView = new ArticleListView ){
+  function ArticleController(articleListView = new ArticleListView , singleArticleView = new SingleArticleView){
     this._articleListView = articleListView;
-    // this._singleArticleView = singleArticleView;
+    this._singleArticleView = singleArticleView;
   }
 
 
@@ -14,51 +14,28 @@
       .getElementById('app')
       .innerHTML = content;},
 
-      guardianRequest: function(link){
+    guardianRequest: function(link){
       var self = this
      var request = new XMLHttpRequest();
      request.open('GET', link);
      request.onload = function (){
        var data = JSON.parse(request.responseText).response.results;
-       data.forEach(function(article){ self.aylienRequest(article, aylien.request(article.webUrl), self._articleListView, function(){self.loadData(); self.hashChange()})});
+       data.forEach(function(article){ self.aylienRequest(article, aylien.request(article.webUrl),  function(){self.loadData(); self.hashChange()})});
        }
      request.send();
    },
 
-   aylienRequest: function(data, link, articleListView,callBack){
-    var self = this;
-    var request = new XMLHttpRequest();
-    request.open('GET', link);
-    request.onload = function (){
-      var body = JSON.parse(request.responseText);
-       self._articleListView.addArticle(data, body)
-       callBack();
-      }
-    request.send();
-  },
-
-  //   guardianRequest: function(link){
-  //     var self = this
-  //    var request = new XMLHttpRequest();
-  //    request.open('GET', link);
-  //    request.onload = function (){
-  //      var data = JSON.parse(request.responseText).response.results;
-  //      data.forEach(function(article){ self.aylienRequest(article, aylien.request(article.webUrl),  function(){self.loadData(); self.hashChange()})});
-  //      }
-  //    request.send();
-  //  },
-
-  //  aylienRequest: function(data, link,callBack){
-  //    var self = this;
-  //    var request = new XMLHttpRequest();
-  //    request.open('GET', link);
-  //    request.onload = function (){
-  //      var body = JSON.parse(request.responseText);
-  //       self._articleListView.addArticle(data, body)
-  //       callBack();
-  //      }
-  //    request.send();
-  //  },
+   aylienRequest: function(data, link,callBack){
+     var self = this;
+     var request = new XMLHttpRequest();
+     request.open('GET', link);
+     request.onload = function (){
+       var body = JSON.parse(request.responseText);
+        self._articleListView.addArticle(data, body)
+        callBack();
+       }
+     request.send();
+   },
 
     guardian: function(){
       this.guardianRequest(guardian.request)},
@@ -75,8 +52,8 @@
       var self = this;
       var content = this._articleListView._list;
       function showArticleForCurrentPage() {
-        var article = new SingleArticleView(content[index(window.location)]);
-      self.changeContent(article.renderHtml());
+        var article = self._singleArticleView.creat(content[index(window.location)]);
+      self.changeContent(self._singleArticleView.renderHtml());
       };
 
       function index(location) {
@@ -87,8 +64,6 @@
 
     }
   }
-
-
 
 
   exports.ArticleController = ArticleController;
