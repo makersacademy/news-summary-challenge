@@ -10,6 +10,7 @@
     request.open("GET", url)
     request.onload = function() {
       self._data = JSON.parse(request.responseText).response.results
+      console.log(self._data)
       callback(self._data, self)
     }
     request.send()
@@ -33,9 +34,9 @@
   // VIEW
 
   AllNews.prototype.putInElements = function(data){
-    var titlearr = data.map(function(item){
+    var titlearr = data.map(function(item, index){
       return '<li><div><a href="' + item.webUrl + '">'
-        + item.webTitle + '</a><p><a href="#'+ item.id +'">View Summary</a></p></div></li>'
+        + item.webTitle + '</a><p><a id="'+ index +'" href="#'+ item.id +'">View Summary</a></p></div></li>'
     });
     return "<ul>" + titlearr.join('') + "</ul>"
   }
