@@ -13,9 +13,12 @@
     this._allArticles.push(this._createNewArticle(url, id, title, thumbnail, body))
   }
 
+// PRIVATE
+
   ArticleList.prototype._createNewArticle = function(url, id, title, thumbnail, body) {
     return new this._article(url, id, title, thumbnail, body)
   }
 
   exports.ArticleList = ArticleList
 })(this);
+``
