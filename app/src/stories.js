@@ -9,14 +9,13 @@
     }
   };
 
-  Stories.prototype.getHeadlines = function(url, apiKey, isAsynchronous) {
+  Stories.prototype.getHeadlines = function(builder) {
     var storiesList = this;
-    var stories = xhrBuilder.buildRequest()
-    stories.open('GET', url + apiKey, isAsynchronous);
+    var stories = builder.buildRequest();
+    stories.open('GET', builder.url + builder.apiKey, builder.isAsynchronous);
     stories.onload = function() {
       var storiesData = JSON.parse(stories.responseText);
       storiesList.addArticles(storiesData.response.results);
-      console.log(storiesList.articles);
     }
     stories.send();
   };
@@ -25,9 +24,16 @@
 })(this);
 
 
-function XhrBuilder() {
+function XhrBuilder(url, apiKey, isAsynchronous) {
+  var builder = this;
+  builder.url = url;
+  builder.apiKey = apiKey;
+  builder.isAsynchronous = isAsynchronous;
 
   function buildRequest() {
+    this.url = builder.url;
+    this.apiKey = builder.apiKey;
+    this.isAsynchronous = builder.isAsynchronous;
     return new XMLHttpRequest();
   }
 
@@ -35,6 +41,3 @@ function XhrBuilder() {
     buildRequest: buildRequest
   }
 }
-
-var xhrBuilder = new XhrBuilder();
-console.log(xhrBuilder);

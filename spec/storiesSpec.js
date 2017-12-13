@@ -1,9 +1,9 @@
 (function(exports) {
   function storiesArticlesShouldBeTenLong() {
     var stories = new Stories();
-    var guardianHeadlinesApi = 'https://content.guardianapis.com/search?api-key=';
+    var xhrBuilder = new XhrBuilder('https://content.guardianapis.com/search?api-key=', apiKey(), false);
 
-    stories.getHeadlines(guardianHeadlinesApi, apiKey(), false);
+    stories.getHeadlines(xhrBuilder);
 
     if (stories.articles.length !== 10) {
       console.log(stories.articles);
