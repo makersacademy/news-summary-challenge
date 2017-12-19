@@ -1,0 +1,21 @@
+MAKING AN XHR REQUEST INJECTABLE TO THE CONTROLLER
+
+
+function XhrBuilder() {
+}
+
+XhrBuilder.prototype.buildRequest = function() {
+  return new XMLHttpRequest();
+}
+
+var xhrBuilder = new XhrBuilder();
+
+MAKING IT SO THAT I DON'T NEED TO USE SELF
+
+
+var instance = new AllNews();
+
+var url = 'someurl'
+instance.makeRequest(url, function(data) {
+  instance.putInElementsRenderHTML(data);
+})
