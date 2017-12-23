@@ -1,7 +1,7 @@
 (function(exports) {
   function storiesArticlesShouldBeTenLong() {
     var stories = new Stories();
-    var xhrBuilder = new XhrBuilder('https://content.guardianapis.com/search?api-key=', apiKey(), false);
+    var xhrBuilder = new MockXhrBuilder('https://content.guardianapis.com/search?api-key=', apiKey(), false);
 
     stories.getHeadlines(xhrBuilder);
 
@@ -15,3 +15,6 @@
 
   storiesArticlesShouldBeTenLong();
 })(this);
+
+
+// Stub the xhrBuilder with a MockXHRBuilder that can return an array of ten that can then be added
