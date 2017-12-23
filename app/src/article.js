@@ -6,19 +6,18 @@
     this.summary = "";
   };
 
+  Article.prototype.loadArticleData = function(url) {
+    var article = new XMLHttpRequest();
+    article.open('GET', url + apiKey(), true);
+    article.onload = function() {
+      var articleData = JSON.parse(article.responseText);
+      document.querySelector('body').appendChild(document.createElement('h1'));
+      document.querySelector('h1').innerHTML = articleData.response.content.webTitle;
+      document.querySelector('body').appendChild(document.createElement('div'));
+      document.querySelector('div').innerHTML = articleData.response.content.blocks.body[0].bodyHtml;
+    }
+    article.send();
+  };
+
   exports.Article = Article;
 })(this);
-
-
-var articleBody = new XMLHttpRequest();
-articleBody.open('GET', 'https://content.guardianapis.com/money/2017/dec/11/worst-consumer-service-errors-of-2017?show-blocks=body&api-key=' + apiKey(), true);
-
-articleBody.onload = function() {
-  if (articleBody.status >= 200 && articleBody.status < 400) {
-    var bodyData = JSON.parse(articleBody.responseText);
-    document.querySelector('body').innerHTML = bodyData.response.content.blocks.body[0].bodyHtml;
-    console.log(bodyData);
-  }
-}
-
-articleBody.send();

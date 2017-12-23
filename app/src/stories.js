@@ -20,6 +20,15 @@
     stories.send();
   };
 
+  Stories.prototype.printStories = function(articles) {
+    for (var i = 0; i < articles.length; i++) {
+      var headline = document.createElement('h3');
+      headline.setAttribute('id', articles[i].id)
+      document.querySelector('body').appendChild(headline);
+      headline.innerHTML = articles[i].webTitle;
+    }
+  };
+
   exports.Stories = Stories;
 })(this);
 
@@ -41,3 +50,8 @@ function XhrBuilder(url, apiKey, isAsynchronous) {
     buildRequest: buildRequest
   }
 }
+
+var stories = new Stories();
+var xhrBuilder = new XhrBuilder('https://content.guardianapis.com/search?api-key=', apiKey(), false);
+stories.getHeadlines(xhrBuilder);
+stories.printStories(stories.articles);
