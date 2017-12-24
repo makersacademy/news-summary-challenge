@@ -1,49 +1,85 @@
-getNews = function(){
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world' );
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      var data = JSON.parse(xhr.responseText)
-      toView(render(data.response))
-    }
-    else {
-      alert('Request failed.  Returned status of ' + xhr.status);
-    }
+function XhrProvider() {
 
-  };
-  xhr.send();
+  function getXhr() {
+    return new XMLHttpRequest()
+  }
+
+  return {
+    getXhr: getXhr
+  }
 }
 
+function ApiService(xhrProvider) {
+
+  function sendApiRequest(verb, url, callback, error) {
+    var xhr = xhrProvider.getXhr();
+    xhr.open(verb, url);
+    xhr.onload = function(e) {
+      if (xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText)
+        callback(data);
+      } else {
+        error(e)
+      }
+    };
+    xhr.send();
+  }
+
+  return {
+    sendApiRequest: sendApiRequest
+  }
+}
+
+function NewsController(apiService) {
+
+  function handleGetNews(data) {
+    toView(render(data.response));
+  }
+
+  function errorHandler(e) {
+    console.log(e)
+  }
+
+  getNews = function(){
+    apiService.sendApiRequest(
+      'GET',
+      'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world',
+      handleGetNews,
+      errorHandler
+    )
+  }
+  return {
+    getNews: getNews
+  }
+}
+
+var apiService = new ApiService();
+var newsController = new NewsController(apiService);
+
 getSummary = function(link){
-  // var sliceLink = link.slice(28);
-  // console.log(sliceLink)
-  console.log(link)
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + link);
   xhr.onload = function() {
     if (xhr.status === 200) {
       var data = JSON.parse(xhr.responseText)
-      console.log("getSummary",data.sentences)
       toSummaryView(summaryRender(data))
     }
     else {
       alert('Request failed.  Returned status of ' + xhr.status);
     }
-
   };
   xhr.send();
 }
 
-
 render = function(news) {
   var htmlString = ""
-    for (var i = 0; i < news.results.length; i++){
-        htmlString += `<a href = "${news.results[i].webUrl}"<li>
-                      <div>${news.results[i].webTitle}</a></div>
-                      <button onClick="(getSummary('${news.results[i].webUrl}'))">Get Summary </button>
-                      </li>`
-    }
-    return (`<ul>${htmlString}</ul>`)
+  for (var i = 0; i < news.results.length; i++){
+      htmlString += `<a href = "${news.results[i].webUrl}"<li>
+                    <div>${news.results[i].webTitle}</a></div>
+                    <button onClick="getSummary('${news.results[i].webUrl}')">Get Summary </button>
+                    </li>`
+  }
+  return (`<ul>${htmlString}</ul>`)
 }
 
 summaryRender = function(singleNews){
@@ -54,15 +90,14 @@ summaryRender = function(singleNews){
     return (`${htmlString}`)
 }
 
-
 toView = function(list) {
   oops = document.getElementById('app');
   oops.innerHTML = list;
 }
 
 toSummaryView = function(summary){
-  righto = document.getElementById('summary');
-  oops.innerHTML = summary;
+  var ooh = document.getElementById('summary');
+  ooh.innerHTML = summary;
 }
 
 getNews();
