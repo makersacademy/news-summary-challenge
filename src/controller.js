@@ -1,60 +1,18 @@
-function XhrProvider() {
-
-  function getXhr() {
-    return new XMLHttpRequest()
-  }
-
-  return {
-    getXhr: getXhr
-  }
+getNews = function(){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      var data = JSON.parse(xhr.responseText)
+      toView(render(data.response))
+    }
+    else {
+      alert('Request failed.  Returned status of ' + xhr.status);
+    }
+  };
+  xhr.send();
 }
 
-function ApiService(xhrProvider) {
-
-  function sendApiRequest(verb, url, callback, error) {
-    var xhr = xhrProvider.getXhr();
-    xhr.open(verb, url);
-    xhr.onload = function(e) {
-      if (xhr.status === 200) {
-        var data = JSON.parse(xhr.responseText)
-        callback(data);
-      } else {
-        error(e)
-      }
-    };
-    xhr.send();
-  }
-
-  return {
-    sendApiRequest: sendApiRequest
-  }
-}
-
-function NewsController(apiService) {
-
-  function handleGetNews(data) {
-    toView(render(data.response));
-  }
-
-  function errorHandler(e) {
-    console.log(e)
-  }
-
-  getNews = function(){
-    apiService.sendApiRequest(
-      'GET',
-      'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world',
-      handleGetNews,
-      errorHandler
-    )
-  }
-  return {
-    getNews: getNews
-  }
-}
-
-var apiService = new ApiService();
-var newsController = new NewsController(apiService);
 
 getSummary = function(link){
   var xhr = new XMLHttpRequest();
