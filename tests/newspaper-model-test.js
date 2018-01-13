@@ -1,9 +1,12 @@
 (function(exports) {
-  var article = new Article("Headline", "www.fakeurl.example", "Body")
+
+  function DoubleArticle(headline, url, body) {};
+
+  var doubleArticle = new DoubleArticle("Headline", "www.fakeurl.example", "Body")
   var newspaper = new Newspaper();
 
   function testArticleInNewspaperArray() {
-    newspaper.addArticle(article);
+    newspaper.addArticle(doubleArticle);
     assert.isTrue(newspaper.listOfArticles.length === 1, "Article is added to newspaper array");
   };
 
