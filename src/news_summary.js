@@ -4,5 +4,7 @@ class NewsSummaryApp extends BaseController{
     return this.manager;
   }
 
-
+  get_home(){
+    this.router.render('home');
+  }
 }
