@@ -1,0 +1,3 @@
+class NewsSummaryApp extends BaseController{
+  
+}
