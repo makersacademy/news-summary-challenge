@@ -1,5 +1,5 @@
 class BaseController{
-  constructor(router = new Router){
+  constructor(router = new Router('app')){
     this.router = router;
     window.onhashchange = this.hashChanged.bind(this);
     this.hashChanged();
