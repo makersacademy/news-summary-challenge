@@ -5,6 +5,8 @@ class NewsSummaryApp extends BaseController{
   }
 
   get_home(){
-    this.router.render('home');
+    
+    var context = {title: "Home"}
+    this.router.render('home', context);
   }
 }

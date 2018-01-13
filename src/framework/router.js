@@ -3,7 +3,6 @@ function getHTML(path, callback){
   getter.onreadystatechange = function(){
     if(getter.readyState === XMLHttpRequest.DONE){
       if(getter.status === 200){
-        console.log(getter.responseText)
         callback(getter.responseText)
       } else {
         console.log("Page Not Found")
