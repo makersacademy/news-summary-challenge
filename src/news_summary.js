@@ -3,4 +3,6 @@ class NewsSummaryApp extends BaseController{
     this.manager = (this.manager || new ArticleManager);
     return this.manager;
   }
+
+
 }

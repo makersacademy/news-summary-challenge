@@ -2,6 +2,7 @@ class BaseController{
   constructor(router = new Router('app')){
     this.router = router;
     window.onhashchange = this.hashChanged.bind(this);
+    window.location.hash = "#home"
     this.hashChanged();
   }
 
@@ -19,8 +20,8 @@ class BaseController{
     // Execute if a method matching pageName exists else pagenotfound
     try{
       this[pageName]();
-    } catch(err){
-      console.log(err);
+    } catch(TypeError){
+      //console.log(err);
       this.get_PageNotFound();
     };
   }
