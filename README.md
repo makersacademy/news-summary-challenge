@@ -47,4 +47,4 @@ So that I have something nice to look at
 ```
 
 ## Further improvements
-If I had developed the program in a more functional way. If I had more time, I would refactor the code my extracting more objects and implementing more SRP. Furthermore, I should add more tests that focus on behaviour.
+I had developed the program in a more functional way. If I had more time, I would refactor the code my extracting more objects and implementing more SRP. Furthermore, I should add more tests that focus on behaviour.
