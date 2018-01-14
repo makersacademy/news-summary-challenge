@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/umairb1/news-summary-challenge#readme",
   "dependencies": {
+    "cors": "^2.8.4",
     "http-server": "^0.11.1"
   },
   "devDependencies": {
-    "mocha": "^4.1.0"
+    "mocha": "^4.1.0",
+    "chai": "^4.1.2",
+    "request": "^2.83.0"
   }
 }

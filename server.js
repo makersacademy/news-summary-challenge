@@ -1,8 +1,9 @@
 var http = require('http');
-var url = 'http://content.guardianapis.com/search?tag=environment/recycling&api-key=test'
+var cors = require('cors')
+var url = 'http://content.guardianapis.com/search?q=breaking%20news&api-key=test'
 var newsApi = '';
 
-http.createServer((req, res) => {
+var server = module.exports = http.createServer((req, res) => {
   switch (req.method) {
     case 'GET':
     getNewsApi(req, res);
@@ -10,19 +11,22 @@ http.createServer((req, res) => {
     default:
       break;
   }
-}).listen(8000, () => {
-  console.log('Running server on port 8000')
+}).listen(8080, () => {
+  console.log('Running server on port 8080')
 });
 
 function getNewsApi(req, res) {
   if (req.url === '/help') {
+    console.log('hi')
     http.get(url, (response) => {
       response.setEncoding("utf8");
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Request-Method', '*');
       response.on("data", (data) => { newsApi += data });
+      
       response.on('end', () => {
-        newsApi = JSON.parse(newsApi);
         res.writeHead(200, { "Content-Type": "text/html" });
-        res.end()
+        res.end(newsApi)
       });
     });
   }
