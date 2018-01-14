@@ -70,6 +70,8 @@ node node_modules/http-server/bin/http-server
 
 Headlines from the Guardian newspaper are displayed:
 
+![ScreenShot](news-summary-screenshot.png)
+
 ## Built with
 
 ```
