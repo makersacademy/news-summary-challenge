@@ -76,11 +76,11 @@ node node_modules/http-server/bin/http-server
 
 Headlines from the Guardian newspaper are displayed:
 
-![ScreenShot](images/guardian-screenshot.png)
+![ScreenShot](images/news-summary-screenshot.png)
 
 Click on a link to be view original news article:
 
-![ScreenShot](images/news-summary-screenshot.png)
+![ScreenShot](images/guardian-screenshot.png)
 
 ## Built with
 
