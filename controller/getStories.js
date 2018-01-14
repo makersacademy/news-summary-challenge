@@ -4,10 +4,6 @@
   var month = today.getMonth() + 1;
   var year = today.getFullYear();
 
-/////////////////////////////////////////////////////////////////////
-  API_KEY = "b76ae747-8e36-4c8e-a0b1-ef235e75ab20" // REMOVE LATER //
-/////////////////////////////////////////////////////////////////////
-
   var api_url = "https://content.guardianapis.com/search?from-date="+ year + "-" + month  +"-" + date + "&api-key=" + API_KEY
 
   function getJSON(url, callback) {
@@ -25,12 +21,19 @@
       xhr.send();
   };
 
+  function printer(data) {
+    document.getElementById('app').innerHTML = new ViewAllStories(data).convertDataToHtml();
+  };
+
   getJSON(api_url, function(err, data) {
     if (err !== null) {
       alert('Something went wrong: ' + err);
     } else {
        exports.newsData = data.response.results;
+       printer(newsData);
     }
   });
+
+
 
 })(this);
