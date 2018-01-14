@@ -22,7 +22,6 @@ class NewsSummaryApp extends BaseController{
     if(manager.articles.length === 0){
       apiRequest(testUrl, (data) => {
         manager.addArticles(JSON.parse(data));
-        console.log(this);
         var context = this.build_context();
         context.title = "Home";
         this.router.render('home', context);
@@ -41,9 +40,7 @@ class NewsSummaryApp extends BaseController{
     var article = manager.articles.filter((article) => {return article.id == id})[0]
     var urlPrefix = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url="
     apiRequest(urlPrefix+article.url, (data) => {
-      //debugger;
-      console.log(data);
-      context.content = JSON.parse(data).text;
+      context.content = JSON.parse(data).sentences.join(" ");
       context.title = article.title
       context.link = article.url
       this.router.render('article_detail', context)
