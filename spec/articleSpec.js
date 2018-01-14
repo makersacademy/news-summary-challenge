@@ -4,39 +4,39 @@ var testList = [
 
   function() {
     testEquals('Article returns headline',
-    article.headline,
+    article.getHeadline(),
     'headline'
     )
   },
 
   function() {
     testEquals('Article returns url',
-    article.url,
+    article.getUrl(),
     'url'
     )
   },
 
   function() {
     testEquals('Article returns text',
-    article.text,
+    article.getText(),
     'text'
     )
   },
 
   function() {
     testEquals('Article returns thumbnail',
-    article.thumbnail,
+    article.getThumbnail(),
     'thumbnail'
     )
   },
 
-  // function() {
-  //   article.setSummary('summary')
-  //   testEquals('Article sets/gets summary',
-  //   article.summary,
-  //   'summary'
-  //   )
-  // },
+  function() {
+    article.setSummary('summary')
+    testEquals('Article sets/gets summary',
+    article.getSummary(),
+    'summary'
+    )
+  },
 
   // function() {
   //   testEquals('Article returns id',
