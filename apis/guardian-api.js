@@ -1,6 +1,8 @@
 (function(exports) {
 
-  function GuardianAPI() {};
+  function GuardianAPI(headlineList = new HeadlineList()) {
+    this.headlineList = headlineList;
+  };
 
   GuardianAPI.prototype.makeRequest = function() {
     var request = new XMLHttpRequest();
@@ -10,13 +12,13 @@
         createHeadlineList(articles);
       };
     };
-    xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search");
+    xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics?show-fields=all");
     xhttp.send();
   };
 
   GuardianAPI.prototype.createHeadlineList = function(articles) {
     articles.forEach((article) => {
-      headlineList.createArticle(article.webTitle, article.webUrl, article.fields.body);
+      this.headlineList.createArticle(article.webTitle, article.webUrl, article.fields.body);
     });
   };
 
