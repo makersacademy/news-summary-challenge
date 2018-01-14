@@ -1,27 +1,11 @@
 (function(exports){
-
+  var idCount = 0;
   function Story(newsObject) {
     this.image = newsObject.fields.thumbnail;
-    this.headline = newsObject.webTitle;
-    this.webUrl = newsObject.webUrl;
-    this.content = newsObject.fields.body;
+    this.title = newsObject.webTitle;
+    this.url = newsObject.webUrl;
+    this.id = idCount++;
   }
-
-  Story.prototype.getHeadLine = function () {
-    return this.headline;
-  };
-
-  Story.prototype.getImage = function () {
-    return this.image;
-  };
-
-  Story.prototype.getWebUrl = function () {
-    return this.webUrl;
-  };
-
-  Story.prototype.getContent = function () {
-    return this.content;
-  };
 
   exports.Story = Story;
 })(this);
