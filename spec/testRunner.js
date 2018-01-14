@@ -15,5 +15,5 @@
 })(this);
 
 var testRunner = new TestRunner();
-
+testRunner.addTest(testConvertDataToHtmlString);
 testRunner.runTests();
