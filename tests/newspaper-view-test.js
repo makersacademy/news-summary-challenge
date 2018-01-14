@@ -5,6 +5,10 @@
     DoubleArticle.prototype = {
       displayHeadline: function() {
         return "Headline";
+      },
+
+      displayURL: function() {
+        return "http://www.example.com"
       }
     };
 
@@ -15,7 +19,7 @@
     newspaper.addArticle(article2);
     var newspaperView = new NewspaperView(newspaper);
 
-    assert.isTrue(newspaperView.returnHtml() === "<ul><li>Headline</li><li>Headline</li></ul>", "Headline returned as Html string");
+    assert.isTrue(newspaperView.returnHtml() === "<ul><li><a href='http://www.example.com'>Headline</a></li><li><a href='http://www.example.com'>Headline</a></li></ul>", "Headline returned as Html string");
   };
 
   testCreateHtmlString()

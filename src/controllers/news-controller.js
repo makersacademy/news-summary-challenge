@@ -5,9 +5,13 @@
   }
 
   NewsController.prototype.addHeadlinesToPage = function(el) {
+      document.getElementById(el).innerHTML = this.newspaperView.returnHtml();
+  };
+
+  NewsController.prototype.loadHeadlines = function(el) {
     var self = this;
     this.newspaper.fetchArticles(function() {
-      document.getElementById(el).innerHTML = self.newspaperView.returnHtml();
+      self.addHeadlinesToPage(el);
     });
   };
 

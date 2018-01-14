@@ -16,10 +16,5 @@
     assert.isTrue(newspaper.listOfArticles.length === 1, "Article is added to newspaper array");
   };
 
-  function testReturnHeadlineFromList() {
-    assert.isTrue(newspaper.returnHeadlineFromList(0) === "Headline", "Headline is returned from listOfArticles array")
-  };
-
   testArticleInNewspaperArray();
-  testReturnHeadlineFromList()
 })(this);
