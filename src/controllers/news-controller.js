@@ -5,7 +5,10 @@
   }
 
   NewsController.prototype.addHeadlinesToPage = function(el) {
-    document.getElementById(el).innerHTML = this.newspaperView.returnHtml();
+    var self = this;
+    this.newspaper.fetchArticles(function() {
+      document.getElementById(el).innerHTML = self.newspaperView.returnHtml();
+    });
   };
 
   exports.NewsController = NewsController;
