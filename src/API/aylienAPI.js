@@ -1,15 +1,17 @@
-function requestToAylienApi(){
-  var url = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://www.telegraph.co.uk/news/2018/01/10/australian-girl-face-iconic-akubra-hat-commits-suicide-aged/";
-
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function () {
-    if(this.readyState == 4 && this.status == 200) {
-      var response = JSON.parse(this.responseText);
-      console.log(response);
+function readStory(storyId, length) {
+  var story = storyList.findStoryById(storyId);
+  var readRequest = new XMLHttpRequest();
+  readRequest.open('GET', encodeURI('http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + story.url));
+  readRequest.onreadystatechange = function(response) {
+    if (readRequest.readyState === 4) {
+      // if(length === 0) {
+      //   var json = JSON.parse(readRequest.response).sentences;
+      //   document.getElementById('summaries').innerHTML = json + "<br><button onclick='readStory(" + storyId + ", 1)'>Read Full Story</button>";
+      // } else {
+        var text = JSON.parse(readRequest.response).text;
+        document.getElementById('summaries').innerHTML = text;
+      }
     }
   };
-  xhr.open("GET", url, true);
-  xhr.send();
+  readRequest.send();
 }
-
-requestToAylienApi();
