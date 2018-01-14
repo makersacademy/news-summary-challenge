@@ -1,10 +1,10 @@
 class Article{
-  constructor(url = "", apiUrl = "", thumbnail = "", content="", title="", date=""){
+  constructor(url = "", apiUrl = "", thumbnail = "", title="", date="", content=""){
     this.url = url;
     this.apiUrl = apiUrl;
     this.thumbnail = thumbnail;
-    this.content = content;
     this.title = "";
-    this.date = ""
+    this.date = "";
+    this.content = content;
   }
 }

@@ -7,8 +7,8 @@ class ArticleManager{
     return this.articles;
   }
 
-  addArticle(article = Article, url, apiUrl, thumbnail, content, title, date){
-    var article = new article(url, apiUrl, thumbnail, content, title, date)
+  addArticle(article = Article, url, apiUrl, thumbnail, title, date, content){
+    var article = new article(url, apiUrl, thumbnail, title, date, content)
     this.articles.push(article)
     return article
   }
@@ -17,6 +17,7 @@ class ArticleManager{
     data.response.results.forEach((result) => {
       this.addArticle(Article,
                       result.webUrl,
+                      result.apiUrl,
                       result.fields.thumbnail,
                       result.webTitle,
                       result.webPublicationDate)
