@@ -4,7 +4,7 @@ class NewsSummaryApp extends BaseController{
     return this.manager;
   }
 
-  build_context(){
+  buildContext(){
     var manager = this.getManager();
     var context = {}
     manager.articles.forEach((article, index) => {
@@ -22,12 +22,12 @@ class NewsSummaryApp extends BaseController{
     if(manager.articles.length === 0){
       apiRequest(testUrl, (data) => {
         manager.addArticles(JSON.parse(data));
-        var context = this.build_context();
+        var context = this.buildContext();
         context.title = "Home";
         this.router.render('home', context);
       })
     } else {
-      var context = this.build_context();
+      var context = this.buildContext();
       context.title = "Home";
       this.router.render('home', context);
     }

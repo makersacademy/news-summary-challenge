@@ -1,0 +1,15 @@
+h3 {
+    font-family: "Georgia", Times, serif;
+}
+
+div{
+  display: inline-block;
+}
+
+.article-block{
+  margin: 20px 20px 20px 20px;
+}
+
+.container{
+  width: 100%;
+}

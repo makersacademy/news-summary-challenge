@@ -13,7 +13,6 @@ class BaseController{
       if(pageName.indexOf('/') === -1){
         this.loadPageController(pageName);
       } else {
-        console.log("Slash");
         this.loadPageController(pageName.slice(0, pageName.indexOf('/')));
       }
     }
@@ -21,12 +20,10 @@ class BaseController{
 
   loadPageController(pageName){
     pageName = "get_" + pageName
-    console.log(pageName);
     // Execute if a method matching pageName exists else pagenotfound
     try{
       this[pageName]();
     } catch(TypeError){
-      //console.log(err);
       this.get_PageNotFound();
     };
   }
