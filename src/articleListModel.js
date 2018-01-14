@@ -18,11 +18,11 @@
 
   List.prototype.getArticleByID = function(num) {
     var arr = this.getArticles()
-    //for(var i=0;i<this.articles.length,i++) {
+    for(var i=0;i<arr.length;i++) {
       if (arr[2].getID() == num) {
         return arr[2]
       }
-    //}
+    }
   }
 
   exports.List = List;

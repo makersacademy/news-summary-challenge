@@ -1,7 +1,5 @@
 (function(exports) {
-  var ArticleID = function() {
-    this.id;
-  };
+  var ArticleID = function() {};
 
   ArticleID.prototype.init = function() {
     this.id = 0;
