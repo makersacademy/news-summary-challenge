@@ -17,8 +17,6 @@
   };
 
   function testReturnHeadlineFromList() {
-    console.log(newspaper)
-    console.log(newspaper.returnHeadlineFromList(0))
     assert.isTrue(newspaper.returnHeadlineFromList(0) === "Headline", "Headline is returned from listOfArticles array")
   };
 
