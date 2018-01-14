@@ -1,5 +1,5 @@
 var list = new List();
-var article;
+var article = 'article';
 
 var testList = [
 
@@ -11,6 +11,22 @@ var testList = [
     )
   },
 
+  function() {
+    list.addArticle(article)
+    var articles = list.getArticles()
+    testEquals('List returns all articles (as array)',
+    articles[0] + articles[1],
+    'articlearticle'
+    )
+  },
+
+  function() {
+    list.createAndAddArticle('url', 'headline', 'text', 'thumbnail')
+    testEquals('List creates(and adds) new articles',
+    list.getArticles()[2].getUrl(),
+    'url'
+    )
+  },
 
 ]
 
