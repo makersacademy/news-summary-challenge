@@ -88,6 +88,8 @@ Makers News Summary API
 
 I approached this project in a similar way to the Notes app and was able to complete User Story 1 and User Story 2. Although I was unable to finish the app, I gained an understanding of the Model-View-Controller relationship, XMLHttpRequest objects, and APIs. If I had more time, I would have used the Aylien API to display a summary and photograph from each article, with each article's link. I plan on returning to this project at another time to incorporate these features.
 
+
+
 ## Author
 
 [Keran Braich](https://github.com/ker-an)
