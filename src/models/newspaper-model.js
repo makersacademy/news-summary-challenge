@@ -18,7 +18,7 @@
         data.response.results.forEach(function(result) {
           self.addArticle(new Article(result.webTitle, result.webUrl));
         });
-        if(callback) {
+        if (callback) {
           callback();
         }
       } else {

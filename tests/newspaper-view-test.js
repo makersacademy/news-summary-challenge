@@ -1,4 +1,4 @@
-(function(exports){
+(function(exports) {
   function testCreateHtmlString() {
     function DoubleArticle(headline, url, body) {};
 
@@ -19,7 +19,7 @@
     newspaper.addArticle(article2);
     var newspaperView = new NewspaperView(newspaper);
 
-    assert.isTrue(newspaperView.returnHtml() === "<ul><li><a href='http://www.example.com'>Headline</a></li><li><a href='http://www.example.com'>Headline</a></li></ul>", "Headline returned as Html string");
+    assert.isTrue(newspaperView.returnHtml().match(/<a href=\'http:\/\/www.example.com\'/g).length === 2, "Links to headlines should be created");
   };
 
   testCreateHtmlString()
