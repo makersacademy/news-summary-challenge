@@ -13,8 +13,11 @@
     return this.stories.filter(function(story) {
         return story.id === id;
     })[0];
-
   };
+
+List.prototype.returnAllStories = function () {
+    return this.stories;
+};
 
   exports.List = List;
 })(this);

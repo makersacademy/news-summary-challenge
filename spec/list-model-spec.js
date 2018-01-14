@@ -6,7 +6,7 @@ function testListModel(){
   };
 
   var story = new Story(newsObject)
-  var list = new List(Story);
+  var list = new List(story);
   assert.isTrue(list instanceof List, "List model instantiated");
 }
 

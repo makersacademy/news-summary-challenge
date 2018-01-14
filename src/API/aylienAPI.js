@@ -1,5 +1,5 @@
 function readStory(storyId, length) {
-  var story = storyList.findStoryById(storyId);
+  var story = List.findStoryById(storyId);
   var readRequest = new XMLHttpRequest();
   readRequest.open('GET', encodeURI('http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + story.url));
   readRequest.onreadystatechange = function(response) {
@@ -10,7 +10,7 @@ function readStory(storyId, length) {
       // } else {
         var text = JSON.parse(readRequest.response).text;
         document.getElementById('summaries').innerHTML = text;
-      }
+
     }
   };
   readRequest.send();

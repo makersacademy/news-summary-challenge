@@ -5,10 +5,16 @@ function loadStories() {
     if (request.readyState === 4) {
       var json = JSON.parse(request.response);
       var array = json.response.results;
+      console.log(array)
       for (var i = 0; i < array.length; i++) {
-        storyList.addStory(array[i].webTitle, array[i].webUrl);
+        var newsObject = {
+          webTitle: array[i].webTitle,
+          webUrl: array[i].webUrl,
+          fields: array[i].fields,
+        };
+        list.addStory(newsObject);
       }
-    list.innerHTML = displayHeadlines(storyList);
+    list.innerHTML = displayHeadlines();
     }
   };
   request.send();
