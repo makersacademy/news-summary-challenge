@@ -11,10 +11,10 @@
     return this.listOfArticles[index].displayHeadline();
   };
 
-  // Newspaper.prototype.fetchArticles = function(callback) {
-  //   //do all your loady stuff
-  //   callback();
-  // };
+    // Newspaper.prototype.fetchArticles = function(callback) {
+    //   //do all your loady stuff
+    //   callback();
+    // };
 
   exports.Newspaper = Newspaper;
 })(this);
