@@ -38,12 +38,17 @@ var testList = [
     )
   },
 
-  // function() {
-  //   testEquals('Article returns id',
-  //   article.id,
-  //   'id'
-  //   )
-  // },
+  function() {
+    var testID = function() {
+      return 0;
+    }
+    var stub = new Stub(ArticleID.prototype, 'getID', testID)
+    testEquals('Article returns id',
+    article.getID(),
+    0
+    )
+    stub.restore()
+  },
 
 ]
 

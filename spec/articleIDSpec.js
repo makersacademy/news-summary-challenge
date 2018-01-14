@@ -1,29 +1,28 @@
-var id = new ArticleID()
+ArticleID.prototype.init()
 
 var testList = [
 
   function() {
-    testEquals('Id initialises to 0',
-    id.id,
+    testEquals('Id can be initialises to 0',
+    ArticleID.prototype.getID(),
     0
     )
   },
 
   function() {
-    id.increment()
+    testEquals('It returns current id',
+    ArticleID.prototype.getID(),
+    0
+    )
+  },
+
+  function() {
+    ArticleID.prototype.increment()
     testEquals('Id can be incremented',
-    id.id,
+    ArticleID.prototype.getID(),
     1
     )
   },
-
-  function() {
-    var id = new ArticleID()
-    testEquals('It returns current id',
-    id.getID(),
-    0
-    )
-  }
 
 ]
 

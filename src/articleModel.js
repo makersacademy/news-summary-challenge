@@ -1,11 +1,17 @@
+
+
+
 (function(exports) {
+  ArticleID.prototype.init()
+
   var Article = function(url, headline, text, thumbnail) {
-    this.id;
+    this.id = ArticleID.prototype.getID();
     this.url = url;
     this.headline = headline;
     this.text = text;
     this.thumbnail = thumbnail;
     this.summary;
+    ArticleID.prototype.increment();
   }
 
   Article.prototype.getUrl = function() {
@@ -32,5 +38,24 @@
     return this.summary
   }
 
+  Article.prototype.getID = function() {
+    return article.id
+  }
+
   exports.Article = Article
 })(this);
+
+function Stub(obj, functionName, newFunction) {
+  this.obj = obj;
+  this.functionName = functionName;
+  console.log(obj)
+  console.log(' ')
+  console.log(obj[functionName])
+  this.originalFunction = obj[functionName];
+  obj[functionName] = newFunction;
+  console.log(obj[functionName])
+}
+
+Stub.prototype.restore = function () {
+  this.obj[this.functionName] = this.originalFunction;
+}
