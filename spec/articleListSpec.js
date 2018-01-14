@@ -29,6 +29,17 @@ var testList = [
     )
   },
 
+  function() {
+    var idArticle = {
+      getID: function() { return 2 }, headline: 'test'
+    }
+    list.addArticle(idArticle)
+    testEquals('List can select article by id number',
+    list.getArticleByID(2).headline,
+    'test'
+    )
+  },
+
 ]
 
 voodoo(testList)

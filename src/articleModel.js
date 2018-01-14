@@ -1,6 +1,3 @@
-
-
-
 (function(exports) {
   ArticleID.prototype.init()
 
