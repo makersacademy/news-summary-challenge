@@ -3,8 +3,8 @@ class Article{
     this.url = url;
     this.apiUrl = apiUrl;
     this.thumbnail = thumbnail;
-    this.title = "";
-    this.date = "";
+    this.title = title;
+    this.date = date;
     this.content = content;
   }
 }
