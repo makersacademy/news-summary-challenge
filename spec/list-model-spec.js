@@ -2,7 +2,6 @@ function testListModel(){
   newsObject = {
     webTitle: "test article",
     webUrl: "https://www.theguardian.com/media/2018/jan/14/new-tabloid-observer-coming-next-week",
-    fields: {thumbnail: "thumbnailURL"}
   };
 
   var story = new Story(newsObject)
@@ -16,7 +15,6 @@ function testAddStory() {
   newsObject = {
     webTitle: "test article",
     webUrl: "https://www.theguardian.com/media/2018/jan/14/new-tabloid-observer-coming-next-week",
-    fields: {thumbnail: "thumbnailURL"}
   };
   var list = new List();
   list.addStory(newsObject);
@@ -28,7 +26,6 @@ function testFindStoryByID() {
   newsObject2 = {
     webTitle: "test article",
     webUrl: "https://www.theguardian.com/media/2018/jan/14/new-tabloid-observer-coming-next-week",
-    fields: {thumbnail: "thumbnailURL"}
   };
   var list = new List();
   list.addStory(newsObject2);
