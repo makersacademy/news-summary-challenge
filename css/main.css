@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 1.5vw/1.5 "Roboto", sans;
+}
+
+#root {
+  padding: 2vw 10.5vw;
+}
+
+h1 {
+  font-size: 4vw;
+  margin: 0 0 2vw 0;
+}
+
+h2 {
+  font-size: 1.5vw;
+  margin: 1vw 0 0 0;
+}
+
+h3 {
+  font-size: 2.5vw;
+  margin: 0;
+}
+
+.thumb {
+  width: 25vw;
+  margin-bottom: 4vw;
+  cursor: pointer;
+}
+
+.thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+time {
+  font-size: 1vw;
+  color: #999;
+}
+
+figure {
+  width: 50%;
+  font-size: 1vw;
+  color: #999;
+  margin: 2vw 0;
+}
+
+figcaption {
+  margin-top: 1vw;
+}
+
+.expanded {
+  width: 60vw;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 3vw;
+  cursor: pointer;
+}
