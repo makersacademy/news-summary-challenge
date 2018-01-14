@@ -2,6 +2,7 @@ function testDisplayView() {
   newsObject = {
     webTitle: "test article",
     webUrl: "https://www.theguardian.com/media/2018/jan/14/new-tabloid-observer-coming-next-week",
+    thumbnail: "thumbnail",
   };
 
   var list = new List();
@@ -10,6 +11,9 @@ function testDisplayView() {
   function StoryDouble() {
     this.id = 1;
     this.title = "China";
+    this.url = "url";
+    this.thumbnail = "thumbnail";
+
     StoryDouble.prototype.getTitle = function(){
       return this.title;
     }

@@ -3,6 +3,7 @@
   function Story(newsObject) {
     this.title = newsObject.webTitle;
     this.url = newsObject.webUrl;
+    this.thumbnail = newsObject.thumbnail;
     this.id = idCount++;
   }
 

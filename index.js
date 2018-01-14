@@ -9,11 +9,14 @@ function loadStories() {
   request.onreadystatechange = function(response) {
     if (request.readyState === 4) {
       var json = JSON.parse(request.response);
+      console.log(json)
       var array = json.response.results;
+
       for (var i = 0; i < array.length; i++) {
         var newsObject = {
           webTitle: array[i].webTitle,
           webUrl: array[i].webUrl,
+          thumbnail: array[i].fields.thumbnail
         };
         controller.list.addStory(newsObject);
       }

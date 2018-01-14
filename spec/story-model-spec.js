@@ -2,6 +2,7 @@ function testStoryModel(){
   newsObject = {
     webTitle: "test article",
     webUrl: "https://www.theguardian.com/media/2018/jan/14/new-tabloid-observer-coming-next-week",
+    thumbnail: "thumbnail",
   };
 
   var story = new Story(newsObject);
@@ -15,6 +16,7 @@ function testUrl(){
   newsObject = {
     webTitle: "test article",
     webUrl: "https://www.theguardian.com/media/2018/jan/14/new-tabloid-observer-coming-next-week",
+    thumbnail: "thumbnail",
   };
 
   var story = new Story(newsObject);
@@ -27,6 +29,7 @@ function testTitle(){
   newsObject = {
     webTitle: "test article",
     webUrl: "https://www.theguardian.com/media/2018/jan/14/new-tabloid-observer-coming-next-week",
+    thumbnail: "thumbnail",
   };
 
   var story = new Story(newsObject);

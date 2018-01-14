@@ -2,6 +2,7 @@ function testController(){
   newsObject = {
     webTitle: "test article",
     webUrl: "https://www.theguardian.com/media/2018/jan/14/new-tabloid-observer-coming-next-week",
+    thumbnail: "thumbnail",
   };
   var list = new List();
   list.addStory(newsObject)
