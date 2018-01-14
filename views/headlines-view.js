@@ -7,7 +7,7 @@
     var list = this.headlineList
     .getArticles()
     .map(article => {
-      return "<li><a href='#" + 1 + "'>" +
+      return "<li><a href='#" + article.id + "'>" +
       article.getHeadline() + "</a></li>"})
     .join("");
 

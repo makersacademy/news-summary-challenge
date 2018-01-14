@@ -16,5 +16,11 @@
     this.addArticle(article);
   };
 
+  HeadlineList.prototype.getArticleById = function(id) {
+    return this.articles.find(function(article) {
+      return article.id === id
+    });
+  };
+
   exports.HeadlineList = HeadlineList;
 })(this);
