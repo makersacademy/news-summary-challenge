@@ -1,16 +1,20 @@
 (function(exports) {
-function HeadlineList() {
-  this.articles = [];
-};
+  function HeadlineList() {
+    this.articles = [];
+  };
 
-HeadlineList.prototype.addArticle = function(article) {
+  HeadlineList.prototype.getArticles = function() {
+    return this.articles;
+  };
+
+  HeadlineList.prototype.addArticle = function(article) {
     this.articles.push(article);
-};
+  };
 
-HeadlineList.prototype.createArticle = function(headline) {
-  article = new Article(headline);
-  this.addArticle(article);
-};
+  HeadlineList.prototype.createArticle = function(webTitle, webUrl, body) {
+    article = new Article(webTitle, webUrl, body);
+    this.addArticle(article);
+  };
 
   exports.HeadlineList = HeadlineList;
 })(this);
