@@ -8,7 +8,7 @@
     var request = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        var articles = JSON.parse(request.responseText)
+        var articles = JSON.parse(request.responseText);
         createHeadlineList(articles);
       };
     };
