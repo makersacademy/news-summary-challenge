@@ -7,9 +7,14 @@
     this.listOfArticles.push(article);
   };
 
-  Newspaper.prototype.returnAllArticles = function() {
-    return this.listOfArticles;
+  Newspaper.prototype.returnHeadlineFromList = function(index) {
+    return this.listOfArticles[index].displayHeadline();
   };
+
+  // Newspaper.prototype.fetchArticles = function(callback) {
+  //   //do all your loady stuff
+  //   callback();
+  // };
 
   exports.Newspaper = Newspaper;
 })(this);
