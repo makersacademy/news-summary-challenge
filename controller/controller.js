@@ -26,6 +26,7 @@
     articleView = new ArticleView(article);
     document.getElementById("app").innerHTML = articleView.createHtmlString();
   };
+};
 
 controller = new NewsController();
 displayArticleSummary();
