@@ -21,9 +21,10 @@ var testList = [
   },
 
   function() {
+    var list = new List()
     list.createAndAddArticle('url', 'headline', 'text', 'thumbnail')
     testEquals('List creates(and adds) new articles',
-    list.getArticles()[2].getUrl(),
+    list.getArticles()[0].getUrl(),
     'url'
     )
   },
