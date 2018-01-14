@@ -29,7 +29,7 @@
     if (err !== null) {
       alert('Something went wrong: ' + err);
     } else {
-       exports.data = data.response.results;
+       exports.newsData = data.response.results;
     }
   });
 

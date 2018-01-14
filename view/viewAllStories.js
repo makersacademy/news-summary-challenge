@@ -7,7 +7,7 @@
     html = "<ul>"
     for(var i = 0; i < this.data.length; i++){
       var story = this.data[i];
-      html += "<li><h3>" + story.webTitle + "</h3><a>"+ story.webUrl + "</a></li>";
+      html += "<li><h3>" + story.webTitle + "</h3><a href = " + story.webUrl + ">Click here to go to article</a></li>";
     }
     return html += "</ul>";
   };
