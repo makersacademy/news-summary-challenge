@@ -2,7 +2,7 @@
 <html>
 
   <head>
-
+    <link rel="stylesheet" type="text/css" href="theme.css">
     <meta charset="utf-8">
     <title>News Reader</title>
 
@@ -10,17 +10,24 @@
   </head>
 
   <body>
+    <div id="content">
+      <h1 id="news-title">Today's latest news</h1>
+      <h5 id="gaurdian">provided by The Gaurdian</h5>
+    <hr/>
 
-    <h1>Today's latest news</h1>
-    <h5>provided by The Gaurdian</h5>
-    </br>
-    </br>
-    <div id="app">
+      <div id="app">
+
+      </div>
+
+      <!-- src files -->
+      <script src="secret.js"></script>
+      <script src="spec/viewAllStories-spec.js"></script>
+      <script src="view/viewAllStories.js"></script>
+      <script src="controller/getStories.js"></script>
+      <script src="controller/printer.js"></script>
 
     </div>
-    <!-- <script>
-      document.getElementById('variable-content').innerHTML = "test"
-    </script> -->
+
 
     <!-- src files -->
     <script src="secret.js"></script>
