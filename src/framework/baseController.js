@@ -10,7 +10,12 @@ class BaseController{
     console.log(window.location.hash);
     if(window.location.hash.length > 0){
       var pageName = window.location.hash.substr(1);
-      this.loadPageController(pageName);
+      if(pageName.indexOf('/') === -1){
+        this.loadPageController(pageName);
+      } else {
+        console.log("Slash");
+        this.loadPageController(pageName.slice(0, pageName.indexOf('/')));
+      }
     }
   }
 

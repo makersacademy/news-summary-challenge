@@ -22,4 +22,9 @@ class NewsSummaryApp extends BaseController{
     })
     console.log(context)
   }
+
+  get_article(){
+    var context = {title: "Some politics article"}
+    this.router.render('article_detail', context)
+  }
 }
