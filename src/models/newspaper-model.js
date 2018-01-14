@@ -7,10 +7,6 @@
     this.listOfArticles.push(article);
   };
 
-  Newspaper.prototype.returnHeadlineFromList = function(index) {
-    return this.listOfArticles[index].displayHeadline();
-  };
-
   Newspaper.prototype.fetchArticles = function(callback) {
     var newsRequest = new XMLHttpRequest();
     var self = this;

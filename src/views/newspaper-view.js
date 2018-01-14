@@ -5,9 +5,9 @@
 
   NewspaperView.prototype.returnHtml = function() {
     string = "";
-    for (var i = 0; i < this.newspaper.listOfArticles.length; i++) {
-      string += "<li>" + this.newspaper.returnHeadlineFromList(i) + "</li>";
-    }
+    this.newspaper.listOfArticles.forEach(function(article) {
+      string += "<li><a href='" + article.displayURL() + "'>" + article.displayHeadline() + "</a></li>";
+    });
     return "<ul>" + string + "</ul>";
   };
   exports.NewspaperView = NewspaperView;

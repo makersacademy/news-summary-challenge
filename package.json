@@ -1,0 +1,25 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "## User stories",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ker-an/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ker-an/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/ker-an/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
