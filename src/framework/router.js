@@ -20,6 +20,7 @@ class Router{
 
   render(pageName, context){
     console.log("Trying to render " + pageName);
+    console.log(context);
     this.clearPage();
     getHTML('views/' + pageName + '.html', (data) => {
       var template = new Template(data)
