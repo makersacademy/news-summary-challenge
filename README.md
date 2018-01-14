@@ -70,7 +70,7 @@ node node_modules/http-server/bin/http-server
 
 Headlines from the Guardian newspaper are displayed:
 
-![Imgur](https://imgur.com/a/HWCHn)
+![alt text](news-summary-screenshot.png "Headlines from Guardian newspaper displayed")
 
 ## Built with
 
