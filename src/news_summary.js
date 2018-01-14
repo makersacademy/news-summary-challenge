@@ -15,6 +15,8 @@ class NewsSummaryApp extends BaseController{
       console.log(this);
       manager.articles.forEach((article, index) => {
         context["title" + index] = article.title
+        context["link" + index] = article.url
+        context["img" + index] = article.thumbnail
       })
       this.router.render('home', context);
     })
