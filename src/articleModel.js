@@ -36,6 +36,21 @@
     return this.summary
   }
 
+  Article.prototype.createSummary = function(x = new XMLHttpRequest()) {
+    var xhr = x
+    var article = this
+    var aylienURL = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=" + article.getUrl()
+    xhr.open('GET', aylienURL)
+    xhr.onload = function() {
+      if(xhr.status === 200) {
+        article.setSummary(xhr.responseText)
+      } else {
+        alert('Summary Request Failed. Status: ' + xhr.status + 'Article ID: ' + article.getID())
+      }
+    }
+    xhr.send()
+  }
+
   Article.prototype.getID = function() {
     return article.id
   }

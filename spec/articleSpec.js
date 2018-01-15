@@ -43,13 +43,29 @@ var testList = [
       return 0;
     }
     var stub = new Stub(ArticleID.prototype, 'getID', testID)
-    
+
     testEquals('Article returns id',
     article.getID(),
     0
     )
+
     stub.restore()
   },
+
+  function() {
+    var article = new Article('url', 'headline', 'text', 'thumbnail')
+    var mockXHR = {
+      open: function(stuff, moreStuff) {},
+      onload: function() {},
+      send: function() { article.setSummary('summary') }
+    }
+    article.createSummary(mockXHR)
+
+    testEquals('Articles can create summaries of themselves',
+    article.getSummary(),
+    'summary'
+    )
+  }
 
 ]
 
