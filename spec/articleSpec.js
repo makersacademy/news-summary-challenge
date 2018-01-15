@@ -1,4 +1,4 @@
-var article = new Article('url', 'headline', 'text', 'thumbnail')
+var article = new Article('url', 'headline', 'thumbnail')
 
 var testList = [
 
@@ -13,13 +13,6 @@ var testList = [
     testEquals('Article returns url',
     article.getUrl(),
     'url'
-    )
-  },
-
-  function() {
-    testEquals('Article returns text',
-    article.getText(),
-    'text'
     )
   },
 
@@ -53,7 +46,7 @@ var testList = [
   },
 
   function() {
-    var article = new Article('url', 'headline', 'text', 'thumbnail')
+    var article = new Article('url', 'headline', 'thumbnail')
     var mockXHR = {
       open: function(stuff, moreStuff) {},
       onload: function() {},

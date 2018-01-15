@@ -36,10 +36,10 @@
     return this.date.toISOString().slice(0,10)
   }
 
-  Controller.prototype.startup = async function() {
-    await this.populateList()
-    this.printArticleList()
-  }
+  // Controller.prototype.startup = async function() {
+  //   await this.populateList()
+  //   this.printArticleList()
+  // }
 
   exports.Controller = Controller
 })(this)

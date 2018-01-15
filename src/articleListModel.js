@@ -11,27 +11,20 @@
     return this.articles
   }
 
-  List.prototype.createAndAddArticle = function(url, headline, text, thumbnail) {
-    var article = new Article(url, headline, text, thumbnail)
+  List.prototype.createAndAddArticle = function(url, headline, thumbnail) {
+    var article = new Article(url, headline, thumbnail)
     this.addArticle(article)
   }
 
   List.prototype.populateList = function(data) {
-    console.log(data)
-    console.log(data['response'])
     var entries = data['response']['results']
-    console.log(entries)
     for(var i=0;i<entries.length;i++) {
       var entry = entries[i]
-      console.log(entry)
       var article = new Article(entry["webUrl"],
                                 entry["webTitle"],
-                                'text',
                                 'thumbnail'
                                )
-                                //entry["fields"]["bodyText"],
                                 //entry["fields"]["thumbnail"]
-
       //article.createSummary()
       this.addArticle(article)
     }

@@ -2,7 +2,6 @@ var testArticle = {
   getID: function() { return 0 },
   getUrl: function() { return 'url' },
   getHeadline: function() { return 'headline' },
-  getText: function() { return 'text' },
   getThumbnail: function() { return 'thumbnail' }
 }
 
@@ -65,7 +64,7 @@ var testList = [
         '</div>' +
       '</li>' +
     '</ul>'
-    
+
     testEquals('Can create html to display multiple articles in article list',
     view.returnHTML(),
     htmlString.toString()
