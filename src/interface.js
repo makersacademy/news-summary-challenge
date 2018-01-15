@@ -5,4 +5,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
 })
   controller = new Controller()
   controller.populateList()
-  //controller.printArticleList('content')

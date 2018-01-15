@@ -25,6 +25,7 @@
     xhr.onload = function() {
       if(xhr.status === 200) {
         controller.list.populateList(JSON.parse(xhr.responseText))
+        controller.printArticleList('content')
       } else {
         alert('News Articles Request Failed. Status: ' + xhr.status)
       }
