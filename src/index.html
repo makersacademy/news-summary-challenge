@@ -3,6 +3,13 @@
   <head>
     <title>NewsBites</title>
     <link rel="stylesheet" href="layout.css">
+    <script src="articleID.js"></script>
+    <script src="articleModel.js"></script>
+    <script src="articleListModel.js"></script>
+    <script src="articleListView.js"></script>
+    <script src="articleView.js"></script>
+    <script src="controller.js"></script>
+    <script src="interface.js"></script>
   </head>
   <body>
     <div id="page">
@@ -11,13 +18,10 @@
           Da News.
         </h1>
         <div id="content" class="box b">
-
+          <button id=news>Show News</button>
+          <script> document.getElementById('news').addEventListener('click', function() { controller.printArticleList('content') })</script>
         </div>
       </div>
     </div>
   </body>
 </html>
-
-date.toISOString().slice(0,10)
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=uk-news&show-fields=thumbnail%2CbodyText&from-date=2018-01-13&to-date=2018-01-13&order-by=newest&use-date=published"
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=https://www.theguardian.com/uk-news/2018/jan/13/picnic-at-hanging-rock-remake-hypnotic-thriller-natalie-dormer"

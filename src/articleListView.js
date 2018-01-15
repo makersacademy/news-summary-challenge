@@ -30,7 +30,7 @@
     '<li>' +
       '<div align=center>' +
         '<img src="' + article.getThumbnail() + '">' +
-        '<h2>' + article.getHeadline() + '</h2>' +
+        '<h3>' + article.getHeadline() + '</h3>' +
         '<input type=button onclick=' + 'location.href="#article/' + article.getID() + '" value="Get Summary">' +
         '<input type=button onclick=' + 'location.href="' + article.getUrl() + '" value="Read full article"/>' +
       '</div>' +

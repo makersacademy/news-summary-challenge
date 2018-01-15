@@ -46,12 +46,12 @@ var testList = [
 
   function() {
     var list = new List()
-    var stubData = [
+    var stubData = {"response":{"results":[
     {"webTitle":"headline","webUrl":"url",
     "fields":{"thumbnail":"thumbnail","bodyText":"text"}},
     {"webTitle":"headline2","webUrl":"url2",
     "fields":{"thumbnail":"thumbnail2","bodyText":"text2"}}
-    ]
+    ]}}
     var stubSummary = new Stub(Article.prototype, 'createSummary', function() {})
     list.populateList(stubData)
 

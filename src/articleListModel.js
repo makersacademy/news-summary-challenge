@@ -17,14 +17,22 @@
   }
 
   List.prototype.populateList = function(data) {
-    for(var i=0;i<data.length;i++) {
-      var entry = data[i]
+    console.log(data)
+    console.log(data['response'])
+    var entries = data['response']['results']
+    console.log(entries)
+    for(var i=0;i<entries.length;i++) {
+      var entry = entries[i]
+      console.log(entry)
       var article = new Article(entry["webUrl"],
                                 entry["webTitle"],
-                                entry["fields"]["bodyText"],
-                                entry["fields"]["thumbnail"]
+                                'text',
+                                'thumbnail'
                                )
-      article.createSummary()                         
+                                //entry["fields"]["bodyText"],
+                                //entry["fields"]["thumbnail"]
+
+      //article.createSummary()
       this.addArticle(article)
     }
   }

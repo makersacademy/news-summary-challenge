@@ -52,7 +52,7 @@
   }
 
   Article.prototype.getID = function() {
-    return article.id
+    return this.id
   }
 
   exports.Article = Article
