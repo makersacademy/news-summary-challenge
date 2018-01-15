@@ -18,6 +18,7 @@ var testList = [
 
   function() {
     ArticleID.prototype.increment()
+    
     testEquals('Id can be incremented',
     ArticleID.prototype.getID(),
     1

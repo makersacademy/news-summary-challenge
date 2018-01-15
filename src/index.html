@@ -19,5 +19,5 @@
 </html>
 
 date.toISOString().slice(0,10)
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=uk-news&from-date=2018-01-13&to-date=2018-01-13&order-by=newest&use-date=published&show-fields=thumbnail%2CbodyText"
+curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=uk-news&show-fields=thumbnail%2CbodyText&from-date=2018-01-13&to-date=2018-01-13&order-by=newest&use-date=published"
 curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=https://www.theguardian.com/uk-news/2018/jan/13/picnic-at-hanging-rock-remake-hypnotic-thriller-natalie-dormer"

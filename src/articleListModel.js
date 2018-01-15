@@ -16,6 +16,18 @@
     this.addArticle(article)
   }
 
+  List.prototype.populateList = function(data) {
+    for(var i=0;i<data.length;i++) {
+      var entry = data[i]
+      var article = new Article(entry["webUrl"],
+                                entry["webTitle"],
+                                entry["fields"]["bodyText"],
+                                entry["fields"]["thumbnail"]
+                               )
+      this.addArticle(article)                       
+    }
+  }
+
   List.prototype.getArticleByID = function(num) {
     var arr = this.getArticles()
     for(var i=0;i<arr.length;i++) {

@@ -18,6 +18,7 @@ var testList = [
       '<input type=button onclick=' + 'location.href="' + 'url' + '" value="Read full article"/>' +
     '</div>'
     var view = new ArticleView(viewArticle)
+    
     testEquals('Can create html for a single article (to view summary)',
     view.returnHTML(),
     htmlString

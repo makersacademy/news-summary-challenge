@@ -12,6 +12,7 @@ var testList = [
   function() {
     var list = new List()
     var view = new ListView(list)
+
     testEquals('A message is displayed when list contains no articles',
     view.returnHTML(),
     '<h1> No news to report! </h1>'
@@ -33,6 +34,7 @@ var testList = [
         '</div>' +
       '</li>' +
     '</ul>'
+
     testEquals('Can create html to display a 1 article list',
     view.returnHTML(),
     htmlString
@@ -63,6 +65,7 @@ var testList = [
         '</div>' +
       '</li>' +
     '</ul>'
+    
     testEquals('Can create html to display multiple articles in article list',
     view.returnHTML(),
     htmlString.toString()

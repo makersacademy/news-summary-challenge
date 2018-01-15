@@ -8,6 +8,7 @@
     this.text = text;
     this.thumbnail = thumbnail;
     this.summary;
+    //this.summary = this.createSummary()
     ArticleID.prototype.increment();
   }
 
