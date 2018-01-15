@@ -11,6 +11,15 @@ var testList = [
 
   function() {
     var list = new List()
+    var view = new ListView(list)
+    testEquals('A message is displayed when list contains no articles',
+    view.returnHTML(),
+    '<h1> No news to report! </h1>'
+    )
+  },
+
+  function() {
+    var list = new List()
     list.addArticle(testArticle)
     var view = new ListView(list)
     var htmlString =

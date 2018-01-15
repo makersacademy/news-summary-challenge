@@ -4,12 +4,16 @@
   }
 
   ListView.prototype.returnHTML = function() {
-    return this.addUltags(this.returnListItemsHTML())
+    var articles = this.list.getArticles()
+    if (articles.length === 0) {
+      return '<h1> No news to report! </h1>'
+    } else {
+      return this.addUltags(this.returnListItemsHTML())
+    }
   }
 
   ListView.prototype.addUltags = function(htmlString) {
-    finalHTML = '<ul style="list-style:none">' + htmlString + '</ul>'
-    return finalHTML
+    return '<ul style="list-style:none">' + htmlString + '</ul>'
   }
 
   ListView.prototype.returnListItemsHTML = function() {
