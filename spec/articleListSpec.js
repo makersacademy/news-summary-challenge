@@ -52,12 +52,15 @@ var testList = [
     {"webTitle":"headline2","webUrl":"url2",
     "fields":{"thumbnail":"thumbnail2","bodyText":"text2"}}
     ]
+    var stubSummary = new Stub(Article.prototype, 'createSummary', function() {})
     list.populateList(stubData)
 
     testEquals('List can be populated using a set of data',
     list.getArticles()[1].getThumbnail(),
     'thumbnail2'
     )
+
+    stubSummary.restore()
   }
 
 ]

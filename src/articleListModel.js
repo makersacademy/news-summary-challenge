@@ -24,7 +24,8 @@
                                 entry["fields"]["bodyText"],
                                 entry["fields"]["thumbnail"]
                                )
-      this.addArticle(article)                       
+      article.createSummary()                         
+      this.addArticle(article)
     }
   }
 
