@@ -22,10 +22,9 @@
       var entry = entries[i]
       var article = new Article(entry["webUrl"],
                                 entry["webTitle"],
-                                'thumbnail'
+                                entry["fields"]["thumbnail"]
                                )
-                                //entry["fields"]["thumbnail"]
-      //article.createSummary()
+      article.createSummary()
       this.addArticle(article)
     }
   }
@@ -33,8 +32,8 @@
   List.prototype.getArticleByID = function(num) {
     var arr = this.getArticles()
     for(var i=0;i<arr.length;i++) {
-      if (arr[2].getID() == num) {
-        return arr[2]
+      if (arr[i].getID() == num) {
+        return arr[i]
       }
     }
   }

@@ -33,6 +33,7 @@ var testList = [
   },
 
   function() {
+    var list = new List()
     var idArticle = {
       getID: function() { return 2 }, headline: 'test'
     }

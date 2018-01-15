@@ -27,7 +27,7 @@ var testList = [
       '<li>' +
         '<div align=center>' +
           '<img src="' + 'thumbnail' + '">' +
-          '<h2>' + 'headline' + '</h2>' +
+          '<h3>' + 'headline' + '</h3>' +
           '<input type=button onclick=' + 'location.href="#article/0"' + ' value="Get Summary">' +
           '<input type=button onclick=' + 'location.href="' + 'url' + '" value="Read full article"/>' +
         '</div>' +
@@ -50,7 +50,7 @@ var testList = [
       '<li>' +
         '<div align=center>' +
           '<img src="' + 'thumbnail' + '">' +
-          '<h2>' + 'headline' + '</h2>' +
+          '<h3>' + 'headline' + '</h3>' +
           '<input type=button onclick=' + 'location.href="#article/0"' + ' value="Get Summary">' +
           '<input type=button onclick=' + 'location.href="' + 'url' + '" value="Read full article"/>' +
         '</div>' +
@@ -58,7 +58,7 @@ var testList = [
       '<li>' +
         '<div align=center>' +
           '<img src="' + 'thumbnail' + '">' +
-          '<h2>' + 'headline' + '</h2>' +
+          '<h3>' + 'headline' + '</h3>' +
           '<input type=button onclick=' + 'location.href="#article/0"' + ' value="Get Summary">' +
           '<input type=button onclick=' + 'location.href="' + 'url' + '" value="Read full article"/>' +
         '</div>' +

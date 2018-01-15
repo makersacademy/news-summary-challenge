@@ -34,11 +34,12 @@
   Article.prototype.createSummary = function(x = new XMLHttpRequest()) {
     var xhr = x
     var article = this
-    var aylienURL = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=" + article.getUrl()
+    var aylienURL = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + article.getUrl()
     xhr.open('GET', aylienURL)
     xhr.onload = function() {
       if(xhr.status === 200) {
-        article.setSummary(xhr.responseText)
+        var summary = JSON.parse(xhr.responseText)
+        article.setSummary(summary['text'])
       } else {
         alert('Summary Request Failed. Status: ' + xhr.status + 'Article ID: ' + article.getID())
       }
