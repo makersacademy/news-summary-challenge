@@ -21,7 +21,7 @@ function displayNews(xhr) {
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="${results[index].fields.thumbnail}">
         <div class="card-body">
-          <h5 class="card-title">${results[index].webTitle}</h5>
+          <h5 class="card-title"><strong>${results[index].webTitle}</strong></h5>
           <p class="card-text">${results[index].fields.trailText}</p>
           <a href="${results[index].fields.shortUrl}" class="btn btn-primary">Read Full Article</a>
        </div>  

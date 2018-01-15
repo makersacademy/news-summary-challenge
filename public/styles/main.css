@@ -23,7 +23,7 @@
 
  /* ========================= Moblie ========================= */
 
- @media(min-width:10em) {
+ @media(max-width:10em) {
    .title {
      font-size: 3em;
      padding: 0%;
