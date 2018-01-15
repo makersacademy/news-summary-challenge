@@ -45,12 +45,8 @@
 function Stub(obj, functionName, newFunction) {
   this.obj = obj;
   this.functionName = functionName;
-  console.log(obj)
-  console.log(' ')
-  console.log(obj[functionName])
   this.originalFunction = obj[functionName];
   obj[functionName] = newFunction;
-  console.log(obj[functionName])
 }
 
 Stub.prototype.restore = function () {
