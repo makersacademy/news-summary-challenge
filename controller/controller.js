@@ -9,6 +9,7 @@
 })(this);
 
   function displayHeadlines() {
+    console.log("I should be called second")
     document.getElementById("app").innerHTML = controller.headlineListView.createHtmlString();
   };
 
@@ -28,13 +29,14 @@
   };
 
   function createHeadlineList(articles) {
+    console.log("I should be called first")
     articles.forEach(function(article) {
       controller.headlineList.createArticle(article.webTitle, article.webUrl, article.fields.body);
     });
+    displayHeadlines();
   };
 
 
 controller = new NewsController();
 controller.api.makeRequest(createHeadlineList)
-displayHeadlines();
 displayArticleSummary();

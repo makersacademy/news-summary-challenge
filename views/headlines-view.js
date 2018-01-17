@@ -4,6 +4,7 @@
   };
 
   HeadlineListView.prototype.createHtmlString = function() {
+    console.log(this.headlineList)
     var list = this.headlineList
     .getArticles()
     .map(article => {
