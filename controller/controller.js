@@ -26,7 +26,15 @@
     articleView = new ArticleView(article);
     document.getElementById("app").innerHTML = articleView.createHtmlString();
   };
-};
+
+  function createHeadlineList(articles) {
+    articles.forEach(function(article) {
+      controller.headlineList.createArticle(article.webTitle, article.webUrl, article.fields.body);
+    });
+  };
+
 
 controller = new NewsController();
+controller.api.makeRequest(createHeadlineList)
+displayHeadlines();
 displayArticleSummary();
