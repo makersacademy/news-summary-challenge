@@ -28,12 +28,12 @@
   ListView.prototype.createArticleHTML = function(article) {
     var htmlString =
     '<li>' +
-      '<div align=center>' +
+      '<article align=center>' +
         '<img src="' + article.getThumbnail() + '">' +
-        '<h3>' + article.getHeadline() + '</h3>' +
+        '<h5>' + article.getHeadline() + '</h5>' +
         '<input type=button onclick=' + 'location.href="#article/' + article.getID() + '" value="Get Summary">' +
         '<input type=button onclick=' + 'location.href="' + article.getUrl() + '" value="Read full article"/>' +
-      '</div>' +
+      '</article>' +
     '</li>'
     return htmlString
   }
