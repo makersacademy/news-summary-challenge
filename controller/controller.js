@@ -35,7 +35,7 @@
 
   function createHeadlineList(articles) {
     articles.forEach(function(article) {
-      controller.headlineList.createArticle(article.webTitle, article.webUrl, article.fields.body);
+      controller.headlineList.createArticle(article.webTitle, article.webUrl);
     });
     displayHeadlines();
   };

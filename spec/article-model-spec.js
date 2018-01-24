@@ -9,8 +9,3 @@ function testInitializedArticleURL() {
   assert.isTrue(article.getURL() === "url", "Article is initialized with a url");
 };
 testInitializedArticleURL();
-
-function testInitializedArticleBody() {
-  assert.isTrue(article.getBody() === "body", "Article is initialized with body text");
-};
-testInitializedArticleBody();
