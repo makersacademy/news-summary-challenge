@@ -9,7 +9,6 @@
 })(this);
 
   function displayHeadlines() {
-    console.log("I should be called second")
     document.getElementById("app").innerHTML = controller.headlineListView.createHtmlString();
   };
 
@@ -20,16 +19,21 @@
   function findArticleFromURL() {
     var id = window.location.hash.split("#")[1];
     var article = controller.headlineList.getArticleById(parseInt(id));
-    renderView(article)
+    fetchArticleSummary(article)
+    // renderView(article)
   };
 
-  function renderView(article) {
+  function fetchArticleSummary(article) {
+    aylienRequest = new AylienAPI(article.getURL());
+    aylienRequest.makeRequest(renderSummary);
+  };
+
+  function renderSummary(summary) {
     articleView = new ArticleView(article);
     document.getElementById("app").innerHTML = articleView.createHtmlString();
   };
 
   function createHeadlineList(articles) {
-    console.log("I should be called first")
     articles.forEach(function(article) {
       controller.headlineList.createArticle(article.webTitle, article.webUrl, article.fields.body);
     });

@@ -1,4 +1,4 @@
-var article = new Article("Headline 1", "url", "summary");
+var article = new Article("Headline 1", "url", "body");
 
 function testInitializedArticleHeadline() {
   assert.isTrue(article.getHeadline() === "Headline 1", "Article is initialized with a headline");
@@ -10,7 +10,7 @@ function testInitializedArticleURL() {
 };
 testInitializedArticleURL();
 
-function testInitializedArticleSummary() {
-  assert.isTrue(article.getSummary() === "summary", "Article is initialized with summary text");
+function testInitializedArticleBody() {
+  assert.isTrue(article.getBody() === "body", "Article is initialized with body text");
 };
-testInitializedArticleSummary();
+testInitializedArticleBody();

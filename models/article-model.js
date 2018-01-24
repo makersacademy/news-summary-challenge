@@ -1,11 +1,11 @@
 (function(exports) {
 
   var id = 0
-  
+
   function Article(webTitle, webUrl, body) {
     this.headline = webTitle;
     this.url = webUrl;
-    this.summary = body;
+    this.body = body;
     this.id = id++
   };
 
@@ -18,7 +18,7 @@
   };
 
   Article.prototype.getSummary = function() {
-    return this.summary;
+    return this.body;
   };
 
   exports.Article = Article;
