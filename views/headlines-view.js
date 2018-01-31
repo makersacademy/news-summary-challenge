@@ -8,7 +8,7 @@
     .getArticles()
     .map(article => {
       return "<li><a href='#" + article.id + "'>" +
-      article.getHeadline() + "</a></li>"})
+      article.getHeadline() + "<img src=" + article.getThumbnail() + "></a></li>"})
     .join("");
 
     return "<ul>" + list + "</ul>";

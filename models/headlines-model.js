@@ -11,8 +11,8 @@
     this.articles.push(article);
   };
 
-  HeadlineList.prototype.createArticle = function(webTitle, webUrl) {
-    article = new ArticleID(webTitle, webUrl);
+  HeadlineList.prototype.createArticle = function(webTitle, webUrl, thumbnail) {
+    article = new ArticleID(webTitle, webUrl, thumbnail);
     this.addArticle(article);
   };
 
