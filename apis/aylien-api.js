@@ -11,8 +11,7 @@
       if (this.readyState == 4 && this.status == 200) {
         var summary = JSON.parse(xhttp.responseText);
         if(callback) {
-          console.log(summary)
-          callback(summary);
+          callback(summary.sentences);
         };
       };
     };

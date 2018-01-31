@@ -5,10 +5,10 @@
 
   HeadlineListView.prototype.createHtmlString = function() {
     var list = this.headlineList
-    .getArticles()
-    .map(article => {
-      return "<li><a href='#" + article.id + "'>" +
-      article.getHeadline() + "<img src=" + article.getThumbnail() + "></a></li>"})
+    .getHeadlines()
+    .map(headline => {
+      return "<li><a href='#" + headline.id + "'>" +
+      headline.getTitle() + "<img src=" + headline.getThumbnail() + "></a></li>"})
     .join("");
 
     return "<ul>" + list + "</ul>";
