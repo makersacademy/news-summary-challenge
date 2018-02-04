@@ -100,7 +100,7 @@ Makers News Summary API
 
 ## Final Thoughts
 
-Although I was unable to finish the app, I gained an understanding of the Model-View-Controller relationship, XMLHttpRequest objects, and APIs. If I had more time, I would have used the Aylien API to display a summary and photograph from each article, with each article's link.
+Although I was unable to finish the app, I gained an understanding of the Model-View-Controller relationship, XMLHttpRequest objects, and APIs. I also had the opportunity to play around with Bulma, a CSS framework based on Flexbox. If given more time, I would have used the Aylien API to display a summary and photograph from each article, with each article's link.
 
 ## Author
 
