@@ -4,16 +4,10 @@
   };
 
   ArticleSummaryView.prototype.createHtmlString = function() {
-    return "<h1><a href='" + this.articleSummary
-    .getHeadline()
-    .getURL() + "'>" + this.articleSummary
-    .getHeadline()
-    .getTitle() + "<img src=" + this.articleSummary
-    .getHeadline()
-    .getThumbnail() + "></a></h1><p>" + this.articleSummary
-    .getSummary()
-    .map(function(sentence) { return sentence })
-    .join(" ") + "</p>"
+    return "<a href='" + this.articleSummary.getHeadline().getURL()
+    + "'><img src=" + this.articleSummary.getHeadline().getThumbnail()
+    + "><h1>" + this.articleSummary.getHeadline().getTitle() + "</h1></a><p>"
+    + this.articleSummary.getSummary().map(function(sentence) { return sentence }).join(" ") + "</p>"
   };
 
   exports.ArticleSummaryView = ArticleSummaryView;

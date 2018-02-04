@@ -4,6 +4,6 @@ function testCreateHtmlString() {
   var articleSummary = new ArticleSummary(headline, ["summary"]);
   var articleSummaryView = new ArticleSummaryView(articleSummary);
 
-  assert.isTrue(articleSummaryView.createHtmlString() === "<h1><a href='webUrl'>webTitle<img src=thumbnail></a></h1><p>summary</p>", "'createHtmlString' returns the headline and summary in html")
+  assert.isTrue(articleSummaryView.createHtmlString() === "<a href='webUrl'><img src=thumbnail><h1>webTitle</h1></a><p>summary</p>", "'createHtmlString' returns the headline and summary in html")
 };
 testCreateHtmlString();

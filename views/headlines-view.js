@@ -7,8 +7,9 @@
     var list = this.headlineList
     .getHeadlines()
     .map(headline => {
-      return "<li><a href='#" + headline.id + "'>" +
-      headline.getTitle() + "<img src=" + headline.getThumbnail() + "></a></li>"})
+      return "<li><a href='#" + headline.id + "'><img src="
+      + headline.getThumbnail() + ">" +
+      headline.getTitle() + "</a></li>"})
     .join("");
 
     return "<ul>" + list + "</ul>";
