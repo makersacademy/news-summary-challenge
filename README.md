@@ -1,20 +1,46 @@
-# News Summary challenge
+# The Day Today
 
-## Project overview
+## Description
 
-This app grabs the top 10 headlines from the Guardian newspaper API and displays them on the homepage.  Clicking on a headline will show a summary of the article and then allow the user to click through to the full article on the Guardian website.
-
-### Technologies
-
+This app grabs the top 10 headlines from the Guardian newspaper API and displays them on the homepage. Clicking on a headline will show a summary of the article and then allow the user to click through to the full article on the Guardian website.
 This single page web app uses pure JavaScript with HTML and CSS.
+See more about my [design process](#design-process).
 
-The project is tested in a pure JavaScript framework.
 
-### Serving this app
+## Setup
 
-A static web server e.g. [http-server](https://www.npmjs.com/package/http-server)) can be used to serve the app as the API is hosted on an external server.
+Clone the repo on the command line by running
 
-## User Stories
+`git clone git@github.com:ewintram/news-summary-challenge.git`
+
+
+## Usage
+
+To launch the app use a static server e.g.
+[http-server](https://www.npmjs.com/package/http-server))
+
+Navigate to http://localhost:8080
+
+*Headline view page*
+![Headline view page](/images/headline-list-view.png)
+
+*Article summary view page*
+![Article summary view page](/images/article-summary-view.png)
+
+
+## Running tests
+
+Testing is in pure JavaScript. To run the tests, open 'SpecRunner.html' in the browser and open the console to see the results.
+
+
+## Author
+
+Eleanor Wintram
+
+
+## Design process
+
+### User Stories
 
 ```
 As a busy politician
@@ -28,99 +54,43 @@ I can click a link to see the original news article
 So that I can get an in depth understanding of a very important story
 ```
 
-## Mockups
+```
+As a busy politician
+So I can get a few more details about an important story
+I can see a summary of a news article
+```
 
-### Headlines page
+```
+As a busy politician
+So that I have something nice to look at
+I can see a picture to illustrate each news article when I browse headlines
+```
+
+### Mockups
+
+*Headlines page*
 
 ![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
 
-### Article summary page
+*Article summary page*
 
 ![Article page mockup](/images/news-summary-project-article-page-mockup.png)
 
-## Still to complete
 
-### User stories
+### Still to implement
 
-```
-As a busy politician
-I can see a summary of a news article
-So I can get a few more details about an important story
-```
+- Front end for testing results.
+
+#### User stories
 
 ```
 As a busy politician
-I can see a picture to illustrate each news article when I browse headlines
-So that I have something nice to look at
-```
-
-```
-As a busy politician
-I can read the site comfortably on my phone
 Just in case my laptop breaks
+I can read the site comfortably on my phone
 ```
 
 ```
 As a busy politician
-I can see whizzy animations in the app
 To make my news reading more fun
+I can see whizzy animations in the app
 ```
-
-### APIs
-
-### API request rate limits and stubbing
-
-The Guardian and Aylien text summarisation APIs are severely rate-limited, therefore need to be stubbed in tests.
-
-### API Overview
-
-The basic idea is to send an `apiRequestUrl` query parameter to the News Summary API.  The value of this parameter is the URL of the request you *would* have made to the Guardian or Aylien API, minus any API credentials.
-
-### Guardian API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.  Notice how it has a query parameter for `api-key`.
-
-```
-curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this:
-
-```
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-```
-
-Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
-
-### Aylien text summarisation API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make.  Notice how it has headers to authenticate with the Aylien API.
-
-```
-curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
-  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
-  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this.
-
-```
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
-```
-
-Note how the `apiRequestUrl` parameter is just the request you would have made to the Aylien API.  Notice how you don't have to send authentication headers.
-
-### Code
-
-The code for the News Summary API is available in this repo: https://github.com/makersacademy/news-summary-api
-
-## Resources
-
-* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-* [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
