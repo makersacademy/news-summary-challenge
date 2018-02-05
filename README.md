@@ -40,6 +40,12 @@ Eleanor Wintram
 
 ## Design process
 
+*MVC pattern*
+
+
+![MVC news summary](/images/mvc-news-summary.png)
+
+
 ### User Stories
 
 ```
@@ -70,16 +76,19 @@ I can see a picture to illustrate each news article when I browse headlines
 
 *Headlines page*
 
+
 ![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
 
 *Article summary page*
+
 
 ![Article page mockup](/images/news-summary-project-article-page-mockup.png)
 
 
 ### Still to implement
 
-- Front end for testing results.
+- Front end view for the resuts of the testing framework.
+- Mocking the API response.
 
 #### User stories
 
