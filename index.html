@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!--≥ <link href="index_stylesheet.css" type="text/css" rel="stylesheet"> -->
+
+  <title>News Summary</title>
+</head>
+<body>
+
+<div id="headlines"> </div>
+
+
+
+
+  <!-- load modules -->
+  <script src="model/requestMaker.js"></script>
+  <script src="view/headlines.js"></script>
+  <script src="controller/controller.js"></script>
+
+<script>
+  requestMaker = new RequestMaker("https://content.guardianapis.com/search?api-key=1adbcffe-98b5-4af3-a187-4886d9b3171b");
+  requestMaker.makeRequest();
+  articleBatch = new Headlines(requestMaker.articles);
+  controller = new Controller(articleBatch);
+  controller.insertHeadlines();
+</script>
+
+
+  <!-- load interface script -->
+  <!-- <script src="src/interface.js"></script> -->
+
+  <!-- load testing framework -->
+  <!-- <script src="spec/jennifer.js"></script> -->
+
+  <!-- unit tests - should be commented out unless running the test itself! -->
+
+
+  <!-- feature tests - should be commented out unless running the test itself! -->
+  <!-- <script src="spec/features/createNoteSpec.js"></script> -->
+
+
+</body>
+
+</html>
