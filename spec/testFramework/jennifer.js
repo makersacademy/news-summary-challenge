@@ -1,5 +1,7 @@
 (function(exports) {
 
+    console.log("type jennifer.runTests() to run tests")
+
   var Jennifer = function() {
     this.subject;
     this.tests = [];
