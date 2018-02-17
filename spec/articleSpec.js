@@ -1,21 +1,21 @@
 (function testArticleCreation() {
 
-  var article = new Article('url', 'headline', 'text', 'thumbnail')
+  article = new Article('url', 'headline', 'body', 'thumbnail')
 
   it("should create an article with a url", function() {
-    jennifer.expects(article.url).toEqual("url")
+    jennifer.expects(article.getUrl()).toEqual("url")
   });
 
   it("should create an article with a headline", function() {
-    jennifer.expects(article.headline).toEqual("headline")
+    jennifer.expects(article.getHeadline()).toEqual("headline")
   });
 
-  it("should create an article with text", function() {
-    jennifer.expects(article.text).toEqual("text")
+  it("should create an article with a body", function() {
+    jennifer.expects(article.getBody()).toEqual("body")
   });
 
   it("should create an article with a thumbnail", function() {
-    jennifer.expects(article.thumbnail).toEqual("thumbnail")
+    jennifer.expects(article.getThumbnail()).toEqual("thumbnail")
   });
 
 })();
