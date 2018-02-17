@@ -31,7 +31,7 @@
 
     runTests: function(beforeBlock) {
       this.tests.forEach(test => {
-        beforeBlock()
+        // beforeBlock()
         test.test()
         this.executedTests[this.executedTests.length - 1].name = test.name
       })
