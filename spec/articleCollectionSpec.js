@@ -1,4 +1,4 @@
-(function ArticleSpec() {
+(function ArticleCollectionSpec() {
   it('Adds an article to the collection', () => {
     const articleDouble = {};
     const collection = new ArticleCollection();
