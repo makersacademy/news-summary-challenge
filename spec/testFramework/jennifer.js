@@ -29,9 +29,9 @@
       return this;
     },
 
-    runTests: function(beforeBlock) {
+    runTests: function() {
       this.tests.forEach(test => {
-        // beforeBlock()
+        // beforeBlock() - pass beforeBlock in as argument
         test.test()
         this.executedTests[this.executedTests.length - 1].name = test.name
       })
