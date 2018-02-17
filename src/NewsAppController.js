@@ -14,4 +14,25 @@ class NewsAppController {
     });
     this.collection = collection;
   }
+
+  getArticles() {
+    // TO DO: implement makers api request
+    // TO DO: this.getSummaries();
+    const response = {
+      results: [
+        {
+          webUrl: 'url',
+          webTitle: 'title',
+          summary: { text: 'some summary text' },
+        },
+
+        {
+          webUrl: 'anotherurl',
+          webTitle: 'anothertitle',
+          summary: { text: 'different summary text' },
+        },
+      ],
+    };
+    this.recordData(response);
+  }
 }
