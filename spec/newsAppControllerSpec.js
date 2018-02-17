@@ -21,4 +21,9 @@
   it('receives the article api response', () => {
     jennifer.expects(controller.articleData).toEqual(mockArticleResponse);
   });
+
+  it('turns the api response into a collection of articles', () => {
+    controller.processData();
+    jennifer.expects(controller.collection.articles.length).toEqual(2);
+  });
 }());
