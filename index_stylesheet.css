@@ -1,2 +1,30 @@
-html, body {
+body {
+  margin: 2% 10%;
+  padding:0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 19% 19% 19%;
+  grid-gap: 10px;
+
+}
+
+.box {
+  border-radius: 2vmin;
+  padding: 1.8vmin;
+  font-size: 200%;
+  outline: none;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.a {
+  grid-column: 1 / 8;
+  grid-row: 1 / 5
+}
+
+.b {
+  grid-column: 1 / 8;
+  grid-row: 5 / 60;
 }
