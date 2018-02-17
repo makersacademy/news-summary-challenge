@@ -6,9 +6,12 @@
   </head>
   <body>
     <div id="headlines"></div>
+    <br>
+    <div id="story"></div>
 
     <script src="models/headlineRequester.js"></script>
     <script src="views/headlineView.js"></script>
+    <script src="views/singleLinkView.js"></script>
     <script src="controller/controller.js"></script>
     <script>
       headlineRequest = new HeadlineRequester("00e86616-938f-41f0-b86c-c1271edfeb6f");
@@ -16,6 +19,7 @@
       headlineView = new HeadlineView(headlineRequest);
       controller = new Controller(headlineView);
       controller.renderHeadlines();
+      controller.hashChangeListener();
     </script>
   </body>
 </html>
