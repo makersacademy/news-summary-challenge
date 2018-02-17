@@ -1,6 +1,6 @@
 (function(exports) {
-  function Article(url, headline, body, thumbnail) {
-    this.id;
+  function Article(id, url, headline, body, thumbnail) {
+    this.id = id;
     this.url = url;
     this.headline = headline;
     this.body = body;

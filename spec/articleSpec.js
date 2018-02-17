@@ -1,6 +1,10 @@
 (function testArticleCreation() {
 
-  article = new Article('url', 'headline', 'body', 'thumbnail')
+  article = new Article('id', 'url', 'headline', 'body', 'thumbnail')
+
+  it("should create an article with an id", function() {
+    jennifer.expects(article.getId()).toEqual("id")
+  });
 
   it("should create an article with a url", function() {
     jennifer.expects(article.getUrl()).toEqual("url")
