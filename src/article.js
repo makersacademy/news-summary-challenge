@@ -1,6 +1,5 @@
 (function(exports) {
-  function Article(id, url, headline, body, thumbnail) {
-    this.id = id;
+  function Article(url, headline, body, thumbnail) {
     this.url = url;
     this.headline = headline;
     this.body = body;
@@ -8,10 +7,6 @@
   }
 
   Article.prototype = {
-
-  getId: function() {
-    return this.id
-  },
 
   getUrl: function() {
     return this.url
