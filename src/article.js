@@ -1,5 +1,7 @@
 (function(exports) {
+
   function Article(url, headline, body, thumbnail) {
+    this.id = ArticleIndex.
     this.url = url;
     this.headline = headline;
     this.body = body;
