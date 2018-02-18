@@ -1,12 +1,12 @@
 (function(global) {
   function NewsController(todaysNews, printer) {
-    this.articles = todaysNews;
+    this.articles = todaysNews.articles();
     this.printer = printer;
   }
 
   NewsController.prototype = {
     run: function(content = document.getElementById('content')) {
-      content.innerHTML =  this.printer.single(this.articles);
+      content.innerHTML = this.printer.list(this.articles);
     }
   };
 
