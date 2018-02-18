@@ -2,14 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Quick'tics</title>
+    <link href="./public/stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Vibur" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
   </head>
   <body>
-    <div id="headlines"></div>
-    <br>
-    <div id="thumbnail"></div>
-    <div id="summary"></div>
-    <div id="linktostory"></div>
+    <header>
+      <h1>Quick'tics</h1>
+    </header>
+
+    <div class="container">
+      <div class="left">
+        <h2>Headlines</h2>
+        <div id="headlines"></div>
+      </div>
+
+      <div class="right">
+        <div id="thumbnail">
+          <div class="originalcontainer">
+            <img src="./public/resources/image1.jpeg" id="originalimage">
+            <span>Click a link to read a story!</span>
+          </div>
+        </div>
+        <div id="summary"></div>
+        <div id="linktostory"></div>
+      </div>
+    </div>
 
     <script src="models/headlineRequester.js"></script>
     <script src="views/headlineView.js"></script>

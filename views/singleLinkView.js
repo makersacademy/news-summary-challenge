@@ -6,7 +6,7 @@
   }
 
   SingleLinkView.prototype.singleLinkHtml = function () {
-    return `<a href='${this.story.webUrl}'>See the whole story here</a>`
+    return `<a href='${this.story.webUrl}' id="articleLink">See the whole story here</a>`
   }
 
   exports.SingleLinkView = SingleLinkView
