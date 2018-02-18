@@ -14,7 +14,7 @@
   });
 
   it('turns the url information into html', () => {
-    jennifer.expects(html).toIncludeString('<div id="url">a url</div>');
+    jennifer.expects(html).toIncludeString('<div id="url"><a href="a url">FULL ARTICLE</a></div>');
   });
 
   it('turns the summary information into html', () => {

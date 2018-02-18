@@ -5,6 +5,14 @@ h1 {
   color: blue;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .article {
   padding: 10px;
   border-bottom: solid;
@@ -23,6 +31,7 @@ h1 {
 
 #summary {
   font-style: italic;
+  padding-top: 5px;
 }
 
 @-webkit-keyframes fadein {
