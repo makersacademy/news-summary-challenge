@@ -1,4 +1,3 @@
-
 describe ('creating an article', function(){
 
   article = new Article('headline', 'body', 'url')
