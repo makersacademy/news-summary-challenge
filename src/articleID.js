@@ -1,16 +1,20 @@
 (function(exports){
 
   function ArticleID(){
-    this.id = 0
-  }
+    this.id
+  };
+
+  ArticleID.prototype.init = function(){
+    this.id = 0;
+  };
 
   ArticleID.prototype.increment = function(){
-    this.id ++
-  }
+    this.id ++;
+  };
 
   ArticleID.prototype.getID = function(){
     return this.id
-  }
+  };
 
-  exports.ArticleID = ArticleID
+  exports.ArticleID = ArticleID;
 })(this)
