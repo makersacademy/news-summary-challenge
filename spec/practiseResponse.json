@@ -1,0 +1,45 @@
+
+var mockResponse = {
+  response: {
+    status: 'ok',
+    userTier: 'developer',
+    total: 96092,
+    startIndex: 1,
+    pageSize: 10,
+    currentPage: 1,
+    pages: 9610,
+    edition: {
+      id: 'politics', webTitle: 'Politics', webUrl: 'https://www.theguardian.com/politics', apiUrl: 'https://content.guardianapis.com/politics', code: 'default',
+    },
+    section: {
+      id: 'politics',
+      webTitle: 'Politics',
+      webUrl: 'https://www.theguardian.com/politics',
+      apiUrl: 'https://content.guardianapis.com/politics',
+      editions: [{
+        id: 'politics', webTitle: 'Politics', webUrl: 'https://www.theguardian.com/politics', apiUrl: 'https://content.guardianapis.com/politics', code: 'default',
+      }],
+    },
+    results: [{
+      id: 'politics/2018/feb/18/ukip-members-oust-henry-bolton-as-leader-after-five-months', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-18T00:05:29Z', webTitle: 'Ukip members oust Henry Bolton as leader after only five months', webUrl: 'https://www.theguardian.com/politics/2018/feb/18/ukip-members-oust-henry-bolton-as-leader-after-five-months', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/18/ukip-members-oust-henry-bolton-as-leader-after-five-months', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+    }, {
+      id: 'politics/2018/feb/18/mps-fake-news-inquiry-barred-uk-washington-embassy-donald-trump', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-18T00:04:29Z', webTitle: 'MPs’ ‘fake news’ inquiry barred from UK embassy', webUrl: 'https://www.theguardian.com/politics/2018/feb/18/mps-fake-news-inquiry-barred-uk-washington-embassy-donald-trump', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/18/mps-fake-news-inquiry-barred-uk-washington-embassy-donald-trump', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+    }, {
+      id: 'politics/2018/feb/17/neil-kinnock-jeremy-corbyn-labour-stop-brexit-save-nhs', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-17T21:01:25Z', webTitle: 'Neil Kinnock warns Jeremy Corbyn: ‘Stop Brexit to save the NHS’', webUrl: 'https://www.theguardian.com/politics/2018/feb/17/neil-kinnock-jeremy-corbyn-labour-stop-brexit-save-nhs', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/17/neil-kinnock-jeremy-corbyn-labour-stop-brexit-save-nhs', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+    }, {
+      id: 'politics/2018/feb/17/labour-dreaming-uk-wants-socialism-privatisation', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-17T17:00:20Z', webTitle: 'Labour is dreaming if it believes Britain wants socialism', webUrl: 'https://www.theguardian.com/politics/2018/feb/17/labour-dreaming-uk-wants-socialism-privatisation', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/17/labour-dreaming-uk-wants-socialism-privatisation', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+    }, {
+      id: 'politics/2018/feb/17/ukip-leader-henry-bolton-arrives-at-crucial-party-meeting', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-17T15:06:19Z', webTitle: 'Ukip leader Henry Bolton arrives at crucial party meeting', webUrl: 'https://www.theguardian.com/politics/2018/feb/17/ukip-leader-henry-bolton-arrives-at-crucial-party-meeting', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/17/ukip-leader-henry-bolton-arrives-at-crucial-party-meeting', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+    }, {
+      id: 'politics/2018/feb/17/revealed-us-uk-rightwing-thinktanks-talks-to-ditch-eu-safety-checks', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-17T12:52:38Z', webTitle: 'Revealed:  rightwing groups plot to ditch EU safety standards on food and drugs', webUrl: 'https://www.theguardian.com/politics/2018/feb/17/revealed-us-uk-rightwing-thinktanks-talks-to-ditch-eu-safety-checks', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/17/revealed-us-uk-rightwing-thinktanks-talks-to-ditch-eu-safety-checks', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+    }, {
+      id: 'politics/commentisfree/2018/feb/17/i-enjoy-the-winter-olympics-but-what-id-really-like-is-spring-to-come-a-bit-sooner', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-17T00:27:19Z', webTitle: 'I enjoy the Winter Olympics, but what I’d really like is spring to come a bit sooner', webUrl: 'https://www.theguardian.com/politics/commentisfree/2018/feb/17/i-enjoy-the-winter-olympics-but-what-id-really-like-is-spring-to-come-a-bit-sooner', apiUrl: 'https://content.guardianapis.com/politics/commentisfree/2018/feb/17/i-enjoy-the-winter-olympics-but-what-id-really-like-is-spring-to-come-a-bit-sooner', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+    }, {
+      id: 'politics/2018/feb/16/ukip-leader-scrutiny-of-my-love-life-is-same-as-princess-diana-suffered', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-16T23:23:05Z', webTitle: "Ukip to decide on Henry Bolton's future at emergency meeting", webUrl: 'https://www.theguardian.com/politics/2018/feb/16/ukip-leader-scrutiny-of-my-love-life-is-same-as-princess-diana-suffered', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/16/ukip-leader-scrutiny-of-my-love-life-is-same-as-princess-diana-suffered', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+    }, {
+      id: 'politics/2018/feb/16/theresa-may-to-warn-eu-not-to-let-ideology-put-its-citizens-at-risk', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-16T22:30:00Z', webTitle: "Theresa May to warn EU not to put ideology before citizens' safety", webUrl: 'https://www.theguardian.com/politics/2018/feb/16/theresa-may-to-warn-eu-not-to-let-ideology-put-its-citizens-at-risk', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/16/theresa-may-to-warn-eu-not-to-let-ideology-put-its-citizens-at-risk', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+    }, {
+      id: 'politics/2018/feb/16/angela-merkel-curious-about-uks-brexit-plan-but-not-frustrated', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-16T18:34:40Z', webTitle: "Angela Merkel 'curious' about UK's Brexit plan, but not 'frustrated'", webUrl: 'https://www.theguardian.com/politics/2018/feb/16/angela-merkel-curious-about-uks-brexit-plan-but-not-frustrated', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/16/angela-merkel-curious-about-uks-brexit-plan-but-not-frustrated', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+    }],
+  },
+};
