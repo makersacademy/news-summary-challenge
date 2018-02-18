@@ -42,3 +42,30 @@ var mockResponse = {
     }],
   },
 };
+
+var lightNewsDay = {
+  response: {
+    status: 'ok',
+    userTier: 'developer',
+    total: 96092,
+    startIndex: 1,
+    pageSize: 10,
+    currentPage: 1,
+    pages: 9610,
+    edition: {
+      id: 'politics', webTitle: 'Politics', webUrl: 'https://www.theguardian.com/politics', apiUrl: 'https://content.guardianapis.com/politics', code: 'default',
+    },
+    section: {
+      id: 'politics',
+      webTitle: 'Politics',
+      webUrl: 'https://www.theguardian.com/politics',
+      apiUrl: 'https://content.guardianapis.com/politics',
+      editions: [{
+        id: 'politics', webTitle: 'Politics', webUrl: 'https://www.theguardian.com/politics', apiUrl: 'https://content.guardianapis.com/politics', code: 'default',
+      }],
+    },
+    results: [{
+      id: 'politics/2018/feb/18/ukip-members-oust-henry-bolton-as-leader-after-five-months', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-18T00:05:29Z', webTitle: 'Ukip members oust Henry Bolton as leader after only five months', webUrl: 'https://www.theguardian.com/politics/2018/feb/18/ukip-members-oust-henry-bolton-as-leader-after-five-months', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/18/ukip-members-oust-henry-bolton-as-leader-after-five-months', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+    }]
+  },
+};
