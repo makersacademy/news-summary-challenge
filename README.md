@@ -150,3 +150,14 @@ If you're interested, you can see the code for the News Summary API in this repo
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+
+
+# News Summary challenge approach:
+
+1. Added test_framework build with the team in the week challenge (Note App)
+2. Built feature feature_tests
+3. Created server_runner.js
+4. Created Article models
+5. Created index.html and requested the url api from theguardian.com (not working)
+6. Created main.css to style the web page
+7. Incorporated BBC news page in a iframe in html
