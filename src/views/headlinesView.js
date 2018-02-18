@@ -1,19 +1,21 @@
 (function(exports){
-  var NewsSummaryView = function(newslog){
+  var NewsHeadlinesView = function(newslog){
     this.newslog = newslog;
   }
 
-  NewsSummaryView.prototype.displayHeadLines = function(){
-    this.newslog().articles.forEach(function(article){
+  NewsHeadlinesView.prototype.displayHeadLines = function(){
+    var index = 0
+    this.newslog.articles.forEach(function(article){
       var node = document.createElement('LI')
       var headline = document.createElement('a')
       headline.innerHTML = article.headline
-      headline.href = article.url
+      headline.href = "#" + (index)
       node.appendChild(headline)
       document.getElementById("headlines").appendChild(node)
+      index ++
     })
   }
 
-  exports.NewsSummaryView = NewsSummaryView
+  exports.NewsHeadlinesView = NewsHeadlinesView
 
 })(this)

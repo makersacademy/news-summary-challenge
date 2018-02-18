@@ -10,9 +10,10 @@
 
   NewsLog.prototype._addArticles = function(data, self = this){
     data.response.results.forEach(function(result){
-      self.articles.push({ headline: result.webTitle, url: result.webUrl })
+      self.articles.push({ headline: result.webTitle, url: result.webUrl, summary: '' })
     })
   }
+
 
   NewsLog.prototype.getArticles = function(callback, HttpRequest = new XMLHttpRequest){
     var xhttp = HttpRequest

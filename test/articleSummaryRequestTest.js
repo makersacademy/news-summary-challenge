@@ -13,6 +13,8 @@ var successfulHttpRequest = {
     send: function() { this.onreadystatechange()}
   }
 
+function callback(){}
+
 it('instantiates with an empty summary content', function(){
   var summaryRequest = new ArticleSummaryRequest('url');
   return assert.isTrue(summaryRequest.summary.length === 0)
@@ -25,6 +27,6 @@ it('stores url argument passed at instantiation', function (){
 
 it('stores sentences returns from api apiRequestResponse',function(){
   var summaryRequest = new ArticleSummaryRequest();
-  summaryRequest.requestSummary(successfulHttpRequest)
+  summaryRequest.requestSummary(callback,successfulHttpRequest)
   return assert.equals(summaryRequest.summary, "He became an architect and editor, and was an international authority on the design of prisons.")
 })
