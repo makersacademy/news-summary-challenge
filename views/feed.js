@@ -1,8 +1,5 @@
 (function(exports) {
-
-
   function addNews(headlines){
-    console.log(headlines)
    headlines.forEach(function(headline){
      var line = document.createElement('li')
      line.innerHTML = headline
@@ -10,6 +7,6 @@
    })
   }
 
-  
+
   exports.addNews = addNews
 })(this)
