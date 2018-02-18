@@ -25,6 +25,7 @@ div {
 
 div#summary{
   column-count: 1;
+  text-align: center;
 }
 
 li {
