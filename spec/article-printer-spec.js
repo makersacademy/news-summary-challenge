@@ -10,13 +10,13 @@
 
   (function testSinglePrint() {
     var articlePrinter = new ArticlePrinter();
-    var dummyPost = [
-      {author: "author",
+    var dummyPost = [{
+      author: "author",
       title: "title",
       description: "description",
       url: "url",
-      urlToImage: "image"}
-    ]
+      urlToImage: "image"
+    }]
     assert.isTrue(
       articlePrinter.list(dummyPost) == `<ul><li><h2><a href="url">title</a></h2></li>
                 <li><div class='image'><img src="image"></div></li>

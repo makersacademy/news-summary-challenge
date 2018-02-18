@@ -1,7 +1,11 @@
 (function(exports) {
 
   (function testNewsController() {
-    var todaysNewsDummy = {articles: function() { return "test"} }
+    var todaysNewsDummy = {
+      articles: function() {
+        return "test"
+      }
+    }
     var newsController = new NewsController(todaysNewsDummy);
     assert.isA(
       newsController,
@@ -10,7 +14,11 @@
   })();
 
   (function testNewsControllerStorestodaysNews() {
-    var todaysNewsDummy = {articles: function() { return "test"} }
+    var todaysNewsDummy = {
+      articles: function() {
+        return "test"
+      }
+    }
     var newsController = new NewsController(todaysNewsDummy);
     assert.isTrue(
       newsController.articles.includes("test"),
@@ -19,14 +27,24 @@
   })();
 
   (function testNewsControllerCanAddTextToIndex() {
-    var todaysNewsDummy = {articles: function() { return "test"} }
-    var printerDummy = {list: function() { return "test"} }
+    var todaysNewsDummy = {
+      articles: function() {
+        return "test"
+      }
+    }
+    var printerDummy = {
+      list: function() {
+        return "test"
+      }
+    }
     var newsController = new NewsController(todaysNewsDummy, printerDummy);
-    var dummyContent = { innerHTML: null};
+    var dummyContent = {
+      innerHTML: null
+    };
     newsController.run(dummyContent);
 
     assert.isTrue(
-       dummyContent.innerHTML === "test",
+      dummyContent.innerHTML === "test",
       "test that newsController can set content of innerHTML elements"
     );
   })();
