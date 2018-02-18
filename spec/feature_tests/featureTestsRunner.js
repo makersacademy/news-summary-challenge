@@ -1,0 +1,4 @@
+function runTests (){
+  addNewNoteTest();
+  visitANote();
+}
