@@ -4,17 +4,20 @@
     <meta charset="utf-8">
     <title>The News</title>
     <script src= 'test/test_framework.js'></script>
+    <script src= 'src/controller/controller.js'></script>
     <script src= 'test/feature_tests/hasNewArticleTest.js'></script>
+   <script src= 'src/models/article.js'></script>
   </body>
   </head>
   <body onload="onLoad()">
     <h1 id="article"> The News today:</h1>
     <div class='articlebox'>
-      <h2> Note List </h2>
+      <h2> News List </h2>
       <ul id='articlelist'></ul>
     </div>
-    <div class='articlebody' id="articlebody" ></div>
+    <div class='articleBody' id="articleBody" ></div>
     <div id="div1"></div>
+    <iframe src="http://www.dailymail.co.uk/home/index.html" width="400" height="500"></iframe>
     <p> <a href="https://newsapi.org">Powered by News API</a></p>
   </body>
 </html>

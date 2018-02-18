@@ -5,4 +5,5 @@ function hasNewArticleTest(){
     assert.doesntHaveContent('articlelist', "Prime Minister Benjamin Netanyahu said");
   })
 
+
 }
