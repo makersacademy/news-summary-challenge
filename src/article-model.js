@@ -1,18 +1,18 @@
-function Article(url, headline, summary) {
+function Article(url, headline, date) {
   this.url = url;
   this.headline = headline;
-  this.summary = summary;
+  this.date = date;
 }
 
 Article.prototype = {
 
   getHTML: function(index) {
   
-    var headline = `<div class="article-headline">${article.headline}</div>`;
-    var url = `<div class="article-url">${article.url}</div>`;
-    var summary = `<div class="article-summary">${article.summary}</div>`;
+    var headline = `<div class="article-headline">${this.headline}</div>`;
+    var url = `<div class="article-url">${this.url}</div>`;
+    var date = `<div class="article-date">${this.date.toDateString()}</div>`;
 
-    return `<div class="article" id="article${index}">` + url + headline + summary + `</div>`
+    return `<div class="article" id="article${index}">` + url + headline + date + `</div>`
 
   }
 
