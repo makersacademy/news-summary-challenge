@@ -11,7 +11,7 @@
     string = "<ul>";
 
     this._headlines.headlines().forEach(function(headline) {
-      string += `<li><div><${headline.webTitle}</div></li>`;
+      string += `<li><div>${headline.webTitle}</div></li>`;
     });
 
     string += "</ul>";

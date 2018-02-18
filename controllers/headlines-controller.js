@@ -17,6 +17,6 @@
     this._element.innerHTML = this._headlinesView.parse();
   };
 
-  exports.HeadlinesContoller = HeadlinesController;
+  exports.HeadlinesController = HeadlinesController;
 
 })(this)
