@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>News</title>
+  </head>
+  <body>
+    <div id="headlines"></div>
+
+    <!-- models -->
+    <script src="models/headlines-model.js">Model</script>
+
+    <!-- views -->
+    <script src="views/headlines-view.js">View</script>
+
+    <!-- controllers -->
+    <script src="controllers/headlines-controller.js">Controller</script>
+
+    <script>
+
+      var headlines;
+      var headlinesView;
+      var headlinesController;
+      var headlineElement = document.getElementById('headlines')
+
+      function reqListener () {
+        console.log(JSON.parse(this.responseText).response.results)
+        headlines = new Headlines(JSON.parse(this.responseText).response.results);
+        headlinesView = new HeadlinesView(headlines);
+        headlinesController = new HeadlinesController(headlinesView, headlineElement);
+        headlinesController.insertHTML();
+      }
+
+      var oReq = new XMLHttpRequest();
+      oReq.addEventListener("load", reqListener);
+      oReq.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk-news");
+      oReq.send();
+
+    </script>
+  </body>
+</html>
