@@ -17,7 +17,6 @@
     this.sentences.forEach(function(sentence) {
       summary += sentence + " "
     });
-    summary +="</p>"
     this.summary = summary;
   };
 
