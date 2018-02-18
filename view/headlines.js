@@ -6,7 +6,7 @@
   Headlines.prototype.makeList = function(){
     list = "<ul>"
     this.listOfNewsStories.forEach(function(article) {
-      list += `<li><a href=${article.webUrl}>${article.webTitle}</a></li>`
+      list += `<li>${article.webTitle}<a href=${article.webUrl}> read more...</a></li>`
     });
     list +="</ul>"
     return list;
