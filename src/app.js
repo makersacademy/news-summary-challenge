@@ -8,5 +8,5 @@
     });
   }
 
-  controller.getArticles(outputHTML);
+  controller.mockApiResponse(outputHTML);
 }());
