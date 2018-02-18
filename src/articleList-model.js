@@ -16,9 +16,7 @@ ArticleList.prototype = {
           var url = element.webUrl;
           var headline = element.webTitle;
           var date = element.webPublicationDate;
-          //this.getArticleSummary(url)
-          var summary = 'blah'
-          self.addArticle(new Article(url, headline, date, summary))
+          self.addArticle(new Article(url, headline, date))
         });
         callback();
     }
