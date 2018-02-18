@@ -9,37 +9,31 @@
 </head>
 <body>
 
-<div id="headlines"> </div>
+  <h1>TODAY'S NEWS:</h1>
 
+<div id="headlineList"> </div>
+<div id="summaries"> </div>
 
-
+<!-- "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search" -->
 
   <!-- load modules -->
   <script src="model/requestMaker.js"></script>
-  <script src="view/headlines.js"></script>
+  <script src="view/headlineList.js"></script>
   <script src="controller/controller.js"></script>
 
 <script>
-  requestMaker = new RequestMaker("https://content.guardianapis.com/search?api-key=1adbcffe-98b5-4af3-a187-4886d9b3171b");
+  requestMaker = new RequestMaker("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail");
   requestMaker.makeRequest();
-  articleBatch = new Headlines(requestMaker.articles);
+  articleBatch = new HeadlineList(requestMaker.articles);
   controller = new Controller(articleBatch);
   controller.insertHeadlines();
 </script>
 
 
   <!-- load interface script -->
-  <!-- <script src="src/interface.js"></script> -->
 
   <!-- load testing framework -->
   <!-- <script src="spec/jennifer.js"></script> -->
-
-  <!-- unit tests - should be commented out unless running the test itself! -->
-
-
-  <!-- feature tests - should be commented out unless running the test itself! -->
-  <!-- <script src="spec/features/createNoteSpec.js"></script> -->
-
 
 </body>
 
