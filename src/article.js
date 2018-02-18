@@ -1,10 +1,11 @@
   (function(exports) {
 
-  function Article(headline, body, url){
+  function Article(headline, body, url, thumbnail){
     this.id = ArticleID.prototype.getID();
     this.Headline = headline
     this.Body = body
     this.url = url
+    this.thumbnail = thumbnail
     ArticleID.prototype.increment();
 
     Article.prototype.getHeadline = function(){
@@ -21,6 +22,10 @@
 
     Article.prototype.getID = function(){
       return article.id
+    }
+
+    Article.prototype.getThumbnail = function(){
+      return this.thumbnail
     }
   };
 
