@@ -8,5 +8,9 @@
     this.articles.push(article)
   }
 
+  ArticleList.prototype.listArticles = function(){
+    return this.articles
+  }
+
   exports.ArticleList = ArticleList;
 })(this)
