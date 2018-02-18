@@ -12,18 +12,20 @@
   <h1>TODAY'S NEWS:</h1>
 
 <div id="headlineList"> </div>
-<div id="summaries"> </div>
+<!-- <div id="summaries"> </div> -->
 
 <!-- "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search" -->
 
   <!-- load modules -->
   <script src="model/requestMaker.js"></script>
+  <script src="model/summaryMaker.js"></script>
   <script src="view/headlineList.js"></script>
   <script src="controller/controller.js"></script>
 
 <script>
-  requestMaker = new RequestMaker("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail");
+  requestMaker = new RequestMaker();
   requestMaker.makeRequest();
+  summaryMaker = new SummaryMaker();
   articleBatch = new HeadlineList(requestMaker.articles);
   controller = new Controller(articleBatch);
   controller.insertHeadlines();
