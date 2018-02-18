@@ -6,13 +6,13 @@ I can see all of today's headlines in one place
 So I know what the big stories of the day are
 ```
 
-## To do
-
 ```
 As a busy politician
 I can click a link to see the original news article
 So that I can get an in depth understanding of a very important story
 ```
+
+## To do
 
 ```
 As a busy politician
