@@ -5,10 +5,15 @@ it('should store the first headline', function() {
   assert.equals(newsStore.headlines()[0], EXPECTED_HEADLINE)
 })
 
-it('should store fixed number of articles', function() {
+it('should store fixed number of articles by default', function() {
   let newsStore = new NewsStore(mockResponse);
   length = newsStore.length;
   assert.equals(newsStore.headlines().length, length);
+})
+
+it('should store six articles if told to', function() {
+  let newsStore = new NewsStore(mockResponse, 6);
+  assert.equals(newsStore.headlines().length, 6);
 })
 
 it('should store the last headline', function() {
