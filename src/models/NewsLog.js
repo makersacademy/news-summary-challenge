@@ -8,19 +8,20 @@
     return this.articles
   }
 
-  NewsLog.prototype.addArticles = function(data, self = this){
+  NewsLog.prototype._addArticles = function(data, self = this){
     data.response.results.forEach(function(result){
       self.articles.push(result.webTitle)
     })
   }
 
-  NewsLog.prototype.getArticles = function(HttpRequest = new XMLHttpRequest){
+  NewsLog.prototype.getArticles = function(callback, HttpRequest = new XMLHttpRequest){
     var xhttp = HttpRequest
     var self = this
     xhttp.onreadystatechange = function(){
       if (xhttp.readyState == 4 && xhttp.status === 200) {
           var data = JSON.parse(xhttp.responseText)
-          self.addArticles(data, self)
+          self._addArticles(data, self)
+          callback()
       }
     }
     xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search", true)

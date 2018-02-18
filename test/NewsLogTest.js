@@ -33,6 +33,7 @@ var unsuccessfulHttpRequest = {
     send: function() { this.onreadystatechange()}
   }
 
+function callback(){}
 
 it('instantiates with an empty array', function(){
   var newslog = new NewsLog();
@@ -41,19 +42,19 @@ it('instantiates with an empty array', function(){
 
 it('stores headlines returns from api apiRequestResponse to articles',function(){
   var newslog = new NewsLog();
-  newslog.addArticles(apiRequestResponse)
+  newslog._addArticles(apiRequestResponse)
   return assert.equals(newslog.articles, "2018 Winter Olympics: day nine from Pyeongchang – live!")
 })
 
 it('sends response from api request to addArticles methods if status code 200 and readyState 4', function(){
   var newslog = new NewsLog();
-  newslog.getArticles(successfulHttpRequest)
+  newslog.getArticles(callback, successfulHttpRequest)
   return assert.equals(newslog.articles, "2018 Winter Olympics: day nine from Pyeongchang – live!")
 
 })
 
 it('does not pass a response from api if status code is not 200 or ready state is not 4', function(){
   var newslog = new NewsLog();
-  newslog.getArticles(unsuccessfulHttpRequest)
+  newslog.getArticles(callback, unsuccessfulHttpRequest)
   return assert.isTrue(newslog.articles.length === 0)
 })
