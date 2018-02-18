@@ -1,7 +1,7 @@
 
-describe ('viewing an article', function(){
+describe ('creating an article', function(){
 
-  article = new Article('headline', 'body')
+  article = new Article('headline', 'body', 'url')
 
   it('user can view an articles headline', function(){
     assert.isEqual(article.getHeadline(), 'headline')
@@ -9,5 +9,9 @@ describe ('viewing an article', function(){
 
   it('user can view an articles body', function(){
     assert.isEqual(article.getBody(), 'body')
+  })
+
+  it('user can view an articles url', function(){
+    assert.isEqual(article.getUrl(), 'url')
   })
 })

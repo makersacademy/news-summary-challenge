@@ -1,12 +1,22 @@
-function Article(headline, body){
-  this.Headline = headline
-  this.Body = body
+(function(exports) {
 
-  Article.prototype.getHeadline = function(){
-    return this.Headline
-  }
+  function Article(headline, body, url){
+    this.Headline = headline
+    this.Body = body
+    this.url = url
 
-  Article.prototype.getBody = function(){
-    return this.Body
-  }
-}
+    Article.prototype.getHeadline = function(){
+      return this.Headline
+    };
+
+    Article.prototype.getBody = function(){
+      return this.Body
+    };
+
+    Article.prototype.getUrl = function(){
+      return this.url
+    }
+  };
+
+  exports.Article = Article;
+})(this)
