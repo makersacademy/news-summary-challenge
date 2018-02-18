@@ -1,5 +1,11 @@
 # News Summary challenge
 
+## Getting started
+* Clone repository
+* cd news-summary-challenge
+* node test/server.js
+* Navigate to http://localhost:3000/
+
 * Challenge time: rest of the day and weekend, until Monday 9am.
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
