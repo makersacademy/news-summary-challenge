@@ -13,6 +13,14 @@ var successfulHttpRequest = {
     send: function() { this.onreadystatechange()}
   }
 
+var unsuccessfulHttpRequest = {
+    readyState: 4,
+    status: 429,
+    responseText: JSON.stringify(apiRequestResponse),
+    open: function() {},
+    send: function() { this.onreadystatechange()}
+  }
+
 function callback(){}
 
 it('instantiates with an empty summary content', function(){
@@ -29,4 +37,10 @@ it('stores sentences returns from api apiRequestResponse',function(){
   var summaryRequest = new ArticleSummaryRequest();
   summaryRequest.requestSummary(callback,successfulHttpRequest)
   return assert.equals(summaryRequest.summary, "He became an architect and editor, and was an international authority on the design of prisons.")
+})
+
+it('stores content summary as please try again if request status not 200, and readystate 4',function(){
+  var summaryRequest = new ArticleSummaryRequest();
+  summaryRequest.requestSummary(callback, unsuccessfulHttpRequest)
+  return assert.equals(summaryRequest.summary, "Please try again, request timed out")
 })

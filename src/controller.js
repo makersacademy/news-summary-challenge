@@ -1,19 +1,19 @@
 (function(exports){
 
   var newsLog
-  var summaryview
   var summaryrequest
+  var newsview
 
   function newsLog(){
     return newslog
   }
 
-  function summaryView(){
-    return summaryview
-  }
-
   function summaryRequest(){
     return summaryrequest
+  }
+
+  function newsView(){
+    return newsview
   }
 
   function showSelectedSummary(){
@@ -24,7 +24,6 @@
     requestSummary(findIndex(window.location))
   }
 
-
   function findIndex(location){
     return location.hash.split("#")[1];
   }
@@ -32,23 +31,17 @@
   function requestSummary(index){
     var articleUrl = newslog.articles[index].url
     summaryrequest = new ArticleSummaryRequest(articleUrl)
-    summaryrequest.requestSummary(displayArticleSummary)
-  }
-
-  function displayArticleSummary(){
-    var summary = summaryRequest().summary
-    document.getElementById('summary').innerHTML = summary
+    summaryrequest.requestSummary(newsView().displayArticleSummary)
   }
 
   function onLoad(){
     newslog = new NewsLog()
-    newsHeadLines = new NewsHeadlinesView(newsLog())
-    summaryView = new SummaryView(newsLog())
-    newslog.getArticles(newsHeadLines.displayHeadLines)
+    newsview = new NewsHeadlinesView(newsLog())
+    newslog.getArticles(newsView().displayHeadLines)
     showSelectedSummary()
   }
 
   exports.onLoad = onLoad
-  exports.displayArticleSummary = displayArticleSummary
+  exports.summaryRequest = summaryRequest
 
 })(this);

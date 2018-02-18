@@ -14,6 +14,10 @@
           self.summary = data.sentences.join()
           callback()
       }
+      else if (xhttp.readyState == 4 && xhttp.status != 200){
+        self.summary = "Please try again, request timed out"
+        callback()
+      }
     }
     xhttp.open("GET", `http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${this.articleUrl}`, true)
     xhttp.send()

@@ -14,7 +14,6 @@
     })
   }
 
-
   NewsLog.prototype.getArticles = function(callback, HttpRequest = new XMLHttpRequest){
     var xhttp = HttpRequest
     var self = this
