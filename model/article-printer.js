@@ -7,7 +7,7 @@
       articles.forEach(article => {
         string += `<ul><li><h2><a href="${article["url"]}">${article["title"]}</a></h2></li>
                 <li><div class='image'><img src="${article["urlToImage"]}"></div></li>
-                <li><div class='author'>Source: ${article["author"]}</div></li></ul>`
+                <li><span class='author'>Source: ${article["author"]}</span></li></ul>`
       })
       return string;
     },
