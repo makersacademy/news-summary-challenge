@@ -43,13 +43,19 @@ it('instantiates with an empty array', function(){
 it('stores headlines returns from api apiRequestResponse to articles',function(){
   var newslog = new NewsLog();
   newslog._addArticles(apiRequestResponse)
-  return assert.equals(newslog.articles, "2018 Winter Olympics: day nine from Pyeongchang – live!")
+  return assert.equals(newslog.articles[0].headline, "2018 Winter Olympics: day nine from Pyeongchang – live!")
+})
+
+it('stores Url returns from api apiRequestResponse to articles',function(){
+  var newslog = new NewsLog();
+  newslog._addArticles(apiRequestResponse)
+  return assert.equals(newslog.articles[0].url, "https://www.theguardian.com/sport/live/2018/feb/18/winter-olympics-2018-day-nine-from-pyeongchang-live")
 })
 
 it('sends response from api request to addArticles methods if status code 200 and readyState 4', function(){
   var newslog = new NewsLog();
   newslog.getArticles(callback, successfulHttpRequest)
-  return assert.equals(newslog.articles, "2018 Winter Olympics: day nine from Pyeongchang – live!")
+  return assert.equals(newslog.articles[0].headline, "2018 Winter Olympics: day nine from Pyeongchang – live!")
 
 })
 
