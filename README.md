@@ -21,6 +21,11 @@ Clicking the link to the side of the headline labelled click for more informatio
 
 HTTP-Server, JavaScript, CSS and HTML.
 
+## What it looks like
+
+![alt text](https://i.imgur.com/6ccNrOy.png)
+![alt text](https://i.imgur.com/tzqrc4A.png)
+
 ## User Stories
 
 Some of these stories will need decomposing if they seem too large.
@@ -47,7 +52,7 @@ So I can get a few more details about an important story
 Given more time I would work on single responsibility principle. I am aware areas of the code are not DRY - this could be improved.
 As I have used my own test framework I have yet to complete feature tests.  I have isolated API calls within the unit tests as required.
 
-The look of the website needs work, along with additional features which I have not implemented. 
+The look of the website needs work, along with additional features which I have not implemented.
 
 
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
