@@ -1,7 +1,18 @@
-var ArticleInstance;
+(function(exports){
+
+var articleInstance;
+
+function articleList(){
+  return articleInstance;
+}
 
 function onLoad() {
-  ArticleInstance = new Article(title, articleUrl, pubDate);
+  articleInstance = new Article(title, articleUrl, pubDate);
   setup();
   runTest();
 }
+
+exports.onLoad = onLoad;
+exports.articleList = articleList;
+
+})(this)
