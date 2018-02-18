@@ -1,5 +1,3 @@
-
-
 function addSuccessDiv(message) {
   newDiv = createDiv('success', message);
   const currentDiv = document.getElementById('div1');
