@@ -8,7 +8,7 @@
 
   HeadlineRequester.prototype.makeRequest = function() {
     var newRequest = new XMLHttpRequest();
-    newRequest.open("GET", `https://content.guardianapis.com/search?section=politics&api-key=${this.secretkey}`, false)
+    newRequest.open("GET", `https://content.guardianapis.com/search?section=politics&show-fields=thumbnail&api-key=${this.secretkey}`, false)
     newRequest.send();
     var response = newRequest.response
     var jsonText = JSON.parse(response);

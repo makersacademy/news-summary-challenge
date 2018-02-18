@@ -11,7 +11,7 @@
   }
 
   Controller.prototype.hashChangeListener = function () {
-    window.addEventListener("hashchange", function () {this._renderSpecificHeadline()}.bind(this));
+    window.addEventListener("hashchange", function () {this._renderStoryContent()}.bind(this));
   }
 
   // private methods
@@ -24,8 +24,9 @@
     return this.headlineview.headlinerequester.findHeadlineById(id)
   };
 
-  Controller.prototype._renderSpecificHeadline = function () {
+  Controller.prototype._renderStoryContent = function () {
     var singlelink = new SingleLinkView(this._retrieveHeadlineById(this._getHeadlineId()));
+    this._renderImage(singlelink.story.fields.thumbnail)
     this._makeSummaryRequest(singlelink.story.webUrl)
     document.getElementById("linktostory").innerHTML = singlelink.singleLinkHtml();
   }
@@ -38,6 +39,11 @@
   Controller.prototype._renderSummary = function () {
     var summaryview = new SummaryView(this.summaryrequester)
     document.getElementById("summary").innerHTML = summaryview.parse();
+  }
+
+  Controller.prototype._renderImage = function (image) {
+    var imageview = new ImageView(image);
+    document.getElementById("thumbnail").innerHTML = imageview.parse();
   }
 
   exports.Controller = Controller

@@ -7,6 +7,7 @@
   <body>
     <div id="headlines"></div>
     <br>
+    <div id="thumbnail"></div>
     <div id="summary"></div>
     <div id="linktostory"></div>
 
@@ -15,6 +16,7 @@
     <script src="views/singleLinkView.js"></script>
     <script src="models/summaryRequester.js"></script>
     <script src="views/summaryView.js"></script>
+    <script src="views/imageView.js"></script>
     <script src="controller/controller.js"></script>
     <script>
       headlineRequest = new HeadlineRequester("00e86616-938f-41f0-b86c-c1271edfeb6f");
@@ -24,7 +26,6 @@
       controller = new Controller(headlineView, summaryRequester);
       controller.renderHeadlines();
       controller.hashChangeListener();
-      // controller.renderSummary();
     </script>
   </body>
 </html>
