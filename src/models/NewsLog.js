@@ -1,7 +1,7 @@
 (function(exports){
 
   var NewsLog = function(){
-    this.articles = []
+    this.articles = [];
   }
 
   NewsLog.prototype.returnArticles = function(){
