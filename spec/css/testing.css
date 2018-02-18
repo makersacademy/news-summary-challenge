@@ -1,0 +1,49 @@
+html {
+  background: url(http://www.bedminsterfamilypractice.co.uk/website/L81082/files/test.png) no-repeat top center;
+  font-family: Palatino, Arial;
+  color: red;
+  text-align: center;
+}
+
+#div1{
+  margin-top: 250px;
+}
+
+#fail {
+  color: silver;
+  font-size: 25px;
+  text-shadow: 2px 1px black;
+  height: 80px;
+  padding-top: 9px;
+  text-shadow:
+     4px 4px 1px #300000,
+      4px 6px 1px #400000,
+      4px 8px 1px #500000,
+      4px 10px 1px #600000,
+      4px 12px 1px #700000,
+      4px 14px 1px #800000,
+      4px 16px 1px #900000,
+      4px 18px 1px #A00000,
+      4px 20px 1px #B00000,
+      4px 22px 1px #C00000,
+      4px 24px 1px #D00000,
+      4px 26px 1px #E00000,
+      4px 28px 1px #F00000,
+      4px 30px 1px #FA0000,
+      4px 32px 1px #FB0000,
+      4px 34px 1px #FC0000,
+      4px 36px 1px #FD0000,
+      4px 38px 1px #FE0000,
+      4px 40px 2px #FF0000;
+      padding: : 20px;
+}
+
+#success {
+  color: rgb(75, 213, 47);
+  font-size: 25px;
+}
+
+div {
+  margin: 10px;
+  background: rgba(237, 210, 214, 0.2);
+}
