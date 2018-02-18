@@ -43,6 +43,32 @@ var mockResponse = {
   },
 };
 
+
+var unitMockResponse = {
+  response: {
+    status: 'ok',
+    userTier: 'developer',
+    total: 96092,
+    startIndex: 1,
+    pageSize: 10,
+    currentPage: 1,
+    pages: 9610,
+    edition: {
+      id: 'politics', webTitle: 'Politics', webUrl: 'https://www.theguardian.com/politics', apiUrl: 'https://content.guardianapis.com/politics', code: 'default',
+    },
+    section: {
+      id: 'politics',
+      webTitle: 'Politics',
+      webUrl: 'https://www.theguardian.com/politics',
+      apiUrl: 'https://content.guardianapis.com/politics',
+      editions: [{
+        id: 'politics', webTitle: 'Politics', webUrl: 'https://www.theguardian.com/politics', apiUrl: 'https://content.guardianapis.com/politics', code: 'default',
+      }],
+    },
+    results: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'],
+  },
+};
+
 var lightNewsDay = {
   response: {
     status: 'ok',
