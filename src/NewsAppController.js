@@ -18,7 +18,6 @@ class NewsAppController {
 
   getArticles(callback) {
     const self = this;
-    // TO DO: this.getSummaries();
     const makersApiURL = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=';
     const contentURL = 'http://content.guardianapis.com/uk-news';
     const request = new XMLHttpRequest();
