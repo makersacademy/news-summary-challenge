@@ -15,7 +15,7 @@
           callback()
       }
       else if (xhttp.readyState == 4 && xhttp.status != 200){
-        self.summary = "Manchester United’s £75m signing has produced the goods against lesser opposition but must raise his game with more challenging matches coming up at home and in Europe"
+        self.summary = "Please try again, request timed out"
         callback()
       }
     }
