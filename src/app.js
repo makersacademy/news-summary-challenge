@@ -6,7 +6,7 @@ refreshArticleList()
 
 
 function refreshArticleList() {
-  articleList.getArticlesFromAPI(displayArticleList,'saved_response.json');
+  articleList.getArticlesFromAPI(displayArticleList);
 }
 
 function displayArticleList() {
