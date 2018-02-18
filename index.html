@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>The News</title>
+    <link rel="stylesheet" href="css/main.css">
     <script src= 'test/test_framework.js'></script>
     <script src= 'src/controller/controller.js'></script>
     <script src= 'test/feature_tests/hasNewArticleTest.js'></script>
@@ -17,7 +18,8 @@
     </div>
     <div class='articleBody' id="articleBody" ></div>
     <div id="div1"></div>
-    <iframe src="http://www.dailymail.co.uk/home/index.html" width="400" height="500"></iframe>
+    <iframe id="image" src="https://newsapi.org/v2/top-headlines?sources=the-guardian-uk&apiKey="+ API_KEY width="700" height="800"></iframe>
     <p> <a href="https://newsapi.org">Powered by News API</a></p>
+    <iframe src="http://www.bbc.co.uk/news/blogs/trending" width="800" height="500"></iframe>
   </body>
 </html>
