@@ -1,4 +1,3 @@
-console.log('working mock')
 var mockResponse = {
   response: {
     status: 'ok',

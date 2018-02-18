@@ -1,4 +1,4 @@
-console.log('working testframework')
+
 
 function addSuccessDiv(message) {
   newDiv = createDiv('success', message);
@@ -15,8 +15,6 @@ function addErrorStack(err) {
   failureDiv.appendChild(stackDiv);
 
   const currentDiv = document.getElementById('div1');
-  // console.log(currentDiv);
-  console.log(document.body);
   currentDiv.appendChild(failureDiv);
 }
 
