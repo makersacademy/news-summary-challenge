@@ -1,7 +1,7 @@
 //this is when not all the style sheed has been loaded
 document.addEventListener('DOMContentLoaded', function(event) {
-  newsStore = new NewsStore(mockResponse)
-  addNews(newsStore.headlines());
+  articleLog = new ArticleLog(mockResponse)
+  addNews(articleLog.headlines());
 })
 
 //this is when the page is fullyloaded
