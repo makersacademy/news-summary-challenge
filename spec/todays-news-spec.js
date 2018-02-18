@@ -1,10 +1,9 @@
 (function(exports) {
 
   (function testTodaysNewsArticles() {
-    var todaysNews = new TodaysNews("test");
-
+    var todaysNews = new TodaysNews();
     assert.isTrue(
-      todaysNews.articles().includes("test"),
+      todaysNews.articles().length == 0,
       "test TodaysNews Stores articles passed"
     );
   })();
