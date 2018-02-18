@@ -1,18 +1,20 @@
 (function newsAppControllerSpec() {
   const mockArticleResponse = {
-    results: [
-      {
-        webUrl: 'url',
-        webTitle: 'title',
-        summary: { text: 'some summary text' },
-      },
+    response: {
+      results: [
+        {
+          webUrl: 'url',
+          webTitle: 'title',
+          summary: { text: 'some summary text' },
+        },
 
-      {
-        webUrl: 'anotherurl',
-        webTitle: 'anothertitle',
-        summary: { text: 'different summary text' },
-      },
-    ],
+        {
+          webUrl: 'anotherurl',
+          webTitle: 'anothertitle',
+          summary: { text: 'different summary text' },
+        },
+      ],
+    },
   };
 
   const controller = new NewsAppController();

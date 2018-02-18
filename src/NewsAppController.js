@@ -5,7 +5,7 @@ class NewsAppController {
 
   processData() {
     const collection = new ArticleCollection();
-    this.articleData.results.forEach((result) => {
+    this.articleData.response.results.forEach((result) => {
       const headline = result.webTitle;
       const url = result.webUrl;
       const summary = result.summary.text;
