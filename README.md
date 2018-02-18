@@ -4,6 +4,8 @@
 
 This app grabs headlines using the newsAPI(https://newsapi.org/) and display them on a page.
 
+demo: [https://news-summary-7.herokuapp.com/](https://news-summary-7.herokuapp.com/)
+
 ## Steps to run projects
 
 Installation
