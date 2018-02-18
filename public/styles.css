@@ -1,0 +1,31 @@
+html, body {
+  font-family: "Tahoma", Geneva, sans-serif;
+}
+h1 {
+  color: blue;
+}
+
+.article {
+  padding: 10px;
+  border-bottom: solid;
+}
+
+#headline {
+  -webkit-animation: fadein 2s;
+ text-align: right;
+ font-size: 25px;
+ font-weight: bold;
+}
+
+#url {
+
+}
+
+#summary {
+  font-style: italic;
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
