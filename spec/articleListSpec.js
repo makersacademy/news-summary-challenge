@@ -15,4 +15,12 @@ describe('Viewing articles in a list', function(){
   it('can return a list of all article headlines in array', function(){
     assert.arrayContain(articlelist.listArticles(), article )
   })
+
+  idArticle = new Article('headline2', 'body2', 'url2')
+
+  it('articles can be selected by id', function(){
+    articlelist.addArticle(idArticle)
+    test = articlelist.listArticleById(1)
+    assert.isEqual(test, idArticle)
+  })
 })

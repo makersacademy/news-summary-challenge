@@ -12,5 +12,10 @@
     return this.articles
   }
 
+  ArticleList.prototype.listArticleById = function(number){
+    var element = this.listArticles()
+    return element[number]
+  }
+
   exports.ArticleList = ArticleList;
 })(this)
