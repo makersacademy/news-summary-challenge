@@ -8,10 +8,10 @@
   };
 
   HeadlinesView.prototype.parse = function() {
-    string = "<ul>";
+    var string = "<ul>";
 
     this._headlines.headlines().forEach(function(headline) {
-      string += `<li><div>${headline.webTitle}</div></li>`;
+      string += `<li><div><a href='#summary/${headline.id}'>${headline.webTitle}</div></li>`;
     });
 
     string += "</ul>";
