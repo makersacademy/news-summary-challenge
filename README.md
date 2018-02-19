@@ -39,3 +39,10 @@ As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
 ```
+### Headlines page
+
+![Headlines page](/images/Headlines.png)
+
+### Article summary page
+
+![Article page](/images/ArticleSummary.png)

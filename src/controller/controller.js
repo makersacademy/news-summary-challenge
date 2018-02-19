@@ -25,11 +25,10 @@ class NewsController {
             a.href = "#" + ni.id;
             const br = document.createElement("br");
             a.innerHTML = ni.title;
-            const img = document.createElement("img");
-            img.src = ni.thumbnail;
+            
             articleDiv.appendChild(a);
             // articleDiv.appendChild(br);
-            articleDiv.appendChild(img);
+    
         });
     }
 
@@ -39,6 +38,7 @@ class NewsController {
         const data = this._findNewsItem(id);
         const summary = this.api.getNewsSummary(data.webUrl);
         const summaryDiv = document.getElementById("news_summary");
+        summaryDiv.innerHTML = "";
 
         const p = document.createElement("p");
         p.innerHTML = summary;
