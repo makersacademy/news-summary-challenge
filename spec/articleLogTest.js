@@ -1,11 +1,12 @@
 function articleLogTest() {
-  let articleInstance = 0
+  let articleInstance = 0;
 
   const MockArticle = {
-    createArticle: function(data) {
-      articleInstance = data
-      return articleInstance}
-  }
+    createArticle(data) {
+      articleInstance = data;
+      return articleInstance;
+    },
+  };
 
 
   it('should store articles', () => {
@@ -32,13 +33,13 @@ function articleLogTest() {
 
   it('should give article data on one news story', () => {
     const articleLog = new ArticleLog(unitMockResponse, MockArticle);
-    let expectedData = 'first'
+    const expectedData = 'first';
     assert.equals(articleLog.collection()[0], expectedData);
   });
 
   it('should give article data on the third news story', () => {
     const articleLog = new ArticleLog(unitMockResponse, MockArticle);
-    let expectedData = 'third'
+    const expectedData = 'third';
     assert.equals(articleLog.collection()[2], expectedData);
   });
 

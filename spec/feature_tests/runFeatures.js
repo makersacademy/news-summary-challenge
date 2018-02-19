@@ -1,6 +1,6 @@
-(function(exports)  {
+(function (exports) {
   function featureTest() {
-   showHeadlinesTest();
+    showHeadlinesTest();
   }
-  exports.featureTest = featureTest
-})(this)
+  exports.featureTest = featureTest;
+}(this));
