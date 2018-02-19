@@ -1,4 +1,6 @@
 var mockResponse = {
+
+
   response: {
     status: 'ok',
     userTier: 'developer',
@@ -22,7 +24,7 @@ var mockResponse = {
     results: [{
       id: 'politics/2018/feb/18/ukip-members-oust-henry-bolton-as-leader-after-five-months', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-18T00:05:29Z', webTitle: 'Ukip members oust Henry Bolton as leader after only five months', webUrl: 'https://www.theguardian.com/politics/2018/feb/18/ukip-members-oust-henry-bolton-as-leader-after-five-months', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/18/ukip-members-oust-henry-bolton-as-leader-after-five-months', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
     }, {
-      id: 'politics/2018/feb/18/mps-fake-news-inquiry-barred-uk-washington-embassy-donald-trump', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-18T00:04:29Z', webTitle: 'MPs’ ‘fake news’ inquiry barred from UK embassy', webUrl: 'https://www.theguardian.com/politics/2018/feb/18/mps-fake-news-inquiry-barred-uk-washington-embassy-donald-trump', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/18/mps-fake-news-inquiry-barred-uk-washington-embassy-donald-trump', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
+      id: 'politics/2018/feb/18/mps-fake-news-inquiry-barred-uk-washington-embassy-donald-trump', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-18T00:04:29Z', webTitle: 'MPs’ ‘fake news’ inquiry barred from UK embassy', webUrl: 'https://www.theguardian.com/politics/2018/feb/18/mps-fake-news-inquiry-barred-uk-washington-embassy-donald-trump', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/18/mps-fake-news-inquiry-barred-uk-washington-embassy-donald-trump', "fields":{"thumbnail":'https://img.buzzfeed.com/buzzfeed-static/static/2015-04/20/9/enhanced/webdr08/original-31679-1429535251-12.jpg?downsize=715:*&output-format=auto&output-quality=auto'}, isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
     }, {
       id: 'politics/2018/feb/17/neil-kinnock-jeremy-corbyn-labour-stop-brexit-save-nhs', type: 'article', sectionId: 'politics', sectionName: 'Politics', webPublicationDate: '2018-02-17T21:01:25Z', webTitle: 'Neil Kinnock warns Jeremy Corbyn: ‘Stop Brexit to save the NHS’', webUrl: 'https://www.theguardian.com/politics/2018/feb/17/neil-kinnock-jeremy-corbyn-labour-stop-brexit-save-nhs', apiUrl: 'https://content.guardianapis.com/politics/2018/feb/17/neil-kinnock-jeremy-corbyn-labour-stop-brexit-save-nhs', isHosted: false, pillarId: 'pillar/news', pillarName: 'News',
     }, {
