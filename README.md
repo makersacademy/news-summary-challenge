@@ -23,7 +23,7 @@ HTTP-Server, JavaScript, CSS and HTML.
 
 ## What it looks like
 
-![alt text](https://i.imgur.com/6ccNrOy.png)
+![alt text](https://i.imgur.com/gwudqLC.png)
 ![alt text](https://i.imgur.com/tzqrc4A.png)
 
 ## User Stories
