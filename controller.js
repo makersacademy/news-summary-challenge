@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
   addNews(articleLog.collection());
 })
 
+
 //this is when the page is fullyloaded
 window.onload = function() {
   featureTest();
