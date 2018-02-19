@@ -41,8 +41,8 @@ To make my news reading more fun
 ```
 ### Headlines page
 
-![Headlines page](/images/Headlines.png)
+![Headlines page](/images/headlinespage.png)
 
 ### Article summary page
 
-![Article page](/images/ArticleSummary.png)
+![Article page](/images/summary.png)
