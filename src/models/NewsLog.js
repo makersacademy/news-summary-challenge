@@ -10,7 +10,7 @@
 
   NewsLog.prototype._addArticles = function(data, self = this){
     data.response.results.forEach(function(result){
-      self.articles.push({ headline: result.webTitle, url: result.webUrl, summary: '' })
+      self.articles.push({ headline: result.webTitle, url: result.webUrl})
     })
   }
 
