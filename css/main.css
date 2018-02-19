@@ -1,0 +1,31 @@
+h1 {
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	font-size: 50px;
+	font-style: normal;
+	font-weight: bold;
+	line-height: 26.4px;
+  text-align: center;
+  column-span: all;
+}
+
+div {
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	font-size: 15px;
+  color: black;
+	font-weight: 500;
+	line-height: 26.4px;
+  column-count: 2;
+}
+ li a {
+   text-decoration: none; color:#000;
+   text-decoration: underline;
+ }
+
+div#summary{
+  column-count: 1;
+  text-align: center;
+}
+
+li {
+  height: 75px;
+}
