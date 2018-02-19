@@ -10,8 +10,25 @@
 
   <h1>TODAY'S NEWS:</h1>
 
-<div id="headlineList"> </div>
-<!-- <div id="summaries"> </div> -->
+<div class="container">
+  <div class="left">
+    <h2> Stories... <h2>
+    <div id="headlineList"> </div>
+  </div>
+
+  <div class="right">
+    <h2> Summary: <h2>
+    <div id="summaries"> </div>
+    <div id="summary"></div>
+    <div id="linktostory"></div>
+  </div>
+</div>
+        <!-- <div id="thumbnail">
+          <div class="originalcontainer">
+            <img src="./public/resources/image1.jpeg" id="originalimage">
+            <span>Click a link to read a story!</span> -->
+          <!-- </div> -->
+        <!-- </div> -->
 
 <!-- "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search" -->
 
@@ -26,8 +43,10 @@
   requestMaker.makeRequest();
   summaryMaker = new SummaryMaker();
   articleBatch = new HeadlineList(requestMaker.articles);
-  controller = new Controller(articleBatch);
+  summaryBatch = new HeadlineList(requestMaker.articles);
+  controller = new Controller(articleBatch,summaryBatch);
   controller.insertHeadlines();
+  controller.insertSummaries();
 </script>
 
 

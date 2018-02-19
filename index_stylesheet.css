@@ -1,6 +1,45 @@
 @import url(https://fonts.googleapis.com/css?family=News+Cycle:400);
 
+html {
+  font-size: 100%;
+  margin: 0%;
+}
+
 body {
+  margin: 0%;
   font-family: 'News Cycle', sans-serif;
   text-align: center;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.container {
+  margin-top: 3.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  max-width: 50%;
+  width: 50%;
+  padding-left: 1.5rem;
+  padding-right: 0.75rem;
+  border-right: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right {
+  max-width: 50%;
+  width: 50%;
+  padding-right: 1.5rem;
+  padding-left: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

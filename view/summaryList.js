@@ -1,17 +1,16 @@
 (function (exports) {
-  function HeadlineList(articles) {
+  function SummaryList(articles) {
     this.articles = articles;
   };
 
-  HeadlineList.prototype.makeHtmlList = function(){
+  SummaryList.prototype.makeHtmlList = function(){
     list = "<ul>"
     summaryMaker = new SummaryMaker();
     this.articles.forEach(function(article) {
       summaryMaker.getSummary(article.webUrl)
       summaryMaker.createSummary()
       list += `<img src=${article.fields.thumbnail}>
-      <li>${article.webTitle}<br>
-      ${summaryMaker.summary}
+      <li>${summaryMaker.summary}
       <a href=${article.webUrl}>read more...</a></li></p>`
     });
     list +="</ul>"
