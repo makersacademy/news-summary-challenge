@@ -14,14 +14,6 @@
     this.articles = newJson.response.results;
   };
 
-  // RequestMaker.prototype.getSummaries = function(url) {
-  //   var anotherRequest = new XMLHttpRequest();
-  //   anotherRequest.open("GET", `${this.summaryKey}+${url}`, false);
-  //   anotherRequest.send();
-  //   var summaryObject = JSON.parse(anotherRequest.response);
-  //   this.summaries = summaryObject.response.sentences;
-  // };
-
   exports.RequestMaker = RequestMaker;
 
 })(this);
