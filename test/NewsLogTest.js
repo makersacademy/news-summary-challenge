@@ -1,18 +1,8 @@
 var apiRequestResponse = {
   response: {
     results: [
-    {
-    id: "sport/live/2018/feb/18/winter-olympics-2018-day-nine-from-pyeongchang-live",
-    type: "liveblog",
-    sectionId: "sport",
-    sectionName: "Sport",
-    webPublicationDate: "2018-02-18T11:18:30Z",
-    webTitle: "2018 Winter Olympics: day nine from Pyeongchang – live!",
-    webUrl: "https://www.theguardian.com/sport/live/2018/feb/18/winter-olympics-2018-day-nine-from-pyeongchang-live",
-    apiUrl: "https://content.guardianapis.com/sport/live/2018/feb/18/winter-olympics-2018-day-nine-from-pyeongchang-live",
-    isHosted: false,
-    pillarId: "pillar/sport",
-    pillarName: "Sport",
+    { webTitle: "2018 Winter Olympics: day nine from Pyeongchang – live!",
+      webUrl: "https://www.theguardian.com/sport/live/2018/feb/18/winter-olympics-2018-day-nine-from-pyeongchang-live",
     }]
   }
 }
@@ -34,6 +24,8 @@ var unsuccessfulHttpRequest = {
   }
 
 function callback(){}
+
+
 
 it('instantiates with an empty array', function(){
   var newslog = new NewsLog();
