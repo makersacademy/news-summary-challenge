@@ -11,9 +11,9 @@
     var string = '<ul style="list-style: none;">';
 
     this._headlines.headlines().forEach(function(headline) {
-      string += `<h3><li><div><a href='#summary/${headline.id}'>`;
-      string += `${headline.webTitle}</a><br>`
-      string += `<img src="${headline.fields.thumbnail}">`
+      string += `<h3><li><div><img src="${headline.fields.thumbnail}"><br>`;
+      string += `<a href='#summary/${headline.id}'>`;
+      string += `${headline.webTitle}</a>`;
       string += `</div></li></h3>`;
     });
 
