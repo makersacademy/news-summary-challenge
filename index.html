@@ -8,6 +8,7 @@
 
     <h1>Headlines</h1>
     <div id="headlines"></div>
+    <hr>
 
     <div id="story"></div>
 
@@ -43,7 +44,7 @@
       function actionOnLoadPage () {
         var headlinesRequest = new XMLHttpRequest();
         headlinesRequest.addEventListener("load", actionOnLoadHeadlines);
-        headlinesRequest.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk-news");
+        headlinesRequest.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk-news?show-fields=thumbnail");
         headlinesRequest.send();
       }
 
