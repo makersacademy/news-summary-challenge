@@ -1,0 +1,25 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "News",
+  "main": "index.js",
+  "dependencies": {
+    "http-server": "latest"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reenz/news-summary-challenge.git"
+  },
+  "author": "Reena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reenz/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/reenz/news-summary-challenge#readme"
+}

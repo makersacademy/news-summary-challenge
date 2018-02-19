@@ -1,0 +1,29 @@
+#news_body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    background-color: #cdd4d6;  
+}
+
+a {
+    cursor: pointer;
+    color:rgb(20, 20, 20);
+    padding: 14px 25px;
+    text-align: left;
+    text-decoration: none;
+    display: grid;    
+}
+
+a:hover, a:active {
+    background-color: rgba(44, 151, 184, 0.233);
+}
+
+div#news_summary {
+    position: relative;
+    float: left;
+    border: 3px solid rgb(9, 15, 1);
+    
+}
+
+a#img {
+    border: 3px solid rgb(9, 15, 1);
+}
