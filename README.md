@@ -96,6 +96,7 @@ Click on a link to be view original news article:
 JavaScript(ES5)
 The Guardian API
 Makers News Summary API
+Bulma CSS
 ```
 
 ## Final Thoughts
