@@ -33,6 +33,18 @@ ul, li {
   flex-direction: column;
 }
 
+#headlineList {
+  text-align: left;
+}
+
+#summaryList {
+  text-align: left;
+  list-style: none;
+  li {
+    list-style: none;
+  }
+}
+
 .right {
   max-width: 50%;
   width: 50%;
@@ -42,4 +54,5 @@ ul, li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: left
 }
