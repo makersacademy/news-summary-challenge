@@ -5,14 +5,14 @@ html {
   margin: 0%;
 }
 
-body {
+body, h2 {
   margin: 0%;
   font-family: 'News Cycle', sans-serif;
   text-align: center;
 }
 
 ul, li {
-  list-style: none;
+  /* list-style: none; */
 }
 
 .container {

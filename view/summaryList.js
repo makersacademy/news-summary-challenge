@@ -17,5 +17,5 @@
     return list;
   };
 
-  exports.HeadlineList = HeadlineList;
+  exports.SummaryList = SummaryList;
 })(this);

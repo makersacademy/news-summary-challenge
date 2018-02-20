@@ -18,7 +18,7 @@
 
   <div class="right">
     <h2> Summary: <h2>
-    <div id="summaries"> </div>
+    <div id="summaryList"> </div>
     <div id="summary"></div>
     <div id="linktostory"></div>
   </div>
@@ -36,6 +36,7 @@
   <script src="model/requestMaker.js"></script>
   <script src="model/summaryMaker.js"></script>
   <script src="view/headlineList.js"></script>
+  <script src="view/summaryList.js"></script>
   <script src="controller/controller.js"></script>
 
 <script>
@@ -43,8 +44,8 @@
   requestMaker.makeRequest();
   summaryMaker = new SummaryMaker();
   articleBatch = new HeadlineList(requestMaker.articles);
-  summaryBatch = new HeadlineList(requestMaker.articles);
-  controller = new Controller(articleBatch,summaryBatch);
+  summaryBatch = new SummaryList(requestMaker.articles);
+  controller = new Controller(articleBatch, summaryBatch);
   controller.insertHeadlines();
   controller.insertSummaries();
 </script>

@@ -5,14 +5,8 @@
 
   HeadlineList.prototype.makeHtmlList = function(){
     list = "<ul>"
-    summaryMaker = new SummaryMaker();
     this.articles.forEach(function(article) {
-      summaryMaker.getSummary(article.webUrl)
-      summaryMaker.createSummary()
-      list += `<img src=${article.fields.thumbnail}>
-      <li>${article.webTitle}<br>
-      ${summaryMaker.summary}
-      <a href=${article.webUrl}>read more...</a></li></p>`
+      list += `<li>${article.webTitle}<br></li></p>`
     });
     list +="</ul>"
     return list;
