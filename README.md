@@ -2,8 +2,8 @@
 
 ## Description
 
-This app grabs the top 10 headlines from the Guardian newspaper API and displays them on the homepage. Clicking on a headline will show a summary of the article and then allow the user to click through to the full article on the Guardian website.
-This single page web app uses pure JavaScript with HTML and CSS.
+This app grabs the top 10 headlines from the Guardian newspaper API and displays them on the homepage. Clicking on a headline will show a summary of the article using the Aylien API and then allow the user to click through to the full article on the Guardian website.
+This single page web app uses pure JavaScript with HTML and CSS and is my first project using APIs in JavaScript.
 See more about my [design process](#design-process).
 
 
@@ -17,14 +17,16 @@ Clone the repo on the command line by running
 ## Usage
 
 To launch the app use a static server e.g.
-[http-server](https://www.npmjs.com/package/http-server))
+[http-server](https://www.npmjs.com/package/http-server)
 
 Navigate to http://localhost:8080
 
 *Headline view page*
+
 ![Headline view page](/images/headline-list-view.png)
 
 *Article summary view page*
+
 ![Article summary view page](/images/article-summary-view.png)
 
 
@@ -87,7 +89,7 @@ I can see a picture to illustrate each news article when I browse headlines
 
 ### Still to implement
 
-- Front end view for the resuts of the testing framework.
+- Front end view for the results of the testing framework.
 - Mocking the API response.
 
 #### User stories
