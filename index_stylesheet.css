@@ -40,9 +40,6 @@ ul, li {
 #summaryList {
   text-align: left;
   list-style: none;
-  li {
-    list-style: none;
-  }
 }
 
 .right {
