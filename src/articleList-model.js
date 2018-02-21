@@ -8,7 +8,7 @@ ArticleList.prototype = {
     this.articles.push(article)
   },
 
-  getArticlesFromAPI: function (callback, source = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/technology') {
+  getArticlesFromAPI: function (callback, source = 'https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/technology') {
     var self = this
     var request = new XMLHttpRequest()
     request.onload = function() {
