@@ -3,10 +3,12 @@
     this.articles = articles;
   };
 
-  HeadlineList.prototype.makeHtmlList = function(){
+  HeadlineList.prototype.makeHtmlHeadlines = function(){
     list = "<ul>"
     this.articles.forEach(function(article) {
-      list += `<li>${article.webTitle}<br></li></p>`
+      list += `<li>
+      <a href="#${article.id}">
+      ${article.webTitle}<br></li></p>`
     });
     list +="</ul>"
     return list;
