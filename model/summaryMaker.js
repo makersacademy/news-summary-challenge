@@ -5,19 +5,20 @@
 
   SummaryMaker.prototype.getSummary = function(url) {
     var anotherRequest = new XMLHttpRequest();
-    anotherRequest.open("GET", this.summaryKey+`${url}`, false);
+    anotherRequest.open("GET", this.summaryKey+`http://www.guardian.co.uk/${url}`, false);
     anotherRequest.send();
     var summaryObject = JSON.parse(anotherRequest.response);
     this.sentences = summaryObject.sentences;
     return this.sentences
   };
 
-  SummaryMaker.prototype.createSummary = function(){
+  SummaryMaker.prototype.createSummary = function() {
     summary = "<p id='summary'>"
     this.sentences.forEach(function(sentence) {
       summary += sentence + " "
     });
-    this.summary = summary;
+    summary += "</p>"
+    return summary;
   };
 
   exports.SummaryMaker = SummaryMaker;
