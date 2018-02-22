@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <link href="index_stylesheet.css" type="text/css" rel="stylesheet">
   <title>News Summary</title>
 </head>
 <body>
@@ -17,35 +16,33 @@
   </div>
 
   <div class="right">
-    <h2> Summary: <h2>
-    <div id="summaryList"> </div>
+    <div id="image"></div>
     <div id="summary"></div>
+    <div id="articleLink"></div>
   </div>
 </div>
 
-<!-- "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search" -->
-
   <!-- load modules -->
-  <script src="model/requestMaker.js"></script>
-  <script src="model/summaryMaker.js"></script>
+  <script src="model/HeadlineRequestMaker.js"></script>
   <script src="view/headlineList.js"></script>
-  <script src="view/summaryList.js"></script>
+  <script src="model/summaryMaker.js"></script>
   <script src="controller/controller.js"></script>
+  <script src="model/SingleStory.js"></script>
+
 
 <script>
-  requestMaker = new RequestMaker();
-  requestMaker.makeRequest();
+  headlineRequestMaker = new HeadlineRequestMaker();
+  headlineRequestMaker.makeRequest();
   summaryMaker = new SummaryMaker();
-  articleBatch = new HeadlineList(requestMaker.articles);
-  summaryBatch = new SummaryList(requestMaker.articles);
-  controller = new Controller(articleBatch, summaryBatch);
+  articleBatch = new HeadlineList(headlineRequestMaker.articles);
+  controller = new Controller(articleBatch);
   controller.insertHeadlines();
-  controller.insertSummaries();
+  controller.makeUrlChangeShowSummaryForCurrentHeadline();
 </script>
 
 
   <!-- load interface script -->
-  <!-- <script src="index_stylesheet.css"></script> -->
+  <link href="index_stylesheet.css" type="text/css" rel="stylesheet">
 
   <!-- load testing framework -->
   <!-- <script src="spec/jennifer.js"></script> -->
