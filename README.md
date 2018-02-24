@@ -1,20 +1,30 @@
 # News Summary challenge
 
-### Guidance
+A news api web app challenge sent in the 7th week of Mackers Academy. The app uses an Express sever in the backend and pure javaScript in the frontend to send an AJAX request to the backend server. HTML and CSS/Bootstrap used to display the results of the api request.
 
-**Coming soon**
+## Technologies
 
-### Technologies
+**JavaScript**
+- Express
 
-**JavaScript, CSS, Bootstrap and HTML**
+**CSS**
 
-### How to run the app
+- Bootstrap
 
-**Coming Soon**
+**HTML**
+##
+
+## Setup
+
+* Ensure that you have [Node.js](https://nodejs.org/en/download/) installed
+* Clone the repo from the github pagg
+
+* Navigate to the folder and install dependencies using:
+
+`npm install`
+
 
 ## User Stories
-
-Some of these stories will need decomposing if they seem too large.
 
 ```
 As a busy politician
@@ -51,4 +61,6 @@ As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
 ```
+## Screenshots
+
 
