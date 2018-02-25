@@ -1,6 +1,6 @@
 # News Summary challenge
 
-A news api web app challenge sent in the 7th week of Mackers Academy. The app uses an Express sever in the backend and pure javaScript in the frontend to send an AJAX request to the backend server. HTML and CSS/Bootstrap used to display the results of the api request.
+A news api web app challenge set in the 7th week of Mackers Academy. The app uses an Express sever in the backend and pure javaScript in the frontend to send an AJAX request to the backend server. HTML and CSS/Bootstrap used to display the results of the api request.
 
 ## Technologies
 
