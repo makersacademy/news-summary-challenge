@@ -63,4 +63,9 @@ To make my news reading more fun
 ```
 ## Screenshots
 
+![alt text](./screenshots/src_s1.png "Screenshot of successful API Page")
 
+
+![alt text](./screenshots/src_s2.png "Screenshot of successful API Page")
+
+![alt text](./screenshots/src_s3.png "Artical page")
