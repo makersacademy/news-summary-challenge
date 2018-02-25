@@ -12,16 +12,27 @@ A news api web app challenge set in the 7th week of Mackers Academy. The app use
 - Bootstrap
 
 **HTML**
-##
+
+
 
 ## Setup
 
 * Ensure that you have [Node.js](https://nodejs.org/en/download/) installed
-* Clone the repo from the github pagg
+* Clone the repo from the github [page](https://github.com/umairb1/news-summary-challenge)
 
 * Navigate to the folder and install dependencies using:
 
 `npm install`
+
+
+
+## Run App
+* Run the Express server using 
+
+`npm start`
+
+Open `index.html` from views folder in a browser
+
 
 
 ## User Stories
@@ -61,6 +72,9 @@ As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
 ```
+
+
+
 ## Screenshots
 
 ![alt text](./screenshots/src_s1.png "Screenshot of successful API Page")
