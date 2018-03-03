@@ -41,4 +41,4 @@ To make my news reading more fun
 ```
 ### Headlines with summary page
 
-![Article page](/images/summary.png)
+![headlines with summary](/images/summary.png)
