@@ -8,5 +8,6 @@
     });
   }
 
-  controller.mockApiResponse(outputHTML);
+  // controller.mockApiResponse(outputHTML);
+  controller.getArticles(outputHTML);
 }());

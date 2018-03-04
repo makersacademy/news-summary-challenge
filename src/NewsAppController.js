@@ -26,7 +26,7 @@ class NewsAppController {
     request.send();
     request.onload = function load() {
       self.recordData(request.response);
-      self.getSummaries();
+      // self.getSummaries();
       self.processData();
       callback();
     };
