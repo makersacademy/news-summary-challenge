@@ -14,7 +14,7 @@ Clone the repository though.
 
 ## Instructions
 
-Simply open `index.html` and watch the 'magic' happen. You can click on a healine to be taken to the aritcle on the Guardian website.
+Simply open `index.html` and watch the 'magic' happen. You can click on a headline to be taken to the article on the Guardian website.
 
 
 ## User Stories
