@@ -1,4 +1,9 @@
-function News(headline, summary) {
+function News(date, headline, url) {
+  this.date = date;
   this.headline = headline;
-  this.summary = summary;
+  this.url = url;
+}
+
+function NewsAggregator() {
+  this.content = []
 }
