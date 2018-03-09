@@ -1,5 +1,4 @@
 getNews = function() {
-
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world");
   xhr.onload = function() {
@@ -10,8 +9,9 @@ getNews = function() {
       var headline = data.response.results[i].webTitle;
       var url = data.response.results[i].webUrl;
       var id = i.toString();
-      var singleNews = new News(headline, url, id)
-      getSummary(singleNews)
+      var summary = (function() {getSummary(url)})();
+      console.log(summary);
+      var singleNews = new News(headline, url, id, summary)
       newsarray.push(singleNews);
     }
   } else {
@@ -39,22 +39,30 @@ render = function(newsarray) {
     newschild.appendChild(headline);
     newschild.appendChild(url);
     newsdiv.appendChild(newschild);
+    newschild.onclick = function() {_onClick(singleNews)};
   })
 }
 
-getSummary = function(singleNews) {
-
+getSummary = function(url) {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + singleNews.url);
+  xhr.open("GET", 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + url);
   xhr.onload = function() {
     if(xhr.status == 200) {
     var summary = JSON.parse(xhr.responseText)
-    singleNews.summary = summary;
+    console.log(summary)
+    return summary
     } else {
     alert('Request failed.')
+    }
   }
-}
   xhr.send();
+}
+
+function _onClick(singleNews) {
+  let summary = document.createTextNode(singleNews.summary);
+  let display = document.getElementById('summary_box');
+  display.innerHTML = "";
+  display.appendChild(summary);
 }
 
 getNews()
