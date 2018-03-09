@@ -1,0 +1,34 @@
+#news {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 3em;
+  width: 25%;
+  margin-top: 3em;
+  margin-left: 3%;
+  float: left;
+}
+
+.single {
+  background-color: #a4d9bc;
+  margin-top: 1em;
+  margin-right: 1em;
+  transition: all 0.3s;
+}
+
+.single:hover {
+  transform: scale(.92);
+  background-color: #dad2a4;
+}
+
+#headline {
+  padding: 0.4em;
+  font-size: 1em;
+  font-family: Work Sans;
+}
+
+#url {
+  padding: 0.5em;
+  margin-top: 0.2em;
+  font-size: 0.5em;
+  color: 385627;
+}
