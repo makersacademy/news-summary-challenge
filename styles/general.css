@@ -32,3 +32,12 @@
   font-size: 0.5em;
   color: 385627;
 }
+
+#summary_box {
+  margin-top: 4em;
+  height: 41em;
+  margin-right: 10%;
+  float: right;
+  width: 40%;
+  background-color: lightgrey;
+}
