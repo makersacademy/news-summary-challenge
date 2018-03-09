@@ -1,23 +1,20 @@
 getNews = function() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world");
-  xhr.onload = function() {
+  xhr.onload = function() { // jak odpowiedz z zapytania dojdzie.
     if(xhr.status == 200) {
-    var data = JSON.parse(xhr.responseText)
-    newsarray = []
-    for (var i = 0; i < 10; i++ ) {
-      var headline = data.response.results[i].webTitle;
-      var url = data.response.results[i].webUrl;
-      var id = i.toString();
-      var summary = (function() {getSummary(url)})();
-      console.log(summary);
-      var singleNews = new News(headline, url, id, summary)
-      newsarray.push(singleNews);
+      var data = JSON.parse(xhr.responseText)
+      newsarray = []
+      for (var i = 0; i < 10; i++ ) {
+        var headline = data.response.results[i].webTitle;
+        var url = data.response.results[i].webUrl;
+        var id = i.toString();
+        var singleNews = new News(headline, url, id)
+        getSummary(singleNews);
+        newsarray.push(singleNews);
+      }
     }
-  } else {
-    alert('Request failed.')
-  }
-    render(newsarray)
+    render(newsarray) // wyrenderuje sie dopuero, jak ten blok wyżej sie zrealizuje.
   }
   xhr.send();
 }
@@ -25,8 +22,6 @@ getNews = function() {
 render = function(newsarray) {
   let newsdiv = document.getElementById('news');
   newsarray.forEach(function(singleNews) {
-    let headlinetext = document.createTextNode(singleNews.headline);
-    let urltext = document.createTextNode(singleNews.url);
     let newschild = document.createElement('div');
     newschild.setAttribute("id", singleNews.id);
     newschild.setAttribute("class", "single");
@@ -34,8 +29,8 @@ render = function(newsarray) {
     headline.setAttribute("id", "headline");
     let url = document.createElement('div');
     url.setAttribute("id", "url");
-    headline.appendChild(headlinetext);
-    url.appendChild(urltext);
+    headline.appendChild(document.createTextNode(singleNews.headline));
+    url.appendChild(document.createTextNode(singleNews.url));
     newschild.appendChild(headline);
     newschild.appendChild(url);
     newsdiv.appendChild(newschild);
@@ -43,19 +38,16 @@ render = function(newsarray) {
   })
 }
 
-getSummary = function(url) {
+getSummary = function(singleNews) { // funkcje asynchroniczne nie zwracac rzeczy.
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + url);
-  xhr.onload = function() {
+  xhr.open("GET", 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + singleNews.url);
+  xhr.onload = function() {  // 43 --> 50 --> 44 - jak dostaniesz dane z API, zrob to.
     if(xhr.status == 200) {
-    var summary = JSON.parse(xhr.responseText)
-    console.log(summary)
-    return summary
-    } else {
-    alert('Request failed.')
+      var summary = JSON.parse(xhr.responseText)
+      singleNews.summary = summary.sentences
     }
   }
-  xhr.send();
+  xhr.send(); // w tym miejscu przegladarka odpytuje API.
 }
 
 function _onClick(singleNews) {

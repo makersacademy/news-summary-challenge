@@ -1,8 +1,7 @@
-function News(headline, url, id, summary) {
+function News(headline, url, id) {
   this.headline = headline;
   this.url = url;
   this.id = id;
-  this.summary = summary;
 }
 
 function NewsAggregator() {
