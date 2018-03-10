@@ -1,15 +1,17 @@
 getNews = function() {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world"); // gdzie i co (get)
+  xhr.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world?show-fields=thumbnail"); // gdzie i co (get)
   xhr.onload = function() { // jak odpowiedz z zapytania dojdzie - czyli z send - to zrob to co nizej
     if(xhr.status == 200) {
+      console.log(xhr)
       var data = JSON.parse(xhr.responseText)
       newsarray = []
       for (var i = 0; i < 10; i++ ) {
         var headline = data.response.results[i].webTitle;
         var url = data.response.results[i].webUrl;
         var id = i.toString();
-        var singleNews = new News(headline, url, id)
+        var linkToImage = data.response.results[i].fields.thumbnail;
+        var singleNews = new News(headline, url, id, linkToImage)
         getSummary(singleNews);
         newsarray.push(singleNews);
       }
@@ -47,18 +49,45 @@ getSummary = function(singleNews) { // funkcje asynchroniczne nie zwracac rzeczy
 }
 
 function _onClick(singleNews) {
-  let summary = document.createTextNode(singleNews.summary);
+  _cleanField();
+  _displaySummary(singleNews);
+  _displayHeadline(singleNews);
+  _displayUrl(singleNews);
+  _displayImage(singleNews);
+}
+
+_cleanField = function() {
+  let info = document.getElementById('info')
+  info.innerHTML = "";
+}
+
+_displayHeadline = function(singleNews) {
   let headline = document.createTextNode(singleNews.headline);
-  let url = document.createTextNode(singleNews.url);
-  let contentbox = document.getElementById('content_box');
   let headlinebox = document.getElementById('headline_box');
-  let urlbox = document.getElementById('url_box');
-  contentbox.innerHTML = "";
   headlinebox.innerHTML = "";
-  urlbox.innerHTML = "";
-  contentbox.appendChild(summary);
   headlinebox.appendChild(headline);
+}
+
+_displaySummary = function(singleNews) {
+  let summary = document.createTextNode(singleNews.summary);
+  let contentbox = document.getElementById('content_box');
+  contentbox.innerHTML = "";
+  contentbox.appendChild(summary);
+}
+
+_displayUrl = function(singleNews) {
+  let url = document.createTextNode(singleNews.url);
+  let urlbox = document.getElementById('url_box');
+  urlbox.innerHTML = "";
   urlbox.appendChild(url);
+  urlbox.setAttribute("href", singleNews.url);
+}
+
+_displayImage = function(singleNews) {
+  let linkToImage = document.createTextNode(singleNews.linkToImage);
+  let imgbox = document.getElementById('img_box');
+  imgbox.appendChild(linkToImage);
+  imgbox.setAttribute("src", singleNews.linkToImage);
 }
 
 getNews()
