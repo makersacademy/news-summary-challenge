@@ -4,7 +4,7 @@ var assert = {
     if (!assertionToCheck) {
       throw new Error(assertionToCheck + " is not truthy!")
     } else if (!!assertionToCheck) {
-      console.log("Life is green!")
+      console.log("All beaks are green!")
     }
   }
 };
@@ -35,7 +35,7 @@ function it(string, callback){
   beforeEach(beforeEachFunction);
   console.log(string);
   callback();
-  console.log("%cHannah is a happy bunny", 'color: #30a337')
+  console.log("%cAll beaks are green!", 'color: #30a337')
 }
 
 var beforeEachFunction;
