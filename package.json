@@ -1,0 +1,24 @@
+{
+  "name": "news-summary",
+  "version": "1.0.0",
+  "description": "single page news summary application",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "test": "test",
+    "start": "node node_modules/http-server/bin/http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosTrapet/news-summary-challenge.git"
+  },
+  "author": "Carlos Trapet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlosTrapet/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/CarlosTrapet/news-summary-challenge#readme"
+}
