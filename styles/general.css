@@ -10,9 +10,10 @@
 
 .single {
   background-color: #a4d9bc;
-  margin-top: 1em;
-  margin-right: 1em;
+  margin-top: 0.8em;
+  margin-right: 0.8em;
   transition: all 0.3s;
+  padding: 0.2em;
 }
 
 .single:hover {
@@ -33,9 +34,22 @@
   color: 385627;
 }
 
+#headline_box {
+  margin-bottom: 1.5em;
+  font-size: 1.5em;
+}
+
+#url_box {
+  position: absolute;
+  bottom: 0.4em;
+}
+
 #summary_box {
+  position: relative;
+  padding: 1.5em;
+  font-family: Work Sans;
   margin-top: 4em;
-  height: 41em;
+  height: 33em;
   margin-right: 10%;
   float: right;
   width: 40%;

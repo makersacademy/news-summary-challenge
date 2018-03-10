@@ -1,7 +1,7 @@
 getNews = function() {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world");
-  xhr.onload = function() { // jak odpowiedz z zapytania dojdzie.
+  xhr.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world"); // gdzie i co (get)
+  xhr.onload = function() { // jak odpowiedz z zapytania dojdzie - czyli z send - to zrob to co nizej
     if(xhr.status == 200) {
       var data = JSON.parse(xhr.responseText)
       newsarray = []
@@ -16,7 +16,7 @@ getNews = function() {
     }
     render(newsarray) // wyrenderuje sie dopuero, jak ten blok wyżej sie zrealizuje.
   }
-  xhr.send();
+  xhr.send(); // zrob to co jest zdefiniowane w open
 }
 
 render = function(newsarray) {
@@ -27,12 +27,8 @@ render = function(newsarray) {
     newschild.setAttribute("class", "single");
     let headline = document.createElement('div');
     headline.setAttribute("id", "headline");
-    let url = document.createElement('div');
-    url.setAttribute("id", "url");
     headline.appendChild(document.createTextNode(singleNews.headline));
-    url.appendChild(document.createTextNode(singleNews.url));
     newschild.appendChild(headline);
-    newschild.appendChild(url);
     newsdiv.appendChild(newschild);
     newschild.onclick = function() {_onClick(singleNews)};
   })
@@ -52,9 +48,17 @@ getSummary = function(singleNews) { // funkcje asynchroniczne nie zwracac rzeczy
 
 function _onClick(singleNews) {
   let summary = document.createTextNode(singleNews.summary);
-  let display = document.getElementById('summary_box');
-  display.innerHTML = "";
-  display.appendChild(summary);
+  let headline = document.createTextNode(singleNews.headline);
+  let url = document.createTextNode(singleNews.url);
+  let contentbox = document.getElementById('content_box');
+  let headlinebox = document.getElementById('headline_box');
+  let urlbox = document.getElementById('url_box');
+  contentbox.innerHTML = "";
+  headlinebox.innerHTML = "";
+  urlbox.innerHTML = "";
+  contentbox.appendChild(summary);
+  headlinebox.appendChild(headline);
+  urlbox.appendChild(url);
 }
 
 getNews()
