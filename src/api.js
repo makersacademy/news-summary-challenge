@@ -72,7 +72,13 @@ _displaySummary = function(singleNews) {
   let summary = document.createTextNode(singleNews.summary);
   let contentbox = document.getElementById('content_box');
   contentbox.innerHTML = "";
-  contentbox.appendChild(summary);
+  if (singleNews.summary !== undefined) {
+    contentbox.appendChild(summary);
+  } else {
+    contentbox.innerHTML = "Unfortunately the daily limit for summaries for this API has been exceeded. \n Today you will be able to read only the headlines on, for summaries come back tomorrow. \n\n\n SORRY!";
+    contentbox.style.color = '#c32424';
+    contentbox.style.background = "#ff000026";
+  }
 }
 
 _displayUrl = function(singleNews) {
