@@ -183,9 +183,8 @@ p6 {
     border-style: none;
  }
 
-
   #content_box {
-    padding-bottom: 3em;
+    margin-bottom: 3em;
     font-size: 0.8em;
   }
 
