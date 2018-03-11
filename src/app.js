@@ -12,7 +12,7 @@ getNews = function() {
         var id = i.toString();
         var linkToImage = data.response.results[i].fields.thumbnail;
         var singleNews = new News(headline, url, id, linkToImage)
-        getSummary(singleNews);
+        getSummary(singleNews); // getNews doesnt wait for the result on onload in getSmmmary
         newsarray.push(singleNews);
       }
     }
@@ -75,7 +75,7 @@ _displaySummary = function(singleNews) {
   if (singleNews.summary !== undefined) {
     contentbox.appendChild(summary);
   } else {
-    contentbox.innerHTML = "Unfortunately the daily limit for summaries for this API has been exceeded. \n Today you will be able to read only the headlines on, for summaries come back tomorrow. \n\n\n SORRY!";
+    contentbox.innerHTML = "Unfortunately the daily limit for summaries for this API has been exceeded. \n Today you will be able to read only the headlines, for summaries come back tomorrow. \n\n\n SORRY!";
     contentbox.style.color = '#c32424';
     contentbox.style.background = "#ff000026";
   }
