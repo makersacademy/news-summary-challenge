@@ -14,7 +14,6 @@ getNews = function() {
 
         // Before defining 'content', we wait for a value to be assigned to getContent(element)
         // therefore we use a promise in getContent
-        // let content = getContent(element)
 
         getContent(element).then((val) => {
           let art = {
@@ -57,16 +56,18 @@ getContent = function(response) {
 }
 
 printContent = function(art) {
-  paraT = document.createElement("P")
-  title = document.createTextNode(art.newsTitle)
-  paraT.appendChild(title)
+  article = document.createElement("article")
+  // Solo un h1 por pag
+  // Vamos redefiniendo el title y content
+  title = document.createElement("H2")
+  title.innerHTML = art.newsTitle
+  title = article.appendChild(title)
 
-  paraC = document.createElement("P")
-  content = document.createTextNode(art.newsContent)
-  paraC.appendChild(content)
+  content = document.createElement("DIV")
+  content.innerHTML = art.newsContent
+  content = article.appendChild(content)
 
-  document.getElementById("title").appendChild(title)
-  document.getElementById("content").appendChild(content)
+  document.getElementById("news").appendChild(article)
 }
 
 getNews()
