@@ -21,11 +21,6 @@ getNews = function() {
 
           printContent(art)
         })
-
-        getSummary(element).then((val) => {
-          console.log(val)
-          return val
-        })
       })
     }
   }
@@ -56,44 +51,33 @@ getContent = function(response) {
   })
 }
 
-getSummary = function(response) {
-  // Aylien has stronger security than The Guardian (open cross-domain?)
-  // Browser cannot do a request to another server through http-server
-  const xhttp = new XMLHttpRequest()
-
-  // Max requests exceeded...
-  // xhttp.open("GET", "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + response.webUrl, true)
-  xhttp.open("GET", "https://api.aylien.com/api/v1/summarize?url=" + response.webUrl, true)
-  
-  xhttp.setRequestHeader("X-AYLIEN-TextAPI-Application-ID", "8c1a5ae3")
-  xhttp.setRequestHeader("X-AYLIEN-TextAPI-Application-Key", "6bcb387c52e9569bdfe2e787cf155fb6")
-  
-  const prom = new Promise(function(resolve, reject) {
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        resolve(JSON.parse(this.responseText).text)
-      }
-    }
-    xhttp.send()
-  })
-
-  return prom.then((summary) => {
-    return summary
-  })
-}
-
 printContent = function(art) {
   article = document.createElement("article")
-  // Vamos redefiniendo el title y content
+
   title = document.createElement("H2")
   title.innerHTML = art.newsTitle
   title = article.appendChild(title)
 
   content = document.createElement("DIV")
-  content.innerHTML = art.newsContent
+  content.innerHTML = art.newsContent.slice(0, 555)
   content = article.appendChild(content)
 
+  fullContentButton = document.createElement("button")
+  fullContentButton.innerHTML = 'Read full news!'
+  fullContentButton = article.appendChild(fullContentButton)
+  fullContentButton.setAttribute("onclick", "displayFullContent()")
+
   document.getElementById("news").appendChild(article)
+  
+  displayFullContent = function() {
+    document.getElementById("news").style.display = 'none'
+
+    // Always loading the last article visible on the HTML, binding problem?
+    fullContent = document.createElement("article")
+    fullContent.innerHTML = art.newsContent
+
+    document.getElementById("full-news").appendChild(fullContent)
+  }
 }
 
 getNews()
