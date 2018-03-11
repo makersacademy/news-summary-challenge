@@ -1,24 +1,8 @@
-describe("App", function() {
-  var news;
+describe("app", function() {
 
-  beforeEach(function() {
-    news = new News("headline", "url");
-  });
-
-  it("has a headline", function() {
-    expect(news.headline).toEqual("headline");
-  });
-
-  it("has a url", function() {
-    expect(news.url).toEqual("url");
-  });
-
-  describe("", function() {
-    it("", function() {
-    });
-
-    it("", function() {
-    });
+  it("Newscollector has 10 news", function() {
+    getNews()
+    expect(COLLECTOR.content.length).toEqual(10)
   });
 
 });

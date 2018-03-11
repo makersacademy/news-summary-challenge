@@ -1,17 +1,12 @@
-function News(headline, url, id, linkToImage) {
-  this.headline = headline;
-  this.url = url;
-  this.id = id;
-  this.linkToImage = linkToImage;
-}
+const COLLECTOR = new NewsCollection();
 
 getNews = function() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world?show-fields=thumbnail"); // gdzie i co (get)
+  console.log(xhr)
   xhr.onload = function() { // jak odpowiedz z zapytania dojdzie - czyli z send - to zrob to co nizej
     if(xhr.status == 200) {
       var data = JSON.parse(xhr.responseText)
-      newsarray = []
       for (var i = 0; i < 10; i++ ) {
         var headline = data.response.results[i].webTitle;
         var url = data.response.results[i].webUrl;
@@ -19,17 +14,17 @@ getNews = function() {
         var linkToImage = data.response.results[i].fields.thumbnail;
         var singleNews = new News(headline, url, id, linkToImage)
         getSummary(singleNews); // getNews doesnt wait for the result on onload in getSmmmary
-        newsarray.push(singleNews);
+        COLLECTOR.content.push(singleNews);
       }
     }
-    render(newsarray) // wyrenderuje sie dopuero, jak ten blok wyżej sie zrealizuje.
+    render() // wyrenderuje sie dopuero, jak ten blok wyżej sie zrealizuje.
   }
   xhr.send(); // zrob to co jest zdefiniowane w open
 }
 
-render = function(newsarray) {
+render = function() {
   let newsdiv = document.getElementById('news');
-  newsarray.forEach(function(singleNews) {
+  COLLECTOR.content.forEach(function(singleNews) {
     let newschild = document.createElement('div');
     newschild.setAttribute("id", singleNews.id);
     newschild.setAttribute("class", "single");
