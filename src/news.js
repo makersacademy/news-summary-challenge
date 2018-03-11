@@ -8,3 +8,8 @@ function News(headline, url, id, linkToImage) {
 function NewsCollection() {
   this.content = []
 }
+
+
+// News.prototype.sth = function() {
+//   this.name = "hehe"
+// }
