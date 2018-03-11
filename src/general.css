@@ -163,8 +163,7 @@ p6 {
   #summary_box {
     float: inline-start;
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 5%;
     display: block;
     padding: 1.3em;
     font-family: Work Sans;
