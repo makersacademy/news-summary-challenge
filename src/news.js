@@ -2,6 +2,7 @@
 // al momento de crearse
 
 getNews = function() {
+
   const xhttp = new XMLHttpRequest();
 
   xhttp.onreadystatechange = function() {
@@ -10,19 +11,20 @@ getNews = function() {
       
       response.forEach(element => {
         let title = element.webTitle
+
         // Before defining 'content', we wait for a value to be assigned to getContent(element)
         // therefore we use a promise in getContent
-        let content = getContent(element)
+        // let content = getContent(element)
 
-        // let art = {
-          //   title: title,
-          //   content: content
-          // }
-          
-          // Se generan las 10 <p>, una por artículo, pero no se pasa bien la info...
-          // printContent(title, content);
-        });
-        
+        getContent(element).then((val) => {
+          let art = {
+            newsTitle: title,
+            newsContent: val
+          }
+
+          printContent(art);
+        })
+      })
     }
   }
 
@@ -54,12 +56,17 @@ getContent = function(response) {
   })
 }
 
-// printContent = function(title, content) {
-//   title = document.createElement("P");
-//   content = document.createElement("P");
+printContent = function(art) {
+  paraT = document.createElement("P")
+  title = document.createTextNode(art.newsTitle)
+  paraT.appendChild(title)
 
-//   document.getElementById("title").appendChild(title);
-//   document.getElementById("content").appendChild(content);
-// }
+  paraC = document.createElement("P")
+  content = document.createTextNode(art.newsContent)
+  paraC.appendChild(content)
+
+  document.getElementById("title").appendChild(title)
+  document.getElementById("content").appendChild(content)
+}
 
 getNews()
