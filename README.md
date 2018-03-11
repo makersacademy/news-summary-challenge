@@ -1,3 +1,52 @@
+README Edit: My approach and code review
+=================
+
+My approach
+------
+Pre-code:
+* As I did not use tests this time, I had to plan all the process better than usual:
+- Outline number of methods needed and their task.
+
+Development:
+I spent a lot of time researching for this challenge, I came across different obstacles that I solved this way:
+- Research about AJAX requests and Asynchronicity in JS (promises was my choice instead of pure callbacks).
+- Learn more about arrow functions, as they are tricky and do not understand contextes of the keyword **this**, which created a lot of issues in my code.
+- On the contrary, they were a big help in defining promises and resolving them, as sometimes I could not use a function per se, but an arrow function.
+- I also researched about Cross-Origin Resource Sharing (CORS), as my browser did not allow me to send the request to Aylien through my own account due to security issues I assume. The explaination I found about the difference between the API of The Guardian and that of Aylien is that The Guardian must have an open cross-domain that can be accessed widely, contrarily to Aylien.
+I tried passing the headers with my credentials into a getSummary method (please check this commit: **304d0f09df8deb6fa3fc15ab194ca7b80b405f3c** for more information).
+
+Next focus
+------
+* Definitely adding some CSS to the project, I run out of time and gave a strong priority to implementation this time as I wanted to learn more about API's in general and how to establish connections, send requests and handle them to get what needs to be extracted from objects.
+* I need to try the Makers News API, but it run out of requests very quickly in the morning, so I did not have the chance to do it.
+* CORS and Cybersecurity is a topic that interests me and that I would like to explore further. I wish I had had more time in this challenge to try and build something similar to the Makers News API (with credentials, cross-domain requests, an aylien get request...)
+
+Personal code review
+------
+<i>Overall, I am satisfied with the result because of the following reasons:</i>
+* I got to learn more about promises and asynchronicity in JS, which was a pending task for me.
+* I am glad I could come up with the idea of slicing the full request body with the whole article body, as I could not access the Makers News API because it run out of requests pretty quickly. So what I came up with more in depth was:
+- I sliced the body content (up to 555 characters) and displayed that summary below the title.
+- I added a button per every article that, once clicked, would load the whole body and hide the rest of the elements.
+This patch serves as a temporary solution, but definitely using Aylien would be optimal, as some of the 'summarised' articles look a bit strange as there are some unfinished sentences.
+
+<i>Things I am not very happy about:</i>
+* Mainly, I am not happy about choosing a wrong approach because I did not plan well enough beforehand. I tried to stick to many wrong approaches, therefore becoming stuck many times without much hope. I had to start over several times, but thinking about every small step that was taken toward the objective.
+* I felt lost at some point as I was not guided by TDD for this challenge. The main reason is we were not allowed to use external libraries and, also, because the testing framework we built durint the week was not ready to implement feature tests for this challenge.
+We were not supposed to write any JS backend either.
+
+Additional comments
+------
+* I am aware of the fact that I need to hide my API credentials. I have done it in the last commit. I did not do it in the previous ones as I wanted to speed up the process of commiting (and keep developing the good practice of commiting often).
+I was thinking about using an ENV variable to hide away API credentials implementation, but this would prevent other users from using it too.
+
+Screenshots
+------
+![News](/public/news-screenshot.png?raw=true)
+
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+
 # News Summary challenge
 
 * Challenge time: rest of the day and weekend, until Monday 9am.
