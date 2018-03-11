@@ -2,9 +2,9 @@
 // getWebtitles(news.url, news);
 // console.log(news);
 
-// document.getElementById('headlines');
-// console.log(document.getElementById('headlines'));
-// console.log(news.headlines.length);
+// document.getElementById('all');
+// console.log(document.getElementById('all'));
+// console.log(news.all.length);
 
 var p = new Promise(function(resolve, reject) {
 
@@ -19,12 +19,17 @@ var p = new Promise(function(resolve, reject) {
 });
 
 p.then(function() {
-	/* do something with the result */
-  news = new News();
+  // Create the news and api url containing object
+  container = new Container();
+	// Call the getAll function
 
-  getWebtitles(news.url, news);
-  console.log(news.headlines[0]);
-  console.log(news.headlines);
+  
+
+  getAll(container.url, container);
+  console.log(container);
+  // console.log(news.all);
+  // console.log(news.all);
+  console.log(getFormattedDate());
 }).catch(function() {
 	/* error :( */
 })
@@ -32,13 +37,13 @@ p.then(function() {
 
 
 // async function displayNotes() {
-//   console.log(news.headlines.length);
+//   console.log(news.all.length);
 // };
 
 // displayNotes();
 // function displayNotes() {
 //   var output = "";
-//   for (i = 0; i < news.headlines.length; ++i) {
+//   for (i = 0; i < news.all.length; ++i) {
 //     output = '<a href="#">'"</a><br>";
 //   }
 //

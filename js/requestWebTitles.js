@@ -1,33 +1,33 @@
-getWebtitles = function(newsUrl, newsObject) {
+getAll = function(containerUrl, containerObject) {
+  console.log(containerObject);
   var request = new XMLHttpRequest();
-  request.open('GET', newsUrl, true);
+  request.open('GET', containerUrl, true);
   request.onload = function() {
     if (request.status >= 200 && request.status < 400 ) {
       data = JSON.parse(request.responseText);
       for (var i = 0; i < data.response.results.length; i++) {
-        newsObject.headlines.push(data.response.results[i].webTitle);
-        // console.log(data.response.results[i].webTitle)
+        news = new News();
+        console.log(data.response);
+        news.headline = data.response.results[i].webTitle;
+        news.headlineUrl = data.response.results[i].webUrl;
+        containerObject.all.push(news);
       };
-      // console.log(data.response.results[0].webTitle);
-      // console.log(data.response.results.length);
     }
-    console.log(newsObject.headlines.length);
-    console.log(newsObject.headlines[0]);
-    var output = '';
-    for (var i = 0; i < newsObject.headlines.length; i++) {
-      output += '<li>' + newsObject.headlines[i] + '</li>';
-    }
-console.log(output);
-document.getElementById('headlines').innerHTML = output;
 
-    // displayNotes(newsObject);
+// Here we loop through the news items in container.all and put them into html
+    var output = '';
+    for (var i = 0; i < containerObject.all.length; i++) {
+      output += '<li>' + containerObject.all[i].headline + '</li>';
+      output += '<a href="' + containerObject.all[i].headlineUrl + '">' + containerObject.all[i].headline + ' </a>'
+    }
+
+document.getElementById('headlines').innerHTML = output;
+// displayNotes(newsObject);
 
     // Everything has to happen in here
   }
   request.send();
 }
-
-// var promise = new Promise(function(resolve, reject) {
 
 // function displayNotes(newsObject) {
 //   var output = "";
