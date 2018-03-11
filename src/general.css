@@ -5,33 +5,15 @@ html {
 
 .head {
   display: flex;
-  width: 40%;
+  width: 100%;
   height: 3em;
-  padding-right: 60%;
   background-color: #94d2d6;
 }
 
-
-.desc {
-  display: flex;
-  width: 30%;
-  margin-right: 2em;
-  float: right;
-  margin-top: 1em;
-}
-
 p2 {
-  font-size: 2.2em;
-  font-family: UnifrakturMaguntia;
+  font-size: 2em;
+  font-family: Playfair Display;
   padding: 0.2em;
-}
-
-p1 {
-  display: flex;
-  float: right;
-  margin-top: -2.5em;
-  position: absolute;
-  font-family: Work Sans;
 }
 
 #news {
@@ -157,17 +139,19 @@ p6 {
   margin-top: 0.3em;
 }
 
-
 @media screen and (max-width: 730px) {
 
-  p1 {
-    display: none;
-    margin-right: 0em;
+  p2 {
+    font-size: 0.6em;
   }
 
 }
 
 @media screen and (max-width: 1160px) {
+
+  p2 {
+    font-size: 1.4em;
+  }
 
   #news {
     display: grid;
@@ -178,6 +162,7 @@ p6 {
   }
 
   #summary_box {
+    margin-top: 1em;
     float: inline-start;
     width: 80%;
     margin-left: 5%;
@@ -193,7 +178,7 @@ p6 {
   }
 
   #headline_box {
-    font-size: 1.05em;
+    font-size: 1.2em;
   }
 
   #img_box {
@@ -202,12 +187,12 @@ p6 {
 
   #content_box {
     margin-bottom: 3em;
-    font-size: 0.85em;
+    font-size: 1em;
   }
 
   #url_box {
     margin-bottom: 0.5em;
-    font-size: 0.75em;
+    font-size: 0.9em;
   }
 
   .footer {
