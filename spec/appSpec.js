@@ -1,4 +1,4 @@
-describe("News", function() {
+describe("App", function() {
   var news;
 
   beforeEach(function() {

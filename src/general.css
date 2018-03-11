@@ -3,6 +3,25 @@ html {
   min-height: 100%;
 }
 
+.head {
+  position: relative;
+  display: flex;
+  background-color: #94d2d6;
+}
+
+p2 {
+  font-size: 2em;
+  position: relative;
+  font-family: UnifrakturMaguntia;
+}
+
+p1 {
+  position: absolute;
+  left: 15%;
+  bottom: 30%;
+  font-family: Work Sans;
+}
+
 #news {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -106,7 +125,7 @@ a:active {
 }
 
 .footer {
-  background-color: #a4dabc;
+  background-color: #94d2d6;
   width: 100%;
   height: 1.5em;
   display: inline-block;
@@ -128,6 +147,11 @@ p6 {
 
 
 @media screen and (max-width: 760px) {
+
+  p1 {
+    display: none;
+  }
+
   #news {
     display: grid;
     grid-template-columns: 1fr;
