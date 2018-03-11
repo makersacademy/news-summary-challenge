@@ -1,9 +1,7 @@
-// No usar arrow functions si hace falta el This, no entienden de binds sino que se definen
-// al momento de crearse
+// No usar arrow functions si hace falta el This, no entienden de binds, sino que se definen al crearse
 
 getNews = function() {
-
-  const xhttp = new XMLHttpRequest();
+  const xhttp = new XMLHttpRequest()
 
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -21,7 +19,12 @@ getNews = function() {
             newsContent: val
           }
 
-          printContent(art);
+          printContent(art)
+        })
+
+        getSummary(element).then((val) => {
+          console.log(val)
+          return val
         })
       })
     }
@@ -33,9 +36,7 @@ getNews = function() {
 }
 
 getContent = function(response) {
-  let content;
-
-  const xhttp = new XMLHttpRequest();
+  const xhttp = new XMLHttpRequest()
   
   const prom = new Promise(function(resolve, reject) {
     xhttp.onreadystatechange = function() {
@@ -55,9 +56,34 @@ getContent = function(response) {
   })
 }
 
+getSummary = function(response) {
+  // Aylien has stronger security than The Guardian (open cross-domain?)
+  // Browser cannot do a request to another server through http-server
+  const xhttp = new XMLHttpRequest()
+
+  // Max requests exceeded...
+  // xhttp.open("GET", "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + response.webUrl, true)
+  xhttp.open("GET", "https://api.aylien.com/api/v1/summarize?url=" + response.webUrl, true)
+  
+  xhttp.setRequestHeader("X-AYLIEN-TextAPI-Application-ID", "8c1a5ae3")
+  xhttp.setRequestHeader("X-AYLIEN-TextAPI-Application-Key", "6bcb387c52e9569bdfe2e787cf155fb6")
+  
+  const prom = new Promise(function(resolve, reject) {
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        resolve(JSON.parse(this.responseText).text)
+      }
+    }
+    xhttp.send()
+  })
+
+  return prom.then((summary) => {
+    return summary
+  })
+}
+
 printContent = function(art) {
   article = document.createElement("article")
-  // Solo un h1 por pag
   // Vamos redefiniendo el title y content
   title = document.createElement("H2")
   title.innerHTML = art.newsTitle
