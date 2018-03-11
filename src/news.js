@@ -9,7 +9,7 @@ function News(title, url, imgUrl, summary) {
 
 News.prototype = {
 
-  oneFunction: function() {
+  getNews: function() {
 
   },
 

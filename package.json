@@ -8,7 +8,7 @@
     "http-server": "^0.11.1"
   },
   "scripts": {
-    "test": "test",
+    "test": "open SpecRunner.html",
     "start": "node node_modules/http-server/bin/http-server"
   },
   "repository": {
