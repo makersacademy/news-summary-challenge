@@ -1,3 +1,10 @@
+function News(headline, url, id, linkToImage) {
+  this.headline = headline;
+  this.url = url;
+  this.id = id;
+  this.linkToImage = linkToImage;
+}
+
 getNews = function() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world?show-fields=thumbnail"); // gdzie i co (get)
