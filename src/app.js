@@ -81,7 +81,7 @@ _displaySummary = function(singleNews) {
   if (singleNews.summary !== undefined) {
     contentbox.appendChild(summary);
   } else {
-    contentbox.innerHTML = "Unfortunately the daily limit for summaries for this API has been exceeded. \n Today you will be able to read only the headlines, for summaries come back tomorrow. \n\n\n SORRY!";
+    contentbox.innerHTML = "Unfortunately the daily limit for summaries for Aylien API has been exceeded. \n Today you will be able to read only the headlines, for summaries come back tomorrow. \n\n\n SORRY!";
     contentbox.style.color = '#c32424';
     contentbox.style.background = "#ff000026";
   }
