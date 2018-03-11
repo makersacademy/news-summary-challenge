@@ -28,13 +28,13 @@ To make my news reading more fun
 ```
 
 # Domain Model
-
+```
 +---------+              +----------+
 |         |              |          |
 | API     +--------------+  Browser |
 |         |              |          |
 +---------+              +----------+
-
+```
 
 # Instructions to try try out this app
 
