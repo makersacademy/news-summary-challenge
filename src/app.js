@@ -3,7 +3,6 @@ getNews = function() {
   xhr.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world?show-fields=thumbnail"); // gdzie i co (get)
   xhr.onload = function() { // jak odpowiedz z zapytania dojdzie - czyli z send - to zrob to co nizej
     if(xhr.status == 200) {
-      console.log(xhr)
       var data = JSON.parse(xhr.responseText)
       newsarray = []
       for (var i = 0; i < 10; i++ ) {
