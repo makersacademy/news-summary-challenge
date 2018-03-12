@@ -1,4 +1,4 @@
-var url = 'http://content.guardianapis.com/search?from-date=2018-03-10&show-blocks=all&to-date=2018-03-10&use-date=published&q=politics&api-key=349ff0e6-2b64-430b-af95-7538e0728a36'
+var url = '<insert your api key here>'
 // 'https://content.guardianapis.com/search?api-key=349ff0e6-2b64-430b-af95-7538e0728a36'
 
 // getNews = function() {    // this is not a full code, only a snippet containing the relevant JSON.parse part.
