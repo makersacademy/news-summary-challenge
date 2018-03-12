@@ -9,11 +9,11 @@ $ open news.html
 ```
 Click on the "Get headlines" button.
 
-[Screen_Shot_2018-03-12_at_07.44.14.png](https://postimg.org/image/kzs899s0t/)
+[![Screen_Shot_2018-03-12_at_07.44.14.png](https://s6.postimg.org/d71kham1t/Screen_Shot_2018-03-12_at_07.44.14.png)](https://postimg.org/image/kzs899s0t/)
 
 Click on the "Full article" button to open a new tab with the full page Guardian article.
 
-[Screen_Shot_2018-03-12_at_07.44.33.png](https://postimg.org/image/u7kgpz6st/)
+[![Screen_Shot_2018-03-12_at_07.44.33.png](https://s6.postimg.org/5r2avi629/Screen_Shot_2018-03-12_at_07.44.33.png)](https://postimg.org/image/u7kgpz6st/)
 
 If I had more time I would try to add full unit and feature testing, and complete work on the "Article summary" button, using Aylien.
 
