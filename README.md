@@ -1,16 +1,21 @@
-# News Summary challenge
+# News summary challenge in vanilla JavaScript
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+## Review
+### What went well
+* I'm particularly satisfied with how I planned and ended up dividing classes and structuring the files/functions
+* I had to use several machines and managed to solve git conflicts fairly quickly.
+* After much trial and error I managed to understand how to properly communicate with an API
 
-## Challenge
+### Difficulties
+* The topics covered in this exercise are way too distant from what I have learned in the last couple of weeks. Looking back I would definitely have preferred going deeper into jQuery or brushing up my Ruby skills, and saving this challenge for a future ocasion.
+* Understanding how to communicate with an API and how to deal with what it returns took a bit of time.
+* Our Summary-API-handler exceeded the maximum amount of requests on the very first day due to tests not being stubbed. Personally, there's not much I could do to solve that, although having more time I would have taken the approach described further below.
 
-As usual please start by forking this repo.
+### Next
+* Find a way to handle summaries, for instance:
+* Query the API for a body and summarize it by slicing the response `news.request.responseText.fields.body`
+* Using jQuery and a bit more CSS to "beautify" the page and make it more interactive.
 
-You'll create an app that summarises the news.
 
 ### Guidance
 
