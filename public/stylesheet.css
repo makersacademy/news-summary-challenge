@@ -1,0 +1,19 @@
+html {
+  font-size: 100%;
+  margin: 0%;
+  background-color: rgb(179, 225, 222);
+}
+
+body,
+
+h2 {
+  margin: 0%;
+  font-family: 'News Cycle', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin: 0%;
+  font-family: 'News Cycle', sans-serif;
+  color: darkslategrey;
+}

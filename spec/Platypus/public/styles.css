@@ -1,0 +1,45 @@
+body {
+  background-color: #7ba3e0;
+  margin: 0;
+  font-size: 18px;
+  font-family: Arial;
+}
+
+h1 {
+  color: lightgreen;
+  background-color: green;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  border-bottom: 4px solid grey;
+}
+
+.desc {
+  width: 100%;
+  color: lightgreen;
+  background-color: darkgreen;
+  border: 1px solid darkgreen;
+  padding-left: 20px;
+  border-bottom: 2px solid grey;
+}
+
+.it {
+  color: darkgreen;
+  background-color: lightgreen;
+  padding-left: 40px;
+  border-bottom: 2px solid grey;
+}
+
+.err-header, .desc-err {
+  color: pink;
+  background-color: red;
+  padding-left: 20px;
+  border-bottom: 2px solid grey;
+}
+
+.err-stack, .it-err {
+  color: red;
+  background-color: pink;
+  padding-left: 40px;
+  border-bottom: 2px solid grey;
+}
