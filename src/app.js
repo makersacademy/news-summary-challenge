@@ -3,7 +3,6 @@ const COLLECTOR = new NewsCollection();
 getNews = function() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world?show-fields=thumbnail"); // gdzie i co (get)
-  console.log(xhr)
   xhr.onload = function() { // jak odpowiedz z zapytania dojdzie - czyli z send - to zrob to co nizej
     if(xhr.status == 200) {
       var data = JSON.parse(xhr.responseText)
@@ -19,7 +18,7 @@ getNews = function() {
     }
     render() // wyrenderuje sie dopuero, jak ten blok wyżej sie zrealizuje.
   }
-  xhr.send(); // zrob to co jest zdefiniowane w open
+  xhr.send(); // zrob to co jest zdefiniowane w open  // its not sending here, only when browser is ready. - not sneding, queing to be send.
 }
 
 render = function() {
