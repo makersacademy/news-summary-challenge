@@ -58,7 +58,10 @@ function _onClick(singleNews) {
 
 _cleanField = function() {
   let info = document.getElementById('info')
+  let box = document.getElementById('summary_box')
   info.innerHTML = "";
+  box.setAttribute("class", "afterclick");
+
 }
 
 _displayHeadline = function(singleNews) {
