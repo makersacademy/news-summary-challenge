@@ -44,7 +44,6 @@ p2 {
   border-color: #596468;
   border-width: 0.01em;
   padding: 0.7em;
-  font-size: 1.2em;
   text-align: center;
   border-top-color: #5386b3 !important;
   border-top-width: 0.7em;
@@ -91,9 +90,9 @@ p2 {
 }
 
 #content_box {
-  font-size: 1.2em;
   margin-bottom: 2em;
   padding: 1em;
+  font-size: 0.95em;
 }
 
 #url_box {
@@ -134,7 +133,6 @@ a:active {
   display: inline-block;
   margin: auto;
   margin-bottom: 0.2em;
-  position: absolute;
   left: 0;
   bottom: 0;
   overflow: hidden;

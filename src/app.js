@@ -10,7 +10,11 @@ getNews = function() {
         var headline = data.response.results[i].webTitle;
         var url = data.response.results[i].webUrl;
         var id = i.toString();
-        var linkToImage = data.response.results[i].fields.thumbnail;
+        if (data.response.results[i].fields) {
+          var linkToImage = data.response.results[i].fields.thumbnail;
+        } else {
+          var linkToImage = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/No_image_available_600_x_450.svg/2000px-No_image_available_600_x_450.svg.png'
+        }
         var singleNews = new News(headline, url, id, linkToImage)
         getSummary(singleNews); // getNews doesnt wait for the result on onload in getSmmmary
         COLLECTOR.content.push(singleNews);
