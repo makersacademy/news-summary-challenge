@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/defc0nONE/news-summary-challenge#readme",
   "dependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
     "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.10.0"
   }
 }
