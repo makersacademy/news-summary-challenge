@@ -1,9 +1,9 @@
-(function(exports) {
+(exports => {
   const helpers = {
-    fillInForm: function(id, content) {
+    fillInForm(id, content) {
       document.getElementById(id).value = content;
     },
-    clickObject: function(id) {
+    clickObject(id) {
       document.getElementById(id).click();
     }
   };
