@@ -8,11 +8,11 @@ function testNewsList() {
 
   newslist.adds(news1);
 
-  document.write(' NL can add notes to its array ', expect(newslist.content).toNotToBeEmpty());
+  document.write(' NL can add news to its array ', expect(newslist.content).toNotToBeEmpty());
 
   newslist.adds(news2);
 
-  document.write(' NL can show all the notes on its array ', expect(newslist.show()[1]).toEqual(news2));
+  document.write(' NL can show all the news on its array ', expect(newslist.show()[1]).toEqual(news2));
 };
 
 testNewsList();
