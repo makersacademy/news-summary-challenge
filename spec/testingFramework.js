@@ -7,6 +7,9 @@
       toEqual: function(value) {
         return _checkAssert(value === thing);
       },
+      toMatchArray: function(array) {
+        return _checkAssert(this.isTypeArray(array) && this.isSameLength(array) && this.arrayContentsMatch(array));
+      },
       toNotEqual: function(value) {
         return _checkAssert(value !== thing);
       },
@@ -14,10 +17,18 @@
         return _checkAssert(typeof string === 'string');
       },
       isTypeArray: function(array) {
-        return _checkAssert(array instanceof Array);
+        return (array instanceof Array);
       },
       isSameLength: function(array) {
-        return _checkAssert(array.length === thing.length);
+        return (array.length === thing.length);
+      },
+      arrayContentsMatch: function(array) {
+        for (var i = array.length; i--;) {
+          if (array[i] !== thing[i]) {
+            return false;
+          };
+          return true;
+        };
       }
     };
   };
