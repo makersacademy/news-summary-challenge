@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Reenakoudi/news-summary-challenge/issues"
   },
-  "homepage": "https://github.com/Reenakoudi/news-summary-challenge#readme"
+  "homepage": "https://github.com/Reenakoudi/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
 }
