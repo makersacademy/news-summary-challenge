@@ -1,12 +1,11 @@
 describe('List', function() {
-  it('is able to store and return a few headlines', function() {
-    var headline1 = 'fakeHeadline';
-    var headline2 = 'fakeHeadline';
+  it('is able to create and store single headline models', function() {
     var list = new List();
 
-    list.add(headline1);
-    list.add(headline2);
+    list.add('A test headline');
+    list.add('A test headline');
 
-    return expect(list.get()).toMatchArray([headline1, headline2]);
+    // TODO: Figure out how to mock this test
+    return expect(list.get()).toMatchArray([new Headline('A test headline'), new Headline('A test headline')]);
   });
 });
