@@ -24,7 +24,7 @@
       },
       arrayContentsMatch: function(array) {
         for (var i = array.length; i--;) {
-          if (array[i] !== thing[i]) {
+          if (JSON.stringify(array[i]) !== JSON.stringify(thing[i])) {
             return false;
           };
           return true;
