@@ -8,7 +8,7 @@
       var xhttp = new requester();
       xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-              return callback(this.responseText);
+              return callback(JSON.parse(this.responseText));
          }
       };
       xhttp.open("GET", apiPrefix + request, true);
@@ -17,6 +17,3 @@
   };
   exports.apiHandler = apiHandler;
 })(this);
-
-// use - make call, set conditional for do thing unless apiHandler.result == false,
-// wait.
