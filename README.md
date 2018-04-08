@@ -11,7 +11,7 @@ So I know what the big stories of the day are
 As a busy politician
 I can see a summary of a news article
 So I can get a few more details about an important story
-``
+```
 --> Display summary of clicked story title
 
 ```
