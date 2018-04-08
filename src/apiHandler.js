@@ -3,9 +3,9 @@
     get: function(request,
       callback,
       apiPrefix= "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=",
-      requester=XMLHttpRequest)
+      requester=new XMLHttpRequest)
       {
-      var xhttp = new requester();
+      var xhttp = requester;
       xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
               return callback(JSON.parse(this.responseText));
