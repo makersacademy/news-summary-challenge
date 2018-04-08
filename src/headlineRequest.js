@@ -25,7 +25,6 @@
         } else {
           alert('There was a problem with the request.');
         }
-
       }
   }
 
@@ -51,7 +50,7 @@
 
         summaryLink.textContent = "Show Summary";
         console.log(`return getAndShowSummary("${headline.url}")`);
-        summaryLink.setAttribute('onclick', `return getAndShowSummary("${headline.url}")`);
+        summaryLink.onclick = function(){getAndShowSummary(headline.url)};
         summaryLink.setAttribute('href', "#")
 
         li.appendChild(originalLink)
