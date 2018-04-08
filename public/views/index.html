@@ -8,16 +8,19 @@
 
     <meta charset="utf-8">
     <title>News Headlines</title>
-    <script src='../src/interface.js'></script>
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
   </head>
   <body onload="drawList(); return false;">
-    <h1 id="header">News Headlines</h1>
+    <div id="header">
+      <img src="https://image.ibb.co/ft6HXH/download.png" border="0">
+    </div>
 
     <div id="stories">
 
     </div>
 
-    <div id="summary">
+    <div id="summary" style="display: none;">
       <p id="summary-text"></p>
       <button id="back_button" onclick="showAllNews()">Back</button>
     </div>

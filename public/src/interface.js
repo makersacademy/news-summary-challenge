@@ -1,11 +1,11 @@
 news = new AllNews();
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Description', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Description', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Description', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Description', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Description', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Description', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Description', 'Summary', 'TITLE'))
+news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
+news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
+news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
+news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
+news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
+news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
+news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
 
 function drawList() {
    emptyList();
@@ -23,12 +23,6 @@ function drawList() {
      var imageElement = document.createElement("img");
      imageElement.src = newsArray[i].photo()
      newArticleDiv.appendChild(imageElement);
-
-     var descElement = document.createElement("p");
-     var desc = newsArray[i].desc()
-     var descContent = document.createTextNode(desc);
-     descElement.appendChild(descContent);
-     newArticleDiv.appendChild(descElement);
 
      var articleId = `${i}`;
      newArticleDiv.id = articleId;

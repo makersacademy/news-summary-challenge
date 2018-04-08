@@ -23,6 +23,9 @@ function(){describe('Front End (Main Page)', function() {
     it('Automatically shows the stories', function() {
       return expect("stories").toBeVisible();
     });
+    it('Automatically does not show summary', function() {
+      return expect("summary").toNotBeVisible();
+    });
     it('Can click on a div to see the summary', function() {
       helpers.clickObject(0)
       return expect("summary").toBeVisible();

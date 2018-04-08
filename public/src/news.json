@@ -1,0 +1,152 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 23792,
+    "startIndex": 1,
+    "pageSize": 10,
+    "currentPage": 1,
+    "pages": 2380,
+    "edition": {
+      "id": "news",
+      "webTitle": "News",
+      "webUrl": "https://www.theguardian.com/news",
+      "apiUrl": "https://content.guardianapis.com/news",
+      "code": "default"
+    },
+    "section": {
+      "id": "news",
+      "webTitle": "News",
+      "webUrl": "https://www.theguardian.com/news",
+      "apiUrl": "https://content.guardianapis.com/news",
+      "editions": [{
+        "id": "news",
+        "webTitle": "News",
+        "webUrl": "https://www.theguardian.com/news",
+        "apiUrl": "https://content.guardianapis.com/news",
+        "code": "default"
+      }]
+    },
+    "results": [{
+      "id": "news/2018/apr/07/for-the-record",
+      "type": "article",
+      "sectionId": "news",
+      "sectionName": "News",
+      "webPublicationDate": "2018-04-07T23:05:13Z",
+      "webTitle": "For the record",
+      "webUrl": "https://www.theguardian.com/news/2018/apr/07/for-the-record",
+      "apiUrl": "https://content.guardianapis.com/news/2018/apr/07/for-the-record",
+      "isHosted": false,
+      "pillarId": "pillar/news",
+      "pillarName": "News"
+    }, {
+      "id": "news/2018/apr/06/corrections-and-clarifications",
+      "type": "article",
+      "sectionId": "news",
+      "sectionName": "News",
+      "webPublicationDate": "2018-04-06T20:00:41Z",
+      "webTitle": "Corrections and clarifications",
+      "webUrl": "https://www.theguardian.com/news/2018/apr/06/corrections-and-clarifications",
+      "apiUrl": "https://content.guardianapis.com/news/2018/apr/06/corrections-and-clarifications",
+      "isHosted": false,
+      "pillarId": "pillar/news",
+      "pillarName": "News"
+    }, {
+      "id": "news/live/2018/apr/06/a-matter-of-opinion",
+      "type": "liveblog",
+      "sectionId": "news",
+      "sectionName": "News",
+      "webPublicationDate": "2018-04-06T08:07:07Z",
+      "webTitle": "A matter of opinion",
+      "webUrl": "https://www.theguardian.com/news/live/2018/apr/06/a-matter-of-opinion",
+      "apiUrl": "https://content.guardianapis.com/news/live/2018/apr/06/a-matter-of-opinion",
+      "isHosted": false,
+      "pillarId": "pillar/news",
+      "pillarName": "News"
+    }, {
+      "id": "news/2018/apr/05/corrections-and-clarifications",
+      "type": "article",
+      "sectionId": "news",
+      "sectionName": "News",
+      "webPublicationDate": "2018-04-05T20:00:12Z",
+      "webTitle": "Corrections and clarifications",
+      "webUrl": "https://www.theguardian.com/news/2018/apr/05/corrections-and-clarifications",
+      "apiUrl": "https://content.guardianapis.com/news/2018/apr/05/corrections-and-clarifications",
+      "isHosted": false,
+      "pillarId": "pillar/news",
+      "pillarName": "News"
+    }, {
+      "id": "news/2018/apr/05/1500-uk-firms-miss-deadline-to-report-gender-pay-gap",
+      "type": "article",
+      "sectionId": "news",
+      "sectionName": "News",
+      "webPublicationDate": "2018-04-05T17:42:39Z",
+      "webTitle": "1,500 UK firms miss deadline to report gender pay gap",
+      "webUrl": "https://www.theguardian.com/news/2018/apr/05/1500-uk-firms-miss-deadline-to-report-gender-pay-gap",
+      "apiUrl": "https://content.guardianapis.com/news/2018/apr/05/1500-uk-firms-miss-deadline-to-report-gender-pay-gap",
+      "isHosted": false,
+      "pillarId": "pillar/news",
+      "pillarName": "News"
+    }, {
+      "id": "news/ng-interactive/2018/apr/05/women-are-paid-less-than-men-heres-how-to-fix-it",
+      "type": "interactive",
+      "sectionId": "news",
+      "sectionName": "News",
+      "webPublicationDate": "2018-04-05T05:00:39Z",
+      "webTitle": "Gender pay gap: what we learned and how to fix it",
+      "webUrl": "https://www.theguardian.com/news/ng-interactive/2018/apr/05/women-are-paid-less-than-men-heres-how-to-fix-it",
+      "apiUrl": "https://content.guardianapis.com/news/ng-interactive/2018/apr/05/women-are-paid-less-than-men-heres-how-to-fix-it",
+      "isHosted": false,
+      "pillarId": "pillar/news",
+      "pillarName": "News"
+    }, {
+      "id": "news/2018/apr/04/corrections-and-clarifications",
+      "type": "article",
+      "sectionId": "news",
+      "sectionName": "News",
+      "webPublicationDate": "2018-04-04T20:00:28Z",
+      "webTitle": "Corrections and clarifications",
+      "webUrl": "https://www.theguardian.com/news/2018/apr/04/corrections-and-clarifications",
+      "apiUrl": "https://content.guardianapis.com/news/2018/apr/04/corrections-and-clarifications",
+      "isHosted": false,
+      "pillarId": "pillar/news",
+      "pillarName": "News"
+    }, {
+      "id": "news/live/2018/apr/04/gender-pay-gap-final-day-of-reporting-live",
+      "type": "liveblog",
+      "sectionId": "news",
+      "sectionName": "News",
+      "webPublicationDate": "2018-04-04T17:03:31Z",
+      "webTitle": "Gender pay gap: hundreds of companies file reports on final day - as it happened",
+      "webUrl": "https://www.theguardian.com/news/live/2018/apr/04/gender-pay-gap-final-day-of-reporting-live",
+      "apiUrl": "https://content.guardianapis.com/news/live/2018/apr/04/gender-pay-gap-final-day-of-reporting-live",
+      "isHosted": false,
+      "pillarId": "pillar/news",
+      "pillarName": "News"
+    }, {
+      "id": "news/ng-interactive/2018/apr/04/gender-pay-gap-when-does-your-company-stop-paying-women-in-2018",
+      "type": "interactive",
+      "sectionId": "news",
+      "sectionName": "News",
+      "webPublicationDate": "2018-04-04T12:09:02Z",
+      "webTitle": "Gender pay gap: when  does your company stop paying women in 2018?",
+      "webUrl": "https://www.theguardian.com/news/ng-interactive/2018/apr/04/gender-pay-gap-when-does-your-company-stop-paying-women-in-2018",
+      "apiUrl": "https://content.guardianapis.com/news/ng-interactive/2018/apr/04/gender-pay-gap-when-does-your-company-stop-paying-women-in-2018",
+      "isHosted": false,
+      "pillarId": "pillar/news",
+      "pillarName": "News"
+    }, {
+      "id": "news/live/2018/apr/04/below-the-line-your-best-comments",
+      "type": "liveblog",
+      "sectionId": "news",
+      "sectionName": "News",
+      "webPublicationDate": "2018-04-04T10:51:26Z",
+      "webTitle": "Below the line: your best comments",
+      "webUrl": "https://www.theguardian.com/news/live/2018/apr/04/below-the-line-your-best-comments",
+      "apiUrl": "https://content.guardianapis.com/news/live/2018/apr/04/below-the-line-your-best-comments",
+      "isHosted": false,
+      "pillarId": "pillar/news",
+      "pillarName": "News"
+    }]
+  }
+}
