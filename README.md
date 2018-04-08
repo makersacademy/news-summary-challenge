@@ -24,18 +24,18 @@ LOCALLY:
 #### Constructor News
 methods:
 
-`headline` - headline from Guardian.
-`url` - url of an article.
-`id` - id of an article.
-`linkToImage` - link to image.
+* `headline` - headline from Guardian.
+* `url` - url of an article.
+* `id` - id of an article.
+* `linkToImage` - link to image.
 
 #### App.js
 
 methods:
-`getNews` - gets the headlines, urls and links to image from the Guardian API.
-`getSummary(singleNews)` - gets a summary from Aylien API, using an url of a singleNews object.
-`render` - renders the grid with news.
-`_onClick(singleNews)` - shows a particular headline with a summary in a new window.
+* `getNews` - gets the headlines, urls and links to image from the Guardian API.
+* `getSummary(singleNews)` - gets a summary from Aylien API, using an url of a singleNews object.
+* `render` - renders the grid with news.
+* `_onClick(singleNews)` - shows a particular headline with a summary in a new window.
 
 ## Screenshots
 
