@@ -1,0 +1,44 @@
+<html>
+<head>
+  <!-- testers -->
+  <script src='../../testFramework/describe.js'></script>
+  <script src='../../testFramework/it.js'></script>
+  <script src='../../testFramework/expect.js'></script>
+  <script src='../../testFramework/helpers.js'></script>
+
+</head>
+
+<body>
+  <h1 id='header' style="display:none;">HEADER!!</h1>
+  <h2 id='formResults'></h2>
+  <form "main_form" onsubmit="showFormResult(); return false;">
+    <input type="text" id="input_form">
+     <button id="submitButton">Submit</button>
+  </form>
+
+  <p id='paragraph'> I am some test text </p>
+
+  <button id="show_header" onclick="showHeader()">CLICK ME!</button>
+
+</body>
+
+<script>
+  function showHeader() {
+    document.getElementById('header').style.display = "block";
+  };
+
+  // function clickButton() {
+  //   document.getElementById('submit_button').click()
+  // };
+
+  function showFormResult(){
+    var results = document.getElementById('input_form').value;
+    document.getElementById('formResults').innerHTML = results;
+  }
+
+</script>
+
+<!-- tests -->
+<script src='../../tests/testTest.js'></script>
+
+</html>

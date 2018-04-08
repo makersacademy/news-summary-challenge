@@ -1,0 +1,22 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "a simple news summary page using the guardian API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VivianAllen/news-summary-challenge.git"
+  },
+  "author": "Vivian Allen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VivianAllen/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/VivianAllen/news-summary-challenge#readme",
+  "dependencies": {
+    "npm-server": "0.0.1"
+  }
+}
