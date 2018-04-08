@@ -3,59 +3,59 @@
     return {
       toEqual: function(y) {
         if (x !== y) {
-        return `FAIL: ${object} is not equal to ${check}`;
+        return `FAIL: ${x} is not equal to ${y}`;
         }
       },
       toNotEqual: function(x) {
         if (x === y) {
-        return `FAIL: ${object} is NOT not equal to ${check}...?!?!`;
+        return `FAIL: ${object} is equal to ${y}`;
         }
       },
       toBeTrue: function() {
         if (x !== true) {
-        return `FAIL: ${object} is not true`;
+        return `FAIL: ${x} is not true`;
         }
       },
       toNotBeTrue: function() {
         if (x === true) {
-        return `FAIL: ${object} is NOT not true...?!?!`;
+        return `FAIL: ${x} is true`;
         }
       },
       toContain: function(y) {
         if (!x.includes(y)) {
-        return `FAIL: ${object} does not contain ${content}`;
+        return `FAIL: ${x} does not contain ${y}`;
         }
       },
       toNotContain: function(y) {
         if (x.includes(y)) {
-        return `FAIL: ${object} does NOT not contain ${content}...WTF?`;
+        return `FAIL: ${x} contains ${y}`;
         }
       },
       toBeHTMLelement: function() {
         if (this._frameDoc().getElementById(object) == null) {
-          return `FAIL: HTML element ${object} does not exist`
+          return `FAIL: HTML element ${x} does not exist`
         }
       },
       toNotBeHTMLelement: function() {
         if (this._frameDoc().getElementById(object) !== null) {
-          return `FAIL: HTML element ${object} exists (but it shouldn't)`
+          return `FAIL: HTML element ${x} exists (but it shouldn't)`
         }
       },
       toHaveHTMLcontent: function(y) {
         if (!this._frameDoc().getElementById(x).innerHTML.includes(y)) {
-          return `FAIL: HTML element ${object} does not include ${text}`
+          return `FAIL: HTML element ${x} does not include ${text}`
         }
       },
       toBeVisible: function() {
         if (this._frameDoc().getElementById(x).style.display === "none") {
-          return `FAIL: HTML element ${object} is not visible`
+          return `FAIL: HTML element ${x} is not visible`
         }
       },
       toNotBeVisible: function() {
         if (this._frameDoc().getElementById(x).style.display !== "none") {
-          return `FAIL: HTML element ${object} is visible`
+          return `FAIL: HTML element ${x} is visible`
         }
-      }
+      },
       // private
       _frameDoc: function() {
         return document.getElementById("pageUnderTest").contentDocument;

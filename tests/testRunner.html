@@ -1,6 +1,7 @@
 <!-- html page to test -->
 <iframe id='pageUnderTest' src="../views/news-summary.html" frameborder="0"
 style="overflow: hidden; height: 100%;  width: 100%; position: absolute;"></iframe>
+
 <!-- testers -->
 <script src='../testFramework/describe.js'></script>
 <script src='../testFramework/it.js'></script>
@@ -8,6 +9,10 @@ style="overflow: hidden; height: 100%;  width: 100%; position: absolute;"></ifra
 <script src='../testFramework/webActions.js'></script>
 <script src='../testFramework/oneShotStub.js'></script>
 <script src='../testFramework/jsonLoader.js'></script>
+
 <!-- logic -->
+<script src='../src/apiHandler.js'></script>
+
 <!-- tests -->
+<script src='apiHandlerTests.js'></script>
 <script src='interfaceTests.js'></script>
