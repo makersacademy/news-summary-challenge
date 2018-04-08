@@ -29,6 +29,7 @@
   }
 
   function getAndAddEachIndexIntoObj(headlines){
+    console.log(headlines);
     var valueWithIndex = Array.from(headlines.entries());
     return valueWithIndex.map(subarr =>
       ({
