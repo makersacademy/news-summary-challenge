@@ -6,12 +6,18 @@ describe('View', function() {
         return [
           {
             get: function() {
-              return 'A test headline';
+              return {
+                headline: 'A test headline',
+                image: 'image'
+              }
             }
           },
           {
             get: function() {
-              return 'Another test headline';
+              return {
+                headline: 'A test headline',
+                image: 'image'
+              }
             }
           }
         ]
@@ -19,7 +25,6 @@ describe('View', function() {
     }
 
     var view = new View(fakeList);
-
-    return expect(view.render(fakeList)).toEqual('<ul><li><div>A test headline</div></li><li><div>Another test headline</div></li></ul>');
+    return expect(view.render(fakeList)).toEqual('<ul><li><div><img src =image></img></div><div>A test headline</div></li><li><div><img src =image></img></div><div>A test headline</div></li></ul>');
   });
 });

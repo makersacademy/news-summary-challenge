@@ -13,8 +13,9 @@
       var list = new List();
 
       api.get().then(function(response) {
-        response.forEach(function(headline) {
-          list.add(headline);
+        response.forEach(function(article) {
+          console.log(article)
+          list.add(article.headline, article.image);
         });
         var controller = new Controller(list);
         controller.render()
@@ -23,6 +24,6 @@
   </head>
   <body>
     <!-- page content -->
-    <div id="app">Headline list goes here</div>
+    <div id="app">Loading</div>
   </body>
 </html>

@@ -10,6 +10,9 @@
       toMatchArray: function(array) {
         return _checkAssert(this.isTypeArray(array) && this.isSameLength(array) && this.arrayContentsMatch(array));
       },
+      toMatchObject: function(object) {
+        return _checkAssert(JSON.stringify(object) === JSON.stringify(thing));
+      },
       toNotEqual: function(value) {
         return _checkAssert(value !== thing);
       },

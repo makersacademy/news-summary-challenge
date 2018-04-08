@@ -1,7 +1,7 @@
-describe('Headline', function() {
-  it('is able to return a headline', function() {
-    var headline = new Headline('Headline');
+describe('Article', function() {
+  it('is able to return a article', function() {
+    var article = new Article('Headline', 'imageUrl');
 
-    return expect(headline.get()).toEqual('Headline');
+    return expect(article.get()).toMatchObject({ headline: 'Headline', image: 'imageUrl' });
   });
 });
