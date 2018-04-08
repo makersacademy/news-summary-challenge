@@ -3,10 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>Headlines</title>
-    <script src="script.js"></script>
+    <script src="./lib/api.js"></script>
+    <script src="./lib/headline-model.js"></script>
+    <script src="./lib/headline-list-model.js"></script>
+    <script src="./lib/headline-list-view.js"></script>
+    <script src="./lib/headline-controller.js"></script>
+    <script>
+      var api = new Api();
+      var list = new List();
+
+      api.get().then(function(response) {
+        response.forEach(function(headline) {
+          list.add(headline);
+        });
+        var controller = new Controller(list);
+        controller.render()
+      });
+    </script>
   </head>
   <body>
     <!-- page content -->
-    <div id="app"></div>
+    <div id="app">Headline list goes here</div>
   </body>
 </html>
