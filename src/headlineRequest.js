@@ -3,13 +3,13 @@
     var httpRequest = new XMLHttpRequest();
 
     httpRequest.onreadystatechange = getAndShowHeadlinesOnThePage;
-    httpRequest.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=2018-04-08', true);
+    httpRequest.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=2018-04-08%26show-fields=thumbnail', true);
     httpRequest.send();
 
       function getAndShowHeadlinesOnThePage(){
         console.log(httpRequest.readyState);
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
-          showHeadlines(getAndAddEachIndexIntoTheObj(getHeadlines()))
+          showHeadlines(getAndAddEachIndexIntoObj(getHeadlines()))
         }
       }
 
@@ -18,7 +18,7 @@
         if (httpRequest.status === 200) {
           var response = JSON.parse(httpRequest.responseText).response.results.map(result =>
             ({
-              title: result.webTitle, url: result.webUrl
+              title: result.webTitle, url: result.webUrl, imageUrl: result.fields? result.fields.thumbnail : undefined
             })
           );
           return response;
@@ -28,11 +28,11 @@
       }
   }
 
-  function getAndAddEachIndexIntoTheObj(headlines){
+  function getAndAddEachIndexIntoObj(headlines){
     var valueWithIndex = Array.from(headlines.entries());
     return valueWithIndex.map(subarr =>
       ({
-        title: subarr[1].title, url: subarr[1].url, id: subarr[0]
+        title: subarr[1].title, url: subarr[1].url, imageUrl: subarr[1].imageUrl, id: subarr[0]
         })
     )
   }
@@ -43,6 +43,7 @@
         var li = document.createElement("li");
         var originalLink = document.createElement("a");
         var summaryLink = document.createElement("a");
+        var image = document.createElement("img");
 
         originalLink.textContent = headline.title;
         originalLink.setAttribute('href', headline.url);
@@ -56,9 +57,12 @@
         };
         summaryLink.setAttribute('href', "#")
 
+        image.setAttribute('src', headline.imageUrl);
+
         li.appendChild(originalLink)
         li.appendChild(document.createElement("br"))
         li.appendChild(summaryLink)
+        li.appendChild(image)
         document.querySelector("ul").appendChild(li);
       }
     )
