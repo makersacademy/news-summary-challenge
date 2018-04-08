@@ -16,13 +16,22 @@ function getAndShowSummary(url){
 
   }
 
-  function getAndShowSummaryOnPage(){
-    if (httpRequest.readyState === XMLHttpRequest.DONE) {
-      showSummaryContentOnPage(getSummary())
+    function getAndShowSummaryOnPage(){
+      if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        showSummaryContentOnPage(getSummary())
+      }
     }
   }
-}
 
 function showSummaryContentOnPage(summary){
   document.getElementById("summary").textContent = summary
+}
+
+function hideOtherLinks(idOfShowingsummary){
+  var elements = document.getElementById("headlines");
+  Array.from(elements.children).map(child => {
+    if(child.id != idOfShowingsummary){
+      child.classList.add("hidden")
+    }
+  })
 }

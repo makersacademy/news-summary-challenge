@@ -3,7 +3,7 @@
     var httpRequest = new XMLHttpRequest();
 
     httpRequest.onreadystatechange = getAndShowHeadlinesOnThePage;
-    httpRequest.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=2018-04-07', true);
+    httpRequest.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=2018-04-08', true);
     httpRequest.send();
 
       function getAndShowHeadlinesOnThePage(){
@@ -46,11 +46,14 @@
 
         originalLink.textContent = headline.title;
         originalLink.setAttribute('href', headline.url);
-        originalLink.setAttribute('id', headline.id)
+        li.setAttribute('id', headline.id)
 
         summaryLink.textContent = "Show Summary";
-        console.log(`return getAndShowSummary("${headline.url}")`);
-        summaryLink.onclick = function(){getAndShowSummary(headline.url)};
+        summaryLink.onclick = function(){
+          getAndShowSummary(headline.url)
+          hideOtherLinks(headline.id)
+          summaryLink.classList.add("hidden")
+        };
         summaryLink.setAttribute('href', "#")
 
         li.appendChild(originalLink)
