@@ -1,11 +1,17 @@
 (function(exports) {
-  function oneShotStub(object, method) {
+  function oneShotStub(object, func) {
+    oldFunc = object[method];
     return {
       andReturn: function(returnVal) {
-        oldFunc = object[method];
-        object[method] = function(){
-          object[method] = oldFunc;
-          return returnVal
+        object[func] = function(){
+          object[func] = oldFunc;
+          return returnVal;
+        };
+      },
+      andReturnArgs: function() {
+        object[func] = function(args){
+          object[func] = oldFunc;
+          return args;
         };
       }
     }

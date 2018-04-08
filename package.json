@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/VivianAllen/news-summary-challenge#readme",
   "dependencies": {
+    "http-server": "^0.11.1",
     "npm-server": "0.0.1"
   }
 }

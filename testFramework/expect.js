@@ -31,17 +31,17 @@
         return `FAIL: ${object} does NOT not contain ${content}...WTF?`;
         }
       },
-      toBeHtmlElement: function() {
+      toBeHTMLelement: function() {
         if (this._frameDoc().getElementById(object) == null) {
           return `FAIL: HTML element ${object} does not exist`
         }
       },
-      toNotBeHtmlElement: function() {
+      toNotBeHTMLelement: function() {
         if (this._frameDoc().getElementById(object) !== null) {
           return `FAIL: HTML element ${object} exists (but it shouldn't)`
         }
       },
-      toContainHtmlContent: function(y) {
+      toHaveHTMLcontent: function(y) {
         if (!this._frameDoc().getElementById(x).innerHTML.includes(y)) {
           return `FAIL: HTML element ${object} does not include ${text}`
         }
