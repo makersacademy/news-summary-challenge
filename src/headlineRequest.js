@@ -9,7 +9,7 @@
       function getAndShowHeadlinesOnThePage(){
         console.log(httpRequest.readyState);
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
-          showHeadlines(getHeadlines())
+          showHeadlines(getAndAddEachIndexIntoTheObj(getHeadlines()))
         }
       }
 
@@ -29,6 +29,15 @@
       }
   }
 
+  function getAndAddEachIndexIntoTheObj(headlines){
+    var valueWithIndex = Array.from(headlines.entries());
+    return valueWithIndex.map(subarr =>
+      ({
+        title: subarr[1].title, url: subarr[1].url, id: subarr[0]
+        })
+    )
+  }
+
   function showHeadlines(headlines){
     headlines.map(headline =>
       {
@@ -38,6 +47,7 @@
 
         originalLink.textContent = headline.title;
         originalLink.setAttribute('href', headline.url);
+        originalLink.setAttribute('id', headline.id)
 
         summaryLink.textContent = "Show Summary";
         console.log(`return getAndShowSummary("${headline.url}")`);
