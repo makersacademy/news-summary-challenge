@@ -49,6 +49,7 @@
         originalLink.textContent = headline.title;
         originalLink.setAttribute('href', headline.url);
         li.setAttribute('id', headline.id)
+        li.classList.add("headlines")
 
         summaryLink.textContent = "Show Summary";
         summaryLink.onclick = function(){
@@ -63,7 +64,9 @@
         li.appendChild(originalLink)
         li.appendChild(document.createElement("br"))
         li.appendChild(summaryLink)
+        li.appendChild(document.createElement("br"))
         li.appendChild(image)
+        li.appendChild(document.createElement("br"))
         document.querySelector("ul").appendChild(li);
       }
     )
