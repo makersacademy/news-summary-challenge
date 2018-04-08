@@ -1,39 +1,29 @@
 function ArticleList() {
   this.articles = []
+  this.send
 }
 
 ArticleList.prototype = {
 
   addArticle: function (article) {
-    this.articles.push(articles)
+    this.articles.push(article)
   },
 
-  getArticlesFromAPI: function () {
-    // get articles from API
-
-    var response = {
-      results: [
-        {
-          webUrl: 'url',
-          webTitle: 'title',
-          summary: { text: 'some summary text' },
-        },
-
-        {
-          webUrl: 'anotherurl',
-          webTitle: 'anothertitle',
-          summary: { text: 'different summary text' },
-        },
-      ],
-    };
-
-    response.results.forEach(element => {
-      var url = element.webUrl;
-      var headline = element.webTitle;
-      var summary = element.summary.text;
-      this.addArticle(new Article(url, headline, summary))
-    });
-
+  getArticlesFromAPI: function (callback, source = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/technology') {
+    var self = this
+    var request = new XMLHttpRequest()
+    request.onload = function() {
+        this.response.response.results.forEach(element => {
+          var url = element.apiUrl;
+          var headline = element.webTitle;
+          var date = element.webPublicationDate;
+          self.addArticle(new Article(url, headline, date))
+        });
+        callback();
+    }
+    request.open('GET', source)
+    request.responseType = 'json';
+    request.send()
   },
 
 
