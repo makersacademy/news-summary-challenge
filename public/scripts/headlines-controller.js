@@ -3,8 +3,6 @@
 // example of how to get all fields https://gist.github.com/dannguyen/c9cb220093ee4c12b840
 'use strict';
 
-var todayDate = (new Date()).toISOString().slice(0, 10);
-
 var xhr = new XMLHttpRequest();
 xhr.open('GET', `http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=debate%20AND%20economy&show-fields=all&tag=politics/politics&from-date=${todayDate}`);
 xhr.onload = function() {
