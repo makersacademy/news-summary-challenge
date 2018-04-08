@@ -3,47 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script src=""></script>
+    <script src="src/headlineRequest.js"></script>
+    <script src="src/summaryRequest.js"></script>
+  </head>
   </head>
   <body>
     <script type="text/javascript">
-    httpRequest = new XMLHttpRequest();
-
-      httpRequest.onreadystatechange = showContentsOnThePage;
-      httpRequest.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=2018-04-07', true);
-      httpRequest.send();
-
-      function alertContents() {
-        if (httpRequest.status === 200) {
-          var response = JSON.parse(httpRequest.responseText).response.results.map(result =>
-            ({"title": result.webTitle, "url": result.webUrl}));
-          return response;
-        } else {
-          alert('There was a problem with the request.');
-        }
-
-      }
-
-      function showContents(headlines){
-        headlines.map(headline =>
-          {
-            var li = document.createElement("li");
-            var a = document.createElement("a");
-
-            a.textContent = headline.title;
-            a.setAttribute('href', headline.url)
-            li.appendChild(a)
-            document.querySelector("ul").appendChild(li);
-          }
-        )
-      }
-
-      function showContentsOnThePage(){
-        console.log(httpRequest.readyState);
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-          showContents(alertContents())
-        }
-      }
+      startHeadlineRequest()
 
     </script>
     <ul id="headlines"></ul>
