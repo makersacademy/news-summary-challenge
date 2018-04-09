@@ -1,0 +1,29 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "single-page web app using raw JS & external APIs",
+  "main": "news-controller.js",
+  "scripts": {
+    "test": "tester"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddregalo/news-summary-challenge.git"
+  },
+  "keywords": [
+    "web-app",
+    "api",
+    "javascript"
+  ],
+  "author": "daniel campos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddregalo/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/ddregalo/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "npm": "^5.8.0",
+    "sinon": "^4.5.0"
+  }
+}
