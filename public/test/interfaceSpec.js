@@ -1,7 +1,7 @@
 describe("Interface", function() {
 
-  function before() {
-    respOutput = {
+  function getFakeContent() {
+    return respOutput = {
       "response": {
         "status": "ok",
         "userTier": "developer",
@@ -45,13 +45,19 @@ describe("Interface", function() {
         }]
       }
     };
-    return respOutput;
   };
 
-  describe("getContent", function() {
+  describe("getNews", function() {
     it("returns the JSON response object from the API", function() {
-      respOutput = before();
-      getTitles(respOutput);
+      // .headlineGrabber#makeRequest
+      var fakeHeadlines;
+      var fakeResponse = getFakeContent();
+      console.log("RESP:", fakeResponse)
+      //var jsonText = JSON.parse(fakeResponse);
+      //console.log("TEXT", jsonText)
+      fakeHeadlines = fakeResponse.response.editorsPicks;
+      console.log("HEAD", fakeHeadlines)
+      addTitles(fakeHeadlines);
       return expect("headline_1").toContainHtmlContent("‘The spirit will be lost’: residents fight eviction from their prefab homes");
     });
   });
