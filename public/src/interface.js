@@ -1,11 +1,16 @@
 news = new AllNews();
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
-news.add(new NewsArticle('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxVhjttLBd99r1ieH70XW9vRLCWEsxYW4c0yWZGKv6oAEEocrSQ', 'Summary', 'TITLE'))
+articleRequest = new ArticleRequest()
+articleRequest.getNews()
+
+function loadArticles() {
+  response = articleRequest.response
+  for(i=0; i<response.length; i++ ) {
+    var image = response[i].fields.thumbnail
+    var title = response[i].webTitle
+    var summary = 'summary'
+    news.add(new NewsArticle(image, summary, title))
+  }
+}
 
 function drawList() {
    emptyList();
