@@ -1,15 +1,12 @@
-(function(exports) {
+
   function NewsList() {
-    this.content = []
-  };
+    this._news = []
+}
 
-  NewsList.prototype.adds = function (news) {
-    this.content.push(news)
-  };
+NewsList.prototype.add = function(news) {
+  this._news.push(news)
+}
 
-  NewsList.prototype.show = function () {
-    return this.content
-  };
-
-  exports.NewsList = NewsList
-})(this);
+NewsList.prototype.all = function() {
+  return this._news
+}

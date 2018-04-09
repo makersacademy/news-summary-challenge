@@ -1,11 +1,13 @@
-(function(exports) {
-  function News(text) {
-    this.text = text
-  };
 
-  News.prototype.show = function() {
-    return this.text
-  };
+function News(body, picture) {
+  this._body = body
+  this._image = picture
+}
 
-  exports.News = News
-})(this);
+News.prototype.getBody = function() {
+  return (this._body + "\n" + this._image)
+}
+
+News.prototype.abbrBody = function() {
+  return (this._body.length > 20 ? this._body.slice(0, 20) + '...' : this._body);
+}

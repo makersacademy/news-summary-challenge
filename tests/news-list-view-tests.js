@@ -1,17 +1,75 @@
 
-function testNewsListView() {
-  var newslist = new NewsList();
-  var news1 = new News('I am the 1st new');
-  var news2 = new News('I am the 2nd new');
+describe('Test for the SPA', function() {
+  describe('Page elements', function() {
+    it('has a title called "Guardian News"', function() {
+      return expect('header').toContainHtmlText('Guardian News')
+    })
 
-  newslist.adds(news1);
-  newslist.adds(news2);
+    it('has a text box element', function() {
+      return expect('news_input').toBeHtmlElement();
+    });
 
-  var newslistview = new NewsListView(newslist);
+    it('has a submit button element', function() {
+      return expect('create_news').toBeHtmlElement();
+    });
 
-  document.write(' NLV is initialized wih an NL ', expect(newslistview.core).toBe(NewsList));
+    it('Has a news list element', function() {
+      return expect('news_table').toBeHtmlElement();
+    });
 
-  document.write(' NLV can show the NL ', expect(newslistview.show()).toEqual('<ul><li><div>I am the 1st new</div></li><li><div>I am the 2nd new</div></li></ul>'));
-};
+  });
 
-testNewsListView();
+  describe('SPA interactivity', function() {
+    it('fills in and creates a new form', function() {
+      helpers.fillInForm('news_input', 'First Guardian New');
+      helpers.clickObject('create_news');
+      return expect('news_list').toContainHtmlText('First Guardian New');
+    });
+
+    it('does not show "big_news" initially', function() {
+      return expect('big_news').toNotBeVisible();
+    });
+
+    it('clicks on a list to show the "big_news" div', function() {
+      helpers.clickObject('news_0');
+      return expect('big_news').toBeVisible();
+    });
+
+    it('clicks on a list to hide the "form_div" div', function() {
+      helpers.clickObject('news_0');
+      return expect('form_div').toNotBeVisible();
+    });
+
+    it('clicks on a list to hide the "list_div" div', function() {
+      helpers.clickObject('news_0');
+      return expect('list_div').toNotBeVisible();
+    });
+
+    it('clicks on back button to hide the "big_news" div', function() {
+      helpers.clickObject('news_0');
+      helpers.clickObject('back_button');
+      return expect('big_news').toNotBeVisible();
+    });
+
+    it('clicks on back button to show the "form_div" div', function() {
+      helpers.clickObject('news_0');
+      helpers.clickObject('back_button');
+      return expect('form_div').toBeVisible();
+    });
+
+    it('clicks on back button to show the "list_div" div', function() {
+      helpers.clickObject('news_0');
+      helpers.clickObject('back_button');
+      return expect('list_div').toBeVisible();
+    });
+
+    it('replaces the form with body of the news', function() {
+      helpers.fillInForm('news_input', 'Second Guardian New');
+      helpers.clickObject('create_news');
+      helpers.clickObject('news_1');
+      return expect('news_body_text').toContainHtmlText('Second Guardian New');
+      });
+
+  });
+
+});
