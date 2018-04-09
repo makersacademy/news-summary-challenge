@@ -1,3 +1,8 @@
+# INSTRUCTIONS
+
+1) run npm install to install dependencies
+2) run http-server and navigate to views/news-summary.html
+
 # === DEVELOPMENT === #
 
 
