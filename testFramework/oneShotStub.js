@@ -1,8 +1,8 @@
 (function(exports) {
   function oneShotStub(object, func) {
-    oldFunc = object[method];
+    oldFunc = object[func];
     return {
-      andReturn: function(returnVal) {
+      andReturnValue: function(returnVal) {
         object[func] = function(){
           object[func] = oldFunc;
           return returnVal;

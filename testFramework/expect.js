@@ -32,18 +32,18 @@
         }
       },
       toBeHTMLelement: function() {
-        if (this._frameDoc().getElementById(object) == null) {
+        if (this._frameDoc().getElementById(x) == null) {
           return `FAIL: HTML element ${x} does not exist`
         }
       },
       toNotBeHTMLelement: function() {
-        if (this._frameDoc().getElementById(object) !== null) {
+        if (this._frameDoc().getElementById(x) !== null) {
           return `FAIL: HTML element ${x} exists (but it shouldn't)`
         }
       },
       toHaveHTMLcontent: function(y) {
         if (!this._frameDoc().getElementById(x).innerHTML.includes(y)) {
-          return `FAIL: HTML element ${x} does not include ${text}`
+          return `FAIL: HTML element ${x} does not include ${y}`
         }
       },
       toBeVisible: function() {
