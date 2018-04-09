@@ -1,14 +1,19 @@
 news = new AllNews();
 articleRequest = new ArticleRequest()
+summaryRequest = new SummaryRequest()
 articleRequest.getNews()
 
 function loadArticles() {
   response = articleRequest.response
   for(i=0; i<response.length; i++ ) {
-    var image = response[i].fields.thumbnail
+    if (response[i].fields) {
+      var image = response[i].fields.thumbnail
+    } else {
+      var image = 'https://developersushant.files.wordpress.com/2015/02/no-image-available.png'
+    }
     var title = response[i].webTitle
-    var summary = 'summary'
-    news.add(new NewsArticle(image, summary, title))
+    var website = response[i].webUrl
+    news.add(new NewsArticle(image, website, title))
   }
 }
 
@@ -27,6 +32,8 @@ function drawList() {
 
      var imageElement = document.createElement("img");
      imageElement.src = newsArray[i].photo()
+     imageElement.setAttribute("style", "height: 420px;");
+     imageElement.setAttribute("style", "width: 700px;");
      newArticleDiv.appendChild(imageElement);
 
      var articleId = `${i}`;
@@ -63,6 +70,8 @@ function showAllNews(Id) {
 };
 
 function setSummary(Id) {
-  var text = news.all()[Id].summary();
-  document.getElementById("summary-text").innerHTML = text;
+  var webUrl = news.all()[Id].webUrl();
+  summaryRequest.getSummary(webUrl)
+  var summary = summaryRequest.response
+  document.getElementById("summary-text").innerHTML = summary;
 }

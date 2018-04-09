@@ -1,6 +1,6 @@
   function ArticleRequest() {
     this.response = []
-    this.url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/news?show-fields=thumbnail"
+    this.url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail"
   };
 
   ArticleRequest.prototype.getNews = function() {
