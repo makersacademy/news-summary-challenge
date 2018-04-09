@@ -3,6 +3,11 @@
 1) run npm install to install dependencies
 2) run http-server and navigate to views/news-summary.html
 
+# TESTING
+
+1) run http-server and navigate to tests/testRunner.html
+2) open console view to see test results
+
 # === DEVELOPMENT === #
 
 
