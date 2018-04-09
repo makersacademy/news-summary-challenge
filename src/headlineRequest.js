@@ -58,14 +58,15 @@
           summaryLink.classList.add("hidden")
         };
         summaryLink.setAttribute('href', "#")
+        summaryLink.classList.add("showSummary")
 
         image.setAttribute('src', headline.imageUrl);
 
+        li.appendChild(image)
+        li.appendChild(document.createElement("br"))
         li.appendChild(originalLink)
         li.appendChild(document.createElement("br"))
         li.appendChild(summaryLink)
-        li.appendChild(document.createElement("br"))
-        li.appendChild(image)
         li.appendChild(document.createElement("br"))
         document.querySelector("ul").appendChild(li);
       }
