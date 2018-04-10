@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <script src="index.js"></script>
+</head>
 <body>
 
 <div id="demo">
 <h2>The XMLHttpRequest Object</h2>
 <button type="button" onclick="loadDoc()">Change Content</button>
+<h1>These are today's headlines</h1>
+<h2>Toffin ate bananas</h2>
+<p>London, England 11:30 08/04 2018</p>
+<a href='http://www.bbc.co.uk'>link</a>
+<h2>Toffin ate more banananas</h2>
+<p>London, England 11:33 08/04 2018</p>
+<a href='http://www.bbc.co.uk'>link</a>
 </div>
-
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML =
-      this.responseText;
-    }
-  };
-  url="https://content.guardianapis.com/search?api-key=5b04ca4c-8fe4-44d9-ac02-4f23b30c04f2"
-  xhttp.open("GET", url, true);
-  xhttp.send();
-}
-</script>
 
 </body>
 </html>

@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "dependencies": {
-    "package-json": "^4.0.1"
+    "package-json": "^4.0.1",
+    "parse-json": "^4.0.0"
   },
   "devDependencies": {},
   "scripts": {
