@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var obj = JSON.parse(this.response)
+        stories = obj['response']['results']
+        headlines = "<h1>Today's headlines from Guardian</h1>"
+        for (let i=0; i<stories.length; i++) {
+          story = stories[i]
+          //headlines.push(story['sectionName'], story['webPublicationDate'], story['webTitle'], story['webUrl'])
+          headlines += "<h2>"+story['webTitle']+"</h2>"
+          headlines += "<h5>"+story['webPublicationDate']+"</h5>"
+          headlines += "<p>"+story['webUrl']+"</p>"
+        };
+
+        document.getElementById("demo").innerHTML =
+        headlines;
+      }
+    };
+    url="https://content.guardianapis.com/search?api-key=5b04ca4c-8fe4-44d9-ac02-4f23b30c04f2"
+    url="gardian.json" //stub
+    xhttp.open("GET", url, true);
+    xhttp.send();
+  }
+  </script>
+</head>
+<body>
+
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Change Content</button>
+<h1>These are today's headlines</h1>
+<h2>Toffin ate bananas</h2>
+<p>London, England 11:30 08/04 2018</p>
+<a href='http://www.bbc.co.uk'>link</a>
+<h2>Toffin ate more banananas</h2>
+<p>London, England 11:33 08/04 2018</p>
+<a href='http://www.bbc.co.uk'>link</a>
+</div>
+
+</body>
+</html>
