@@ -1,7 +1,8 @@
 # News Summary App
 
-A javascript application created as a weekend challange at the 7th weekend of Makers Academy.
-Read the headlines from Guardian API and the summaries from Aylien in one place!
+A javascript application created as a weekend challange at the 7th weekend of Makers Academy. Read the headlines from Guardian API and the summaries from Aylien in one place!
+
+I welcome you to read a [Gist](https://gist.github.com/Kotauror/618302fab7c851b63c98aa233db48d13) on asyns in JS that I wrote during this challenge.
 
 ## Technology used
 
@@ -12,8 +13,8 @@ Read the headlines from Guardian API and the summaries from Aylien in one place!
 ## How to run it
 
 ONLINE:
-* news-summaries.surge.sh/
-/it takes some time for the API to load - in case of problems, please refresh the page/
+
+[news-summaries.surge.sh](https://news-summaries.surge.sh) /it takes some time for the API to load - in case of problems, please refresh the page/
 
 LOCALLY:
 * Clone this repository into to your local computer.
