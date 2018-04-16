@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src='../src/articleRequest.js'></script>
     <script src='../src/summaryRequest.js'></script>
     <script src='../src/allNews.js'></script>
@@ -9,21 +18,22 @@
 
     <meta charset="utf-8">
     <title>News Headlines</title>
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
   </head>
-  <body onload="loadArticles(); drawList(); return false;">
-    <div id="header">
-      <img src="https://image.ibb.co/ft6HXH/download.png" border="0">
-    </div>
+  <body>
+    <div class="container">
+      <div id="header">
+        <img src="https://image.ibb.co/ft6HXH/download.png" border="0">
+      </div>
+      <div id="stories" class="row">
 
-    <div id="stories">
+      </div>
 
-    </div>
-
-    <div id="summary" style="display: none;">
-      <p id="summary-text"></p>
-      <button id="back_button" onclick="showAllNews()">Back</button>
+      <div id="summary" style="display: none;">
+        <p id="summary-text">Loading...</p>
+        <button id="back_button" onclick="showAllNews()">Back</button>
+      </div>
     </div>
 
   </body>

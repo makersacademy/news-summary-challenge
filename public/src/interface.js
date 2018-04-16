@@ -1,10 +1,9 @@
 news = new AllNews();
 articleRequest = new ArticleRequest()
 summaryRequest = new SummaryRequest()
-articleRequest.getNews()
+articleRequest.getNews(loadArticles)
 
-function loadArticles() {
-  response = articleRequest.response
+function loadArticles(response) {
   for(i=0; i<response.length; i++ ) {
     if (response[i].fields) {
       var image = response[i].fields.thumbnail
@@ -15,6 +14,7 @@ function loadArticles() {
     var website = response[i].webUrl
     news.add(new NewsArticle(image, website, title))
   }
+  drawList()
 }
 
 function drawList() {
@@ -32,15 +32,16 @@ function drawList() {
 
      var imageElement = document.createElement("img");
      imageElement.src = newsArray[i].photo()
-     imageElement.setAttribute("style", "height: 420px;");
-     imageElement.setAttribute("style", "width: 700px;");
+     imageElement.setAttribute("style", "height: 80%;");
+     imageElement.setAttribute("style", "width: 80%;");
      newArticleDiv.appendChild(imageElement);
 
      var articleId = `${i}`;
      newArticleDiv.id = articleId;
+     newArticleDiv.className  = "col-md-12"
 
      document.getElementById("stories").appendChild(newArticleDiv)
-     document.getElementById(articleId).onclick = function() {showSummary(this.id)};
+     document.getElementById(articleId).onclick = function() {showSummaryDiv(this.id)};
    }
 }
 
@@ -54,7 +55,7 @@ function emptyList() {
   }
 }
 
-function showSummary(Id) {
+function showSummaryDiv(Id) {
   var bigSummary = document.getElementById('summary')
   var summaryDiv = document.getElementById('stories')
   bigSummary.style.display = "block";
@@ -67,11 +68,14 @@ function showAllNews(Id) {
   var summaryDiv = document.getElementById('stories')
   bigSummary.style.display = "none";
   summaryDiv.style.display = "block";
+  document.getElementById("summary-text").innerHTML = 'Loading.....';
 };
 
 function setSummary(Id) {
   var webUrl = news.all()[Id].webUrl();
-  summaryRequest.getSummary(webUrl)
-  var summary = summaryRequest.response
+  summaryRequest.getSummary(webUrl, showSummary)
+}
+
+function showSummary(summary) {
   document.getElementById("summary-text").innerHTML = summary;
 }
