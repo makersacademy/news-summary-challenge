@@ -1,0 +1,186 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 50719,
+    "startIndex": 1,
+    "pageSize": 10,
+    "currentPage": 1,
+    "pages": 5072,
+    "edition": {
+      "id": "technology",
+      "webTitle": "Technology",
+      "webUrl": "https://www.theguardian.com/technology",
+      "apiUrl": "https://content.guardianapis.com/technology",
+      "code": "default"
+    },
+    "section": {
+      "id": "technology",
+      "webTitle": "Technology",
+      "webUrl": "https://www.theguardian.com/technology",
+      "apiUrl": "https://content.guardianapis.com/technology",
+      "editions": [
+        {
+          "id": "technology",
+          "webTitle": "Technology",
+          "webUrl": "https://www.theguardian.com/technology",
+          "apiUrl": "https://content.guardianapis.com/technology",
+          "code": "default"
+        },
+        {
+          "id": "au/technology",
+          "webTitle": "Technology",
+          "webUrl": "https://www.theguardian.com/au/technology",
+          "apiUrl": "https://content.guardianapis.com/au/technology",
+          "code": "au"
+        },
+        {
+          "id": "uk/technology",
+          "webTitle": "Technology",
+          "webUrl": "https://www.theguardian.com/uk/technology",
+          "apiUrl": "https://content.guardianapis.com/uk/technology",
+          "code": "uk"
+        },
+        {
+          "id": "us/technology",
+          "webTitle": "Technology",
+          "webUrl": "https://www.theguardian.com/us/technology",
+          "apiUrl": "https://content.guardianapis.com/us/technology",
+          "code": "us"
+        }
+      ]
+    },
+    "results": [
+      {
+        "id": "technology/2018/feb/18/bitcoin-gambling-tycoon-builds-100m-resort-antigua-calvin-ayre",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2018-02-18T16:54:54Z",
+        "webTitle": "Gambling tycoon builds $100m bitcoin-funded Antiguan resort",
+        "webUrl": "https://www.theguardian.com/technology/2018/feb/18/bitcoin-gambling-tycoon-builds-100m-resort-antigua-calvin-ayre",
+        "apiUrl": "https://content.guardianapis.com/technology/2018/feb/18/bitcoin-gambling-tycoon-builds-100m-resort-antigua-calvin-ayre",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2018/feb/18/temple-cycles-adventure-disc-trail-bristol-bespoke-review-martin-love",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2018-02-18T06:00:36Z",
+        "webTitle": "Temple Cycles Adventure review: ‘Perfect for hill passes, pints and pasties’ | Martin Love",
+        "webUrl": "https://www.theguardian.com/technology/2018/feb/18/temple-cycles-adventure-disc-trail-bristol-bespoke-review-martin-love",
+        "apiUrl": "https://content.guardianapis.com/technology/2018/feb/18/temple-cycles-adventure-disc-trail-bristol-bespoke-review-martin-love",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2018/feb/18/seat-arona-preview-a-savvy-little-car-martin-love",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2018-02-18T05:59:36Z",
+        "webTitle": "Seat Arona preview: ‘A savvy little car’ | Martin Love",
+        "webUrl": "https://www.theguardian.com/technology/2018/feb/18/seat-arona-preview-a-savvy-little-car-martin-love",
+        "apiUrl": "https://content.guardianapis.com/technology/2018/feb/18/seat-arona-preview-a-savvy-little-car-martin-love",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2018/feb/16/peter-thiel-silicon-valley-move-la-conservatives-welcome",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2018-02-16T21:47:35Z",
+        "webTitle": "As Peter Thiel ditches Silicon Valley for LA, locals tout 'conservative renaissance'",
+        "webUrl": "https://www.theguardian.com/technology/2018/feb/16/peter-thiel-silicon-valley-move-la-conservatives-welcome",
+        "apiUrl": "https://content.guardianapis.com/technology/2018/feb/16/peter-thiel-silicon-valley-move-la-conservatives-welcome",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2018/feb/16/how-to-explain-the-inflatable-penises",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2018-02-16T16:24:37Z",
+        "webTitle": "How to explain the inflatable penises | Brief letters",
+        "webUrl": "https://www.theguardian.com/technology/2018/feb/16/how-to-explain-the-inflatable-penises",
+        "apiUrl": "https://content.guardianapis.com/technology/2018/feb/16/how-to-explain-the-inflatable-penises",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2018/feb/16/facebook-ordered-stop-collecting-user-data-fines-belgian-court",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2018-02-16T16:14:59Z",
+        "webTitle": "Facebook ordered to stop collecting user data by Belgian court",
+        "webUrl": "https://www.theguardian.com/technology/2018/feb/16/facebook-ordered-stop-collecting-user-data-fines-belgian-court",
+        "apiUrl": "https://content.guardianapis.com/technology/2018/feb/16/facebook-ordered-stop-collecting-user-data-fines-belgian-court",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2018/feb/16/parents-killed-it-facebook-losing-teenage-users",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2018-02-16T16:08:09Z",
+        "webTitle": "'Parents killed it': why Facebook is losing its teenage users",
+        "webUrl": "https://www.theguardian.com/technology/2018/feb/16/parents-killed-it-facebook-losing-teenage-users",
+        "apiUrl": "https://content.guardianapis.com/technology/2018/feb/16/parents-killed-it-facebook-losing-teenage-users",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2018/feb/16/uber-set-up-24-hour-incident-hotline-uk-customers-report-police",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2018-02-16T12:45:48Z",
+        "webTitle": "Uber to set up 24-hour hotline for UK customers",
+        "webUrl": "https://www.theguardian.com/technology/2018/feb/16/uber-set-up-24-hour-incident-hotline-uk-customers-report-police",
+        "apiUrl": "https://content.guardianapis.com/technology/2018/feb/16/uber-set-up-24-hour-incident-hotline-uk-customers-report-police",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2018/feb/16/apple-bug-crashes-apps-that-display-telegu-character",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2018-02-16T09:58:19Z",
+        "webTitle": "Apple bug crashes apps that display Telugu character",
+        "webUrl": "https://www.theguardian.com/technology/2018/feb/16/apple-bug-crashes-apps-that-display-telegu-character",
+        "apiUrl": "https://content.guardianapis.com/technology/2018/feb/16/apple-bug-crashes-apps-that-display-telegu-character",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2018/feb/15/uk-blames-russia-notpetya-cyber-attack-ukraine",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2018-02-15T22:45:24Z",
+        "webTitle": "US joins UK in blaming Russia for NotPetya cyber-attack",
+        "webUrl": "https://www.theguardian.com/technology/2018/feb/15/uk-blames-russia-notpetya-cyber-attack-ukraine",
+        "apiUrl": "https://content.guardianapis.com/technology/2018/feb/15/uk-blames-russia-notpetya-cyber-attack-ukraine",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+    ]
+  }
+}
