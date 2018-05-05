@@ -13,3 +13,5 @@ The MVP would ideally be able to display a list of un-clickable text headlines o
 ### Test Framework
 
 Taking inspiration of the test framework that my group wrote over the notes challenge, it would be able to do a simple `toEqual` expectation. It will also have `describe` and `it` functions to wrap the expectations for better clarity and ease of use so that other's can jump on without learning much.
+
+### Writing the first test
