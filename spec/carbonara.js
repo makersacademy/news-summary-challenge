@@ -14,15 +14,15 @@ var init = (function() {
   var hooks = [];
 
   function getHook() {
-    return hooks[0];
+    return hooks[hooks.length -1];
   }
 
   function setHook(func) {
-    hooks.unshift(func);
+    hooks.push(func);
   }
 
   function removeHook() {
-    hooks.splice(0, 1);
+    hooks.splice(1);
   }
 
   return {
