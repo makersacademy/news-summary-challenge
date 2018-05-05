@@ -60,7 +60,7 @@ So I can get a few more details about an important story
 As a busy politician
 I can see a picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
-```
+ ```
 
 ```
 As a busy politician
@@ -91,6 +91,8 @@ To make my news reading more fun
 So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
 
 > Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
+
+Storing keys in the front end mean they can be accessed by someone with access to a browser.
 
 ### API request rate limits and stubbing
 

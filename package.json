@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mattb20/news-summary-challenge#readme",
   "dependencies": {
+    "http-server": "^0.11.1",
     "httpserver": "^0.3.0"
   }
 }

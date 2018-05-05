@@ -1,11 +1,13 @@
-(function testHeadline(){
-  (function hasText() {
+(function (exports){
+  function testHeadlinetext() {
     // arrange
-    var headline = new Headline();
+
     // act
+    var headline = new Headline("headline text");
 
     //assert
     expect(headline.text).toEqual("headline text");
-  })
+  };
+  testHeadlinetext();
 
-})();
+})(this);
