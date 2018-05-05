@@ -1,6 +1,7 @@
 function Story(data) {
     this.data = data;
     this.title = this.getTitle();
+    this.hotLink = this.data.webUrl;
 }
 
 Story.prototype.getTitle = function() {
@@ -8,4 +9,3 @@ Story.prototype.getTitle = function() {
   var res = this.data.id.match(reg);
   return res[0];
 };
-
