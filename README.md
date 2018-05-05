@@ -144,9 +144,14 @@ Note how the `apiRequestUrl` parameter is just the request you would have made t
 
 If you're interested, you can see the code for the News Summary API in this repo: https://github.com/makersacademy/news-summary-api
 
-## Resources
+## Resources Used
 
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+
+
+### My approach
+
+I firstly read through all the user stories, breaking down a couple of them to simpler chunks in order to gain an understanding for how the app would take shape and how I would test drive my app using my framework.

@@ -1,0 +1,22 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "a front end single page app summarying the news headlines from the guardian",
+  "main": "headline.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattb20/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattb20/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/mattb20/news-summary-challenge#readme",
+  "dependencies": {
+    "httpserver": "^0.3.0"
+  }
+}
