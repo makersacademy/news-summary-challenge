@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <a href="#tiger">Tiger</a>
+    <a href="#lion">Lion</a>
+    <a href="#zebra">Zebra</a>
+    <div id="animal"></div>
+
+    <script>
+      var request = new XMLHttpRequest();
+      request.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=uk', true);
+
+      request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+          var data = JSON.parse(request.responseText);
+          document.getElementById('animal').innerHTML = data;
+        } else {
+          console.log('server returned an error');
+        }
+      };
+
+      request.onerror = function() {
+        console.log('connection failed, please retry')
+      };
+
+      request.send();
+    </script>
+
+</body>
+</html>
+
+
+
