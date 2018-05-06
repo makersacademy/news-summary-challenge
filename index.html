@@ -14,11 +14,11 @@
 
       api.get().then(function(response) {
         response.forEach(function(article) {
-          console.log(article)
           list.add(article.headline, article.image);
         });
+
         var controller = new Controller(list);
-        controller.render()
+        controller.renderList();
       });
     </script>
   </head>
