@@ -15,5 +15,5 @@ Story.prototype.removeHyphens = function(str) {
 };
 
 Story.prototype.getSummary = function(body) {
-  return body.slice(0, 100);
+  return body.slice(0, 400);
 };

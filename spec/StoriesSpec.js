@@ -35,7 +35,7 @@ describe('Story', function() {
     it('should return the first 200 characters of a summary', function() {
       var example = { summary: 'The Top Employers Institute selects its top employers through a six-step certification process. This involves in-depth research into the company\u2019s HR process and an external audit of the research findings before awarding the companies final certification. Here are the employers that made its final cut:\n\nAbbott\n\nHealth technology company employing 94,000 staff to help people live the best life possible, through the power of health.\n\nAkzoNobel\n\nA major producer of specialty chemicals. Creating everyday essentials to make people\u2019s lives more liveable and inspiring.\n\nAlphabet (GB) Limited\n\nEurope\u2019s leading provider of Business Mobility services and the third largest' };
       Object.setPrototypeOf(example, proto);
-      expect(example.getSummary(example.summary)).toEqual('The Top Employers Institute selects its top employers through a six-step certification process. This')
+      expect(example.getSummary(example.summary).length).toEqual(400);
     });
   });
 });
