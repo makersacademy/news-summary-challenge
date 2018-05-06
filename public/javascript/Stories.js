@@ -1,7 +1,7 @@
 function Story(data) {
-    this.data = data;
-    this.title = this.removeHyphens(this.getTitle());
-    this.hotLink = this.data.webUrl;
+  this.data = data;
+  this.title = this.removeHyphens(this.getTitle());
+  this.hotLink = this.data.webUrl;
 }
 
 Story.prototype.getTitle = function() {
@@ -12,4 +12,8 @@ Story.prototype.getTitle = function() {
 
 Story.prototype.removeHyphens = function(str) {
   return str.replace(/-/g, ' ');
+};
+
+Story.prototype.getSummary = function(body) {
+  return body.slice(0, 100);
 };
