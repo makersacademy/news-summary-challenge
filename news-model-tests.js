@@ -9,3 +9,18 @@ function testDisplayNews() {
   assert.isTrue(news.display() === "test2", "display news works ")
 }
 testDisplayNews()
+
+function testCreateNewsList() {
+  var newslist = new NewsList();
+  assert.isTrue(Array.isArray(newslist.items), "created news list");
+};
+testCreateNewsList();
+
+function testStoreNews() {
+  var newslist = new NewsList()
+  newslist.store("News of the day")
+  console.log(newslist.items)
+  assert.isTrue(newslist.items[0] === "News of the day", "news is stored in list")
+};
+
+testStoreNews();
