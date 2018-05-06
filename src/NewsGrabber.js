@@ -5,7 +5,24 @@ function exampleOutputTester(json) {
 }
 
 /// Grabs news from guardian api when passed as argument.
-function NewsGrabber(json) {
+function getNews(url){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  this.data = null;
+
+  xhr.onload = function(){
+    if(this.status == 200){
+      var news = new NewsParser(JSON.parse(this.responseText));
+
+      console.log("loaded news");
+      listHeadlines(news);
+    }
+  };
+
+  xhr.send();
+}
+
+function NewsParser(json) {
 
   this.allStories = json.response.results;
 
@@ -19,10 +36,10 @@ function NewsGrabber(json) {
 
 function listHeadlines(news) {
   var storyList = document.getElementById("storyList");
-  appendHeadlines(storyList);
+  appendHeadlines(storyList, news);
 }
 
-function appendHeadlines(storyList) {
+function appendHeadlines(storyList, news) {
     for (var i = 0; i < news.allStories.length; i++) {
     var currentStory = news.allStories[i];
     var storyListItem = document.createElement("li");
@@ -35,5 +52,4 @@ function appendHeadlines(storyList) {
   }
 }
 
-var news;
-news = new NewsGrabber(exampleOutput);
+// var news = getNews("http://127.0.0.1:8080/src/testOutput.json");
