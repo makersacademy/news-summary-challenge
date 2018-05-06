@@ -1,30 +1,32 @@
 function storyFactory(Story) {
   var stories = [];
 
-  var url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=uk';
+  return new Promise(function(resolve, reject) {
+    var url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=uk';
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
 
-  var request = new XMLHttpRequest();
-  request.open('GET', url, true);
-  
-  request.onload = function() {
-    if ( request.status >= 200 && request.status < 400) {
-      var results = JSON.parse(request.responseText).response.results;
-      makeStories(results);
-      addSummary(stories);
-    } else {
-      console.log('server returned an error');
+    request.onload = function() {
+      if (request.status == 200) {
+        var results = JSON.parse(request.responseText).response.results;
+        makeStories(results);
+        resolve(stories);
+      }
+      else {
+        reject(Error(request.statusText));
+      }
+    };
+
+    request.onerror = function() {
+      reject(Error("Network Error"));
+    };
+
+    function makeStories(results) {
+      results.forEach(function(result){
+        stories.push(new Story(result));
+      });
     }
-  };
 
-  function makeStories(results) {
-    results.forEach(function(result){
-      stories.push(new Story(result));
-    });
-  }
-
-  request.onerror = function() {
-    console.log('connection failed');
-  };
-
-  request.send();
+    request.send();
+  });
 }

@@ -16,10 +16,12 @@
     <article id="story-list"></article>
 
     <script>
-       var articles = storyFactory(Story);
+       storyFactory(Story).then(function(response) {
+          addSummary(response);
+        }, function(error) {
+          console.log('failed');
+       })
     </script>
-
-  
 </body>
 </html>
 
