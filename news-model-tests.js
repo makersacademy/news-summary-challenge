@@ -37,3 +37,10 @@ function newsListViewTests(){
 }
 
 newsListViewTests();
+
+function testGetHTML() {
+  var newscontroller = new NewsController();
+  newscontroller.getHTML();
+  assert.isTrue(document.getElementById("headline").innerHTML === "<ul><li><div>Stormy Daniels is running for President!</div></li></ul>", "newscontroller tested ")
+  };
+   testGetHTML();
