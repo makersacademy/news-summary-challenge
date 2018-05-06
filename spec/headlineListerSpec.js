@@ -22,6 +22,13 @@ describe("NewsGrabber", function() {
     expect(news.url(3)).toEqual(url3);
   });
 
+  it("#allStories should return the array of story objects", function(){
+    var news = new NewsGrabber(exampleOutput);
+    var headline5 = "Greening warns young voters won't forgive damaging Brexit deal";
+    var url3 = "https://www.theguardian.com/media/media-blog/2018/may/06/windrush-scandal-racism-papers";
+    expect(news.allStories[3].webUrl).toEqual(url3);
+    expect(news.allStories[5].webTitle).toEqual(headline5);
+  });
 
 
 

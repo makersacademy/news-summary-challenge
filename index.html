@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Summarize</title>
+  <!-- THIS IS FOR TESTING WITHOUT CALLING APIS FOR REAL -->
+  <script src="src/exampleAPIOutput.js"></script>
 
 </head>
 <body>
-  <h1>sanity check</h1>
+  <h1>The Guardian Summarizer</h1>
+  <h2>Top Stories:</h2>
 
+  <ul id="storyList">
+
+  </ul>
+
+  <script src="src/NewsGrabber.js"></script>
+  <script>listHeadlines();</script>
 </body>
 </html>
