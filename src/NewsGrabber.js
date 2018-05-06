@@ -26,9 +26,12 @@ function appendHeadlines(storyList) {
     for (var i = 0; i < news.allStories.length; i++) {
     var currentStory = news.allStories[i];
     var storyListItem = document.createElement("li");
-    // storyLink.innerHTML = currentStory.webTitle;
+    var storyLink = document.createElement("a");
+    storyLink.href = currentStory.webUrl;
     storyList.appendChild(storyListItem);
+    storyList.appendChild(storyLink);
     storyListItem.innerHTML = currentStory.webTitle;
+    storyLink.innerHTML = "link";
   }
 }
 
