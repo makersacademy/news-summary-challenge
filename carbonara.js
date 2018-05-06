@@ -13,12 +13,12 @@ Object.prototype.toEqual = function(expected) {
    testingDisplay.appendChild(expectDisplay);
    console.log('%c Assertion passing ' + this.actual + ' equals ' + expected, 'color: green;');
  } else {
-   var expectFailText = 'FAIL: expected ' + this.actual + ', got: ' + expected;
+   var expectFailText = 'FAIL: expected ' + expected + ', got: ' + this.actual;
    var expectFailDisplay = document.createElement("p");
    expectFailDisplay.innerHTML = expectFailText;
    expectFailDisplay.classList.add("fail");
    testingDisplay.appendChild(expectFailDisplay);
-   console.log('%c FAIL: expected ' + this.actual + ', got: ' + expected, 'color: red;');
+   console.log('%c FAIL: expected ' + expected + ', got: ' + this.actual, 'color: red;');
  }
 };
 
