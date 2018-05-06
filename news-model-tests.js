@@ -24,3 +24,16 @@ function testStoreNews() {
 };
 
 testStoreNews();
+
+function newsListViewTests(){
+  var list = new NewsList();
+  var news1 = new News("Trump resigns");
+  var news2 = new News("No more Brexit");
+  list.store(news1.text);
+  list.store(news2.text);
+  var view = new NewsListView(list)
+  console.log(view.display())
+  assert.isTrue(view.display() === "<ul><li><div>Trump resigns</div></li><li><div>No more Brexit</div></li></ul>", "returns a string of HTML that represents the news list");
+}
+
+newsListViewTests();
