@@ -14,7 +14,7 @@ function render(story) {
   (function setBody(){
     body = document.createElement('p');
     body.classList.add('story-body');
-    body.innerHTML = story.getSummary(story.summary);
+    body.innerHTML = story.getSummary(story.summary) + '...';
   })();
 
   (function buildStructure(){

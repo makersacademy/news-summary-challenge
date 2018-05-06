@@ -1,6 +1,6 @@
 function addSummary(stories) {
-  var baseUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url='
-  
+  var baseUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=';
+
   stories.forEach(function(story) {
      var reqUrl = baseUrl + story.hotLink;
 

@@ -10,6 +10,7 @@ function storyFactory(Story) {
     if ( request.status >= 200 && request.status < 400) {
       var results = JSON.parse(request.responseText).response.results;
       makeStories(results);
+      addSummary(stories);
     } else {
       console.log('server returned an error');
     }

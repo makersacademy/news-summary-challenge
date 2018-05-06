@@ -5,33 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <script src="./javascript/Stories.js"></script>
+  <script src="./javascript/StoryFactory.js"></script>
+  <script src="./javascript/Summary.js"></script>
+  <script src="./javascript/interface.js"></script>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
 </head>
 <body>
-    <a href="#tiger">Tiger</a>
-    <a href="#lion">Lion</a>
-    <a href="#zebra">Zebra</a>
-    <div id="animal"></div>
+
+    <article id="story-list"></article>
 
     <script>
-      var request = new XMLHttpRequest();
-      request.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=uk', true);
-
-      request.onload = function() {
-        if (request.status >= 200 && request.status < 400) {
-          var data = JSON.parse(request.responseText);
-          document.getElementById('animal').innerHTML = data;
-        } else {
-          console.log('server returned an error');
-        }
-      };
-
-      request.onerror = function() {
-        console.log('connection failed, please retry')
-      };
-
-      request.send();
+       var articles = storyFactory(Story);
     </script>
 
+  
 </body>
 </html>
 
