@@ -157,3 +157,8 @@ If you're interested, you can see the code for the News Summary API in this repo
 ### My approach
 
 I firstly read through all the user stories, breaking down a couple of them to simpler chunks in order to gain an understanding for how the app would take shape and how I would test drive my app using my framework.
+
+### Run the tests
+
+$ cd this/repo
+$ open SpecRunner.html
