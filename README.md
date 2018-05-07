@@ -60,7 +60,7 @@ So I can get a few more details about an important story
 As a busy politician
 I can see a picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
-```
+ ```
 
 ```
 As a busy politician
@@ -91,6 +91,8 @@ To make my news reading more fun
 So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
 
 > Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
+
+Storing keys in the front end mean they can be accessed by someone with access to a browser.
 
 ### API request rate limits and stubbing
 
@@ -144,9 +146,23 @@ Note how the `apiRequestUrl` parameter is just the request you would have made t
 
 If you're interested, you can see the code for the News Summary API in this repo: https://github.com/makersacademy/news-summary-api
 
-## Resources
+## Resources Used
 
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+
+
+### My approach
+
+I firstly read through all the user stories, breaking down a couple of them to simpler chunks in order to gain an understanding for how the app would take shape and how I would test drive my app using my framework.
+
+### Run the tests
+
+$ cd this/repo
+$ open SpecRunner.html
+
+## To do
+
+Correct naming in test framework files
