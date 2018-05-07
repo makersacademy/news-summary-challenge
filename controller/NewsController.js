@@ -52,9 +52,9 @@ var NEWSCONTROLLERMODULE = (function(exports) {
       if (request.status >= 200 && request.status < 400) {
         // Success!
         var data = JSON.parse(request.responseText);
-        var containerDiv = currentNewsController.getNewsContainerDiv();
         currentNewsController.news =
           currentNewsController.parseGuardiansResponseJSON(data);
+        var containerDiv = currentNewsController.getNewsContainerDiv()
         var listView = new NewsListView(currentNewsController.news);
         containerDiv.innerHTML = listView.HTMLNewsListRepresentation();
 
