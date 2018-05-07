@@ -1,8 +1,9 @@
 (function (exports) {
   function Article(jsonString){
-    this.headline = jsonString.response.content.webTitle;
-    this.publicationDate = jsonString.response.content.webPublicationDate.split("T")[0];
-    this.url = jsonString.response.content.webUrl;
+    this.headline = jsonString.webTitle;
+    this.publicationDate = jsonString.webPublicationDate.split("T")[0];
+    this.url = jsonString.webUrl;
+    this.thumbnail = jsonString.fields.thumbnail;
 
 
   }

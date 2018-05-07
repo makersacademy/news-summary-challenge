@@ -17,13 +17,21 @@ describe("List", function () {
 
   })
 
-  it("has a function that will make request to API and add JSON objects to storage", function (){
-    // arrange
-    var list = new List();
-    var newsStub = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search'
-    var returned_object_from_api = list.getNews(newsStub);
-    // act
-    expects()
+
+
+
+  it("can store the details of multiple articles in it's storage", function () {
+   // arrange
+   var newsStub = JSON.parse(stub);
+
+
+   var list = new List();
+   // act
+   newsStub.response.results.forEach(result => list.add(new Article(result)));
+
+
+   // assert
+   expects(list.storage.length).toEqual(10);
 
 
   })

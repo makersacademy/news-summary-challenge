@@ -9,19 +9,16 @@
   }
 
   List.prototype.getNews = function(url) {
-     var req = new XMLHttpRequest();
-     req.onreadystatechange = function() {
-       if (req.readyState == XMLHttpRequest.DONE){
-          return JSON.parse(req.responseText);
-       }
+    var list = this;
 
-     }
-     req.open("GET", url, true);
-     req.send;
+    fetch(url).then(response => response.json().then(result => result.response.results.forEach(article => list.add(new Article(article)))))
+
+
 
 
 
   }
+
 
   exports.List = List;
 })(this)
