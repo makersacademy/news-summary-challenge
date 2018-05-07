@@ -1,33 +1,39 @@
 (function(exports){
 
   function NewsList(){
-    this._headlines = [];
+    this._news = [];
   }
 
   NewsList.prototype = {
 
-    add: function (headlines, img) {
-      const id = this._headlines.length;
-      const news = new News(id, headlines, img);
-      this._headlines.push(
-        [news.get().id,
-          [news.get().headline, news.get().image]
+    add: function (headlines, img, summary, bodytext) {
+      const id = this._news.length;
+      const news = new News(id, headlines, img, summary, bodytext);
+      var Id = news.get().id;
+      var Headline = news.get().headline;
+      var Img = news.get().image;
+      var Summary = news.get().summary;
+      var Bodytext = news.get().body;
+
+      this._news.push(
+        [Id,
+          [Headline, Img, Summary, Bodytext]
         ]
       );
     },
 
     get: function () {
-      return this._headlines;
+      return this._news;
     },
 
-    getNewsById: function(id, news = this._headlines){
+    getById: function(id, news = this._news){
       const newsHash = new Map(news)
-      return newsHash.get(id)[0]
-    },
-
-    getImageById: function(id, img = this._headlines){
-      const newsHash = new Map(img)
-      return newsHash.get(id)[1]
+      return{
+        headline: newsHash.get(id)[0],
+        image: newsHash.get(id)[1],
+        summary: newsHash.get(id)[2],
+        bodyText: newsHash.get(id)[3]
+      }
     }
 
   }

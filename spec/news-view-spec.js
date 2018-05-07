@@ -1,12 +1,10 @@
 function newsViewTests(){
 
-  var news = new News(0, "news for news view test", "imgURL")
-
-  var newsView = new NewsView(news)
+  var newsView = new NewsView("news for news view test", "imgURL", "this is body text")
 
   assert.isTrue(
     "News View: display single news HTML",
-    newsView.html() === "<div><img src='imgURL'></img><div>news for news view test</div>"
+    newsView.html() === "<div><img src='imgURL'></img><div>news for news view test</div><div>this is body text</div>"
   )
 
 };

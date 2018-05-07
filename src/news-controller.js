@@ -1,9 +1,7 @@
 (function(exports){
 
-  function NewsController(list = new NewsList()){
+  function NewsController(list){
     this._newsList = list;
-    this._newsList.add("testingheadline1", "http://www.pet365.co.uk/blog/wp-content/uploads/Border-Collie_71279674.jpg")
-    this._newsList.add("testingheadline2", "http://www.catster.com/wp-content/uploads/2017/08/A-fluffy-cat-looking-funny-surprised-or-concerned.jpg")
   }
 
   NewsController.prototype = {
@@ -17,9 +15,10 @@
       window.addEventListener("hashchange", function(event){
         event.preventDefault();
         var id = getNewsID(window.location);
-        var news = newslist.getNewsById(Number(id));
-        var img = newslist.getImageById(Number(id));
-        newsHtmlUpdate(news, img);
+        var headline = newslist.getById(Number(id)).headline;
+        var img = newslist.getById(Number(id)).image;
+        var body = newslist.getById(Number(id)).bodyText;
+        newsHtmlUpdate(headline, img, body);
       })
     }
 
@@ -38,9 +37,9 @@
     newslist.innerHTML = new NewsListView(headlines).html()
   };
 
-  function newsHtmlUpdate(singleNews, img){
+  function newsHtmlUpdate(singleNews, img, body){
     var news = getField("news")
-    news.innerHTML = new NewsView(singleNews, img).html()
+    news.innerHTML = new NewsView(singleNews, img, body).html()
   };
 
   exports.NewsController = NewsController;

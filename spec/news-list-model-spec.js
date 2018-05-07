@@ -10,12 +10,12 @@ function newsListTests(){
 
   assert.isTrue(
     "News List: get news: ",
-    newsList.getNewsById(0) === "headlines"
+    newsList.getById(0).headline === "headlines"
   );
 
   assert.isTrue(
     "News List: get image: ",
-    newsList.getImageById(0) === "imageURL"
+    newsList.getById(0).image === "imageURL"
   );
 
 }
