@@ -1,4 +1,4 @@
-var url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search'
+var url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail'
 
 fetch(url).then(res => {
   if (res.status !== 200) {
@@ -16,8 +16,11 @@ fetch(url).then(res => {
       var listItem = document.createElement("li");
       var itemLink = document.createElement("a");
       itemLink.href = currentArticle.webUrl;
+      var thumbnail = document.createElement("img");
+      thumbnail.src = currentArticle.fields['thumbnail'];
       list.appendChild(listItem);
       list.appendChild(itemLink);
+      list.appendChild(thumbnail);
       listItem.innerHTML = currentArticle.webTitle;
       itemLink.innerHTML = "read more";
     }
