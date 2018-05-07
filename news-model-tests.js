@@ -25,7 +25,7 @@ function testStoreNews() {
 
 testStoreNews();
 
-function newsListViewTests(){
+function newsListViewTests() {
   var list = new NewsList();
   var news1 = new News("Trump resigns");
   var news2 = new News("No more Brexit");
@@ -41,6 +41,6 @@ newsListViewTests();
 function testGetHTML() {
   var newscontroller = new NewsController();
   newscontroller.getHTML();
-  assert.isTrue(document.getElementById("headline").innerHTML === "<ul><li><div>Stormy Daniels is running for President!</div></li></ul>", "newscontroller tested ")
-  };
-   testGetHTML();
+  assert.isTrue(document.getElementById("headlines").innerHTML === "<ul><li><div>Stormy Daniels is running for President!</div></li></ul>", "newscontroller tested ")
+};
+testGetHTML();

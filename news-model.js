@@ -1,5 +1,5 @@
 (function(exports) {
-  function News(text){
+  function News(text) {
     this.text = text;
   };
   News.prototype.display = function() {

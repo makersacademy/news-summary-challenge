@@ -1,8 +1,9 @@
-(function(exports){
-  function NewsList(){
+(function(exports) {
+  function NewsList(items) {
     this.items = []
   };
-  NewsList.prototype.store = function(news){
+
+  NewsList.prototype.store = function(news) {
     this.items.push(news);
   };
   NewsList.prototype.list = function() {
