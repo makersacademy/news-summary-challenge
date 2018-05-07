@@ -1,13 +1,12 @@
 (function(exports){
 
-  function NewsView(news){
+  function NewsView(news, img){
     this._news = news;
+    this._img = img;
   };
 
   NewsView.prototype.html = function () {
-    var news = this._news.get().headline
-    var image = this._news.get().image
-    return `<div><img src='${image}'></img><div>${news}</div>`
+    return `<div><img src='${this._img}'></img><div>${this._news}</div>`
   };
 
   exports.NewsView = NewsView;

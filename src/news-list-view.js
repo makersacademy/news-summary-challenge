@@ -8,7 +8,7 @@
     var html = "<ul>"
 
     this._newsList.get().forEach(function(news){
-      html += `<div><img src='${news[1][1]}'></img></div><a href='#${news[0]}'>${news[1][0]}</a>`
+      html += `<div><img src='${news[1][1]}' width="50%"></img></div><a href='#${news[0]}'>${news[1][0]}</a>`
     })
 
     html += "</ul>"
