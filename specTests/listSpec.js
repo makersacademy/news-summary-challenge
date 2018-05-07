@@ -17,4 +17,15 @@ describe("List", function () {
 
   })
 
+  it("has a function that will make request to API and add JSON objects to storage", function (){
+    // arrange
+    var list = new List();
+    var newsStub = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search'
+    var returned_object_from_api = list.getNews(newsStub);
+    // act
+    expects()
+
+
+  })
+
 });
