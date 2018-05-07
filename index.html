@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Summarize</title>
-  <!-- THIS IS FOR TESTING WITHOUT CALLING APIS FOR REAL -->
-  <script src="src/exampleAPIOutput.js"></script>
+  <!-- THIS FILE IS NOT ON GITHUB TO GET IT WORKING SEE README-2 -->
+  <script src="env.js"></script>
 
 </head>
-<body>
+<body style="font-family: sans-serif;">
   <h1>The Guardian Summarizer</h1>
   <h2>Top Stories:</h2>
 
@@ -19,7 +19,7 @@
 
   <script src="src/NewsGrabber.js"></script>
   <script>
-    getNews("http://127.0.0.1:8080/src/testOutput.json");
+    getNews("https://content.guardianapis.com/search?api-key=" + SUPER_SECRET_API_KEY);
   </script>
 </body>
 </html>

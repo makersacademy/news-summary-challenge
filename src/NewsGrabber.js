@@ -29,9 +29,15 @@ function NewsParser(json) {
   this.headline = function(index) {
     return json.response.results[index].webTitle;
   };
+
   this.url = function(index) {
     return json.response.results[index].webUrl;
   };
+
+  this.category = function(index) {
+    return json.response.results[index].sectionName;
+  };
+
 }
 
 function listHeadlines(news) {
@@ -41,15 +47,15 @@ function listHeadlines(news) {
 
 function appendHeadlines(storyList, news) {
     for (var i = 0; i < news.allStories.length; i++) {
-    var currentStory = news.allStories[i];
+    var currentStoryCategory = news.category(i);
     var storyListItem = document.createElement("li");
     var storyLink = document.createElement("a");
-    storyLink.href = currentStory.webUrl;
+    storyLink.href = news.url(i);
     storyList.appendChild(storyListItem);
     storyList.appendChild(storyLink);
-    storyListItem.innerHTML = currentStory.webTitle;
     storyLink.innerHTML = "link";
+    storyListItem.innerHTML = news.headline(i) + " - " +
+    currentStoryCategory;
+
   }
 }
-
-// var news = getNews("http://127.0.0.1:8080/src/testOutput.json");
