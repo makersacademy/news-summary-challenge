@@ -5,22 +5,22 @@ fetch(url).then(res => {
        return;  
    }
 
-   res.json().then(function(data) {
-       var body = document.getElementById('body');
-       var headline = document.getElementById('headline');
-       var articleArray = data.response.results;
+  res.json().then(function(data) {
+    var body = document.getElementById('body');
+    var headline = document.getElementById('headline');
+    var articleArray = data.response.results;
 
-      for (var i = 0; i < articleArray.length; i++) {
-        var currentArticle = articleArray[i];
-        var listContainer = document.getElementById('articleList');
+    for (var i = 0; i < articleArray.length; i++) {
+      var currentArticle = articleArray[i];
+      var listContainer = document.getElementById('articleList');
 
-        var listContainerItemImage = document.createElement("img");
-        listContainerItemImage.src = currentArticle.fields.thumbnail;
-        listContainer.appendChild(listContainerItemImage);
-        
-        var listContainerItemHeadline = document.createElement("li");
-        listContainer.appendChild(listContainerItemHeadline);
-        listContainerItemHeadline.innerHTML = currentArticle.webTitle;
-      }
-   });
+      var listContainerItemImage = document.createElement("img");
+      listContainerItemImage.src = currentArticle.fields.thumbnail;
+      listContainer.appendChild(listContainerItemImage);
+      
+      var listContainerItemHeadline = document.createElement("li");
+      listContainer.appendChild(listContainerItemHeadline);
+      listContainerItemHeadline.innerHTML = currentArticle.webTitle;
+    }
+  });
 });

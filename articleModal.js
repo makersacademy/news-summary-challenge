@@ -1,10 +1,18 @@
-var modal = document.getElementById('myModal');
-var closeButton = document.getElementsByClassName("close")[0];
-closeButton.onclick = function() {
-    modal.style.display = "none";
-};
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-};
+(function showNoteBodyInModal() {
+  var itemArray = Array.from(document.getElementsByTagName("LI"));
+  console.log(Array.from(document.getElementsByTagName("LI")));
+  console.log(document.getElementsByTagName("LI"));
+
+
+  itemArray.forEach(function(listContainerItem) {
+    console.log(listContainerItem);
+    listContainerItem.onclick = function() {
+      var modalText = document.getElementById('modalText');
+      console.log(modalText);
+      var listContainerItemIndex = itemArray.indexOf(listContainerItem);
+      modalText.innerHTML = "hello";
+      modal.style.display = "block";
+    };
+  });
+})();
+
