@@ -16,5 +16,5 @@
   xhttp.send();
 
   }
- exports.NoteController = NoteController;
+ exports.HeadlineController = HeadlineController;
 })(this);
