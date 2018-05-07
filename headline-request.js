@@ -14,8 +14,12 @@ fetch(url).then(res => {
       var currentArticle = articles[i];
       var list = document.getElementById('headlines');
       var listItem = document.createElement("li");
+      var itemLink = document.createElement("a");
+      itemLink.href = currentArticle.webUrl;
       list.appendChild(listItem);
+      list.appendChild(itemLink);
       listItem.innerHTML = currentArticle.webTitle;
+      itemLink.innerHTML = "read more";
     }
   });
 });
