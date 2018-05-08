@@ -2,7 +2,6 @@
   function NewsList(items) {
     this.items = []
   };
-
   NewsList.prototype.store = function(news) {
     this.items.push(news);
   };
