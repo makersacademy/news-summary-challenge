@@ -29,7 +29,7 @@ to handle this complexity.
 * Completed first draft of testing framework developed during the week, extending my knowledge of closures in javascript
 
 ## If I had more time
-* Finnish refactoring to use promises when making the api call to the text summary api
+* Finish refactoring to use promises when making the api call to the text summary api
 * Add an image to each news story by querying a third api with the 'category' returned from the guardian api
 
 ## Focus for the next week
