@@ -1,5 +1,10 @@
 # News Summary challenge
 
+
+Screenshot News Summary:
+
+![image](https://user-images.githubusercontent.com/33194929/39743461-d1e2c164-5298-11e8-93f2-5fa56d9b2438.png)
+
 * Challenge time: rest of the day and weekend, until Monday 9am.
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
