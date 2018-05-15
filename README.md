@@ -1,55 +1,17 @@
-## news-summary-challenge ![news-summary-challenge](https://img.shields.io/npm/v/news-summary-challenge.svg)
+##  News summary challenge
 
->
+
 
 ### Installation
 
 ```bash
-$ npm install news-summary-challenge
+$ git clone git@github.com:cindyjialiu/news-summary-challenge.git
 ```
 
-### Example
+### Screenshots
 
-```js
-const newsSummaryChallenge = require('news-summary-challenge');
-
-// your code here
-
-```
-
-### Contributing
-- Fork this Repo first
-- Clone your Repo
-- Install dependencies by `$ npm install`
-- Checkout a feature branch
-- Feel free to add your features
-- Make sure your features are fully tested
-- Publish your local branch, Open a pull request
-- Enjoy hacking <3
-
-### MIT
-
-This work is licensed under the [MIT license](./LICENSE).
-
----
-
-# News Summary challenge
-
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
-
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that summarises the news.
-
-### Guidance
-
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+<img width="737" alt="screen shot 2018-05-15 at 03 10 20" src="https://user-images.githubusercontent.com/33848023/40032982-4e239b86-57ee-11e8-8f05-df7df70e68e7.png">
+<img width="668" alt="screen shot 2018-05-15 at 03 10 49" src="https://user-images.githubusercontent.com/33848023/40032984-51c67d76-57ee-11e8-847f-abb6f8c7284b.png">
 
 ## Project overview
 
@@ -185,3 +147,14 @@ If you're interested, you can see the code for the News Summary API in this repo
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+
+
+### Contributing
+- Fork this Repo first
+- Clone your Repo
+- Install dependencies by `$ npm install`
+- Checkout a feature branch
+- Feel free to add your features
+- Make sure your features are fully tested
+- Publish your local branch, Open a pull request
+- Enjoy hacking <3
