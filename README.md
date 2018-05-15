@@ -1,12 +1,6 @@
 ##  News summary challenge
 
-
-
-### Installation
-
-```bash
-$ git clone git@github.com:cindyjialiu/news-summary-challenge.git
-```
+A javascript application created as a weekend challange at the 7th weekend of Makers Academy. Read the headlines from Guardian API and the summaries from Aylien in one place!
 
 ### Screenshots
 
@@ -19,17 +13,12 @@ Your app will grab all the headlines from the Guardian newspaper API and display
 
 ### Technologies
 
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
+- Frontend JavaScript, jQuary, CSS and HTML
+- Backend JavaScript
 
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+## How to run the application
+Clone this repository into to your local computer.
+Open the index.html file in the browser
 
 ## User Stories
 
