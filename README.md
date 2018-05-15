@@ -1,6 +1,6 @@
 ##  News summary challenge
 
-A javascript application created as a weekend challange at the 7th weekend of Makers Academy. Read the headlines from Guardian API and the summaries from Aylien in one place!
+A JavaScript application created as a weekend challange at the 7th weekend of Makers Academy. Read the headlines from Guardian API and the summaries from Aylien in one place!
 
 ### Screenshots
 
