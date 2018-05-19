@@ -1,87 +1,80 @@
-# News Summary challenge
+News Summary challenge
+======================
 
-<img width="1385" alt="news-summary-list" src="https://user-images.githubusercontent.com/36331920/39725697-a454d01a-5244-11e8-842c-48b75ebbac40.png">
-<img width="1384" alt="news-summary-list single" src="https://user-images.githubusercontent.com/36331920/39725698-a475a39e-5244-11e8-8884-8d5d2e638c4d.png">
+Completed this as seventh weekend challenge at Makers Academy([makersacademy/news-summary-challenge](https://github.com/makersacademy/news-summary-challenge)), writing this app with pure JavaScript.
+
+This is an app that shows the head line, displays the pictures from original news page, summarises the news, and shows the sigle news article.
+
+**L: News List**
+![newslist](https://user-images.githubusercontent.com/36331920/39725697-a454d01a-5244-11e8-842c-48b75ebbac40.png)
+**R: Sigle News**
+![singlenews](https://user-images.githubusercontent.com/36331920/39725698-a475a39e-5244-11e8-8884-8d5d2e638c4d.png)
+
+## Table of content
+
+- [Setup](#setup)
+- [Usage](#usage)
+- [Test](#test)
+- [User Stories](#user-stories)
+- [Technologies](#technologies)
+- [Resources](#resources)
 
 
-## Challenge
+## Setup
 
-As usual please start by forking this repo.
+- Clone this repo, run:
+`git clone https://github.com/shihhanwang/news-summary-challenge.git`
 
-You'll create an app that summarises the news.
+## Usage
 
-### Guidance
+- After setting up, go to its root directory and run: `http-server`
+- In your brower, you will be able to access it at `localhost:8080`
 
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+## Test
+
+- Open `SpecRunner.html` in browser, using Console to see the results of the tests
 
 
-### Technologies
 
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
-
-## API
-
-### API authentication
-
-So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
-
-> Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
-
-### API request rate limits and stubbing
-
-The Guardian and Aylien text summarisation APIs are severely rate-limited.
-
-**Please stub your tests so we don't exceed the daily limit.  Otherwise, all requests will be rejected and everyone's apps will stop working!**
-
-### API Overview
-
-The basic idea is to send an `apiRequestUrl` query parameter to the News Summary API.  The value of this parameter is the URL of the request you *would* have made to the Guardian or Aylien API, minus any API credentials.
-
-### Guardian API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.  Notice how it has a query parameter for `api-key`.
+## User Stories
 
 ```
-curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
+As a modern busy person
+I can see all of today's headlines in one place
+So I know what the big stories of the day are
 ```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this:
-
 ```
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
+As a modern busy person
+I can click a link to see the original news article
+So that I can get an in depth understanding of a very important story
 ```
-
-Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
-
-### Aylien text summarisation API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make.  Notice how it has headers to authenticate with the Aylien API.
-
 ```
-curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
-  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
-  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
+As a modern busy person
+I can see a summary of a news article
+So I can get a few more details about an important story
 ```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this.
+```
+As a modern busy person
+I can see a picture to illustrate each news article when I browse headlines
+So that I have something nice to look at
+```
+Uncompleted:
 
 ```
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
+As a modern busy person
+I can read the site comfortably on my phone
+Just in case my laptop breaks
 ```
+```
+As a modern busy person
+I can see whizzy animations in the app
+To make my news reading more fun
+```
+## Technologies
 
-Note how the `apiRequestUrl` parameter is just the request you would have made to the Aylien API.  Notice how you don't have to send authentication headers.
-
-### Code
-
-If you're interested, you can see the code for the News Summary API in this repo: https://github.com/makersacademy/news-summary-api
+- API request: [Guardian News API](https://open-platform.theguardian.com/documentation/)
+- Front-end style: HTML, CSS
+- The rest: **PURE JAVASCRIPT**
 
 ## Resources
 
