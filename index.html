@@ -1,0 +1,39 @@
+<DOCTYPE html>
+  <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
+    <script src="lib/News.js"></script>
+    <script src="views/NewsListView.js"></script>
+    <script src="views/SingleNewsView.js"></script>
+    <script src="controller/NewsController.js"></script>
+    <script src="tests/NewsTest.js"></script>
+    <script src="tests/SingleNewsViewTest.js"></script>
+    <script src="tests/NewsListViewTest.js"></script>
+
+    <script>
+    // run this function when the document is loaded
+    window.onload = function() {
+      var newsController = new NewsController();
+      newsController.displayNews();
+      newsController.startListeningForHashChange();
+    }
+    </script>
+
+  </head>
+
+  <div class="head"><p2>Guardian's sumary top articles.</p2> </div>
+
+  <body>
+
+    <div id="newsContainerDiv">
+      News loading...
+    </div>
+    <div id="newsSummaryContainerDiv">
+      <div id="info"> Click on article that interests you to see a summary </div>
+      <div id="content_box"> </div>
+    </div>
+
+  </body>
+  </html>
+</DOCTYPE>
