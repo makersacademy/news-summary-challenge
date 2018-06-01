@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="src/headlineRequest.js"></script>
+    <script type="text/javascript" src="src/summaryRequest.js"></script>
+
+    <style >
+      body {
+        background-color: rgba(51,51,51,0.05);
+      }
+      .header {
+        background-color: #e9eff1;
+        padding: 10px;
+        text-align: center;
+        margin-top: 30px;
+        font-family: "Times New Roman", Times, serif;
+      }
+      #headlines {
+        text-align: center;
+        list-style-type: none;
+        margin: auto;
+        width: 60%;
+        background-color: white;
+        padding-left: 0;
+        padding-bottom: 30px;
+        font-size: 20px;
+      }
+      .headlines {
+        padding-top: 50px;
+      }
+      a {
+        font-size: 22px;
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+      }
+      a:hover {
+       color: red;
+     }
+      .showSummary {
+        background-color: #e9eff1;
+        color: black;
+        padding: 5px 20px;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 15px;
+      }
+      .showSummary:hover {
+       background-color: #a7afb2;
+       color: white;
+      }
+      #summary{
+        margin: auto;
+        width: 55.2%;
+        padding: 0 30px 50px 30px;
+        background-color: white;
+        font-size: 18px;
+        font-family: "Times New Roman", Times, serif;
+      }
+      .show {
+        display: block;
+      }
+      .hidden {
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      startHeadlineRequest()
+
+    </script>
+    <div class="header">
+      <h1>News Collector</h1>
+
+    </div>
+    <ul id="headlines" class=""></ul>
+    <div id="summary"></div>
+  </body>
+</html>
