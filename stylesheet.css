@@ -1,0 +1,21 @@
+body{
+  background-color: rgba(212, 208, 221, 0.44);
+}
+
+#newslist{
+  height: auto;
+  width: 45%;
+  float: left;
+  background-color: rgba(230, 223, 255, 0.33);
+  text-align: center;
+  overflow: scroll;
+  padding-right: 5%;
+}
+
+#news{
+  width: 45%;
+  float: right;
+  overflow: scroll;
+  padding-right: 5%;
+  text-align: center;
+}
