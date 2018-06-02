@@ -7,6 +7,31 @@
   </head>
 
   <body>
-    A Summary of the news
-  </body>
+    <h1>A Summary of the news</h1>
+
+<div>
+
+  <a href="" id="bacon-story-link">BREAKING(back) NEWS: BACON IS GOOD FOR YOU!!!!!!</a>
+  <div id="news-story"></div>
+
+  <script>
+    clickShowsHeadlineInFull();
+
+    function clickShowsHeadlineInFull() {
+      document
+        .getElementById("bacon-story-link")
+        .addEventListener("click", function(clickEvent) {
+          clickEvent.preventDefault();
+          showHeadline();
+        });
+    };
+
+    function showHeadline() {
+      document
+        .getElementById("news-story")
+        .innerHTML = "some stuff about bacon";
+    };
+
+  </script>
+</body>
 </html>
