@@ -1,6 +1,6 @@
 describe("Headlines", function () {
   var headlines = new Headlines();
-  it("is an empty", function () {
+  it("is empty", function () {
     assert.isEmpty(headlines.headlinesArray)
   });
   it("is an empty array", function () {
