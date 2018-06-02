@@ -11,26 +11,34 @@
 
 <div>
 
-  <a href="" id="bacon-story-link">BREAKING(back) NEWS: BACON IS GOOD FOR YOU!!!!!!</a>
-  <div id="news-story"></div>
+<a href="#Some stuff about bacon.">BREAKING(back) NEWS: BACON IS GOOD FOR YOU!!!!!!</a>
+<a href="#6 and a half.">How many cups of sugar does it take to get to the moon?</a> |
+<a href="#Is it a bird? Is it a plane? Is it a Paedophile ring?">More politicians without morals.</a> |
+<a href="#Bacon and bacon and bacon.">Another Bacon Story</a> |
+<a href="#Have you had enough Bacon?">Bacon Bacon Bacon</a>
 
-  <script>
-    clickShowsHeadlineInFull();
+<div id="news-story"></div>
 
-    function clickShowsHeadlineInFull() {
-      document
-        .getElementById("bacon-story-link")
-        .addEventListener("click", function(clickEvent) {
-          clickEvent.preventDefault();
-          showHeadline();
-        });
-    };
+<script>
+  makeUrlChangeShowStoryForCurrentPage();
 
-    function showHeadline() {
-      document
-        .getElementById("news-story")
-        .innerHTML = "some stuff about bacon";
-    };
+  function makeUrlChangeShowStoryForCurrentPage() {
+    window.addEventListener("hashchange", showStoryForCurrentPage);
+  };
+
+  function showStoryForCurrentPage() {
+    showStory(getStoryFromUrl(window.location));
+  };
+
+  function getStoryFromUrl(location) {
+    return location.hash.split("#")[1];
+  };
+
+  function showStory(story) {
+    document
+      .getElementById("news-story")
+      .innerHTML = story;
+  };
 
   </script>
 </body>
