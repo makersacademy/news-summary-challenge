@@ -10,6 +10,15 @@ This app grabs all the headlines from the Guardian newspaper API and display the
 
 The app has been written in frontend Javascript, HTML and CSS. No other libraries or frameworks have been used.
 
+### Getting Started
+
+Clone this repo.
+
+To run the app, open the news.html file in your browser.
+
+To run the tests, open the testRunner.html file in your browser.
+
+
 ## API
 
 ### API authentication
