@@ -12,11 +12,9 @@ The app has been written in frontend Javascript, HTML and CSS. No other librarie
 
 ### Getting Started
 
-Clone this repo.
-
-To run the app, open the news.html file in your browser.
-
-To run the tests, open the testRunner.html file in your browser.
+* Clone this repo
+* To run the app, open the news.html file in your browser
+* To run the tests, open the testRunner.html file in your browser
 
 
 ## API
