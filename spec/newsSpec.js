@@ -10,9 +10,9 @@ describe("Headlines", function () {
     headlines.addHeadline("Test Headline: Bacon is Good For You!")
     assert.arrayContains(headlines.headlinesArray, "Test Headline: Bacon is Good For You!")
   });
-  // it("returns all the headlines", function () {
-  //   headlines.addHeadline("test Headline 1: Some Bacon Here!")
-  //   console.log(headlines.allHeadlines())
-  //   assert.isEqual(headlines.allHeadlines(), ["Test Headline: Bacon is Good For You!","test Headline 1: Some Bacon Here!"])
-  // });
+  it("returns a headlines", function () {
+    headlines.returnFromHeadlinesArray();
+    console.log(headlines.headlinesArray[0])
+    console.log(headlines.returnFromHeadlinesArray());
+  });
 })
