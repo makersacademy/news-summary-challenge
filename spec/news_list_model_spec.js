@@ -17,3 +17,7 @@ describe('#AddNewsArticle')
   it('Adds a News object to the list array')
   newsList.AddNewsArticle(newsArticle)
   assert.areEqual(newsList.list[0], newsArticle)
+
+describe('#ReturnAllNews')
+  it('Returns the array of News objects')
+  assert.areEqual(newsList.ReturnAllNews(), [newsArticle])
