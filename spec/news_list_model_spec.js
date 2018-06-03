@@ -1,10 +1,19 @@
-var newslist = new NewsListModel();
+function NewsDouble() {
+}
+
+var newsList = new NewsListModel();
+var newsArticle = new NewsDouble();
 
 describe('NewsListModel')
   it('Exists upon instantiation')
-  assert.exists(newslist)
+  assert.exists(newsList)
 
 describe('#list')
   it('Is an empty array upon instantiation')
-  assert.isAnArray(newslist.list)
-  assert.areEqual(newslist.list.length, 0)
+  assert.isAnArray(newsList.list)
+  assert.areEqual(newsList.list.length, 0)
+
+describe('#AddNewsArticle')
+  it('Adds a News object to the list array')
+  newsList.AddNewsArticle(newsArticle)
+  assert.areEqual(newsList.list[0], newsArticle)
