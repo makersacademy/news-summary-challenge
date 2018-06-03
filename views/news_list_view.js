@@ -10,7 +10,7 @@
       var newsArticle = new SingleNewsView(news)
       html.push('<div><li>' + newsArticle.DisplaySingleNewsHeader() + '</li></div>')
     })
-    return '<ul>' + html + '</ul>'
+    return '<ul>' + html.join('') + '</ul>'
   }
 
   exports.NewsListView = NewsListView

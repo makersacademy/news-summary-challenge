@@ -6,12 +6,12 @@ function NewsDouble() {
 }
 
 function NewsListDouble() {
-  this.list = [new NewsDouble]
+  this.list = [new NewsDouble, new NewsDouble]
 }
 
 NewsListDouble.prototype = {
   ReturnAllNews: function() {
-    return [new NewsDouble]
+    return [new NewsDouble,  new NewsDouble]
   }
 }
 
@@ -32,4 +32,4 @@ describe('#newslist')
 
 describe('#NewsListToHTML')
   it('Returns an html string of all the news objects in news list')
-  assert.areEqual(newsListView.NewsListToHTML(), `<ul><div><li><p><a href='id'>title</a></p><img src=image></li></div></ul>`)
+  assert.areEqual(newsListView.NewsListToHTML(), `<ul><div><li><p><a href='id'>title</a></p><img src=image></li></div><div><li><p><a href='id'>title</a></p><img src=image></li></div></ul>`)
