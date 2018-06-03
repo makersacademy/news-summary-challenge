@@ -9,7 +9,7 @@ Your app will grab all the headlines from the Guardian newspaper API and display
 
 I have created basic one page app, which displays 10 headlines of guardian articles and when you click on title it redirects you to the original article.
 
-Point for improvement: to use suggested API to summarize article and to create a view to see a summary; code in tests needs serious refactoring (DRY).
+Points for improvement: to use suggested API to summarize article and to create a view to see a summary; code in tests needs serious refactoring (DRY).
 
 ### Instructions
 
