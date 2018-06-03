@@ -4,6 +4,7 @@
   }
 
   NewsListView.prototype.NewsListToHTML = function() {
+    console.log(this.newslist)
     var allnews = this.newslist.ReturnAllNews();
     var html = []
     allnews.forEach(function(news) {
