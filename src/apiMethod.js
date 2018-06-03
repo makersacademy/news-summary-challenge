@@ -43,5 +43,3 @@ Guardian.prototype.load = function(url, callback) {
         xhr.open('GET', url, true);
         xhr.send('');
     }
-
-  var guardian = new Guardian();

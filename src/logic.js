@@ -1,3 +1,5 @@
+  var guardian = new Guardian();
+
   var realUrl = "http://content.guardianapis.com/uk?show-editors-picks=true&api-key=test"
   var testUrl = "../src/JSON/editorsPicks.json"
 
