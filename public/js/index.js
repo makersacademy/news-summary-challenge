@@ -6,6 +6,7 @@ window.onload = function () {
     var newsUrl = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail'
     var newsTitles = []
     var titleIndex
+    var imageSources = []
 
     function makeRequest (url) {
       currentUrl = url
@@ -57,7 +58,9 @@ window.onload = function () {
       document.getElementById('news_headlines').hidden = true
       document.getElementById('news_item_summary').hidden = false
       document.getElementById('news_item_summary').innerText = ''
-
+      let newsItemThumbnail = new Image(250, 150)
+      newsItemThumbnail.src = imageSources[titleIndex]
+      document.getElementById('news_item_summary').appendChild(newsItemThumbnail)
       let headline = document.createTextNode(newsTitles[titleIndex])
       let heading = document.createElement('h2')
       heading.appendChild(headline)
@@ -86,10 +89,11 @@ window.onload = function () {
         let newsItemThumbnail = new Image(250, 150)
         try {
           newsItemThumbnail.src = newsHeadline.fields.thumbnail
-        } catch {
+        } catch (_) {
           newsItemThumbnail.src = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg"
           newsItemThumbnail.alt = 'No image provided'
         }
+        imageSources.push(newsItemThumbnail.src)
         let section = document.createElement('section')
         let paragraphLinks = document.createElement('p')
         let paragraphNews = document.createElement('p')
