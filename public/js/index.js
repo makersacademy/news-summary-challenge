@@ -3,9 +3,9 @@ window.onload = function () {
     var httpRequest
     var responseReceivedFromServer
     var currentUrl
-    //var newsUrl = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk?show-editors-picks=true&order-by=newest&show-fields=all'
     var newsUrl = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail'
-    // document.getElementById("ajaxButton").addEventListener('click', makeRequest(newsUrl))
+    var newsTitles = []
+    var titleIndex
 
     function makeRequest (url) {
       currentUrl = url
@@ -46,14 +46,22 @@ window.onload = function () {
     }
 
     function getUrlFromHash() {
-      return window.location.hash.split("#")[1]
+      let url = window.location.hash.split("#")[1].split("&")[0]
+      titleIndex = window.location.hash.split("#")[1].split("&")[1]
+      return url
     }
 
     function processAylienJson(responseContents) {
       document.getElementById('page_title').innerHTML = 'Article Summary'
+
       document.getElementById('news_headlines').hidden = true
       document.getElementById('news_item_summary').hidden = false
       document.getElementById('news_item_summary').innerText = ''
+
+      let headline = document.createTextNode(newsTitles[titleIndex])
+      let heading = document.createElement('h2')
+      heading.appendChild(headline)
+      document.getElementById('news_item_summary').appendChild(heading)
       let backButton = document.createElement('button')
       backButton.setAttribute('id', 'back_button')
       backButton.innerHTML = 'Back to Headlines'
@@ -74,6 +82,7 @@ window.onload = function () {
       document.getElementById('news_item_summary').hidden = true
       document.getElementById('page_title').innerHTML = 'Headlines'
       for (let newsHeadline of responseContents.response.results) {
+        newsTitles.push(newsHeadline.webTitle)
         let newsItemThumbnail = new Image(250, 150)
         try {
           newsItemThumbnail.src = newsHeadline.fields.thumbnail
@@ -90,7 +99,7 @@ window.onload = function () {
         linkButton.setAttribute('href', `${newsHeadline.webUrl}`)
         linkButton.innerHTML = "Full Article"
         let summaryButton = document.createElement('a')
-        summaryButton.setAttribute('href', `#${newsHeadline.webUrl}`)
+        summaryButton.setAttribute('href', `#${newsHeadline.webUrl}&${responseContents.response.results.indexOf(newsHeadline)}`)
         summaryButton.setAttribute('class', 'paragraph_links')
         summaryButton.innerHTML = "Summary"
         var newsItemTitle = document.createTextNode(newsHeadline.webTitle)
