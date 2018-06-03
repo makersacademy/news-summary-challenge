@@ -7,7 +7,7 @@
     var title = this.news.title
     var image = this.news.image
     var id = this.news.id
-    var html = `<p><a href='${id}'>${title}</a></p><img src=${image}`
+    var html = `<p><a href='${id}'>${title}</a></p><img src=${image}>`
     return html
   }
 

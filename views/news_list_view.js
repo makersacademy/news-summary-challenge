@@ -4,7 +4,13 @@
   }
 
   NewsListView.prototype.NewsListToHTML = function() {
-    //COME BACK TO THIS AFTER SINGLE NEWS VIEW
+    var allnews = this.newslist.ReturnAllNews();
+    var html = []
+    allnews.forEach(function(news) {
+      var newsArticle = new SingleNewsView(news)
+      html.push('<div><li>' + newsArticle.DisplaySingleNewsHeader() + '</li></div>')
+    })
+    return '<ul>' + html + '</ul>'
   }
 
   exports.NewsListView = NewsListView

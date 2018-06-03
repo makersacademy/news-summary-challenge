@@ -19,7 +19,7 @@ describe('#news')
 
 describe('#DisplaySingleNewsHeader')
   it('Returns an html string')
-  assert.areEqual(singleNewsView.DisplaySingleNewsHeader(), `<p><a href='id'>title</a></p><img src=image`)
+  assert.areEqual(singleNewsView.DisplaySingleNewsHeader(), `<p><a href='id'>title</a></p><img src=image>`)
 
 describe('#DisplaySingleNewsSummary')
   it('Returns an html string')
