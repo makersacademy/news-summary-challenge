@@ -51,11 +51,14 @@ var guardian = new Guardian();
   guardian.editorsPicks = myJSON.response.editorsPicks
   var i = 0
   guardian.editorsPicks.forEach(function(article){
+    guardian.load(article.testUrl, async function(content){
+    var fields = await JSON.parse(content.response);
     var a = document.createElement('li');
     a.setAttribute('id', i)
-    a.innerHTML= guardian.editorsPicks[i].webTitle;
+    console.log(fields.response.content.fields.body)
+    a.innerHTML= fields.response.content.fields.body;
     var element = document.getElementById("mydiv");
     element.appendChild(a);
-    i++
+    i++})
   })
 });
