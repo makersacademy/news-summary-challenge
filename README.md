@@ -1,4 +1,4 @@
-# Chitter Challenge
+# News Summary Challenge
 ## Makers Academy weekend challenge to create a new summary website in vanilla-js
 
 [Challenge Specification](https://github.com/makersacademy/news-summary-challenge)
