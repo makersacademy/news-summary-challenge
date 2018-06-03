@@ -44,15 +44,17 @@ Guardian.prototype.load = function(url, callback) {
         xhr.send('');
     }
 
-var guardian = new Guardian();
-
-  guardian.load("http://content.guardianapis.com/uk?show-editors-picks=true&api-key=test", async function(content){
+  var guardian = new Guardian();
+  var real = "http://content.guardianapis.com/uk?show-editors-picks=true&api-key=test"
+  var test = "../src/JSON/editorsPicks.json"
+  guardian.load(test , async function(content){
   var myJSON = await JSON.parse(content.response);
   guardian.editorsPicks = myJSON.response.editorsPicks
-  console.log(guardian.editorsPicks)
   var i = 0
   guardian.editorsPicks.forEach(function(article){
-    guardian.load(article.apiUrl + "?show-fields=all&api-key=test", async function(content){
+    var real = article.apiUrl + "?show-fields=all&api-key=test"
+    var test = article.testUrl
+    guardian.load(test , async function(content){
       var fields = await JSON.parse(content.response);
       console.log(fields.response.content.fields.thumbnail)
       var link = document.createElement('a');
@@ -73,8 +75,9 @@ var guardian = new Guardian();
 });
 
 function expandBody(index) {
-  console.log(index)
-  guardian.load(guardian.editorsPicks[Number(index[0])].apiUrl + "?show-fields=all&api-key=test", async function(content){
+  var real = guardian.editorsPicks[Number(index[0])].apiUrl + "?show-fields=all&api-key=test"
+  var test = guardian.editorsPicks[Number(index[0])].testUrl
+  guardian.load(test, async function(content){
     var fields = await JSON.parse(content.response);
     var link = document.createElement('a');
 
