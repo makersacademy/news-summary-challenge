@@ -41,7 +41,7 @@ window.onload = function () {
       makeRequest(currentUrl)
     }
 
-    function makeUrlChangeShowAnimalForCurrentPage() {
+    function makeUrlChangeShowAbstractForCurrentPage() {
       window.addEventListener("hashchange", summarise, false)
     }
 
@@ -78,7 +78,7 @@ window.onload = function () {
         try {
           newsItemThumbnail.src = newsHeadline.fields.thumbnail
         } catch {
-          newsItemThumbnail.src = ''
+          newsItemThumbnail.src = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg"
           newsItemThumbnail.alt = 'No image provided'
         }
         let section = document.createElement('section')
@@ -105,7 +105,7 @@ window.onload = function () {
       }
     }
     makeRequest(newsUrl)
-    makeUrlChangeShowAnimalForCurrentPage()
+    makeUrlChangeShowAbstractForCurrentPage()
   })()
 
 }
