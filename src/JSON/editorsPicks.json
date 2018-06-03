@@ -1,0 +1,74 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 1,
+    "editorsPicks": [
+      {
+        "id": "environment/2018/jun/03/shetland-seabirds-climate-change-catastrophe-terns-kittiwakes-puffins",
+        "type": "article",
+        "sectionId": "environment",
+        "sectionName": "Environment",
+        "webPublicationDate": "2018-06-03T05:59:39Z",
+        "webTitle": "Eerie silence falls on Shetland cliffs that once echoed to seabirds’ cries",
+        "webUrl": "https://www.theguardian.com/environment/2018/jun/03/shetland-seabirds-climate-change-catastrophe-terns-kittiwakes-puffins",
+        "apiUrl": "https://content.guardianapis.com/environment/2018/jun/03/shetland-seabirds-climate-change-catastrophe-terns-kittiwakes-puffins",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "society/2018/jun/03/obesity-food-poverty-cheap-bread",
+        "type": "article",
+        "sectionId": "society",
+        "sectionName": "Society",
+        "webPublicationDate": "2018-06-03T05:21:38Z",
+        "webTitle": "The miller’s tale: poverty, obesity and the 45p loaf",
+        "webUrl": "https://www.theguardian.com/society/2018/jun/03/obesity-food-poverty-cheap-bread",
+        "apiUrl": "https://content.guardianapis.com/society/2018/jun/03/obesity-food-poverty-cheap-bread",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "commentisfree/2018/jun/03/sunday-essay-britain-always-an-island-nation-but-never-alone",
+        "type": "article",
+        "sectionId": "commentisfree",
+        "sectionName": "Opinion",
+        "webPublicationDate": "2018-06-03T08:00:42Z",
+        "webTitle": "An island nation, but never alone | Will Hutton",
+        "webUrl": "https://www.theguardian.com/commentisfree/2018/jun/03/sunday-essay-britain-always-an-island-nation-but-never-alone",
+        "apiUrl": "https://content.guardianapis.com/commentisfree/2018/jun/03/sunday-essay-britain-always-an-island-nation-but-never-alone",
+        "isHosted": false,
+        "pillarId": "pillar/opinion",
+        "pillarName": "Opinion"
+      },
+      {
+        "id": "music/2018/jun/03/summer-sounds-playlists-chosen-by-justice-hot-chip-susanne-sundfor-marlon-williams",
+        "type": "article",
+        "sectionId": "music",
+        "sectionName": "Music",
+        "webPublicationDate": "2018-06-03T09:00:42Z",
+        "webTitle": "Summer 2018  playlists, chosen by Goat Girl, Justice, Hot Chip and more",
+        "webUrl": "https://www.theguardian.com/music/2018/jun/03/summer-sounds-playlists-chosen-by-justice-hot-chip-susanne-sundfor-marlon-williams",
+        "apiUrl": "https://content.guardianapis.com/music/2018/jun/03/summer-sounds-playlists-chosen-by-justice-hot-chip-susanne-sundfor-marlon-williams",
+        "isHosted": false,
+        "pillarId": "pillar/arts",
+        "pillarName": "Arts"
+      },
+      {
+        "id": "sport/2018/jun/03/tt-isle-of-man-ian-hutchinson-michael-dunlop",
+        "type": "article",
+        "sectionId": "sport",
+        "sectionName": "Sport",
+        "webPublicationDate": "2018-06-03T07:00:40Z",
+        "webTitle": "Ian Hutchinson: ‘I want to race the TT until there is no more magic’",
+        "webUrl": "https://www.theguardian.com/sport/2018/jun/03/tt-isle-of-man-ian-hutchinson-michael-dunlop",
+        "apiUrl": "https://content.guardianapis.com/sport/2018/jun/03/tt-isle-of-man-ian-hutchinson-michael-dunlop",
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      }
+    ]
+  }
+}
