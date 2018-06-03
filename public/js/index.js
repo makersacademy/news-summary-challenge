@@ -24,11 +24,10 @@ window.onload = function () {
       if (httpRequest.readyState === XMLHttpRequest.DONE) {
         if (httpRequest.status === 200) {
           responseReceivedFromServer = JSON.parse(httpRequest.responseText)
-          console.log(responseReceivedFromServer)
           if (currentUrl === newsUrl) {
             processGuardianJson(responseReceivedFromServer)
           } else {
-            console.log(responseReceivedFromServer)
+            processAylienJson(responseReceivedFromServer)
           }
         } else {
           alert('There was a problem with the request.')
@@ -38,17 +37,22 @@ window.onload = function () {
 
     function summarise () {
       var url = getUrlFromHash()
-      console.log(url)
-      // currentUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + url
-      // makeRequest(currentUrl)
+      currentUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + url
+      makeRequest(currentUrl)
     }
 
     function makeUrlChangeShowAnimalForCurrentPage() {
-      window.addEventListener("hashchange", console.log("hash changed"), false)
+      window.addEventListener("hashchange", summarise, false)
     }
 
     function getUrlFromHash() {
       return window.location.hash.split("#")[1]
+    }
+
+    function processAylienJson(responseContents) {
+      for (let sentence of responseContents.sentences) {
+        console.log(sentence)
+      }
     }
 
     function processGuardianJson (responseContents) {
