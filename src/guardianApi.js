@@ -52,13 +52,41 @@ var guardian = new Guardian();
   var i = 0
   guardian.editorsPicks.forEach(function(article){
     guardian.load(article.testUrl, async function(content){
-    var fields = await JSON.parse(content.response);
-    var a = document.createElement('li');
-    a.setAttribute('id', i)
-    console.log(fields.response.content.fields.body)
-    a.innerHTML= fields.response.content.fields.body;
-    var element = document.getElementById("mydiv");
-    element.appendChild(a);
-    i++})
+      var fields = await JSON.parse(content.response);
+      var link = document.createElement('a');
+      link.setAttribute('id', i +"link");
+      link.setAttribute('onclick', 'expandBody(event.target.id);')
+      var title = document.createElement('h1');
+      var thumbnail = document.createElement('img');
+      thumbnail.setAttribute('id', i +"img");
+      thumbnail.setAttribute('src', fields.response.content.fields.thumbnail);
+      title.innerHTML= fields.response.content.fields.headline;
+      var element = document.getElementById("frontPage");
+      element.appendChild(link);
+      link.appendChild(thumbnail);
+      link.appendChild(title);
+      i++;
+    })
   })
 });
+
+function expandBody(index) {
+  console.log(index)
+  guardian.load(guardian.editorsPicks[Number(index[0])].testUrl, async function(content){
+    var fields = await JSON.parse(content.response);
+    var link = document.createElement('a');
+
+  document.getElementById('main').innerHTML= fields.response.content.fields.body
+  var x = document.getElementById('frontPage');
+  x.style.display = "none";
+  var y = document.getElementById('secondPage');
+  y.style.display = "block";
+})};
+
+function goBack() {
+  var x = document.getElementById('frontPage');
+  x.style.display = "block";
+  var y = document.getElementById('secondPage');
+  y.style.display = "none";
+
+};
