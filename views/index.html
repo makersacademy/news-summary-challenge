@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../src/apiMethod.js" type="text/javascript" ></script>
+    <script src="../src/logic.js" type="text/javascript" ></script>
+    <script src="../src/buttons.js" type="text/javascript" ></script>
+
+  </head>
+  <style>
+  #secondPage{display: none;}
+
+  #frontPage{
+    margin: auto;
+    text-align: center;
+  }
+  img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+  }
+  h1{
+    color:blue;
+  }
+  h1#title2 {
+    color:black;
+  }
+  </style>
+  <body>
+    <a name="top"></a>
+    <div id="frontPage">
+      <h2>THE DAILY NEWS</h2>
+
+    </div>
+    <div id="secondPage">
+      <h1 id="title2"></h1>
+      <div id="main"></div>
+      <a href="#top"><input type="submit" id="goBack" value="Go Back" onclick="goBack();"></a>
+    </div>
+
+  </body>
+</html>

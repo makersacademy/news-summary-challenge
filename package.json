@@ -1,0 +1,25 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "displays news summary pulled from the Guardian",
+  "main": "index.js",
+  "scripts": {
+    "test": "run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnNewman1/news-summary-challenge.git"
+  },
+  "keywords": [
+    ""
+  ],
+  "author": "John",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnNewman1/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/JohnNewman1/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
