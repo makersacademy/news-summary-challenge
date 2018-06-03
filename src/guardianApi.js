@@ -46,7 +46,7 @@ Guardian.prototype.load = function(url, callback) {
 
 var guardian = new Guardian();
 
-  guardian.load("http://content.guardianapis.com/uk?show-editors-picks=true&api-key=test", async function(content){
+  guardian.load("../src/JSON/editorsPicks.json", async function(content){
   var myJSON = await JSON.parse(content.response);
   guardian.editorsPicks = myJSON.response.editorsPicks
   var i = 0
@@ -58,6 +58,4 @@ var guardian = new Guardian();
     element.appendChild(a);
     i++
   })
-
-https://content.guardianapis.com/world/2018/jun/02/juncker-eu-italy-olive-branch?show-fields=body&api-key=test
-})
+});

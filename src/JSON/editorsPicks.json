@@ -13,6 +13,7 @@
         "webTitle": "Eerie silence falls on Shetland cliffs that once echoed to seabirds’ cries",
         "webUrl": "https://www.theguardian.com/environment/2018/jun/03/shetland-seabirds-climate-change-catastrophe-terns-kittiwakes-puffins",
         "apiUrl": "https://content.guardianapis.com/environment/2018/jun/03/shetland-seabirds-climate-change-catastrophe-terns-kittiwakes-puffins",
+        "testUrl": "../src/JSON/articleOne.json",
         "isHosted": false,
         "pillarId": "pillar/news",
         "pillarName": "News"
@@ -26,6 +27,7 @@
         "webTitle": "The miller’s tale: poverty, obesity and the 45p loaf",
         "webUrl": "https://www.theguardian.com/society/2018/jun/03/obesity-food-poverty-cheap-bread",
         "apiUrl": "https://content.guardianapis.com/society/2018/jun/03/obesity-food-poverty-cheap-bread",
+        "testUrl": "../src/JSON/articleTwo.json",
         "isHosted": false,
         "pillarId": "pillar/news",
         "pillarName": "News"
@@ -39,6 +41,7 @@
         "webTitle": "An island nation, but never alone | Will Hutton",
         "webUrl": "https://www.theguardian.com/commentisfree/2018/jun/03/sunday-essay-britain-always-an-island-nation-but-never-alone",
         "apiUrl": "https://content.guardianapis.com/commentisfree/2018/jun/03/sunday-essay-britain-always-an-island-nation-but-never-alone",
+        "testUrl": "../src/JSON/articleThree.json",
         "isHosted": false,
         "pillarId": "pillar/opinion",
         "pillarName": "Opinion"
@@ -52,6 +55,7 @@
         "webTitle": "Summer 2018  playlists, chosen by Goat Girl, Justice, Hot Chip and more",
         "webUrl": "https://www.theguardian.com/music/2018/jun/03/summer-sounds-playlists-chosen-by-justice-hot-chip-susanne-sundfor-marlon-williams",
         "apiUrl": "https://content.guardianapis.com/music/2018/jun/03/summer-sounds-playlists-chosen-by-justice-hot-chip-susanne-sundfor-marlon-williams",
+        "testUrl": "../src/JSON/articleFour.json",
         "isHosted": false,
         "pillarId": "pillar/arts",
         "pillarName": "Arts"
@@ -65,6 +69,7 @@
         "webTitle": "Ian Hutchinson: ‘I want to race the TT until there is no more magic’",
         "webUrl": "https://www.theguardian.com/sport/2018/jun/03/tt-isle-of-man-ian-hutchinson-michael-dunlop",
         "apiUrl": "https://content.guardianapis.com/sport/2018/jun/03/tt-isle-of-man-ian-hutchinson-michael-dunlop",
+        "testUrl": "../src/JSON/articleFive.json",
         "isHosted": false,
         "pillarId": "pillar/sport",
         "pillarName": "Sport"
