@@ -12,19 +12,35 @@
   </head>
   <style>
   #secondPage{display: none;}
+
+  #frontPage{
+    margin: auto;
+    text-align: center;
+  }
+  img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+  }
+  h1{
+    color:blue;
+  }
+  h1#title2 {
+    color:black;
+  }
   </style>
   <body>
+    <a name="top"></a>
     <div id="frontPage">
+      <h2>THE DAILY NEWS</h2>
 
     </div>
     <div id="secondPage">
+      <h1 id="title2"></h1>
       <div id="main"></div>
-      <input type="submit" id="goBack" value="Go Back" onclick="goBack();">
+      <a href="#top"><input type="submit" id="goBack" value="Go Back" onclick="goBack();"></a>
     </div>
 
   </body>
-  <script>
-
-
-  </script>
 </html>

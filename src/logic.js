@@ -3,14 +3,14 @@
   var realUrl = "http://content.guardianapis.com/uk?show-editors-picks=true&api-key=test"
   var testUrl = "../src/JSON/editorsPicks.json"
 
-  guardian.load(testUrl , async function(content){
+  guardian.load(realUrl , async function(content){
     var myJSON = await JSON.parse(content.response);
     guardian.editorsPicks = myJSON.response.editorsPicks
     var i = 0
     guardian.editorsPicks.forEach( async function(article){
       var real = article.apiUrl + "?show-fields=all&api-key=test"
       var test = article.testUrl
-      await guardian.load(test , async function(content){
+      await guardian.load(real , async function(content){
         var fields = await JSON.parse(content.response);
         _addHtml(fields, i)
         i++;
@@ -24,6 +24,7 @@ function _addHtml(fields, i) {
   var thumbnail = document.createElement('img');
   var element = document.getElementById("frontPage");
   link.setAttribute('id', i +"link");
+  link.setAttribute('href', "#top");
   link.setAttribute('onclick', 'expandBody(event.target.id);')
   title.setAttribute('id', i +"title");
   thumbnail.setAttribute('id', i +"img");

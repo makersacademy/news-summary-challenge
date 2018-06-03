@@ -1,5 +1,27 @@
 # News Summary challenge
 
+## install
+
+To install fork and clone this repo.
+
+run ``npm install``
+
+## Running the Application
+
+run the following command and visit localhost:8080
+
+```
+http-server
+```
+
+## Tests
+
+To run tests make sure you change all load methods to have the argument ``test`` instead of ``real``
+
+tests run with mr Jazz(self made TDD)
+
+## The Specs
+
 * Challenge time: rest of the day and weekend, until Monday 9am.
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
