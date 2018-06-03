@@ -24,4 +24,4 @@ describe('#newslist')
 
 // describe('#NewsListToHTML')
 //   it('Returns an html string of all the news objects in news list')
-//   assert.areEqual(newsListView.NewslistToHTML(), `<p><a href='url'>title</a></p><img src=image`)
+//   assert.areEqual(newsListView.NewslistToHTML(), `<p><a href='id'>title</a></p><img src=image`)
