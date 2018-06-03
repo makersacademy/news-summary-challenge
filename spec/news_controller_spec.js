@@ -1,9 +1,20 @@
+function ElementDouble() {
+}
+
+ElementDouble.prototype = {
+  innerHTML: function() {
+    return 'string'
+  }
+}
+
 function DocumentDouble() {
+  this.getElementByIdCount = 0;
 }
 
 DocumentDouble.prototype = {
   getElementById: function() {
-    return `<div id="news">Sample news</div>`
+    this.getElementByIdCount++;
+    return new ElementDouble();
   }
 }
 
@@ -16,4 +27,9 @@ describe('NewsController')
 
 describe('#GetNewsDivElement')
   it('Grabs the news div html element')
-  assert.areEqual(newsController.GetNewsDivElement(doc), `<div id="news">Sample news</div>`)
+  newsController.GetNewsDivElement(doc);
+  assert.areEqual(doc.getElementByIdCount, 1)
+
+describe('#ChangeNewsDivContent')
+  it('Changes the content of the news div')
+  assert.areEqual(newsController.ChangeNewsDivContent('test', doc), 'test')

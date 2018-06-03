@@ -5,6 +5,11 @@
       var newsDiv = doc.getElementById('news')
       return newsDiv
     }
+
+    NewsController.prototype.ChangeNewsDivContent = function(text, doc = document) {
+      var content = this.GetNewsDivElement(doc).innerHTML = text
+      return content
+    }
   }
 
   // NewsController.prototype.GetGuardianNewsAPI = function() {
