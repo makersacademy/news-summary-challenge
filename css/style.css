@@ -1,0 +1,22 @@
+* {
+  margin: 0 auto;
+}
+
+#container {
+  text-align: center;
+}
+
+#display,
+#article-summary {
+  max-width: 500px;
+}
+
+#display {
+}
+
+#article-summary {
+}
+
+.headline {
+  margin-bottom: 20px;
+}
