@@ -10,9 +10,4 @@ describe("Headlines", function () {
     headlines.addHeadline("Test Headline: Bacon is Good For You!")
     assert.arrayContains(headlines.headlinesArray, "Test Headline: Bacon is Good For You!")
   });
-  it("returns a headlines", function () {
-    headlines.returnFromHeadlinesArray();
-    console.log(headlines.headlinesArray[0])
-    console.log(headlines.returnFromHeadlinesArray());
-  });
 })
