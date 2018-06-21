@@ -11,3 +11,7 @@ describe("Headlines", function () {
     assert.arrayContains(headlines.headlinesArray, "Test Headline: Bacon is Good For You!")
   });
 })
+
+describe("Headline Request", function () {
+  var headlineRequest = new HeadlineRequest();
+})
