@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./javascript/Stories.js"></script>
+  <script src="./javascript/StoryFactory.js"></script>
+  <script src="./javascript/Summary.js"></script>
+  <script src="./javascript/interface.js"></script>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
+</head>
+<body>
+
+    <article id="story-list"></article>
+
+    <script>
+       storyFactory(Story).then(function(response) {
+          addSummary(response);
+        }, function(error) {
+          console.log('failed');
+       })
+    </script>
+</body>
+</html>
+
+
+
