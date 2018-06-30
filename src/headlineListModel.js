@@ -10,7 +10,7 @@
     for(var i = 0; i < APIcall.results.length; i++) {
       var id = this.headlineListArray.length;
       var headline = new Headline(APIcall.results[i], id)
-      this.headlineListArray.push(APIcall.results[i])
+      this.headlineListArray.push(headline)
     };
   };
 
