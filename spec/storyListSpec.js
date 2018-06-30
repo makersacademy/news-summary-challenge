@@ -1,3 +1,7 @@
+function StoryDouble(title) {
+  this.title = title;
+};
+
 function testEmptyStoryList() {
   var storyList = new StoryList();
   assert.isTrue("Story list starts empty", storyList.storyArray[0] === undefined);
@@ -24,7 +28,6 @@ function testStoryList() {
       }
     };
   var title = apiResponse.response.results[0].webTitle
-  var story = new Story(title);
   var storyList = new StoryList();
   storyList.addStory(apiResponse);
   assert.isTrue("Add one story to story list", storyList.storyArray[0].title === "Uruguay v Portugal: World Cup 2018 – live!");
@@ -53,7 +56,6 @@ function testStoryListWithTwoStories() {
       }
     };
   var title = apiResponse.response.results[0].webTitle
-  var story = new Story(title);
   var storyList = new StoryList();
   storyList.addStory(apiResponse);
   assert.isTrue("Add first of two stories to story list", storyList.storyArray[0].title === "Uruguay v Portugal: World Cup 2018 – live!");

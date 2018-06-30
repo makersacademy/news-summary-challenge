@@ -17,7 +17,7 @@
         if (xhr.readyState === XMLHttpRequest.DONE) {
           if (xhr.status === 200) {
             apiResponse = xhr.responseText
-            newsController.getHTML(apiResponse);
+            newsController.returnHTML(apiResponse);
           } else {
             alert('There was a problem with the request.');
           }
@@ -29,7 +29,7 @@
     }
   };
 
-  NewsController.prototype.getHTML = function (apiResponse) {
+  NewsController.prototype.returnHTML = function (apiResponse) {
     var json = JSON.parse(apiResponse)
     var results = json.response.results
     for (var i=0; i < results.length; i++) {
