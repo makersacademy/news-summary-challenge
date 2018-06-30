@@ -1,10 +1,10 @@
 var assert = {
   isTrue: function(testName, assertionToCheck) {
     if (!assertionToCheck) {
-      throw new Error(testName + " failed");
+      throw new Error(testName + " test failed");
     }
     else {
-      console.log(testName + " passes!");
+      console.log(testName + " test passes!");
     }
   }
 };
