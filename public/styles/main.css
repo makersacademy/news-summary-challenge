@@ -1,0 +1,31 @@
+ body {
+   background-color: #EAE8E3;
+   font-family: Courier New, Courier, monospace;
+ }
+
+ .title {
+   text-align: center;
+   padding: 1em 2em 1em 0;
+   margin-bottom: 1em;
+   font-size: 4em;
+   background-color: #AAD8E8;
+ }
+
+ .card {
+   display: inline-block;
+   margin-right: 1em;
+   margin-bottom: 1em;
+ }
+
+ .d-block {
+   text-align: center;
+ }
+
+ /* ========================= Moblie ========================= */
+
+ @media(max-width:10em) {
+   .title {
+     font-size: 3em;
+     padding: 0%;
+   }
+ }
