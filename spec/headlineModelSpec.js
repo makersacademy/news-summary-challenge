@@ -1,6 +1,6 @@
 "use strict";
 
-(function testheadlineModelAccessHeadline() {
+(function testHeadlineModelAccessHeadline() {
   var fromAPIDouble = {'webTitle': "Danny Dyre is Great!"}
   var headline = new Headline(fromAPIDouble)
   assert.isTrue(headline.text() === "Danny Dyre is Great!")
