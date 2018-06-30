@@ -40,6 +40,6 @@
   exports.NewsController = NewsController;
 })(this);
 
-var element = document.getElementById("news");
-var newsController = new NewsController(element);
-newsController.sendAPIRequest();
+// var element = document.getElementById("news");
+// var newsController = new NewsController(element);
+// newsController.sendAPIRequest();
