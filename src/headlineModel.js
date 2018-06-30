@@ -2,12 +2,13 @@
 
 (function(exports) {
 
-  function Headline(headlines) {
-    this.headlines = headlines;
+  function Headline(headline, id) {
+    this.headline = headline;
+    this.id = id;
   };
 
   Headline.prototype.text = function() {
-    return this.headlines.webTitle;
+    return this.headline.webTitle;
   };
 
   exports.Headline = Headline;

@@ -1,8 +1,8 @@
 "use strict";
 
-(function headlineModelCanStoreAHeadline() {
+(function testheadlineModelAccessHeadline() {
   var fromAPIDouble = {'webTitle': "Danny Dyre is Great!"}
   var headline = new Headline(fromAPIDouble)
   assert.isTrue(headline.text() === "Danny Dyre is Great!")
-  console.log("Test for: Headline model can store a headline PASSED")
+  console.log("Test for: Headline model can access a headline PASSED")
 })();
