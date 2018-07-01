@@ -7,6 +7,8 @@
   <body>
     <div id='app'>News News News!</div>
 
+    <div id='story'></div>
+
     <script src="src/headlineModel.js"></script>
     <script src="src/headlineListView.js"></script>
     <script src="src/headlineListModel.js"></script>
@@ -23,16 +25,60 @@
         return;
       }
       var apiCall = JSON.parse(xhr.responseText);
-      execute(apiCall)
+      executeHeadlines(apiCall)
     };
     xhr.open("GET", "testApiCall.txt", true); // swap 2nd argument for url if executing real API call
     xhr.send("");
 
-    function execute(apiCall) {
+    function executeHeadlines(apiCall) {
       var headlineList = new HeadlineList;
       headlineList.addHeadlines(apiCall);
       var newsController = new NewsController(headlineList);
       newsController.renderHTML();
+      // newsController.updatePage();
+      makeUrlChangeDisplayStorySummary();
+
+      function makeUrlChangeDisplayStorySummary() {
+        window.addEventListener("hashchange", showStoryOnPage)
+      };
+
+      function showStoryOnPage() {
+        showStory(getStoryFromUrl(window.location));
+      };
+
+      function getStoryFromUrl(location) {
+        return location.hash.split('#')[1];
+        // needs to complete api call for the shortened story
+      };
+
+      function getStorySummaryFromApi() {
+        var xhr2 = new XMLHttpRequest();
+        var url2 = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + getStoryFromUrl(location); // Deliberately not using real API call function below
+        xhr2.onreadystatechange = summaryCallback;
+        function summarysCallback() {
+          if (xhr2.readystate < 4) {
+            return;
+          }
+          if (xhr2.status !== 200) {
+            return;
+          }
+          var apiSummaryCall = JSON.parse(xhr2.responseText);
+          executeSummary(apiSummaryCall)
+        };
+        xhr2.open("GET", "testSummaryFirstTestHeadline.txt", true); // swap 2nd argument for url if executing real API call
+        xhr2.send("");
+      };
+
+      function executeSummary(apiSummaryCall) {
+        var singleNewsStoryView = new SingleNewStoryView(apiSummaryCall);
+        singleNewsStoryView.returnNewsStoryHTML();
+      };
+
+      function showStory(story) {
+        document
+          .getElementById("story")
+          .innerHTML = story
+      };
     };
 
     </script>
