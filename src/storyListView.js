@@ -6,11 +6,13 @@
   StoryListView.prototype.returnHTML = function () {
     var listHTML = `<ul>`
     var storyArray = this.storyList.storyArray;
+    var counter = 0
     storyArray.forEach(function(story){
       var headline = story.title;
       var url = story.url;
       var image = story.image;
-      listHTML += `<li><div><img src=${image}/><a href=${url}>${headline}</a></div></li>`;
+      counter++;
+      listHTML += `<li><div><img src=${image}/><a href="#headline/${counter}">${headline}</a></div></li>`;
     });
     listHTML += `</ul>`
     return listHTML

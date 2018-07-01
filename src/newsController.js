@@ -30,8 +30,35 @@
     }
   };
 
+  NewsController.prototype.displayArticle = function (number) {
+    for (var i=0; i < this.storyList.storyArray.length; i++) {
+      if(this.storyList.storyArray[i] === parseInt(number)) {
+        return this.storyList.storyArray[i].story.title;
+      }
+    }
+  };
+
   exports.NewsController = NewsController;
 })(this);
 
-// var newsController = new NewsController();
-// newsController.sendAPIRequest();
+function makeUrlChangeShowSingleStory() {
+  window.addEventListener("hashchange", showSingleStory);
+};
+
+function showSingleStory() {
+  showStory(getStoryFromUrl(window.location));
+};
+
+function getStoryFromUrl(location) {
+  return location.hash.split("#headline/")[1];
+};
+
+function showStory(number) {
+  document
+    .getElementById("news")
+    .innerHTML = newsController.displayArticle(number);
+};
+
+var newsController = new NewsController();
+newsController.sendAPIRequest();
+makeUrlChangeShowSingleStory();

@@ -66,7 +66,7 @@ function testStoryListView() {
   var storyListDouble = new StoryListDouble();
   storyListDouble.addStory(apiResponse);
   var storyListView = new StoryListView(storyListDouble);
-  assert.isTrue("View list of stories", storyListView.returnHTML().includes(`<ul><li><div><img src=https://media.guim.co.uk/191b818a4971ed285a07b5ac97cbf2afadab6821/0_246_5568_3341/500.jpg/><a href=https://www.theguardian.com/sport/live/2018/jul/01/nba-free-agency-lebron-james-and-paul-georges-decisions-imminent>NBA free agency: LeBron James decision imminent as Paul George re-signs with Thunder</a></div></li><li><div><img src=https://media.guim.co.uk/ed7d9eee067c8190f9373e76bfb45964e2da1079/0_95_3120_1873/500.jpg/><a href=https://www.theguardian.com/football/live/2018/jul/01/world-cup-2018-messi-ronaldo-out-and-spain-v-russia-buildup-live>World Cup 2018: Messi, Ronaldo out and Spain v Russia buildup – live!</a></div></li></ul>`));
+  assert.isTrue("View list of stories", storyListView.returnHTML().includes(`<ul><li><div><img src=https://media.guim.co.uk/191b818a4971ed285a07b5ac97cbf2afadab6821/0_246_5568_3341/500.jpg/><a href="#headline/1">NBA free agency: LeBron James decision imminent as Paul George re-signs with Thunder</a></div></li><li><div><img src=https://media.guim.co.uk/ed7d9eee067c8190f9373e76bfb45964e2da1079/0_95_3120_1873/500.jpg/><a href="#headline/2">World Cup 2018: Messi, Ronaldo out and Spain v Russia buildup – live!</a></div></li></ul>`));
 };
 
 testStoryListView();
