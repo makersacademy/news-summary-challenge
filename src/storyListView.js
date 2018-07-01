@@ -8,7 +8,9 @@
     var storyArray = this.storyList.storyArray;
     storyArray.forEach(function(story){
       var headline = story.title;
-      listHTML += `<li><div>${headline}</div></li>`;
+      var url = story.url;
+      var image = story.image;
+      listHTML += `<li><div><img src=${image}/><a href=${url}>${headline}</a></div></li>`;
     });
     listHTML += `</ul>`
     return listHTML

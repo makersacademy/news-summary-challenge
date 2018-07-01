@@ -8,7 +8,9 @@
     var storyArray = []
     apiResults.forEach(function(story) {
       var title = story.webTitle;
-      storyArray.push(new Story(title));
+      var url = story.webUrl;
+      var image = story.fields.thumbnail;
+      storyArray.push(new Story(title, url, image));
     });
     this.storyArray = storyArray
   };
