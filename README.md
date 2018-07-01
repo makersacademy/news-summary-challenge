@@ -1,4 +1,75 @@
-# News Summary challenge
+News Summary Challenge
+=================
+
+### Quickstart:
+#### How to install the code:
+Assumes prior global installation of npm http-server
+```
+$ git clone https://github.com/CLTPayne/news-summary-challenge.git
+$ cd news-summary-challenge
+$ http-server
+```
+
+#### How to use the website:
+1. Load the site via ```open index.html```
+2. Click on a headline to view a summary of the story at the bottom of the page
+
+#### How to run the tests:
+1. ```open specRunner.html```
+2. Open the JavaScript console in the browser
+
+
+### Approach to solving the challenge:
+1. Build simple truthy assert clause for use in all tests
+2. TDD headline and headline list models for MVC set up
+3. TDD headline list view for generating HTML components
+4. TDD news controller for rendering HTML on the page
+5. Add in single news story model and view for updating page on hash change.
+
+### Status at point of push:
+1. Successfully renders page with headlines and images from Guardian API
+2. Implemented eventlistener for hashchange which adds summary of news story to bottom of the page upon headline click.
+
+News Feed:
+![Application Example](images/news-summary-news-feed-screenshot.png)
+
+Story Summary:
+![Application Example](images/news-summary-headline-clickevent.png)
+
+### Description of what code does:
+Reproduces the MVC pattern in vanilla JavaScript
+
+### Code Style:
+1. Vanilla JavaScript
+2. All source code is wrapped in the module pattern
+3. All specs are wrapped in IIFEs
+
+### Features:
+1. Clickable headlines that display summary of each story
+
+### Intended next steps:
+1. Refactor API calls (currently in a script tag of index.html) out to the controller
+
+### Code Example:
+Extract from the codebase:
+```
+(function(exports) {
+
+  function NewsController(headlineList) {
+    this.headlineListView = new HeadlineListView(headlineList);
+  };
+
+  NewsController.prototype.renderHTML = function() {
+    var element = document.getElementById('app')
+    element.innerHTML = this.headlineListView.returnHeadlineHTML();
+  };
+
+  exports.NewsController = NewsController;
+
+})(this);
+```
+
+# Instructions Set by Makers:
 
 * Challenge time: rest of the day and weekend, until Monday 9am.
 * Feel free to use Google, your notes, books, etc. but work on your own.
