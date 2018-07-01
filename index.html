@@ -8,30 +8,33 @@
     <div id='app'>News News News!</div>
 
     <script src="src/headlineModel.js"></script>
-    <script src="src/headlineListModel.js"></script>
     <script src="src/headlineListView.js"></script>
+    <script src="src/headlineListModel.js"></script>
     <script src="src/newsController.js"></script>
     <script type="text/javascript">
     var xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = someCallback;
-
-    function someCallback() {
+    var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world?show-editors-picks=true&format=json&show-fields=headline,thumbnail,body" // Deliberately not using real API call function below
+    xhr.onreadystatechange = headlinesCallback;
+    function headlinesCallback() {
       if (xhr.readystate < 4) {
         return;
       }
       if (xhr.status !== 200) {
-        alert("Unable to access the news, slow news day?");
         return;
       }
-      // all is well
-      console.log(xhr.responseText);
-    }
+      var apiCall = JSON.parse(xhr.responseText);
+      execute(apiCall)
+    };
+    xhr.open("GET", "testApiCall.txt", true); // swap 2nd argument for url if executing real API call
+    xhr.send("");
 
-    xhr.open("GET", "testApiCall.txt", true)
-    xhr.send("")
+    function execute(apiCall) {
+      var headlineList = new HeadlineList;
+      headlineList.addHeadlines(apiCall);
+      var newsController = new NewsController(headlineList);
+      newsController.renderHTML();
+    };
 
-    // real request - works - "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world?show-editors-picks=true&format=json&show-fields=headline,thumbnail,body"
     </script>
   </body>
 </html>
