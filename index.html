@@ -29,7 +29,7 @@
       var apiCall = JSON.parse(xhr.responseText);
       executeHeadlines(apiCall)
     };
-    xhr.open("GET", url, true); // swap 2nd argument for url if executing real API call
+    xhr.open("GET", "testApiCall.txt", true); // swap 2nd argument for url if executing real API call
     xhr.send("");
 
     function executeHeadlines(apiCall) {
@@ -67,7 +67,7 @@
         var apiSummaryCall = JSON.parse(xhr2.responseText);
         executeSummary(apiSummaryCall)
       };
-      xhr2.open("GET", url2, true); // swap 2nd argument for url if executing real API call
+      xhr2.open("GET", "testSummaryFirstTestHeadline.txt", true); // swap 2nd argument for url if executing real API call
       xhr2.send("");
       function executeSummary(apiSummaryCall) {
         var singleNewsStoryView = new SingleNewsStoryView(apiSummaryCall);
