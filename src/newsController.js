@@ -1,7 +1,5 @@
 (function(exports) {
-  function NewsController(element) {
-    this.element = element;
-  };
+  function NewsController() {};
 
   NewsController.prototype.sendAPIRequest = function () {
     var guardianApi = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=2018-06-30";
@@ -16,8 +14,11 @@
       try {
         if (xhr.readyState === XMLHttpRequest.DONE) {
           if (xhr.status === 200) {
-            apiResponse = xhr.responseText
-            newsController.returnHTML(apiResponse);
+            apiResponse = JSON.parse(xhr.responseText)
+            var storyList = new StoryList();
+            var storyListView = new StoryListView(storyList)
+            storyList.addStory(apiResponse);
+            document.getElementById("news").innerHTML += storyListView.returnHTML()
           } else {
             alert('There was a problem with the request.');
           }
@@ -29,17 +30,8 @@
     }
   };
 
-  NewsController.prototype.returnHTML = function (apiResponse) {
-    var json = JSON.parse(apiResponse)
-    var results = json.response.results
-    for (var i=0; i < results.length; i++) {
-      this.element.innerHTML += `<br>` + results[i].webTitle;
-    }
-  };
-
   exports.NewsController = NewsController;
 })(this);
 
-// var element = document.getElementById("news");
-// var newsController = new NewsController(element);
-// newsController.sendAPIRequest();
+var newsController = new NewsController();
+newsController.sendAPIRequest();
