@@ -17,7 +17,7 @@
     <script src="src/newsController.js"></script>
     <script type="text/javascript">
     var xhr = new XMLHttpRequest();
-    var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world?show-editors-picks=true&format=json&show-fields=headline,thumbnail,body" // Deliberately not using real API call function below
+    var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail,body" // Deliberately not using real API call function below
     xhr.onreadystatechange = headlinesCallback;
     function headlinesCallback() {
       if (xhr.readystate < 4) {
@@ -29,7 +29,7 @@
       var apiCall = JSON.parse(xhr.responseText);
       executeHeadlines(apiCall)
     };
-    xhr.open("GET", "testApiCall.txt", true); // swap 2nd argument for url if executing real API call
+    xhr.open("GET", url, true); // swap 2nd argument for url if executing real API call
     xhr.send("");
 
     function executeHeadlines(apiCall) {
@@ -49,14 +49,13 @@
       getStorySummaryFromApi()
     };
 
-    function getStoryFromUrl() {
+    function getStoryUrl() {
       return window.location.hash.split('#')[1];
-      // needs to complete api call for the shortened story
     };
 
     function getStorySummaryFromApi() {
       var xhr2 = new XMLHttpRequest();
-      var url2 = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + getStoryFromUrl(); // Deliberately not using real API call function below
+      var url2 = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + getStoryUrl(); // Deliberately not using real API call function below
       xhr2.onreadystatechange = summaryCallback;
       function summaryCallback() {
         if (xhr2.readystate < 4) {
@@ -68,7 +67,7 @@
         var apiSummaryCall = JSON.parse(xhr2.responseText);
         executeSummary(apiSummaryCall)
       };
-      xhr2.open("GET", "testSummaryFirstTestHeadline.txt", true); // swap 2nd argument for url if executing real API call
+      xhr2.open("GET", url2, true); // swap 2nd argument for url if executing real API call
       xhr2.send("");
       function executeSummary(apiSummaryCall) {
         var singleNewsStoryView = new SingleNewsStoryView(apiSummaryCall);
