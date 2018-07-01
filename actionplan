@@ -39,23 +39,39 @@ Don't feel I'm quite there to set a list of objectives yet.
 
 New action plan:
 
-1. Break it down... only one API first.
+1. DONE:Break it down... only one API first.
     - guardian one
-2. In order to do one. lets rewrite and re-order the user stories.
+2. DONE:In order to do one. lets rewrite and re-order the user stories.
     - only 2 user stories for MVP, start with headlines
     - What a lovely diagram
 3. Review next steps.
 
 New action plan
 
-1. Create testing file
-2. TDD making a change to the HTML page
+1. DONE:Create testing file
+2. DONE:TDD making a change to the HTML page
    - This will involve creating a controller
    - This may involve creating a viewer
    - Plagurise code from notes
-3. Write a features test (get it actually working)
-4. Begin looking at integrating the API
+3. DONE:Write a features test (get it actually working)
+4. DONE:Begin looking at integrating the API
+ - Work out how to:
+  - send a request for an object (I think thats done)
+  - return the object (this is the key)
 
+DONE! Well done goose.
 
+Next up:
+
+1. DONE: Work out how to extract elements from the object (title)
+2. DONE: Display elements
 
 nb, refer to this when stuck: https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)
+
+Next up
+
+1. Write a test to get 5 headlines up
+    - make some objects for mocking these tests
+2. Write the code
+3. Write tests for what happens if you click the link
+4. Write the code

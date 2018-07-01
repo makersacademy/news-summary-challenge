@@ -24,12 +24,14 @@ function alertContents() {
 
 function updatePage(json){
   var element = document.getElementById('app');
-  var headline = json.response.content.webTitle;
-  var newsController = new NewsController(element, headline);
+  var newsList = json.response.results;
+  var newsListView = new NewsListView(newsList);
+  var headlines = newsListView.returnHTML();
+  var newsController = new NewsController(element, headlines);
   newsController.inputHTMLtoDOM();
 }
 
-var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?"
+var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail,body"
 
 var sendRequest = "show-fields=body"
 
