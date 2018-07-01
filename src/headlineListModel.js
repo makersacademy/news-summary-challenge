@@ -6,10 +6,10 @@
     this.headlineListArray = [];
   };
 
-  HeadlineList.prototype.addHeadlines = function(APIcall) {
-    for(var i = 0; i < APIcall.results.length; i++) {
+  HeadlineList.prototype.addHeadlines = function(apiCall) {
+    for(var i = 0; i < apiCall.response.results.length; i++) {
       var id = this.headlineListArray.length;
-      var headline = new Headline(APIcall.results[i], id)
+      var headline = new Headline(apiCall.response.results[i], id)
       this.headlineListArray.push(headline)
     };
   };

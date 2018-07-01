@@ -9,7 +9,6 @@
   NewsController.prototype.renderHTML = function() {
     var element = document.getElementById('app')
     element.innerHTML = this.headlineListView.returnHeadlineHTML();
-
   };
 
   exports.NewsController = NewsController;
