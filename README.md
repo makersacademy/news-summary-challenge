@@ -20,10 +20,12 @@ Points for improvement: to use suggested API to summarize article and to create 
 * go to localhost:8080 in your browser
 
 ### Technologies
+**And, as is the theme for this week, no use any libraries or frameworks!**
 
 Frontend JavaScript, CSS and HTML.  
 
-**And, as is the theme for this week, no use any libraries or frameworks!**
+Code is tested with custom made testing framework written in Javascript.
+To see tests passing run index.html file in the browser and inspect a page.
 
 ## User Stories implemented
 
