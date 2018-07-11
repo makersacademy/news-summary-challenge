@@ -2,7 +2,7 @@
 
 Fake News is a single-page app that shows the latest news headlines and summarises news stories. It was written in vanilla Javascript with no libraries. The headlines are grabbed from the Guardian's API then summarised by the Aylien Text Analysis API. 
 
-Clone the repo, 
+Clone the repo, run ```http-server``` then navigate to localhost:8080 in your browser to see the app in action.
 
 ## Tests
 
@@ -34,18 +34,6 @@ So I can get a few more details about an important story
 As a busy politician
 I can see a picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
-```
-
-```
-As a busy politician
-I can read the site comfortably on my phone
-Just in case my laptop breaks
-```
-
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
 ```
 
 ## Resources
