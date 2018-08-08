@@ -1,6 +1,8 @@
 News Summary Challenge
 =================
 
+A single page front-end news summary application pulling the top headlines from The Guardian API and story summaries via Aylien Text Summary API. No external libraries used (including tests) so full application is in vanilla javascript.
+
 ### Quickstart:
 #### How to install the code:
 Assumes prior global installation of npm http-server
@@ -17,7 +19,6 @@ $ http-server
 #### How to run the tests:
 1. ```open specRunner.html```
 2. Open the JavaScript console in the browser
-
 
 ### Approach to solving the challenge:
 1. Build simple truthy assert clause for use in all tests
