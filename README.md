@@ -1,12 +1,27 @@
-# News Summary challenge
+News Summary challenge
+========
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+Solo weekend challenge at the end of week 7 of Makers. Week 7 saw us focussing on more advanced Javascript and we were restricted from using libraries and other frameworks so we could increase our understanding of vanilla javascript.
 
-## Challenge
+By the end of week 7 all developers can:
+
+- Build a front-end app in Javascript
+- Work competently in Javascript
+- Reason about asynchronous behaviour in Javascript
+
+Workflow:
+---
+Screenshots to follow
+
+Progress Update:
+---
+- [ ] 
+- [ ] 
+- [ ] 
+
+
+
+## Original Challenge Instructions
 
 As usual please start by forking this repo.
 
@@ -33,6 +48,8 @@ But, feel free to use the test framework you wrote during the week!
 You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
 
 > The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+
+[Makers pill for http-server](https://github.com/makersacademy/course/blob/master/pills/http_server.md)
 
 ## User Stories
 
