@@ -38,6 +38,22 @@ You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package
 
 Some of these stories will need decomposing if they seem too large.
 
+- News
+- APIs
+- Headlines
+- Summary
+- Link
+- Full Article
+- Picture
+- Mobile Responsive
+- CSS Animations
+
+**My resources:**
+
+- https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+- https://developer.mozilla.org/en-US/docs/Web/Events/hashchange
+- 
+
 ```
 As a busy politician
 I can see all of today's headlines in one place
