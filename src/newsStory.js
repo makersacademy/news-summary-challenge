@@ -29,15 +29,3 @@
 
   exports.NewsStory = NewsStory;
 })(this);
-
-// (function(exports) {
-//   function News(headlines) {
-//     this._headlines = headlines;
-//   };
-
-//   News.prototype.headline = function() {
-//     return this._headlines;
-//   }
-
-//   exports.News = News;
-// })(this);

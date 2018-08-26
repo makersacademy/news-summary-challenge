@@ -1,7 +1,7 @@
 function expect(actual) {
   function toEqual(expected) {
     if(expected == actual) {
-      console.log(`Success! ${actual} equals ${expected}`)
+      console.log(`Success! Actual result (${actual}) equals expected result (${expected})`)
     }
     else {
       throw new Error(`Test failed: expected ${actual} to equal ${expected}`)
@@ -10,10 +10,10 @@ function expect(actual) {
 
   function toBe(expected) {         
     if(expected === actual) {
-      console.log(`Success! ${actual} is identical to ${expected}`)
+      console.log(`Success! Actual result (${actual}) is identical to expected result (${expected})`)
     }
     else {
-      throw new Error(`Test failed: expected ${actual} to be ${expected}`)
+      throw new Error(`Test failed: expected ${actual} to be identical to ${expected}`)
     }
   }
   return {
