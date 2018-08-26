@@ -9,13 +9,21 @@
 	<title>News Summary App</title>
 </head>
 <body>
+  <h1>Mock the Weekend</h1>
+  <div id="headlines"></div>
     <!-- GET https://api.aylien.com/api/v1/summarize
     POST https://api.aylien.com/api/v1/summarize -->
 
-  <script src="spec/testingFramework.js"></script>
-  <script src="src/newsStory.js"></script>
-  <script src="spec/newsStoryTest.js"></script>
-    <!-- <script>
+    <script src="src/newsStory.js"></script>
+    <script src="src/newsList.js"></script>
+  
+    <!-- Spec files -->
+    <script src="spec/newsListTest.js"></script>
+    <script src="spec/testingFramework.js"></script>
+    <script src="spec/newsStoryTest.js"></script>
+   
+  
+  <!-- <script>
       makeUrlChangeShowAnimalForCurrentPage();
 
       function makeUrlChangeShowAnimalForCurrentPage() {
