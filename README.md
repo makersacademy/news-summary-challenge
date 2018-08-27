@@ -1,16 +1,38 @@
-# News Summary challenge
+# :newspaper: News Summary challenge :newspaper:
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+## Makers Week 7 Weekend Project, made with Vanilla JS, The Guardian API and the Aylien API (for summarisation), and a home-baked testing framework.
 
-## Challenge
+![alt text]("http://res.cloudinary.com/dani-devs-and-designs/image/upload/v1535339136/Screen_Shot_2018-08-27_at_04.04.38_pscvfu.png")
 
-As usual please start by forking this repo.
+### How to use?
 
-You'll create an app that summarises the news.
+- Clone this repo
+- Run `http-server` in your terminal
+- Visit either http://127.0.0.1:8080 or http://192.168.43.225:8080
+- Test results can be seen in the browser console (cmd+alt+j)
+
+### How far did I get?
+
+**Feature extraction and completion:**
+
+:ballot_box_with_check: News Story 
+:ballot_box_with_check: APIs
+:ballot_box_with_check: Headlines
+:ballot_box_with_check: Images (not happy with them yet)
+:ballot_box_with_check: Mobile Responsive
+:hammer: Summary 
+:hammer: Links to different pages/sections
+:hammer: CSS Animations 
+
+I have a lot of fixing and finishing to do still.
+
+**My resources:**
+
+- https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+- https://developer.mozilla.org/en-US/docs/Web/Events/hashchange
+- https://github.com/n-ckr-ch-rds-n (Makers Alumnus Nick Richardson. I studied and gratefully used some of his code when I got stuck re. APIs with vanilla JS - Thanks Nick!)
+
+## Task:
 
 ### Guidance
 
@@ -37,22 +59,6 @@ You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package
 ## User Stories
 
 Some of these stories will need decomposing if they seem too large.
-
-- News
-- APIs
-- Headlines
-- Summary
-- Link
-- Full Article
-- Picture
-- Mobile Responsive
-- CSS Animations
-
-**My resources:**
-
-- https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
-- https://developer.mozilla.org/en-US/docs/Web/Events/hashchange
-- 
 
 ```
 As a busy politician

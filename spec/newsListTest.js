@@ -2,21 +2,15 @@
 
 describe('NewsList', function() {
   it('shows a list of news stories', function() {
-    var newsList = new NewsList();
+    var newsList = new NewsList;
     newsList.addToList("headline", "date", "url", "content")
-    // newsList.addToList();
     expect(newsList._newsStories[0].headline()).toBe("headline")
-    // expect(newsList._newsStories[0].content()).toBe("content")
+  })
+
+  it('converts the stories to the correct HTML for display purposes', function() {
+    var newsList = new NewsList()
+    newsList.addToList("headline", "date", "url", "content")
+    var newsListView = new NewsListView(newsList)
+    expect(newsListView.htmlParser()).toBe('<ul><li><div><a href="http://localhost:8080#newsStories/1">headline</a></div></li></ul>')
   })
 })
-
-
-
-// (function(exports) {
-//   function testSaveFunction() {
-//     articlelist = new ArticleList;
-//     articlelist.save("headline", "content", "url", "date")
-//     assert.isTrue(articlelist._articles[0].headline() === "headline")
-//   };
-//    testSaveFunction();
-// })(this);

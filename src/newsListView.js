@@ -6,15 +6,15 @@
   }
   
   NewsListView.prototype.htmlParser = function() {
-      var str = "<ul>";
+      var str = `<ul>`;
       this.newsList._newsStories.forEach(function(newsStory) {
-        str += `<li><div><a href="http://localhost:8080#articles/` + newsStory.id() + `">` + newsStory.headline() + `</a></div></li>`
-        // str += "<li><div><a href='http://localhost:8080#articles/'" + newsStory.id() + ">" + newsStory.headline() + "</a></div></li>"
-
+        str += '<li><div><a href="http://localhost:8080#newsStories/' + newsStory.id() + '">' + newsStory.headline() + '</a></div></li>'
       })
-      str += "</ul>";
+      str += '</ul>';
       return str;
     }
   
    exports.NewsListView = NewsListView;
  })(this);
+
+//  `<li><div><a href="http://localhost:8080#newsStories/ ${newsStory.id()} "> ${newsStory.headline()} </a></div></li>`
