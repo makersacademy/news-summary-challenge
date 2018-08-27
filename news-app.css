@@ -1,0 +1,72 @@
+body {
+  background-image: url("http://res.cloudinary.com/dani-devs-and-designs/image/upload/v1535337797/crumpled_paper_zbl2ms.jpg");
+  /* background-color: #f9f7f1; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* keeps page within screen boundaries */
+html,
+body {
+  height: 100%;
+  margin: 0%;
+  overflow-x: hidden;
+  padding: 0%;  
+  width: 100%;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 5vw;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 2%;
+  padding-left: 1%;
+}
+
+p, li {
+  list-style-type: none;
+  font-size: 2vw;
+  font-family: 'Droid Serif', serif;
+}
+
+a {
+  text-decoration: none !important;
+  padding-left: 2%;
+  display: flex;
+  align-items: flex-start;
+  line-height: 2em;
+  max-width: 90%;
+}
+
+a:link{
+  color:black;
+}
+a:visited{
+  color:#52160A;
+}
+a:hover{
+  color:#E48C0C;
+}
+a:focus{
+  color:#B0270A;
+}
+a:active{
+  color:#0E8626;
+}
+
+/* mobile phone screens */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 9vw;
+    padding: 8% 10% 0% 8%;
+    margin-left: 10%;
+  }
+  a, p {
+    font-size: 5vw;
+    padding-right: 2%;
+    line-height: 4vh;
+  }
+}
