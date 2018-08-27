@@ -1,0 +1,22 @@
+// Dummy api test
+
+testHeadlineListModel = new HeadlineList();
+testController = new NewsController(testHeadlineListModel);
+var apiCallDouble = {'response': {'results': [{'webTitle': "Whatapalaver wow's the techno world", 'webUrl': 'www.whatapalaver.co.uk', 'fields': {'thumbnail': 'www.testimage.co.uk'}}, {'webTitle': "It rained on Bank Holiday Monday", 'webUrl': 'www.shockhorror.co.uk', 'fields': {'thumbnail': 'www.testimage2.co.uk'}}]}}
+testHeadlineListModel.addHeadlines(apiCallDouble)
+testHeadlineView = new HeadlineListView(testController);
+
+
+var html = testController.returnHeadlineHTML()
+console.log(html)
+
+// Actual api test
+
+testHeadlineListModel = new HeadlineList();
+testController = new NewsController(testHeadlineListModel);
+testHeadlineListModel.addHeadlines(api)
+testHeadlineView = new HeadlineListView(testController);
+
+
+var html = testController.returnHeadlineHTML()
+console.log(html)
