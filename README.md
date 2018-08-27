@@ -2,7 +2,7 @@
 
 ## Makers Week 7 Weekend Project, made with Vanilla JS, The Guardian API and the Aylien API (for summarisation), and a home-baked testing framework.
 
-![alt text]("http://res.cloudinary.com/dani-devs-and-designs/image/upload/v1535339136/Screen_Shot_2018-08-27_at_04.04.38_pscvfu.png")
+![alt text](http://res.cloudinary.com/dani-devs-and-designs/image/upload/v1535339136/Screen_Shot_2018-08-27_at_04.04.38_pscvfu.png)
 
 ### How to use?
 
