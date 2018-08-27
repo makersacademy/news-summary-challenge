@@ -1,12 +1,9 @@
 testHeadlineListModel = new HeadlineList();
 testController = new NewsController(testHeadlineListModel);
+var apiCallDouble = {'response': {'results': [{'webTitle': "Whatapalaver wow's the techno world", 'webUrl': 'www.whatapalaver.co.uk', 'fields': {'thumbnail': 'www.testimage.co.uk'}}, {'webTitle': "It rained on Bank Holiday Monday", 'webUrl': 'www.shockhorror.co.uk', 'fields': {'thumbnail': 'www.testimage2.co.uk'}}]}}
+testHeadlineListModel.addHeadlines(apiCallDouble)
 testHeadlineView = new HeadlineListView(testController);
 
-// var webTitle = webTitle: 'Whatapalaver rocks the techno world';
-// var webUrl = webUrl: 'http://whatapalaver.co.uk';
-// var image = 'https://media.guim.co.uk/74ffb27b89af4019d136e6f75004afd03ba2bf0f/0_0_3472_2083/1000.jpg\';
-var apiCallDouble = {'response': {'results': [{'webTitle': "Whatapalaver wow's the techno world", 'webUrl': 'www.whatapalaver.co.uk', 'fields': {'thumbnail': 'www.testimage.co.uk'}}, {'webTitle': "It rained on Bank Holiday Monday", 'webUrl': 'www.shockhorror.co.uk', 'fields': {'thumbnail': 'www.testimage2.co.uk'}}]}}
 
-testHeadlineListModel.addHeadlines(apiCallDouble)
-var html = testHeadlineView.returnHeadlineHTML()
+var html = testController.returnHeadlineHTML()
 console.log(html)
