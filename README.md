@@ -15,14 +15,14 @@
 
 **Feature extraction and completion:**
 
-:ballot_box_with_check: News Story 
-:ballot_box_with_check: APIs
-:ballot_box_with_check: Headlines
-:ballot_box_with_check: Images (not happy with them yet)
-:ballot_box_with_check: Mobile Responsive
-:hammer: Summary 
-:hammer: Links to different pages/sections
-:hammer: CSS Animations 
+:ballot_box_with_check: News Story   
+:ballot_box_with_check: APIs  
+:ballot_box_with_check: Headlines  
+:ballot_box_with_check: Images (not happy with them yet)  
+:ballot_box_with_check: Mobile Responsive  
+:hammer: Summary   
+:hammer: Links to different pages/sections  
+:hammer: CSS Animations   
 
 I have a lot of fixing and finishing to do still.
 
