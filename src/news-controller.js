@@ -1,9 +1,10 @@
 (function(exports) {
-  function NewsController(element) {
-    this.element = element;
+  function NewsController(headlineList) {
+    this.headlineList = headlineList;
   };
-   NewsController.prototype.getHTML = function(text) {
-    return this.element.innerHTML = `<p>${text}</p>`;
+   NewsController.prototype.getHeadlineHTML = function(text) {
+    var element = document.getElementById('news')
+    return element.innerHTML = `<p>${text}</p>`;
   };
    exports.NewsController = NewsController;
 })(this);
