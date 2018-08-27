@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <title>News Summary App</title>
   </head>
   <body>
@@ -9,29 +11,10 @@
     <div id="news">
         
     </div>
-    <!-- <script>
-      var request = new XMLHttpRequest();
-      var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail,body;
-      request.open('GET', url);
-      request.responseType = 'json';
-      request.send();
-      var headlineList = new HeadLineList;
-      var api = [];
-
-      request.onload = function() {
-        api = request.response.response.results;
-        for(var i = 0; i < api.length; i++) {
-          // order of requests: headline (webTitle), date (webPublicationDate), url (webUrl), content (fields.body)
-          headlineList.addToList(api[i].webTitle, api[i].fields.body, api[i].webUrl, api[i].webPublicationDate, api[i].fields.thumbnail, api[i].fields.main);
-          console.log("Latest news stories have been added to your list")
-        }
-        display(headlineList);
-      };
-    </script> -->
     <script src="./src/news-controller.js"></script>
     <script src="./src/headline-list-model.js"></script>
     <script src="./src/headline-model.js"></script>
     <script src="./src/headline-list-view.js"></script>
-
+    <script src="./src/main-api.js"></script>
   </body>
 </html>

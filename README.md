@@ -11,15 +11,21 @@ By the end of week 7 all developers can:
 
 Workflow:
 ---
-Screenshots to follow
+Here's the planning overview of my desired MVC framework:
+
+![MVC](./images/MVC.JPG)
+
+Here's the headline list view. For some reason my api request doesn't seem to be bringing in thumbnails. I've left the placeholder there to remind me to fathom it out:
+
+![HeadlineListView](./images/HeadlinelistView.png)
 
 Progress Update:
 ---
 - [x] designed the initial structure using MVC framework - [ref](https://medium.com/@patrickackerman/classic-front-end-mvc-with-vanilla-javascript-7eee550bc702)
-- [ ] Mock an api call and test the display of a headline list
-- [ ] Get the actual api request to communicate with the model
+- [x] Mock an api call and test the display of a headline list
+- [x] Get the actual api request to communicate with the model
 - [ ] Using single page architecture to show a single story
-- [ ] Style the page
+- [x] Style the page - *in a fashion*
 
 *Special thanks*
 -----
