@@ -15,10 +15,15 @@ Screenshots to follow
 
 Progress Update:
 ---
-- [ ] 
-- [ ] 
-- [ ] 
+- [x] designed the initial structure using MVC framework - [ref](https://medium.com/@patrickackerman/classic-front-end-mvc-with-vanilla-javascript-7eee550bc702)
+- [ ] Mock an api call and test the display of a headline list
+- [ ] Get the actual api request to communicate with the model
+- [ ] Using single page architecture to show a single story
+- [ ] Style the page
 
+*Special thanks*
+-----
+Thanks to @CLTPayne whose news api repo is so well documented and structured. I stopped just short of cloning your work.....
 
 
 ## Original Challenge Instructions

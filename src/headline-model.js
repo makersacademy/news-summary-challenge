@@ -1,11 +1,11 @@
 (function(exports) {
-  function Headline(headlineObject, id) {
-    this.headlineObject = headlineObject;
+  function Headline(headline, id) {
+    this.headline = headline;
     this.headlineId = id;
   }
 
   Headline.prototype.headlineText = function() {
-    return this.headlineObject.webTitle
+    return this.headline.webTitle
   };
 
   Headline.prototype.headlineId = function() {
