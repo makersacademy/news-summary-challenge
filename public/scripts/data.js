@@ -4,12 +4,13 @@ $(document).ready(function() {
 
 function getData(){
    $.ajax({
-    url: "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body",
+    url: "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk?show-editors-picks=true&order-by=newest",
     type: 'GET',
     dataType: 'json',
   })
   .done(function(data) {
-    console.log(data)
+    console.log(data.response.editorsPicks)
+    return data.response.editorsPicks
   })
   .fail(function(xhr,status,errorThrown) {
     alert("Sorry, there was a problem. Status: " + status)
