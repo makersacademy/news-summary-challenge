@@ -3,7 +3,7 @@ function NewsManager (newsData) {
 }
 
 NewsManager.prototype = {
-  extractHeadlines: function () {
+  extractOverview: function () {
     return this._results().map(function (result, index) {
       return {
         articleId: index,
@@ -13,11 +13,14 @@ NewsManager.prototype = {
     })
   },
 
-  // extractArticle: function (articleID) {
-  //   return this._results().map(function(result){
-  //     return result.fields.bodyText
-  //   })
-  // },
+  extractArticle: function (articleId) {
+    let rawArticle = this._results()[articleId]
+    return  {
+      title: rawArticle.webTitle,
+      image: rawArticle.fields.thumbnail,
+      bodyText: rawArticle.fields.bodyText
+    }
+  },
 
   _results: function () {
     return this._newsData.response.results

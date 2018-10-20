@@ -8,8 +8,6 @@ function APIQuery (callback) {
   request.send()
 
   request.onreadystatechange = function () {
-   console.log(this.readyState)
-   console.log(this.status)
     if (this.readyState == 4 && this.status == 200) {
       callback(JSON.parse(request.responseText))
     }

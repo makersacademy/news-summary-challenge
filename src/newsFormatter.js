@@ -1,9 +1,13 @@
 
 function NewsFormatter () {}
 
-NewsFormatter.createArticleList = function(headlines) {
-  let list = headlines.map(function(headline, index) {
-    return `<div id="${headline.articleId}"><a href="#article-${headline.articleId + 1}"><h2>${headline.title}</h2></a><img src="${headline.image}" alt="${headline.title}"></div>`
+NewsFormatter.createArticleList = function(overview) {
+  let list = overview.map(function(article, index) {
+    return `<div id="${article.articleId}"><a href="#article-${article.articleId}"><h2>${article.title}</h2></a><img src="${article.image}" alt="${article.title}"></div>`
   })
   return list.join('')
-  }
+}
+
+NewsFormatter.createFullArticleView = function (fullArticleInformation) {
+  return `<div><h2>${fullArticleInformation.title}</h2></a><img src="${fullArticleInformation.image}" alt="${fullArticleInformation.title}"><p>${fullArticleInformation.bodyText}</p></div>`
+}
