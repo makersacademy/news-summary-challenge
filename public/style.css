@@ -22,7 +22,7 @@ h2 {
 }
 
 div.wrapper {
-  text-align: center
+  text-align: center;
 }
 
 .body {
@@ -30,7 +30,8 @@ div.wrapper {
   margin-left: 25%;
 }
 
-.article__body {
+.article__body > p {
+  font-family: 'Playfair Display', serif;
   text-align: left;
   margin-left: 10%;
   margin-right: 10%;

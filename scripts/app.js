@@ -4,18 +4,23 @@ const app = document.getElementById('root');
 const request = new XMLHttpRequest(); // eslint-disable-line
 request.open(
   'GET',
-  `https://content.guardianapis.com/search?order-by=newest&page-size=20&show-fields=body&q=technology&api-key=${
+  `https://content.guardianapis.com/search?show-fields=main%2Cbody&order-by=newest&page-size=30&q=technology&api-key=${
     keys.GUARDIAN_KEY
   }`,
   true,
 );
 request.onload = function () {
   // Begin accessing JSON data here
-  const data = JSON.parse(this.response).response.results;
+  const apiInfo = JSON.parse(this.response);
+  const data = apiInfo.response.results;
+
   if (request.status >= 200 && request.status < 400) {
     data.forEach((article, index) => {
       const wrapper = document.createElement('div');
       wrapper.setAttribute('class', 'wrapper');
+
+      const image = document.createElement('div');
+      image.innerHTML = article.fields.main;
 
       const h2 = document.createElement('h2');
       h2.setAttribute('onclick', `show(${index})`);
@@ -29,6 +34,7 @@ request.onload = function () {
 
       app.appendChild(wrapper);
       wrapper.appendChild(h2);
+      wrapper.appendChild(image);
       wrapper.appendChild(p);
     });
   } else {
@@ -36,6 +42,10 @@ request.onload = function () {
     errorMessage.textContent = "This is an automated message. 'YOU GOOFED'";
     app.appendChild(errorMessage);
   }
+  const annoyingCaption = document.querySelectorAll('figcaption');
+  annoyingCaption.forEach((caption) => {
+    caption.toggleAttribute('hidden', true);
+  });
 };
 
 request.send();
