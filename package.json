@@ -1,0 +1,30 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "single page app summarising Guardian news stories",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gunpowder": "0.0.4"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camjw/news-summary-challenge.git"
+  },
+  "keywords": [
+    "javascript",
+    "noframework",
+    "news",
+    "single",
+    "page"
+  ],
+  "author": "Cameron Whitehead",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/camjw/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/camjw/news-summary-challenge#readme"
+}
