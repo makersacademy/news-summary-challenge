@@ -11,23 +11,26 @@ request.open(
 );
 request.onload = function () {
   // Begin accessing JSON data here
-  const data = JSON.parse(this.response).response;
+  const data = JSON.parse(this.response).response.results;
   if (request.status >= 200 && request.status < 400) {
-    const wrapper = document.createElement('div');
-    wrapper.setAttribute('class', 'wrapper');
+    data.forEach((article, index) => {
+      const wrapper = document.createElement('div');
+      wrapper.setAttribute('class', 'wrapper');
 
-    const h2 = document.createElement('h2');
-    h2.setAttribute('onclick', 'show(1)');
-    h2.textContent = data.content.webTitle;
+      const h2 = document.createElement('h2');
+      h2.setAttribute('onclick', `show(${index})`);
+      h2.setAttribute('class', 'article__header');
+      h2.textContent = article.webTitle;
 
-    const p = document.createElement('p');
-    p.setAttribute('class', 'body-1');
-    p.toggleAttribute('hidden');
-    p.innerHTML = data.content.fields.body.substring(360, 500);
+      const p = document.createElement('p');
+      p.setAttribute('class', `article__body body-${index}`);
+      p.toggleAttribute('hidden');
+      p.innerHTML = article.fields.body;
 
-    app.appendChild(wrapper);
-    wrapper.appendChild(h2);
-    wrapper.appendChild(p);
+      app.appendChild(wrapper);
+      wrapper.appendChild(h2);
+      wrapper.appendChild(p);
+    });
   } else {
     const errorMessage = document.createElement('marquee');
     errorMessage.textContent = "This is an automated message. 'YOU GOOFED'";

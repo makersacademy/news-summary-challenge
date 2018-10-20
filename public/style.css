@@ -3,9 +3,13 @@ body {
   padding: 0;
 }
 
-.img {
+img {
   height: 200px;
+  width: 400px;
   box-shadow: 3px 5px 25px rgba(0,0,0,0.3);
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 3%;
 }
 
 h1 {
@@ -24,4 +28,10 @@ div.wrapper {
 .body {
   width: 50%;
   margin-left: 25%;
+}
+
+.article__body {
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
 }
