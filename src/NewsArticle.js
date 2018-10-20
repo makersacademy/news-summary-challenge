@@ -3,8 +3,8 @@
       this.headline = headline;
   }
 
-  NewsArticle.prototype.returnHeadline = function () {
-    return this.headline.webTitle;
+  NewsArticle.prototype.returnHeadLine = function () {
+    return this.headline;
   };
 
 exports.NewsArticle = NewsArticle;
