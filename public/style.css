@@ -13,6 +13,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-family: 'Courier New', Courier, monospace
+}
+
 div.wrapper {
   text-align: center
 }
