@@ -30,7 +30,7 @@
   }
 
   NewsController.prototype.showSummary = function(article) {
-
+    
   }
 
   exports.NewsController = NewsController

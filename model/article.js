@@ -2,23 +2,23 @@
 
 (function(exports) {
 
-  function Article(headline, body, id, date) {
+  function Article(headline, id, date, link) {
     this.headline = headline
-    this.body = body
     this.id = id
     this.date = date
+    this.link = link
   }
 
   Article.prototype.returnHeadline = function() {
     return this.headline
   }
 
-  Article.prototype.returnBody  = function() {
-    return this.body
-  }
-
   Article.prototype.returnDate = function() {
     return this.date
+  }
+
+  Article.prototype.returnLink = function() {
+    return this.link
   }
 
   exports.Article = Article

@@ -4,7 +4,7 @@
   }
 
   SummaryView.prototype.returnSummary = function() {
-    string = `<div>${this.summary}</div>`
+    string = `<div>${this.summary}<button type='submit' id='back'>Back</button></div>`
     return string
   }
   exports.SummaryView = SummaryView

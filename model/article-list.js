@@ -6,8 +6,8 @@
     this.idCounter = 0
   }
 
- ArticleList.prototype.create = function(headline, body, date) {
-   var article = new Article(headline, body, this.idCounter, date)
+ ArticleList.prototype.create = function(headline, date, url) {
+   var article = new Article(headline, this.idCounter, date, url)
    this.idCounter++
    this.list.push(article)
  }
