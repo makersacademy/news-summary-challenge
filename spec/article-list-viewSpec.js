@@ -25,12 +25,10 @@ describe('Article list view', function() {
     assert.isTrue(articleListView.stringifyHeadline() === "<ul><li><div><a href='article/#0'>An alien was seen eating a burger</a></div></li></ul>")
   })
 
-  
-
-  // it('url contains id', function() {
-  //   window.onload = function() {
-  //     document.getElementById('article0').click();
-  //     assert.isTrue(window.location === 'localhost:8000/article/#0')
-  // }
-  // })
+  it('url contains id', function() {
+    window.onload = function() {
+      document.getElementById('article0').click();
+      assert.isTrue(window.location === 'localhost:8000/article/#0')
+    }
+  })
 })
