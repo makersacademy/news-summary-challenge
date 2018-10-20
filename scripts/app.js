@@ -1,9 +1,12 @@
-const app = document.getElementById('root');
+import keys from '../var.js'; // eslint-disable-line
 
-const request = new XMLHttpRequest();
+const app = document.getElementById('root');
+const request = new XMLHttpRequest(); // eslint-disable-line
 request.open(
   'GET',
-  'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body',
+  `https://content.guardianapis.com/search?order-by=newest&page-size=20&show-fields=body&q=technology&api-key=${
+    keys.GUARDIAN_KEY
+  }`,
   true,
 );
 request.onload = function () {
@@ -14,10 +17,12 @@ request.onload = function () {
     wrapper.setAttribute('class', 'wrapper');
 
     const h2 = document.createElement('h2');
+    h2.setAttribute('onclick', 'show(1)');
     h2.textContent = data.content.webTitle;
 
     const p = document.createElement('p');
-    p.setAttribute('class', 'body');
+    p.setAttribute('class', 'body-1');
+    p.toggleAttribute('hidden');
     p.innerHTML = data.content.fields.body.substring(360, 500);
 
     app.appendChild(wrapper);

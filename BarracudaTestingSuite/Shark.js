@@ -1,5 +1,5 @@
 // A Spy Add-on to the beautiful barracuda framework
-(function(exports) {
+(function (exports) {
   class Shark {
     constructor(className) {
       this.className = className;
@@ -7,12 +7,12 @@
     }
   }
 
-  Shark.prototype.eat = function(method) {
+  Shark.prototype.eat = function (method) {
     this.method = method;
   };
 
-  Shark.prototype.attack = function() {
-    this.methodCallCount++;
+  Shark.prototype.attack = function () {
+    this.methodCallCount += 1;
     return this.method;
   };
 
@@ -23,4 +23,4 @@
   console.log(doubleNote.attack()); */
 
   exports.Shark = Shark;
-})(this);
+}(this));
