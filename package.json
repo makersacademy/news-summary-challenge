@@ -4,6 +4,7 @@
   "description": "A SPA that lists articles from The Guardian",
   "main": "index.js",
   "scripts": {
+    "app": "node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
