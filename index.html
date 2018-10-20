@@ -14,17 +14,28 @@
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
+    // if (this.readyState == 4 && this.status == 200) {
       document.getElementById("demo").innerHTML = this.responseText;
-    }
+    // }
   };
-  xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body", true);
+  xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/2018/oct/20/nicola-sturgeon-quits-bbc-event-over-steve-bannon-invitation?show-fields=body", true);
+
+
+ //curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
+              //     https://www.theguardian.com/science/2018/oct/20/dark-matter-day-scientists-hunt-ghost-particle
+            //       curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
+            //  curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
   xhttp.send();
 }
 </script>
 
 </body>
 </html>
+
+<!-- http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=https://content.guardianapis.com/search?use-date=published&from-date=2018-10-20=body -->
+
+
+
 
 
 
