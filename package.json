@@ -1,0 +1,29 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "A News website that fetches information from an API to display the toppest of quality posts.",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "launch": "open -a Google\\ Chrome --args --disable-web-security --user-data-dir"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kharouk/news-summary-challenge.git"
+  },
+  "author": "Alex Kharouk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kharouk/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/Kharouk/news-summary-challenge#readme"
+}
