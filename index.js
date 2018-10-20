@@ -1,50 +1,45 @@
 const http = require('http')
 const fs = require('fs')
-const port = 3000
+const port = 4000
 
 const server = http.createServer((req,res) => {
   if (req.method === 'GET') {
-    // handle favicon request
-    if (req.url === "/favicon.ico") {
-      fs.readFile('./public/favicon.ico', (err, icon) => {
-        if (err) {
-          console.log('error loading favicon')
-        } else {
-          res.writeHead(200, {'Content-Type': 'image/x-icon'})
-          res.end(icon)
-        }
-      })
+    // gets path of relevant file for html, js, css and favicon requests
+    let filePath = (req.url == "/") ? "./public/index.html" : "./public" + req.url
+
+    // extracts file extension name
+    let filetype = filePath.split('.')[2]
+
+    // hash of content type for each file extension
+    let contentTypeList = {
+      'html': 'text/html',
+      'js': 'text/javascript',
+      'css': 'text/css',
+      'json': 'application/json',
+      'ico': 'image/x-icon'
     }
-    // handle css request
-    else if (req.url == "/mystyle.css") {
-      fs.readFile('./public/mystyle.css', (err, css) => {
-        if (err) {
-          console.log("error reading css")
-        } else {
-          res.writeHead(200, {'Content-Type': 'text/css'})
-          res.end(css)
-        }
-      })
-    }
-    // handle html request
-    else {
-      fs.readFile('./public/index.html', (err, html) => {
-        if (err){
-          console.log("Error loading html")
-        }
-        res.writeHead(200, {'Content-Type': "text/html"})
-        res.end(html)
-      })
-    }
+
+    // returns content type for the request based on filetype
+    let contentType = contentTypeList[filetype]
+
+    // reads file with correct content type
+    fs.readFile(filePath, (err, file) => {
+      if (err) {
+        // returns 404 if no file found
+        res.writeHead(404)
+        res.end()
+      } else {
+        res.writeHead(200, {'Content-Type': contentType})
+        res.end(file)
+      }
+    })
   }
-  // send 403 error for other requests
   else {
+    // returns 403 for any other type of request
     res.writeHead(403)
     res.end()
   }
 });
-
-
 
 server.listen(port, (err) => {
   if (err) {
