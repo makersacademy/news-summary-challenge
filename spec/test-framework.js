@@ -8,7 +8,7 @@ const it = (msg, fn) => describe('  ' + msg, fn)
 const matchers = (exp) => ({
   toBe: (asssertion) => {
     if (exp === assertion) {
-      console.log('%c Test passed!', "color: green")
+      console.log('%c Success!', "color: green")
       return true
     } else {
       throw new Error('Fail!')
@@ -16,9 +16,27 @@ const matchers = (exp) => ({
     }
   },
 
+  toEqual: (asssertion) => {
+    if (exp === assertion) {
+      console.log('%c Success!', "color: green")
+      return true
+    } else {
+      throw new Error('Fail!')
+      return false
+    }
+  },
+
+  notToEqual: (assertion) => {
+    if (exp === assertion) {
+      throw new Error(`Fail! ${exp} is equal to ${assertion}`)
+    } else {
+      console.log(`%c Success! ${exp} is NOT equal to ${assertion}`, "color: green")
+    }
+  },
+
   toContain: (element) => {
     if (exp.includes(element)) {
-      console.log(`%c Test passed! ${exp} includes ${element}!`, "color: green")
+      console.log(`%c Sucess! ${exp} includes ${element}!`, "color: green")
       return true
     } else {
       throw new Error(`Fail ${exp} does not include ${element}!`)
@@ -30,7 +48,7 @@ const matchers = (exp) => ({
     if (exp.includes(element)) {
       throw new Error(`Fail ${exp} includes ${element}!`)
     } else {
-      console.log(`%c Test passed! ${exp} does not include ${element}!`, "color: green")
+      console.log(`%c Success! ${exp} does not include ${element}!`, "color: green")
     }
   }
 })
@@ -42,7 +60,7 @@ var assert = {
     if (!assertionToCheck) {
       throw new Error(`Assertion failed: ${assertionToCheck} is not truthy`);
     } else {
-      console.log("%c Test passed!", "color: green")
+      console.log("%c Success!", "color: green")
     }
   },
 
@@ -50,13 +68,13 @@ var assert = {
     if (!typeof string === "" || !typeof string === '') {
       throw new Error(`${string} is not a string!`)
     } else {
-      console.log(`%c Test passed! ${string} is a string`, "color: green")
+      console.log(`%c Success! ${string} is a string`, "color: green")
     }
   },
 
   isArray: function(array) {
     if ( array instanceof Array) {
-      console.log(`%c Test passed!It is an array!`, "color: green")
+      console.log(`%c Success!It is an array!`, "color: green")
     } else {
       throw new Error(`${array} is not an array!`)
     }
@@ -64,7 +82,7 @@ var assert = {
 
   isEmpty: function(array) {
     if (array.length === 0) {
-      console.log(`%c Test passed! ${array} is empty`, "color: green")
+      console.log(`%c Success! ${array} is empty`, "color: green")
     } else {
       throw new Error(`${array} is not empty!`)
     }
