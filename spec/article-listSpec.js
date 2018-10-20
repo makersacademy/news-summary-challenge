@@ -5,6 +5,10 @@ describe('Article list', function() {
     assert.isTrue(articleList instanceof ArticleList)
   })
 
+  it('starts with an empty array', function() {
+    assert.isEmpty(articleList.list)
+  })
+
   it('can create and store a new article', function() {
     articleList.create('A dinosaur was seen playing with a chicken', 'A dinosaur was playing with a chicken in a green field.')
     assert.isTrue(articleList.list[0].headline === 'A dinosaur was seen playing with a chicken' )
