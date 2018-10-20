@@ -2,5 +2,8 @@
     "extends": "airbnb-base",
     "globals": {
         "Barracuda": true
+    },
+    "rules": {
+        "func-names":"off"
     }
 }

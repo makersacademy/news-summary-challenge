@@ -1,4 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.img {
+  height: 200px;
+  box-shadow: 3px 5px 25px rgba(0,0,0,0.3);
+}
+
 h1 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
+}
+
+div.wrapper {
+  text-align: center
+}
+
+.body {
+  width: 50%;
+  margin-left: 25%;
 }
