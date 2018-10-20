@@ -2,11 +2,12 @@
 
 (function(exports) {
 
-  function Article(headline, id, date, link) {
+  function Article(headline, id, date, link, image) {
     this.headline = headline
     this.id = id
     this.date = date
     this.link = link
+    this.image = image
   }
 
   Article.prototype.returnHeadline = function() {

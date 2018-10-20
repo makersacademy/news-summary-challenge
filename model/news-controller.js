@@ -7,7 +7,7 @@
   }
 
   NewsController.prototype.insertHeadlineHtml = function() {
-    var element = document.getElementById('app')
+    var element = document.getElementById('content')
     element.innerHTML = this.view.stringifyHeadline()
   }
 
@@ -22,15 +22,18 @@
     var article = articles.find(function(story) {
       return story.id === Number(articleId)
     })
-    showSummary(article)
+    this.showSummary(article)
   }
 
   NewsController.prototype.getArticleIdFromUrl = function(location) {
-    return location.hash.split('article/#')[1]
+    return location.hash.split('#article/')[1]
   }
 
   NewsController.prototype.showSummary = function(article) {
-    
+    var url = article.link
+    var title = article.headline
+    var displaySummary = new DisplaySummary(url, title)
+     displaySummary.getSummary()
   }
 
   exports.NewsController = NewsController
