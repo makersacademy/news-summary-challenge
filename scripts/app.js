@@ -26,6 +26,7 @@ request.onload = function () {
       h2.setAttribute('onclick', `show(${index})`);
       h2.setAttribute('class', 'article__header');
       h2.textContent = article.webTitle;
+      h2.innerHTML = `<a href="#${index}">${article.webTitle}</a>`;
 
       const p = document.createElement('p');
       p.setAttribute('class', `article__body body-${index}`);
@@ -42,6 +43,7 @@ request.onload = function () {
     errorMessage.textContent = "This is an automated message. 'YOU GOOFED'";
     app.appendChild(errorMessage);
   }
+
   const annoyingCaption = document.querySelectorAll('figcaption');
   annoyingCaption.forEach((caption) => {
     caption.toggleAttribute('hidden', true);
