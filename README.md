@@ -7,7 +7,7 @@
 
 ### Functionality
 
-- Unfortunately this app doesn't have a lot of functionality. It loads the stories that I selected, when you click on the headline you can see the stories. It's a one page app, but each story doesn't have it's own url yet. 
+- Unfortunately this app doesn't have a lot of functionality. It loads the stories that I selected, and when you click on the headline you can see the stories. It's a one page app, but each story doesn't have it's own URL yet. 
 
 ## Goals of Feedback
 
@@ -17,7 +17,7 @@
  -------
 
  I found this challenge to be one of the most difficult so far: 
- - I tried for a long time to get my page to grab the headlines from a search of the Guardian website. In the end it didn't   work, so I had to select the articles myself. I was also unclear about whether this was the goal of the challenge or not. 
+ - I tried for a long time to get my page to grab the headlines from a search of the Guardian website. I was also unclear about whether this was the goal of the challenge or not. In the end it didn't work, so I had to select the articles myself. 
  - Getting the api to work was quite challenging.
 - I couldn't extract my code to a controller.
 
@@ -28,7 +28,7 @@
 
 ## What I would do if I had more time
 
-- Get some tests going, as I feel very guilty. I felt unable to write any without being at all clear on the technology I was using, and once I'd got some basic functionality of the app the weekend was over. I'm also confused as to how to test this.
+- Get some tests going, as I feel very guilty that I haven't written any! I felt unable to write any as I wasn't at all clear on the technology I was using, and once I'd got some basic functionality going, the weekend was over. I'm also confused as to how to test what I've written.
 
 
 ## What I want to improve on
