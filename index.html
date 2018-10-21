@@ -1,70 +1,51 @@
 <!DOCTYPE html>
 <html>
 <body>
+<h1> Headlines </h1>
 
-<a onclick="loadDoc()" > Conservatives must hold nerve despite Brexit jitters, says Raab </a>
-
-
-
+<h3> <a onclick="loadDoc()" > Conservatives must hold nerve despite Brexit jitters, says Raab </a> </h3>
+<h3> <a onclick="loadDoc2()" > Trump was 'playful' in praising assault on Guardian reporter, Ben Sasse says </a> </h3>
+<h3> <a onclick="loadDoc3()" > MPs press Hunt to take action against Saudis over Khashoggi affair </a> </h3>
 
 <p id="demo"></p>
 
-
 <script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    // if (this.readyState == 4 && this.status == 200) {
-      //var stuff = this.responseText
-      var myObj = JSON.parse(this.responseText);
-      console.log(myObj)
-    //  console.log(myObj.response.results[0].webTitle)
-      var text = myObj.response.content.fields.body
-      console.log(text)
-      //array.map(item => item.webTitle)
-  //    var newArray = []
-      // array.forEach(hash =>
-      //   newArray.push('<a href=" ' + hash.apiUrl + '?api-key=fd20389a-3579-469a-89c4-6d1f42095624' + '">' + hash.webTitle + '</a>')
-      // )
-      //
-      //
-      //   console.log(newArray)
-      document.getElementById("demo").innerHTML = text
-    //  document.getElementById("demo").innerHTML = newArray.join("<p>");
-    //  console.log(array.map(item => item.webTitle))
-      //document.getElementById("demo").innerHTML = myObj.response.results[0].webTitle;
-  };
-  xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/2018/oct/21/conservatives-must-hold-nerve-despite-brexit-jitters-says-raab?show-fields=body", true);
- //curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-              //     https://www.theguardian.com/science/2018/oct/20/dark-matter-day-scientists-hunt-ghost-particle
-            //       curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
-            //  curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-  xhttp.send();
-}
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    var myObj = JSON.parse(this.responseText);
+    var text = myObj.response.content.fields.body
+    document.getElementById("demo").innerHTML = text
+    };
+    xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/2018/oct/21/conservatives-must-hold-nerve-despite-brexit-jitters-says-raab?show-fields=body", true);
+    xhttp.send();
+  }
+
+  function loadDoc2() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    var myObj = JSON.parse(this.responseText);
+    var text = myObj.response.content.fields.body
+    document.getElementById("demo").innerHTML = text
+    };
+    xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/us-news/2018/oct/21/trump-playful-assault-guardian-reporter-ben-sasse?show-fields=body", true);
+    xhttp.send();
+  }
+
+  function loadDoc3() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    var myObj = JSON.parse(this.responseText);
+    var text = myObj.response.content.fields.body
+    document.getElementById("demo").innerHTML = text
+    };
+    xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/2018/oct/21/mps-press-hunt-to-take-action-against-saudis-over-khashoggi-affair?show-fields=body", true);
+    xhttp.send();
+  }
+
 </script>
+
+
 
 </body>
 </html>
-<!-- http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=https://content.guardianapis.com/search?use-date=published&from-date=2018-10-20=body -->
-
-
-
-
-
-
-
-
-
-<!--
-<body>
-
-  <script>
-
-  var xhttp = new XMLHttpRequest();
-
-  xhttp.open("GET", "ajax_info.txt", true);
-  xhttp.send();
-
-  </script>
-
-</body> -->
