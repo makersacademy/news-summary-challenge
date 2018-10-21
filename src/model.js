@@ -1,9 +1,10 @@
 function Model(url) {
   this.data = [];
+  this.individualStory = null;
   this.url = url;
 }
 
-Model.prototype.getNews = async function(cb = null) {
+Model.prototype.getNews = async function(cb=null) {
   let self = this
   xml = new XMLHttpRequest()
   xml.open('GET', this.url, true);
@@ -31,7 +32,7 @@ Model.prototype.parseNews = async function(json) {
   }
 }
 
-Model.prototype.loadNews = async function(cb = () => console.log('loadNews empty callback')) {
+Model.prototype.loadNews = async function(cb=null) {
   try {
     await this.getNews(cb);
   } catch (error) {
@@ -39,7 +40,7 @@ Model.prototype.loadNews = async function(cb = () => console.log('loadNews empty
   }
 }
 
-Model.prototype.getNewsSummary = function(url) {
+Model.prototype.getNewsSummary = function(url, cb=null) {
   let self = this
   var xhr = new XMLHttpRequest();
   var queryUrl = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + url
@@ -47,7 +48,9 @@ Model.prototype.getNewsSummary = function(url) {
   xml.onreadystatechange = async function() {
     if(xml.readyState == 4 && xml.status == 200) {
       var summary = JSON.parse(xml.responseText);
-      cb(self)
+      if (cb !== null) {
+        cb(self)
+      }
     }
   };
   xml.send();

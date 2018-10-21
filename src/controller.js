@@ -5,9 +5,13 @@ function Controller(model, view) {
 
 Controller.prototype.initialise = async function() {
   await this.model.loadNews(() => {
-    this.view.renderNews(this.model.data, () => {
-      this.view.setClickFunctions()
-    });
+    this.view.renderNews(this.model.data);
+  });
+}
+
+Controller.prototype.showIndividualStory = async function() {
+  await this.model.loadNews(() => {
+    this.view.renderNews(this.model.data);
   });
 }
 

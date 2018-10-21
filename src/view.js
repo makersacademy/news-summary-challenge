@@ -31,23 +31,17 @@ View.prototype.renderNews = async function(newsData, cb = null) {
   }
 }
 
-View.prototype.setClickFunctions = function(cb) {
-  let self = this
-  let all = document.getElementsByTagName('*')
-  for (let node of all) {
-    if (node.id.includes('title')) {
-      this.builder.updateClick(node.id, function() {
-        console.log(node.getAttribute('storyurl'))
-      })
-    }
-  }
-}
-
-View.prototype.setDivClickFunction = function(cb, id) {
-  cb(id)
-  console.log("div button clicked")
-}
-
+// View.prototype.setClickFunctions = function(cb) {
+//   let self = this
+//   let all = document.getElementsByTagName('*')
+//   for (let node of all) {
+//     if (node.id.includes('title')) {
+//       this.builder.updateClick(node.id, function() {
+//         console.log(node.getAttribute('storyurl'))
+//       })
+//     }
+//   }
+// }
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = View
