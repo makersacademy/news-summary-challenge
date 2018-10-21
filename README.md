@@ -18,7 +18,6 @@ The app will grab all the headlines from the Guardian newspaper API and display 
 - Run `npm install http-server`
 - Run `node node_modules/http-server/bin/http-server . `
 - Visit `localhost:8080` and enjoy!
-- To run the tests, go to this [link](/Users/mariannerachid/code/makers/course/week7/news-summary-challenge/SpecRunner.html)
 
 ## User Stories
 
