@@ -64,4 +64,4 @@ Last user story not implemented yet. Will do it when I have more time.
 
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
-* [How to Connect to an API with JavaScript](How to Connect to an API with JavaScript)
+* [How to Connect to an API with JavaScript](https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/)
