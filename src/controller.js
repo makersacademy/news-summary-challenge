@@ -9,9 +9,9 @@ Controller.prototype.initialise = async function() {
   });
 }
 
-Controller.prototype.showIndividualStory = async function() {
-  await this.model.loadNews(() => {
-    this.view.renderNews(this.model.data);
+Controller.prototype.showIndividualStory = async function(url) {
+  await this.model.loadSummary(url, () => {
+    this.view.renderSummary(url, this.model.summary, this.model.data);
   });
 }
 

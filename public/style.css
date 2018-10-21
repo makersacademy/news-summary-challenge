@@ -11,13 +11,20 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, a {
- font-weight: 500;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+p {
+  color: #ffffff;
+  font-weight: 100;
 }
 
 a {
   display:inline;
   color: #ffffff
 }
+
 a:after {
     content:"\a";
     white-space: pre;

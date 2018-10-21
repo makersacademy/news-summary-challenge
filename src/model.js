@@ -1,6 +1,6 @@
 function Model(url) {
   this.data = [];
-  this.individualStory = null;
+  this.summary = null;
   this.url = url;
 }
 
@@ -40,14 +40,15 @@ Model.prototype.loadNews = async function(cb=null) {
   }
 }
 
-Model.prototype.getNewsSummary = function(url, cb=null) {
+Model.prototype.getSummary = async function(url, cb=null) {
   let self = this
   var xhr = new XMLHttpRequest();
-  var queryUrl = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + url
+  var queryUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + url
   xml.open("GET", queryUrl, true);
   xml.onreadystatechange = async function() {
     if(xml.readyState == 4 && xml.status == 200) {
       var summary = JSON.parse(xml.responseText);
+      await self.parseSummary(summary)
       if (cb !== null) {
         cb(self)
       }
@@ -55,6 +56,18 @@ Model.prototype.getNewsSummary = function(url, cb=null) {
   };
   xml.send();
 };
+
+Model.prototype.parseSummary = async function(json) {
+  this.summary = json.sentences
+}
+
+Model.prototype.loadSummary = async function(url, cb=null) {
+  try {
+    await this.getSummary(url, cb);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = Model
