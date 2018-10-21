@@ -6,6 +6,7 @@ class ArticleHandler{
 
   async getEverything() {
     let articles = await this.gh.getApi()
+    console.log(articles)
     for ( let i = 0; i < articles.length; i++ ) {
       let summary = await this.ah.getSummary(articles[i].webUrl)
       articles[i].sentences = summary.sentences.join(' ')
