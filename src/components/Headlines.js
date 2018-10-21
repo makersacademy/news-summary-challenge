@@ -1,12 +1,12 @@
 (function(exports){
   var headlines_div = document.getElementById('headlines')
 
-  function renderHeadlines(headlines) {
-    headlines.forEach(function(headline) {
+  function renderLinkedHeadlines(linkedHeadlines) {
+    linkedHeadlines.forEach(function(linkedHeadline) {
 
-      headlines_div.innerHTML += '<div style="display: block">'+headline+'</div>'
+      headlines_div.innerHTML += '<a style="display: block" href=' + linkedHeadline.link + '>'+ linkedHeadline.headline +'</div>'
     })
   }
 
-  exports.renderHeadlines = renderHeadlines
+  exports.renderLinkedHeadlines = renderLinkedHeadlines
 })(this)
