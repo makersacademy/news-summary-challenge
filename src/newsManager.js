@@ -1,8 +1,10 @@
+// takes json object (json parsed Guardian API query response) upon instantiation
 function NewsManager (newsData) {
   this._newsData = newsData
 }
 
 NewsManager.prototype = {
+  // extracts webTitle and thumbnail from json object and adds index as ID
   extractOverview: function () {
     return this._results().map(function (result, index) {
       return {
@@ -12,7 +14,7 @@ NewsManager.prototype = {
       }
     })
   },
-
+  // accesses news article by ID, extracts title, thumbnail, full text and webURL or article, keeps ID (index as per 'extractOverview')
   extractArticle: function (articleId) {
     let rawArticle = this._results()[articleId]
     return  {
@@ -23,7 +25,7 @@ NewsManager.prototype = {
       webURL: rawArticle.webUrl
     }
   },
-
+  // refactor for legibility
   _results: function () {
     return this._newsData.response.results
   }

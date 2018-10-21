@@ -9,7 +9,7 @@ function APIQuery (callback) {
 
   request.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      callback(JSON.parse(request.responseText))
+      callback(JSON.parse(request.responseText)) // this is the object returned by the API query
     }
   }
 }
@@ -22,7 +22,7 @@ function APIQuerySymmarize (articleurl, callback) {
 
   request.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      callback(JSON.parse(request.responseText))
+      callback(JSON.parse(request.responseText)) // this is the parsed object returned by the API query ('newsData' parameter for new newsManager())
     }
   }
 }
