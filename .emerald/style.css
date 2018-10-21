@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    --green: #27ae60;
+    --red: #e84118;
+    --white: #ecf0f1;
+    font-family: 'Roboto', sans-serif;
+    color: #34495e;
+}
+body {
+    background: var(--white);
+}
+.desc {
+    padding-left: 16px;
+}
+.it-pass {
+    color: var(--green);
+}
+
+.it-fail {
+    color: var(--red);
+}
+
+.it-pass, .it-fail {
+    padding-left: 20px;
+}
+
+.test-result {
+    padding-left: 40px;
+}
+
+#num-container {
+    color: var(--white);
+    padding: 7px 16px;
+    margin-bottom: 6px;
+}
+
+.num-failing {
+    background: var(--red);
+}
+
+.num-passing {
+    background: var(--green);
+}
