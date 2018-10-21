@@ -4,20 +4,20 @@ var ViewController = (function() {
   let mainContent = document.getElementById("main-content")
 
   function showTargetView() {
-    let targetView = window.location.hash //#article-0
+    let targetView = window.location.hash //#article-0 / #summary-0
     
     if (targetView.includes('article')) {
-      showFullArticle(targetView)
-    } else if (!window.location.hash) {
-      showHomepage()
+      _showFullArticle(targetView)
     } else if (targetView.includes('summary')) {
-      showSummarizedArticle(targetView)
+      _showSummarizedArticle(targetView)
+    } else if (!window.location.hash) {
+      _showHomepage()
     } else {
       console.log('This page does not exist')  
     }    
   }
 
-  function showFullArticle(targetView) {
+  function _showFullArticle(targetView) {
     let articleIndex = parseInt(targetView.split('-')[1])
     let fullArticleInformation = newsManager.extractArticle(articleIndex)
     let articleView = NewsFormatter.createFullArticleView(fullArticleInformation)
@@ -27,7 +27,7 @@ var ViewController = (function() {
     _showElement(goBack)
   }
 
-  function showSummarizedArticle(targetView) {
+  function _showSummarizedArticle(targetView) {
     let articleIndex = parseInt(targetView.split('-')[1])
     let fullArticleInformation = newsManager.extractArticle(articleIndex)
     let articleurl = fullArticleInformation.webURL
@@ -41,7 +41,7 @@ var ViewController = (function() {
     })
   }
 
-  function showHomepage() {
+  function _showHomepage() {
     let overview = newsManager.extractOverview()
     let formattedOverview = NewsFormatter.createArticleList(overview)
     

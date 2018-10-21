@@ -16,6 +16,7 @@ NewsManager.prototype = {
   extractArticle: function (articleId) {
     let rawArticle = this._results()[articleId]
     return  {
+      articleId: articleId,
       title: rawArticle.webTitle,
       image: rawArticle.fields.thumbnail,
       bodyText: rawArticle.fields.bodyText,
