@@ -1,5 +1,5 @@
 (function(exports){
-  function formatArticles(articles) {
+  function formatArticles(articles, GetSummaryFunc = GetSummary) {
     var formattedArticles = []
     articles.forEach(function(article){
       var formattedArticle = {
