@@ -1,12 +1,12 @@
 (function(exports){
   var headlines_div = document.getElementById('headlines')
 
-  function renderLinkedHeadlines(linkedHeadlines) {
-    linkedHeadlines.forEach(function(linkedHeadline) {
-
-      headlines_div.innerHTML += '<a style="display: block" href=' + linkedHeadline.link + '>'+ linkedHeadline.headline +'</div>'
+  function render(formattedArticles) {
+    formattedArticles.forEach(function(formattedArticle) {
+      headlines_div.innerHTML += '<a style="display: block" href=' + formattedArticle.link + '>'+ formattedArticle.headline +'</div>'
+      headlines_div.innerHTML += '<div style="display: block">' + formattedArticle.summary + '</div>'
     })
   }
 
-  exports.renderLinkedHeadlines = renderLinkedHeadlines
+  exports.render = render
 })(this)

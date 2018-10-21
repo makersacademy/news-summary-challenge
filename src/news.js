@@ -1,27 +1,16 @@
 (function(exports) {
-  var GetNewsFunc, renderLinkedHeadlinesFunc;
+  var GetNewsFunc, renderFunc;
 
-  function News(GetNewsFunc = GetNews, renderLinkedHeadlinesFunc = renderLinkedHeadlines) {
+  function News(GetNewsFunc = GetNews, renderFunc = render) {
     const that = this;
     GetNewsFunc(function(error,result){
       if (error === null) {
         console.log(JSON.parse(result).response.results)
         that.articles = JSON.parse(result).response.results
-        that.linkedHeadlines = that.getLinkedHeadlines(that.articles)
-        renderLinkedHeadlinesFunc(that.linkedHeadlines)
+        that.formattedArticles = formatArticles(that.articles)
+        render(that.formattedArticles)
       }
     });
-  }
-
-  News.prototype.getLinkedHeadlines = function(articles) {
-    var linkedHeadlines = []
-    articles.forEach(function(item) {
-      linkedHeadlines.push({
-        headline: item.webTitle,
-        link: item.webUrl
-      })
-    })
-    return linkedHeadlines
   }
 
   exports.News = News
