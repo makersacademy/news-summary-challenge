@@ -3,6 +3,7 @@ function View(builder = new NodeBuilder()) {
 }
 
 View.prototype.renderNews = function(newsData, cb=null) {
+  let count = 1;
   for (let newsItem of newsData) {
 
     // set names of elements
@@ -16,7 +17,7 @@ View.prototype.renderNews = function(newsData, cb=null) {
     // add title
     let newsTitle = this.builder.createNode('a', 'title' + newsId);
     this.builder.addNode(newsTitle, newsDivId)
-    this.builder.updateText('title' + newsId, newsItem.title);
+    this.builder.updateText('title' + newsId, `${count}. ` + newsItem.title);
     this.builder.addAttribute('title' + newsId, 'href', '#' + newsItem.link);
     this.builder.addAttribute('title' + newsId, 'storyUrl', newsItem.link);
 
@@ -24,6 +25,8 @@ View.prototype.renderNews = function(newsData, cb=null) {
     let newsImage = this.builder.createNode('img', 'img' + newsId)
     this.builder.addNode(newsImage, newsDivId)
     this.builder.addAttribute('img' + newsId, 'src', newsItem.thumbnail)
+
+    count += 1;
   }
   if (cb !== null ) {
     cb()

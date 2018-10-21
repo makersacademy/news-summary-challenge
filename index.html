@@ -6,41 +6,61 @@
 </head>
 
 <body>
-  <h1> News Summary </h1>
-  <div id='newsAnchor'></div>
-  <div id='individualStory'></div>
-  <span id='summarySignal' sig='true'></span>
-  <script src='src/nodeBuilder.js' type='text/javascript'> </script>
-  <script src='src/model.js' type='text/javascript'> </script>
-  <script src='src/view.js' type='text/javascript'> </script>
-  <script src='src/controller.js' type='text/javascript'> </script>
-
+  <div id='header' class='header'>
+    <h1> Guardian News Summary </h1>
+  </div>
   <script>
+    window.onscroll = function() { scroller() };
 
-  let model = new Model('http://content.guardianapis.com/search?show-fields=thumbnail,body&api-key=test');
-  let view = new View();
-  let controller = new Controller(model, view);
-  
-  controller.initialise();
+    var header = document.getElementById("header");
 
-  window.addEventListener("hashchange", updatePage)
+    var sticky = header.offsetTop;
 
-  function updatePage() {
-    let signal = document.getElementById('summarySignal')
-    if (signal.getAttribute('sig') === 'true') {
-      showIndividualStory()
-      signal.setAttribute('sig', 'false')
-    } else {
-      document.getElementById('individualStory').innerHTML = ""
-      controller.initialise()
-      signal.setAttribute('sig', 'true')
+    function scroller() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else if (window.pageYOffset < 70){
+        header.classList.remove("sticky");
+      }
     }
-  }
-
-  function showIndividualStory() {
-    document.getElementById('newsAnchor').innerHTML = '';
-    controller.showIndividualStory(window.location.hash.substr(1))
-  }
-
   </script>
+
+
+  <div class='content'>
+    <div id='newsAnchor'></div>
+    <div id='individualStory' class='newsContainer'></div>
+    <span id='summarySignal' sig='true'></span>
+
+    <script src='src/nodeBuilder.js' type='text/javascript'> </script>
+    <script src='src/model.js' type='text/javascript'> </script>
+    <script src='src/view.js' type='text/javascript'> </script>
+    <script src='src/controller.js' type='text/javascript'> </script>
+
+    <script>
+      let model = new Model('http://content.guardianapis.com/search?show-fields=thumbnail,body&api-key=test');
+      let view = new View();
+      let controller = new Controller(model, view);
+
+      controller.initialise();
+
+      window.addEventListener("hashchange", updatePage)
+
+      function updatePage() {
+        let signal = document.getElementById('summarySignal')
+        if (signal.getAttribute('sig') === 'true') {
+          showIndividualStory()
+          signal.setAttribute('sig', 'false')
+        } else {
+          document.getElementById('individualStory').innerHTML = ""
+          controller.initialise()
+          signal.setAttribute('sig', 'true')
+        }
+      }
+
+      function showIndividualStory() {
+        document.getElementById('newsAnchor').innerHTML = '';
+        controller.showIndividualStory(window.location.hash.substr(1))
+      }
+    </script>
+  </div>
 </body>

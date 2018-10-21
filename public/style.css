@@ -1,13 +1,13 @@
 h1 {
-  color: #ffffff;
-  margin-left: 40%;
-  margin-right: 40%;
+  text-align: center;
+  position: fixed;
 }
 
 body {
  font-family: 'Quicksand', sans-serif;
- font-weight: 300;
- background-color: #ff0d7b
+ font-weight: 500;
+ background-color: #3FEEE6;
+ margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6, a {
@@ -17,15 +17,51 @@ h1, h2, h3, h4, h5, h6, a {
 
 p {
   color: #ffffff;
-  font-weight: 100;
+  font-weight: 150;
+  margin:auto;
 }
 
 a {
-  display:inline;
-  color: #ffffff
+  color: #ffffff;
+  text-align: center;
+  padding: 7px;
+  font-size: 20;
 }
 
 a:after {
-    content:"\a";
-    white-space: pre;
+  content:"\a";
+  white-space: pre;
+}
+
+.newsContainer {
+  margin: 40 auto;
+  background: #55BCC9;
+  padding: 10px
+
+}
+
+img {
+  display: block;
+    margin: auto;
+    width: 40%;
+  padding: 10px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header {
+  padding: 70px;
+  background: #FC4445;
+}
+
+.sticky + .content {
+  padding-top: 700px;
+}
+
+.content {
+  padding: 16px;
 }
