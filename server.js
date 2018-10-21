@@ -38,7 +38,7 @@ const server = http.createServer((req,res) => {
   }
   else {
     // returns 403 for any other type of request
-    res.writeHead(403)
+    res.writeHead(404)
     res.end()
   }
 });
