@@ -1,3 +1,16 @@
 body {
-  background-color: coral;
+  background-color: SlateGray;
+  font: courier;
+}
+
+#title {
+}
+
+
+#header {
+    color: BurlyWood;
+    font: 30px courier;
+    border-bottom: 5px solid BurlyWood;
+    margin-left: 40%;
+    margin-right: 40%;
 }

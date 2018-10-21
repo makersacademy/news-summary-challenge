@@ -1,24 +1,21 @@
-import GuardianHandler from './guardianApi.js'
+import ArticleBuilder from './articleBuilder.js'
 import DomManip from './domManip.js'
+import GuardianHandler from './guardianHandler.js'
+import AylienHandler from './aylienHandler.js'
+import ArticleHandler from './articleHandler.js'
 
-let ga = new GuardianHandler
+let guardianApiKey = 'xxxxxx'
 
+let aylien = new AylienHandler()
 let dm = new DomManip(document)
+let guardian = new GuardianHandler(guardianApiKey)
+let ab
+let ah = new ArticleHandler(guardian, aylien)
 
-async function go() {
-  const articles = await ga.getApi()
-  for ( let i = 1; i < articles.length; i++ ) {
-    console.log(articles[i])
-    console.log(articles[i].id)
-    console.log(articles[i].webTitle)
-    if (articles[i].fields == null) {
-      articles[i].fields = {thumbnail: null}
-    }
-    console.log(articles[i].fields.thumbnail)
-    console.log(articles[i].webUrl)
-    console.log(articles[i].apiUrl)
-  }
+async function initialise() {
+  let articles = await ah.getEverything()
+  ab = new ArticleBuilder(articles, dm)
+  ab.renderArticles()
 }
 
-
-console.log(dm.getIdByClass(".classname"))
+initialise()
