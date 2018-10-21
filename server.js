@@ -15,11 +15,13 @@ const server = http.createServer((req,res) => {
       'html': 'text/html',
       'js': 'text/javascript',
       'css': 'text/css',
+      "png": "image/png",
+      "jpg" : "image/jpeg",
       'json': 'application/json',
       'ico': 'image/x-icon'
     }
 
-    // returns content type for the request based on filetype
+    // sets content type for the request based on filetype
     let mimeType = mimeList[filetype]
 
     // reads file with correct content type
