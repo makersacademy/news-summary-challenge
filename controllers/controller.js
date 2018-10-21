@@ -20,6 +20,7 @@ news.getNews().then((data) => {
 
 function loadSingle(url, title, thumbnail) {
     summary.getSummary(url).then((data) => {
+        console.log(data);
         let div = document.createElement('div');
 
         div.className = 'single-article-container';
@@ -29,6 +30,12 @@ function loadSingle(url, title, thumbnail) {
         <img src=${thumbnail}>
         `
 
-        document.getElementById('articles').appendChild(div)
+        data.sentences.forEach((sentence) => {
+            let e = document.createElement('p');
+            e.innerText = sentence;
+            div.appendChild(e);
+        });
+
+        document.getElementById('articles').replaceWith(div);
     })
 }
