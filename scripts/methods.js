@@ -1,6 +1,19 @@
+const clicked = false;
+
 const show = (num) => {
   const p = document.querySelector(`.body-${num}`);
   p.toggleAttribute('hidden');
 };
 
-const nextArticle = () => {};
+const scrollToTop = () => {
+  document.querySelector('h2').scrollIntoView({
+    behavior: 'smooth',
+  });
+};
+
+const nextArticle = () => {
+  const article = document.querySelector('.wrapper');
+  article.nextElementSibling.scrollIntoView({
+    behavior: 'smooth',
+  });
+};

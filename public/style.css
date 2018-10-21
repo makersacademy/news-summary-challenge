@@ -62,7 +62,16 @@ div.wrapper {
 .scroll {
   position: fixed;
   bottom: 30px;
-  right: 50%;
+  right: 20%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: none
+
+}
+.scroll__next {
+  position: fixed;
+  bottom: 50px;
+  right: 20%;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   border: none
