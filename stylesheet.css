@@ -1,0 +1,34 @@
+body {
+  font-family: verdana;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headline {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.summary {
+  border: 1px black solid;
+  min-height: 50px;
+}
+
+.thumbnail {
+  width: 400px;
+  margin-top: 10px;
+}
