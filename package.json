@@ -1,0 +1,23 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "Guardian news app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebgrebe/news-summary-challenge.git"
+  },
+  "author": "sebgrebe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebgrebe/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/sebgrebe/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

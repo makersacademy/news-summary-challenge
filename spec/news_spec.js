@@ -26,9 +26,6 @@ describe("News", function(){
     it("returns a list of articles with links",function(){
       return expect(news.formattedArticles[1].link).toEqual("https://www.theguardian.com/world/2018/oct/21/trump-nuclear-deal-talks-corker-nafta")
     })
-    it("returns a list of articles with summaries",function(){
-      return expect(news.formattedArticles[1].summary).toEqual("mock Summary")
-    })
     it("returns a list of articles with thumbnails",function(){
       return expect(news.formattedArticles[1].thumbnail).toEqual("https://media.guim.co.uk/a9a983fb83ddea9d51c7e9fc832701da32332d12/0_93_2315_1389/500.jpg")
     })
