@@ -32,9 +32,12 @@
   NewsController.prototype.showSummary = function(article) {
     var url = article.link
     var title = article.headline
-    var displaySummary = new DisplaySummary(url, title)
+    var date = article.date
+    var image = article.image
+    var displaySummary = new DisplaySummary(url, title, date, image)
      displaySummary.getSummary()
   }
+
 
   exports.NewsController = NewsController
 })(this)

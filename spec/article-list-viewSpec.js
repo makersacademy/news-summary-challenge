@@ -22,7 +22,7 @@ describe('Article list view', function() {
   })
 
   it('returns headline as HTML string', function() {
-    assert.isTrue(articleListView.stringifyHeadline() === "<ul><li><div><a href='article/#0'>An alien was seen eating a burger</a><button type='submit' id='full-article0'>Read full article</button></div></li></ul>")
+    assert.isTrue(articleListView.stringifyHeadline() === "<ul><li><div><a href='#article/0'>An alien was seen eating a burger</a><button type='submit' id='full-article0'>Read full article</button></div></li></ul>")
   })
 
   it('url contains id', function() {

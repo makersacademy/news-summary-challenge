@@ -19,7 +19,7 @@ describe('News Controller', function() {
   it('can insert headline HTML', function() {
     window.onload = function() {
       newsController.insertHeadlineHtml()
-      var app = document.getElementById('app')
+      var app = document.getElementById('content')
       assert.isTrue(app.innerHTML ===  '<ul><li><div><a href="article/#0">An alien was seen eating a burger</a></div></li></ul>')
     }
   })

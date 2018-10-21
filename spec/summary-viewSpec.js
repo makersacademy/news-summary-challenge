@@ -6,6 +6,6 @@ describe('Summary view', function() {
   })
 
   it('returns summary html', function() {
-    assert.isTrue(summaryView.returnSummary() === "<div>Zombie invaded Makers Academy on a moonless night and ate all screens<button type='submit' id='back'>Back</button></div>" )
+    assert.isTrue(summaryView.returnSummary() === "<div>Zombie invaded Makers Academy on a moonless night and ate all screens<br><br><button type='submit' id='back'>Back</button></div>" )
   })
 })

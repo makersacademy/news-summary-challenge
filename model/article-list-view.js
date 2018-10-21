@@ -6,9 +6,9 @@
   }
 
   ArticleListView.prototype.stringifyHeadline = function() {
-    var string = '<ul>'
-    this.articleList.list.map(article => string += `<li><div><a href='#article/${article.id}'>${article.headline}</a><button type='submit' id='full-article${article.id}'>Read full article</button></div></li>`)
-    string += '</ul>'
+    var string = ''
+    this.articleList.list.map(article => string += `<div>${article.image}<a href='#article/${article.id}'>${article.headline}</a><button type='submit' id='full-article${article.id}'>Read full article</button></div>`)
+    // string += '</ul>'
     return string
   }
 
