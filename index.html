@@ -21,11 +21,13 @@ function loadDoc() {
       var myObj = JSON.parse(this.responseText);
     //  console.log(myObj.response.results[0].webTitle)
       var array = myObj.response.results
-      //console.log(array)
+      console.log(array)
       //array.map(item => item.webTitle)
       var newArray = []
+
+
       array.forEach(hash =>
-        newArray.push('<a href=" ' + hash.webUrl + '">' + hash.webTitle + '</a>')
+        newArray.push('<a href=" ' + hash.apiUrl + '?api-key=fd20389a-3579-469a-89c4-6d1f42095624' + '">' + hash.webTitle + '</a>')
       )
 
 
