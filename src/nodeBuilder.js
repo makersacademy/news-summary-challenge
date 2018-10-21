@@ -31,10 +31,6 @@ NodeBuilder.prototype.updateText = function(id, value) {
   }
 }
 
-NodeBuilder.prototype.updateClick = function(id, func) {
-  this.getElementById(id).addEventListener('click', func)
-}
-
 NodeBuilder.prototype.getElementById = function(id) {
   return document.getElementById(id);
 }

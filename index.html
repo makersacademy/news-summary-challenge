@@ -20,6 +20,7 @@
   let model = new Model('http://content.guardianapis.com/search?show-fields=thumbnail,body&api-key=test');
   let view = new View();
   let controller = new Controller(model, view);
+  
   controller.initialise();
 
   window.addEventListener("hashchange", updatePage)
