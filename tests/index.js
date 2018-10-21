@@ -1,1 +1,2 @@
-require('./guardianApiSpec');
+// require('./guardianApiSpec');
+require('./domManip.test')

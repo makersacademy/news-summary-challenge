@@ -4,9 +4,9 @@
   "description": "A SPA that lists articles from The Guardian",
   "main": "index.js",
   "scripts": {
-    "app": "node index",
+    "app": "node server",
     "test": "npm run babel && node tests/index",
-    "babel": "npx babel src --out-dir lib"
+    "babel": "npx babel public/src --out-dir lib"
   },
   "repository": {
     "type": "git",
