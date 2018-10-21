@@ -4,7 +4,7 @@
     this.failingTests = 0;
   }
 
-  Assert.protoype.isTrue = function(assertionTocheck) {
+  Assert.prototype.isTrue = function(assertionTocheck) {
     if (!assertionToCheck) {
       throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
     }
