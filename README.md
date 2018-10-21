@@ -141,6 +141,7 @@ Note how the `apiRequestUrl` parameter is just the request you would have made t
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
 * [maker's sample](https://github.com/makersacademy/news-summary-api)
 * [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)
+* [Testing library](https://codeburst.io/a-simple-javascript-test-framework-from-scratch-89d6e7d22e74)
 
 ## Auther
 [Shweta Patil](https://github.com/shwetzpatil)
