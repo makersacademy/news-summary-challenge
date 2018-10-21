@@ -46,6 +46,36 @@ pretzl.batch("DomManip", () => {
     })
   })
 
+  pretzl.batch("createLinkElement", () => {
+    pretzl.bag("createElement called on mockdoc", () => {
+      subject.createLinkElement("testurl")
+      pretzl.bite(mockDoc, "createElement").toHaveBeenEaten()
+    })
+
+    pretzl.bag("setAttribute called for href", () => {
+      // reset all method calls for mockElement
+      mockElement._resetAllCount()
+
+      subject.createLinkElement("testurl")
+      pretzl.bite(mockElement, "setAttribute").toHaveBeenEaten()
+    })
+  })
+
+  pretzl.batch("createImgElement", () => {
+    pretzl.bag("createElement called on mockdoc", () => {
+      subject.createImgElement("testurl")
+      pretzl.bite(mockDoc, "createElement").toHaveBeenEaten()
+    })
+
+    pretzl.bag("setAttribute called for src", () => {
+      // reset all method calls for mockElement
+      mockElement._resetAllCount()
+
+      subject.createImgElement("testurl")
+      pretzl.bite(mockElement, "setAttribute").toHaveBeenEaten()
+    })
+  })
+
   pretzl.batch("addElement", () => {
     pretzl.bag("getElementById called", () => {
       subject.addElement("test", "parentId")
@@ -57,6 +87,13 @@ pretzl.batch("DomManip", () => {
 
       subject.addElement("test", "parentId")
       pretzl.bite(mockElement, "appendChild").toHaveBeenEaten()
+    })
+  })
+
+  pretzl.batch("addText", () => {
+    pretzl.bag("getElementById called", () => {
+      subject.addText
+      pretzl.bite(mockDoc, "getElementById").toHaveBeenEaten()
     })
   })
 

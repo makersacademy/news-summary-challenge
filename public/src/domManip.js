@@ -10,6 +10,18 @@ class DomManip {
     return element
   }
 
+  createLinkElement(linkUrl, id = null, htmlClass = null) {
+    let element = this.createElement("a", id, htmlClass)
+    element.setAttribute('href', linkUrl)
+    return element
+  }
+
+  createImgElement(imgUrl, id = null, htmlClass = null) {
+    let element = this.createElement("img", id, htmlClass)
+    element.setAttribute('src', imgUrl)
+    return element
+  }
+
   addElement(element, parentId) {
     let parentNode = this.getElementById(parentId)
     parentNode.appendChild(element)
@@ -20,10 +32,11 @@ class DomManip {
       this.toggleHidden(hideId)
     })
   }
-  // 
-  // getIdByClass(htmlClass) {
-  //   return this.document.querySelector(htmlClass).id
-  // }
+
+  addText(id, text) {
+    let element = this.getElementById(id)
+    element.innerHTML = text
+  }
 
   toggleHidden(id) {
     let element = this.getElementById(id)
