@@ -32,7 +32,7 @@ var listArticles = articles => articles.forEach(article => {
 
     // headline.textContent = article.summarize({
     //   sentences_number: 5
-    httpRequest.open('GET', "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?" + article.webUrl + "&sentences_number=5")
+    httpRequest.open('GET', "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?" + article.webUrl + "&sentences_number=5");
     httpRequest.send();
     // }, function(error, response) {
     //   if (error === null) {
@@ -43,5 +43,5 @@ var listArticles = articles => articles.forEach(article => {
   })
 });
 
-httpRequest.open('GET', "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?api-key=afe232e7-c432-4f7e-bfb0-08242d4645c8")
+httpRequest.open('GET', "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?api-key=afe232e7-c432-4f7e-bfb0-08242d4645c8");
 httpRequest.send();
