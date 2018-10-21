@@ -33,11 +33,12 @@
        var image = document.getElementById('image')
        image.innerHTML = document.image
 
-       document.getElementById("back").addEventListener("click", function() {
+       document.getElementById("back").addEventListener("click", function(clickEvent) {
+         clickEvent.preventDefault()
          window.location.href = "http://localhost:8080/";
        });
       }
-      
+
      requestSummary.send()
 }
 

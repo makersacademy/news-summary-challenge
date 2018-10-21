@@ -7,12 +7,29 @@ describe('News Controller', function() {
   function MockListView() {}
 
   MockListView.prototype.stringifyHeadline = function() {
-    return '<div><a href="#article/0">An alien was seen eating a burger</a></div>'
+    return '<div><a id="article0" href="#article/0">An alien was seen eating a burger</a></div>'
     }
 
   var newsController = new NewsController(list, MockListView);
 
   it('can be instantiated', function() {
     assert.isTrue(newsController instanceof NewsController)
+  })
+
+  it('can insert headline HTML', function() {
+    window.onload = function() {
+      newsController.insertHeadlineHtml()
+      var app = document.getElementById('article0')
+      assert.isTrue(app.innerHTML ===  'An alien was seen eating a burger')
+    }
+  })
+
+  it('can see headline in summary page', function() {
+    window.onload = function() {
+      newsController.insertHeadlineHtml()
+      document.getElementById('article0').click();
+      var element = document.getElementById('article0')
+      assert.isTrue(element.innerHTML === 'An alien was seen eating a burger')
+    }
   })
 })
