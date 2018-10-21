@@ -1,17 +1,15 @@
 body {
   background-color: #CEE0E5;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 70px;
   text-align: center;
 }
 
 #content {
   text-align: justify;
-
+  font-family: sans-serif;
 }
 
 a {
@@ -30,13 +28,17 @@ img {
 
   border-width: none;
   box-sizing:content-box;
-  width: 400px;
+  width: 410px;
   height: 450px;
   float:right;
   text-align:justify;
   margin-right: 60px;
   margin-bottom: 20px;
 
+}
+
+#headline {
+ font-size: 45px;
 }
 
 #back {

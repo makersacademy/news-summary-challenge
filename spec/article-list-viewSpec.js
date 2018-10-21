@@ -22,13 +22,6 @@ describe('Article list view', function() {
   })
 
   it('returns headline as HTML string', function() {
-    assert.isTrue(articleListView.stringifyHeadline() === "<div>undefined<a href='#article/0'>An alien was seen eating a burger</a><button type='submit' id='full-article0'>Read full article</button></div>")
-  })
-
-  it('url contains id', function() {
-    window.onload = function() {
-      document.getElementById('article0').click();
-      assert.isTrue(window.location === 'localhost:8000/article/#0')
-    }
+    assert.isTrue(articleListView.stringifyHeadline() === "<div id='article'>undefined<a href='#article/0'>An alien was seen eating a burger</a> <br><br><a href='undefined'>Read full article</a></div>")
   })
 })
