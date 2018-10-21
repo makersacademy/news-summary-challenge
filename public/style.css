@@ -5,12 +5,12 @@ body {
 }
 
 img {
-  height: 15%;
-  width: 35%;
+  /* height: 10%; */
+  height: 90%;
+  width: 100%;
   box-shadow: 3px 5px 25px rgba(0,0,0,0.3);
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-bottom: 3%;
+  /* margin-left: 25%;
+  margin-right: 25%; */
 }
 
 h1 {
@@ -25,6 +25,24 @@ h2 {
 
 div.wrapper {
   text-align: center;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.header {
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .wrapper {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .wrapper {
+    flex: 1 1 calc(33% - 2rem);
+  }
 }
 
 .body {
@@ -32,10 +50,21 @@ div.wrapper {
   margin-left: 25%;
 }
 
+
 .article__body > p {
   font-family: 'Playfair Display', serif;
   font-size: 1.4em;
   text-align: left;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.scroll {
+  position: fixed;
+  bottom: 30px;
+  right: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: none
+
 }
