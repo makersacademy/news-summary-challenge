@@ -1,7 +1,7 @@
 (function(exports){
   function GetNews(callback) {
     // const xhr = new XMLHttpRequest();
-    // const url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=body'
+    // const url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail'
     // xhr.onreadystatechange = function(){
     //   if (this.readyState == 4 && this.status == 200) {
     //

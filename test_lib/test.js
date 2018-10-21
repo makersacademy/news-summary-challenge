@@ -21,7 +21,7 @@ const expect = (a) => ({
 const it = (string, test) => {
   var test_div = document.getElementById('test');
   test_div.innerHTML += '<div style="display: block">' + string + '</div>';
-  test_div.innerHTML += (test() ? '<div style="display: block">Test passing</div>': '<div style="display: block">Test failing</div>')
+  test_div.innerHTML += (test() ? '<div style="display: block; color: green">Test passing</div>': '<div style="display: block; color: red">Test failing</div>')
 }
 
 const describe = (string, block) => {

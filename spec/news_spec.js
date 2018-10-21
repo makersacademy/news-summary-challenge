@@ -19,15 +19,18 @@ describe("News", function(){
   })
 
   describe("formattedArticles", function(){
-    console.log(news)
+    console.log(news.formattedArticles)
     it("returns a list of articles with headlines",function(){
-      return expect(news.formattedArticles[1].headline).toEqual("Dismayed  journalists condemn Trump for praising assault on Guardian reporter")
+      return expect(news.formattedArticles[1].headline).toEqual("Trump promise to leave nuclear deal could be bargaining move, Corker says")
     })
     it("returns a list of articles with links",function(){
-      return expect(news.formattedArticles[1].link).toEqual("https://www.theguardian.com/us-news/2018/oct/19/trump-greg-gianforte-guardian-reporter-assault")
+      return expect(news.formattedArticles[1].link).toEqual("https://www.theguardian.com/world/2018/oct/21/trump-nuclear-deal-talks-corker-nafta")
     })
     it("returns a list of articles with summaries",function(){
       return expect(news.formattedArticles[1].summary).toEqual("mock Summary")
+    })
+    it("returns a list of articles with thumbnails",function(){
+      return expect(news.formattedArticles[1].thumbnail).toEqual("https://media.guim.co.uk/a9a983fb83ddea9d51c7e9fc832701da32332d12/0_93_2315_1389/500.jpg")
     })
   })
 

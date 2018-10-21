@@ -21,16 +21,15 @@
       var formattedArticle = {
         headline: article.webTitle,
         link: article.webUrl,
+        thumbnail: article.fields.thumbnail
       }
       that.GetSummary(article.webUrl,function(error,result){
-        console.log(result)
         if (error === null) {
           formattedArticle.summary = result;
-          formattedArticles.push(formattedArticle);
         } else {
           formattedArticle.summary = undefined;
-          formattedArticles.push(formattedArticle);
         }
+        formattedArticles.push(formattedArticle);
       })
     })
     return formattedArticles
