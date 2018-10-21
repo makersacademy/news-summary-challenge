@@ -2,11 +2,12 @@ news = new NewsAPI();
 summary = new SummaryAPI();
 
 news.getNews().then((data) => {
-    console.log(data);
     data.forEach(element => {
         let div = document.createElement('div');
-
-        div.className = 'article-container'
+        div.className = 'article-container';
+        div.addEventListener('click', () => {
+            loadSingle(element.webUrl, element.webTitle, element.fields.thumbnail)
+        });
 
         div.innerHTML = `
         <h1>${element.webTitle}</h1>
@@ -17,12 +18,17 @@ news.getNews().then((data) => {
     });
 });
 
-// let promises = [];
+function loadSingle(url, title, thumbnail) {
+    summary.getSummary(url).then((data) => {
+        let div = document.createElement('div');
 
-// data.forEach(element => {
-//     promises.push(summary.getSummary(element.webUrl, element.webTitle));
-// });
+        div.className = 'single-article-container';
 
-// Promise.all(promises).then((values) => {
-//     console.log(values)
-// })
+        div.innerHTML = `
+        <h1>${title}</h1>
+        <img src=${thumbnail}>
+        `
+
+        document.getElementById('articles').appendChild(div)
+    })
+}
