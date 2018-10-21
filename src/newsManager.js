@@ -25,5 +25,4 @@ NewsManager.prototype = {
   _results: function () {
     return this._newsData.response.results
   }
-
 }
