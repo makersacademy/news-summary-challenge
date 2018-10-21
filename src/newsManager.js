@@ -18,7 +18,8 @@ NewsManager.prototype = {
     return  {
       title: rawArticle.webTitle,
       image: rawArticle.fields.thumbnail,
-      bodyText: rawArticle.fields.bodyText
+      bodyText: rawArticle.fields.bodyText,
+      webURL: rawArticle.webUrl
     }
   },
 
