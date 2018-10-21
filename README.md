@@ -43,21 +43,15 @@ As a busy politician
 I can read the site comfortably on my phone
 Just in case my laptop breaks
 ```
-
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
-```
-
+Last user story not implemented yet. Will do it when I have more time.
 
 ### Headlines page
 
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
+![Headlines page mockup](/images/headlines.png)
 
 ### Article summary page
 
-![Article page mockup](/images/news-summary-project-article-page-mockup.png)
+![Article page mockup](/images/summary.png)
 
 ## Resources
 
