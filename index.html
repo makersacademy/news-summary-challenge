@@ -1,8 +1,25 @@
 <head>
   <title>News Summary App</title>
+  <link rel="stylesheet" href="public/style.css">
   <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
 </head>
 
 <body>
-  <script src='src/fetchAPI.js' type='text/javascript'> </script>
+  <h1> News Summary </h1>
+  <div id='newsAnchor'></div>
+
+  <script src='src/nodeBuilder.js' type='text/javascript'> </script>
+  <script src='src/model.js' type='text/javascript'> </script>
+  <script src='src/view.js' type='text/javascript'> </script>
+  <script src='src/controller.js' type='text/javascript'> </script>
+
+  <script>
+
+  let model = new Model('http://content.guardianapis.com/search?show-fields=thumbnail,body&api-key=test');
+  let view = new View();
+  let controller = new Controller(model, view);
+  controller.initialise();
+
+  </script>
 </body>

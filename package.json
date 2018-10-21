@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "single page app summarising Guardian news stories",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "http-serve": "^1.0.1",
+    "http-server": "^0.11.1"
+  },
   "devDependencies": {
-    "gunpowder": "0.0.4"
+    "gunpowder": "0.0.7"
   },
   "scripts": {
     "test": "node test"

@@ -1,52 +1,43 @@
-class NodeBuilder {
-  createNode(type, id = null, htmlclass = null) {
-    let element = document.createElement(type);
-    if (id) {
-      element.setAttribute('id', id);
-    }
-    if (htmlclass) {
-      element.setAttribute('class', htmlclass);
-    }
-    return element;
-  }
+function NodeBuilder() {
+}
 
-  addNode(node, afterID) {
-    let afterNode = this.getElementById(afterID);
-    afterNode.appendChild(node);
+NodeBuilder.prototype.createNode = function (type, id = null, htmlclass = null) {
+  let element = document.createElement(type);
+  if (id) {
+    element.setAttribute('id', id);
   }
-
-  addAttribute(id, name, initialValue) {
-    let node = this.getElementById(id)
-    node.setAttribute(name, initialValue)
+  if (htmlclass) {
+    element.setAttribute('class', htmlclass);
   }
+  return element;
+}
 
-  updateText(id, value) {
-    let element = this.getElementById(id);
-    if (element === null) {
-      throw new Error('No element with that id');
-    } else {
-      element.innerHTML = value;
-    }
-  }
+NodeBuilder.prototype.addNode = function(node, afterID) {
+  let afterNode = this.getElementById(afterID);
+  afterNode.appendChild(node);
+}
 
-  getParentId(id) {
-    let child = this.getElementById(id)
-    return child.parentNode.id
-  }
+NodeBuilder.prototype.addAttribute = function(id, name, initialValue) {
+  let node = this.getElementById(id)
+  node.setAttribute(name, initialValue)
+}
 
-  getText(id) {
-    return this.getElementById(id).value;
-  }
-
-  updateClick(id, func) {
-    this.getElementById(id).addEventListener('click', func)
-  }
-
-  getElementById(id) {
-    return document.getElementById(id);
+NodeBuilder.prototype.updateText = function(id, value) {
+  let element = this.getElementById(id);
+  if (element === null) {
+    throw new Error('No element with that id');
+  } else {
+    element.innerHTML = value;
   }
 }
 
+NodeBuilder.prototype.updateClick = function(id, func) {
+  this.getElementById(id).addEventListener('click', func)
+}
+
+NodeBuilder.prototype.getElementById = function(id) {
+  return document.getElementById(id);
+}
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = NodeBuilder

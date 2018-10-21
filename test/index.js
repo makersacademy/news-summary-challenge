@@ -1,5 +1,5 @@
 const gunpowder = require('gunpowder')
 
-require('./fetchAPITest')
+require('./getNewsTest')
 
 gunpowder.end()

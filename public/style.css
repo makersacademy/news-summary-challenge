@@ -1,0 +1,24 @@
+h1 {
+  color: #ffffff;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+body {
+ font-family: 'Quicksand', sans-serif;
+ font-weight: 300;
+ background-color: #ff0d7b
+}
+
+h1, h2, h3, h4, h5, h6, a {
+ font-weight: 500;
+}
+
+a {
+  display:inline;
+  color: #ffffff
+}
+a:after {
+    content:"\a";
+    white-space: pre;
+}
