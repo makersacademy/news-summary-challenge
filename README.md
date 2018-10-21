@@ -1,152 +1,37 @@
 # News Summary challenge
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+## How to use
 
-## Challenge
+- Clone this repo
+- Run with http-server, using this guide https://github.com/makersacademy/course/blob/master/pills/http_server.md
 
-As usual please start by forking this repo.
+### Functionality
 
-You'll create an app that summarises the news.
+- Unfortunately this app doesn't have a lot of functionality. It loads the stories that I selected, when you click on the headline you can see the stories. It's a one page app, but each story doesn't have it's own url yet. 
 
-### Guidance
+## Goals of Feedback
 
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+- I think the feedback will be mainly driven by my questions on how to impliment the features that I don't have.
 
-## Project overview
+ What I found challenging
+ -------
 
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
+ I found this challenge to be one of the most difficult so far: 
+ - I tried for a long time to get my page to grab the headlines from a search of the Guardian website. In the end it didn't   work, so I had to select the articles myself. I was also unclear about whether this was the goal of the challenge or not. 
+ - Getting the api to work was quite challenging.
+- I couldn't extract my code to a controller.
 
-### Technologies
+## What I think went well
 
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
+- I'm really please that I managed to understand what was being returned by the API. I was confused for a long time because it looks like a dictionary. Once I realised it was a string that I could use Json with, things got easier. I'm pleased I worked out how to use json, as well. 
+- I've built my confidence a lot this weekend about my research skills. I feel I'm really improving at learning new technologies by myself. 
 
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
+## What I would do if I had more time
 
-But, feel free to use the test framework you wrote during the week!
+- Get some tests going, as I feel very guilty. I felt unable to write any without being at all clear on the technology I was using, and once I'd got some basic functionality of the app the weekend was over. I'm also confused as to how to test this.
 
-### Serving your app
 
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
+## What I want to improve on
 
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+- Interogating what is being returned when I create an object using a new technology. This is the second time that I've made costly assuptions about an object that proved to be incorrect. 
 
-## User Stories
-
-Some of these stories will need decomposing if they seem too large.
-
-```
-As a busy politician
-I can see all of today's headlines in one place
-So I know what the big stories of the day are
-```
-
-```
-As a busy politician
-I can click a link to see the original news article
-So that I can get an in depth understanding of a very important story
-```
-
-```
-As a busy politician
-I can see a summary of a news article
-So I can get a few more details about an important story
-```
-
-```
-As a busy politician
-I can see a picture to illustrate each news article when I browse headlines
-So that I have something nice to look at
-```
-
-```
-As a busy politician
-I can read the site comfortably on my phone
-Just in case my laptop breaks
-```
-
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
-```
-
-## Mockups
-
-### Headlines page
-
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
-
-### Article summary page
-
-![Article page mockup](/images/news-summary-project-article-page-mockup.png)
-
-## API
-
-### API authentication
-
-So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
-
-> Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
-
-### API request rate limits and stubbing
-
-The Guardian and Aylien text summarisation APIs are severely rate-limited.
-
-**Please stub your tests so we don't exceed the daily limit.  Otherwise, all requests will be rejected and everyone's apps will stop working!**
-
-### API Overview
-
-The basic idea is to send an `apiRequestUrl` query parameter to the News Summary API.  The value of this parameter is the URL of the request you *would* have made to the Guardian or Aylien API, minus any API credentials.
-
-### Guardian API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.  Notice how it has a query parameter for `api-key`.
-
-```
-curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this:
-
-```
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-```
-
-Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
-
-### Aylien text summarisation API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make.  Notice how it has headers to authenticate with the Aylien API.
-
-```
-curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
-  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
-  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this.
-
-```
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
-```
-
-Note how the `apiRequestUrl` parameter is just the request you would have made to the Aylien API.  Notice how you don't have to send authentication headers.
-
-### Code
-
-If you're interested, you can see the code for the News Summary API in this repo: https://github.com/makersacademy/news-summary-api
-
-## Resources
-
-* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-* [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
