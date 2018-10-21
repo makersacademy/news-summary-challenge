@@ -32,7 +32,7 @@ var ViewController = (function() {
     let articleIndex = parseInt(targetView.split('-')[1])
     let fullArticleInformation = newsManager.extractArticle(articleIndex)
     let articleurl = fullArticleInformation.webURL
-    // sends query to Aylien API to get summarised text for article, receives back json object ('textSummaryObject') containing text summary (and full text)
+    // sends query to Aylien API, getting back json object, the text of which is parsed into a javascript object ('textSummaryObject') containing text summary (and full text)
     APIQuerySymmarize(articleurl, function (textSummaryObject) {
       let articleSummaryView = NewsFormatter.createSummarizedArticleView(textSummaryObject, fullArticleInformation)
       
