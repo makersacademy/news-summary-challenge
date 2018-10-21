@@ -77,3 +77,12 @@ div.wrapper {
   border: none
 
 }
+.scroll__test {
+  position: fixed;
+  bottom: 70px;
+  right: 20%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: none
+
+}
