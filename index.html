@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Guardian UK News</title>
+</head>
+
+<body>
+  <div><h1 id="headline" style="display: inline-block;">Todays Headlines from The Guardian</h1></div>
+  <div id="main-content"></div>
+
+  <input class="btn go-back" id="go-back" type="button" value="Return to article list" style="display: none;" onclick="window.location.hash = ''">
+ <!-- scripts -->
+  <script src="src/APIQuery.js"></script>
+  <script src="src/newsFormatter.js"></script>
+  <script src="src/newsManager.js"></script>
+
+  <!-- view Control -->
+  <script src="src/viewController.js"></script>
+
+  <!-- entry point -->
+  <script src="index.js"></script>
+</body>
+
+</html>
