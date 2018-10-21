@@ -1,5 +1,5 @@
 var request = new XMLHttpRequest();
-var url = `https://content.guardianapis.com/search?api-key=${GUARDIAN_API}&show-fields=all&q=uk&page-size=12`
+var url = `https://content.guardianapis.com/search?api-key=${GUARDIAN_API}&show-fields=all&q=uk&page-size=13`
 request.open('GET', url, true);
 var articleList = new ArticleList()
 

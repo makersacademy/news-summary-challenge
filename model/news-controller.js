@@ -34,6 +34,7 @@
     var title = article.headline
     var date = article.date
     var image = article.image
+    console.log(image)
     var displaySummary = new DisplaySummary(url, title, date, image)
      displaySummary.getSummary()
   }
