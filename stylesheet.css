@@ -8,6 +8,11 @@ h1 {
 
 a {
   text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: grey;
 }
 
 .content {
@@ -26,6 +31,7 @@ a {
 .summary {
   border: 1px black solid;
   min-height: 50px;
+  margin-bottom: 10px;
 }
 
 .thumbnail {
