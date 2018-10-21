@@ -3,21 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>DDC News</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+    <link href="public/style.css" rel="stylesheet">
   </head>
   <body>
-    <h1>DDC News: For people in the know</h1>
+
+    <div id="app">
+    </div>
+
+    <div class="main-header">
+      <h1>DDC NEWS</h1>
+    </div>
+    <div id="root">
+      <h2>...for people in the know</h2>
+    </div>
 
      <!-- Source files -->
      <script src="src/NewsArticle.js"></script>
      <script src="src/NewsList.js"></script>
      <script src="src/NewsListView.js"></script>
-
+     <script src="src/NewsController.js"></script>
+     <script src="src/script.js"></script>
+     <script type="text/javascript"></script>
+     
      <!-- Spec files -->
      <script src="spec/assert.js"></script>
      <script src="spec/specHelpers.js"></script>
-     <script src="spec/news-article-model-test.js"></script>
-     <script src="spec/news-list-test.js"></script>
-     <script src="spec/news-list-view-test.js"></script>
+     <script src="spec/NewsArticleTest.js"></script>
+     <script src="spec/NewsListTest.js"></script>
+     <script src="spec/NewsListViewTest.js"></script>
+     <script src="spec/NewsControllerTest.js"></script>
 
   </body>
 </html>
