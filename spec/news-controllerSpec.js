@@ -23,13 +23,4 @@ describe('News Controller', function() {
       assert.isTrue(app.innerHTML ===  'An alien was seen eating a burger')
     }
   })
-
-  it('can see headline in summary page', function() {
-    window.onload = function() {
-      newsController.insertHeadlineHtml()
-      document.getElementById('article0').click();
-      var element = document.getElementById('article0')
-      assert.isTrue(element.innerHTML === 'An alien was seen eating a burger')
-    }
-  })
 })
