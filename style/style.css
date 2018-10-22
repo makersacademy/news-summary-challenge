@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    --background-grey: #e9ebee;
+    --border-grey: #dddfe2;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: var(--background-grey);
+}
+
+h1 {
+    margin: 20px;
+}
+
+img {
+    margin-bottom: 20px;
+}
+.article-container {
+    text-align: center;
+    border: 1px solid var(--border-grey);
+    background: white;
+    width: 100%;
+}
+
+#articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
