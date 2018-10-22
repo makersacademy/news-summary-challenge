@@ -4,13 +4,13 @@ let headlines_div = document.getElementById('headlines')
 let summary_div = document.getElementById('summary')
 
 function clickSummaryBtn(id,GetSummaryFunc = GetSummary) {
-  removeSummary()
   removeHeadlines()
   GetSummaryFunc(news.formattedArticles[id].link,function(error,summary){
+    removeSummary()
     if (error === null) {
       renderSummary(news.formattedArticles[id], summary)
     } else {
-      renderSummary(news.formattedArticles[id], "Sorry, could not retrieve summary")
+      renderSummary(news.formattedArticles[id], "Loading...")
     }
   })
 }
