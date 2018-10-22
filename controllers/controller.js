@@ -18,6 +18,8 @@ news.getNews().then((data) => {
     });
 });
 
+// TODO: Make it so all API's load at the start and transition between clicks will be more seamless.
+
 function loadSingle(url, title, thumbnail) {
     summary.getSummary(url).then((data) => {
         console.log(data);
