@@ -8,6 +8,7 @@ Makers Week 7 Friday challenge.
 
 * See the 10 most recent headlines on the home page
 * Click on the headlines to see the actual article on the Guardian homepage  
+* See tests in testRunner.html
 
 ## Tech stack  
 * VanillaJS for frontend
