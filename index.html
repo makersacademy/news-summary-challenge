@@ -14,7 +14,10 @@
   function loadDoc() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
+      console.log(this.responseTest)
     var myObj = JSON.parse(this.responseText);
+    console.log(this.responseText)
+
     var text = myObj.response.content.fields.body
     document.getElementById("demo").innerHTML = text
     };
