@@ -1,6 +1,4 @@
 (function(exports) {
-
-
   function describe(description, func) {
     console.log(description)
     func()
@@ -43,7 +41,7 @@
     }
   }
 
-  exports.expect = expect
   exports.describe = describe
   exports.it = it
+  exports.expect = expect
 })(this)
