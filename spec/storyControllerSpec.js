@@ -10,6 +10,6 @@ describe("storyController", function() {
     element.id = 'story'
     document.body.appendChild(element)
     storyController.updateText();
-    expect(element.innerHTML).toEqual('<ul><li><div id="0">News story</div></li></ul>')
+    expect(element.innerHTML).toEqual('<ul><li><div id="0"><a href="0">News story</a></div></li></ul>')
   });
 });
