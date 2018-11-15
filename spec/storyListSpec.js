@@ -1,6 +1,6 @@
 describe("storyList", function() {
   it("shows a list of story healines", function() {
-    function StoryDouble(story) {this.headline = story; };
+    function StoryDouble(headline) {this.headline = headline; };
 
     var firstStoryDouble = new StoryDouble("News story");
     var secondStoryDouble = new StoryDouble("Another news story");
