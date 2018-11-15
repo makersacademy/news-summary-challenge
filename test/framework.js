@@ -1,26 +1,17 @@
 (function(exports) {
 
-  var beforeFunctions = []
-
-  function expect(arg) {
-    return matchers(arg)
-  }
 
   function describe(description, func) {
     console.log(description)
     func()
-    beforeFunctions = []
   }
 
   function it(description, func) {
-    var savedBeforeFunctions = beforeFunctions
-    beforeFunctions.forEach(func => { func.call() })
     describe(" # " + description, func)
-    beforeFunctions = savedBeforeFunctions
   }
 
-  function beforeEach(func) {
-    beforeFunctions.push(func)
+  function expect(arg) {
+    return matchers(arg)
   }
 
   function matchers(arg) {
