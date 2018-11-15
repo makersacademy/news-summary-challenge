@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1> Headlines </h1>
+
+<h3> <a onclick="loadDoc()" > Conservatives must hold nerve despite Brexit jitters, says Raab </a> </h3>
+<h3> <a onclick="loadDoc2()" > Trump was 'playful' in praising assault on Guardian reporter, Ben Sasse says </a> </h3>
+<h3> <a onclick="loadDoc3()" > MPs press Hunt to take action against Saudis over Khashoggi affair </a> </h3>
+
+
+<p id="demo"></p>
+
+<script>
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      console.log(this.responseTest)
+    var myObj = JSON.parse(this.responseText);
+    console.log(this.responseText)
+
+    var text = myObj.response.content.fields.body
+    document.getElementById("demo").innerHTML = text
+    };
+    xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/2018/oct/21/conservatives-must-hold-nerve-despite-brexit-jitters-says-raab?show-fields=body", true);
+    xhttp.send();
+  }
+
+  function loadDoc2() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    var myObj = JSON.parse(this.responseText);
+    var text = myObj.response.content.fields.body
+    document.getElementById("demo").innerHTML = text
+    };
+    xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/us-news/2018/oct/21/trump-playful-assault-guardian-reporter-ben-sasse?show-fields=body", true);
+    xhttp.send();
+  }
+
+  function loadDoc3() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    var myObj = JSON.parse(this.responseText);
+    var text = myObj.response.content.fields.body
+    document.getElementById("demo").innerHTML = text
+    };
+    xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/2018/oct/21/mps-press-hunt-to-take-action-against-saudis-over-khashoggi-affair?show-fields=body", true);
+    xhttp.send();
+  }
+
+</script>
+
+
+
+</body>
+</html>
