@@ -7,7 +7,7 @@
   StoryListView.prototype.returnList = function () {
     view += "<ul>";
     for(var i = 0; i < this.storyList.length; i++) {
-      view += `<li><div>${this.storyList[i]}</div></li>`
+      view += `<li><div id='${i}'>${this.storyList[i]}</div></li>`
     }
     view += "</ul>";
     return view;
