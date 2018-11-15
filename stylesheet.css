@@ -1,0 +1,44 @@
+body {
+  font-family: verdana;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: grey;
+}
+
+.headlines {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headline {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn {
+  border: 1px black solid;
+  height: 30px;
+  width: 70px;
+  margin-bottom: 10px;
+  cursor: Pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thumbnail {
+  width: 400px;
+  margin-top: 10px;
+}
