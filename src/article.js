@@ -1,6 +1,6 @@
 class Article {
-  constructor(body) {
-    this.body = body
+  constructor(headline) {
+    this.headline = headline
   }
 }
 
