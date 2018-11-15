@@ -13,28 +13,41 @@
   }
 
   function matchers(arg) {
+    var pass = '   %cP'
+    var passColour = 'color: green'
+    var fail = '   %cF'
+    var failColour = 'color: red'
+
     return {
-      isEqualTo: function(argTwo) {
-        if (arg !== argTwo) {
-          console.log('   %cF', 'color:red')
-          throw new Error(`Assertion failed: ${arg} does not equal ${argTwo}`)
+      toBeTruthy: function() {
+        if (!!arg) {
+          console.log(pass, passColour)
         } else {
-          console.log('   %cP', 'color:green')
+          console.log(fail, failColour)
+          throw new Error(`Assertion failed: ${arg} is not truthy`)
+        }
+      },
+      isEqualTo: function(argTwo) {
+        if (arg === argTwo) {
+          console.log(pass, passColour)
+        } else {
+          console.log(fail, failColour)
+          throw new Error(`Assertion failed: ${arg} does not equal ${argTwo}`)
         }
       },
       isInstanceOf: function(argTwo) {
         if (arg instanceof argTwo) {
-          console.log('   %cP', 'color:green')
+          console.log(pass, passColour)
         } else {
-          console.log('   %cF', 'color:red')
+          console.log(fail, failColour)
           throw new Error(`Assertion failed: ${arg} is not an instance of ${argTwo}`)
         }
       },
       includes: function(argTwo) {
         if (arg.includes(argTwo)) {
-          console.log('   %cP', 'color:green')
+          console.log(pass, passColour)
         } else {
-          console.log('   %cF', 'color:red')
+          console.log(fail, failColour)
           throw new Error(`Assertion failed: ${arg} does not include ${argTwo}`)
         }
       },
