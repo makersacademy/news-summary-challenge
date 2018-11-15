@@ -3,6 +3,7 @@ describe("storyList", function() {
     var storyList = new StoryList
     storyList.addStory("News story")
     storyList.addStory("Another news story")
-    expect(storyList.list).toEqual(["News story", "Another news story"])
+    expect(storyList.list[0]).toEqual("News story")
+    expect(storyList.list[1]).toEqual("Another news story")
   });
 });
