@@ -6,9 +6,8 @@ fetch(url).then(response => {
   console.log(data);
   let stories = data.response.results;
   stories.forEach(story => {
-    let headline = story.webTitle;
     let para = document.createElement('p');
-    para.innerHTML = '<a href="' + story.webUrl + '">' + story.webTitle +'</a>';
+    para.innerHTML = `<a href="${story.webUrl}">${story.webTitle}</a>`
     document.body.appendChild(para);
   });
 }).catch(err => {
