@@ -1,4 +1,28 @@
 (function(exports) {
+
+  var beforeFunctions = []
+
+  function expect(arg) {
+    return matchers(arg)
+  }
+
+  function describe(description, func) {
+    console.log(description)
+    func()
+    beforeFunctions = []
+  }
+
+  function it(description, func) {
+    var savedBeforeFunctions = beforeFunctions
+    beforeFunctions.forEach(func => { func.call() })
+    describe(" # " + description, func)
+    beforeFunctions = savedBeforeFunctions
+  }
+
+  function beforeEach(func) {
+    beforeFunctions.push(func)
+  }
+
   function matchers(arg) {
     return {
       isEqualTo: function(argTwo) {
@@ -26,19 +50,6 @@
         }
       },
     }
-  }
-
-  function expect(arg) {
-    return matchers(arg)
-  }
-
-  function describe(desc, func) {
-    console.log(desc)
-    return func()
-  }
-
-  function it(msg, func) {
-    return describe(" # " + msg, func)
   }
 
   exports.expect = expect
