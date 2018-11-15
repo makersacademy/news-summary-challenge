@@ -1,18 +1,23 @@
 (function(exports) {
 
   var beforeFunctions = [];
-  
+
+  var padding = "";
 
   function describe(description, callback) {
-    console.log(description);
+    padding += "  ";
+    console.log(padding + description);
     callback();
     beforeFunctions = [];
+    padding = padding.substring(2);
   }
 
   function it(description, callback) {
+    padding += "  ";
     beforeFunctions.forEach((callback) => { callback.call(); });
-    console.log(description);
+    console.log(padding + description);
     callback();
+    padding = padding.substring(2);
   }
 
   function beforeEach(callback) {
@@ -23,10 +28,10 @@
     return {
       toBe: function(expression2){
         if (expression1 === expression2) {
-          console.log("  :)");
+          console.log(padding + "%c  :)", "color: green");
           return true;
         } else {
-          console.log(`  Error: expected "${expression1}" to equal "${expression2}"`);
+          console.log(padding+`%c  Error: expected "${expression1}" to equal "${expression2}"`, "color: red");
           return false;
         }
       },
@@ -35,14 +40,14 @@
           expression1.includes(element);
         }
         catch(err) {
-          console.log(` Error: ${expression1} does not have an include() method`);
+          console.log(padding+`%c  Error: ${expression1} does not have an include() method`, "color: red");
           return false;
         }
         if (expression1.includes(element)) {
-          console.log("  :)");
+          console.log(padding + "%c  :)", "color: green");
           return true;
         } else {
-          console.log(`  Error: expected "${expression1}" to include "${element}"`);
+          console.log(padding+`%c  Error: expected "${expression1}" to include "${element}"`, "color: red");
           return false;
         }
       }
@@ -53,4 +58,5 @@
   exports.expect = expect;
   exports.beforeFunctions = beforeFunctions;
   exports.beforeEach = beforeEach;
+  exports.padding = padding;
 })(this);
