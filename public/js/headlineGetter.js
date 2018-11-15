@@ -23,8 +23,9 @@ window.addEventListener("hashchange", () => {
   var id = window.location.hash.split("/")[1];
   var article = articleHash[id];
   var articleDiv = document.getElementById("article");
-  fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${article.webUrl}`)
-  .then((response) => {
+  var promise = fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${article.webUrl}`)
+  console.log(promise);
+  promise.then((response) => {
     return response.json();
   })
   .then((json) => {

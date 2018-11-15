@@ -4,10 +4,15 @@
     this.url = url;
     this.headline = headline;
     this.summariser = summariser;
+    this.content = "not yet loaded";
+    this._setContent();
   }
 
-  Article.prototype.url = function() {
-    return this.url;
+  Article.prototype._setContent = function() {
+    fetch(this.summariser + this.url)
+    .then((response) => { return response.json(); })
+    .then((json) => { this.content = json.text; });
   };
+
   exports.Article = Article;
 })(this);
