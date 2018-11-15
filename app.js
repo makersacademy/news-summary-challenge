@@ -1,11 +1,17 @@
-fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body").then(response => {
+let url = "https://content.guardianapis.com/search?api-key=a2b7e67e-d194-46ae-9d15-5b21a1fc543f";
+fetch(url).then(response => {
   return response.json();
 }).then(data => {
   // Work with JSON data here
   console.log(data);
-  let body = data.response.content.fields.body;
-  document.body.innerHTML = body;
+  let stories = data.response.results;
+  stories.forEach(story => {
+    let headline = story.webTitle;
+    let para = document.createElement('p');
+    para.innerHTML = '<a href="' + story.webUrl + '">' + story.webTitle +'</a>';
+    document.body.appendChild(para);
+  });
 }).catch(err => {
   // Do something for an error here
-  console.log("🌈");
+  console.log(err);
 });
