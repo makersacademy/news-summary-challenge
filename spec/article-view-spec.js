@@ -1,11 +1,9 @@
 describe("ArticleView", function() {
-  var article1 = new Article(new ArticleList(), 1, "http://www.test.com", "Headline");
-  var articleView1 = new ArticleView(article1);
-
+  beforeEach(setupTestVariables);
   describe(".render()", function() {
     it("returns html of article content", function() {
-      article1.content = "CONTENT"
-      expect(articleView1.render()).toBe("<p>CONTENT</p>");
+      article1.content = "CONTENT";
+      expect(articleView1.render()).toBe("<img src='http://img1.com'><p>CONTENT</p>");
     });
   });
 });

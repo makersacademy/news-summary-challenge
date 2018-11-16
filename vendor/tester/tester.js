@@ -8,7 +8,6 @@
     padding += "  ";
     console.log(padding + description);
     callback();
-    beforeFunctions = [];
     padding = padding.substring(2);
   }
 

@@ -2,8 +2,8 @@
   function ArticleList() {
     this.articles = [];
   }
-  ArticleList.prototype.create = function(url, headline) {
-    article = new Article(this, this._nextID(), url, headline);
+  ArticleList.prototype.create = function(url, headline, imageURL) {
+    article = new Article(this, this._nextID(), url, headline, imageURL);
     this.articles.push(article);
     return article;
   };

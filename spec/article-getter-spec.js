@@ -1,13 +1,8 @@
 describe("ArticleGetter", function() {
   getter = new ArticleGetter();
+  beforeEach(stubFetch);
   describe(".getArticles()", function() {
     it("gets articles from api", function() {
-      json.response = {
-        results: [
-          {webTitle: "HEADLINE1", webUrl: "http://test1.com"},
-          {webTitle: "HEADLINE2", webUrl: "http://test2.com"}
-        ]
-      };
       var articleListPromise = getter.getArticles("http://url.com");
       expect(passedURL).toBe("http://url.com");
       articleListPromise.then((promiseValue) => {

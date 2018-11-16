@@ -1,5 +1,6 @@
 describe("ArticleList", function() {
   var articleList = new ArticleList();
+
   describe(".articles", function() {
     it("returns an empty array initially", function() {
       expect(articleList.articles.length).toBe(0);

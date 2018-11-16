@@ -1,13 +1,24 @@
-<p>HELLO WORLD</p>
+<head>
+  <link rel="stylesheet" href="./public/css/style.css">
+</head>
 
-<div id="headlines"></div>
-<div id="article"></div>
+<body>
+  <div id="articleListContainer">LOADING - PLEASE WAIT</div>
+  <div id="articleContainer"></div>
 
-<script src="src/article.js"></script>
-<script src="src/article-list.js"></script>
-<script src="src/article-view.js"></script>
-<script src="src/article-list-view.js"></script>
-<script src="src/article-controller.js"></script>
-<script>
-  var articleList = new ArticleList();
-</script>
+  <script src="src/article.js"></script>
+  <script src="src/article-list.js"></script>
+  <script src="src/article-view.js"></script>
+  <script src="src/article-list-view.js"></script>
+  <script src="src/article-controller.js"></script>
+  <script src="src/article-getter.js"></script>
+  <script>
+    var getter = new ArticleGetter();
+    getter.getArticles("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics?show-fields=thumbnail")
+    .then((articleList) => {
+      var controller = new ArticleController(articleList);
+      controller.loadHTML(controller.articleListView, "articleListContainer");
+      controller.listenForHashChange("articleContainer");
+    })
+  </script>
+</body>

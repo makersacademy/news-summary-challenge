@@ -1,0 +1,16 @@
+li {
+  list-style-type: none;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.article-headline {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.article-image {
+
+}

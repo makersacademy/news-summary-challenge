@@ -12,13 +12,13 @@ ArticleGetter.prototype.getArticles = function(url) {
   })
   .then((articles) => {
     articles.forEach((article) => {
-      articleList.create(article.webUrl, article.webTitle);
+      articleList.create(article.webUrl, article.webTitle, article.fields.thumbnail);
     });
     return articleList;
   })
   .then((articleList) => {
     var promiseList = articleList.articles.map((article) => {
-      return article._setContent();
+      return article.setContent();
     });
     return Promise.all(promiseList);
   })
@@ -26,5 +26,3 @@ ArticleGetter.prototype.getArticles = function(url) {
     return articleList;
   });
 };
-
-// I THINK IN MY FILE THAT ULTIMATELY DOES STUFF, IT SHOULD BASICALLY START WITH A PROMISE AND WHEN IT'S DONE ('THEN') set up all the variables and go from there
