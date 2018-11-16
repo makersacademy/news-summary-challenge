@@ -3,5 +3,9 @@
     this.articleList = articleList;
   }
 
-  exports.ArticleListView = ArticleListView
+  ArticleListView.prototype.html = function() {
+    return '<ul></ul>'
+  };
+
+  exports.ArticleListView = ArticleListView;
 })(this);
