@@ -3,6 +3,10 @@
 import env from '../.env.js';
 
 export default class NewsController {
+  constructor(name) {
+    this.name = name;
+  }
+
   render() {
     console.log(this);
     const url = `https://content.guardianapis.com/search?api-key=${env.API_KEY}`;
