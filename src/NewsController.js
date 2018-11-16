@@ -1,12 +1,11 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
-import getApiKey from '../.env.js';
+import env from '../.env.js';
 
 export default class NewsController {
   render() {
     console.log(this);
-    const API_KEY = getApiKey();
-    const url = `https://content.guardianapis.com/search?api-key=${API_KEY}`;
+    const url = `https://content.guardianapis.com/search?api-key=${env.API_KEY}`;
     fetch(url)
       .then(response => response.json())
       .then((data) => {
