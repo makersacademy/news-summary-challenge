@@ -1,3 +1,21 @@
+body {
+  background-color: white;
+  font-family: helvetica;
+}
+
+h1 {
+  background-color: #0F7DC2;
+  width: 100%;
+  padding: 0.75em;
+  color: white;
+}
+
 ul {
   list-style-type: none;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+  font-size: 1.5em;
 }
