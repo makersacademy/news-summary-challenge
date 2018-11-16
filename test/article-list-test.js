@@ -9,7 +9,7 @@ describe('An article list', () => {
 
   it('can store a list of articles', () => {
     expect(list.articles).isInstanceOf(Array)
-    expect(list.articles.length < 1).toBeTruthy()
+    expect(list.articles.length === 0).toBeTruthy()
   })
 
   it('can create an article and store it in its list', () => {
