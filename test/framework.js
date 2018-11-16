@@ -1,7 +1,7 @@
 (function(exports) {
   function matchers(arg) {
     return {
-      isEqualTo: function(argTwo) {
+      toEqual: function(argTwo) {
         if (arg !== argTwo) {
           console.log('   %cF', 'color:red')
           throw new Error(`Assertion failed: ${arg} does not equal ${argTwo}`)
