@@ -7,6 +7,11 @@
     this.articles.push(article);
     return article;
   };
+  ArticleList.prototype.find = function(id) {
+    return this.articles.find((article) => {
+      return article.id === id;
+    });
+  };
   ArticleList.prototype._nextID = function() {
     return this.articles.length+1;
   };

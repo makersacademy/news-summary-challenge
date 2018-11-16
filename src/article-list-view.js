@@ -11,5 +11,5 @@ ArticleListView.prototype.render = function() {
 };
 
 ArticleListView.prototype._list = function(article) {
-  return `<li><a href='/articles#${article.id}'>${article.headline}</a></li>`;
+  return `<li><a href='#articles/${article.id}'>${article.headline}</a></li>`;
 };

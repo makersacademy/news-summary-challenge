@@ -16,4 +16,10 @@ describe("ArticleList", function() {
       expect(article2.id).toBe("2");
     });
   });
+  describe(".find()", function() {
+    it("finds article with passed ID", function() {
+      var article2 = articleList.articles[1];
+      expect(articleList.find("2")).toBe(article2);
+    });
+  });
 });
