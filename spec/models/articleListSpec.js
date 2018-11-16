@@ -13,4 +13,15 @@ describe('ArticleList', function() {
       expect(articleList.getArticles()[0]).toEqual(double);
     });
   });
+
+  describe('#add', function() {
+    it('adds an article to the articleList', function() {
+      var articleList = new ArticleList()
+      articleList.add("Headline", "Body")
+
+      expect(articleList.getArticles()[0].getHeadline()).toEqual('Headline');
+      expect(articleList.getArticles()[0].getBody()).toEqual('Body');
+
+    });
+  });
 });
