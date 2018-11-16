@@ -6,6 +6,7 @@ describe("ArticleHeadlinesController", function() {
       expect(articleHeadlinesController.articleList).toBe(articleList);
     });
     it("should initialize a new article list view object which takes the same article list object as the controller", function() {
+      expect(articleHeadlinesController.articleListView instanceof ArticleListView).toBe(true);
       expect(articleHeadlinesController.articleListView.articleList).toBe(articleList);
     });
   });
