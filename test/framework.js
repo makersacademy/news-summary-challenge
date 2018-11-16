@@ -1,4 +1,4 @@
-function(exports) {
+(function(exports) {
   function matchers(arg) {
     return {
       isEqualTo: function(argTwo) {
