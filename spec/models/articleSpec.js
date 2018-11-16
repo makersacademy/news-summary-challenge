@@ -10,4 +10,11 @@ describe('Article', function() {
       expect(article.getHeadline()).toEqual("This is a headline");
     });
   });
+
+  describe('#getBody', function() {
+    it('returns the body of the article', function() {
+      var article = new Article("This is a headline", 'This is the body')
+      expect(article.getBody()).toEqual('This is the body');
+    });
+  });
 });
