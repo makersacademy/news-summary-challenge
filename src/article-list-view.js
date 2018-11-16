@@ -5,7 +5,7 @@ class ArticleListView {
 
   renderListHTML() {
     var html = this.articleList.articles.map(
-      article => `<li><a href='#articles/0'>${article.headline}</a></li>`
+      article => `<li><a href='#articles/${article.id}'>${article.headline}</a></li>`
     ).join('')
     return `<ul>${html}</ul>`
   }
