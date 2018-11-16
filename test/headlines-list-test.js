@@ -1,4 +1,4 @@
-import { HeadlinesList } from '../src/article-list.js'
+import { HeadlinesList } from '../src/headlines-list.js'
 
 describe('An article list', () => {
   var list
