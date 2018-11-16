@@ -1,11 +1,21 @@
 (function(exports) {
+  var beforeActions = []
+
+  function beforeEach(actions) {
+    beforeActions.push(actions)
+  }
+
   function describe(description, func) {
     console.log(description)
     func()
+    beforeFunctions = []
   }
 
   function it(description, func) {
-    describe(" # " + description, func)
+    var savedBeforeActions = beforeActions
+    beforeActions.forEach(action => { action.call() })
+    describe(" # " + description, func)
+    beforeActions = savedBeforeActions
   }
 
   function expect(arg) {
@@ -54,6 +64,7 @@
     }
   }
 
+  exports.beforeEach = beforeEach
   exports.describe = describe
   exports.it = it
   exports.expect = expect
