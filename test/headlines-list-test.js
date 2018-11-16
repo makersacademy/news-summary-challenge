@@ -1,10 +1,10 @@
-import { ArticleList } from '../src/article-list.js'
+import { HeadlinesList } from '../src/article-list.js'
 
 describe('An article list', () => {
   var list
 
   beforeEach(() => {
-    list = new ArticleList()
+    list = new HeadlinesList()
   })
 
   it('can store a list of articles', () => {
