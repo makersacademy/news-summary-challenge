@@ -1,4 +1,4 @@
-import { ArticleListView } from '../src/article-list-view.js'
+import { ArticleListView } from '../src/views/article-list-view.js'
 
 describe('An article list view', () => {
   it('stores a list of articles when instantiated', () => {

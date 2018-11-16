@@ -1,4 +1,4 @@
-import { Article } from './article.js'
+import * as articleExports from './article.js'
 
 class ArticleList {
   constructor() {
@@ -6,7 +6,9 @@ class ArticleList {
   }
 
   createArticle(headline) {
-    this.articles.push(new Article(headline, this._nextArticleID()))
+    this.articles.push(
+      new articleExports.Article(headline, this._nextArticleID())
+    )
   }
 
   _nextArticleID() {
