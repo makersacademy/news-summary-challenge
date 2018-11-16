@@ -7,7 +7,7 @@
 * You must submit a pull request to this repo with your code by 9am Monday morning.
 
 ## To Do
-- [ ] Basic HTML page set up
+- [x] Basic HTML page set up
 - [ ] Required functionality
   - [ ] Grab headlines from API and Display on page
   - [ ] Show full news article when headline is clicked
