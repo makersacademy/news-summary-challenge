@@ -1,6 +1,6 @@
-import { ArticleListView } from '../src/views/article-list-view.js'
+import { HeadlinesView } from '../src/views/headlines-view.js'
 
-describe('An article list view', () => {
+describe('A headline view', () => {
   var view
   var list
   var article
@@ -11,14 +11,14 @@ describe('An article list view', () => {
       id: 0
     }
     list = { articles: [article] }
-    view = new ArticleListView(list)
+    view = new HeadlinesView(list)
   })
 
   it('stores a list of articles when instantiated', () => {
     expect(view.articleList).isEqualTo(list)
   })
 
-  it('can render HTML for its article list', () => {
+  it('can render HTML for its headlines list', () => {
     expect(view.renderListHTML()).isEqualTo("<ul><li><a href='#articles/0'>This is a headline.</a></li></ul>")
   })
 })

@@ -1,4 +1,4 @@
-class ArticleListView {
+class HeadlinesView {
   constructor(articleList) {
     this.articleList = articleList
   }
@@ -11,4 +11,4 @@ class ArticleListView {
   }
 }
 
-export { ArticleListView }
+export { HeadlinesView }
