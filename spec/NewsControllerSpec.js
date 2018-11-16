@@ -14,4 +14,12 @@ describe('NewsController', () => {
     const newsController = new NewsController('Henry');
     expect(newsController.name).toEqual('Henry');
   });
+
+  it('can fetch articles and store them in results', () => {
+    const newsController = new NewsController();
+    newsController.fetchAndUpdateResults();
+    setTimeout(() => {
+      expect(newsController.results.length).toEqual(10);
+    }, 2000);
+  });
 });
