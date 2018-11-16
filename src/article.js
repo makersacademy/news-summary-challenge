@@ -1,5 +1,6 @@
 (function(exports) {
-  function Article(id, url, headline, summariser="http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=") {
+  function Article(articleList, id, url, headline, summariser="http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=") {
+    this.articleList = articleList;
     this.id = id.toString();
     this.url = url;
     this.headline = headline;
@@ -9,9 +10,12 @@
   }
 
   Article.prototype._setContent = function() {
-    fetch(this.summariser + this.url)
+    return fetch(this.summariser + this.url)
     .then((response) => { return response.json(); })
-    .then((json) => { this.content = json.text; });
+    .then((json) => {
+      this.content = json.text;
+      return this.article;
+    });
   };
 
   exports.Article = Article;

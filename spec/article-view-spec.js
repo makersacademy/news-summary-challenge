@@ -1,5 +1,5 @@
 describe("ArticleView", function() {
-  var article1 = new Article(1, "http://www.test.com", "Headline");
+  var article1 = new Article(new ArticleList(), 1, "http://www.test.com", "Headline");
   var articleView1 = new ArticleView(article1);
 
   describe(".render()", function() {

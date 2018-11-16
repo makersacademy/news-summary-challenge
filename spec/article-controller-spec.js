@@ -41,5 +41,4 @@ describe("ArticleController", function() {
       expect(htmlMock.articleContainer.innerHTML).toBe("<p>TEST_CONTENT2</p>");
     });
   });
-  document.getElementById = document.getElementByIdOriginal;
 });
