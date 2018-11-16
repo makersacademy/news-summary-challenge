@@ -6,7 +6,7 @@ getHeadliners = function() {
         displayHeadliners(result)
       }
     };
-  request.open("GET", "https://content.guardianapis.com/search?q=debates&api-key=c70caebd-9aca-4647-a488-642b7ef30a6b", true);
+  request.open("GET", "https://content.guardianapis.com/search?q=debates&show-fields=thumbnail&api-key=c70caebd-9aca-4647-a488-642b7ef30a6b", true);
   request.send();
 }
 
@@ -14,6 +14,7 @@ displayHeadliners = function(stories) {
   for (var i = 0; i < stories.length; i++) {
     addHeadlinerWithLink(stories, i)
     addShowMoreButton(stories, i)
+    addHeadlinerImage(stories, i)
     addSummaryArea(stories, i)
     b = document.createElement("BR")
     document.body.appendChild(b)
@@ -28,6 +29,15 @@ addHeadlinerWithLink = function(stories, i) {
   a.setAttribute('href', link)
   a.appendChild(headline)
   document.body.appendChild(a)
+  b = document.createElement("BR")
+  document.body.appendChild(b)
+}
+
+addHeadlinerImage = function(stories, i) {
+  var img = document.createElement("IMG")
+  console.log(stories[i])
+  img.setAttribute("src", stories[i].fields.thumbnail)
+  document.body.appendChild(img)
 }
 
 addShowMoreButton = function(stories, i) {
