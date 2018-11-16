@@ -9,7 +9,8 @@ describe('An article list view', () => {
 
   it('can render HTML for its article list', () => {
     var article = {
-      headline: 'This is a headline.'
+      headline: 'This is a headline.',
+      id: 0
     }
     var list = {
       articles: [article]
