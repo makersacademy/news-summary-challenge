@@ -11,8 +11,8 @@ class APIController {
       .then(response => {
         return response.json()
       })
-      .then(myJson => {
-        callback(myJson)
+      .then(json => {
+        callback(json.response.results)
       })
   }
 }
