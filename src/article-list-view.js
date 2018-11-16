@@ -4,12 +4,13 @@
   }
 
   ArticleListView.prototype.html = function() {
-    var view = "<ul>"
+    var view = "<ul>";
+    console.log(this.articleList.articles)
     this.articleList.articles.forEach((article) => {
-      view += "<li><a href='#articlesummary/" + article.id + "'>" + article.headline + "</a></li>"
-    })
-    view += "</ul>"
-    return view
+      view += "<li>" + article.headline + "</li>";
+    });
+    view += "</ul>";
+    return view;
   };
 
   exports.ArticleListView = ArticleListView;

@@ -1,7 +1,8 @@
 (function(exports) {
-  function ArticleHeadlinesController (articleList) {
-    this.articleList = articleList;
-    this.articleListView = new ArticleListView(articleList);
+  function ArticleHeadlinesController () {
+    this.getAPIs = new GetAPIs();
+    this.articleList = this.getAPIs.headlinesAPI();
+    this.articleListView = new ArticleListView(this.articleList);
   }
 
   ArticleHeadlinesController.prototype.render = function () {
