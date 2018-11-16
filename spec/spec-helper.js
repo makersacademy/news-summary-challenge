@@ -30,6 +30,9 @@ function stubGetElementById() {
     },
     articleListContainer: {
       innerHTML: "string"
+    },
+    "content-2": {
+      innerHTML: "string"
     }
   };
   document.getElementById = function(id) { return htmlMock[id]; };

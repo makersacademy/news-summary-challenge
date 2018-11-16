@@ -8,11 +8,11 @@ ArticleController.prototype.loadHTML = function(view, containerID) {
   container.innerHTML = view.render();
 };
 
-ArticleController.prototype.listenForHashChange = function(articleContainerID) {
+ArticleController.prototype.listenForHashChange = function() {
   window.addEventListener("hashchange", (event) => {
     event.preventDefault();
     var article = this.articleList.find(this.hashID());
-    this.loadHTML(new ArticleView(article), articleContainerID);
+    this.loadHTML(new ArticleView(article), `content-${article.id}`);
   });
 };
 

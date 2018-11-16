@@ -18,7 +18,7 @@
     .then((articleList) => {
       var controller = new ArticleController(articleList);
       controller.loadHTML(controller.articleListView, "articleListContainer");
-      controller.listenForHashChange("articleContainer");
+      controller.listenForHashChange();
     })
   </script>
 </body>
