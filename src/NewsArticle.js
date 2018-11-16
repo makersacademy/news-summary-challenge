@@ -2,7 +2,9 @@
 /* eslint-disable no-console */
 
 export default class NewsArticle {
-  constructor(headline) {
+  constructor(headline, url, id) {
     this.headline = headline;
+    this.url = url;
+    this.id = id;
   }
 }

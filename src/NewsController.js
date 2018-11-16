@@ -13,6 +13,7 @@ export default class NewsController {
     fetch(url)
       .then(response => response.json())
       .then((data) => {
+        console.log(data.response.results[0]);
         const stories = data.response.results;
         stories.forEach((story) => {
           const para = document.createElement('p');
