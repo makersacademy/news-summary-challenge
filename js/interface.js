@@ -21,13 +21,22 @@ xhttp.onreadystatechange = function() {
       heading.setAttribute("id", "heading_" + i);
       heading.innerHTML += news[i].webTitle;
       document.getElementById("headline_" + i).appendChild(heading);
+      var link_container = document.createElement("p")
+      link_container.setAttribute("class", "link_container");
+      link_container.setAttribute("id", "link_container_" + i);
+      document.getElementById("headline_" + i).appendChild(link_container);
       var link = document.createElement("a")
       link.setAttribute("class", "link");
       link.setAttribute("id", "link_" + i);
       link.setAttribute("href", news[i].webUrl);
       link.setAttribute("target", "_blank");
       link.innerHTML = "View link on guardian site"
-      document.getElementById("headline_" + i).appendChild(link);
+      document.getElementById("link_container_" + i).appendChild(link);
+      var new_win_icon = document.createElement("img")
+      new_win_icon.setAttribute("src", "images/new_window.png");
+      // new_win_icon.setAttribute("id", "thumbnail_" + i)
+      // new_win_icon.setAttribute("class", "thumbnail");
+      document.getElementById("link_container_" + i).appendChild(new_win_icon);
         var hr = document.createElement("hr")
         document.getElementById("headline_" + i).appendChild(hr);
     }
