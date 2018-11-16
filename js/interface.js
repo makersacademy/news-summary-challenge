@@ -3,7 +3,7 @@ xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var data = JSON.parse(this.response);
     var news = data.response.results
-    // console.log(news)
+    console.log(news)
     for (i = 0; i < news.length; i++) {
       // for (i = 0; i < 8; i++) {
       var div = document.createElement("div")
@@ -21,6 +21,15 @@ xhttp.onreadystatechange = function() {
       heading.setAttribute("id", "heading_" + i);
       heading.innerHTML += news[i].webTitle;
       document.getElementById("headline_" + i).appendChild(heading);
+      var link = document.createElement("a")
+      link.setAttribute("class", "link");
+      link.setAttribute("id", "link_" + i);
+      link.setAttribute("href", news[i].webUrl);
+      link.setAttribute("target", "_blank");
+      link.innerHTML = "View link on guardian site"
+      document.getElementById("headline_" + i).appendChild(link);
+        var hr = document.createElement("hr")
+        document.getElementById("headline_" + i).appendChild(hr);
     }
 
     var headingclass = document.getElementsByClassName("heading");
@@ -93,5 +102,5 @@ xhttp.onreadystatechange = function() {
     }
   }
 };
-xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail,headline,trailText&show-tags=all", true);
+xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail,headline,trailText,bodyText&show-tags=all", true);
 xhttp.send();
