@@ -22,7 +22,7 @@ this.article = "";
           }
           // console.log(newsFeed.news_articles)
           // return newsFeed.news_articles
-          console.log(newsFeed.news_articles.length)
+          // console.log(newsFeed.news_articles.length)
         }
       }
       xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail,headline,trailText,bodyText&show-tags=all", true);
@@ -30,7 +30,7 @@ this.article = "";
     };
 
     function getArticle(url) {
-      console.log(url)
+      // console.log(url)
       var apiUrl = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + url + ""
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
@@ -40,7 +40,7 @@ this.article = "";
           var sentences = data.sentences
           // console.log(sentences)
           newsFeed.article = sentences
-          console.log(newsFeed.article)
+          // console.log(newsFeed.article)
         }
     }
     xhttp.open("GET", apiUrl, true);
