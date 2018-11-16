@@ -8,7 +8,15 @@
         } else {
           console.log('   %cP', 'color:green')
         }
-      }
+      },
+      toBeInstanceOf: function(argTwo) {
+        if (arg instanceof argTwo) {
+          console.log('   %cP', 'color:green')
+        } else {
+          console.log('   %cF', 'color:red')
+          throw new Error(`Assertion failed: ${arg} is not an instance of ${argTwo}`)
+        }
+      },
     }
   }
 
