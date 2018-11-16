@@ -7,8 +7,12 @@ describe(".initialize", function() {
   });
 });
 describe(".html", function() {
-  it("should return an html list of articles", function() {
+  it("should return an empty html list of articles", function() {
     expect(articleListView.html()).toBe('<ul></ul>');
   });
-});
+  it("should return an html list of articles when created", function() {
+    articleList.create("this is an article");
+    expect(articleListView.html()).toBe("<ul><li><a href='#articlesummary/0'> this is an article</a></li></ul>");
+    });
+  });
 });
