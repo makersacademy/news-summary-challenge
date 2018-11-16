@@ -11,8 +11,19 @@
   <body>
     <h1>Top Stories Today</h1>
     <div id="story">
-      Hi there
+      A new story
     </div>
     <script src="src/storyController.js"></script>
+    <div id="fullStory">
+    </div>
+    <script src="src/script.js"></script>
+    <script type="text/javascript">
+      var story = new Story("Great news story", "It's great.");
+      var storyList = new StoryList();
+      storyList.addStory(story);
+      var storyListView = new StoryListView(storyList);
+      var controller = new StoryController(storyListView);
+      controller.updateText();
+    </script>
   </body>
 </html>
