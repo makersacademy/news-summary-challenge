@@ -51,10 +51,14 @@
       var guardianData;
       window.onload = function() {
         guardianAPICall()
-        for (var i = 0; i < window.guardianData.response.results.length; i++) {
-          console.log(window.guardianData.response.results[i].webTitle);
-        }
+
       };
+
+      function generateHeadlines(){
+        for (var i = 0; i < window.guardianData.response.results.length; i++) {
+          console.log(guardianData.response.results[i].webTitle);
+        }
+      }
 
 
       function guardianAPICall(){
@@ -65,13 +69,13 @@
         // Open a new connection, using the GET request on the URL endpoint
         request.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=headline,trailText', true);
 
+        //set what should happen when request is sent
         request.onload = function () {
 
           if (this.readyState == 4 && this.status == 200) {
             guardianData = JSON.parse(this.response);
-            console.log(guardianData)
-
-            // console.log(data.result)
+            console.log(guardianData);
+            generateHeadlines();
           }
 
         }

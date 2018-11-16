@@ -23,6 +23,9 @@
 - [ ] Environment
   - [ ] served locally
   - [ ] served from server
+- [ ] Handling Asynchronicity
+  - [ ] ES5 - Call backs
+  - [ ] ES6 - promises and await
 
 ## Considerations
 - [ ] Use Guardian API
