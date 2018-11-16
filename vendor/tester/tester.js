@@ -50,7 +50,7 @@
           console.log(padding+`%c  Error: expected "${expression1}" to include "${element}"`, "color: red");
           return false;
         }
-      }
+      },
     };
   }
   exports.describe = describe;
