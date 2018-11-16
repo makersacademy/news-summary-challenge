@@ -48,7 +48,36 @@
     <footer>Created by <a href="https://github.com/Tolvic/">Terry Mace</a></footer>
 
     <script type="text/javascript">
+      var guardianData;
+      window.onload = function() {
+        guardianAPICall()
+        for (var i = 0; i < window.guardianData.response.results.length; i++) {
+          console.log(window.guardianData.response.results[i].webTitle);
+        }
+      };
 
+
+      function guardianAPICall(){
+        // Create a request variable and assign a new XMLHttpRequest object to it.
+        var request = new XMLHttpRequest();
+
+
+        // Open a new connection, using the GET request on the URL endpoint
+        request.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=headline,trailText', true);
+
+        request.onload = function () {
+
+          if (this.readyState == 4 && this.status == 200) {
+            guardianData = JSON.parse(this.response);
+            console.log(guardianData)
+
+            // console.log(data.result)
+          }
+
+        }
+        // Send request
+        request.send();
+      }
     </script>
 
   </body>
