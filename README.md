@@ -6,6 +6,33 @@
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
 * You must submit a pull request to this repo with your code by 9am Monday morning.
 
+## To Do
+- [ ] Basic HTML page set up
+- [ ] Required functionality
+  - [ ] Grab headlines from API and Display on page
+  - [ ] Show full news article when headline is clicked
+  - [ ] Show short summary below each headline
+  - [ ] Show an image above each headline
+  - [ ] Make site mobile responsive
+  - [ ] Add css animations
+- [ ] APIs
+  - [ ] Use Maker's API
+  - [ ] Test environment variables set up
+  - [ ] API keys not exposed on front end
+  - [ ] Use Guardian API
+- [ ] Environment
+  - [ ] served locally
+  - [ ] served from server
+
+## Considerations
+- [ ] Use Guardian API
+- [ ] Use Aylien text cummarisation API
+- [ ] Don't store API key in front end
+- [ ] Stub API requests so that we do not exceed daily limit
+- [ ] How will you server the app? Node https-server?
+- [ ] Do I need to write unit tests?
+- [ ] Do I need to write feature tests?
+
 ## Challenge
 
 As usual please start by forking this repo.
