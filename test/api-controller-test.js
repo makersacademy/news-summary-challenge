@@ -10,7 +10,7 @@ describe('An API controller', () => {
   beforeEach(() => {
     i = 0
     passedURL = null
-    json = { text: 'Test'}
+    json = { text: 'Test', response: { results: null }}
     response = { json: () => { return json; } }
     controller = new APIController()
   })
