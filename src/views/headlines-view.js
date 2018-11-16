@@ -1,10 +1,10 @@
 class HeadlinesView {
-  constructor(articleList) {
-    this.articleList = articleList
+  constructor(headlinesList) {
+    this.headlinesList = headlinesList
   }
 
   renderListHTML() {
-    var html = this.articleList.articles.map(
+    var html = this.headlinesList.articles.map(
       article => `<li><a href='#articles/${article.id}'>${article.headline}</a></li>`
     ).join('')
     return `<ul>${html}</ul>`
