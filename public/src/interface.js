@@ -13,8 +13,8 @@ getHeadliners = function() {
 displayHeadliners = function(stories) {
   for (var i = 0; i < stories.length; i++) {
     addHeadlinerWithLink(stories, i)
-    addShowMoreButton(stories, i)
     addHeadlinerImage(stories, i)
+    addShowMoreButton(stories, i)
     addSummaryArea(stories, i)
     b = document.createElement("BR")
     document.body.appendChild(b)
@@ -35,9 +35,12 @@ addHeadlinerWithLink = function(stories, i) {
 
 addHeadlinerImage = function(stories, i) {
   var img = document.createElement("IMG")
-  console.log(stories[i])
   img.setAttribute("src", stories[i].fields.thumbnail)
+  img.setAttribute("height", "150")
+  img.setAttribute("width", "250")
   document.body.appendChild(img)
+  b = document.createElement("BR")
+  document.body.appendChild(b)
 }
 
 addShowMoreButton = function(stories, i) {
@@ -46,6 +49,8 @@ addShowMoreButton = function(stories, i) {
   button.setAttribute('onclick', 'showSummary(' + i + ')')
   button.appendChild(text)
   document.body.appendChild(button)
+  b = document.createElement("BR")
+  document.body.appendChild(b)
 }
 
 addSummaryArea = function(stories, i) {
