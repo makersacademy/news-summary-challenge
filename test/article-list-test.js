@@ -12,4 +12,12 @@ describe('An article list', () => {
     list.createArticle('This is a headline.')
     expect(list.articles[0].headline).isEqualTo('This is a headline.')
   })
+
+  it('gives an article an ID when created', () => {
+    var list = new ArticleList()
+    list.createArticle('This is a headline.')
+    list.createArticle('This is a second headline.')
+    expect(list.articles[0].id).isEqualTo(0)
+    expect(list.articles[1].id).isEqualTo(1)
+  })
 })

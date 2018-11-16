@@ -1,6 +1,7 @@
 class Article {
-  constructor(headline) {
+  constructor(headline, id) {
     this.headline = headline
+    this.id = id || 0
   }
 }
 
