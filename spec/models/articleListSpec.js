@@ -3,4 +3,14 @@ describe('ArticleList', function() {
     var articleList = new ArticleList()
     expect(articleList).toBeAnInstanceOf(ArticleList);
   });
+
+  describe('#getArticles', function() {
+    it('returns the stored articles', function() {
+      var articleList = new ArticleList()
+      var double = "Article"
+      articleList.articles = [double]
+
+      expect(articleList.getArticles()[0]).toEqual(double);
+    });
+  });
 });
