@@ -10,4 +10,12 @@ describe("ArticleHeadlinesController", function() {
       expect(articleHeadlinesController.articleListView.articleList).toBe(articleList);
     });
   });
+  describe(".render()", function() {
+    it("should add the list of articles to a div on page", function() {
+      var htmlMock = { innerHTML: "string"};
+      document.getElementById = function() { return htmlMock; };
+      articleHeadlinesController.render();
+      expect(htmlMock.innerHTML).toBe("<ul></ul>");
+    });
+  });
 });
