@@ -1,15 +1,15 @@
 /* eslint-disable no-console */
-function describe(desc, fn) {
+export function describe(desc, fn) {
   console.log(desc);
   fn();
 }
 
-function it(test, fn) {
+export function it(test, fn) {
   console.log(test);
   fn();
 }
 
-function expect(expectation) {
+export function expect(expectation) {
   return {
     toEqual: (assertion) => {
       if (assertion === expectation) {
@@ -20,9 +20,3 @@ function expect(expectation) {
     },
   };
 }
-
-describe('test', () => {
-  it('is true', () => {
-    expect(true).toEqual(true);
-  });
-});
