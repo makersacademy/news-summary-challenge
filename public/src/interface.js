@@ -5,12 +5,15 @@ request.onreadystatechange = function() {
       result = JSON.parse(this.responseText)
       stories = result.response.results
       for (var i = 0; i < stories.length; i++) {
-        var p = document.createElement("P")
-        var storyDetails = stories[i].id.split("/")
-        var title = storyDetails[storyDetails.length - 1]
+        var a = document.createElement("A")
+        var title = stories[i].webTitle
+        var link = stories[i].webUrl
         var headline = document.createTextNode(title)
-        p.appendChild(headline)
-        document.body.appendChild(p)
+        a.setAttribute('href', link)
+        a.appendChild(headline)
+        document.body.appendChild(a)
+        b = document.createElement("BR")
+        document.body.appendChild(b)
       }
     }
   };
