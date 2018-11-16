@@ -6,21 +6,21 @@ describe("ArticleList", function() {
 
   it("returns all the articles in the array", function() {
     var articleList = new ArticleList();
-    articleList.add("Hello");
-    expect(articleList.getArticles()[0].text).toEqual("Hello");
+    articleList.add("Football match score");
+    expect(articleList.getArticles()[0].headline).toEqual("Football match score");
   });
 
   it("gives first article a unique id", function() {
     var articleList = new ArticleList();
-    articleList.add("Hello");
+    articleList.add("Football match score");
     expect(articleList.getArticles()[0].id).toEqual(0);
   });
 
   it("gives multiple articles a unique id", function() {
     var articleList = new ArticleList();
-    articleList.add("Hello");
-    articleList.add("Bonjour");
-    articleList.add("Hola");
+    articleList.add("Football match score");
+    articleList.add("Pound drops again");
+    articleList.add("Black Friday 2018");
     expect(articleList.getArticles()[2].id).toEqual(2);
   });
 });

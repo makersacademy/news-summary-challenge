@@ -1,6 +1,6 @@
 (function(exports) {
-  function Article(text, id) {
-    this.text = text;
+  function Article(headline, id) {
+    this.headline = headline;
     this.id = id;
   }
   exports.Article = Article;
