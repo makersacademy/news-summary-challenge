@@ -6,4 +6,9 @@ describe(".initialize", function() {
     expect(articleListView.articleList).toBe(articleList);
   });
 });
+describe(".html", function() {
+  it("should return an html list of articles", function() {
+    expect(articleListView.html()).toBe('<ul></ul>');
+  });
+});
 });
