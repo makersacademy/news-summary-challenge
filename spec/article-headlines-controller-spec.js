@@ -3,7 +3,7 @@ describe("ArticleHeadlinesController", function() {
   var articleHeadlinesController = new ArticleHeadlinesController(articleList);
   describe(".initialize", function() {
     it("should take an article list object as a parameter and assign it to a constructor property of this.articleList", function() {
-      expect(articleHeadLinesController.articleList).toBe(articleList);
+      expect(articleHeadlinesController.articleList).toBe(articleList);
     });
   });
 });
