@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, Sans-Serif;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+a {
+  color: white;
+  font-size: 25px;
+}
