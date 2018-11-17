@@ -5,6 +5,8 @@ describe('A headlines controller', () => {
   var headlinesList
   var resultObject
   var createResult
+  var element
+  var results
 
   beforeEach(() => {
     createResult = {
@@ -20,8 +22,10 @@ describe('A headlines controller', () => {
     }
     resultObject = {
       webTitle: 'This is a headline.',
-      fields: { main: "<img src='http://test.com/img'>This is an image.</img>"}
+      fields: { main: "This is an image."}
     }
+
+    results = [resultObject]
     controller = new HeadlinesController(headlinesList)
   })
 
@@ -34,8 +38,22 @@ describe('A headlines controller', () => {
   })
 
   it('can set headline information', () => {
-    var results = [resultObject]
-    controller.setHeadlinesInformation(results)
+    controller._setHeadlinesInformation(results)
     expect(createResult.headline).isEqualTo(resultObject.webTitle)
+  })
+
+  it('can render HTML', () => {
+    element = document.createElement('div')
+    element.id = 'headlines'
+    document.body.appendChild(element)
+
+    headlinesList.articles = [{
+      headline: 'This is a headline.',
+      image: 'This is an image.',
+      id: 0
+    }]
+
+    controller.listHeadlines(results)
+    expect(element.innerHTML).isEqualTo("<ul><li>This is an image.<br><a href=\"#articles/0\">This is a headline.</a></li></ul>")
   })
 })

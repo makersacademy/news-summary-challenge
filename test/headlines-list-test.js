@@ -24,7 +24,6 @@ describe('An article list', () => {
   it('gives an article an ID when created', () => {
     list.createArticle(headline, image)
     list.createArticle('This is a second headline.', image)
-    console.log(list.articles)
     expect(list.articles[0].id).isEqualTo(0)
     expect(list.articles[1].id).isEqualTo(1)
   })

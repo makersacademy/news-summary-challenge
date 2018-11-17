@@ -5,7 +5,7 @@ class HeadlinesView {
 
   renderListHTML() {
     var html = this.headlinesList.articles.map(
-      article => `<li><a href='#articles/${article.id}'>${article.headline}</a></li>`
+      article => `<li>${article.image}<br><a href='#articles/${article.id}'>${article.headline}</a></li>`
     ).join('')
     return `<ul>${html}</ul>`
   }

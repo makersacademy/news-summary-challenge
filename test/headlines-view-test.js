@@ -8,6 +8,7 @@ describe('A headline view', () => {
   beforeEach(() => {
     article = {
       headline: 'This is a headline.',
+      image: 'This is an image.',
       id: 0
     }
     list = { articles: [article] }
@@ -19,6 +20,6 @@ describe('A headline view', () => {
   })
 
   it('can render HTML for its headlines list', () => {
-    expect(view.renderListHTML()).isEqualTo("<ul><li><a href='#articles/0'>This is a headline.</a></li></ul>")
+    expect(view.renderListHTML()).isEqualTo("<ul><li>This is an image.<br><a href='#articles/0'>This is a headline.</a></li></ul>")
   })
 })
