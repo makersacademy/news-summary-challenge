@@ -44,7 +44,7 @@ describe('A summary controller', () => {
     }
     let callback = () => {}
 
-    controller.summaryView = { article: articleList.articles[0] }
+    controller.summaryView = { article: articleList.articles[0], renderSummaryHTML: () => null }
     controller.getSummary(controller.summaryView.article.url)
     expect(passedURL).isEqualTo(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${controller.summaryView.article.url}`)
     expect(i).isEqualTo(1)
@@ -58,7 +58,7 @@ describe('A summary controller', () => {
   })
 
   it('can find an article by its ID', () => {
-    controller.findArticleByID(0)
+    controller.findArticleByID('0')
     expect(controller.summaryView.article).isEqualTo(articleList.articles[0])
   })
 
@@ -75,7 +75,6 @@ describe('A summary controller', () => {
 
   it('initializes a summary using its other methods', () => {
     var passedID = null
-    var i = 0
 
     controller.findArticleByID = id => {
       passedID = id
@@ -83,15 +82,11 @@ describe('A summary controller', () => {
     controller.getSummary = url => {
       passedURL = url
     }
-    controller.renderSummaryHTML = () => {
-      i++
-    }
     controller.summaryView = { article: articleList.articles[0] }
 
-    controller.initializeSummary(0)
+    controller.initializeSummary('0')
 
-    expect(passedID).isEqualTo(0)
+    expect(passedID).isEqualTo('0')
     expect(passedURL).isEqualTo('https://test.com')
-    expect(i).isEqualTo(1)
   })
 })
