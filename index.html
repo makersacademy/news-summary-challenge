@@ -3,6 +3,7 @@
 </head>
 
 <body>
+  <h1>Have I Got Views For You</h1>
   <div id="articleListContainer">LOADING - PLEASE WAIT</div>
   <div id="articleContainer"></div>
 
@@ -11,14 +12,7 @@
   <script src="src/article-view.js"></script>
   <script src="src/article-list-view.js"></script>
   <script src="src/article-controller.js"></script>
-  <script src="src/article-getter.js"></script>
-  <script>
-    var getter = new ArticleGetter();
-    getter.getArticles("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics?show-fields=thumbnail")
-    .then((articleList) => {
-      var controller = new ArticleController(articleList);
-      controller.loadHTML(controller.articleListView, "articleListContainer");
-      controller.listenForHashChange();
-    })
-  </script>
+  <script src="src/api-controller.js"></script>
+  <script src="src/interface.js"></script>
+  <script> initialize(); </script>
 </body>
