@@ -11,5 +11,10 @@
   ArticleList.prototype._nextID = function() {
     return this.articles.length;
   };
+
+  ArticleList.prototype._getLength = function(array) {
+    return Object.keys(array).length;
+  };
+
   exports.ArticleList = ArticleList;
 })(this);

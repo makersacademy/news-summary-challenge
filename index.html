@@ -9,7 +9,7 @@
     <script src="./src/article-headlines-controller.js"></script>
     <script>
     var articleHeadlinesController = new ArticleHeadlinesController()
-    articleHeadlinesController.render()
+    setTimeout(function(){ articleHeadlinesController.render(); }, 3000);
     </script>
   </body>
 </html>
