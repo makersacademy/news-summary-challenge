@@ -1,4 +1,5 @@
 (function(exports) {
+
   function newsUpdate() {
     url = "https://content.guardianapis.com/search?";
     api = "15ab9879-6713-40b7-a6d9-0abbeb1a5b71";
@@ -12,7 +13,7 @@
     articles = data.response.results
     for (i = 0; i < articles.length; i++) {
       listStringHtml +=
-        `<li><img src="${articles[i].fields.thumbnail}" width="100"></img>
+        `<li><img class="picture" src="${articles[i].fields.thumbnail}" width="100"></img>
           <a href =${articles[i].webUrl}>
             ${articles[i].webTitle}
           </a>
@@ -21,5 +22,6 @@
     };
     return listStringHtml + '</ul>';
   };
+
   exports.newsUpdate = newsUpdate();
 })(this);
