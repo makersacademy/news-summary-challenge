@@ -1,5 +1,15 @@
 # News Summary challenge
 
+## Instructions for installation
+
+Clone this repo
+
+Run `npm install`
+
+Run the server: `npm start`
+
+Run the server `node node_modules/http-server/bin/http-server`
+
 
 ## User Stories
 
