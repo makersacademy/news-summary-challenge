@@ -1,9 +1,14 @@
 (function(exports) {
-  function NewsStory(text, id) {
+  function NewsStory(headline, text, id) {
+    this.headline = headline
     this.text = text
     this.id = id
     // this.headline = "headline"
     // this.summary = "summary"
+  }
+
+  NewsStory.prototype.getHeadline = function() {
+    return this.headline
   }
 
   NewsStory.prototype.getText = function() {

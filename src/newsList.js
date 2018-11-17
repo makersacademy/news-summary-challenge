@@ -14,7 +14,7 @@
       .then(response => {return response.json() })
       .then(data => {
         this.newsArray = data.response.results
-        // console.log(this.newsList)
+        console.log(this.newsArray)
       }).catch(err => {
         console.log("API Error: Gaurdian")
       })
