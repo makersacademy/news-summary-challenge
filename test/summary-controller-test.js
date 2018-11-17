@@ -14,4 +14,12 @@ describe('A summary controller', () => {
     }
     controller = new SummaryController(headlinesList)
   })
+
+  it('is instantiated with a headlines list', () => {
+    expect(controller.headlinesList).isEqualTo(headlinesList)
+  })
+
+  it('has no summary view object when instantiated', () => {
+    expect(controller.summaryView).isEqualTo(null)
+  })
 })
