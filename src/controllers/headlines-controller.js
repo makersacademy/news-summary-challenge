@@ -9,7 +9,7 @@ class HeadlinesController {
   }
 
   initializeHeadlines () {
-    fetch(`https://content.guardianapis.com/search?show-fields=main%2Cbody&order-by=newest&page-size=10&q=technology&api-key=${this.key}`)
+    fetch(`https://content.guardianapis.com/search?show-fields=main&order-by=newest&page-size=10&q=technology&api-key=${this.key}`)
       .then(response => { return response.json() })
       .then(json => {
         this.setHeadlinesInformation(json.response.results)
