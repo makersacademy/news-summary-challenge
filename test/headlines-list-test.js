@@ -2,9 +2,13 @@ import { HeadlinesList } from '../src/headlines-list.js'
 
 describe('An article list', () => {
   var list
+  var headline
+  var image
 
   beforeEach(() => {
     list = new HeadlinesList()
+    headline = 'This is a headline.'
+    image = 'This is an image.'
   })
 
   it('can store a list of articles', () => {
@@ -13,14 +17,20 @@ describe('An article list', () => {
   })
 
   it('can create an article and store it in its list', () => {
-    list.createArticle('This is a headline.')
+    list.createArticle(headline, image)
     expect(list.articles[0].headline).isEqualTo('This is a headline.')
   })
 
   it('gives an article an ID when created', () => {
-    list.createArticle('This is a headline.')
-    list.createArticle('This is a second headline.')
+    list.createArticle(headline, image)
+    list.createArticle('This is a second headline.', image)
+    console.log(list.articles)
     expect(list.articles[0].id).isEqualTo(0)
     expect(list.articles[1].id).isEqualTo(1)
+  })
+
+  it('can create an article with an image', () => {
+    list.createArticle(headline, image)
+    expect(list.articles[0].image).isEqualTo(image)
   })
 })
