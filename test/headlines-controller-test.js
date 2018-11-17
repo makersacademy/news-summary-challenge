@@ -53,7 +53,14 @@ describe('A headlines controller', () => {
       id: 0
     }]
 
+    var savedFormatImage = controller.headlinesView.formatImage
+    controller.headlinesView.formatImage = (imageData) => {
+      return imageData
+    }
+
     controller.renderHeadlinesHTML(results)
-    expect(element.innerHTML).isEqualTo("<ul><li>This is an image.<br><a href=\"#articles/0\">This is a headline.</a></li></ul>")
+    controller.headlinesView.formatImage = savedFormatImage
+
+    expect(element.innerHTML).isEqualTo('<article>This is an image.<a href="#articles/0">This is a headline.</a></article>')
   })
 })

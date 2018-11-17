@@ -4,6 +4,7 @@ describe('A headline view', () => {
   var view
   var list
   var article
+  var image
 
   beforeEach(() => {
     article = {
@@ -13,6 +14,7 @@ describe('A headline view', () => {
     }
     list = { articles: [article] }
     view = new HeadlinesView(list)
+    image = '<figure class="test-image" data-media-id="test"> <img src="https://test.jpg" alt="Test." width="1000" height="600" class="test" /> <figcaption> <span class="test">Testing</span> <span class="element-image__credit">Photograph: Test</span> </figcaption> </figure>'
   })
 
   it('stores a list of articles when instantiated', () => {
@@ -20,6 +22,15 @@ describe('A headline view', () => {
   })
 
   it('can render HTML for its headlines list', () => {
-    expect(view.renderListHTML()).isEqualTo("<ul><li>This is an image.<br><a href='#articles/0'>This is a headline.</a></li></ul>")
+    var savedFormatImage = view.formatImage
+    view.formatImage = (imageData) => {
+      return imageData
+    }
+    expect(view.renderListHTML()).isEqualTo('<article>This is an image.<a href="#articles/0">This is a headline.</a></article>')
+    view.formatImage = savedFormatImage
+  })
+
+  it('can format a fetched image', () => {
+    expect(view.formatImage(image)).isEqualTo('<figure class="headline-image"><img src="https://test.jpg" alt="Test." width="500" height="300"/></figure>')
   })
 })
