@@ -31,7 +31,7 @@ describe('A summary controller', () => {
     expect(controller.summaryView).isEqualTo(null)
   })
 
-  it('gets a summary uses the fetch method correctly', () => {
+  it('gets a summary using the fetch method correctly', () => {
     var i = 0
     var savedFunctionState = window.fetch
     window.fetch = url => {
@@ -46,5 +46,11 @@ describe('A summary controller', () => {
     controller.initializeSummary(`http://testurl.com`)
     expect(passedURL).isEqualTo(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://testurl.com`)
     expect(i).isEqualTo(1)
+  })
+
+  it('can set summary information on articles', () => {
+    var summary = 'This is a sentence. This is a second sentence.'
+    controller.setSummaryInformation(controller.articleList.articles[0], summary)
+    expect(controller.articleList.articles[0].summary).isEqualTo(summary)
   })
 })

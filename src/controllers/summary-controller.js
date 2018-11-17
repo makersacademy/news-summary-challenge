@@ -14,6 +14,10 @@ class SummaryController {
         return json.sentences.join('<br>')
       })
   }
+
+  setSummaryInformation(article, summaryData) {
+    article.summary = summaryData
+  }
 }
 
 export { SummaryController }
