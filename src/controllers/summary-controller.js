@@ -1,5 +1,4 @@
 import * as viewExports from '../views/summary-view.js'
-import { apiKeys } from '../../api-keys.js'
 
 class SummaryController {
   constructor (articleList) {
@@ -7,19 +6,19 @@ class SummaryController {
     this.summaryView = null
   }
 
-  initializeSummary(id) {
+  initializeSummary (id) {
     this.findArticleByID(id)
     this.getSummary(this.summaryView.article.url)
   }
 
-  findArticleByID(id) {
+  findArticleByID (id) {
     var article = this.articleList.articles.find(article => {
       return String(article.id) === id
     })
     this.summaryView = new viewExports.SummaryView(article)
   }
 
-  getSummary(articleURL) {
+  getSummary (articleURL) {
     fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${articleURL}`)
       .then(response => { return response.json() })
       .then(json => {
@@ -28,11 +27,11 @@ class SummaryController {
       })
   }
 
-  setSummaryInformation(summaryData) {
+  setSummaryInformation (summaryData) {
     this.summaryView.article.summary = summaryData
   }
 
-  renderSummaryHTML() {
+  renderSummaryHTML () {
     var html = this.summaryView.renderSummaryHTML()
     document.getElementById('content').innerHTML = html
   }
