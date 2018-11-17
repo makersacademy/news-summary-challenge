@@ -32,7 +32,6 @@
       this.newsController.articleList.add(data);
       var articleListView = new ArticleListView(this.newsController.articleList);
       var element = document.querySelector('ul')
-      var id = data.response.results.id;
       element.innerHTML = articleListView.getHTML();
     })
   }

@@ -13,7 +13,14 @@ SummarizedArticle.prototype.summarize = function(url, articleUrl) {
   .then(function(data) {
     this.summary = data.text
     console.log(this.summary)
+    //this.summary is not updating the this.summary in the initialize method
+    //so it cannot get the HTML for it which means that it will not appear on page
   })
+  this.getHTML(this.summary)
+}
+
+SummarizedArticle.prototype.getHTML = function(text) {
+  "<div>" + text + "</div>"
 }
 
 SummarizedArticle.prototype.getSummary = function() {
