@@ -24,4 +24,8 @@ describe('An article', () => {
   it('can be instantiated with an image', () => {
     expect(article.image).isEqualTo(image)
   })
+
+  it('is instantiated with an empty summary', () => {
+    expect(article.summary).isEqualTo(null)
+  })
 })

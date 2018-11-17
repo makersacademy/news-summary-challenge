@@ -1,6 +1,7 @@
 class Article {
   constructor (headline, image, id) {
     this.headline = headline
+    this.summary = null
     this.image = image
     this.id = id
   }

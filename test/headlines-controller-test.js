@@ -43,8 +43,8 @@ describe('A headlines controller', () => {
   })
 
   it('can list headlines as HTML', () => {
-    element = document.createElement('div')
-    element.id = 'headlines'
+    element = document.createElement('section')
+    element.id = 'content'
     document.body.appendChild(element)
 
     headlinesList.articles = [{
