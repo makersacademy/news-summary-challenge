@@ -6,9 +6,10 @@
   ArticleListView.prototype.html = function() {
     var view = "<ul>";
     this.articleList.articles.forEach((article) => {
-      view += "<li><a ahref='" + article.webURL + "'>" + article.headline + "</a></li>";
+      view += "<li><a href='" + article.webURL + "'>" + article.headline + "</a></li>";
     });
     view += "</ul>";
+    console.log(view)
     return view;
   };
 

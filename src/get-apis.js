@@ -11,7 +11,7 @@
       .then(myJson => {
         var results = myJson.response.results;
         for (var i = 0; i < results.length; i++) {
-          this.articleList.create(results[i].webTitle);
+          this.articleList.create(results[i].webTitle, results[i].webUrl);
         }
       });
       return this.articleList;
