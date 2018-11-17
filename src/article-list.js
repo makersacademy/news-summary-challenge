@@ -5,9 +5,9 @@ class ArticleList {
     this.articles = []
   }
 
-  createArticle (headline, image) {
+  createArticle (headline, image, url) {
     this.articles.push(
-      new articleExports.Article(headline, image, this._nextArticleID())
+      new articleExports.Article(headline, image, url, this._nextArticleID())
     )
   }
 
