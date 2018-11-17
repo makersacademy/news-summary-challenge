@@ -2,8 +2,8 @@ import * as viewExports from '../views/summary-view.js'
 import { apiKeys } from '../../api-keys.js'
 
 class SummaryController {
-  constructor (headlinesList) {
-    this.headlinesList = headlinesList
+  constructor (articleList) {
+    this.articleList = articleList
     this.summaryView = null
   }
 }

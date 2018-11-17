@@ -1,4 +1,4 @@
-import { HeadlinesList } from '../src/headlines-list.js'
+import { ArticleList } from '../src/article-list.js'
 
 describe('An article list', () => {
   var list
@@ -6,7 +6,7 @@ describe('An article list', () => {
   var image
 
   beforeEach(() => {
-    list = new HeadlinesList()
+    list = new ArticleList()
     headline = 'This is a headline.'
     image = 'This is an image.'
   })
