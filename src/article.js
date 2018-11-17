@@ -5,5 +5,9 @@
     this.webURL = webURL;
   }
 
+  Article.prototype.createSummary = function(summary) {
+    return this.summary = summary
+  }
+
   exports.Article = Article;
 })(this);
