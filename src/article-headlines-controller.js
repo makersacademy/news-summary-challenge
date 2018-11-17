@@ -7,7 +7,7 @@
 
   ArticleHeadlinesController.prototype.api = function () {
     this.getAPIs = new GetAPIs();
-    this.articleList = this.getAPIs.headlinesAPI();
+    this.articleList = this.getAPIs.getHeadlines();
     this.articleListView = new ArticleListView(this.articleList);
   };
 

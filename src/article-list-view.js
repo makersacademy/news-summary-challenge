@@ -9,7 +9,6 @@
       view += "<li><a href='" + article.webURL + "'>" + article.headline + "</a></li>";
     });
     view += "</ul>";
-    console.log(view)
     return view;
   };
 
