@@ -8,7 +8,7 @@ describe("ArticleSummaryView", function() {
   });
   describe(".html", function() {
     it("should return an html string of the article's summary", function() {
-      expect(articleSummaryView.html()).toBe("<div> this is a summary </div>");
+      expect(articleSummaryView.html()).toBe("<div>this is a summary</div>");
     });
   });
 });
