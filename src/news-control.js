@@ -5,8 +5,12 @@
     $.get(url + "api-key=" + api, function(data) {
       listStringHtml = '<ul>';
       for (i = 0; i < data.response.results.length; i++) {
-        listStringHtml += `<li>${data.response.results[i].webTitle}</li>`
-        // $('#news_update').text(data.response.results.webTitle);
+        listStringHtml +=
+          `<li>
+            <a href =${data.response.results[i].webUrl}>
+              ${data.response.results[i].webTitle}
+            </a>
+          </li>`
       };
       listStringHtml += '</ul>';
       $('#news_update').html(listStringHtml);
