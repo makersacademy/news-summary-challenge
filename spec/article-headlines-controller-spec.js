@@ -23,7 +23,7 @@ describe("ArticleHeadlinesController", function() {
       var htmlMock = { innerHTML: "string" };
       document.getElementById = function() { return htmlMock; };
       var articleList = new ArticleList();
-      articleList.create("this is an article", "www.google.com");
+      articleList.create("this is an article", "www.google.com", "this is a summary");
       articleHeadlinesController.articleListView = new ArticleListView(articleList);
       articleHeadlinesController.render();
       expect(htmlMock.innerHTML).toBe("<ul><li><a href='www.google.com'>this is an article</a></li></ul>");
