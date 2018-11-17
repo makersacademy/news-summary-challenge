@@ -5,4 +5,8 @@ export default class NewsList {
   constructor() {
     this.articles = [];
   }
+
+  add(newsArticle) {
+    this.articles.push(newsArticle);
+  }
 }

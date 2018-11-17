@@ -1,3 +1,25 @@
 body {
-  font-family: sans-serif;
+  font-family: Verdana, sans-serif;
+}
+
+#title {
+  background-color: #ff6600;
+  font-weight: bold;
+}
+
+#title, #headlines, #summary {
+  padding: 0.5em;
+}
+
+#container {
+  background-color: #f7f7ef;
+  max-width: 800px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+
+
+a {
+  color: black;
 }

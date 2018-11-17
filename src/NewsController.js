@@ -2,12 +2,14 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
 import env from '../.env.js';
+import NewsList from './NewsList.js';
 
 export default class NewsController {
   constructor(name) {
     this.name = name;
     this.results = [];
     this.sentences = [];
+    this.newsList = new NewsList();
   }
 
   render() {
@@ -34,7 +36,7 @@ export default class NewsController {
   }
 
   fetchFromGuardianAndUpdateResults() {
-    const url = `https://content.guardianapis.com/search?api-key=${env.GUARDIAN_KEY}`;
+    const url = `https://content.guardianapis.com/search?tag=technology/technology&api-key=${env.GUARDIAN_KEY}`;
     fetch(url)
       .then(response => response.json())
       .then((data) => {
