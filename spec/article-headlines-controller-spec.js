@@ -26,7 +26,7 @@ describe("ArticleHeadlinesController", function() {
       articleList.create("this is an article", "www.google.com", "this is a summary");
       articleHeadlinesController.articleListView = new ArticleListView(articleList);
       articleHeadlinesController.render();
-      expect(htmlMock.innerHTML).toBe("<ul><li><a href='www.google.com'>this is an article</a></li></ul>");
+      expect(htmlMock.innerHTML).toBe("<ul><li><a href='www.google.com'>this is an article</a></li><button id='button' type='button'>Summary</button></ul>");
     });
   });
 });

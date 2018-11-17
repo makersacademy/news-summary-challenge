@@ -37,5 +37,28 @@
     return this.articleList;
   };
 
+//   GetAPIs.prototype.summaryAPI = function() {
+//     fetch("https://api.aylien.com/api/v1/summarize", {
+//       mode: 'no-cors',
+//       body: "sentences_number=3&url=https://content.guardianapis.com/search?api-key=b5a397fe-7a8b-47c4-9727-abc75851d690",
+//       headers: {
+//         "Content-Type": "application/x-www-form-urlencoded",
+//         "X-Aylien-Textapi-Application-Id": "687d69ca",
+//         "X-Aylien-Textapi-Application-Key": "5a4aaf7d044f737bfbe716c2d5cb5749"
+//       },
+//       method: "POST"
+// })
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(myJson => {
+//     console.log(String(myJson));
+//   });
+// };
+
+
+
+
+
     exports.GetAPIs = GetAPIs;
   })(this);
