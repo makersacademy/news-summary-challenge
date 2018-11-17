@@ -11,12 +11,15 @@ describe(".html", function() {
     expect(articleListView.html()).toBe('<ul></ul>');
   });
   it("should return an html list of an article when created", function() {
-    articleList.create("this is an article");
+    articleList.create("this is an article", "www.google.com");
     expect(articleListView.html()).toBe("<ul><li>this is an article</li></ul>");
     });
   it("should return an html list of multiple articles", function() {
-    articleList.create("this is another article");
+    articleList.create("this is another article", "www.facebook.com");
     expect(articleListView.html()).toBe("<ul><li>this is an article</li><li>this is another article</li></ul>");
   });
+  it("should contain the link to the original article", function() {
+    expect(articleListView.html()).toBe("<ul><li><a ahref='www.google.com'>this is an article</a></li><li><a ahref='www.facebook.com'>this is another article</a></li></ul>")
+  })
   });
 });
