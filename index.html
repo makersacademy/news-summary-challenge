@@ -58,13 +58,40 @@
           //contents variables
           var data = guardianData.response.results[i]
           var headline = document.createTextNode(data.webTitle);
-          var byline = document.createTextNode(data.fields.trailText);
+          var bylineText = document.createTextNode(data.fields.trailText);
           var image = data.fields.thumbnail;
           console.log("headline: " + headline);
           console.log("byline: " + byline);
-          console.log("image: " + image)
+          console.log("image: " + image);
 
           //create html elements
+          var article = document.createElement('article');
+          var link = document.createElement('a');
+          link.href="#";
+          var link2 = document.createElement('a');
+          link2.href="#";
+          var header = document.createElement('h2');
+          var imageElement = document.createElement('img');
+          imageElement.src = image;
+          var details = document.createElement('details');
+          var summary = document.createElement('summary');
+          var byline = document.createElement('p');
+
+          // Append elements
+          byline.appendChild(bylineText);
+          summary.appendChild(byline);
+          details.appendChild(summary);
+
+          header.appendChild(headline);
+          link.appendChild(header);
+
+          link2.appendChild(imageElement)
+
+          article.appendChild(link2)
+          article.appendChild(link)
+          article.appendChild(details)
+
+          console.log(article);
         }
       }
 
