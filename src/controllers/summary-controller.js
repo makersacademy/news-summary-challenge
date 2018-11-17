@@ -9,7 +9,7 @@ class SummaryController {
 
   initializeSummary(id) {
     this.findArticleByID(id)
-    this.getSummary('https://github.com/')
+    this.getSummary(this.summaryView.article.url)
   }
 
   getSummary(articleURL) {

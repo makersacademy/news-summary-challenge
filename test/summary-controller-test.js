@@ -13,6 +13,7 @@ describe('A summary controller', () => {
         headline: 'This is a headline.',
         summary: 'This is a summary.',
         image: 'This is an image.',
+        url: 'https://test.com',
         id: 0 }]
     }
 
@@ -44,8 +45,8 @@ describe('A summary controller', () => {
     let callback = () => {}
 
     controller.summaryView = { article: articleList.articles[0] }
-    controller.getSummary(`http://testurl.com`)
-    expect(passedURL).isEqualTo(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://testurl.com`)
+    controller.getSummary(controller.summaryView.article.url)
+    expect(passedURL).isEqualTo(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${controller.summaryView.article.url}`)
     expect(i).isEqualTo(1)
   })
 
@@ -70,10 +71,11 @@ describe('A summary controller', () => {
     controller.getSummary = url => {
       passedURL = url
     }
+    controller.summaryView = { article: articleList.articles[0] }
 
     controller.initializeSummary(0)
 
     expect(passedID).isEqualTo(0)
-    expect(passedURL).isEqualTo('https://github.com/')
+    expect(passedURL).isEqualTo('https://test.com')
   })
 })
