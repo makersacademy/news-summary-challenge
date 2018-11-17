@@ -12,7 +12,7 @@ class HeadlinesView {
 
   formatImage (imageData) {
     var truncatedData = imageData.split(/src=/)[1].split(/ width/)[0]
-    return `<figure class="headline-image"><img src=${truncatedData} width="500" height="300"/></figure>`
+    return `<figure class="headline-image"><img src=${truncatedData} width="50%" height="30%"/></figure>`
   }
 }
 

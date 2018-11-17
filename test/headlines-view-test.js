@@ -31,6 +31,6 @@ describe('A headline view', () => {
   })
 
   it('can format raw image data', () => {
-    expect(view.formatImage(image)).isEqualTo('<figure class="headline-image"><img src="https://test.jpg" alt="Test." width="500" height="300"/></figure>')
+    expect(view.formatImage(image)).isEqualTo('<figure class="headline-image"><img src="https://test.jpg" alt="Test." width="50%" height="30%"/></figure>')
   })
 })
