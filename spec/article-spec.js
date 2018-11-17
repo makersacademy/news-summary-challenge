@@ -1,5 +1,5 @@
 describe("Article", function() {
-  var article = new Article(1, 'this is a news article', 'www.google.com');
+  var article = new Article(1, 'this is a news article', 'www.google.com', 'this is a summary');
   describe(".initialize", function() {
     it("initializes with an id", function() {
       expect(article.id).toBe(1);
@@ -10,5 +10,8 @@ describe("Article", function() {
     it("initialize with web url", function() {
       expect(article.webURL).toBe('www.google.com');
     });
+    it("initialize with summary", function() {
+      expect(article.summary).toBe('this is a summary')
+    })
   });
 });
