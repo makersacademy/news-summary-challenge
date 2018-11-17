@@ -15,7 +15,7 @@ describe('A headlines controller', () => {
     }
     headlinesList = {
       articles: [],
-      create: (headline, image) => {
+      createArticle: (headline, image) => {
         createResult.headline = headline
         createResult.image = image
       }
@@ -38,7 +38,7 @@ describe('A headlines controller', () => {
   })
 
   it('can set headline information', () => {
-    controller._setHeadlinesInformation(results)
+    controller.setHeadlinesInformation(results)
     expect(createResult.headline).isEqualTo(resultObject.webTitle)
   })
 
@@ -53,7 +53,7 @@ describe('A headlines controller', () => {
       id: 0
     }]
 
-    controller.listHeadlines(results)
+    controller.renderHeadlinesHTML(results)
     expect(element.innerHTML).isEqualTo("<ul><li>This is an image.<br><a href=\"#articles/0\">This is a headline.</a></li></ul>")
   })
 })
