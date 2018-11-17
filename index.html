@@ -6,7 +6,7 @@
     <style>
       body {font-family: verdana;}
       li {padding: 15px;}
-      ul {list-style-type: none;}       
+      ul {list-style-type: none;}
     </style>
   </head>
   <body>
@@ -15,6 +15,12 @@
     <script src="src/article.js"></script>
     <script src="src/article-list.js"></script>
     <script src="src/article-list-view.js"></script>
+    <script src="src/summarized-article-view.js"></script>
     <script src="src/controller.js"></script>
+    <script>
+      var newsController = new NewsController();
+      newsController.render()
+      newsController.makeUrlChangeShowArticleForCurrentPage()
+    </script>
   </body>
 </html>
