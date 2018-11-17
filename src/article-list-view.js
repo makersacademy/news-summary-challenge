@@ -6,7 +6,7 @@
   ArticleListView.prototype.html = function() {
     var view = "<ul>";
     this.articleList.articles.forEach((article) => {
-      view += "<li>" + article.headline + "</li>";
+      view += "<li><a ahref='" + article.webURL + "'>" + article.headline + "</a></li>";
     });
     view += "</ul>";
     return view;
