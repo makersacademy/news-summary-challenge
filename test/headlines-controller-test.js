@@ -42,7 +42,7 @@ describe('A headlines controller', () => {
     expect(createResult.headline).isEqualTo(resultObject.webTitle)
   })
 
-  it('can render HTML', () => {
+  it('can list headlines as HTML', () => {
     element = document.createElement('div')
     element.id = 'headlines'
     document.body.appendChild(element)
