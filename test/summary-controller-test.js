@@ -53,4 +53,9 @@ describe('A summary controller', () => {
     controller.setSummaryInformation(controller.articleList.articles[0], summary)
     expect(controller.articleList.articles[0].summary).isEqualTo(summary)
   })
+
+  it('can find an article by its ID', () => {
+    controller.findArticleByID(0)
+    expect(controller.summaryView.article).isEqualTo(articleList.articles[0])
+  })
 })
