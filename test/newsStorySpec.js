@@ -15,6 +15,6 @@ describe("#getText", function() {
 describe("#getId", function() {
   it("gets the Id of a NewsStory", function() {
     newsStory = new NewsStory("Text", 1)
-    expect(newsStory.getText()).toEqual(1)
+    expect(newsStory.getId()).toEqual(1)
   })
 })
