@@ -62,8 +62,20 @@ describe('A summary controller', () => {
     expect(controller.summaryView.article).isEqualTo(articleList.articles[0])
   })
 
+  it('renders HTML for an article summary', () => {
+    var html = '<article>This is an image.<h2>This is a headline.</h2><p>This is a summary.</p></article>'
+    controller.summaryView = {
+      renderSummaryHTML: () => { return html }
+    }
+
+    controller.renderSummaryHTML()
+
+    expect(document.getElementById('content').innerHTML).isEqualTo(html)
+  })
+
   it('initializes a summary using its other methods', () => {
     var passedID = null
+    var i = 0
 
     controller.findArticleByID = id => {
       passedID = id
@@ -71,11 +83,15 @@ describe('A summary controller', () => {
     controller.getSummary = url => {
       passedURL = url
     }
+    controller.renderSummaryHTML = () => {
+      i++
+    }
     controller.summaryView = { article: articleList.articles[0] }
 
     controller.initializeSummary(0)
 
     expect(passedID).isEqualTo(0)
     expect(passedURL).isEqualTo('https://test.com')
+    expect(i).isEqualTo(1)
   })
 })
