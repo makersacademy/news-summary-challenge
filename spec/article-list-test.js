@@ -1,26 +1,22 @@
 describe("ArticleList", function() {
+
+  var data = { response:
+                { results: [
+                    { webTitle: "Sri Lanka v England: hosts seven down chasing 301 to win second Test – live!",
+                      webUrl: "https://www.theguardian.com/sport/live/2018/nov/17/sri-lanka-v-england-third-test-day-four-live"
+                    }]
+                }
+              }
+  var result = data.response.results[0]
+
   it("stores an array of articles", function() {
     var articleList = new ArticleList();
     expect(articleList.articles.length).toEqual(0);
   });
 
-  it("returns all the articles in the array", function() {
+  it("adds a new article to the array", function() {
     var articleList = new ArticleList();
-    articleList.add("Football match score");
-    expect(articleList.getArticles()[0].headline).toEqual("Football match score");
-  });
-
-  it("gives first article a unique id", function() {
-    var articleList = new ArticleList();
-    articleList.add("Football match score");
-    expect(articleList.getArticles()[0].id).toEqual(0);
-  });
-
-  it("gives multiple articles a unique id", function() {
-    var articleList = new ArticleList();
-    articleList.add("Football match score");
-    articleList.add("Pound drops again");
-    articleList.add("Black Friday 2018");
-    expect(articleList.getArticles()[2].id).toEqual(2);
-  });
+    articleList.add(data)
+    expect(articleList.articles[0].headline).toEqual("Sri Lanka v England: hosts seven down chasing 301 to win second Test – live!")
+  })
 });

@@ -1,7 +1,7 @@
 (function(exports) {
-  function Article(headline, id) {
+  function Article(headline, url) {
     this.headline = headline;
-    this.id = id;
+    this.url = url;
   }
   exports.Article = Article;
 })(this);

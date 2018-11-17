@@ -1,11 +1,21 @@
 describe("Article", function() {
+
+    var data = { response:
+                  { results: [
+                      { webTitle: "Sri Lanka v England: hosts seven down chasing 301 to win second Test – live!",
+                        webUrl: "https://www.theguardian.com/sport/live/2018/nov/17/sri-lanka-v-england-third-test-day-four-live"
+                      }]
+                  }
+                }
+    var result = data.response.results[0]
+
   it("takes the text of an article when object is created", function() {
-    var article = new Article("Pound drops again");
-    expect(article.headline).toEqual("Pound drops again");
+    var article = new Article(result.webTitle, result.webUrl);
+    expect(article.headline).toEqual("Sri Lanka v England: hosts seven down chasing 301 to win second Test – live!");
   });
 
-  it("gives article unique id when object is created", function() {
-    var article = new Article("This is the news", 0);
-    expect(article.id).toEqual(0);
+  it("gives article url when object is created", function() {
+    var article = new Article(result.webTitle, result.webUrl);
+    expect(article.url).toEqual("https://www.theguardian.com/sport/live/2018/nov/17/sri-lanka-v-england-third-test-day-four-live");
   });
 });
