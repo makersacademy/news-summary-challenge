@@ -7,20 +7,27 @@ class SummaryController {
     this.summaryView = null
   }
 
-  initializeSummary(articleURL) {
+  initializeSummary(id) {
+    this.findArticleByID(id)
+    this.getSummary('https://github.com/')
+  }
+
+  getSummary(articleURL) {
     fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${articleURL}`)
       .then(response => { return response.json() })
       .then(json => {
-        return json.sentences.join('<br>')
+        this.setSummaryInformation(json.sentences)
       })
   }
 
-  setSummaryInformation(article, summaryData) {
-    article.summary = summaryData
+  setSummaryInformation(summaryData) {
+    this.summaryView.article.summary = summaryData
   }
 
   findArticleByID(id) {
-    var article = this.articleList.articles.find(article => { return article.id === id })
+    var article = this.articleList.articles.find(article => {
+      return article.id === id
+    })
     this.summaryView = new viewExports.SummaryView(article)
   }
 }
