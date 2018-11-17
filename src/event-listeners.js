@@ -5,4 +5,10 @@ function loadSummaryOnClick (summaryController) {
   })
 }
 
-export { loadSummaryOnClick }
+function loadHeadlinesOnHomeClick (headlinesController) {
+  document.getElementById('home').addEventListener('click', () => {
+    headlinesController.initializeHeadlines()
+  })
+}
+
+export { loadSummaryOnClick, loadHeadlinesOnHomeClick }
