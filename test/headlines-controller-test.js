@@ -43,10 +43,6 @@ describe('A headlines controller', () => {
   })
 
   it('can list headlines as HTML', () => {
-    element = document.createElement('section')
-    element.id = 'content'
-    document.body.appendChild(element)
-
     headlinesList.articles = [{
       headline: 'This is a headline.',
       image: 'This is an image.',
@@ -61,6 +57,8 @@ describe('A headlines controller', () => {
     controller.renderHeadlinesHTML(results)
     controller.headlinesView.formatImage = savedFormatImage
 
-    expect(element.innerHTML).isEqualTo('<article>This is an image.<a href="#articles/0">This is a headline.</a></article>')
+    var content = document.getElementById('content')
+
+    expect(content.innerHTML).isEqualTo('<article>This is an image.<a href="#articles/0">This is a headline.</a></article>')
   })
 })
