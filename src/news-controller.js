@@ -5,8 +5,9 @@
     this.newsListView = new NewsListView(this.newsList);
    };
   NewsController.prototype.getHTML = function() {
-    html = this.newsListView.renderNewsItems()
-    div = document.getElementById('headline').innerHTML = html
+    // html = this.newsListView.renderNewsItems()
+    // div = document.getElementById("headlines").innerHTML = html
+    document.getElementById("headlines").innerHTML = this.newsListView.renderNewsItems();
   };
   exports.NewsController = NewsController;
 })(this);
