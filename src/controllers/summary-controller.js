@@ -18,6 +18,11 @@ class SummaryController {
   setSummaryInformation(article, summaryData) {
     article.summary = summaryData
   }
+
+  findArticleByID(id) {
+    var article = this.articleList.articles.find(article => { return article.id === id })
+    this.summaryView = new viewExports.SummaryView(article)
+  }
 }
 
 export { SummaryController }
