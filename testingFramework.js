@@ -1,6 +1,6 @@
 
-(function(export) {
-  function export(value) {
+(function(exports) {
+  function expect(value) {
 
     function isEqual(assertion) {
       if (value === assertion) {
@@ -19,7 +19,6 @@
     }
 
   }
-  export.export = expect
+  exports.expect = expect
 
-})(this)
- 
+})(this);
