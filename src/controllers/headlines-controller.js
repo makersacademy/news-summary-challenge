@@ -27,7 +27,7 @@ class HeadlinesController {
 
   renderHeadlinesHTML () {
     var html = this.headlinesView.renderListHTML()
-    document.getElementById('headlines').innerHTML = html
+    document.getElementById('content').innerHTML = html
   }
 }
 
