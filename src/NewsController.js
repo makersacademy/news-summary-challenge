@@ -7,26 +7,34 @@ export default class NewsController {
   constructor(name) {
     this.name = name;
     this.results = [];
+    this.sentences = [];
   }
 
   render() {
-    this.makeButtonWork();
-    this.fetchAndUpdateResults();
+    this.fetchFromGuardianAndUpdateResults();
     setTimeout(() => {
       this.updatePageWithResults();
+      this.makePlusButtonsWork();
     }, 2000);
   }
 
   updatePageWithResults() {
-    this.results.forEach((story) => {
+    this.results.forEach((story, index) => {
       const para = document.createElement('p');
-      para.innerHTML = `<a href="${story.webUrl}">${story.webTitle}</a>`;
+      para.innerHTML = `<a href="${story.webUrl}">${story.webTitle}</a>&nbsp;<button id="${index}">[+]</button>`;
       document.getElementById('headlines').appendChild(para);
     });
   }
 
-  fetchAndUpdateResults() {
-    const url = `https://content.guardianapis.com/search?api-key=${env.API_KEY}`;
+  updatePageWithSummary() {
+    document.getElementById('summary').innerHTML = '';
+    const span = document.createElement('span');
+    span.innerHTML = this.sentences.join(' ');
+    document.getElementById('summary').appendChild(span);
+  }
+
+  fetchFromGuardianAndUpdateResults() {
+    const url = `https://content.guardianapis.com/search?api-key=${env.GUARDIAN_KEY}`;
     fetch(url)
       .then(response => response.json())
       .then((data) => {
@@ -34,23 +42,30 @@ export default class NewsController {
       });
   }
 
-  makeButtonWork() {
-    document.getElementById('summaryButton').addEventListener('click', this.fetchFromAylien);
+  makePlusButtonsWork() {
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < 10; i++) {
+      document.getElementById(i).addEventListener('click', (event) => {
+        event.preventDefault();
+        this.fetchFromAylienAndUpdateSentences(this.results[i].webUrl);
+        setTimeout(() => {
+          this.updatePageWithSummary();
+        }, 2000);
+      });
+    }
   }
 
-  fetchFromAylien() {
-    const url = 'https://api.aylien.com/api/v1/summarize?url=https://www.theguardian.com/artanddesign/2018/nov/15/david-hockney-painting-record-auction-living-artist';
-    const request = new Request(url, {
+  fetchFromAylienAndUpdateSentences(urlToSummarize) {
+    const urlRequest = `http://hnryjmes-cors-anywhere.herokuapp.com/https://api.aylien.com/api/v1/summarize?url=${urlToSummarize}`;
+    const request = new Request(urlRequest, {
       headers: new Headers({
-        'X-AYLIEN-TextAPI-Application-Key': '459a45149ca7c4a0b22f50e4a9b13a6e',
-        'X-AYLIEN-TextAPI-Application-ID': '2d7caed4',
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
+        'X-AYLIEN-TextAPI-Application-Key': env.AYLIEN_KEY,
+        'X-AYLIEN-TextAPI-Application-ID': env.AYLIEN_ID,
       }),
     });
     fetch(request).then(response => response.json())
       .then((data) => {
-        console.log(data);
+        this.sentences = data.sentences;
       });
   }
 }
