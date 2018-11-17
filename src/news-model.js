@@ -1,6 +1,6 @@
 (function(exports) {
   function News(text) {
-    this._text = text
+    this._text = text;
   }
 
   News.prototype.displayText = function () {
