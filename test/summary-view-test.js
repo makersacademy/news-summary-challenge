@@ -21,13 +21,19 @@ describe('An article summary view', () => {
   })
 
   it('can render HTML for an article', () => {
-    var savedFunctionState = view.formatImage
+    var i = 0
     view.formatImage = (imageData) => {
+      i++
       return imageData
     }
 
+    view.formatSummary = summaryData => {
+      i++
+      return summaryData
+    }
+
     expect(view.renderSummaryHTML()).isEqualTo('<article>This is an image.<h2>This is a headline.</h2><p>This is a summary.</p></article>')
-    view.formatImage = savedFunctionState
+    expect(i).isEqualTo(2)
   })
 
   it('can format raw image data', () => {
