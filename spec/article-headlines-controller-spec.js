@@ -12,12 +12,21 @@ describe("ArticleHeadlinesController", function() {
   // });
   describe(".render()", function() {
     it("should add the list of articles to a div on page", function() {
-      var htmlMock = { innerHTML: "string"};
+      var htmlMock = { innerHTML: "string" };
       document.getElementById = function() { return htmlMock; };
       var articleList = new ArticleList();
       articleHeadlinesController.articleListView = new ArticleListView(articleList);
       articleHeadlinesController.render();
       expect(htmlMock.innerHTML).toBe("<ul></ul>");
+    });
+    it("should have a link in the div on page", function() {
+      var htmlMock = { innerHTML: "string" };
+      document.getElementById = function() { return htmlMock; };
+      var articleList = new ArticleList();
+      articleList.create("this is an article", "www.google.com");
+      articleHeadlinesController.articleListView = new ArticleListView(articleList);
+      articleHeadlinesController.render();
+      expect(htmlMock.innerHTML).toBe("<ul><li><a ahref='www.google.com'>this is an article</a></li></ul>");
     });
   });
 });
