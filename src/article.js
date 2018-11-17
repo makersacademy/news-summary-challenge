@@ -1,12 +1,9 @@
 (function(exports) {
-  function Article(id, headline, webURL) {
+  function Article(id, headline, webURL, summary) {
     this.id = id;
     this.headline = headline;
     this.webURL = webURL;
-  }
-
-  Article.prototype.createSummary = function(summary) {
-    return this.summary = summary
+    this.summary = summary;
   }
 
   exports.Article = Article;
