@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <style>
+  div.list {
+    width: 500px;
+    list-style: none;
+  }
+  img{
+    width: 500px;
+  }
+  </style>
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+</head>
 <body>
 
-<h1>News Headlines</h1>
+  <h1 id="news">News Headlines</h1>
 
-<ul id="headlines">
-</ul>
+  <div class="list" id="headlines">
+  </div>
 
-<ul id="test">
-</ul>
+  <div id="summary">
+  </div>
 
+  <script>
+  // document.getElementById("headlines").addEventListener("click", function() {
+  //   myFunction();
+  // }, false);
+  //
+  // function myFunction() {
+  //     var x = document.getElementById("headlines");
+  //     if (x.style.display === "none") {
+  //         x.style.display = "block";
+  //     } else {
+  //         x.style.display = "none";
+  //     }
+  // }
+  </script>
 </body>
 <script src="headlines.js"></script>
 </html>
