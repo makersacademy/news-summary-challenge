@@ -2,9 +2,9 @@ import * as viewExports from '../views/headlines-view.js'
 import { apiKeys } from '../../api-keys.js'
 
 class HeadlinesController {
-  constructor (headlinesList) {
-    this.headlinesList = headlinesList
-    this.headlinesView = new viewExports.HeadlinesView(headlinesList)
+  constructor (articleList) {
+    this.articleList = articleList
+    this.headlinesView = new viewExports.HeadlinesView(articleList)
     this.key = apiKeys.GUARDIAN_KEY
   }
 
@@ -21,7 +21,7 @@ class HeadlinesController {
     var images = resultsList.map(resultObject => resultObject.fields.main)
     var headlines = resultsList.map(resultObject => resultObject.webTitle)
     headlines.forEach((headline, index) => {
-      this.headlinesView.headlinesList.createArticle(headline, images[index])
+      this.headlinesView.articleList.createArticle(headline, images[index])
     })
   }
 

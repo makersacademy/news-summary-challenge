@@ -18,7 +18,7 @@ describe('A headline view', () => {
   })
 
   it('stores a list of articles when instantiated', () => {
-    expect(view.headlinesList).isEqualTo(list)
+    expect(view.articleList).isEqualTo(list)
   })
 
   it('can render HTML for its headlines list', () => {

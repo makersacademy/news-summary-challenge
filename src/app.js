@@ -1,7 +1,7 @@
 import { HeadlinesController } from './controllers/headlines-controller.js'
-import { HeadlinesList } from './headlines-list.js'
+import { ArticleList } from './headlines-list.js'
 
-var headlinesList = new HeadlinesList()
-var headlinesController = new HeadlinesController(headlinesList)
+var articleList = new ArticleList()
+var headlinesController = new HeadlinesController(articleList)
 
 headlinesController.initializeHeadlines()

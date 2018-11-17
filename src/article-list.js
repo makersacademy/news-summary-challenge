@@ -1,6 +1,6 @@
 import * as articleExports from './article.js'
 
-class HeadlinesList {
+class ArticleList {
   constructor () {
     this.articles = []
   }
@@ -16,4 +16,4 @@ class HeadlinesList {
   }
 }
 
-export { HeadlinesList }
+export { ArticleList }

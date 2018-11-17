@@ -2,7 +2,7 @@ import { HeadlinesController } from '../src/controllers/headlines-controller.js'
 
 describe('A headlines controller', () => {
   var controller
-  var headlinesList
+  var articleList
   var resultObject
   var createResult
   var element
@@ -13,7 +13,7 @@ describe('A headlines controller', () => {
       headline: null,
       image: null
     }
-    headlinesList = {
+    articleList = {
       articles: [],
       createArticle: (headline, image) => {
         createResult.headline = headline
@@ -26,15 +26,15 @@ describe('A headlines controller', () => {
     }
 
     results = [resultObject]
-    controller = new HeadlinesController(headlinesList)
+    controller = new HeadlinesController(articleList)
   })
 
   it('takes a new articles list when instantiated', () => {
-    expect(controller.headlinesList).isEqualTo(headlinesList)
+    expect(controller.articleList).isEqualTo(articleList)
   })
 
   it('creates a new headlines view when instantiated', () => {
-    expect(controller.headlinesView.headlinesList).isEqualTo(headlinesList)
+    expect(controller.headlinesView.articleList).isEqualTo(articleList)
   })
 
   it('can set headline information', () => {
@@ -43,7 +43,7 @@ describe('A headlines controller', () => {
   })
 
   it('can list headlines as HTML', () => {
-    headlinesList.articles = [{
+    articleList.articles = [{
       headline: 'This is a headline.',
       image: 'This is an image.',
       id: 0
