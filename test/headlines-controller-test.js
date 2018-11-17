@@ -22,7 +22,7 @@ describe('A headlines controller', () => {
     }
     resultObject = {
       webTitle: 'This is a headline.',
-      fields: { main: "This is an image."}
+      fields: { main: 'This is an image.' }
     }
 
     results = [resultObject]

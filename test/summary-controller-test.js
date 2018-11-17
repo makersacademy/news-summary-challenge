@@ -19,7 +19,7 @@ describe('A summary controller', () => {
 
     passedURL = null
     json = { text: 'Test', sentences: { join: () => 'Test successful' } }
-    response = { json: () => { return json; } }
+    response = { json: () => { return json } }
 
     controller = new SummaryController(articleList)
   })
