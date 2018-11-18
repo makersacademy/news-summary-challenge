@@ -15,4 +15,5 @@ let loadHeadlinesOnHomeClick = () => {
   })
 }
 
+
 export { loadSummaryOnClick, loadHeadlinesOnHomeClick }
