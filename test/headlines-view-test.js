@@ -22,12 +22,10 @@ describe('A headline view', () => {
   })
 
   it('can render HTML for its headlines list', () => {
-    var savedFormatImage = view.formatImage
     view.formatImage = (imageData) => {
       return imageData
     }
     expect(view.renderListHTML()).isEqualTo('<article>This is an image.<a href="#articles/0">This is a headline.</a></article>')
-    view.formatImage = savedFormatImage
   })
 
   it('can format raw image data', () => {
