@@ -5,14 +5,29 @@ body {
 
 button#home {
   font-family: 'Fredoka One', cursive;
+  color: #491D2C;
   margin-top: 10%;
+  margin-bottom: 2%;
+  margin-left: 36.5%;
   border: none;
   background-color: inherit;
-  font-size: 32px;
-  cursor: pointer;
-  display: inline-block;
+  font-size: 4vw;
+  float: left;
 }
 
 button#home:hover {
-  color: #eee;
+  color: #F3E8DF;
+}
+
+button#home:focus {
+  outline: none;
+}
+
+img#shallot {
+  float: left;
+  margin-top: 11%;
+}
+
+section#title {
+  display: inline-block;
 }
