@@ -11,5 +11,6 @@ window.onload = function() {
     .then(function(data) {
       console.log(data);
     })
+    console.log(data)
   document.getElementById("app").innerHTML = IndexPage().render(data);
 }
