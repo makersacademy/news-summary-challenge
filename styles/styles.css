@@ -7,7 +7,8 @@ a {
 }
 
 a:hover {
-  color: #F3E8DF;
+  color: #E9CAD0;
+  text-decoration: none;
 }
 
 figure {
@@ -17,6 +18,8 @@ figure {
 body {
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  background-color: #F3EBE4;
+  background-image: url('../images/background-texture.png');
 }
 
 h2 {
@@ -52,7 +55,7 @@ button#home {
 }
 
 button#home:hover {
-  color: #F3E8DF;
+  color: #E9CAD0;
 }
 
 button#home:focus {
