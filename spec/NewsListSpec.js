@@ -54,7 +54,7 @@ describe('NewsList', () => {
       }, 1500);
       setTimeout(() => {
         expect(newsList.articles[0].sentences.length).toEqual(5);
-      }, 2500);
+      }, 3000);
     });
   });
 });

@@ -1,7 +1,6 @@
 export default class NewsController {
   constructor(newsList) {
     this.newsList = newsList;
-    this.render();
   }
 
   render() {
