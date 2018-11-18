@@ -13,13 +13,12 @@
     articles = data.response.results
     for (i = 0; i < articles.length; i++) {
       listStringHtml +=
-        `<li><img class="picture" src="${articles[i].fields.thumbnail}" width="100"></img>
-          <caption>${articles[i].sectionName}</caption><br>
-          <a href =${articles[i].webUrl}>
-            ${articles[i].webTitle}
-          </a>
-          <span>${articles[i].fields.trailText}</span>
-        </li>`
+      `<li onclick="location.href='${articles[i].webUrl}'">
+        <img src="${articles[i].fields.thumbnail}" width="200">
+        <caption>${articles[i].sectionName}</caption><br>
+        <h4>${articles[i].webTitle}</h4>
+        <span>${articles[i].fields.trailText}</span>
+      </li>`
     };
     return listStringHtml + '</ul>';
   };
