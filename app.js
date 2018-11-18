@@ -1,18 +1,12 @@
 window.onload = function() {
-  const API_KEY = '1836ff0dabce42ce86ee463e75d05fbd'
+  const API_KEY = '46d4c3c8937142eca861cda8a7eca0c0'
 
   var url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${API_KEY}`
-  var request = new XMLHttpRequest();
-  request.open('GET', url, true);
-  request.onload = function() {
-    var data = JSON.parse(this.response);
-    var articles = data.response.docs;
-    for (var i = 0; i < 5; i++) {
-      createElement('h1', articles[i].headline.main);
-      createP(articles[i].snippet);
-    }
-  }
-  request.send();
+  var req = new Request(url);
+  fetch(req)
+    .then(function(response) {
+      console.log(response.json());
+    })
 
-  document.getElementById("app").innerHTML = IndexPage().render();
+  document.getElementById("app").innerHTML = IndexPage().render(req);
 }
