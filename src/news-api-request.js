@@ -19,11 +19,11 @@ fetch(url).then(res => {
       itemLink.innerHTML = "read more";
       var summaryUrl = ("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + currentArticle.webUrl)
       fetch(summaryUrl).then(res => {
-        res.json().then(function(dataSum) {
+        res.json().then(function(dataSummary) {
           var summary = document.createElement("p");
-          summary.innerHTML = dataSum.sentences;
+          summary.innerHTML = dataSummary.sentences;
           document.body.appendChild(summary);
-          summary.innerHTML = dataSum.sentences;
+          summary.innerHTML = dataSummary.sentences;
         })
       })
     }
