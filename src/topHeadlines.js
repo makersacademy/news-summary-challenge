@@ -3,12 +3,14 @@
 
 function renderHeadlines(allHeadlines) {
   var html = "";
-  allHeadlines.forEach(function(article) {
+  allHeadlines.forEach(article) => {
     html += `<li><div name='${article.id}'><a href='#articles/${article.id}'>${article.webTitle}</li>`
-  })
-  return html
+  }
+  return{
+    html: html
+  }
 }
 
 exports.renderHeadlines = renderHeadlines
 
-})(this)
+})(this);
