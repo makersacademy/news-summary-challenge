@@ -3,7 +3,6 @@
 function showArticles(container) {
 
   requestNews(20, container, function(container, json){
-    // debugger;
     let results = json.response.results;
     var articleList = [];
     for(var i=0; i<results.length; ++i) {

@@ -22,7 +22,6 @@ class ArticleListView {
 
   _createList(id){
     let list = document.createElement("ul");
-    // set id
     return list;
   }
 }
