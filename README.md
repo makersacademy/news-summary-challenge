@@ -9,22 +9,22 @@
 ## To Do
 - [x] Basic HTML page set up
 - [ ] Required functionality
-  - [ ] Grab headlines from API and Display on page
-  - [ ] Show full news article when headline is clicked
-  - [ ] Show short summary below each headline
-  - [ ] Show an image above each headline
+  - [x] Grab headlines from API and Display on page
+  - [x] Show full news article when headline is clicked
+  - [x] Show short summary below each headline
+  - [x] Show an image above each headline
   - [ ] Make site mobile responsive
   - [ ] Add css animations
 - [ ] APIs
-  - [ ] Use Maker's API
+  - [x] Use Maker's API
   - [ ] Test environment variables set up
   - [ ] API keys not exposed on front end
   - [ ] Use Guardian API
 - [ ] Environment
-  - [ ] served locally
+  - [x] served locally
   - [ ] served from server
 - [ ] Handling Asynchronicity
-  - [ ] ES5 - Call backs
+  - [x] ES5 - Call backs
   - [ ] ES6 - promises and await
 
 ## Considerations
