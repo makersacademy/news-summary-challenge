@@ -35,6 +35,8 @@ export default class NewsList {
 
   fetchSummariesFromAylienAndUpdateSentences() {
     this.articles.forEach((article) => {
+      // try Makers proxy if normal one is rate-limited
+      // const urlRequest = `http://hnryjmes-cors-anywhere.herokuapp.com/http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${article.url}`;
       const urlRequest = `http://hnryjmes-cors-anywhere.herokuapp.com/https://api.aylien.com/api/v1/summarize?url=${article.url}`;
       const request = new Request(urlRequest, {
         headers: new Headers({
