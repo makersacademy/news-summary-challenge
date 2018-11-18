@@ -1,19 +1,13 @@
 (function (exports) {
-  function NewsListView(newsList) {
-    this.newsList = newsList
-    this.view = '<ul>'
+  function NewsListView() {
   }
 
-  NewsListView.prototype.render = function(headlineList) {
-      console.log(headlineList)
-      var view = '<ul>'
-      for (let i = 0; i < headlineList.length; i++) {
-      console.log(headlineList[i])
-      view += 'li' + headlineList[i].getHeadline() + '</li>'
+  NewsListView.prototype.render = function(results, view) {
+      for (let i = 0; i < results.length; i++) {
+        view += '<li>' + results[i].webTitle + '</li>'
+      } view += '</ul>'
+        document.getElementById('app').innerHTML = view
     }
-      view += '</ul>'
-      return view
-  }
 
   exports.NewsListView = NewsListView
 })(this)

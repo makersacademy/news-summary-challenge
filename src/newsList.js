@@ -23,7 +23,8 @@
 
     function render(results, view) {
       for (let i = 0; i < results.length; i++) {
-        view += '<li>' + results[i].webTitle + '</li>'
+        view += '<li><div><a href="#story/' + [i + 1] + '">'
+        view += results[i].webTitle + '</li></div></li>'
       } view += '</ul>'
         document.getElementById('app').innerHTML = view
     }
