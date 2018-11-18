@@ -22,7 +22,7 @@
   };
 
   NewsController.prototype.render = function() {
-    fetch("https://content.guardianapis.com/search?api-key=aabcd544-37ed-434f-a275-e2af9055b42b")
+    fetch("https://content.guardianapis.com/search?api-key=aabcd544-37ed-434f-a275-e2af9055b42b&show-fields=thumbnail")
     .then(function(response) {
       return response.json();
     })
