@@ -1,7 +1,7 @@
 window.onload = function() {
   const API_KEY = '1836ff0dabce42ce86ee463e75d05fbd'
 
-  var url = "https://api.nytimes.com/svc/topstories/v2/home.json?" + API_KEY;
+  var url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${API_KEY}`
   var request = new XMLHttpRequest();
   request.open('GET', url, true);
   request.onload = function() {
@@ -12,6 +12,7 @@ window.onload = function() {
       createP(articles[i].snippet);
     }
   }
+  request.send();
 
   document.getElementById("app").innerHTML = IndexPage().render();
 }
