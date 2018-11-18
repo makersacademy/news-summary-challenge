@@ -18,7 +18,7 @@ visit:
 ```
 localhost:8080/news.html
 ```
-## Technology
+## Technology
 
 The app uses the Guardian API and the Aylien Text API to summarise the articles:
 ```
@@ -30,7 +30,7 @@ It would use the test-sweet framework had I built any tests.
 https://github.com/rbbri/sweet
 ```
 
-## Improvements
+## Improvements
 
 - I have struggled to test the project. I intended to use the test-sweet framework but got stuck with knowing what to test and how. I will acome back to this.
 - I intend to improve the search options with either a search bar or a fully equipped navigation bar.
