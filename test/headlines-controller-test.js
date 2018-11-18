@@ -47,7 +47,7 @@ describe('A headlines controller', () => {
     controller.renderHeadlinesHTML = () => {
       i++
     }
-    
+
     controller.initializeHeadlines()
 
     setTimeout(() => {

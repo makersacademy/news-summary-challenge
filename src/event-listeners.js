@@ -10,7 +10,7 @@ function loadSummaryOnClick (summaryController) {
 
 function loadHeadlinesOnHomeClick () {
   document.getElementById('home').addEventListener('click', () => {
-    var headlinesController = new HeadlinesController(new ArticleList)
+    var headlinesController = new HeadlinesController(new ArticleList())
     headlinesController.initializeHeadlines()
   })
 }
