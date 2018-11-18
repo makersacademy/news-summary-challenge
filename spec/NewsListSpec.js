@@ -1,11 +1,24 @@
 /* eslint-disable import/extensions */
 import { describe, it, expect } from '../lib/TestLibrary.js';
-
 import NewsList from '../src/NewsList.js';
 
 describe('NewsList', () => {
-  it('it initialises with an empty array of articles', () => {
-    const newsList = new NewsList();
-    expect(newsList.articles.length).toEqual(0);
+  describe('#create', () => {
+    it('can create a news article with an id', () => {
+      const newsList = new NewsList();
+      const headline = 'headline';
+      const url = 'url';
+      newsList.create(headline, url);
+      expect(newsList.articles[0].id).toEqual(0);
+    });
+
+    it('can create two news articles with consecutive ids', () => {
+      const newsList = new NewsList();
+      const headline = 'headline';
+      const url = 'url';
+      newsList.create(headline, url);
+      newsList.create(headline, url);
+      expect(newsList.articles[1].id).toEqual(1);
+    });
   });
 });

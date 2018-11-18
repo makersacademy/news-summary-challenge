@@ -1,12 +1,14 @@
 /* eslint-disable import/extensions */
-/* eslint-disable no-console */
+import NewsArticle from './NewsArticle.js';
 
 export default class NewsList {
   constructor() {
     this.articles = [];
+    this.idCount = 0;
   }
 
-  add(newsArticle) {
-    this.articles.push(newsArticle);
+  create(headline, url) {
+    this.articles.push(new NewsArticle(headline, url, this.idCount));
+    this.idCount += 1;
   }
 }
