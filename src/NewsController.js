@@ -8,6 +8,7 @@ export default class NewsController {
     setTimeout(() => {
       const view = this.newsList.getView();
       document.getElementById('headlines').innerHTML = view;
+      this.newsList.fetchSummariesFromAylienAndUpdateSentences();
     }, 1500);
   }
 }

@@ -31,7 +31,7 @@ describe('NewsList', () => {
       for (let i = 0; i < 10; i++) {
         newsList.createArticle(headline, url);
       }
-      expect(newsList.getView()).toEqual('<p><a href="url" id="0">headline</a></p><p><a href="url" id="1">headline</a></p><p><a href="url" id="2">headline</a></p><p><a href="url" id="3">headline</a></p><p><a href="url" id="4">headline</a></p><p><a href="url" id="5">headline</a></p><p><a href="url" id="6">headline</a></p><p><a href="url" id="7">headline</a></p><p><a href="url" id="8">headline</a></p><p><a href="url" id="9">headline</a></p>');
+      expect(newsList.getView()).toEqual('<p id="0"><a href="#articles/0">headline</a></p><p id="1"><a href="#articles/1">headline</a></p><p id="2"><a href="#articles/2">headline</a></p><p id="3"><a href="#articles/3">headline</a></p><p id="4"><a href="#articles/4">headline</a></p><p id="5"><a href="#articles/5">headline</a></p><p id="6"><a href="#articles/6">headline</a></p><p id="7"><a href="#articles/7">headline</a></p><p id="8"><a href="#articles/8">headline</a></p><p id="9"><a href="#articles/9">headline</a></p>');
     });
   });
 
@@ -54,7 +54,7 @@ describe('NewsList', () => {
       }, 1500);
       setTimeout(() => {
         expect(newsList.articles[0].sentences.length).toEqual(5);
-      }, 3000);
+      }, 3500);
     });
   });
 });

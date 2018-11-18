@@ -5,4 +5,8 @@ export default class NewsArticle {
     this.id = id;
     this.sentences = null;
   }
+
+  getSummaryView() {
+    return `<p>${this.sentences.join(' ')}</p>`;
+  }
 }
