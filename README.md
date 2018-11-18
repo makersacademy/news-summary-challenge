@@ -25,10 +25,12 @@ To run:
 - At the moment, title links are set up correctly, but nothing happens when they are clicked
 
 ### What I would do given more time:
-- Finalise hashchange event listener, so that on click, the app shows full article view with 'back' button
-- Include "submit" event listener, to change view back to article list from single article view
+In rough order only:
 - Write controller tests
 - Isolate article list view and controller tests
+- Finalise hashchange event listener, so that on click, the app shows full article view with 'back' button
+- Include "submit" event listener, to change view back to article list from single article view
 - Work with Aylien API to show summary of each article on front page
 - Create app.js and include that in index.html, instead of Controller.  App.js would create a new controller and have it display the article list. Controller would thereafter be responsible for everything else.
+- Refactor controller code - it has too many responsibilities.
 - Refine styling
