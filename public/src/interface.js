@@ -21,10 +21,10 @@ document.getElementById('summary_container').addEventListener("click", function 
   summaryContainer.innerHTML = ""
 })
 
-document.getElementById('searchQueryButton').addEventListener('click', function(event) {
+document.getElementById('Favourites').addEventListener('change', function(event) {
   event.preventDefault()
   document.getElementById('headlines_container').innerHTML = ""
-  searchQuery = document.getElementById('searchQuery').value
-  searchQuery = "&section=" + searchQuery
+  searchQuery = document.getElementById('Favourites').value
+  searchQuery = "&section=" + searchQuery.toLowerCase()
   getHeadlines(searchQuery)
 })
