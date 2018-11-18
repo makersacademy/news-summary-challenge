@@ -10,6 +10,9 @@ Here is the main headlines view as you load the app:
 And here is an example summary page:
 ![image](./images/summary.png)
 
+Clicking on the app title takes you back to the headlines view:
+![image](./images/return-home.png)
+
 ### To install this app
 - Clone the repository.
 - `npm install` inside the project folder to install dependencies.
