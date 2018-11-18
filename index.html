@@ -2,9 +2,19 @@
 <html>
 <head>
   <title>News App</title>
+  <link rel="stylesheet" href="public/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
 </head>
 <body>
+  <h1 class="app_title">News of the Day</h1>
   <div id="news_feed"></div>
-  <script src="./script.js"></script>
+  <script src="./src/article-model.js"></script>
+  <script src="./src/article-list.js"></script>
+  <script src="./src/single-article-view.js"></script>
+  <script src="./src/article-list-view.js"></script>
+  <script src="./src/api.js"></script>
+  <script src="./src/news-controller.js"></script>
+  <script>var controller = new NewsController()</script>
+  <script>controller.displayList()</script>
 </body>
 </html>

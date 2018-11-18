@@ -1,0 +1,11 @@
+body {
+  width: 500px;
+  margin: auto;
+  font-family: 'PT Serif', serif;
+}
+img {
+  margin: 10px 0 10px 0;
+}
+li {
+  list-style-type: none;
+}
