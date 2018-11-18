@@ -19,6 +19,10 @@ By default, the app should be available to view on `localhost:8080`.
 
 To run tests, follow instructions as above, then navigate to `/SpecRunner.html` in your browser. Open the console in DevTools to see current passing or failing tests.
 
+## Screenshots
+
+![Screenshot 1](./images/screenshot.png)
+
 ## User Stories
 
 ```
