@@ -2,6 +2,8 @@ a {
   font-family: 'Fredoka One', cursive;
   margin-bottom: 2%;
   color: #491D2C;
+  display: inline-block;
+  width: 50%;
 }
 
 a:hover {
@@ -15,6 +17,23 @@ figure {
 body {
   text-align: center;
   font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-size: 2.5vw;
+  font-family: 'Fredoka One', cursive;
+  color: #491D2C;
+  display: inline-block;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+p {
+  font-size: 1.5vw;
+  display: inline-block;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 2%;
 }
 
 .headline-image {
