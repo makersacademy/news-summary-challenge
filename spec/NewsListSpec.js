@@ -8,7 +8,7 @@ describe('NewsList', () => {
       const newsList = new NewsList();
       const headline = 'headline';
       const url = 'url';
-      newsList.create(headline, url);
+      newsList.createArticle(headline, url);
       expect(newsList.articles[0].id).toEqual(0);
     });
 
@@ -16,9 +16,22 @@ describe('NewsList', () => {
       const newsList = new NewsList();
       const headline = 'headline';
       const url = 'url';
-      newsList.create(headline, url);
-      newsList.create(headline, url);
+      newsList.createArticle(headline, url);
+      newsList.createArticle(headline, url);
       expect(newsList.articles[1].id).toEqual(1);
+    });
+  });
+
+  describe('#getView', () => {
+    it('can create the HTML view from a news list', () => {
+      const newsList = new NewsList();
+      const headline = 'headline';
+      const url = 'url';
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < 10; i++) {
+        newsList.createArticle(headline, url);
+      }
+      expect(newsList.getView()).toEqual("<p><a href='url' id='0'>headline</a></p><p><a href='url' id='1'>headline</a></p><p><a href='url' id='2'>headline</a></p><p><a href='url' id='3'>headline</a></p><p><a href='url' id='4'>headline</a></p><p><a href='url' id='5'>headline</a></p><p><a href='url' id='6'>headline</a></p><p><a href='url' id='7'>headline</a></p><p><a href='url' id='8'>headline</a></p><p><a href='url' id='9'>headline</a></p>");
     });
   });
 });
