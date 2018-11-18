@@ -31,7 +31,7 @@ describe('NewsList', () => {
       for (let i = 0; i < 10; i++) {
         newsList.createArticle(headline, url);
       }
-      expect(newsList.getView()).toEqual("<p><a href='url' id='0'>headline</a></p><p><a href='url' id='1'>headline</a></p><p><a href='url' id='2'>headline</a></p><p><a href='url' id='3'>headline</a></p><p><a href='url' id='4'>headline</a></p><p><a href='url' id='5'>headline</a></p><p><a href='url' id='6'>headline</a></p><p><a href='url' id='7'>headline</a></p><p><a href='url' id='8'>headline</a></p><p><a href='url' id='9'>headline</a></p>");
+      expect(newsList.getView()).toEqual('<p><a href="url" id="0">headline</a></p><p><a href="url" id="1">headline</a></p><p><a href="url" id="2">headline</a></p><p><a href="url" id="3">headline</a></p><p><a href="url" id="4">headline</a></p><p><a href="url" id="5">headline</a></p><p><a href="url" id="6">headline</a></p><p><a href="url" id="7">headline</a></p><p><a href="url" id="8">headline</a></p><p><a href="url" id="9">headline</a></p>');
     });
   });
 });

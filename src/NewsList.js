@@ -15,7 +15,7 @@ export default class NewsList {
   getView() {
     let view = '';
     this.articles.forEach((article) => {
-      view += `<p><a href='${article.url}' id='${article.id}'>${article.headline}</a></p>`;
+      view += `<p><a href="${article.url}" id="${article.id}">${article.headline}</a></p>`;
     });
     return view;
   }
