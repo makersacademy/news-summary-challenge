@@ -1,5 +1,5 @@
 describe("ArticleSummaryView", function() {
-  var article = new Article(0, "this is an article", "www.google.com", "this is a summary");
+  var article = new Article(0, "this is an article", "www.google.com");
   var articleSummaryView = new ArticleSummaryView(article);
   describe(".initialize", function() {
     it("should take an article as a parameter and assign that to a constructor property", function() {
@@ -8,7 +8,8 @@ describe("ArticleSummaryView", function() {
   });
   describe(".html", function() {
     it("should return an html string of the article's summary", function() {
-      expect(articleSummaryView.html()).toBe("<div>this is a summary</div>");
+      article.summary = []
+      expect(articleSummaryView.html()).toBe("<p></p>")
     });
   });
 });

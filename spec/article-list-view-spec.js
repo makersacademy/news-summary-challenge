@@ -11,15 +11,15 @@ describe(".html", function() {
     expect(articleListView.html()).toBe('<ul></ul>');
   });
   it("should return an html list of an article when created", function() {
-    articleList.create("this is an article", "www.google.com", "this is a summary");
-    expect(articleListView.html()).toBe("<ul><li><a href='www.google.com'>this is an article</a></li><button id='button' type='button'>Summary</button></ul>");
+    articleList.create("this is an article", "www.google.com");
+    expect(articleListView.html()).toBe("<ul><li><a href='www.google.com'>this is an article</a></li><a href='#article/0'>Click here for summary</a></ul>");
     });
   it("should return an html list of multiple articles", function() {
-    articleList.create("this is another article", "www.facebook.com", "this is another summary");
-    expect(articleListView.html()).toBe("<ul><li><a href='www.google.com'>this is an article</a></li><button id='button' type='button'>Summary</button><li><a href='www.facebook.com'>this is another article</a></li><button id='button' type='button'>Summary</button></ul>");
+    articleList.create("this is another article", "www.facebook.com");
+    expect(articleListView.html()).toBe("<ul><li><a href='www.google.com'>this is an article</a></li><a href='#article/0'>Click here for summary</a><li><a href='www.facebook.com'>this is another article</a></li><a href='#article/1'>Click here for summary</a></ul>");
   });
   it("should contain the link to the original article", function() {
-    expect(articleListView.html()).toBe("<ul><li><a href='www.google.com'>this is an article</a></li><button id='button' type='button'>Summary</button><li><a href='www.facebook.com'>this is another article</a></li><button id='button' type='button'>Summary</button></ul>");
+    expect(articleListView.html()).toBe("<ul><li><a href='www.google.com'>this is an article</a></li><a href='#article/0'>Click here for summary</a><li><a href='www.facebook.com'>this is another article</a></li><a href='#article/1'>Click here for summary</a></ul>");
   });
   });
 });
