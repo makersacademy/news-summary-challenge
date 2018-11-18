@@ -3,8 +3,8 @@ function creatmode(element) {
 }
 
 let get_news = creatmode('get_news'),
-    headlines = creatmode('headlines'),
-    articles = creatmode('articles');
+headlines = creatmode('headlines'),
+articles = creatmode('articles');
 
 const controller = new NewsSummary();
 controller.shownews();
@@ -16,6 +16,6 @@ get_news.addEventListener('click', function() {
 headlines.addEventListener('click', function() {
   setTimeout(function(){
     articles = (window.location.hash.split('/'))
-    artlicle_id = articles.slice(-1)[0]
+    artlicle_id = articles.slice(-1)[1]
   }, 10);
 })

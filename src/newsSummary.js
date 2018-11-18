@@ -3,7 +3,7 @@
   // function url(){
   //   return this.guardianapis = "https://content.guardianapis.com/search?api-key="+MyKey
   // }
-let api = "851c438c-1135-430d-b04e-f4a69a51fdb5"
+  let api = "851c438c-1135-430d-b04e-f4a69a51fdb5"
 
   function NewsSummary(){
     this.allheadlines = []
@@ -15,7 +15,7 @@ let api = "851c438c-1135-430d-b04e-f4a69a51fdb5"
     .then(res => {
     return res.json();
   }).then(data => {
-    this.allheadlines = (data.results);
+    this.allheadlines = (data.res.results);
     console.log(data)
   }).catch(function(error){
     console.log(JSON.stringify(error));
