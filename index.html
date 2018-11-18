@@ -82,9 +82,9 @@
           //create html elements
           var article = document.createElement('article');
           var link = document.createElement('a');
-          link.href="#";
+          link.href="javascript:showArticle(" + i + ")";
           var link2 = document.createElement('a');
-          link2.href="#";
+          link2.href="javascript:showArticle(" + i + ")";
           var header = document.createElement('h2');
           var imageElement = document.createElement('img');
           imageElement.src = image;
@@ -112,13 +112,14 @@
       }
 
       function showArticle(articleNumber){
-        document.getElementById('headlines').style.display="none";
-        document.getElementById('individual-article').style.display="block";
         articleDetails = guardianData.response.results[articleNumber];
         document.getElementById('individual-img').src = articleDetails.fields.thumbnail;
         document.getElementById('individual-headline').innerHTML = articleDetails.webTitle;
         document.getElementById('individual-byline').innerHTML = articleDetails.fields.trailText;
         document.getElementById('individual-article-text').innerHTML = articleDetails.fields.body;
+
+        document.getElementById('headlines').style.display="none";
+        document.getElementById('individual-article').style.display="block";
       }
 
     </script>
