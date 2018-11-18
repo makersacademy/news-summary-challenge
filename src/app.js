@@ -10,4 +10,4 @@ headlinesController.initializeHeadlines()
 var summaryController = new SummaryController(headlinesController.headlinesView.articleList)
 
 listeners.loadSummaryOnClick(summaryController)
-listeners.loadHeadlinesOnHomeClick(headlinesController)
+listeners.loadHeadlinesOnHomeClick()
