@@ -4,7 +4,7 @@
   }
 
   StoryList.prototype.addStory = function(story) {
-    this.list.push(story.headline)
+    this.list.push(story)
   }
 
   exports.StoryList = StoryList;

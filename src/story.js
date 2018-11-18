@@ -1,7 +1,7 @@
 (function(exports) {
-  function Story (headline, content){
+  function Story (headline, url){
     this.headline = headline;
-    this.content = content;
+    this.url = url;
     MAXIMUM_LENGTH = 50;
   };
 

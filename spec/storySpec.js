@@ -4,9 +4,9 @@ describe("Story", function(){
     expect(story.headline).toEqual("News story");
   });
 
-  it("has content", function() {
-    var story = new Story("News story", "This news story is great");
-    expect(story.content).toEqual("This news story is great")
+  it("has url", function() {
+    var story = new Story("News story", "www.newsstroy.com");
+    expect(story.url).toEqual("www.newsstroy.com")
   })
 
   describe("getHeadline", function(){
