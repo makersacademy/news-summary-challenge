@@ -18,8 +18,6 @@ describe('A summary controller', () => {
     }
 
     passedURL = null
-    json = { text: 'Test', sentences: { join: () => 'Test successful' } }
-    response = { json: () => { return json } }
 
     controller = new SummaryController(articleList)
   })
@@ -34,7 +32,10 @@ describe('A summary controller', () => {
 
   it('gets a summary using the fetch method correctly', () => {
     var i = 0
-    var savedFunctionState = window.fetch
+    var json = { text: 'Test', sentences: { join: () => 'Test successful' } }
+    var response = { json: () => { return json } }
+    controller.summaryView = { article: articleList.articles[0], renderSummaryHTML: () => null }
+
     window.fetch = url => {
       passedURL = url
       return new Promise(resolve => {
@@ -42,9 +43,6 @@ describe('A summary controller', () => {
         resolve(response)
       })
     }
-    let callback = () => {}
-
-    controller.summaryView = { article: articleList.articles[0], renderSummaryHTML: () => null }
     controller.getSummary(controller.summaryView.article.url)
     expect(passedURL).isEqualTo(`https://cors-anywhere.herokuapp.com/https://api.aylien.com/api/v1/summarize?url=${controller.summaryView.article.url}`)
     expect(i).isEqualTo(1)

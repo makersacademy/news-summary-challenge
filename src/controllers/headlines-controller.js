@@ -5,11 +5,10 @@ class HeadlinesController {
   constructor (articleList) {
     this.articleList = articleList
     this.headlinesView = new viewExports.HeadlinesView(articleList)
-    this.key = apiKeys.GUARDIAN_KEY
   }
 
   initializeHeadlines () {
-    fetch(`https://content.guardianapis.com/search?show-fields=main&order-by=newest&page-size=10&q=technology&api-key=${this.key}`)
+    fetch(`https://content.guardianapis.com/search?show-fields=main&order-by=newest&page-size=10&q=technology&api-key=${apiKeys.GUARDIAN_KEY}`)
       .then(response => { return response.json() })
       .then(json => {
         this.setHeadlinesInformation(json.response.results)
