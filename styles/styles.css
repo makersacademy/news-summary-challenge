@@ -1,13 +1,30 @@
+a {
+  font-family: 'Fredoka One', cursive;
+  margin-bottom: 2%;
+  color: #491D2C;
+}
+
+a:hover {
+  color: #F3E8DF;
+}
+
+figure {
+  margin-top: 4%;
+}
+
 body {
   text-align: center;
   font-family: 'Roboto', sans-serif;
+}
+
+.headline-image {
+  border-radius: 5px;
 }
 
 button#home {
   font-family: 'Fredoka One', cursive;
   color: #491D2C;
   margin-top: 10%;
-  margin-bottom: 2%;
   margin-left: 36.5%;
   border: none;
   background-color: inherit;
