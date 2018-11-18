@@ -1,4 +1,6 @@
-var getHeadlines = function(url) {
+var getHeadlines = function(searchQuery) {
+  base = "https://content.guardianapis.com/search?api-key=test&show-fields=trailText,thumbnail"
+  url = base + searchQuery
   var request = new Request(url, {})
   fetch(request).then(response => response.json())
   .then((data) => {

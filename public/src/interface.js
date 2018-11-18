@@ -20,3 +20,11 @@ document.getElementById('summary_container').addEventListener("click", function 
   headlinesContainer.style.display = "block";
   summaryContainer.innerHTML = ""
 })
+
+document.getElementById('searchQueryButton').addEventListener('click', function(event) {
+  event.preventDefault()
+  document.getElementById('headlines_container').innerHTML = ""
+  searchQuery = document.getElementById('searchQuery').value
+  searchQuery = "&section=" + searchQuery
+  getHeadlines(searchQuery)
+})
