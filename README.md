@@ -25,7 +25,7 @@ To run:
 - At the moment, title links are set up correctly, but nothing happens when they are clicked
 
 ### What I would do given more time:
-In rough order only:
+In rough order:
 - Write controller tests
 - Isolate article list view and controller tests
 - Finalise hashchange event listener, so that on click, the app shows full article view with 'back' button
