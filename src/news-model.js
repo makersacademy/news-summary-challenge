@@ -1,10 +1,15 @@
 (function(exports) {
-  function News(text) {
-    this._text = text;
+  function News(text, id) {
+    this.id = id
+    this.text = text;
+  }
+
+  News.prototype.getId = function () {
+    return this.id
   }
 
   News.prototype.displayText = function () {
-    return this._text
+    return this.text
   }
 
   exports.News = News

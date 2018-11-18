@@ -4,9 +4,14 @@
   };
 
   NewsListView.prototype.renderNewsItems = function() {
-    list = this.newsList.newsItems.map(
-      newsItem => `<li><div>${newsItem.displayText()}</div></li>`).join("")
-      return `<ul>${list}</ul>`;
+    var view = '<ul>';
+    this.newsList.getNewsItems().forEach(function (news) {
+      view += '<li><div><a href="#news/' + news.getId() + '">';
+      view += news.displayText();
+      view += '</a></div></li>';
+    })
+    view += '</ul>'
+    return view;
   };
 
   exports.NewsListView = NewsListView;
