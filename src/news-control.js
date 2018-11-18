@@ -14,6 +14,7 @@
     for (i = 0; i < articles.length; i++) {
       listStringHtml +=
         `<li><img class="picture" src="${articles[i].fields.thumbnail}" width="100"></img>
+          <caption>${articles[i].sectionName}</caption><br>
           <a href =${articles[i].webUrl}>
             ${articles[i].webTitle}
           </a>
