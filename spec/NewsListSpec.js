@@ -34,4 +34,14 @@ describe('NewsList', () => {
       expect(newsList.getView()).toEqual('<p><a href="url" id="0">headline</a></p><p><a href="url" id="1">headline</a></p><p><a href="url" id="2">headline</a></p><p><a href="url" id="3">headline</a></p><p><a href="url" id="4">headline</a></p><p><a href="url" id="5">headline</a></p><p><a href="url" id="6">headline</a></p><p><a href="url" id="7">headline</a></p><p><a href="url" id="8">headline</a></p><p><a href="url" id="9">headline</a></p>');
     });
   });
+
+  describe('#fetchArticlesFromGuardian', () => {
+    it('can fetch and store articles from the Guardian API', () => {
+      const newsList = new NewsList();
+      newsList.fetchFromGuardianAndUpdateArticles();
+      setTimeout(() => {
+        expect(newsList.articles.length).toEqual(10);
+      }, 1500);
+    });
+  });
 });
