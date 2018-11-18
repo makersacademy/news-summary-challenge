@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,7 +7,90 @@
     <title>News Summary Challenge</title>
     <link rel="canonical" href="https://github.com/Tolvic/news-summary-challenge" />
     <style>
+      /* Set the background color of body to tan */
+      body {
+        margin: 0;
+        text-align: center;
+      }
 
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: space-evenly;
+      }
+
+
+      .flex-container > article {
+        background-color: #f1f1f1;
+        margin: 10px;
+        padding: 20px;
+        font-size: 1em;
+        max-width: 40%;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      p {
+        text-align: left;
+        padding-left: 20px;
+        padding-right: 20px;
+
+      }
+
+      #individual-headline {
+        text-align: left;
+        padding: 20px;
+      }
+
+      .individual-article > article {
+        max-width: 80%;
+      }
+
+      nav, footer {
+        background-color: black;
+        color: white;
+        overflow: hidden;
+
+      }
+
+      summary:hover {
+        cursor: pointer; 
+      }
+
+      footer {
+        min-height: 40px
+      }
+
+      footer > a{
+        color: white
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      /* On screens that are 992px or less, set the background color to blue */
+      @media screen and (max-width: 992px) {
+        body {
+
+        }
+      }
+
+      /* On screens that are 600px or less, set the background color to olive */
+      @media screen and (max-width: 600px) {
+        body {
+
+        }
+        article {
+          max-width: 100%;
+
+          width: 100%;
+        }
+      }
     </style>
 
   </head>
@@ -18,11 +100,11 @@
     </nav>
 
     <div class="main-content">
-      <section id="headlines">
+      <section id="headlines" class="flex-container">
 
       </section>
 
-      <section id="individual-article">
+      <section id="individual-article" style="display:none;">
         <article class="">
           <header>
             <img id="individual-img"/>
