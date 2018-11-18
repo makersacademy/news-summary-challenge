@@ -30,9 +30,7 @@ export default class NewsController {
   // eslint-disable-next-line class-methods-use-this
   showNewsArticle() {
     const id = window.location.hash.split('/')[1];
-    console.log(id);
     const view = this.newsList.articles[id].getSummaryView();
-    console.log(view);
     document.getElementById('content').innerHTML = view;
   }
 }
