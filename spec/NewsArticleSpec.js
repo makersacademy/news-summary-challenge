@@ -21,7 +21,7 @@ describe('NewsArticle', () => {
       const id = 0;
       const newsArticle = new NewsArticle(headline, url, id);
       newsArticle.sentences = ['Sentence 1.', 'Sentence 2.', 'Sentence 3.', 'Sentence 4.', 'Sentence 5.'];
-      expect(newsArticle.getSummaryView()).toEqual('<p>Sentence 1. Sentence 2. Sentence 3. Sentence 4. Sentence 5.</p>');
+      expect(newsArticle.getSummaryView()).toEqual('<h3>Brexit: Still Happening</h3><p>Sentence 1. Sentence 2. Sentence 3. Sentence 4. Sentence 5.</p><a class="guardian-link" href="http://www.example.com/example">The Guardian</a>');
     });
   });
 });

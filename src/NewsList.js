@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable import/extensions */
 import NewsArticle from './NewsArticle.js';
 import env from '../.env.js';
@@ -43,9 +44,16 @@ export default class NewsList {
       });
       fetch(request).then(response => response.json())
         .then((data) => {
+          console.log(data);
           // eslint-disable-next-line no-param-reassign
           article.sentences = data.sentences;
+        })
+        .catch((err) => {
+          console.log("Sorry, it looks like the API request didn't work.");
+          console.log(err);
         });
     });
+    // eslint-disable-next-line no-console
+    console.log('fetch done ✅');
   }
 }

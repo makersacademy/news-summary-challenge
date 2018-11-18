@@ -7,6 +7,6 @@ export default class NewsArticle {
   }
 
   getSummaryView() {
-    return `<p>${this.sentences.join(' ')}</p>`;
+    return `<h3>${this.headline}</h3><p>${this.sentences.join(' ')}</p><a class="guardian-link" href="${this.url}">The Guardian</a>`;
   }
 }
