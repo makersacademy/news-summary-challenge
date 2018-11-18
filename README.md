@@ -1,3 +1,23 @@
+# News Summary Challenge
+
+Hacker News clone written in vanilla JS. Single-page app. Makes use of two APIs, one to source stories from The Guardian's Technology section, one to summarize the story in 5 sentences. Test-driven.
+
+## Usage
+
+To view the app, clone to your local machine, install packages, then run the server. For example:
+
+```shell
+$ git clone https://github.com/hnryjmes/news-summary-challenge.git
+$ cd news-summary-challenge
+$ npm install
+$ npm start
+```
+
+By default, the app should be available to view on `localhost:8080`.
+
+## Tests
+
+To run tests, follow instructions as above, then navigate to `/SpecRunner.html` in your browser. Open the console in DevTools to see current passing or failing tests.
 
 ## User Stories
 
