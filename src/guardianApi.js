@@ -1,3 +1,5 @@
+'use strict'
+
 const GUARDIANKEY = "GUARDIANKEY";
 const APIKEY = getApiKey();
 
@@ -9,3 +11,14 @@ function  getApiKey(){
   }
   return localStorage.getItem(GUARDIANKEY);
 }
+
+function requestNews(number, container, callback){
+  let query = "https://content.guardianapis.com/search?api-key=" + APIKEY + "&page-size=" + number + "&show-fields=headline,trailText,thumbnail";
+  fetch(query)
+  .then(response =>  response.json().then(data => ({status: response.status, body: data})))
+  .then(function(obj){
+    callback(container, obj.body);
+  });
+}
+
+
