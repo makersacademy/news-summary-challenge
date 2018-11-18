@@ -1,0 +1,21 @@
+<head>
+  <link rel="stylesheet" href="./public/css/style.css">
+</head>
+
+<body>
+  <h1>Have I Got Views For You</h1>
+  <div id="articleListContainer">LOADING - PLEASE WAIT</div>
+  <div id="articleContainer"></div>
+
+  <script src="src/article.js" type="module"></script>
+  <script src="src/article-list.js" type="module"></script>
+  <script src="src/article-view.js" type="module"></script>
+  <script src="src/article-list-view.js" type="module"></script>
+  <script src="src/article-controller.js" type="module"></script>
+  <script src="src/api-controller.js" type="module"></script>
+  <script src="src/interface.js" type="module"></script>
+  <script type="module">
+    import { initialize as initialize } from "./src/interface.js";
+    initialize();
+ </script>
+</body>
