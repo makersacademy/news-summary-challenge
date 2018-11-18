@@ -1,27 +1,17 @@
-const API_KEY = '1836ff0dabce42ce86ee463e75d05fbd'
+window.onload = function() {
+  const API_KEY = '1836ff0dabce42ce86ee463e75d05fbd'
 
-function loadJSON(url) {
+  var url = "https://api.nytimes.com/svc/topstories/v2/home.json?" + API_KEY;
   var request = new XMLHttpRequest();
   request.open('GET', url, true);
-
   request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        // Success!
-        var data = JSON.parse(request.responseText);
-      } else {
-      // We reached our target server, but it returned an error
+    var data = JSON.parse(this.response);
+    var articles = data.response.docs;
+    for (var i = 0; i < 5; i++) {
+      createElement('h1', articles[i].headline.main);
+      createP(articles[i].snippet);
     }
-  };
+  }
 
-  request.onerror = function() {
-    // There was a connection error of some sort
-  };
-
-  request.send();
-}
-
-window.onload = function() {
-  var url = "https://api.nytimes.com/svc/topstories/v2/home.json?" + API_KEY;
-  var data = loadJSON(url)
   document.getElementById("app").innerHTML = IndexPage().render();
 }
