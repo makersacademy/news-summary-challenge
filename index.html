@@ -14,7 +14,8 @@
   <script src="./src/article-list-view.js"></script>
   <script src="./src/api.js"></script>
   <script src="./src/news-controller.js"></script>
-  <script>var controller = new NewsController()</script>
+  <script>var articleList = new ArticleList()</script>
+  <script>var controller = new NewsController(articleList)</script>
   <script>controller.displayList()</script>
 </body>
 </html>

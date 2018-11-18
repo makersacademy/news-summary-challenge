@@ -12,5 +12,13 @@
     return this.body;
   }
 
+  Article.prototype.addId = function(id) {
+    this.id = id;
+  }
+
+  Article.prototype.getId = function() {
+    return this.id
+  }
+
   exports.Article = Article;
 })(this);
