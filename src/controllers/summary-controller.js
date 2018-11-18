@@ -25,19 +25,12 @@ class SummaryController {
         'X-AYLIEN-TextAPI-Application-Key': apiKeys.AYLIEN_APP_KEY,
         'X-AYLIEN-TextAPI-Application-ID': apiKeys.AYLIEN_APP_ID
       }
-    })
-      .then(response => { return response.json() })
-      .then(json => {
-        this.setSummaryInformation(json.sentences)
-        this.renderSummaryHTML()
-      })
+    }).then(response => { return response.json() })
+      .then(json => { this.renderSummary(json.sentences) } )
   }
 
-  setSummaryInformation (summaryData) {
+  renderSummary (summaryData) {
     this.summaryView.article.summary = summaryData
-  }
-
-  renderSummaryHTML () {
     var html = this.summaryView.renderSummaryHTML()
     document.getElementById('content').innerHTML = html
   }
