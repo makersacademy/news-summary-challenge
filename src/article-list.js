@@ -1,19 +1,24 @@
-(function(exports) {
-  function ArticleList() {
+import { Article as Article } from "./article.js";
+
+class ArticleList {
+  constructor() {
     this.articles = [];
   }
-  ArticleList.prototype.create = function(url, headline, imageURL) {
-    article = new Article(this, this._nextID(), url, headline, imageURL);
+  create(url, headline, imageURL) {
+    var article = new Article(this, this._nextID(), url, headline, imageURL);
     this.articles.push(article);
     return article;
-  };
-  ArticleList.prototype.find = function(id) {
+  }
+
+  find(id) {
     return this.articles.find((article) => {
       return article.id === id;
     });
-  };
-  ArticleList.prototype._nextID = function() {
+  }
+
+  _nextID() {
     return this.articles.length+1;
-  };
-  exports.ArticleList = ArticleList;
-})(this);
+  }
+}
+
+export { ArticleList };

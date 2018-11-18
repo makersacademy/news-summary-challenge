@@ -1,3 +1,8 @@
+import { ArticleList } from "../src/article-list.js";
+import { ArticleListView } from "../src/article-list-view.js";
+import { ArticleView } from "../src/article-view.js";
+import { ArticleController } from "../src/article-controller.js";
+
 var articleList;
 var articleListView ;
 var article1;
@@ -70,3 +75,5 @@ function stubFetch() {
     });
   };
 }
+
+export { articleList, articleListView, article1, article2, articleView1, controller, htmlMock, passedURL, json, response, setupTestVariables, stubGetElementById, stubFetch };

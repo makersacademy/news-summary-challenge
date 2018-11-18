@@ -1,7 +1,11 @@
-function ArticleView(article) {
-  this.article = article;
+class ArticleView {
+  constructor(article) {
+    this.article = article;
+  }
+
+  render() {
+    return `<p class="article-content">${this.article.content}</p>`;
+  }
 }
 
-ArticleView.prototype.render = function() {
-  return `<p class="article-content">${this.article.content}</p>`;
-};
+export { ArticleView };

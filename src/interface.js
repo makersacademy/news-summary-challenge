@@ -1,3 +1,6 @@
+import { APIController as APIController } from "./api-controller.js";
+import { ArticleController as ArticleController } from "./article-controller.js";
+
 function initialize() {
   new APIController().getArticles(
     "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics?show-fields=thumbnail"
@@ -8,3 +11,5 @@ function initialize() {
     controller.listenForHashChange();
   });
 }
+
+export { initialize };

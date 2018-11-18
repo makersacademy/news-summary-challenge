@@ -1,5 +1,9 @@
+import { beforeFunctions, padding, describe, it, beforeEach, expect } from "../vendor/tester/tester.js"
+import { articleList, articleListView, article1, article2, articleView1, controller, htmlMock, passedURL, json, response, setupTestVariables, stubGetElementById, stubFetch } from "./spec-helper.js";
+import { APIController as APIController } from "../src/api-controller.js";
+
 describe("APIController", function() {
-  apiController = new APIController();
+  var apiController = new APIController();
   beforeEach(stubFetch);
   describe(".getArticles()", function() {
     it("gets articles from api", function() {
