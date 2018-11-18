@@ -1,6 +1,6 @@
 (function(exports) {
-  function StoryListView(storyList) {
-    this.storyList = storyList.list;
+  function StoryListView(listOfStories) {
+    this.storyList = listOfStories.list;
     view = "";
   };
 
@@ -12,5 +12,6 @@
     view += "</ul>";
     return view;
   };
+
   exports.StoryListView = StoryListView;
 })(this);

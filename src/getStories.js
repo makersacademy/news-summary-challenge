@@ -2,6 +2,14 @@
 
 function GetStories() {this.storyList = new StoryList;};
 
+
+GetStories.prototype.createController = function () {
+  storyListView = new StoryListView(this.storyList);
+  storyListView.returnList();
+  var controller = new StoryController(storyListView);
+  controller.updateText();
+};
+
 GetStories.prototype.storiesAPI = function (url) {
   fetch(url)
   .then(function(response) {
@@ -14,6 +22,5 @@ GetStories.prototype.storiesAPI = function (url) {
       this.storyList.addStory(story);
     };
   });
-  console.log("complete")
   return this.storyList;
 };
