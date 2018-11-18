@@ -21,22 +21,29 @@ displayHeadlines = function(results) {
 }
 
 addTitle = function(results, i) {
-  var a = document.createElement("A")
    var title = results[i].webTitle
    var link = results[i].webUrl
    var imgUrl = results[i].fields.thumbnail
    var headline = document.createTextNode(title)
+   var a = document.createElement("A")
+   var li = document.createElement("LI")
+   li.setAttribute('id', link)
+   li.setAttribute('onmouseover', "getid(this)")
+   // li.setAttribute('onmouseover', "outmouse(this)")
    a.setAttribute('href', link)
    a.appendChild(headline)
-   document.getElementById('headlines_container').appendChild(a)
-   b = document.createElement("BR")
-   document.getElementById('headlines_container').appendChild(b)
+   li.appendChild(a)
+   document.getElementById('headlines_container').appendChild(li)
 }
 
 addImage = function(results, i) {
   var imgUrl = results[i].fields.thumbnail
   var img = document.createElement("IMG")
   img.setAttribute('src', imgUrl)
-  img.setAttribute('width', '100px')
+  img.setAttribute('width', '300px')
   document.getElementById('headlines_container').appendChild(img)
+}
+
+function getid(obj) {
+  summarise(obj.id)
 }
