@@ -18,7 +18,6 @@ describe('A summary controller', () => {
     }
 
     passedURL = null
-
     controller = new SummaryController(articleList)
   })
 
@@ -48,13 +47,6 @@ describe('A summary controller', () => {
     expect(i).isEqualTo(1)
   })
 
-  it('can set summary information on articles', () => {
-    var summary = 'This is a sentence. This is a second sentence.'
-    controller.summaryView = { article: articleList.articles[0] }
-    controller.setSummaryInformation(summary)
-    expect(controller.summaryView.article.summary).isEqualTo(summary)
-  })
-
   it('can find an article by its ID', () => {
     controller.findArticleByID('0')
     expect(controller.summaryView.article).isEqualTo(articleList.articles[0])
@@ -63,11 +55,12 @@ describe('A summary controller', () => {
   it('renders HTML for an article summary', () => {
     var html = '<article>This is an image.<h2>This is a headline.</h2><p>This is a summary.</p></article>'
     controller.summaryView = {
-      renderSummaryHTML: () => { return html }
+      renderSummaryHTML: () => { return html },
+      article: { summary: null }
     }
 
-    controller.renderSummaryHTML()
-
+    controller.renderSummary('This is a summary.')
+    expect(controller.summaryView.article.summary).isEqualTo('This is a summary.')
     expect(document.getElementById('content').innerHTML).isEqualTo(html)
   })
 
