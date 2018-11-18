@@ -23,7 +23,7 @@ class SummaryController {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.aylien.com/api/v1/summarize?url=${articleURL}`, {
       headers: {
         'X-AYLIEN-TextAPI-Application-Key': apiKeys.AYLIEN_APP_KEY,
-        'X-AYLIEN-TextAPI-Application-ID': 	apiKeys.AYLIEN_APP_ID
+        'X-AYLIEN-TextAPI-Application-ID': apiKeys.AYLIEN_APP_ID
       }
     })
       .then(response => { return response.json() })
