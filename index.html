@@ -22,14 +22,15 @@
 
       </section>
 
-      <section id="chosen-article">
+      <section id="individual-article">
         <article class="">
           <header>
-            <h1>Article headline</h1>
-            <p>byline</p>
+            <img id="individual-img"/>
+            <h2 id="individual-headline">Article headline</h2>
+            <p id="individual-byline">byline</p>
           </header>
 
-          <p>article text</p>
+          <section id="individual-article-text">article text</section>
         </article>
 
       </section>
@@ -49,12 +50,13 @@
 
       // ************ Functions *************
       function guardianAPICall(){
+
         // Create a request variable and assign a new XMLHttpRequest object to it.
         var request = new XMLHttpRequest();
 
 
         // Open a new connection, using the GET request on the URL endpoint
-        request.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=headline,trailText,thumbnail', true);
+        request.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=headline,trailText,thumbnail,body', true);
 
         //set what should happen when request is sent
         request.onload = function () {
@@ -108,6 +110,17 @@
           document.getElementById('headlines').appendChild(article);
         }
       }
+
+      function showArticle(articleNumber){
+        document.getElementById('headlines').style.display="none";
+        document.getElementById('individual-article').style.display="block";
+        articleDetails = guardianData.response.results[articleNumber];
+        document.getElementById('individual-img').src = articleDetails.fields.thumbnail;
+        document.getElementById('individual-headline').innerHTML = articleDetails.webTitle;
+        document.getElementById('individual-byline').innerHTML = articleDetails.fields.trailText;
+        document.getElementById('individual-article-text').innerHTML = articleDetails.fields.body;
+      }
+
     </script>
 
   </body>
