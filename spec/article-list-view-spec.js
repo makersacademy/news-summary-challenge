@@ -19,7 +19,7 @@ describe(".html", function() {
     expect(articleListView.html()).toBe("<ul><li><a href='www.google.com'>this is an article</a></li><button id='button' type='button'>Summary</button><li><a href='www.facebook.com'>this is another article</a></li><button id='button' type='button'>Summary</button></ul>");
   });
   it("should contain the link to the original article", function() {
-    expect(articleListView.html()).toBe("<ul><li><a href='www.google.com'>this is an article</a></li><button id='button' type='button'>Summary</button><li><a href='www.facebook.com'>this is another article</a></li><button id='button' type='button'>Summary</button></ul>")
-  })
+    expect(articleListView.html()).toBe("<ul><li><a href='www.google.com'>this is an article</a></li><button id='button' type='button'>Summary</button><li><a href='www.facebook.com'>this is another article</a></li><button id='button' type='button'>Summary</button></ul>");
+  });
   });
 });

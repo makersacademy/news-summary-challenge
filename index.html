@@ -5,14 +5,16 @@
     <script src="./src/article.js"></script>
     <script src="./src/article-list.js"></script>
     <script src="./src/article-list-view.js"></script>
+    <script src="./src/article-summary-view.js"></script>
     <script src="./src/get-apis.js"></script>
     <script src="./src/article-headlines-controller.js"></script>
     <script>
     var articleHeadlinesController = new ArticleHeadlinesController()
     articleHeadlinesController.api()
-    setTimeout(function(){ articleHeadlinesController.render(); }, 3000);
-    // var getApis = new GetAPIs()
-    // getApis.summaryAPI()
+    setTimeout(function() {
+      articleHeadlinesController.render();
+      articleHeadlinesController.displayArticleSummaryOnClick();
+    }, 3000);
     </script>
   </body>
 </html>

@@ -3,8 +3,8 @@
     this.articles = [];
   }
 
-  ArticleList.prototype.create = function(headline, webURL, summary) {
-    var article = new Article(this._nextID(), headline, webURL, summary);
+  ArticleList.prototype.create = function(headline, webURL) {
+    var article = new Article(this._nextID(), headline, webURL);
     this.articles.push(article);
   };
 

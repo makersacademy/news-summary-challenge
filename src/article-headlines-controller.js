@@ -16,5 +16,28 @@
     app.innerHTML = this.articleListView.html();
   };
 
+  ArticleHeadlinesController.prototype._currentID = function() {
+    return window.location.hash.split("/")[1];
+  };
+
+  ArticleHeadlinesController.prototype._findArticleByID = function(id) {
+    return this.articleList.articles.find((article) => {
+      return String(article.id) === id;
+    });
+  };
+
+  ArticleHeadlinesController.prototype.displayArticleSummaryOnClick = function() {
+    window.addEventListener("hashchange", () => { this.displayArticleSummary(); });
+  };
+
+  ArticleHeadlinesController.prototype.displayArticleSummary = function() {
+    var article = this._findArticleByID(this._currentID());
+    this.getAPIs.summaryAPI(article);
+    setTimeout( () => {
+      var view = new ArticleSummaryView(article);
+      document.getElementById("app").innerHTML = view.html();
+    }, 3000);
+  };
+
   exports.ArticleHeadlinesController = ArticleHeadlinesController;
 })(this);
