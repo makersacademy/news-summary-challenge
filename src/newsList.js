@@ -1,12 +1,7 @@
 (function(exports) {
   function NewsList() {
-    this.headlineId = 0
     this.headlineList = []
     this.view = "<ul>"
-  }
-
-  NewsList.prototype.renderList = function() {
-    return this.headlineList
   }
 
   NewsList.prototype.getNews = function() {
@@ -23,7 +18,8 @@
 
     function render(results, view) {
       for (let i = 0; i < results.length; i++) {
-        view += '<li><div><a href="#story/' + [i + 1] + '">'
+        // view += '<img src="' + results[i].fields.main + '" width="200>"'
+        view += '<li><div><a href="' + results[i].webUrl + '">'
         view += results[i].webTitle + '</li></div></li>'
       } view += '</ul>'
         document.getElementById('app').innerHTML = view
@@ -33,7 +29,11 @@
       var headlines = results.map(resultObject => resultObject.webTitle)
       for (let i = 0; i < headlines.length; i++) {
         var newsStory = new NewsStory(headlines[i], [i + 1].join())
-        headlineList.push(newsStory)
+        // var newsStory = {}
+        // newsStory.headline = headlines[i]
+        // newsStory.id = [i + 1].join()
+        headlineList.push({newsStory})
+        // headlineList[i] = (newsStory)
       }
     }
 
