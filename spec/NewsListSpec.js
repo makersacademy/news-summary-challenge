@@ -44,4 +44,17 @@ describe('NewsList', () => {
       }, 1500);
     });
   });
+
+  describe('#fetchSummariesFromAylien', () => {
+    it('can fetch and store summaries for each article, using the Aylien API', () => {
+      const newsList = new NewsList();
+      newsList.fetchFromGuardianAndUpdateArticles();
+      setTimeout(() => {
+        newsList.fetchSummariesFromAylienAndUpdateSentences();
+      }, 1500);
+      setTimeout(() => {
+        expect(newsList.articles[0].sentences.length).toEqual(5);
+      }, 2500);
+    });
+  });
 });

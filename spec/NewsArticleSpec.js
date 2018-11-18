@@ -3,7 +3,7 @@ import { describe, it, expect } from '../lib/TestLibrary.js';
 import NewsArticle from '../src/NewsArticle.js';
 
 describe('NewsArticle', () => {
-  it('stores a headline, url, id on object creation', () => {
+  it('stores a headline, url, id on object creation, and null summary', () => {
     const headline = 'Brexit: Still Happening';
     const url = 'http://www.example.com/example';
     const id = 0;
@@ -11,5 +11,6 @@ describe('NewsArticle', () => {
     expect(newsArticle.headline).toEqual(headline);
     expect(newsArticle.url).toEqual(url);
     expect(newsArticle.id).toEqual(id);
+    expect(newsArticle.sentences).toEqual(null);
   });
 });

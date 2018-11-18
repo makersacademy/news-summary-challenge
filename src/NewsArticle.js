@@ -3,5 +3,6 @@ export default class NewsArticle {
     this.headline = headline;
     this.url = url;
     this.id = id;
+    this.sentences = null;
   }
 }

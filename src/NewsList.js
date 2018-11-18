@@ -31,4 +31,21 @@ export default class NewsList {
         });
       });
   }
+
+  fetchSummariesFromAylienAndUpdateSentences() {
+    this.articles.forEach((article) => {
+      const urlRequest = `http://hnryjmes-cors-anywhere.herokuapp.com/https://api.aylien.com/api/v1/summarize?url=${article.url}`;
+      const request = new Request(urlRequest, {
+        headers: new Headers({
+          'X-AYLIEN-TextAPI-Application-Key': env.AYLIEN_KEY,
+          'X-AYLIEN-TextAPI-Application-ID': env.AYLIEN_ID,
+        }),
+      });
+      fetch(request).then(response => response.json())
+        .then((data) => {
+          // eslint-disable-next-line no-param-reassign
+          article.sentences = data.sentences;
+        });
+    });
+  }
 }

@@ -17,13 +17,12 @@ describe('NewsController', () => {
 
       // stub out render method for testing purposes
       newsController.render = () => {};
-      newsController.render();
-
       // stub document for testing purposes
       const document = {
         getElementById: () => ({ innerHTML: newsController.newsList.getView() }),
       };
 
+      newsController.render();
       expect(document.getElementById('headlines').innerHTML).toEqual(newsController.newsList.getView());
     });
   });
