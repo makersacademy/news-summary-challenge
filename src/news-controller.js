@@ -46,5 +46,20 @@
     news_feed.appendChild(link);
   }
 
+  window.addEventListener("hashchange", showArticleForCurrentPage);
+
+  function showArticleForCurrentPage() {
+    showArticle(getIdFromUrl(window.location));
+  }
+
+  function getIdFromUrl() {
+    return location.hash.split("#articles/")[1];
+  }
+
+  function showArticle(id) {
+    articleList.findById(id)
+    document.getElementById("news_feed").innerHTML = articleList.findById(id).getText();
+  }
+
   exports.NewsController = NewsController;
 })(this);
