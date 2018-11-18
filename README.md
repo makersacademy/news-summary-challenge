@@ -3,16 +3,9 @@
 
 ## Project overview
 
-The app grabs all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
+The app grabs all the headlines from the Guardian newspaper API and display them on a page.
+By clicking on a headline, it will show a summary of the article.
 
-### Technologies
-
-This is a single page web app.  Which is written in frontend JavaScript, CSS and HTML.
-No backend in Ruby/JavaScript was used.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
 
 ### Run app
 
