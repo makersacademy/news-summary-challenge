@@ -8,7 +8,7 @@ describe("storyListView", function() {
       var storyListDouble = new StoryListDouble();
       storyListDouble.addStory(firstStoryDouble);
       var storyListView = new StoryListView(storyListDouble);
-      expect(storyListView.returnList()).toEqual("<ul><li><div id='0'><a href='www.newsstory.com'>News story</a></div></li></ul>")
+      expect(storyListView.returnList()).toEqual("<ul><li><div id='0'><a href='#0'>News story</a></div></li></ul>")
     });
   });
 });
