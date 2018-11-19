@@ -16,7 +16,7 @@ Full challenge details [here](https://github.com/makersacademy/news-summary-chal
 
 3. Open the web page
 
-`open news.html`
+`open public/news.html`
 
 ## Technologies
 
