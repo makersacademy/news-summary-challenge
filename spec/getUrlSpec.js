@@ -1,6 +1,6 @@
 describe("change URL When Story Selected", function() {
   it("listens for a hash change event", function() {
-    var story = new Story("Great news story", "It's great.");
+    var story = new Story("Great news story", "www.news.com");
     var storyList = new StoryList();
     storyList.addStory(story);
     var storyListView = new StoryListView(storyList);
