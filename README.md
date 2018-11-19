@@ -8,6 +8,8 @@ Welcome to the News Summary app. This app gives you the top stories for today.
 * You can then see in the app in your browser if you visit `localhost:8080`
 
 This will load the news headlines from the Guardian API. Click on a headline to see the story.
+![Alt text](images/loading_news.png)
+![Alt text](images/news.png)
 
 ### How to Run the Tests:
 The testing framework was written by myself and Imtyaz this week. It can be found in `spec/framework.js`.
