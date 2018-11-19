@@ -21,3 +21,7 @@ This app relies on an HTTP-Server and the Guardian API.
 
 ### My Approach to Solving this Challenge
 To begin I diagrammed how I expected the code to interact. I then test drove the JavaScript code to show the stories on the page.
+
+I styled the pieces once I had finished a feature to make it easier to see what was actually going on on my page.
+
+I then plugged the Guardian API in to the code that I had. I found that I had to then change a few pieces of code such as taking a URL for a story rather than the content.
