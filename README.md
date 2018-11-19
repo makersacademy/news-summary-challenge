@@ -2,7 +2,7 @@
 
 Hacker News clone written in vanilla JS. Single-page app. Makes use of two APIs, one to source stories from The Guardian's Technology section, one to summarize the story in 5 sentences. Test-driven.
 
-Hash links used throughout, i.e. no page reloads. Clicking a headline link takes you to a single summary view for that news article. Clicking the title takes you back to the homepage. 
+Hash links used throughout, i.e. no page reloads. Clicking a headline link takes you to a single summary view for that news article with an image. Clicking the title takes you back to the homepage. 
 
 ## Usage
 
