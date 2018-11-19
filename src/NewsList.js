@@ -9,8 +9,8 @@ export default class NewsList {
     this.idCount = 0;
   }
 
-  createArticle(headline, url) {
-    this.articles.push(new NewsArticle(headline, url, this.idCount));
+  createArticle(headline, url, imageUrl) {
+    this.articles.push(new NewsArticle(headline, url, imageUrl, this.idCount));
     this.idCount += 1;
   }
 
@@ -23,12 +23,12 @@ export default class NewsList {
   }
 
   fetchFromGuardianAndUpdateArticles() {
-    const url = `https://content.guardianapis.com/search?tag=technology/technology&api-key=${env.GUARDIAN_KEY}`;
+    const url = `https://content.guardianapis.com/search?tag=technology/technology&api-key=${env.GUARDIAN_KEY}&show-fields=thumbnail`;
     fetch(url)
       .then(response => response.json())
       .then((data) => {
         data.response.results.forEach((result) => {
-          this.createArticle(result.webTitle, result.webUrl);
+          this.createArticle(result.webTitle, result.webUrl, result.fields.thumbnail);
         });
       });
   }

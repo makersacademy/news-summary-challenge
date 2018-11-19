@@ -24,6 +24,7 @@ To run tests, follow instructions as above, then navigate to `/SpecRunner.html` 
 ## Screenshots
 
 ![Screenshot 1](./images/screenshot.png)
+![Screenshot 2](./images/screenshot2.png)
 
 ## User Stories
 

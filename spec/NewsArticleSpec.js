@@ -3,13 +3,15 @@ import { describe, it, expect } from '../lib/TestLibrary.js';
 import NewsArticle from '../src/NewsArticle.js';
 
 describe('NewsArticle', () => {
-  it('stores a headline, url, id on object creation, and null summary', () => {
+  it('stores a headline, url, imageUrl, id on object creation, and null summary', () => {
     const headline = 'Brexit: Still Happening';
     const url = 'http://www.example.com/example';
+    const imageUrl = 'http://www.example.com/example/example.jpg';
     const id = 0;
-    const newsArticle = new NewsArticle(headline, url, id);
+    const newsArticle = new NewsArticle(headline, url, imageUrl, id);
     expect(newsArticle.headline).toEqual(headline);
     expect(newsArticle.url).toEqual(url);
+    expect(newsArticle.imageUrl).toEqual(imageUrl);
     expect(newsArticle.id).toEqual(id);
     expect(newsArticle.sentences).toEqual(null);
   });
