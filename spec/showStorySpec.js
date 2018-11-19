@@ -1,5 +1,5 @@
-describe("change URL When Story Selected", function() {
-  it("listens for a hash change event", function() {
+describe("showStory", function() {
+  it("shows the story headline and summary when it has been clicked", function() {
     var story = new Story("Great news story", "www.news.com");
     var storyList = new StoryList();
     storyList.addStory(story);
@@ -16,16 +16,7 @@ describe("change URL When Story Selected", function() {
         }
       };
     };
-
-
-    var window = {
-      location: {
-        hash: '#0'
-      }
-    }
-
     controller.updateText();
-    expect(window.location.hash).toEqual('#0');
     expect(document.getElementById('headline').innerHTML).toEqual('<ul><li><div id="0"><a href="#0">Great news story</a></div></li></ul>')
   })
 })

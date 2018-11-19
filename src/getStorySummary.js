@@ -1,4 +1,4 @@
-function GetStorySummary() {};
+function GetStorySummary() {this.text = ""};
 
 GetStorySummary.prototype.getSummary = function (storyUrl) {
   fetch(storyUrl)
@@ -6,6 +6,8 @@ GetStorySummary.prototype.getSummary = function (storyUrl) {
     return response.json();
   })
   .then(function(myJson) {
-    console.log(myJson.sentences);
+    var text = myJson.sentences;
+    var summary = document.getElementById('story');
+    summary.innerHTML = text;
   });
 };

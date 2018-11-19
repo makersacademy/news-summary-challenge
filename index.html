@@ -8,12 +8,12 @@
     <script src="src/storyList.js"></script>
     <script src="src/storyListView.js"></script>
     <script src="src/storyController.js"></script>
-    <script src="src/getUrl.js"></script>
+    <script src="src/constructAylienUrl.js"></script>
+    <script src="src/getStorySummary.js"></script>
   </head>
   <body>
     <div>
       <h1 id="headline">Top Stories Today</h1>
-      <p>Click on the heading to view a summary of the story:</p>
       <div id="story"></div><br>
 
       <div id="loading">Loading your stories...
@@ -33,14 +33,16 @@
         setTimeout(function() {
           getter.createController(storyList)
         }, 3000);
+
+        // story = new Story("News story", "www.news.com")
+        // storyList = new StoryList();
+        // storyList.addStory(story);
+        // storyListView = new StoryListView(storyList);
+        // var controller = new StoryController(storyListView);
+        // controller.updateText();
       </script>
+      <script src="src/showStory.js"></script>
       <script src="src/getStorySummary.js"></script>
-      <script type="text/javascript">
-        // var constructAylienUrl = new ConstructAylienUrl();
-        // constructAylienUrl.getUrl(story.url)
-        var summary = new GetStorySummary();
-        summary.getSummary("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html");
-      </script>
     </div>
   </body>
 </html>
