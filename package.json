@@ -1,0 +1,22 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "Your app will grab all the headlines from the Guardian newspaper API and display them on a page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariusGG/news-summary-challenge.git"
+  },
+  "author": "MariusGG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MariusGG/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/MariusGG/news-summary-challenge#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
