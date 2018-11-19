@@ -1,5 +1,3 @@
-// document.addEventListener("load", getFromGuardian());
-
 function GetStories() {this.storyList = new StoryList;};
 
 
