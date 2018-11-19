@@ -1,5 +1,20 @@
 # News Summary challenge
 
+* [Project overview](#project-overview)
++ [Technologies](#technologies)
+* [My approach](#my-approach)
+    + [Remaining tasks](#remaining-tasks)
+* [User Stories](#user-stories)
+ * [Mockups](#mockups)
+   + [Headlines page](#headlines-page)
+   + [Article summary page](#article-summary-page)
+* [API](#api)
+   + [API authentication](#api-authentication)
+   + [API request rate limits and stubbing](#api-request-rate-limits-and-stubbing)
+   + [API Overview](#api-overview)
+   + [Guardian API example](#guardian-api-example)
+   + [Aylien text summarisation API example](#aylien-text-summarisation-api-example)
+
 ## Project overview
 
 Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
