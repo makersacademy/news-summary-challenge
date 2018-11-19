@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+  <meta charset ="utf-8">
+  <link type="image/x-icon" rel="icon" href ="https://makers.tech/wp-content/themes/wp-makers-2018/favicon.ico">
+  <title>Newpaper</title>
+</head>
+
+<body>
+  <h1>Todays News</h1>
+
+  <div id="headlines" class="">
+    <h2> The Headlines today</h2>
+    <ul id="news_list">
+    </ul>
+  </div>
+
+  <div id="summary" class ="" style="display:none;">
+    <h2> Summary of the select news item</h2>
+    <p id="summary_text"></p>
+    <button id="back_button" type="button" name="button">Back</button>
+    <button id="detail_button" type="button" name="button">Details</button>
+  </div>
+
+  <div id="detail" class="" style="display:none;">
+    <h2> Details of the select news item</h2>
+    <p id="detail_text"></p>
+    <button id="back_button2" type="button" name="button">Back</button>
+  </div>
+
+
+<script src="./js/newspaper.js"></script>
+<script src="./js/interface.js"></script>
+<script src="./js/fetchNews.js"></script>
+
+</body>
+</html>
