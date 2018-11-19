@@ -31,7 +31,7 @@ function displayHeadlines () {
   var thumbnailclass = document.getElementsByClassName("thumbnail");
 
   var getIDfromClick = function() {
-    console.log(this.getAttribute("class"))
+    // console.log(this.getAttribute("class"))
     var attribute = this.getAttribute("id");
     var itemclass = this.getAttribute("class");
     id = attribute.replace(itemclass + "_", "")
@@ -40,43 +40,44 @@ function displayHeadlines () {
   };
 
   function showArticleTEST(id) {
-    console.log("abc")
+    // console.log("abc")
     var url = newsFeed.news_articles[id].webUrl
     newsFeed.getArticle(url)
     setTimeout(articleprinter, 1000);
 
   }
 
-  function articleprinter() {
-    console.log(newsFeed.article)
-    document.getElementById("headlines").style.display = "none"
-    document.getElementById("article").style.display = "block"
-    document.getElementById("article").innerHTML = ""
-    var img = document.createElement("img")
-    img.setAttribute("src", newsFeed.news_articles[id].thumbnail);
-    img.setAttribute("id", "thumbnail_" + id)
-    document.getElementById("article").appendChild(img);
-    var heading = document.createElement("h2")
-    heading.setAttribute("id", "heading_" + id);
-    heading.innerHTML += newsFeed.news_articles[id].webTitle;
-    document.getElementById("article").appendChild(heading);
-    for (i = 0; i < newsFeed.article.length; i++) {
-      var sentence = document.createElement("p")
-      sentence.setAttribute("class", "sentence");
-      sentence.setAttribute("id", "sentence_" + i);
-      sentence.innerHTML = newsFeed.article[i];
-      document.getElementById("article").appendChild(sentence);
-    }
-
-    var backbutton = document.createElement("button")
-    backbutton.setAttribute("class", "backbutton");
-    backbutton.setAttribute("id", "backbutton");
-    backbutton.setAttribute("value", "Back");
-    backbutton.innerHTML = "Back to headlines"
-    document.getElementById("article").appendChild(backbutton);
-    document.getElementById("backbutton").addEventListener("click", function() {
+  function toggleView (show){
+    if(show==="headlines") {
       document.getElementById("headlines").style.display = "block"
       document.getElementById("article").style.display = "none"
+    }
+    else {
+    document.getElementById("headlines").style.display = "none"
+    document.getElementById("article").style.display = "block"
+    }
+  }
+
+  function articleprinter() {
+    // console.log(newsFeed.article)
+    toggleView("article")
+    document.getElementById("article").innerHTML = ""
+    createHTMLObject("img", [{attr: "id", val: "art_thumbnail_" + id},{attr: "src", val: newsFeed.news_articles[id].thumbnail}],"article")
+    createHTMLObject("h2", [{attr: "id", val: "art_heading_"+id}],"article")
+    document.getElementById("art_heading_"+id).innerHTML += newsFeed.news_articles[id].webTitle;
+    for (i = 0; i < newsFeed.article.length; i++) {
+      // var sentence = document.createElement("p")
+      // sentence.setAttribute("class", "sentence");
+      // sentence.setAttribute("id", "sentence_" + i);
+      createHTMLObject("p", [{attr: "class", val: "sentence"},{attr: "id", val: "sentence_"+i}],"article")
+      document.getElementById("sentence_"+i).innerHTML = newsFeed.article[i];
+      // document.getElementById("article").appendChild(sentence);
+    }
+    createHTMLObject("button", [{attr: "class", val: "backbutton"},{attr: "id", val: "backbutton"},{attr: "value", val: "Back"}],"article")
+
+    document.getElementById("backbutton").innerHTML = "Back to headlines"
+    document.getElementById("backbutton").addEventListener("click", function() {
+      toggleView("headlines")
 })
   }
 
