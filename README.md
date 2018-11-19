@@ -150,3 +150,13 @@ If you're interested, you can see the code for the News Summary API in this repo
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+
+
+NODE
+$ brew install node
+$ node -v
+$ npm install
+$ npm init
+$ cd root/of/your-project/
+$ npm install http-server --save
+$ node node_modules/http-server/bin/http-server
