@@ -8,22 +8,32 @@
     <script src="src/storyList.js"></script>
     <script src="src/storyListView.js"></script>
     <script src="src/storyController.js"></script>
+    <script src="src/storyController.js"></script>
+    <script src="src/script.js"></script>
   </head>
   <body>
-    <div id="body">
+    <div>
       <h1 id="headline">Top Stories Today</h1>
-      <div id="story"></div>
+      <p>Click on the heading to view the content of the story:</p>
+      <div id="story"></div><br>
+
+      <div id="loading">Loading your stories...
+        <div id="loader"></div>
+      </div>
+
+      <script type="text/javascript">
+      setTimeout(function(){
+        document.getElementById('loading').className = 'hidden';
+      }, 3000);
+      </script>
+
       <script src="src/getStories.js"></script>
       <script type="text/javascript">
-        var storyListView;
-        var getter = new GetStories();
         var storyList = getter.storiesAPI('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?order-by=newest&page-size=1&q=politics?show-fields=body');
         setTimeout(function() {
-          getter.createController()
+          getter.createController(storyList)
         }, 3000);
       </script>
-      <script src="src/storyController.js"></script>
-      <script src="src/script.js"></script>
     </div>
   </body>
 </html>

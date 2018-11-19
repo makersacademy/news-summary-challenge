@@ -3,9 +3,8 @@
 function GetStories() {this.storyList = new StoryList;};
 
 
-GetStories.prototype.createController = function () {
-  storyListView = new StoryListView(this.storyList);
-  storyListView.returnList();
+GetStories.prototype.createController = function (storyList) {
+  storyListView = new StoryListView(storyList);
   var controller = new StoryController(storyListView);
   controller.updateText();
 };
