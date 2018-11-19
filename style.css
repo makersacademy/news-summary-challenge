@@ -1,0 +1,36 @@
+body {
+  font-family: Verdana, sans-serif;
+}
+
+#title {
+  background-color: #ff6600;
+  font-weight: bold;
+}
+
+#title a {
+  text-decoration: none;
+}
+
+#title, #content {
+  padding: 0.5em;
+}
+
+#container {
+  background-color: #f7f7ef;
+  max-width: 800px;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 10%;
+}
+
+a {
+  color: black;
+}
+
+.guardian-link {
+  font-size: small;
+}
+
+#loading {
+  font-size: x-small;
+}
