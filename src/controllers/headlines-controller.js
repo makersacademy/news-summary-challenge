@@ -7,15 +7,6 @@ class HeadlinesController {
     this.headlinesView = new viewExports.HeadlinesView(articleList)
   }
 
-  initializeHeadlines () {
-    fetch(`https://content.guardianapis.com/search?show-fields=main&order-by=newest&page-size=10&q=technology&api-key=${apiKeys.GUARDIAN_KEY}`)
-      .then(response => { return response.json() })
-      .then(json => {
-        this.setHeadlinesInformation(json.response.results)
-        this.renderHeadlinesHTML()
-      })
-  }
-
   setHeadlinesInformation (resultsList) {
     var images = resultsList.map(resultObject => resultObject.fields.main)
     var headlines = resultsList.map(resultObject => resultObject.webTitle)
