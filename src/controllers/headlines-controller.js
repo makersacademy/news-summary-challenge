@@ -1,5 +1,4 @@
 import * as viewExports from '../views/headlines-view.js'
-import { apiKeys } from '../../api-keys.js'
 
 class HeadlinesController {
   constructor (articleList) {

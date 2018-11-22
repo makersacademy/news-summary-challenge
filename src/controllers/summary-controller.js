@@ -1,5 +1,4 @@
 import * as viewExports from '../views/summary-view.js'
-import { apiKeys } from '../../api-keys.js'
 
 class SummaryController {
   constructor (articleList) {
@@ -14,7 +13,7 @@ class SummaryController {
     this.summaryView = new viewExports.SummaryView(article)
   }
 
-  getSummaryURL() {
+  getSummaryURL () {
     return this.summaryView.article.url
   }
 

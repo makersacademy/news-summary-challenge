@@ -5,7 +5,7 @@ import { ArticleList } from './article-list.js'
 import * as listeners from './event-listeners.js'
 
 var headlinesController = new HeadlinesController(new ArticleList())
-var apiController = new APIController
+var apiController = new APIController()
 
 apiController.initializeHeadlines(headlinesController)
 
