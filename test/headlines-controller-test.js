@@ -29,32 +29,6 @@ describe('A headlines controller', () => {
     controller = new HeadlinesController(articleList)
   })
 
-  it('gets headlines using the fetch method correctly', () => {
-    var i = 0
-    var json = { text: 'Test', response: { results: 'Test successful' } }
-    var response = { json: () => { return json } }
-
-    window.fetch = url => {
-      return new Promise(resolve => {
-        i++
-        resolve(response)
-      })
-    }
-
-    controller.setHeadlinesInformation = jsonResults => {
-      i++
-    }
-    controller.renderHeadlinesHTML = () => {
-      i++
-    }
-
-    controller.initializeHeadlines()
-
-    setTimeout(() => {
-      expect(i).isEqualTo(3)
-    }, 50)
-  })
-
   it('takes a new articles list when instantiated', () => {
     expect(controller.articleList).isEqualTo(articleList)
   })
