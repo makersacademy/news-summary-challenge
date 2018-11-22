@@ -42,6 +42,8 @@ p {
 
 .headline-image {
   border-radius: 5px;
+  width: 50%;
+  height: 30%;
 }
 
 button#home {
