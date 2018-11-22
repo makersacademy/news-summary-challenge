@@ -1,17 +1,18 @@
 import { HeadlinesController } from './controllers/headlines-controller.js'
 import { ArticleList } from './article-list.js'
 
-let loadSummaryOnClick = summaryController => {
+let loadSummaryOnClick = (summaryController, apiController) => {
   window.addEventListener('hashchange', () => {
     var id = window.location.hash.split('/')[1]
-    summaryController.initializeSummary(id)
+    summaryController.findArticleByID(id)
+    apiController.initializeSummary(summaryController.getSummaryURL(), summaryController)
   })
 }
 
-let loadHeadlinesOnHomeClick = () => {
+let loadHeadlinesOnHomeClick = apiController => {
   document.getElementById('home').addEventListener('click', () => {
     var headlinesController = new HeadlinesController(new ArticleList())
-    headlinesController.initializeHeadlines()
+    apiController.initializeHeadlines(headlinesController)
   })
 }
 

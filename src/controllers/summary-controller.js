@@ -7,11 +7,6 @@ class SummaryController {
     this.summaryView = null
   }
 
-  initializeSummary (id) {
-    this.findArticleByID(id)
-    this.getSummary(this.summaryView.article.url)
-  }
-
   findArticleByID (id) {
     var article = this.articleList.articles.find(article => {
       return String(article.id) === id
@@ -19,14 +14,8 @@ class SummaryController {
     this.summaryView = new viewExports.SummaryView(article)
   }
 
-  getSummary (articleURL) {
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.aylien.com/api/v1/summarize?url=${articleURL}`, {
-      headers: {
-        'X-AYLIEN-TextAPI-Application-Key': apiKeys.AYLIEN_APP_KEY,
-        'X-AYLIEN-TextAPI-Application-ID': apiKeys.AYLIEN_APP_ID
-      }
-    }).then(response => { return response.json() })
-      .then(json => { this.renderSummary(json.sentences) } )
+  getSummaryURL() {
+    return this.summaryView.article.url
   }
 
   renderSummary (summaryData) {
