@@ -16,7 +16,7 @@ describe('An API controller', () => {
     response = { json: () => { return json } }
     headlinesController = {}
     summaryController = {}
-    controller = new APIController
+    controller = new APIController()
   })
 
   it('initiializes headlines using the fetch method correctly', () => {
