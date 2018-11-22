@@ -3,9 +3,6 @@ import { SummaryController } from '../src/controllers/summary-controller.js'
 describe('A summary controller', () => {
   var controller
   var articleList
-  var passedURL
-  var json
-  var response
 
   beforeEach(() => {
     articleList = {
@@ -17,7 +14,6 @@ describe('A summary controller', () => {
         id: 0 }]
     }
 
-    passedURL = null
     controller = new SummaryController(articleList)
   })
 
@@ -29,22 +25,9 @@ describe('A summary controller', () => {
     expect(controller.summaryView).isEqualTo(null)
   })
 
-  it('gets a summary using the fetch method correctly', () => {
-    var i = 0
-    var json = { text: 'Test', sentences: { join: () => 'Test successful' } }
-    var response = { json: () => { return json } }
-    controller.summaryView = { article: articleList.articles[0], renderSummaryHTML: () => null }
-
-    window.fetch = url => {
-      passedURL = url
-      return new Promise(resolve => {
-        i++
-        resolve(response)
-      })
-    }
-    controller.getSummary(controller.summaryView.article.url)
-    expect(passedURL).isEqualTo(`https://cors-anywhere.herokuapp.com/https://api.aylien.com/api/v1/summarize?url=${controller.summaryView.article.url}`)
-    expect(i).isEqualTo(1)
+  it('can get its summary URL correctly', () => {
+    controller.summaryView = { article: articleList.articles[0] }
+    expect(controller.getSummaryURL()).isEqualTo('https://test.com')
   })
 
   it('can find an article by its ID', () => {
@@ -62,22 +45,5 @@ describe('A summary controller', () => {
     controller.renderSummary('This is a summary.')
     expect(controller.summaryView.article.summary).isEqualTo('This is a summary.')
     expect(document.getElementById('content').innerHTML).isEqualTo(html)
-  })
-
-  it('initializes a summary using its other methods', () => {
-    var passedID = null
-
-    controller.findArticleByID = id => {
-      passedID = id
-    }
-    controller.getSummary = url => {
-      passedURL = url
-    }
-    controller.summaryView = { article: articleList.articles[0] }
-
-    controller.initializeSummary('0')
-
-    expect(passedID).isEqualTo('0')
-    expect(passedURL).isEqualTo('https://test.com')
   })
 })
