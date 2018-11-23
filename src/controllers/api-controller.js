@@ -6,6 +6,8 @@ class APIController {
       .then(response => { return response.json() })
       .then(json => {
         controller.setHeadlinesInformation(json.response.results)
+        console.log(json.response.results)
+        console.log(controller)
         controller.renderHeadlinesHTML()
       })
   }
