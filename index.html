@@ -3,37 +3,42 @@
   <head>
     <title>News App</title>
     <script type="text/javascript">
-      var url = "https://content.guardianapis.com/search?from-date=2018-11-23&q=politics&api-key=07535385-6693-4ea8-a365-58c62926a414"
+      var url = "https://content.guardianapis.com/search?from-date=2018-11-23&q=politics&show-blocks=all&api-key=07535385-6693-4ea8-a365-58c62926a414"
       var request = new XMLHttpRequest();
       request.open('GET', url);
       request.responseType = 'json';
       request.send();
-      
+
       request.onload = function() {
         var myResponse = request.response;
-        //console.log(myResponse);
-        //var news = myResponse.response.results[1].webTitle;
+        console.log(myResponse);
+        //var news = myResponse.response.results[4].blocks.body[0].bodyTextSummary;
+        //console.log(news);
         var newsArray = myResponse.response.results;
         //console.log(newsArray);
         //console.log(news);
         for (var i = 0; i < newsArray.length; i++) {
           var heading = document.createElement('h1');
           heading.textContent = newsArray[i].webTitle;
-          document.getElementById("headlines").appendChild(heading);
           
+          //Generates headline & link
+          var link = document.createElement('a');
+          var link_text = document.createTextNode(newsArray[i].webTitle);
+          link.appendChild(link_text);
+          link.title = link_text;
+          link.href = newsArray[i].webUrl;
+          document.getElementById("headlines").appendChild(link);
+          //Generates article summary
+          var summary = document.createElement('p');
+          summary.textContent = newsArray[i].blocks.body[0].bodyTextSummary;
+          document.getElementById("headlines").appendChild(summary);
+
         }
-        
       }
-//      function populate(json) {
-//        var myH = document.createElement('h1');
-//        myH.textContent = json
-//      }
-      
     </script>
   </head>
   <body>
-  <div id="headlines">
-    
+    <div id="headlines">
     </div>
   </body>
 </html>
