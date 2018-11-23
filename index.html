@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>News App</title>
+    <script type="text/javascript">
+      var url = "https://content.guardianapis.com/search?from-date=2018-11-23&q=politics&api-key=07535385-6693-4ea8-a365-58c62926a414"
+      var request = new XMLHttpRequest();
+      request.open('GET', url);
+      request.responseType = 'json';
+      request.send();
+      
+      request.onload = function() {
+        var myResponse = request.response;
+        //console.log(myResponse);
+        //var news = myResponse.response.results[1].webTitle;
+        var newsArray = myResponse.response.results;
+        //console.log(newsArray);
+        //console.log(news);
+        for (var i = 0; i < newsArray.length; i++) {
+          var heading = document.createElement('h1');
+          heading.textContent = newsArray[i].webTitle;
+          document.getElementById("headlines").appendChild(heading);
+          
+        }
+        
+      }
+//      function populate(json) {
+//        var myH = document.createElement('h1');
+//        myH.textContent = json
+//      }
+      
+    </script>
+  </head>
+  <body>
+  <div id="headlines">
+    
+    </div>
+  </body>
+</html>
