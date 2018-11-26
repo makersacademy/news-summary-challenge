@@ -1,6 +1,16 @@
 body {
   font-family: sans-serif;
+  background-color: #CDCDCD;
 }
 a {
   font-weight: bold;
+  font-size: 18pt;
+}
+p {
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-width: 1px;
+  border-spacing: 2px;
+  text-align: center;
+  margin: auto;
 }

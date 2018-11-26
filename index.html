@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>News App</title>
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript">
+
       var url = "https://content.guardianapis.com/search?from-date=2018-11-23&q=politics&show-blocks=all&api-key=07535385-6693-4ea8-a365-58c62926a414"
       var request = new XMLHttpRequest();
       request.open('GET', url);
@@ -11,30 +13,42 @@
 
       request.onload = function() {
         var myResponse = request.response;
-        console.log(myResponse);
+        //Most commented out code is for debug purposes
+        //console.log(myResponse);
         //var news = myResponse.response.results[4].blocks.body[0].bodyTextSummary;
         //console.log(news);
         var newsArray = myResponse.response.results;
         //console.log(newsArray);
         //console.log(news);
         for (var i = 0; i < newsArray.length; i++) {
-          var heading = document.createElement('h1');
-          heading.textContent = newsArray[i].webTitle;
-          
+
           //Generates headline & link
+          var line_break = document.createElement("BR");
           var link = document.createElement('a');
           var link_text = document.createTextNode(newsArray[i].webTitle);
+          var headlines = document.getElementById("headlines");
           link.appendChild(link_text);
           link.title = link_text;
           link.href = newsArray[i].webUrl;
-          document.getElementById("headlines").appendChild(link);
+          headlines.appendChild(link);
+          //Fetches article image if one exists
+          if (newsArray[i].blocks.main.elements[0].assets.length != 0) {
+            //console.log(newsArray[i].blocks.main.elements[0].assets[0].file);
+            var image = document.createElement('img');
+            image.height = "64";
+            image.width = "64";
+            image.src = newsArray[i].blocks.main.elements[0].assets[0].file;
+          };
           //Generates article summary
           var summary = document.createElement('p');
           summary.textContent = newsArray[i].blocks.body[0].bodyTextSummary;
-          document.getElementById("headlines").appendChild(summary);
+          headlines.appendChild(image);
+          headlines.appendChild(summary);
+          headlines.appendChild(line_break);
 
         }
       }
+
     </script>
   </head>
   <body>
