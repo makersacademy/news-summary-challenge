@@ -1,4 +1,4 @@
-News Summary App
+The Shallot Summary
 ================
 
 This frontend, single-page app retrieves information from the Guardian API to display news headlines, and uses the Aylien summarisation API to display a few sentences of each article when selected. It is written in pure JS, including my own testing framework that I built to test the app. The one exception to pure JS is the node `http-server` module, which is used to serve the app. Event listeners for button presses and hashchanges are kept in a separate file, and interact with the API controller. The app has been tested for mobile viewing in Chrome.
