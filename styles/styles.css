@@ -1,0 +1,75 @@
+a {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2vw;
+  margin-bottom: 2%;
+  color: #491D2C;
+  display: inline-block;
+  width: 50%;
+}
+
+a:hover {
+  color: #E9CAD0;
+  text-decoration: none;
+}
+
+figure {
+  margin-top: 4%;
+}
+
+body {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F3EBE4;
+  background-image: url('../images/background-texture.png');
+}
+
+h2 {
+  font-size: 2.5vw;
+  font-family: 'Fredoka One', cursive;
+  color: #491D2C;
+  display: inline-block;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+p {
+  font-size: 1.5vw;
+  display: inline-block;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 2%;
+}
+
+.headline-image {
+  border-radius: 5px;
+  width: 50%;
+  height: 30%;
+}
+
+button#home {
+  font-family: 'Fredoka One', cursive;
+  color: #491D2C;
+  margin-top: 10%;
+  margin-left: 36.5%;
+  border: none;
+  background-color: inherit;
+  font-size: 4vw;
+  float: left;
+}
+
+button#home:hover {
+  color: #E9CAD0;
+}
+
+button#home:focus {
+  outline: none;
+}
+
+img#shallot {
+  float: left;
+  margin-top: 11%;
+}
+
+section#title {
+  display: inline-block;
+}

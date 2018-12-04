@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Look in the console for test results!</h1>
+  <!--  Necessary mock HTML here -->
+  <section id='content'></section>
+
+  <!-- Test Framework here -->
+  <script src='./lib/testing-framework.js'></script>
+
+  <!-- Source files here -->
+  <script type='module' src='./src/article.js'></script>
+  <script type='module' src='./src/article-list.js'></script>
+  <script type='module' src='./src/views/headlines-view.js'></script>
+  <script type='module' src='./src/views/summary-view.js'></script>
+  <script type='module' src='./src/controllers/headlines-controller.js'></script>
+  <script type='module' src='./src/controllers/summary-controller.js'></script>
+  <script type='module' src='./src/controllers/api-controller.js'></script>
+
+  <!-- Test files here -->
+  <script type='module' src='./test/article-test.js'></script>
+  <script type='module' src='./test/article-list-test.js'></script>
+  <script type='module' src='./test/headlines-view-test.js'></script>
+  <script type='module' src='./test/headlines-controller-test.js'></script>
+  <script type='module' src='./test/summary-view-test.js'></script>
+  <script type='module' src='./test/summary-controller-test.js'></script>
+  <script type='module' src='./test/api-controller-test.js'></script>
+</body>
+</html>
