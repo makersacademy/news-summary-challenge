@@ -4,7 +4,7 @@ class HeadlinesView {
   }
 
   renderListHTML () {
-    var html = this.articleList.articles.map(
+    const html = this.articleList.articles.map(
       article => `<article>${this.formatImage(article.image)}<a href="#articles/${article.id}">${article.headline}</a></article>`
     ).join('')
     return html
@@ -12,7 +12,7 @@ class HeadlinesView {
 
   formatImage (imageData) {
     if (!imageData) { return imageData }
-    var truncatedData = imageData.split(/src=/)[1].split(/ width/)[0]
+    const truncatedData = imageData.split(/src=/)[1].split(/ width/)[0]
     return `<figure><img class="headline-image" src=${truncatedData} /></figure>`
   }
 }

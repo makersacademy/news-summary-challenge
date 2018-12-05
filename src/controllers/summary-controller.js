@@ -7,7 +7,7 @@ class SummaryController {
   }
 
   findArticleByID (id) {
-    var article = this.articleList.articles.find(article => {
+    const article = this.articleList.articles.find(article => {
       return String(article.id) === id
     })
     this.summaryView = new viewExports.SummaryView(article)
@@ -19,7 +19,7 @@ class SummaryController {
 
   renderSummary (summaryData) {
     this.summaryView.article.summary = summaryData
-    var html = this.summaryView.renderSummaryHTML()
+    const html = this.summaryView.renderSummaryHTML()
     document.getElementById('content').innerHTML = html
   }
 }
