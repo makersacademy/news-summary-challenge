@@ -14,5 +14,6 @@ window.onload = function() {
         articles.push(article);
       })
     })
+    console.log(articles)
   document.getElementById("app").innerHTML = IndexPage().render(articles);
 }
