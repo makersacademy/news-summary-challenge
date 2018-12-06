@@ -3,7 +3,8 @@
   function newsUpdate() {
     url = "https://content.guardianapis.com/search?";
     api = "15ab9879-6713-40b7-a6d9-0abbeb1a5b71";
-    $.get(url + "api-key=" + api + "&show-fields=trailText,thumbnail", function(data) {
+    fields = "&show-fields=trailText,thumbnail";
+    $.get(url + "api-key=" + api + fields, function(data) {
       $('#news_update').html(generateArticleListHTML(data));
     });
   };
