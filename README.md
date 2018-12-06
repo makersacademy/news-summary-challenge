@@ -1,14 +1,22 @@
 # News Summary challenge
 
+This project uses the Guardian News API to bring together the top news stories in one handy web page.
+
+Click the links to be redirected to the original page.
+
 ## Instructions for installation
 
 Clone this repo
 
 Run `npm install`
 
+Copy the full path to `index.html` and paste it into the URL bar in your browser
+
+OR
+
 Run the server: `npm start`
 
-Run the server `node node_modules/http-server/bin/http-server`
+Visit `localhost:8080` in your browser
 
 
 ## User Stories
