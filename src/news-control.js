@@ -11,7 +11,7 @@
 
   function generateArticleListHTML(data) {
     listStringHtml = '<ul>';
-    articles = data.response.results
+    articles = data.response.results;
     for (i = 0; i < articles.length; i++) {
       listStringHtml +=
       `<li onclick="location.href='${articles[i].webUrl}'">
@@ -19,7 +19,7 @@
         <caption>${articles[i].sectionName}</caption><br>
         <h4>${articles[i].webTitle}</h4>
         <span>${articles[i].fields.trailText}</span>
-      </li>`
+      </li>`;
     };
     return listStringHtml + '</ul>';
   };
