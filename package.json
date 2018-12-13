@@ -1,0 +1,22 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "Grab the headlines from the Guardian newspaper API and display them on a page. Click on a headline to see sommary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertsK284/news-summary-challenge.git"
+  },
+  "author": "Karen Roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobertsK284/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/RobertsK284/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
