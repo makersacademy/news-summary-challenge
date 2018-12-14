@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Spectrum</title>
+
+  <link rel="stylesheet" href="Spectrum.css">
+
+  <!-- TEST FRAMEWORK -->
+  <script src="Spectrum.js"></script>
+  <script>
+    function Spectrum() { this.string = "" }; spectrum = new Spectrum();
+  </script>
+
+  <!-- JACVASCRIPT FILES -->
+  <script src="../../src/model/article-list-model.js"></script>
+  <script src="../../src/view/article-list-view.js"></script>
+
+
+  <!-- HELPER FILES -->
+  <script src="../testhelpers-spec.js"></script>
+
+  <!-- SPEC FILES -->
+  <script src="../model/article-list-model-spec.js"></script>
+  <script src="../view/article-list-view-spec.js"></script>
+
+
+
+  <!-- RENDER FRONT-END -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() { document.getElementById("spectrum").innerHTML = spectrum.string; })
+  </script>
+
+</head>
+<body>
+  <div hidden id="test"></div>
+  <div id="spectrum"></div>
+</body>
+</html>
