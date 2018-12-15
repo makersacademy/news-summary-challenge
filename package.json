@@ -1,0 +1,22 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "News Summary Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alittlecross/news-summary-challenge.git"
+  },
+  "author": "alittlecross",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alittlecross/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/alittlecross/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

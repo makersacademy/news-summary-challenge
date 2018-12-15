@@ -1,0 +1,29 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #111111;
+}
+
+#describe {
+  padding: 5px;
+  color: #ff0055;
+}
+
+#it {
+  padding: 5px;
+  color: #ffbb00;
+}
+
+#message {
+  padding: 5px;
+  color: #00ff55;
+}
+
+#pass, #fail {
+  padding: 5px;
+  color: #0099ff;
+}
+
+#fail {
+  font-weight: bold;
+  font-size: 20px;
+}
