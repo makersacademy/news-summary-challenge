@@ -1,9 +1,16 @@
 (function (exports) {
 
-  function Article(thumbnail, headline, url) {
+  var i = 0;
+
+  function Article(thumbnail, headline, firstParagraph, secondParagraph, thirdParagraph, url) {
     this.thumbnail = thumbnail;
     this.headline = headline;
+    this.firstParagraph = firstParagraph;
+    this.secondParagraph = secondParagraph;
+    this.thirdParagraph = thirdParagraph;
     this.url = url;
+    this.id = i;
+    i++;
   }
   
   Article.prototype.thumbnail = function() {

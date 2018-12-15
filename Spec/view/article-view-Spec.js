@@ -1,0 +1,19 @@
+describe("Article View", function() {
+
+  describe(".htmlString()", function() {
+
+    it("Should return html an article", function() {
+      article = new Article("thumbnail.jpg", "headline", "firstParagraph", "secondParagraph", "thirdParagraph", "url");
+      articleView = new ArticleView(article);
+      expect(articleView.htmlString()).toEqual(
+        "<div>" +
+          "<img src='thumbnail.jpg' alt='article thumbnail'>" +
+          "<h1>headline</h1>" +
+          "<p>firstParagraph</p>" +
+          "<p>secondParagraph</p>" +
+          "<p>thirdParagraph</p>" +
+          "<a href='url'>Click here for the full Guardian article</a>" +
+        "</div>")
+    })
+  })
+})
