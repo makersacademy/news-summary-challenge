@@ -1,6 +1,6 @@
 describe("Article Model", function() {
 
-  it("An article can be instantiated", function() {
+  it("An Article object can be instantiated", function() {
     article = new Article("thumbnail", "headline", "firstParagraph", "secondParagraph", "thirdParagraph", "url");
     // expect(article.id).toEqual(0);
     expect(article.thumbnail).toEqual("thumbnail");
