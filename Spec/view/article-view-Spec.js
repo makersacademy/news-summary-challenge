@@ -2,7 +2,7 @@ describe("Article View", function() {
 
   describe(".htmlString()", function() {
 
-    it("Should return html an article", function() {
+    it("Should return html for an article", function() {
       article = new Article("thumbnail.jpg", "headline", "firstParagraph", "secondParagraph", "thirdParagraph", "url");
       articleView = new ArticleView(article);
       expect(articleView.htmlString()).toEqual(
@@ -13,7 +13,8 @@ describe("Article View", function() {
           "<p>secondParagraph</p>" +
           "<p>thirdParagraph</p>" +
           "<a href='url'>Click here for the full Guardian article</a>" +
-        "</div>")
+        "</div>"
+      )
     })
   })
 })
