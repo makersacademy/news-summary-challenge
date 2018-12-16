@@ -34,7 +34,7 @@ testjs.test('news article list view: renders list of news articles', function() 
 
 });
 
-
+// news article view tests
 testjs.test('news article view: renders article with heading and summary', function() {
 
   var newsArticleModel = {
@@ -46,10 +46,29 @@ testjs.test('news article view: renders article with heading and summary', funct
     }
   };
 
-  var expectedResult = "<div><h1>news headline</h1><p>news summary</p></div>";
-
   var newsArticleView = new NewsArticleView();
+
+  var expectedResult = "<div><h1>news headline</h1><p>news summary</p></div>";
 
   testjs.assertEquals(newsArticleView.render(newsArticleModel), expectedResult);
 
+});
+
+// news article model tests
+testjs.test('a news article has a headline', function() {
+
+  var apiResponse = JSON.stringify({ headline: 'headline', summary: 'summary'})
+
+  var newsArticleModel = new NewsArticleModel(apiResponse.headline, apiResponse.summary);
+
+  testjs.assertEquals(newsArticleModel.headline(), 'headline');
+});
+
+testjs.test('a news article has a headline', function() {
+
+  var apiResponse = JSON.stringify({ headline: 'headline', summary: 'summary'})
+
+  var newsArticleModel = new NewsArticleModel(apiResponse.headline, apiResponse.summary);
+
+  testjs.assertEquals(newsArticleModel.summary(), 'summary');
 });

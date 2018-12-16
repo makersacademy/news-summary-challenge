@@ -1,7 +1,7 @@
 (function(exports) {
 
   function NewsArticleListView(newsArticleListModel) {
-    this.newsArticleListModel = newsArticleListModel;
+    this.newsArticleListModel = [];
   }
 
   NewsArticleListView.prototype = {
