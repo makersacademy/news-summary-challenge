@@ -2,13 +2,13 @@
 
   window.addEventListener("load", function() {
 
-    var newsArticleList = new NewsArticleList(NewsArticle);
+    var newsArticleListModel = new NewsArticleListModel(NewsArticleModel);
 
-    var newsArticleListView = new NewsArticleListView(newsArticleList);
+    var newsArticleListView = new NewsArticleListView(newsArticleListModel);
 
-    var controller = new Controller(newsArticleList, newsArticleListView, NewsArticleView)
+    var controller = new Controller(newsArticleListModel, newsArticleListView, NewsArticleView)
     html = newsArticleListView.render();
-    controller.render(html);
+    controller.render('app', html);
 
   })
 
