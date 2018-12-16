@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lucafrancesc/news-summary-challenge/issues"
   },
-  "homepage": "https://github.com/lucafrancesc/news-summary-challenge#readme"
+  "homepage": "https://github.com/lucafrancesc/news-summary-challenge#readme",
+  "dependencies": {
+    "aylien_textapi": "^0.7.0"
+  }
 }

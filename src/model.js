@@ -1,5 +1,6 @@
 var model = {};
 (function(exports){
+
   function titles(){
     return "heading"
   }
