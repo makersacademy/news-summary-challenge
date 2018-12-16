@@ -1,0 +1,23 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "a news summary app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "http-server -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cesarecamurani/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cesarecamurani/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/cesarecamurani/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "nodemon": "^1.18.9"
+  }
+}
