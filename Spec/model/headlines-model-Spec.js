@@ -1,12 +1,10 @@
 describe("Headlines Model", function() {
-  
-  it("A Headlines object can be instantiated", function() {
-    headlines = new Headlines()
-    expect(headlines.list).isArray(true);
-  })
 
-  it("Should add an article to the list array", function() {
-    headlines.addArticle("thumbnail", "section", "headline", "byline", "firstParagraph", "secondParagraph", "thirdParagraph", "url");
-    expect(headlines.returnList()[0].headline).toEqual("headline")
+  describe(".addArticle", function() {
+    it("Should add an article to the list array", function() {
+      headlines = new Headlines;
+      headlines.addArticle("thumbnail", "section", "headline", "byline", "firstParagraph", "secondParagraph", "thirdParagraph", "url");
+      expect(headlines.list[0].headline).toEqual("headline")
+    })
   })
 })

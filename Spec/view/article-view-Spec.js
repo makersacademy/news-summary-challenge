@@ -1,7 +1,6 @@
 describe("Article View", function() {
 
   describe(".htmlString()", function() {
-
     it("Should return html for an article", function() {
       article = new Article("thumbnail.jpg", "section", "headline", "byline", "firstParagraph", "secondParagraph", "thirdParagraph", "url");
       articleView = new ArticleView(article);

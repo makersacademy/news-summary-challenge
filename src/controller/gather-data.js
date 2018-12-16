@@ -27,16 +27,27 @@
   
     for (i = 0; i < numberOfResults; i++) {
       var paragraphs = document.createElement( 'html' );
+      var paragraphOne, paragraphTwo, paragraphThree;
+
       paragraphs.innerHTML = query.response.results[i].fields.body;
+      
+      if (paragraphs.getElementsByTagName('p')[0] === undefined) { paragraphOne = ""; }
+      else { paragraphOne = paragraphs.getElementsByTagName('p')[0].innerHTML; }
+
+      if (paragraphs.getElementsByTagName('p')[1] === undefined) { paragraphTwo = ""; }
+      else { paragraphTwo = paragraphs.getElementsByTagName('p')[1].innerHTML; }
+
+      if (paragraphs.getElementsByTagName('p')[2] === undefined) { paragraphThree = ""; }
+      else { paragraphThree = paragraphs.getElementsByTagName('p')[2].innerHTML; }
   
       headlines.addArticle(
         query.response.results[i].fields.thumbnail,
         query.response.results[i].sectionName,
         query.response.results[i].fields.headline,
         query.response.results[i].fields.byline,
-        paragraphs.getElementsByTagName('p')[0].innerHTML,
-        paragraphs.getElementsByTagName('p')[1].innerHTML,
-        paragraphs.getElementsByTagName('p')[2].innerHTML,
+        paragraphOne,
+        paragraphTwo,
+        paragraphThree,
         query.response.results[i].webUrl
       );
     }

@@ -10,7 +10,9 @@
     var listLength = this.headlines.list.length;
 
     for (i = 0; i < listLength; i++) {
-      string += "<div>"
+      string += "<div><a href='#article/"
+      string += this.headlines.list[i].id
+      string += "'>"
       if (this.headlines.list[i].thumbnail != undefined) {
         string += "<img src='";
         string += this.headlines.list[i].thumbnail;
@@ -20,7 +22,7 @@
       string += this.headlines.list[i].section;
       string += " &#x2F; "
       string += this.headlines.list[i].headline;
-      string += "</h1></div>"
+      string += "</h1></a></div>"
     }
 
     return string;
