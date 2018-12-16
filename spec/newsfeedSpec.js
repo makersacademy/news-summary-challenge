@@ -41,7 +41,7 @@ testjs.test('news article list view: renders list of news headlines', function()
 
   var newsArticleListView = new NewsArticleListView(newsArticleListModel);
 
-  var expectedResult = "<div> <ul> <li>headline</li> </ul> </div>"
+  var expectedResult = "<div> <ul> <a ref='#'>headline</a> </ul> </div>"
 
   testjs.assertEquals(newsArticleListView.render(), expectedResult);
 

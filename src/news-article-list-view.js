@@ -9,7 +9,7 @@
       return [
         "<div>",
           "<ul>",
-            this.newsArticleListModel.list.map(function(article) { return "<li>" + article.headline() + "</li>" }),
+            this.newsArticleListModel.list.map(function(article) { return "<a ref='#'>" + article.headline() + "</a>" }),
           "</ul>",
         "</div>"
       ].join(" ")
