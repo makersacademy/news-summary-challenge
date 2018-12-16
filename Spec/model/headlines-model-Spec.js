@@ -6,7 +6,7 @@ describe("Headlines Model", function() {
   })
 
   it("Should add an article to the list array", function() {
-    headlines.addArticle("thumbnail", "headline", "firstParagraph", "secondParagraph", "thirdParagraph", "url");
+    headlines.addArticle("thumbnail", "section", "headline", "byline", "firstParagraph", "secondParagraph", "thirdParagraph", "url");
     expect(headlines.returnList()[0].headline).toEqual("headline")
   })
 })

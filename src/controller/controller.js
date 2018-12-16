@@ -6,9 +6,7 @@
 
   Controller.prototype.html = function(id) {
     headlinesView = new HeadlinesView(this.headlines)
-    document.addEventListener("DOMContentLoaded", function() {
-      document.getElementById(id).innerHTML = headlinesView.htmlString();
-    })
+    document.getElementById(id).innerHTML = headlinesView.htmlString();
   }
 
   exports.Controller = Controller;

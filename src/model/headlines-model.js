@@ -8,8 +8,8 @@
     return this.list;
   }
 
-  Headlines.prototype.addArticle = function(thumbnail, headline, firstParagraph, secondParagraph, thirdParagraph, url) {
-    this.list.push(new Article(thumbnail, headline, firstParagraph, secondParagraph, thirdParagraph, url));
+  Headlines.prototype.addArticle = function(thumbnail, section, headline, byline, firstParagraph, secondParagraph, thirdParagraph, url) {
+    this.list.push(new Article(thumbnail, section, headline, byline, firstParagraph, secondParagraph, thirdParagraph, url));
   }
 
   exports.Headlines = Headlines;
