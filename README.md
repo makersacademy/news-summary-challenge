@@ -1,32 +1,15 @@
-# News Summary challenge
+# News Summary
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
-
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that summarises the news.
-
-### Guidance
-
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+This project was a challenge from Makers Academy to create an app that summarises the news.
 
 ## Project overview
 
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
+ A single page web app that grabs all the headlines from the Guardian newspaper API and displays them on a page.  Clicking on a headline will show a summary of the article.
 
 ### Technologies
 
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
+Written using frontend JavaScript, CSS and HTML.  It is tested with the test framework my team came up with during the week.
 
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
 
 ### Serving your app
 
@@ -150,3 +133,15 @@ If you're interested, you can see the code for the News Summary API in this repo
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+
+## API Key setup
+
+Sign up for API keys
+
+
+## Running the tests
+
+In the command line, navigate to the root directory of the project folder.
+
+Type in the following to open all the spec.html's in your browser:
+open ./spec/*.html
