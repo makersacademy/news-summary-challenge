@@ -1,25 +1,3 @@
-// function NewsController (headlineListView) {
-//   this.headlineListView = headlineListView
-//
-//   this._setup()
-// }
-//
-// NewsController.prototype = {
-//   _setup: function () {
-//     var self = this
-//
-//     window.addEventListener('click', function (event) {
-//       event.preventDefault();
-//       var html = self.headlineListView.render()
-//       self.render(html)
-//     })
-//   },
-//
-//   render: function(html) {
-//     document.getElementById('app').innerHTML = html
-//   }
-// }
-
 var render = new Render ()
 
 window.onload = function () {
@@ -29,31 +7,21 @@ window.onload = function () {
   })
 }
 
-
-// Load Headlines
 function loadHeadlines() {
   event.preventDefault()
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://content.guardianapis.com/search?api-key=9ba73e9a-73b3-454e-b973-7c295c6942f5', true);
 
-  xhr.onload = function () {
-    if (this.status == 200) {
-      var headlines = JSON.parse(this.responseText);
-
-      var output = ""
-      for (var i in headlines){
-        output +=
-          "<div class='article'>" +
-          "<ul>" +
-          "<li>ID: " + headlines[i].id + "</li>" +
-          "<li>Title: " + headlines[i].webTitle + "</li>" +
-          "</ul>" +
-          "<div>";
-      }
-
-      document.getElementById('headlines').innerHTML = output;
-    }
-  }
-
-  xhr.send();
+  fetch("http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=9ba73e9a-73b3-454e-b973-7c295c6942f5")
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+  // Work with JSON data here
+  console.log(data);
+  let body = data.response.content.fields.body;
+  document.body.innerHTML = body;
+  })
+  .catch(err => {
+  // Do something for an error here
+  console.log("🌈");
+  });
 }
