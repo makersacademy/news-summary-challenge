@@ -6,7 +6,7 @@ var controller = {};
   }
   function renderBody(){
     html.body();
-    html.showBody();
+    html.showBody(model.text());
     html.hideBody()
   }
 
