@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/RobertsK284/news-summary-challenge#readme",
   "dependencies": {
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.1",
+    "node-fetch": "^2.3.0"
   }
 }

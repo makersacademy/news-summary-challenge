@@ -1,8 +1,8 @@
 const fs = require('fs');
-const async = require
+const async = require;
 const exec = require('child_process').exec;
 const bucket = require('./bucket.js');
-const scriptFolder = '../specs/'
+const scriptFolder = '../specs/';
 
 const files = fs.readFile(scriptFolder);
 
