@@ -24,11 +24,24 @@ var testjs = new TestJS();
 // });
 
 // news article list view tests
-testjs.test('news article list view: renders list of news articles', function() {
+testjs.test('news article list view: renders list of news headlines', function() {
 
-  var newsArticleListView = new NewsArticleListView(["article1"]);
+  var newsArticleModel = {
+    headline: function() {
+      return 'headline'
+    },
+    summary: function() {
+      return 'summary'
+    }
+  }
 
-  var expectedResult = "<div> <ul> <li>article1</li> </ul> </div>"
+  var newsArticleListModel = {
+    list: [newsArticleModel]
+  };
+
+  var newsArticleListView = new NewsArticleListView(newsArticleListModel);
+
+  var expectedResult = "<div> <ul> <li>headline</li> </ul> </div>"
 
   testjs.assertEquals(newsArticleListView.render(), expectedResult);
 
@@ -39,18 +52,18 @@ testjs.test('news article view: renders article with heading and summary', funct
 
   var newsArticleModel = {
     headline: function() {
-      return 'news headline'
+      return 'headline'
     },
     summary: function() {
-      return 'news summary'
+      return 'summary'
     }
-  };
+  }
 
-  var newsArticleView = new NewsArticleView();
+  var newsArticleView = new NewsArticleView(newsArticleModel);
 
-  var expectedResult = "<div><h1>news headline</h1><p>news summary</p></div>";
+  var expectedResult = "<div><h1>headline</h1><p>summary</p></div>";
 
-  testjs.assertEquals(newsArticleView.render(newsArticleModel), expectedResult);
+  testjs.assertEquals(newsArticleView.render(), expectedResult);
 
 });
 
@@ -58,7 +71,7 @@ testjs.test('news article view: renders article with heading and summary', funct
 testjs.test('a news article has a headline', function() {
 
   var apiResponse = JSON.stringify({ headline: 'headline', summary: 'summary'})
-  console.log(apiResponse)
+
   var newsArticleModel = new NewsArticleModel(apiResponse);
 
   testjs.assertEquals(newsArticleModel.headline(), 'headline');

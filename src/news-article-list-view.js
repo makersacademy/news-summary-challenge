@@ -1,15 +1,15 @@
 (function(exports) {
 
   function NewsArticleListView(newsArticleListModel) {
-    this.newsArticleListModel = [];
+    this.newsArticleListModel = newsArticleListModel;
   }
 
   NewsArticleListView.prototype = {
-    render: function(article) {
+    render: function() {
       return [
         "<div>",
           "<ul>",
-            this.newsArticleListModel.map(function(article) { return "<li>" + article + "</li>" }),
+            this.newsArticleListModel.list.map(function(article) { return "<li>" + article.headline() + "</li>" }),
           "</ul>",
         "</div>"
       ].join(" ")

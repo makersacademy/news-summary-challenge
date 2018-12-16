@@ -5,14 +5,14 @@
   }
 
   NewsArticleView.prototype = {
-    render: function(article) {
+    render: function() {
       return [
         "<div>",
           "<h1>",
-            article.headline(),
+            this.newsArticleModel.headline(),
           "</h1>",
           "<p>",
-            article.summary(),
+            this.newsArticleModel.summary(),
           "</p>",
         "</div>"
       ].join("")
