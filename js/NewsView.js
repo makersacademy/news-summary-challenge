@@ -1,7 +1,7 @@
 (function(exports) {
 
     function NewsView (news) {
-      this.news =  news
+      this.news = news
     };
 
     NewsView.prototype.display = function () {
@@ -10,11 +10,11 @@
         "<center>",
         "<h2>",
         "<font face='courier' color='black'>",
-        "<div>", "<p>" + this.news.headline + "</p>", "</div>",
+        "<div>", "<p>" + this.news.webTitle + "</p>", "</div>",
         "</h2>",
         "<br>", "<br>",
         "<h3>",
-        "<div>", "<p>" + this.news.summary + "</p>", "</div>",
+        "<div>", "<p>" + this.news.webUrl + "</p>", "</div>",
         "</h3>",
         "</font>",
         "<h4>", "<font face='courier' color='black'>",

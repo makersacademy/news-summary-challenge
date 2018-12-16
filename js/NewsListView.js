@@ -3,29 +3,25 @@
     this.newsList = newsList
   }
 
-  NewsListView.prototype.display = function () {
-    return [
-      "<br>",
-      "<center>",
-      "<h2>",
-      "<font face='courier'>",
-      "CCN Breaking News",
-      "</h2>",
-      "<br>",
-      "<br>",
-      "<br>",
-        this.newsList.newsBox.map(function(news) {
-          return [
-            "<div>",
-            "<h2>",
-            "<a href='#news/" + news.id + "'>" + news.headline() + "</a>",
-            "</h2>",
-            "</div>"
-          ].join("")
-        }).join(""),
-        "</font>",
-        "</center>"
-      ].join("")
+  NewsListView.prototype.displayNews = function () {
+    newsString = "";
+    this.newslist.allNews.forEach(function(news) {
+      var template = [
+        "<div class='column is-one-quarter'>",
+        "<div class='card is-4by3'>",
+        "<div class='card-content'>",
+        "<a href='",
+        news.displayWebUrl(),
+        "'>",
+        news.displayWebTitle(),
+        "</a>",
+        "</div>",
+        "</div>",
+        "</div>"
+      ];
+      newsString += template.join("");
+    });
+    return newsString;
     }
 
     exports.NewsListView = NewsListView

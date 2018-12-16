@@ -2,11 +2,9 @@
 window.addEventListener('load', function() {
 
   var newsList = new NewsList(News)
-  var newsListView = new NewsListView(newsList)
-  var newsController = new NewsController(newsList, newsListView, NewsView)
+  var newsListView = new NewsList(newsList)
+  var newsController = new NewsController(newsList, newsListView, newsView)
 
-  var html = newsListView.display()
-
-  newsController.display(html)
+  newsController.display("headlines")
 
 });
