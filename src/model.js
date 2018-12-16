@@ -1,7 +1,7 @@
 var model = {};
 (function(exports){
-  function title(){
+  function titles(){
     return "heading"
   }
-  exports.title = title
+  exports.titles = titles
 })(model)
