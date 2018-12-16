@@ -32,7 +32,7 @@ testjs.test('news article list view: renders list of news headlines', function()
     },
     summary: function() {
       return 'summary'
-    }
+    },
   }
 
   var newsArticleListModel = {
