@@ -58,8 +58,8 @@ testjs.test('news article view: renders article with heading and summary', funct
 testjs.test('a news article has a headline', function() {
 
   var apiResponse = JSON.stringify({ headline: 'headline', summary: 'summary'})
-
-  var newsArticleModel = new NewsArticleModel(apiResponse.headline, apiResponse.summary);
+  console.log(apiResponse)
+  var newsArticleModel = new NewsArticleModel(apiResponse);
 
   testjs.assertEquals(newsArticleModel.headline(), 'headline');
 });
@@ -68,7 +68,7 @@ testjs.test('a news article has a headline', function() {
 
   var apiResponse = JSON.stringify({ headline: 'headline', summary: 'summary'})
 
-  var newsArticleModel = new NewsArticleModel(apiResponse.headline, apiResponse.summary);
+  var newsArticleModel = new NewsArticleModel(apiResponse, apiResponse.summary);
 
   testjs.assertEquals(newsArticleModel.summary(), 'summary');
 });

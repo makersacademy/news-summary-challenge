@@ -1,10 +1,8 @@
 (function(exports) {
 
-  function NewsArticleListModel(apiResponse) {
-    this.apiResponse = apiResponse;
+  function NewsArticleListModel(newsArticleModel) {
+    this.newsArticleModel = newsArticleModel;
   }
-
-  
 
   exports.NewsArticleListModel = NewsArticleListModel;
 })(this);
