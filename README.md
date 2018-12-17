@@ -1,5 +1,41 @@
 # News Summary Challenge
 
+This challenge was to create a news summary web app build with only JavaScript, html, and CSS.
+
+To try out the app, clone this repo:
+
+```git clone git@github.com:alittlecross/bowling-challenge.git```
+
+And run `index.html` from that folder.
+
+HOWEVER - the will only work if you save a Guardian API key in a file within that folder call `api-key.js`, like so:
+
+```var apiKey = "qwertyuiopasdfghjklzxcvbnm";```
+
+## Screenshots ##
+
+When running, when viewing the homepage, it should look like this in browser:
+
+![articles-fullscreen](images/articles-fullscreen.png)
+
+And like this on a mobile:
+
+![articles-mobile](images/articles-mobile.png)
+
+When viewing an article summary, it should look like this in browser:
+
+![article-fullscreen](images/article-fullscreen.png)
+
+And like this on a mobile:
+
+![article-mobile](images/article-mobile.png)
+
+## Testing ##
+
+All code has been testing with my own testing framework, Spectrum.
+
+In the repo that you cloned, run `Spectrum.html` from the `Spectrum` folder.
+
 ## User Stories
 
 ```
