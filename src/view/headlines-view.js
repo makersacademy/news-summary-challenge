@@ -9,21 +9,23 @@
     var string = "";
     var listLength = this.headlines.list.length;
 
+    string += "<main>"
     for (i = 0; i < listLength; i++) {
-      string += "<div><a href='#article/"
+      string += "<div class='articles-container breaks'><a class='article' href='#article/"
       string += this.headlines.list[i].id
       string += "'>"
       if (this.headlines.list[i].thumbnail != undefined) {
-        string += "<img src='";
+        string += "<div class='thumbnail'><img src='";
         string += this.headlines.list[i].thumbnail;
-        string += "' alt='article thumbnail'>";
+        string += "' alt='article thumbnail'></div>";
       }
-      string += "<h1>";
+      string += "<p class='headline'><span class='section'>";
       string += this.headlines.list[i].section;
-      string += " &#x2F; "
+      string += "</span> &#x2F; "
       string += this.headlines.list[i].headline;
-      string += "</h1></a></div>"
+      string += "</p></a></div>"
     }
+    string += "</main>"
 
     return string;
   }

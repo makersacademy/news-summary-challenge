@@ -7,18 +7,24 @@ describe("Headlines View", function() {
       headlines.addArticle("lianbmuht.jpg", "noitces", "enildaeh", "enilyb", "hpargaraPtsrif", "hpargaraPdnoces", "hpargaraPdriht", "lru");
       headlinesView = new HeadlinesView(headlines);
       expect(headlinesView.htmlString()).toEqual(
-        "<div>" +
-          "<a href='#article/3'>" +
-            "<img src='thumbnail.jpg' alt='article thumbnail'>" +
-            "<h1>section &#x2F; headline</h1>" +
-          "</a>" +
-        "</div>" +
-        "<div>" +
-          "<a href='#article/4'>" +
-            "<img src='lianbmuht.jpg' alt='article thumbnail'>" +
-            "<h1>noitces &#x2F; enildaeh</h1>" +
-          "</a>" +
-        "</div>"
+        "<main>" +
+          "<div class='articles-container breaks'>" +
+            "<a class='article' href='#article/3'>" +
+              "<div class='thumbnail'>" +
+                "<img src='thumbnail.jpg' alt='article thumbnail'>" +
+              "</div>" +
+              "<p class='headline'><span class='section'>section</span> &#x2F; headline</p>" +
+            "</a>" +
+          "</div>" +
+          "<div class='articles-container breaks'>" +
+            "<a class='article' href='#article/4'>" +
+              "<div class='thumbnail'>" +
+                "<img src='lianbmuht.jpg' alt='article thumbnail'>" +
+              "</div>" +
+              "<p class='headline'><span class='section'>noitces</span> &#x2F; enildaeh</p>" +
+            "</a>" +
+          "</div>" +
+        "</main>"
       )
     })
   })

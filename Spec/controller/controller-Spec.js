@@ -9,18 +9,24 @@ describe("Controller", function() {
       document.addEventListener("DOMContentLoaded", function() {
         controller.html("test");
         expect(document.getElementById("test").innerHTML).toEqual(
-          '<div>' +
-            '<a href="#article/7">' +
-              '<img src="../images/thumbnail.gif" alt="article thumbnail">' +
-              '<h1>section / headline</h1>' +
-            '</a>' +
-          '</div>' +
-          '<div>' +
-            '<a href="#article/8">' +
-              '<img src="../images/thumbnail.gif" alt="article thumbnail">' +
-              '<h1>noitces / enildaeh</h1>' +
-            '</a>' +
-          '</div>'
+          '<main>' +
+            '<div class="articles-container breaks">' +
+              '<a class="article" href="#article/7">' +
+                '<div class="thumbnail">' +
+                  '<img src="../images/thumbnail.gif" alt="article thumbnail">' +
+                '</div>' +
+                '<p class="headline"><span class="section">section</span> / headline</p>' +
+              '</a>' +
+            '</div>' +
+            '<div class="articles-container breaks">' +
+              '<a class="article" href="#article/8">' +
+                '<div class="thumbnail">' +
+                  '<img src="../images/thumbnail.gif" alt="article thumbnail">' +
+                '</div>' +
+                '<p class="headline"><span class="section">noitces</span> / enildaeh</p>' +
+              '</a>' +
+            '</div>' +
+          '</main>'
         );
       })
     })
@@ -34,7 +40,7 @@ describe("Controller", function() {
       controller = new Controller(headlines);
       document.addEventListener("DOMContentLoaded", function() {
         controller.html("test");
-        document.getElementById("test").firstChild.firstChild.click();
+        document.getElementById("test").firstChild.firstChild.firstChild.click();
         expect(window.location.hash).toEqual("#article/7")
       })
     })

@@ -1,0 +1,106 @@
+body {
+  margin: 30px 0;
+  font-family: Helvetica Neue;
+  font-weight: 100;
+  color: #000000;
+}
+a, a:link, a:visited, a:hover, a:active {
+  color: #000000;
+  text-decoration: none;
+}
+.article {
+  float: left;
+  text-align: center;
+}
+.thumbnail, #header {
+  overflow: hidden;
+  height: 150px;
+  border-radius: 5px;
+}
+.thumbnail img, #header img {
+  width: 100%;
+  height: auto;
+}
+
+#header {
+  text-align: center;
+}
+
+.section {
+  font-style: italic;
+  font-weight: 300;
+  color: #000aaa;
+
+}
+@media screen and (min-width: 340px) {
+  main .breaks {
+    width: 340px;
+    height: auto;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  body {
+    font-size: 20px;
+  }
+
+  .section {
+    font-size: 25px;
+  }
+
+  #header {
+    width: 170px;
+    height: auto;
+    padding: 0;
+    margin: 0 auto;
+  }
+  main .breaks .article {
+    width: 320px;
+    padding: 0 10px;
+  }
+}
+@media screen and (min-width: 680px) {
+  main .breaks {
+    width: 680px;
+  }
+
+  body {
+    font-size: 25px;
+  }
+
+  .section {
+    font-size: 30px;
+  }
+
+  #header {
+    width: 340px;
+    height: auto;
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1020px) {
+  main .breaks {
+    width: 1020px;
+  }
+}
+@media screen and (min-width: 1360px) {
+  main .breaks {
+    width: 1360px;
+  }
+}
+@media screen and (min-width: 1700px) {
+  main .breaks {
+    width: 1700px;
+  }
+}
+
+/* .loading {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  transition: opacity 0.5s;
+  transition-delay: 0.5s;
+} */

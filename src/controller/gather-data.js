@@ -6,7 +6,7 @@
 
   GatherData.prototype.askTheGuardian = function() {
     var address = "https://content.guardianapis.com/";
-    var parameters = "search?type=article&show-elements=image&show-fields=thumbnail,headline,body,byline&api-key=";
+    var parameters = "search?type=article&page-size=50&show-elements=image&show-fields=thumbnail,headline,body,byline&api-key=";
     var myRequest = new XMLHttpRequest();
     myRequest.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
