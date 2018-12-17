@@ -18,4 +18,9 @@
    var storiesFactory = new StoriesFactory(guardianService, summaryService);
    var stories = storiesFactory.getStories();
    var main = document.getElementById('main');
+
+   stories.forEach(function(story){
+       var image = document.createElement('img');
+   });
+
 })();
