@@ -4,7 +4,7 @@ This challenge was to create a news summary web app build with only JavaScript, 
 
 To try out the app, clone this repo:
 
-```git clone git@github.com:alittlecross/bowling-challenge.git```
+```git clone git@github.com:alittlecross/news-summary-challenge.git```
 
 And run `index.html` from that folder.
 
