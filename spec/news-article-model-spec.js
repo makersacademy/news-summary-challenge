@@ -1,8 +1,10 @@
 'use strict';
 
 var apiResponse = {
-  headline: 'news headline',
-  summary: 'news summary'
+  webTitle: 'news headline',
+  fields: {
+    body: 'news summary'
+  }
 }
 
 var newsArticleModel = new NewsArticleModel(apiResponse)
