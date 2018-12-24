@@ -1,16 +1,16 @@
 (function(exports) {
 
-  function NewsArticleModel(newsArticle) {
+  function NewsArticleModel(apiResponse) {
     this.apiResponse = (apiResponse);
   }
 
   NewsArticleModel.prototype = {
     headline: function() {
-      return this.apiResponse.headline;
+      return this.apiResponse.webTitle;
     },
 
     summary: function() {
-      return this.apiResponse.summary;
+      return this.apiResponse.fields.body;
     }
   }
 

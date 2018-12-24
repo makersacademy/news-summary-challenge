@@ -2,13 +2,12 @@
 
   window.addEventListener("load", function() {
 
-    var newsArticleListModel = new NewsArticleListModel(NewsArticleModel);
+    var apiConnector = new ApiConnector;
+    var newsArticleListModel = new NewsArticleListModel(NewsArticleModel, apiConnector);
 
     var newsArticleListView = new NewsArticleListView(newsArticleListModel);
 
-    var controller = new Controller(newsArticleListModel, newsArticleListView, NewsArticleView)
-    html = newsArticleListView.render();
-    controller.render('app', html);
+    var controller = new Controller(newsArticleListModel, newsArticleListView, NewsArticleView, apiConnector)
 
   })
 

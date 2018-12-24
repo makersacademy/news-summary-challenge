@@ -1,16 +1,21 @@
 (function(exports) {
 
-  function Controller(newsArticleList, newsArticleListView, NewsArticleView) {
-    this.newsArticleList = newsArticleList;
+  function Controller(newsArticleListModel, newsArticleListView) {
+    this.newsArticleListModel = newsArticleListModel;
     this.newsArticleListView = newsArticleListView;
-    this.NewsArticleView = NewsArticleView;
+    this._getArticles();
   }
 
   Controller.prototype = {
-    render: function(id, html) {
-      document.getElementById(id).innerHTML = html;
+    updateDOM: function(html) {
+      document.getElementById('app').innerHTML += html;
     },
 
+    _getArticles: function() {
+      articles = this.newsArticleListModel.viewList();
+      html = this.newsArticleListView.render(articles)
+      this.updateDOM(html)
+    }
   }
 
   exports.Controller = Controller;

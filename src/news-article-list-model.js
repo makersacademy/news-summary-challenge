@@ -1,18 +1,23 @@
 (function(exports) {
 
-  function NewsArticleListModel(newsArticleModel) {
-    this.newsArticleModel = newsArticleModel;
+  function NewsArticleListModel(NewsArticleModel, apiConnector) {
+    this.NewsArticleModel = NewsArticleModel;
+    this.apiConnector = apiConnector;
     this.list = [];
+    this.addArticles();
   }
 
   NewsArticleListModel.prototype = {
-    addArticle: function(newsArticle) {
-      var article = new this.newsArticleModel(newsArticle);
-      this.list.push(article);
+    addArticles: function() {
+      var self = this;
+      this.articleList = this.apiConnector.getData();
+      this.articleList.forEach(function(newsArticle) {
+        self.list.push(new this.NewsArticleModel(newsArticle));
+      })
     },
 
     viewList: function() {
-      return this.list
+      return this.list;
     }
   }
 

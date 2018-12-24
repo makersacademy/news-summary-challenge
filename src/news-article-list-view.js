@@ -5,14 +5,14 @@
   }
 
   NewsArticleListView.prototype = {
-    render: function() {
+    render: function(articles) {
       return [
         "<div>",
           "<ul>",
-            this.newsArticleListModel.list.map(function(article) { return "<a ref='#'>" + article.headline() + "</a>" }),
+            articles.map(function(article) { return "<a ref='#'>" + article.headline() + "<br>" + "</a>" }).join(""),
           "</ul>",
         "</div>"
-      ].join(" ")
+      ].join("")
     }
   }
 
