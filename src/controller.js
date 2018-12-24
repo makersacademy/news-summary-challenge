@@ -9,7 +9,8 @@
   Controller.prototype = {
     render: function(id, html) {
       document.getElementById(id).innerHTML = html;
-    }
+    },
+
   }
 
   exports.Controller = Controller;
