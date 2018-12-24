@@ -1,7 +1,7 @@
 (function(exports) {
 
-  function NewsArticleModel(apiResponse) {
-    this.apiResponse = JSON.parse(apiResponse);
+  function NewsArticleModel(newsArticle) {
+    this.apiResponse = (apiResponse);
   }
 
   NewsArticleModel.prototype = {

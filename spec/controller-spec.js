@@ -14,7 +14,7 @@ tea.describe('controller', function() {
   //   el.setAttribute("id", "app");
   //   var html = '<p>html</p>';
   //   result = controller.render("app", html)
-  //   tea.check(html, result)
+  //   tea.check(html === result)
   // })
 
 })

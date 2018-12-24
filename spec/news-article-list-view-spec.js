@@ -1,11 +1,13 @@
 'use strict';
 
-var newsArticleListModel = {
+var newsArticleModel = {
   headline: function() {
     return 'news headline'
-  },
+  }
+}
 
-  list: []
+var newsArticleListModel = {
+  list: [newsArticleModel]
 }
 
 var newsArticleListView = new NewsArticleListView(newsArticleListModel)
@@ -20,6 +22,6 @@ tea.describe('news article list view', function() {
       "</div>"
     ].join(" ");
     var result = newsArticleListView.render();
-    tea.check(expected, result)
+    tea.check(expected === result)
   })
 })
