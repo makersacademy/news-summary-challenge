@@ -6,9 +6,13 @@
   }
 
   NewsArticleListModel.prototype = {
-    addArticle: function(apiResponse) {
-      var article = new this.newsArticleModel(apiResponse);
+    addArticle: function(newsArticle) {
+      var article = new this.newsArticleModel(newsArticle);
       this.list.push(article);
+    },
+
+    viewList: function() {
+      return this.list
     }
   }
 
