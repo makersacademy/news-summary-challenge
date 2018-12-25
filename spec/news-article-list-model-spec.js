@@ -1,13 +1,19 @@
 'use strict';
 
-function newsArticleListModel() {}
+function newsArticleModel() {}
 
-var newsArticleListModel = new NewsArticleListModel(newsArticleListModel);
+var apiConnector = {
+  getData: function() {
+    return ["article"]
+  }
+}
+
+var newsArticleListModel = new NewsArticleListModel(newsArticleModel, apiConnector);
 
 tea.describe('news article list model', function() {
-  tea.it('adds articles to its list array', function() {
-    newsArticleListModel.addArticle('news article 1')
-    tea.check(newsArticleListModel.viewList().length === 1)
+  tea.it('returns array of articles', function() {
+    newsArticleListModel._addArticles()
+    tea.check(newsArticleListModel.viewList(), ["article"])
   })
 
 })

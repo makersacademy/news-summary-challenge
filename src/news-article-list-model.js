@@ -4,11 +4,11 @@
     this.NewsArticleModel = NewsArticleModel;
     this.apiConnector = apiConnector;
     this.list = [];
-    this.addArticles();
+    this._addArticles();
   }
 
   NewsArticleListModel.prototype = {
-    addArticles: function() {
+    _addArticles: function() {
       var self = this;
       this.articleList = this.apiConnector.getData();
       this.articleList.forEach(function(newsArticle) {

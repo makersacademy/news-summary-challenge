@@ -1,16 +1,16 @@
 (function(exports) {
 
-  function ApiConnector(url) {
-    this.url = url
+  function ApiConnector() {
+    var url = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=88771be1-78d1-463a-b3aa-88d7364df580"
     this.dataStore = [];
-    this._connect();
+    this._connect(url);
   }
 
   ApiConnector.prototype = {
-    _connect: function() {
+    _connect: function(url) {
     var self = this;
     var xhttp = new XMLHttpRequest();
-      xhttp.open("GET", self.url, false);
+      xhttp.open("GET", url, false);
       xhttp.onload = function () {
         var data = JSON.parse(this.response).response.results;
         data.forEach(function(element) {
