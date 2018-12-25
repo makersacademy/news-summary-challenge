@@ -14,14 +14,8 @@ var newsArticleListView = new NewsArticleListView(newsArticleListModel)
 
 tea.describe('news article list view', function() {
   tea.it('renders a list of news articles', function() {
-    var expected = [
-      "<div>",
-        "<ul>",
-          "<a ref='#'>" + 'news headline' + "</a>",
-        "</ul>",
-      "</div>"
-    ].join(" ");
-    var result = newsArticleListView.render();
+    var expected = "<h1>NewsFeed</h1><div><ul><a ref='#'>news headline<br></a></ul></div>"
+    var result = newsArticleListView.render([newsArticleModel]);
     tea.check(expected === result)
   })
 })

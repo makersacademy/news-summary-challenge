@@ -13,6 +13,7 @@
 
     _getArticles: function() {
       articles = this.newsArticleListModel.viewList();
+      console.log(articles)
       html = this.newsArticleListView.render(articles)
       this._updateDOM(html)
     }
