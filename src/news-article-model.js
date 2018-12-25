@@ -11,6 +11,10 @@
 
     summary: function() {
       return this.apiResponse.fields.body;
+    },
+
+    thumbnail: function() {
+      return this.apiResponse.fields.thumbnail;
     }
   }
 

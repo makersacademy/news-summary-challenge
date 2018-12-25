@@ -8,15 +8,17 @@
 
   Controller.prototype = {
     _updateDOM: function(html) {
-      document.getElementById('app').innerHTML += html;
+      document.getElementById('app').innerHTML = html;
     },
 
     _getArticles: function() {
-      articles = this.newsArticleListModel.viewList();
-      console.log(articles)
-      html = this.newsArticleListView.render(articles)
+      articleList = this.newsArticleListModel.viewList();
+      html = this.newsArticleListView.render(articleList)
       this._updateDOM(html)
     }
+
+    // liust for hash change
+    // on hash change render single article view (summary)
   }
 
   exports.Controller = Controller;

@@ -1,3 +1,9 @@
 var Heading = function() {
-  return "<h1>" + "NewsFeed" + "</h1>"
+  return [
+    "<div class='container text-center'>",
+      "<h1>",
+        "NewsFeed",
+      "</h1>",
+    "</div>"
+  ].join("")
 }
