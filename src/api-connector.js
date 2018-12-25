@@ -1,7 +1,7 @@
 (function(exports) {
 
   function ApiConnector() {
-    var url = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=88771be1-78d1-463a-b3aa-88d7364df580"
+    var url = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=YOUR API KEY"
     this.dataStore = [];
     this._connect(url);
   }
