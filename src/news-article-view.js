@@ -7,7 +7,9 @@
   NewsArticleView.prototype = {
     render: function() {
       return [
-        "<div>",
+        "<div class='container'>",
+        HomeButton(),
+        "<img class='card-img-top' src=" + this.newsArticleModel.thumbnail() + ">",
           "<h1>",
             this.newsArticleModel.headline(),
           "</h1>",
