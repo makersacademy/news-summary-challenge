@@ -1,10 +1,13 @@
+'use strict';
+
 (function(exports) {
 
-  var guardianUrl = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=YOUR API KEY"
+  var guardianUrl = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=YOU API KEY"
 
-  function ApiConnector() {
+  function ApiConnector(url = guardianUrl) {
     this.dataStore = [];
-    this._connect(guardianUrl);
+    this.url = url;
+    this._connect(url = this.url);
   }
 
   ApiConnector.prototype = {
@@ -13,6 +16,7 @@
       var xhttp = new XMLHttpRequest();
       xhttp.open("GET", url, false);
       xhttp.onload = function () {
+        console.log(this.response)
         var data = JSON.parse(this.response).response.results;
         data.forEach(function(element) {
           self._saveData(element);

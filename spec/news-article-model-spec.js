@@ -29,10 +29,10 @@ tea.describe('news article model', function() {
     tea.check(expected === result)
   })
 
-  // tea.it('returns the id', function() {
-  //   var expected = 1
-  //   var result = newsArticleModel.articleId();
-  //   tea.check(expected === result)
-  // })
+  tea.it('returns the id', function() {
+    var expected = 4
+    var result = newsArticleModel.articleId;
+    tea.check(expected === result)
+  })
 
 })

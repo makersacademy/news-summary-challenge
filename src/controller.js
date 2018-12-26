@@ -1,3 +1,5 @@
+'use strict';
+
 (function(exports) {
 
   function Controller(newsArticleListModel, newsArticleListView, NewsArticleView) {

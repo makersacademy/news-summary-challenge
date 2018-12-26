@@ -8,10 +8,10 @@
 
     var newsArticleListView = new NewsArticleListView(newsArticleListModel);
 
-    var controller = new Controller(newsArticleListModel, newsArticleListView, NewsArticleView, apiConnector)
+    var controller = new Controller(newsArticleListModel, newsArticleListView, NewsArticleView, apiConnector);
 
     controller.loadArticleList();
 
-  })
+  });
 
 })(this);

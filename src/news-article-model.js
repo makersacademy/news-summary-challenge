@@ -1,3 +1,5 @@
+'use strict';
+
 (function(exports) {
 
   var idCounter = 0;
@@ -20,6 +22,10 @@
 
     thumbnail: function() {
       return this.apiResponse.fields.thumbnail;
+    },
+
+    returnArticleId: function() {
+      return this.articleId;
     }
   }
 
