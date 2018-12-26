@@ -1,6 +1,6 @@
 # News Summary challenge
 
-I built the SPA App using vanilla JS and my own rudimentary testing Framework 'tea'.
+I built the SPA App using vanilla JS and my own basic testing Framework 'tea'.
 
 ## How to use
 
@@ -13,11 +13,11 @@ I built the SPA App using vanilla JS and my own rudimentary testing Framework 't
 
 ## Desktop NewsFeed view
 
-![desktop NewsFeed view](/public/newsfeed-desktop-view.png)  
+![desktop NewsFeed view](public/newsfeed-desktop-view.png)  
 
 ## Mobile Article view
 
-![mobile mobile view](/public/summary-mobile-view.png)  
+![mobile mobile view](public/summary-mobile-view.png)  
 
 ## User Stories
 
