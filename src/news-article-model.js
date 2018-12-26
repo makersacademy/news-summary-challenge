@@ -15,6 +15,10 @@
 
     thumbnail: function() {
       return this.apiResponse.fields.thumbnail;
+    },
+
+    id: function() {
+      return this.apiResponse.id;
     }
   }
 
