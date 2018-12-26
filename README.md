@@ -5,7 +5,9 @@ I built the SPA App using vanilla JS and my own basic testing Framework 'tea'.
 ## How to use
 
 `git clone https://github.com/chrisjgilbert/news-summary-challenge`  
-`open index.html`   
+`npm install`
+`http-server`   
+`http://localhost:8080/#home`   
 
 ## Run the tests
 
@@ -13,11 +15,11 @@ I built the SPA App using vanilla JS and my own basic testing Framework 'tea'.
 
 ## Desktop NewsFeed view
 
-![desktop NewsFeed view](public/newsfeed-desktop-view.png)  
+![desktop NewsFeed view](images/newsfeed-desktop-view.png)  
 
 ## Mobile Article view
 
-![mobile mobile view](public/summary-mobile-view.png)  
+![mobile mobile view](images/summary-mobile-view.png)  
 
 ## User Stories
 

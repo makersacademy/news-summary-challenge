@@ -1,6 +1,6 @@
 (function(exports) {
 
-  var guardianUrl = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=API KEY"
+  var guardianUrl = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=YOUR API KEY"
 
   function ApiConnector() {
     this.dataStore = [];

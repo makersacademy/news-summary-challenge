@@ -5,7 +5,6 @@
     this.newsArticleListView = newsArticleListView;
     this.NewsArticleView = NewsArticleView;
 
-    this._loadArticleListView();
     this._listenForHashChange();
   }
 
@@ -14,7 +13,7 @@
       document.getElementById('app').innerHTML = html;
     },
 
-    _loadArticleList: function() {
+    loadArticleList: function() {
       articleList = this.newsArticleListModel.viewList();
       html = this.newsArticleListView.render(articleList)
       this._updateDOM(html)
@@ -25,7 +24,7 @@
       window.addEventListener('hashchange', function(event) {
         event.preventDefault();
         if (window.location.href.includes('#home')) {
-          self._loadArticleListView();
+          self.loadArticleList();
         } else {
           var articleId = window.location.hash.split("article/")[1];
           var article = self.newsArticleListModel.findByArticleId(articleId);

@@ -5,10 +5,11 @@
   "main": "app.js",
   "dependencies": {
     "all": "0.0.0",
-    "dotenv": "^6.2.0",
+    "dotenv": "^6.2.0"
+  },
+  "devDependencies": {
     "http-server": "^0.11.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
