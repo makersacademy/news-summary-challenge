@@ -6,7 +6,7 @@ I built the SPA App using vanilla JS and my own basic testing Framework 'tea'.
 
 * `git clone https://github.com/chrisjgilbert/news-summary-challenge`  
 * `npm install`
-* Add your Guardian API Key to `var guardianUrl = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=" + YOUR_API_KEY`   
+* Add your Guardian API Key in `src/api-connector.js` to `var guardianUrl = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=" + YOUR_API_KEY`
 * `http-server`   
 * `http://localhost:8080/#home`   
 
