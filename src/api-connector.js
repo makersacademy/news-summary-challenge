@@ -16,7 +16,6 @@
       var xhttp = new XMLHttpRequest();
       xhttp.open("GET", url, false);
       xhttp.onload = function () {
-        console.log(this.response)
         var data = JSON.parse(this.response).response.results;
         data.forEach(function(element) {
           self._saveData(element);
