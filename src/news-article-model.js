@@ -1,7 +1,11 @@
 (function(exports) {
 
+  var idCounter = 0;
+
   function NewsArticleModel(apiResponse) {
     this.apiResponse = (apiResponse);
+    idCounter++;
+    this.articleId = idCounter;
   }
 
   NewsArticleModel.prototype = {
@@ -17,8 +21,8 @@
       return this.apiResponse.fields.thumbnail;
     },
 
-    id: function() {
-      return this.apiResponse.id;
+    articleId: function() {
+      return this.articleId;
     }
   }
 

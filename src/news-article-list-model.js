@@ -18,6 +18,12 @@
 
     viewList: function() {
       return this.list;
+    },
+
+    findByArticleId: function(id) {
+      return this.list.find(function(article) {
+        return article.articleId == id;
+      })
     }
   }
 

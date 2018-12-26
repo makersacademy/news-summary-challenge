@@ -12,7 +12,7 @@
                   "<div class='card mb-2' style='max-width: 30rem;'>",
                   "<img class='card-img-top' src=" + article.thumbnail() + ">",
                     "<div class='card-body'>",
-                      "<a class='btn btn-primary' href='#article/" + article.id() + "'>" + article.headline() + "</a>",
+                      "<a class='btn btn-primary' href='#article/" + article.articleId + "'>" + article.headline() + "</a>",
                     "</div>",
                   "</div>"
                 ].join("")

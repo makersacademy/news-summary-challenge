@@ -2,7 +2,6 @@
 
 var apiResponse = {
   webTitle: 'news headline',
-  id: 'id',
   fields: {
     body: 'news summary',
     thumbnail: 'photo'
@@ -30,10 +29,10 @@ tea.describe('news article model', function() {
     tea.check(expected === result)
   })
 
-  tea.it('returns the id', function() {
-    var expected = 'id'
-    var result = newsArticleModel.id();
-    tea.check(expected === result)
-  })
+  // tea.it('returns the id', function() {
+  //   var expected = 1
+  //   var result = newsArticleModel.articleId();
+  //   tea.check(expected === result)
+  // })
 
 })
