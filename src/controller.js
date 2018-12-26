@@ -11,9 +11,18 @@
   }
 
   Controller.prototype = {
+    _setUp: function() {
+
+    },
 
     updateDOM: function(html) {
       document.getElementById('app').innerHTML = html;
+    },
+
+    loadArticleList: function() {
+      articleList = this.newsArticleListModel.viewList();
+      html = this.newsArticleListView.render(articleList)
+      this._updateDOM(html)
     },
 
     _listenForHashChange: function() {
@@ -34,30 +43,3 @@
 
   exports.Controller = Controller;
 })(this);
-
-
-_setup: function() {
-  var self = this;
-  window.addEventListener('submit', function(event) {
-    event.preventDefault();
-    self.notesList.createNote(event.target[0].value);
-    var html = self.notesListView.render();
-    self.render(html);
-    self._listenForHashChange();
-  })
-},
-
-
-  _listenForHashChange: function() {
-    var self = this;
-    window.addEventListener('hashchange', function() {
-    var id = window.location.hash.split("note/")[1];
-    var note = self.notesList.findById(id);
-    var html = new self.NotesView(note).render();
-    self.render(html);
-  })
-},
-
-render: function(html) {
-  document.getElementById('app').innerHTML = html;
-}
