@@ -4,14 +4,15 @@ I built the SPA App using vanilla JS and my own basic testing Framework 'tea'.
 
 ## How to use
 
-`git clone https://github.com/chrisjgilbert/news-summary-challenge`  
-`npm install`
-`http-server`   
-`http://localhost:8080/#home`   
+* `git clone https://github.com/chrisjgilbert/news-summary-challenge`  
+* `npm install`
+* `http-server`   
+* `http://localhost:8080/#home`   
 
 ## Run the tests
 
-`open spec-runner.html` and view the console  
+* `open spec-runner.html`
+* view the browser console (cmd + option + i in Chrome)
 
 ## Desktop NewsFeed view
 
