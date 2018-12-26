@@ -7,19 +7,15 @@
     this.newsArticleListView = newsArticleListView;
     this.NewsArticleView = NewsArticleView;
 
-    this._setUp();
+    this._loadArticleList();
   }
 
   Controller.prototype = {
-    _setUp: function() {
-
-    },
-
-    updateDOM: function(html) {
+    _updateDOM: function(html) {
       document.getElementById('app').innerHTML = html;
     },
 
-    loadArticleList: function() {
+    _loadArticleList: function() {
       articleList = this.newsArticleListModel.viewList();
       html = this.newsArticleListView.render(articleList)
       this._updateDOM(html)

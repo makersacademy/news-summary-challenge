@@ -10,8 +10,6 @@
 
     var controller = new Controller(newsArticleListModel, newsArticleListView, NewsArticleView, apiConnector);
 
-    controller.loadArticleList();
-
   });
 
 })(this);
