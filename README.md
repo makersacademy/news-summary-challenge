@@ -23,8 +23,6 @@ I built the SPA App using vanilla JS and my own basic testing Framework 'tea'.
 
 ## User Stories
 
-Some of these stories will need decomposing if they seem too large.
-
 ```
 As a busy politician
 I can see all of today's headlines in one place
