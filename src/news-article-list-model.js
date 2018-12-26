@@ -4,6 +4,7 @@
     this.NewsArticleModel = NewsArticleModel;
     this.apiConnector = apiConnector;
     this.list = [];
+    
     this._addArticles();
   }
 

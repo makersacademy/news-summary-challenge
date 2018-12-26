@@ -6,6 +6,7 @@
 
   function NewsArticleModel(apiResponse) {
     this.apiResponse = (apiResponse);
+
     idCounter++;
     this.articleId = idCounter;
   }
@@ -24,9 +25,6 @@
       return this.apiResponse.fields.thumbnail;
     },
 
-    returnArticleId: function() {
-      return this.articleId;
-    }
   }
 
   exports.NewsArticleModel = NewsArticleModel;

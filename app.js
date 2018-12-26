@@ -4,11 +4,20 @@
 
     var apiConnector = new ApiConnector();
 
-    var newsArticleListModel = new NewsArticleListModel(NewsArticleModel, apiConnector);
+    var newsArticleListModel = new NewsArticleListModel(
+      NewsArticleModel,
+      apiConnector
+    );
 
-    var newsArticleListView = new NewsArticleListView(newsArticleListModel);
+    var newsArticleListView = new NewsArticleListView(
+      newsArticleListModel
+    );
 
-    var controller = new Controller(newsArticleListModel, newsArticleListView, NewsArticleView, apiConnector);
+    var controller = new Controller(
+      newsArticleListModel,
+      newsArticleListView,
+      NewsArticleView
+     );
 
   });
 

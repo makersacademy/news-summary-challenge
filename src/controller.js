@@ -8,6 +8,7 @@
     this.NewsArticleView = NewsArticleView;
 
     this._loadArticleList();
+    this._listenForHashChange();
   }
 
   Controller.prototype = {
@@ -26,7 +27,7 @@
       window.addEventListener('hashchange', function(event) {
         event.preventDefault();
         if (window.location.href.includes('#home')) {
-          self.loadArticleList();
+          self._loadArticleList();
         } else {
           var articleId = window.location.hash.split("article/")[1];
           var article = self.newsArticleListModel.findByArticleId(articleId);
