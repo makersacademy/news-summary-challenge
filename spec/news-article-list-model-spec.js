@@ -14,12 +14,10 @@ var newsArticleListModel = new NewsArticleListModel(newsArticleModel, apiConnect
 
 tea.describe('news article list model', function() {
   tea.it('returns array of articles', function() {
-    newsArticleListModel._addArticles()
-    tea.check(newsArticleListModel.viewList(), ["article"])
+    tea.check(newsArticleListModel.viewArticleList(), ["article"])
   })
 
   tea.it('returns an individual article form the array of articles', function() {
-    newsArticleListModel._addArticles()
     var expected = ["article"];
     var result = newsArticleListModel.findByArticleId(1)
     tea.check(expected, result)

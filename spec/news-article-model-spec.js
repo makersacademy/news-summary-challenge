@@ -30,7 +30,7 @@ tea.describe('news article model', function() {
   })
 
   tea.it('returns the id', function() {
-    var expected = 4
+    var expected = 1
     var result = newsArticleModel.articleId;
     tea.check(expected === result)
   })

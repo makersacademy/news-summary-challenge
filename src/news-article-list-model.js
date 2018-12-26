@@ -3,28 +3,26 @@
   function NewsArticleListModel(NewsArticleModel, apiConnector) {
     this.NewsArticleModel = NewsArticleModel;
     this.apiConnector = apiConnector;
-    this.list = [];
-    
-    this._addArticles();
+    this.articleList = [];
   }
 
   NewsArticleListModel.prototype = {
-    _addArticles: function() {
+    getArticleList: function() {
       var self = this;
-      this.articleList = this.apiConnector.getData();
-      this.articleList.forEach(function(newsArticle) {
-        self.list.push(new this.NewsArticleModel(newsArticle));
+      this.apiData = this.apiConnector.getData();
+      this.apiData.forEach(function(newsArticle) {
+        self.articleList.push(new this.NewsArticleModel(newsArticle));
       })
-    },
-
-    viewList: function() {
-      return this.list;
     },
 
     findByArticleId: function(id) {
-      return this.list.find(function(article) {
+      return this.articleList.find(function(article) {
         return article.articleId == id;
       })
+    },
+
+    viewArticleList: function() {
+      return this.articleList;
     }
   }
 

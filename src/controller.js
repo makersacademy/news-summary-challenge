@@ -7,7 +7,7 @@
     this.newsArticleListView = newsArticleListView;
     this.NewsArticleView = NewsArticleView;
 
-    this._loadArticleList();
+    this._renderArticleList();
     this._listenForHashChange();
   }
 
@@ -16,9 +16,10 @@
       document.getElementById('app').innerHTML = html;
     },
 
-    _loadArticleList: function() {
-      articleList = this.newsArticleListModel.viewList();
-      html = this.newsArticleListView.render(articleList)
+    _renderArticleList: function() {
+      this.newsArticleListModel.getArticleList();
+      var articleList = this.newsArticleListModel.viewArticleList();
+      var html = this.newsArticleListView.render(articleList)
       this._updateDOM(html)
     },
 
