@@ -12,7 +12,7 @@ I built the SPA App using vanilla JS and my own basic testing Framework 'tea'.
 ## Run the tests
 
 * `open spec-runner.html`
-* view the browser console (cmd + option + i in Chrome)
+* view the browser console (cmd + option + i for a Mac using Chrome)
 
 ## Desktop NewsFeed view
 
