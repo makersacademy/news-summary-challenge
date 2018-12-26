@@ -9,6 +9,7 @@
   }
 
   NewsArticleModel.prototype = {
+
     headline: function() {
       return this.apiResponse.webTitle;
     },
@@ -19,10 +20,6 @@
 
     thumbnail: function() {
       return this.apiResponse.fields.thumbnail;
-    },
-
-    articleId: function() {
-      return this.articleId;
     }
   }
 

@@ -1,9 +1,10 @@
 (function(exports) {
 
+  var guardianUrl = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=API KEY"
+
   function ApiConnector() {
-    var url = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=API KEY"
     this.dataStore = [];
-    this._connect(url);
+    this._connect(guardianUrl);
   }
 
   ApiConnector.prototype = {
