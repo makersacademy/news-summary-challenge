@@ -2,16 +2,12 @@
 
 (function(exports) {
 
-  var guardianUrl = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=" + YOUR_API_KEY
-
-  function ApiConnector(url = guardianUrl) {
+  function ApiConnector() {
     this.dataStore = [];
-    this.url = url;
-    this._connect(url = this.url);
   }
 
   ApiConnector.prototype = {
-    _connect: function(url) {
+    connect: function(url) {
       var self = this;
       var xhttp = new XMLHttpRequest();
       xhttp.open("GET", url, false);

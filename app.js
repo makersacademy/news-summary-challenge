@@ -1,12 +1,12 @@
+'use strict';
+
 (function() {
 
   window.addEventListener("load", function() {
 
-    var apiConnector = new ApiConnector();
-
     var newsArticleListModel = new NewsArticleListModel(
       NewsArticleModel,
-      apiConnector
+      ApiConnector
     );
 
     var newsArticleListView = new NewsArticleListView(

@@ -28,7 +28,7 @@
       window.addEventListener('hashchange', function(event) {
         event.preventDefault();
         if (window.location.href.includes('#home')) {
-          self._loadArticleList();
+          self._renderArticleList();
         } else {
           var articleId = window.location.hash.split("article/")[1];
           var article = self.newsArticleListModel.findByArticleId(articleId);

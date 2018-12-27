@@ -1,15 +1,18 @@
 (function(exports) {
 
-  function NewsArticleListModel(NewsArticleModel, apiConnector) {
+  function NewsArticleListModel(NewsArticleModel, ApiConnector) {
     this.NewsArticleModel = NewsArticleModel;
-    this.apiConnector = apiConnector;
+    this.ApiConnector = ApiConnector;
     this.articleList = [];
   }
 
   NewsArticleListModel.prototype = {
     getArticleList: function() {
       var self = this;
-      this.apiData = this.apiConnector.getData();
+      var guardianQueryUrl = "http://content.guardianapis.com/search?show-fields=body,headline,thumbnail&api-key=" + YOUR_API_KEY
+      var apiConnector = new this.ApiConnector();
+      apiConnector.connect(guardianQueryUrl)
+      this.apiData = apiConnector.getData();
       this.apiData.forEach(function(newsArticle) {
         self.articleList.push(new this.NewsArticleModel(newsArticle));
       })
