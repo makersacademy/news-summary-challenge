@@ -12,7 +12,8 @@ I built the SPA App using vanilla JS and my own basic testing Framework 'tea'.
 ## Run the tests
 
 * `open spec-runner.html`
-* view the browser console (cmd + option + i for a Mac using Chrome)
+* view the browser console (cmd + option + i for a Mac using Chrome)   
+* if Chrome fails to load the mock api for the relevant tests, `open /Applications/Google\ Chrome.app/ --args --allow-file-access-from-files` to allow opening of local files with a XMLHttpRequest.   
 
 ## Desktop NewsFeed view
 
