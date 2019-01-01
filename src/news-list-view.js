@@ -1,4 +1,4 @@
-const app = document.getElementById('root');
+const app = document.getElementById('news');
 
 const logo = document.createElement('img');
 logo.src = './logo.png';
@@ -15,12 +15,14 @@ function NewsListView() {
 }
 
 NewsListView.prototype.render = function(newsList) {
+  console.log(newsList[0].title)
   return [
     "<h1> News Summary </h1>",
     newsList.map(function(news) {
-      "<div>",
-        "<a href='" + news.webURL + "'>" + news.headline + "</a>",
-      "</div>"
-    })
+      return  "<div class = container>" 
+              + "<a href='" + news.url + "'>" + news.title + "</a>" 
+              + "<img src=" + news.thumbnail + ">" +
+              "</div>"
+    }).join("")
   ].join("")
 };
