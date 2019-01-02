@@ -12,7 +12,7 @@ window.addEventListener('load', function() {
   var newsListView = new NewsListView();
   var html = newsListView.render(newsList.newslist)
 
-  var newsController = new NewsController();
+  var newsController = new NewsController(newsList, NewsView); // NewsView is an empty NewsView
   newsController.render(html);
   // console.log(guardian.rawlist[0].webTitle)
 
