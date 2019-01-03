@@ -11,14 +11,6 @@ NewsList.prototype.storeNews = function(rawlist) {
     self.newslist.push(news)
   })
   
-  // rawlist.forEach(function(n) {
-  //   self.newslist.push( {
-  //     title: n.webTitle,
-  //     body: n.fields.body,
-  //     url: n.webUrl,
-  //     thumbnail: n.fields.thumbnail
-  //   })
-  // })
 };
 
 NewsList.prototype.findById = function(id) {
