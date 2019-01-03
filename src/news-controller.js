@@ -7,6 +7,7 @@ NewsController.prototype._setup = function() {
 
   var self = this;
 
+
   window.addEventListener('hashchange', function() {
 
     var newsId = window.location.hash.split('#news/')[1];
@@ -18,8 +19,8 @@ NewsController.prototype._setup = function() {
     var html = newsView.render(news)
 
     self.render(html)
-  })
 
+  })
   
 };
 
