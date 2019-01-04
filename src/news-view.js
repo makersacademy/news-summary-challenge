@@ -3,7 +3,8 @@ function NewsView() {
 
 NewsView.prototype.render = function(news) {
 
-  console.log(news)  
+  console.log(news);
+  var thumbnailIfExist = news.thumbnail !== undefined ? "<img src=" + news.thumbnail + " class='news_img'>"  : "";
   return [
     "<div class='newspage'>"
       + "<div> <a href='' class='backbutton'> Back </a> </div>" 
@@ -11,7 +12,7 @@ NewsView.prototype.render = function(news) {
       + "<div class='newscontainer'>" 
         
         + "<h2>" + news.title + "</h2>" 
-        + "<img src=" + news.thumbnail + " class='news_img'>"
+        + thumbnailIfExist
         + "<span>" + news.date + "</span>" 
         + "<div class='newsbody'>" + news.body + "</div>" +
       "</div>" + 

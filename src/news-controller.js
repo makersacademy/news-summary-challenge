@@ -1,11 +1,34 @@
-function NewsController(newsList, newsView) {
+function NewsController(newsList, newsListView, newsView) {
   this.newsList = newsList;
+  this.newsListView = newsListView;
   this.newsView = newsView;
 }
 
 NewsController.prototype._setup = function() {
 
   var self = this;
+
+  var newsParams = this.newsListView.getNewsParams();
+  for (var i = newsParams.length - 1; i >= 0; i--) {
+    var newsParam = newsParams[i];
+    if (newsParam) {
+      newsParam.addEventListener('click', function(event) {
+        // console.log(self.newsList.parameter)
+        // self.newsList.parameter == 'environment';
+        // console.log(self.newsList.parameter)
+        // var html = self.newsListView.render(self.newsList.newslist);
+        // self.render(html); 
+        self.newsList = new NewsList();
+        self.newsList.parameter = this.value;
+        self.newsList.getNews();
+        self.newsList.storeNews(self.newsList.rawlist);
+        console.log(self.newsList.parameter)
+        var html = self.newsListView.render(self.newsList.newslist);
+        self.render(html); 
+      })
+    }
+  }
+  
 
 
   window.addEventListener('hashchange', function() {

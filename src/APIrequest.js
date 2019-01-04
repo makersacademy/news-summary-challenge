@@ -1,4 +1,3 @@
-
 function ApiRequest () {
   this.rawlist = [];
   this.getNews();
