@@ -7,7 +7,7 @@ NewsView.prototype.render = function(news) {
   return [
     "<div class='newspage'>"
       + "<div> <a href='' class='backbutton'> Back </a> </div>" 
-        // + "<button id='backbutt'> Go Back </button>" /*how to pass this to controller*/
+      + "<button id='topbutton'> Go To Top </button>" /*how to pass this to controller*/
       + "<div class='newscontainer'>" 
         
         + "<h2>" + news.title + "</h2>" 
@@ -19,6 +19,6 @@ NewsView.prototype.render = function(news) {
 };
 
 
-// NewsView.prototype.getBackButton = function() {
-//   return document.getElementById('backbutt')
-// };
+NewsView.prototype.getTopButton = function() {
+  return document.getElementById('topbutton')
+};

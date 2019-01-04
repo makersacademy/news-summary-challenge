@@ -20,8 +20,33 @@ NewsController.prototype._setup = function() {
 
     self.render(html)
 
+    var topButton = newsView.getTopButton();
+    if (topButton) {
+      topButton.addEventListener('click', function(event) {
+        goToTop();
+      })
+    } else {}
+
+    window.addEventListener('scroll', function(event) {
+      maybeShow();
+    })
+
+    function maybeShow() {
+      if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+        topButton.style.display = "block";
+      } else {
+        topButton.style.display = "none";
+      }
+    }
+
+    function goToTop() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+
   })
-  
+
 };
 
 NewsController.prototype.render = function(html) {
