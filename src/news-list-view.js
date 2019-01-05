@@ -6,9 +6,11 @@ NewsListView.prototype.render = function(newsList) {
     "<h1> <strong> News</strong> Feeds </h1>",
       "<form id='news-form'>",
         "<input type='button' class='news-param' value='Environment'/>",
+        "<input type='button' class='news-param' value='Food'/>",
+        "<input type='button' class='news-param' value='Music'/>",
+        "<input type='button' class='news-param' value='Travel'/>",
         "<input type='button' class='news-param' value='Sport'/>",
         "<input type='button' class='news-param' value='Science'/>",
-        "<input type='button' class='news-param' value='Food'/>",
       "</form>",
     newsList.map(function(news) {
       var thumbnailIfExist = news.thumbnail !== undefined ? "<img src=" + news.thumbnail + " class='newslist_img'>"  : "";

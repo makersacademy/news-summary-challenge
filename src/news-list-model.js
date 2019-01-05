@@ -13,7 +13,6 @@ NewsList.prototype.storeNews = function(rawlist) {
     var news = new News(n.webTitle, n.fields.body, n.webUrl, n.fields.thumbnail, n.webPublicationDate);
     self.newslist.push(news)
   })
-
 };
 
 NewsList.prototype.findById = function(id) {
@@ -23,7 +22,6 @@ NewsList.prototype.findById = function(id) {
 };
 
 NewsList.prototype.getNews = function() {
-
   var self = this;
   var request = new XMLHttpRequest();
   request.open('GET', 'https://content.guardianapis.com/search?q=' + this.parameter + '&show-fields=headline,thumbnail,body&show-refinements=all&order-by=newest&api-key=075f0c45-9391-4826-9e03-45aa1550fcc9', false); // false for wat?
@@ -31,7 +29,6 @@ NewsList.prototype.getNews = function() {
   request.onload = function () {
     var data = JSON.parse(request.response); // <- string
     self.rawlist = data.response.results
-
   }
   request.send();
 };
