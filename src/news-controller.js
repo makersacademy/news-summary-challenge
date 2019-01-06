@@ -17,7 +17,7 @@ NewsController.prototype._setup = function() {
         self.newsList.getNews();
         var html = self.newsListView.render(self.newsList.newslist);
         self.render(html); 
-      })
+      });
     }
   }
 
@@ -25,40 +25,39 @@ NewsController.prototype._setup = function() {
 
     var newsId = window.location.hash.split('#news/')[1];
 
-    var news = self.newsList.findById(newsId)
+    var news = self.newsList.findById(newsId);
 
-    var newsView = new self.newsView()
+    var newsView = new self.newsView();
 
-    var html = newsView.render(news)
+    var html = newsView.render(news);
 
-    self.render(html)
+    self.render(html);
 
     var backButton = newsView.getBackButton();
     if (backButton) {
       backButton.addEventListener('click', function(event) {
-        // window.history.back();
+        // window.history.back(); /* doesnt work after added news parameter */
         var html = self.newsListView.render(self.newsList.newslist);
         self.render(html); 
-        console.log(self.newsList.parameter);
-      })
+      });
     }
 
     var topButton = newsView.getTopButton();
     if (topButton) {
       topButton.addEventListener('click', function(event) {
         goToTop();
-      })
-    } else {}
+      });
+    }
 
     window.addEventListener('scroll', function(event) {
       maybeShow();
-    })
+    });
 
     function maybeShow() {
       if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-        topButton.style.display = "block";
+        topButton.style.display = 'block';
       } else {
-        topButton.style.display = "none";
+        topButton.style.display = 'none';
       }
     }
 
@@ -67,9 +66,7 @@ NewsController.prototype._setup = function() {
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 
-
-  })
-
+  });
 };
 
 NewsController.prototype.render = function(html) {

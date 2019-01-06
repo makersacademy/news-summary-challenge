@@ -6,10 +6,10 @@
     this.body = body;
     this.url = url;
     this.thumbnail = thumbnail,
-    this.date = date
-    id++
+    this.date = date;
+    id++;
     this.id = id;
   }
 
-  exports.News = News
-})(this)
+  exports.News = News;
+})(this);

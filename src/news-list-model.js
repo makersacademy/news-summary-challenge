@@ -1,7 +1,7 @@
 (function(exports) {
   function NewsList(parameter) {
     this.newslist = []; 
-    this.parameter = parameter? parameter : "food%20AND%20health";
+    this.parameter = parameter? parameter : 'politics'; // original: food%20AND%20health, changed to fit user story
     this.getNews();
   }
 
@@ -10,14 +10,14 @@
 
     rawlist.forEach(function(n) { 
       var news = new News(n.webTitle, n.fields.body, n.webUrl, n.fields.thumbnail, n.webPublicationDate);
-      self.newslist.push(news)
-    })
+      self.newslist.push(news);
+    });
   };
 
   NewsList.prototype.findById = function(id) {
     return this.newslist.find(function(news) {
       return news.id == id;
-    })
+    });
   };
 
   NewsList.prototype.getNews = function() {
@@ -29,9 +29,9 @@
     request.onload = function () {
       var data = JSON.parse(request.response); // <- string
       self.storeNews(data.response.results);
-    }
+    };
     request.send();
   };
 
-  exports.NewsList = NewsList
-})(this)
+  exports.NewsList = NewsList;
+})(this);

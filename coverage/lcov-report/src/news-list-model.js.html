@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">27.27% </span>
+        <span class="strong">69.57% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/22</span>
+        <span class='fraction'>16/23</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12.5% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/8</span>
+        <span class='fraction'>4/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">27.27% </span>
+        <span class="strong">69.57% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/22</span>
+        <span class='fraction'>16/23</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -79,47 +79,53 @@
 34
 35
 36
-37</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+37
+38
+39</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function(exports) {
-<span class="fstat-no" title="function not covered" >  function NewsList(parameter) {</span>
-<span class="cstat-no" title="statement not covered" >    this.newslist = []; </span>
-<span class="cstat-no" title="statement not covered" >    this.parameter = parameter? parameter : "food%20AND%20health";</span>
-<span class="cstat-no" title="statement not covered" >    this.getNews();</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+&nbsp;
+(function(exports) {
+  function NewsList(parameter) {
+    this.newslist = []; 
+    this.parameter = parameter? <span class="branch-0 cbranch-no" title="branch not covered" >parameter </span>: "politics"; // original: food%20AND%20health, changed to fit user story
+    this.getNews();
   }
 &nbsp;
   NewsList.prototype.storeNews = <span class="fstat-no" title="function not covered" >function(rawlist) {</span>
@@ -137,17 +143,17 @@
     })
   };
 &nbsp;
-  NewsList.prototype.getNews = <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >    var self = this;</span>
-<span class="cstat-no" title="statement not covered" >    var request = new XMLHttpRequest();</span>
-<span class="cstat-no" title="statement not covered" >    request.open('GET', 'https://content.guardianapis.com/search?q=' + this.parameter + '&amp;show-fields=headline,thumbnail,body&amp;show-refinements=all&amp;order-by=newest&amp;api-key=075f0c45-9391-4826-9e03-45aa1550fcc9', false); </span>// false for wat?
+  NewsList.prototype.getNews = function() {
+    var self = this;
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://content.guardianapis.com/search?q=' + this.parameter + '&amp;show-fields=headline,thumbnail,body&amp;show-refinements=all&amp;order-by=newest&amp;api-key=075f0c45-9391-4826-9e03-45aa1550fcc9', false); // false for wat?
     // sample: http://content.guardianapis.com/search?api-key=test&amp;show-fields=thumbnail
     // ref: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
-<span class="cstat-no" title="statement not covered" >    request.onload = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >      var data = JSON.parse(request.response); </span>// &lt;- string
+    request.onload = function () {
+      var data = JSON.parse(request.response); // &lt;- string
 <span class="cstat-no" title="statement not covered" >      self.storeNews(data.response.results);</span>
     }
-<span class="cstat-no" title="statement not covered" >    request.send();</span>
+    request.send();
   };
 &nbsp;
   exports.NewsList = NewsList
@@ -157,7 +163,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 06 2019 00:15:50 GMT+0000 (Greenwich Mean Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 06 2019 22:21:13 GMT+0000 (Greenwich Mean Time)
 </div>
 </div>
 <script src="../prettify.js"></script>
