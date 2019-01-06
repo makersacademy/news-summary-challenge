@@ -11,7 +11,7 @@ NewsView.prototype.render = function(news) {
       + "<button id='topbutton'> Go To Top </button>" /*how to pass this to controller*/
       + "<div class='newscontainer'>"  
         + "<div id='news-main'>"   
-          + "<h2>" + news.title + "</h2>" 
+          + "<h3>" + news.title + "</h3>" 
           + thumbnailIfExist
           + "<div id='news-date'>" + news.date + "</div>" 
           + "<div> <a href=" + news.url + " class='url'> Original Link </a> </div>" 

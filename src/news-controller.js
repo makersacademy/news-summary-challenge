@@ -13,10 +13,8 @@ NewsController.prototype._setup = function() {
     var newsParam = newsParams[i];
     if (newsParam) {
       newsParam.addEventListener('click', function(event) {
-        self.newsList = new NewsList();
-        self.newsList.parameter = this.value;
+        self.newsList = new NewsList(this.value);
         self.newsList.getNews();
-        self.newsList.storeNews(self.newsList.rawlist);
         var html = self.newsListView.render(self.newsList.newslist);
         self.render(html); 
       })

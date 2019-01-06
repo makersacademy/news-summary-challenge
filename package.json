@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "http-server": "^0.11.1",
-    "jasmine-node": "^1.16.2"
+    "jasmine-node": "^2.0.1"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
@@ -14,7 +14,8 @@
     "nodeunit": "^0.11.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover jasmine",
+    "report-coverage": "nyc --reporter=text-lcov jasmine | coveralls"
   },
   "repository": {
     "type": "git",
