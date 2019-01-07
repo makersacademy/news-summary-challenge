@@ -6,12 +6,12 @@ This repository is a Javascript implementation of a News Feed app using the Mode
 
 ### Installation  
 
-This app runs on Javascript, and uses Node.js to manage dependencies. To install Node.js follow the instructions [here](https://nodejs.org/en/). To run the app just open the `index.html` page. News parameters can be selected on the menu bar. The default parameter is 'politics' to comply with the [user story](), but it is not on the menu bar because I don't want to.
+This app runs on Javascript, and uses Node.js to manage dependencies. To install Node.js follow the instructions [here](https://nodejs.org/en/). To run the app just open the `index.html` page. News parameters can be selected on the menu bar. The default parameter is 'politics' to comply with the [user story](https://github.com/EllyChanx/news-summary-challenge/blob/master/INSTRUCTION.md), but it is not on the menu bar because I don't want to.
 
-Default parameter:
+** Default parameter: **
 ![App interface1](images/default_param.png)
 
-Travel parameter:
+** Travel parameter: **
 ![App interface1](images/travel_param.png)
 
 ### Linting Utility
