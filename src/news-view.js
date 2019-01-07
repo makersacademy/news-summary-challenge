@@ -8,7 +8,7 @@ NewsView.prototype.render = function(news) {
     "<div class='newspage'>"
       // + "<div> <a href='' class='backbutton'> Back </a> </div>" /*original way to serve back function, doesnt work after news parameters added*/
       + "<button id='backbutton'> Back </button>"
-      + "<button id='topbutton'> Go To Top </button>" /*how to pass this to controller*/
+      + "<button id='topbutton'> Go To Top </button>"
       + "<div class='newscontainer'>"  
         + "<div id='news-main'>"   
           + "<h3>" + news.title + "</h3>" 
