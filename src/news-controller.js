@@ -35,7 +35,7 @@ NewsController.prototype._setup = function() {
     var backButton = newsView.getBackButton();
     if (backButton) {
       backButton.addEventListener('click', function(event) {
-        // window.history.back(); /* doesnt work after added news parameter */
+        // window.history.back(); /* doesnt work after added news_type parameter */
         var html = self.newsListView.render(self.newsList.newslist);
         self.render(html); 
       });

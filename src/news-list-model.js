@@ -1,7 +1,7 @@
 (function(exports) {
-  function NewsList(parameter) {
+  function NewsList(news_type) {
     this.newslist = []; 
-    this.parameter = parameter? parameter : 'politics'; // original: food%20AND%20health, changed to fit user story
+    this.news_type = news_type? news_type : 'politics'; // original: food%20AND%20health, changed to fit user story
     this.getNews();
   }
 
@@ -23,7 +23,7 @@
   NewsList.prototype.getNews = function() {
     var self = this;
     var request = new XMLHttpRequest();
-    request.open('GET', 'https://content.guardianapis.com/search?q=' + this.parameter + '&show-fields=headline,thumbnail,body&show-refinements=all&order-by=newest&api-key=075f0c45-9391-4826-9e03-45aa1550fcc9', false); // false for wat?
+    request.open('GET', 'https://content.guardianapis.com/search?q=' + this.news_type + '&show-fields=headline,thumbnail,body&show-refinements=all&order-by=newest&api-key=075f0c45-9391-4826-9e03-45aa1550fcc9', false); // false for wat?
     // sample: http://content.guardianapis.com/search?api-key=test&show-fields=thumbnail
     // ref: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
     request.onload = function () {
