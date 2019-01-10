@@ -4,6 +4,12 @@
 
 App that summarizes news articles. It takes headlines from the Guardian newspaper API and displays them on the page, along with a picture icon. Managed to get summary to appear in console but not on page. 
 
+To run
+  - `git clone` https://github.com/imogenmisso/news-summary-challenge/
+  - `open index.html`
+To run tests
+  - `open specrunner.html`
+ 
 ### Technologies
 
 Single page web app.  Written in frontend JavaScript, CSS and HTML. Tested using my own [testing framework](https://github.com/imogenmisso/Notes-App/blob/master/lib/test-framework.js).
