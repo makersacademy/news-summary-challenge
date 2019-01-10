@@ -7,6 +7,7 @@ App that summarizes news articles. It takes headlines from the Guardian newspape
 To run
   - `git clone` https://github.com/imogenmisso/news-summary-challenge/
   - `open index.html`
+  
 To run tests
   - `open specrunner.html`
  
