@@ -1,4 +1,6 @@
 window.onload = () => {
-let headlines = document.getElementById('headlines')
-  console.log('headlines')
+  let news = new News
+  news.getHeadlines()
+  news.displayHeadlines()
+
 };

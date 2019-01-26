@@ -1,9 +1,9 @@
-// describe('News',()=>{
-//   can('get headlines',()=>{
-//     let news = new News
-//     let fakeRequest = {request:() => {}}
-//     fakeRequest.open()
-//     this.newsHeadlines.push(fakeRequest.request())
-//     expect(news.headlines[0].length).toEq(10)
-//   })
-// })
+describe('News',()=>{
+  can('get headlines',()=>{
+    let news = new News
+    let headlines =[]
+    let fakeRequest = {request:() => {}}
+    headlines.push(fakeRequest.request())
+    expect(headlines.length).toEq(1)
+  })
+})
