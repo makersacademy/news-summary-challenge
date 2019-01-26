@@ -29,11 +29,17 @@ class Guardian {
 
   renderArticle (headline) {
     let article = document.createElement('p')
+    let titleP = document.createElement('p')
+    let linkP = document.createElement('p')
     let title = this.createHyperlink(headline)
     let image = this.fetchImage(headline)
+    let link = this.linkToOriginalArticle(headline)
 
-    article.appendChild(title)
     article.appendChild(image)
+    titleP.appendChild(title)
+    article.appendChild(titleP)
+    linkP.appendChild(link)
+    article.appendChild(linkP)
 
     return article
   }
@@ -43,6 +49,13 @@ class Guardian {
     title.setAttribute('href', headline.webUrl)
     title.innerText = headline.webTitle
     return title
+  }
+
+  linkToOriginalArticle (headline) {
+    let link = document.createElement('a')
+    link.setAttribute('href', headline.webUrl)
+    link.innerText = 'Original Article'
+    return link
   }
 
   fetchImage (headline) {

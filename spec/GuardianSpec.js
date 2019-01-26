@@ -26,16 +26,28 @@ describe('Guardian', () => {
     })
 
     describe('#renderArticle', () => {
-      it('returns a paragraph containing one headline', () => {
+      it('returns a paragraph', () => {
         let article = guardian.headlines[0][0]
         expect(guardian.renderArticle(article).tagName).toEqual('P')
       })
     })
 
     describe('#createHyperlink', () => {
-      it('returns a link to one headline', () => {
+      it('returns a link', () => {
         let article = guardian.headlines[0][0]
         expect(guardian.createHyperlink(article).tagName).toEqual('A')
+      })
+    })
+
+    describe('#linkToOriginalArticle', () => {
+      it('returns a link', () => {
+        let article = guardian.headlines[0][0]
+        expect(guardian.linkToOriginalArticle(article).tagName).toEqual('A')
+      })
+
+      it('returns a link to the original article', () => {
+        let article = guardian.headlines[0][0]
+        expect(guardian.linkToOriginalArticle(article).getAttribute('href')).toEqual(article.webUrl)
       })
     })
 
@@ -43,6 +55,11 @@ describe('Guardian', () => {
       it('fetches an image', () => {
         let article = guardian.headlines[0][0]
         expect(guardian.fetchImage(article).tagName).toEqual('IMG')
+      })
+
+      it('fetches the thumbnail of the article', () => {
+        let article = guardian.headlines[0][0]
+        expect(guardian.fetchImage(article).getAttribute('src')).toEqual(article.fields.thumbnail)
       })
     })
   })
