@@ -5,5 +5,5 @@ describe('News',()=>{
     let fakeRequest = {request:() => {}}
     headlines.push(fakeRequest.request())
     expect(headlines.length).toEq(1)
-  })
-})
+  });
+});

@@ -27,11 +27,9 @@ class News {
     this.newsHeadlines.forEach((headline) =>{
       const article = document.createElement('div')
       article.setAttribute('class', 'article')
-      console.log(this.newsHeadlines)
 
-      const h3 = document.createElement('h3')
-      h3.textContent = this.newsHeadlines[0].response.results[0].webTitle
-      console.log('h3'.value)
+      let h3 = document.createElement('h3')
+      h3.textContent = headline.response.results[0].webTitle
       container.appendChild(article);
       article.appendChild(h3);
     })
