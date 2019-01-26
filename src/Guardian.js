@@ -29,12 +29,17 @@ class Guardian {
 
   renderArticle (headline) {
     let article = document.createElement('p')
-    let title = document.createElement('a')
+    let title = this.createHyperlink(headline)
 
-    title.setAttribute('href', headline.webUrl)
-    title.innerText = headline.webTitle
     article.appendChild(title)
 
     return article
+  }
+
+  createHyperlink (headline) {
+    let title = document.createElement('a')
+    title.setAttribute('href', headline.webUrl)
+    title.innerText = headline.webTitle
+    return title
   }
 }

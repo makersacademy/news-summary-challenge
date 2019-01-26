@@ -18,17 +18,25 @@ describe('Guardian', () => {
     let guardian = new Guardian
     guardian.headlines.push(mockResponse.response.results)
 
-    describe('renderArticles', () => {
+    describe('#renderArticles', () => {
       it('returns a div containing all the headlines', () => {
         expect(guardian.renderArticles().tagName).toEqual('DIV')
       })
     })
 
-    describe('renderArticle', () => {
+    describe('#renderArticle', () => {
       it('returns a paragraph containing one headline', () => {
         let article = guardian.headlines[0]
 
         expect(guardian.renderArticle(article).tagName).toEqual('P')
+      })
+    })
+
+    describe('#createHyperlink', () => {
+      it('returns a paragraph containing one headline', () => {
+        let article = guardian.headlines[0]
+
+        expect(guardian.createHyperlink(article).tagName).toEqual('A')
       })
     })
   })
