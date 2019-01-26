@@ -1,5 +1,7 @@
 window.onload = () => {
   let news = new News
   news.getHeadlines()
-  news.displayHeadlines()
+  let articles =  news.displayHeadlines()
+  let div = document.getElementById('headlines')
+  div.appendChild(articles)
 };

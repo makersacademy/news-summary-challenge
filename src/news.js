@@ -25,14 +25,16 @@ class News {
     container.setAttribute('class', 'container');
 
     this.newsHeadlines[0].forEach((headline) =>{
-      const article = document.createElement('div')
-      article.setAttribute('class', 'article')
+      const newsArticle = document.createElement('div')
+      newsArticle.setAttribute('class', 'article')
 
-      let h3 = document.createElement('h3')
-      h3.textContent = headline
-      container.appendChild(article);
-      article.appendChild(h3);
+      const p = document.createElement('p')
+      p.textContent = headline.webTitle
+
+      container.appendChild(newsArticle);
+      newsArticle.appendChild(p);
     })
+    return container;
   }
 
 }
