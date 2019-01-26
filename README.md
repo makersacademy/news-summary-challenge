@@ -27,7 +27,7 @@ $ touch config.js
 $ open config.js (in a text editor of your choice)
 ```
 Add the following to your config.js file, subbing API-KEY for your own Guardian API key.
-`var config = { GUARDIAN_KEY : "d8192ef6-d691-4b48-a954-a8a734b62cff"}`
+`var config = { GUARDIAN_KEY : "API-KEY}`
 
 ```
 $ open index.html
