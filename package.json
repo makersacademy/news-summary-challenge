@@ -1,0 +1,10 @@
+{
+  "standard": {
+    "ignore": [
+      "**/out/",
+      "/lib/select2/",
+      "/lib/ckeditor/",
+      "tmp.js"
+    ]
+  }
+}
