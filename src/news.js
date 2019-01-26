@@ -12,7 +12,7 @@ class News {
     request.onload = () => {
       let data = JSON.parse(request.response)
       if (request.status >= 200 && request.status < 400) {
-          this.newsHeadlines.push(data)
+          this.newsHeadlines.push(data.response.results)
       } else {
         console.log('Failed to retrieve news')
       }
@@ -24,12 +24,12 @@ class News {
     const container = document.createElement('div');
     container.setAttribute('class', 'container');
 
-    this.newsHeadlines.forEach((headline) =>{
+    this.newsHeadlines[0].forEach((headline) =>{
       const article = document.createElement('div')
       article.setAttribute('class', 'article')
 
       let h3 = document.createElement('h3')
-      h3.textContent = headline.response.results[0].webTitle
+      h3.textContent = headline
       container.appendChild(article);
       article.appendChild(h3);
     })
