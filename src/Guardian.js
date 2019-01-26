@@ -22,10 +22,19 @@ class Guardian {
     let articlesDiv = document.createElement('div')
 
     this.headlines[0].forEach((headline) => {
-      let article = document.createElement('div')
-      article.innerText = headline.webTitle
-      articlesDiv.appendChild(article)
+      articlesDiv.appendChild(this.renderArticle(headline))
     })
     return articlesDiv
+  }
+
+  renderArticle (headline) {
+    let article = document.createElement('p')
+    let title = document.createElement('a')
+
+    title.setAttribute('href', headline.webUrl)
+    title.innerText = headline.webTitle
+    article.appendChild(title)
+
+    return article
   }
 }

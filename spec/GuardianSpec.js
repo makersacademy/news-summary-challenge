@@ -13,4 +13,15 @@ describe('Guardian', () => {
       expect(guardian.headlines[0].length).toEqual(10)
     })
   })
+
+  describe('After the headlines have been fetched', () => {
+    let guardian = new Guardian
+    guardian.headlines.push(mockResponse.response.results)
+
+    describe('renderArticles', () => {
+      it('returns a div containing all the headlines', () => {
+        expect(guardian.renderArticles().tagName).toEqual('DIV')
+      })
+    })
+  })
 })
