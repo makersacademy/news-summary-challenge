@@ -23,5 +23,13 @@ describe('Guardian', () => {
         expect(guardian.renderArticles().tagName).toEqual('DIV')
       })
     })
+
+    describe('renderArticle', () => {
+      it('returns a paragraph containing one headline', () => {
+        let article = guardian.headlines[0]
+
+        expect(guardian.renderArticle(article).tagName).toEqual('P')
+      })
+    })
   })
 })
