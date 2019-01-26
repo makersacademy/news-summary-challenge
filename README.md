@@ -23,6 +23,13 @@ If the link isn't working, or you would like to deploy your own version, follow 
 ```
 $ git clone https://github.com/rednblack99/news-summary-challenge
 $ cd news-summary-challenge
+$ touch config.js
+$ open config.js (in a text editor of your choice)
+```
+Add the following to your config.js file, subbing API-KEY for your own Guardian API key.
+`var config = { GUARDIAN_KEY : "d8192ef6-d691-4b48-a954-a8a734b62cff"}`
+
+```
 $ open index.html
 ```
 
@@ -32,7 +39,7 @@ There is a large amount of refactoring required in this code. It isn't properly 
 
 ## Images
 
-![Guardian Tech News Summary Screenshot](https://imgur.com/a/GBftNWL)
+![Guardian Tech News Summary Screenshot](https://i.imgur.com/xzulgaL.png)
 
 ## Credits
 
