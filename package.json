@@ -4,7 +4,8 @@
       "**/out/",
       "/lib/select2/",
       "/lib/ckeditor/",
-      "tmp.js"
+      "tmp.js",
+      "/lib/JoustTestingFramework.js"
     ]
   }
 }
