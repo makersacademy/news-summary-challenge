@@ -5,10 +5,11 @@ describe('Guardian', () => {
   describe('#getHeadlines', () => {
     it('gets the headlines', () => {
       let guardian = new Guardian
-      let requestMock = { open: () => {}, send: () => {} }
-
+      let requestMock = {
+        open: () => {},
+        send: () => { guardian.headlines.push(mockResponse.response.results) }
+      }
       guardian.getHeadlines(requestMock)
-      guardian.headlines.push(mockResponse.response.results)
 
       expect(guardian.headlines[0].length).toEqual(10)
     })
@@ -26,17 +27,22 @@ describe('Guardian', () => {
 
     describe('#renderArticle', () => {
       it('returns a paragraph containing one headline', () => {
-        let article = guardian.headlines[0]
-
+        let article = guardian.headlines[0][0]
         expect(guardian.renderArticle(article).tagName).toEqual('P')
       })
     })
 
     describe('#createHyperlink', () => {
-      it('returns a paragraph containing one headline', () => {
-        let article = guardian.headlines[0]
-
+      it('returns a link to one headline', () => {
+        let article = guardian.headlines[0][0]
         expect(guardian.createHyperlink(article).tagName).toEqual('A')
+      })
+    })
+
+    describe('#fetchImage', () => {
+      it('fetches an image', () => {
+        let article = guardian.headlines[0][0]
+        expect(guardian.fetchImage(article).tagName).toEqual('IMG')
       })
     })
   })

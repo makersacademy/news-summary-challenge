@@ -8,7 +8,7 @@ class Guardian {
   getHeadlines (request = new XMLHttpRequest()) {
     request = request
     let key = KEYS.guardian
-    let url = `https://content.guardianapis.com/uk-news?show-editors-picks=true&api-key=${key}`
+    let url = `https://content.guardianapis.com/uk-news?show-editors-picks=true&api-key=${key}&show-fields=thumbnail`
 
     request.open('GET', url, false)
     request.onload = () => {
@@ -30,8 +30,10 @@ class Guardian {
   renderArticle (headline) {
     let article = document.createElement('p')
     let title = this.createHyperlink(headline)
+    let image = this.fetchImage(headline)
 
     article.appendChild(title)
+    article.appendChild(image)
 
     return article
   }
@@ -41,5 +43,11 @@ class Guardian {
     title.setAttribute('href', headline.webUrl)
     title.innerText = headline.webTitle
     return title
+  }
+
+  fetchImage (headline) {
+    let image = document.createElement('img')
+    image.src = headline.fields.thumbnail
+    return image
   }
 }
