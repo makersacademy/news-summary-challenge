@@ -1,4 +1,5 @@
 'use strict'
+/* global XMLHttpRequest, KEYS */
 
 class Guardian {
   constructor () {
@@ -6,7 +7,6 @@ class Guardian {
   }
 
   getHeadlines (request = new XMLHttpRequest()) {
-    request = request
     let key = KEYS.guardian
     let url = `https://content.guardianapis.com/uk-news?show-editors-picks=true&api-key=${key}&show-fields=thumbnail`
 

@@ -1,10 +1,10 @@
 'use strict'
-/* global describe, it */
+/* global describe, it, expect, Guardian, mockResponse */
 
 describe('Guardian', () => {
   describe('#getHeadlines', () => {
     it('gets the headlines', () => {
-      let guardian = new Guardian
+      let guardian = new Guardian()
       let requestMock = {
         open: () => {},
         send: () => { guardian.headlines.push(mockResponse.response.results) }
@@ -16,7 +16,7 @@ describe('Guardian', () => {
   })
 
   describe('After the headlines have been fetched', () => {
-    let guardian = new Guardian
+    let guardian = new Guardian()
     guardian.headlines.push(mockResponse.response.results)
 
     describe('#renderArticles', () => {
