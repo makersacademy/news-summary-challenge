@@ -1,0 +1,27 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "* Challenge time: rest of the day and weekend, until Monday 9am.\r * Feel free to use Google, your notes, books, etc. but work on your own.\r * If you refer to the solution of another coach or student, please put a link to that in your README.\r * If you have a partial solution, **still check in a partial solution** and send in a pull request.\r * You must submit a pull request to this repo with your code by 9am Monday morning.",
+  "main": "app.js",
+  "dependencies": {
+    "all": "0.0.0",
+    "dotenv": "^6.2.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisjgilbert/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisjgilbert/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/chrisjgilbert/news-summary-challenge#readme"
+}
