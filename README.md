@@ -64,8 +64,9 @@ To make my news reading more fun
 ## Mockups
 
 ### Headlines & Articles page
-
 ![Headlines & articles page mockup](https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/C7ffb35d05c2e41edaf8e6a67f82eab02/projects/Mc64316e809079116af5ac6334f6b46e51547045656488/pages/D921b927239690a24a4ce7044dfba830c/image/D921b927239690a24a4ce7044dfba830c.png)
+### Headlines & Articles screenshot
+![Headlines main page](/images/app.png)
 
 ### API authentication
 
@@ -74,4 +75,4 @@ API key hidden in config file for privacy
 ## Resources
 
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-* [TaniaRacscia](https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/)
+* [Tania Racscia](https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/)
