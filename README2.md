@@ -33,3 +33,5 @@
 
 
     - Steps 1 - 3 I feel are necessary for my learning and step 4 is something I will implement if I have both the time and the necessary understanding.
+
+- Successfully learnt how to properly hide an API key and to properly use .gitignore!
