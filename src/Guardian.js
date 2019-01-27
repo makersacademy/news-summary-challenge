@@ -60,7 +60,7 @@ class Guardian {
 
   createHyperlink (headline, index) {
     let title = document.createElement('a')
-    title.href = `#${headline.webUrl}`
+    title.href = `#article/${index}`
     title.setAttribute('class', 'link')
     title.id = index
     title.innerText = headline.webTitle
