@@ -21,6 +21,4 @@ window.onload = () => {
       summaryDiv.innerHTML = guardian.summary
     })
   })
-
-  window.g = guardian
 }

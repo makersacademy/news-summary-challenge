@@ -29,7 +29,6 @@ describe('Guardian', () => {
     })
   })
 
-
   describe('After the headlines have been fetched', () => {
     let guardian = new Guardian()
     guardian.headlines.push(mockResponse.response.results)
@@ -47,10 +46,10 @@ describe('Guardian', () => {
       })
     })
 
-    describe('#createHyperlink', () => {
+    describe('#createSummaryLink', () => {
       it('returns a link', () => {
         let article = guardian.headlines[0][0]
-        expect(guardian.createHyperlink(article).tagName).toEqual('A')
+        expect(guardian.createSummaryLink(article).tagName).toEqual('A')
       })
     })
 

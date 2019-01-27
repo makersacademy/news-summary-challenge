@@ -46,7 +46,7 @@ class Guardian {
     let titleP = document.createElement('p')
     let linkP = document.createElement('p')
     let image = this.fetchImage(headline)
-    let title = this.createHyperlink(headline, index)
+    let title = this.createSummaryLink(headline, index)
     let link = this.linkToOriginalArticle(headline)
 
     article.appendChild(image)
@@ -58,7 +58,7 @@ class Guardian {
     return article
   }
 
-  createHyperlink (headline, index) {
+  createSummaryLink (headline, index) {
     let title = document.createElement('a')
     title.href = `#article/${index}`
     title.setAttribute('class', 'link')
