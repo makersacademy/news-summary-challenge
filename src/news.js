@@ -6,7 +6,7 @@ class News {
 //creates XMLHttpRequest and push response to headlines array
   getHeadlines(){
   let key = config.SECRET_KEY
-  let url = `https://content.guardianapis.com/uk-news?show-editors-picks=true&api-key=${key}`
+  let url = `https://content.guardianapis.com/uk-news?show-editors-picks=true&api-key=${key}&show-fields=thumbnail`
   let request = new XMLHttpRequest()
   request.open('GET', url, false)
     request.onload = () => {
@@ -30,7 +30,7 @@ class News {
 
       const img = document.createElement('img')
       img.setAttribute('class', 'thumbnail')
-      img.src = 'https://media.istockphoto.com/photos/news-picture-id638044390'
+      img.src = headline.fields.thumbnail
 
       const p = document.createElement('p')
       p.textContent = headline.webTitle
