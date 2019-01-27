@@ -47,4 +47,14 @@
           - Reverse engineer my code to understand its needs and return values
           - Test these functions to test my own understanding of them.
 
-- This process is my current guide and drive. 
+- This process is my current guide and drive.
+
+## Step 5 - Fucked again
+
+ - Trying to implement all of the above has failed due to lack of understanding and motivation. \
+ - I have felt completely overwhelmed this weekend with this project and will demand some 1-2-1 time pairing on this from a coach.
+ - In all I fell like I have learnt very little from this project and question whether weekend projects themselves are actually helping me at this point or if the extra work is simply killing my motivation.
+ - I have attempted to be methodical and failed.
+ - I have tried to follow a TDD process but could not even begin to test these things, especially when limited to my own poor test framework.
+ - I would have gotten nothing done if it weren't for Ed helping me.
+ - I feel this challenge needed a couple of days using API's with a coaches help before undertaking it. 
