@@ -32,7 +32,7 @@ class ArticleList {
     articleDiv.appendChild(url)
 
     articleDiv.addEventListener('click', function() {
-      var event = new CustomEvent('clicked_event', { detail: article.url } );
+      var event = new CustomEvent('clicked_event', { detail: article } );
       document.dispatchEvent(event);
     })
 

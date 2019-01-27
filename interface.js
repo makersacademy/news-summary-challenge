@@ -50,9 +50,13 @@ function initialize () {
     var summary = document.createElement('p')
     summary.setAttribute("style", "margin: 1em");
 
-    getSummaryData (event.detail, summary);
+    var pic = document.createElement('img')
+    pic.setAttribute("src", event.detail.pic)
+
+    getSummaryData (event.detail.url, summary);
 
     individual.appendChild(homepagebutton)
+    individual.appendChild(pic)
     individual.appendChild(summary)
   })
 
