@@ -4,6 +4,7 @@
 class Guardian {
   constructor () {
     this.headlines = []
+    this.summary = ''
   }
 
   getHeadlines (request = new XMLHttpRequest()) {
@@ -14,6 +15,19 @@ class Guardian {
     request.onload = () => {
       let data = JSON.parse(request.response)
       this.headlines.push(data.response.results)
+    }
+    request.send()
+  }
+
+  getSummary (headline, request = new XMLHttpRequest()) {
+    let makersAPI = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl='
+    let aylienAPI = 'https://api.aylien.com/api/v1/summarize?url='
+    let url = `${makersAPI}${aylienAPI}${headline.webUrl}`
+
+    request.open('GET', url, false)
+    request.onload = () => {
+      let data = JSON.parse(request.response)
+      this.summary = data.sentences.toString()
     }
     request.send()
   }
@@ -31,8 +45,8 @@ class Guardian {
     let article = document.createElement('p')
     let titleP = document.createElement('p')
     let linkP = document.createElement('p')
-    let title = this.createHyperlink(headline)
     let image = this.fetchImage(headline)
+    let title = this.createHyperlink(headline)
     let link = this.linkToOriginalArticle(headline)
 
     article.appendChild(image)
@@ -46,7 +60,7 @@ class Guardian {
 
   createHyperlink (headline) {
     let title = document.createElement('a')
-    title.setAttribute('href', headline.webUrl)
+    title.setAttribute('href', '#test')
     title.innerText = headline.webTitle
     return title
   }
