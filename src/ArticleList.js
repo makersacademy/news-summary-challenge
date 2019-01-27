@@ -19,7 +19,8 @@ class ArticleList {
     let articleDiv = document.createElement('div')
     let title = document.createElement('p')
     let url = document.createElement('p')
-    let pic = document.createElement('p')
+    let pic = document.createElement('img')
+    pic.setAttribute("src", article.pic)
     title.innerText = article.title
     url.innerText = article.url
     pic.innerText = article.pic
