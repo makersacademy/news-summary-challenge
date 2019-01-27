@@ -1,6 +1,7 @@
 class Article {
-  constructor(title, url) {
+  constructor(title, url, pic) {
     this.title = title;
     this.url = url;
+    this.pic = pic;
   }
 }

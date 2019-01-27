@@ -3,33 +3,39 @@ class ArticleList {
     this.articles = [];
   }
 
-  getArticleList() {
-    var date = this.formatDate();
-    var numberOfArticles = 0;
-    var request = new XMLHttpRequest();
-    //var urlAPI = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2019-01-27&api-key=83c92f37-9271-486b-8ad7-cb7cbd35a4be"
-    var urlAPI = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2019-01-26&api-key=690962db-172e-4bae-8562-7fee1e1fffa3";
-    request.open('GET', urlAPI, true)
-    request.onload = () => {
-      var data = JSON.parse(request.response)
-      numberOfArticles = data.response.results.length
-      this.articles.push(data.response.results)
+  add(title, url, pic) {
+    this.articles.push(new Article(title, url, pic));
+  }
+
+  displayArticles () {
+    let div = document.createElement('div')
+    for (var i=0; i<this.articles.length; i++) {
+      div.appendChild(this.displayArticle(this.articles[i]))
     }
-    request.send()
-    return numberOfArticles
+    return div
   }
 
-  // addArticle(title, url) {
-  //   this.articles.push(new Article(title, url));
+  displayArticle(article) {
+    let articleDiv = document.createElement('div')
+    let title = document.createElement('p')
+    let url = document.createElement('p')
+    let pic = document.createElement('p')
+    title.innerText = article.title
+    url.innerText = article.url
+    pic.innerText = article.pic
+    articleDiv.appendChild(title)
+    articleDiv.appendChild(url)
+    articleDiv.appendChild(pic)
+    return articleDiv
+  }
+
+  // formatDate() {
+  //   var currentDate = new Date();
+  //   var date = currentDate.getDate();
+  //   var month = currentDate.getMonth();
+  //   var year = currentDate.getFullYear();
+  //   var dateString = year + "-" + "0" + (month + 1) + "-" + date;
+  //   return dateString;
   // }
-
-  formatDate() {
-    var currentDate = new Date();
-    var date = currentDate.getDate();
-    var month = currentDate.getMonth();
-    var year = currentDate.getFullYear();
-    var dateString = year + "-" + "0" + (month + 1) + "-" + date;
-    return dateString;
-  }
 
 }
