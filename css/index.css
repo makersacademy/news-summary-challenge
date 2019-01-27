@@ -17,7 +17,6 @@ overflow: hidden;
 transition: all .2s linear;
 padding: 1em;
 width: 200px;
-text-align: justify;
 }
 
 .article:hover{
@@ -28,7 +27,6 @@ text-align: justify;
 .thumbnail{
   width: 160px;
   height: 100px;
-  text-align: center;
 }
 
 #page_title{
