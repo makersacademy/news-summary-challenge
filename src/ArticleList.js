@@ -34,13 +34,5 @@ class ArticleList {
     return articleDiv
   }
 
-  // formatDate() {
-  //   var currentDate = new Date();
-  //   var date = currentDate.getDate();
-  //   var month = currentDate.getMonth();
-  //   var year = currentDate.getFullYear();
-  //   var dateString = year + "-" + "0" + (month + 1) + "-" + date;
-  //   return dateString;
-  // }
 
 }
