@@ -7,10 +7,11 @@ class News_source {
         this.key = key;
         this.headlines = 'page=1';
         this.date = 'from-date=2019-01-27';
+        this.thumb = 'show-fields=thumbnail';
     }
 
     get api_request(){
-        return `${this.source}?${this.date}&${this.headlines}&api-key=${this.key}`;
+        return `${this.source}?${this.date}&${this.headlines}&api-key=${this.key}&${this.thumb}`;
     }
 
 /* 
