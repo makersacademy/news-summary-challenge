@@ -17,7 +17,7 @@
   - I will test other functions which use these functions and test their output but these two seem like the most important functions to and therefore I feel lost not test driving them.
   - I partly feel currently that this weekend challenge may be slightly too much for me, but will press on, I simply wish we had more of an introduction to API's and how to work with them than we did.
 
-  ## Step 3 - Begin again
+## Step 3 - Begin again
 
   - throughout step 2 my code has become a mess of poor functions, untested code and API requests and response dealing. This led to a piece of code that could draw out headlines from the API and display them nicely.
   - Re-Reading the project requirements has led me to restart the project on Sunday morning, removing all frameworks used previously. I will now begin to complete the project in a methodical manner but without any form of TDD as my only test framework does not have the capability to mock anything and only has 3 matchers with which to work. Therefore I decided to focus on learning how to handle API responses, transform the data received and get it to display.
@@ -35,3 +35,16 @@
     - Steps 1 - 3 I feel are necessary for my learning and step 4 is something I will implement if I have both the time and the necessary understanding.
 
 - Successfully learnt how to properly hide an API key and to properly use .gitignore!
+
+- Managed to implement a test, even though it is not a great test as it tests internal mechanics that would most likely be private methods in professional environment. The test passes and can lead me on to other tests but I fear they will be poor tests.
+
+## Step 4 - The development begins properly
+
+- Having managed to implement a test(even a poor one) has given me a better direction to move in.
+
+- I shall still test as needed rather than in advance as I feel to learn how to test these asynchronous functions will come by learning the functions themselves, while not in any way following a strict TDD method, I am following my methods for learning something new.
+          - See it in action to see the flow of data
+          - Reverse engineer my code to understand its needs and return values
+          - Test these functions to test my own understanding of them.
+
+- This process is my current guide and drive. 
