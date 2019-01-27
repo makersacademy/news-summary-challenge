@@ -1,6 +1,5 @@
 var fetch_request = (news_obj, display_handler) => {
 
-
    function fetch_headlines(news = news_obj){
       fetch(`${news.api_request}`)
          .then(function(response){
@@ -12,9 +11,7 @@ var fetch_request = (news_obj, display_handler) => {
    }
    
    function fetch_call_back(x, news = news_obj){
-      console.log(x);
-      news_obj.data = x;
-      display_handler.convert_all_to_thumb(news_obj.data, 'guardian-container');
+      display_handler.convert_all_to_thumb(x, 'guardian-container');
       
    }
    
