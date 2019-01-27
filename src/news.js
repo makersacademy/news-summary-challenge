@@ -33,12 +33,12 @@ class News {
       img.src = headline.fields.thumbnail
 
       const p = document.createElement('p')
-      p.textContent = headline.webTitle + "..."
+      p.textContent = headline.webTitle + '...'
 
       const a = document.createElement('a')
       a.setAttribute('class', 'article_link')
       a.setAttribute('href', headline.webUrl)
-      a.innerText = "Read more"
+      a.innerText = 'Read more'
 
       container.appendChild(newsArticle);
       newsArticle.appendChild(img);
