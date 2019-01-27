@@ -35,18 +35,18 @@ class Guardian {
   renderArticles () {
     let articlesDiv = document.createElement('div')
 
-    this.headlines[0].forEach((headline) => {
-      articlesDiv.appendChild(this.renderArticle(headline))
+    this.headlines[0].forEach((headline, index) => {
+      articlesDiv.appendChild(this.renderArticle(headline, index))
     })
     return articlesDiv
   }
 
-  renderArticle (headline) {
+  renderArticle (headline, index) {
     let article = document.createElement('p')
     let titleP = document.createElement('p')
     let linkP = document.createElement('p')
     let image = this.fetchImage(headline)
-    let title = this.createHyperlink(headline)
+    let title = this.createHyperlink(headline, index)
     let link = this.linkToOriginalArticle(headline)
 
     article.appendChild(image)
@@ -58,9 +58,10 @@ class Guardian {
     return article
   }
 
-  createHyperlink (headline) {
+  createHyperlink (headline, index) {
     let title = document.createElement('a')
-    title.setAttribute('href', '#test')
+    title.setAttribute('href', `#${headline.webUrl}`)
+    title.id = index
     title.innerText = headline.webTitle
     return title
   }
