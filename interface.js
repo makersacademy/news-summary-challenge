@@ -38,9 +38,12 @@ function initialize () {
     main.setAttribute("style", "display: none;");
     individual.innerText = "";
     individual.setAttribute("style", "display: inline-block;");
+    individual.setAttribute("style", "width: 39em");
+
 
     var homepagebutton = document.createElement('button')
     homepagebutton.innerHTML = 'Take me back to the homepage';
+    homepagebutton.setAttribute("style", "margin-bottom: 1em");
 
     homepagebutton.addEventListener('click', function () {
       main.setAttribute("style", "display: inline-block;");
