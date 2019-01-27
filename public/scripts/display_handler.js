@@ -1,5 +1,5 @@
 
-var DisplayHandler = function(news_source_articles, target_node){
+var display_handler = (function(news_source_articles, target_node){
 
     function create_thumbnail(obj){
         let div_node = document.createElement('div');
@@ -34,4 +34,4 @@ var DisplayHandler = function(news_source_articles, target_node){
         convert_all_to_thumb : convert_all_to_thumb,
         make_element: make_element
     }
-}
+})();

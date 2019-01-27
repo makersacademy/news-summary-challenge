@@ -19,24 +19,23 @@ class News_source {
     does not feel safe going - it is a block. They can be caused from calling multiple times from same location but can just happen...
     https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors 
     https://medium.freecodecamp.org/a-practical-es6-guide-on-how-to-perform-http-requests-using-the-fetch-api-594c3d91a547
-    */ 
-    fetch_headlines(){
-        var self = this;
-        fetch(`${this.api_request}`)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(myJson) {
-            self.fetch_callback(myJson.response.results);
-        });
-    }
+    // */ 
+    // fetch_headlines(){
+    //     var self = this;
+    //     fetch(`${this.api_request}`)
+    //     .then(function(response) {
+    //         return response.json();
+    //     })
+    //     .then(function(myJson) {
+    //         self.fetch_callback(myJson.response.results);
+    //     });
+    // }
 
-    fetch_callback(data){
-        this.data = data;
-        console.log(this.data);
-    }
+    // fetch_callback(data){
+    //     this.data = data;
+    // }
 
-    display(){
+    // display(){
 
-    }
+    // }
 }
