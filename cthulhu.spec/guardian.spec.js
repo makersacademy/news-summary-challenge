@@ -14,4 +14,4 @@ describe(" #Onload", () =>{
     expect(JSON.stringify(loadResponse))
       .toMostlyEqual(JSON.stringify(expectedResponse))
   })
-})
+});
