@@ -1,10 +1,5 @@
 
 describe('Article List', () => {
-    // it('retrieves a list of articles', () => {
-    //   let list1 = new ArticleList
-      //mock the request
-    //   expect(list1.articles.length).toEqual(x)
-    // })
 
     it('can add articles to the list', () => {
       let list2 = new ArticleList

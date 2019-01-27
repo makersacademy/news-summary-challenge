@@ -31,6 +31,11 @@ class ArticleList {
     url.innerText = "Read the article on the Guardian website"
     articleDiv.appendChild(url)
 
+    articleDiv.addEventListener('click', function() {
+      var event = new CustomEvent('clicked_event', { detail: article.url } );
+      document.dispatchEvent(event);
+    })
+
     return articleDiv
   }
 
