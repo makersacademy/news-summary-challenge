@@ -3,10 +3,8 @@ function initialize () {
   var articleList = new ArticleList();
 
   var articlesDiv = document.getElementById('main')
-  var searchButton = document.getElementById('search')
 
-  searchButton.addEventListener('click', function () {
-
+  function getAPIData () {
     var request = new XMLHttpRequest();
     // var urlAPI = `https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=${articleList.formatDate()}&api-key=690962db-172e-4bae-8562-7fee1e1fffa3`;
     var urlAPI = "https://content.guardianapis.com/uk-news?show-editors-picks=true&api-key=690962db-172e-4bae-8562-7fee1e1fffa3&show-fields=thumbnail";
@@ -22,7 +20,10 @@ function initialize () {
 
     }
     request.send();
-  })
+  }
+
+  getAPIData();
+
 }
 
 document.addEventListener("DOMContentLoaded", initialize);

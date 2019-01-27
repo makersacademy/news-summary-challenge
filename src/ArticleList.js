@@ -18,15 +18,19 @@ class ArticleList {
   displayArticle(article) {
     let articleDiv = document.createElement('div')
     let title = document.createElement('p')
-    let url = document.createElement('p')
+    let url = document.createElement('a')
     let pic = document.createElement('img')
+
     pic.setAttribute("src", article.pic)
-    title.innerText = article.title
-    url.innerText = article.url
-    pic.innerText = article.pic
-    articleDiv.appendChild(title)
-    articleDiv.appendChild(url)
     articleDiv.appendChild(pic)
+
+    title.innerText = article.title
+    articleDiv.appendChild(title)
+
+    url.setAttribute("href", article.url)
+    url.innerText = "Read the article on the Guardian website"
+    articleDiv.appendChild(url)
+
     return articleDiv
   }
 
