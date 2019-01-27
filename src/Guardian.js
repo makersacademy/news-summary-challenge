@@ -14,7 +14,12 @@ class Guardian {
     request.open('GET', url, false)
     request.onload = () => {
       let data = JSON.parse(request.response)
-      this.headlines.push(data.response.results)
+      
+      if (request.status >= 200 && request.status < 400) {
+        this.headlines.push(data.response.results)
+      } else {
+       console.log('Failed to retrieve news')
+      }
     }
     request.send()
   }
@@ -27,7 +32,12 @@ class Guardian {
     request.open('GET', url, false)
     request.onload = () => {
       let data = JSON.parse(request.response)
-      this.summary = data.sentences.toString()
+
+      if (request.status >= 200 && request.status < 400) {
+        this.summary = data.sentences.toString()
+      } else {
+       console.log('Failed to summarise article')
+      }
     }
     request.send()
   }
