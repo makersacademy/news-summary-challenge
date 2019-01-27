@@ -14,4 +14,8 @@ class Guardian {
     return JSON.parse(this.request.response)
   };
 
+  completeRequest() {
+    this.request.send()
+  }
+
 }
