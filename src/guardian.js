@@ -6,16 +6,32 @@ class Guardian {
     this.list = [];
   };
 
-    requestHeadlines () {
-    this.request.open('Get', `https://content.guardianapis.com/uk-news?show-editors-picks=true&api-key=de43dc95-a4c8-4652-bc9a-25b1fd275dcc`, true)
+  requestHeadlines () {
+    this.request.open('Get', `https://content.guardianapis.com/uk-news?show-editors-picks=true&api-key=${myKey}`, true)
+    this.request.onload = this.onLoad;
+    this.request.send();
+
   };
 
-  onLoad () {
-    return JSON.parse(this.request.response)
-  };
+    onLoad () {
+       var response = JSON.parse(this.response)
 
-  completeRequest() {
-    this.request.send()
-  }
+        response.response.results.forEach(headline => {
 
-}
+        const card = document.createElement('div');
+        card.setAttribute('class', 'card');
+
+        const h1 = document.createElement('h1');
+        h1.textContent = headline.webTitle;
+
+        const p = document.createElement('href');
+        p.textContent = headline.webUrl;
+
+        container.appendChild(card)
+        card.appendChild(h1)
+        card.appendChild(p)
+      })
+
+};
+
+};
