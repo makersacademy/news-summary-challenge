@@ -28,11 +28,17 @@ class News {
       const newsArticle = document.createElement('div')
       newsArticle.setAttribute('class', 'article')
 
+      const img = document.createElement('img')
+      img.setAttribute('class', 'thumbnail')
+      img.src = 'https://media.istockphoto.com/photos/news-picture-id638044390'
+
       const p = document.createElement('p')
       p.textContent = headline.webTitle
 
       container.appendChild(newsArticle);
+      newsArticle.appendChild(img);
       newsArticle.appendChild(p);
+
     })
     return container;
   }

@@ -1,11 +1,11 @@
-body {
+* {
   margin: 0;
   box-sizing: border-box;
 }
 
 .container {
-  width: 50%;
-  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .article{
@@ -16,11 +16,19 @@ border-radius: 12px;
 overflow: hidden;
 transition: all .2s linear;
 padding: 1em;
+width: 200px;
+text-align: justify;
 }
 
 .article:hover{
   box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
   transform: translate3D(0, -2px, 0);
+}
+
+.thumbnail{
+  width: 160px;
+  height: 100px;
+  text-align: center;
 }
 
 #page_title{
@@ -35,6 +43,5 @@ padding: 1em;
   text-align: center;
   padding: 1.5rem 2.5rem;
   margin: 0 0 1rem 0;
-  /* font-size: 1.5rem; */
   color: black;
 }
