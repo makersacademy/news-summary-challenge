@@ -18,7 +18,7 @@ function guardianAPICall(){
 
 
   // Open a new connection, using the GET request on the URL endpoint
-  request.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=headline,trailText,thumbnail,body', true);
+  request.open('GET', 'http://content.guardianapis.com/search?show-fields=headline,trailText,thumbnail,body&api-key=your-api-key', true);
 
   //set what should happen when request is sent
   request.onload = function () {
