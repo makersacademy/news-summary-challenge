@@ -11,15 +11,19 @@
 <body>
     <h1> A simple News app </h1>
     <div class = 'container'>
-        <div id='guardian-container'></div>
-        <div id='daily-mail-container'></div>
+        <div id='guardian-container' class='half'>
+            <h2> The Guardian || ABC1 Liberal  </h2>
+        </div>
+        <div id='daily-mail-container' class='half'>
+            <h2> daily-mail || ABC1 conservative  </h2>
+        </div>
         <!-- item divs generate here-->
           
     </div>
     <!-- script -->
+    <script src="public/scripts/base_display_handler.js"></script>
     <script src="public/scripts/guardian_display_handler.js"></script>
-    <script src="public/scripts/display_handler.js"></script>
-
+    <script src="public/scripts/daily_mail_display_handler.js"></script>
     <script src="public/scripts/fetch_request.js"></script>
     <script src="public/scripts/newsource.js"></script>
     <script src="public/scripts/main.js"></script>

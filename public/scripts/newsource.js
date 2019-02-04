@@ -16,5 +16,3 @@ class News_source {
         return result.join('');
     }
 }
-
-

@@ -1,4 +1,4 @@
-var guardian_display_handler = (function(response, target_node){
+var daily_mail_display_handler = (function(response, target_node){
 
     const base = base_display_handler;
 
@@ -6,16 +6,12 @@ var guardian_display_handler = (function(response, target_node){
        
         let div_node = document.createElement('div');
         let elements = [
-                        base.make_text_element('h3',obj.webTitle),
-                        base.make_text_element('p', obj.sectionName),
-                        base.make_text_element('p', obj.webPublicationDate),
-                        base.make_article_element('article', obj.id),
-                        base.make_link( obj.webUrl, obj.id)
+                        base.make_text_element('h3',obj.title),
+                        base.make_text_element('p', obj.description),
+                        base.make_text_element('p', obj.publishedAt),
+                        base.make_image(obj.urlToImage)
                     ]
-        // will tidy later but im tired and this only just happened not all post have pics lol
-        if(obj.fields){
-            elements.push(base.make_image(obj.fields.thumbnail),)
-        }
+
         for(let element of elements){
            div_node.appendChild(element);
         };
@@ -24,7 +20,7 @@ var guardian_display_handler = (function(response, target_node){
     };
     
     function convert_all_to_thumb(array = response, target_node){
-        array = array.response.results;
+        array = array.articles;
         const parent_node = document.getElementById(target_node);
         for(let event of array){
             let thumb = create_thumbnail(event);

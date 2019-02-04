@@ -1,0 +1,23 @@
+.half{
+    display: inline-block;
+    width:40%;
+    padding:10px;
+}
+
+#daily-mail-container{
+    float:right;
+}
+
+
+/*===========  news article types */
+
+.thumb{
+    border-radius: 10px;
+    padding:10px;
+    margin: 10px;
+    opacity: 0.2;
+}
+
+.opinion{
+  background: #25417f;
+}

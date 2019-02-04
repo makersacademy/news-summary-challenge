@@ -47,4 +47,4 @@ var base_display_handler = function(handler){
         make_link : make_link,
         make_text_element: make_text_element
     }
-}(guardian_display_handler)
+}();
