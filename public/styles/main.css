@@ -1,6 +1,6 @@
 .half{
     display: inline-block;
-    width:40%;
+    width:45%;
     padding:10px;
 }
 
@@ -8,6 +8,33 @@
     float:right;
 }
 
+body{
+    background: #797F9A;
+    font-family: 'Roboto', sans-serif;
+}
+
+body h1, .half h2{
+    text-align: center;
+}
+
+.half{
+  background: #A1A9CC;
+  border-radius: 5px;
+  padding:10px;
+}
+
+.half div {
+    background:white;
+    opacity:0.8;
+    margin: 10px;
+    padding:10px;
+    border-radius:10px;
+}
+
+.half div div{
+    background-size:contain;
+    background-repeat:no-repeat;
+}
 
 /*===========  news article types */
 
@@ -16,8 +43,4 @@
     padding:10px;
     margin: 10px;
     opacity: 0.2;
-}
-
-.opinion{
-  background: #25417f;
 }
