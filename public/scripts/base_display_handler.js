@@ -33,6 +33,16 @@ var base_display_handler = function(handler){
         return a;
     }
 
+    function make_element(tagname, value) {
+        if (['h3', 'p'].contains(tagname)) {
+            return make_text_element(tagname, value)
+        }
+        if (tagname === 'img') {
+            return 
+        }
+        throw new Error(`unsupoorted element "${tagname}"`)
+    }
+
     function make_image(img_src){
         let div = document.createElement('div');
         div.style.backgroundImage = `url(${img_src})`;

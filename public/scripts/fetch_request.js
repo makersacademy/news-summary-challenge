@@ -14,7 +14,18 @@ var fetch_request = (address, display_handler, container) => {
       felxibility... ?
     */
 
-   function fetch_call_back(x){
-      display_handler.convert_all_to_thumb(x, container);  
+   function fetch_call_back(res){
+      convert(display_handler, res, container)
+      let thumb =  display_handler.convert_all_to_thumb(x, container); 
+      container.appendChild(thumb); 
    }
+
+   function convert(display_handler, response, target_node){
+      array = display_handler.get_array(Response);
+      const parent_node = document.getElementById(target_node);
+      for(let event of array){
+          let thumb = base.create_thumbnail(make_elements(event));
+          target_node.appendChild(thumb);
+      }
+  };
 }
