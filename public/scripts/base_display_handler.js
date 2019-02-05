@@ -40,11 +40,22 @@ var base_display_handler = function(handler){
         return div;
     }
 
+    function create_thumbnail(element_array){
+       
+        let div_node = document.createElement('div');
+        for(let element of element_array){
+           div_node.appendChild(element);
+        };
+    
+        return div_node;
+    };
+
     return {
         convert_all_to_thumb : convert_all_to_thumb,
         make_image : make_image,
         make_article_element: make_article_element,
         make_link : make_link,
-        make_text_element: make_text_element
+        make_text_element: make_text_element,
+        create_thumbnail: create_thumbnail
     }
 }();
