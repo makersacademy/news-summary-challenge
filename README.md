@@ -50,4 +50,4 @@ As a busy politician
 I can read the site comfortably on my phone
 I can see whizzy animations in the app
 ```
-I did not bother with css responsiveness in this challenge
+I did not focus on responsiveness and css in this challenge - there is basic styling which will allo for responsiveness to a certain screen size.
