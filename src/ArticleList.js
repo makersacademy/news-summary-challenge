@@ -17,6 +17,7 @@ class ArticleList {
 
   displayArticle(article) {
     let articleDiv = document.createElement('div')
+    articleDiv.setAttribute("style", "margin-bottom: 3em")
     let title = document.createElement('p')
     let url = document.createElement('a')
     let pic = document.createElement('img')
