@@ -1,4 +1,4 @@
-# News Summary
+# News Summary [![BCH compliance](https://bettercodehub.com/edge/badge/AlinaGoaga/NewsSummary?branch=master)](https://bettercodehub.com/)
 
 This is a test driven JavaScript app which uses the [**custom testing framework**](https://github.com/AlinaGoaga/JS_TestingFramework) built in week seven at Makers.
 
