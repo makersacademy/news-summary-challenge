@@ -35,34 +35,50 @@ function initialize () {
   }
 
   document.addEventListener('clicked_event', function(event) {
-    main.setAttribute("style", "display: none;");
+    //create an element to hold the article summary
+    var summary = document.createElement('p')
+    summary.setAttribute("style", "margin: 1em");
+
+    hideMainPage(articlesDiv);
+    showHomepageButton(individual, articlesDiv);
+    showArticlePic(individual);
+    loadArticleSummary(individual,summary);
+
+    getSummaryData (event.detail.url, summary);
+  })
+
+  function hideMainPage(articlesDiv) {
+    articlesDiv.setAttribute("style", "display: none;");
     individual.innerText = "";
     individual.setAttribute("style", "display: inline-block;");
     individual.setAttribute("style", "width: 39em");
+    return individual;
+  }
 
-
+  function showHomepageButton(individual, articlesDiv) {
     var homepagebutton = document.createElement('button')
     homepagebutton.innerHTML = 'Take me back to the homepage';
     homepagebutton.setAttribute("style", "margin-bottom: 1em");
 
     homepagebutton.addEventListener('click', function () {
-      main.setAttribute("style", "display: inline-block;");
+      articlesDiv.setAttribute("style", "display: inline-block;");
       individual.setAttribute("style", "display: none;");
     })
-
-    var summary = document.createElement('p')
-    summary.setAttribute("style", "margin: 1em");
-
-    var pic = document.createElement('img')
-    pic.setAttribute("src", event.detail.pic)
-
-    getSummaryData (event.detail.url, summary);
-
     individual.appendChild(homepagebutton)
-    individual.appendChild(pic)
-    individual.appendChild(summary)
-  })
+    return individual;
+  }
 
+  function showArticlePic(individual) {
+    var pic = document.createElement('img');
+    pic.setAttribute("src", event.detail.pic);
+    individual.appendChild(pic);
+    return individual;
+  }
+
+  function loadArticleSummary(individual,summary) {
+    individual.appendChild(summary);
+    return individual;
+  }
 
   getGuardianData();
 
