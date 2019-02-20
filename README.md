@@ -1,14 +1,12 @@
 # News Summary Challenge
 
-Makers Week 7 (Friday) - this project is a single page web app built and tested without existing frameworks.
-
-This challenge was to create a news summary web app using The Guardian API and build with only JavaScript, html, and CSS.
+Makers Week 7 (Friday) - This challenge was to create a news summary web app using The Guardian API and build without frameworks, only JavaScript, html, and CSS.
 
 ## Getting Started
 
 In the location of your choice, in Terminal:
 
-`git@github.com:alittlecross/news-summary-challenge.git`
+`git clone git@github.com:alittlecross/news-summary-challenge.git`
 
 `cd` into the `news-summary-challenge` folder.
 
@@ -18,7 +16,7 @@ Assuming you have Node.js and NPM installed, in that same location, in Terminal:
 
 ## Usage
 
-(Note: The app the will only work if you save a Guardian API key in a file within that same location called `api-key.js`, like so: `var apiKey = "qwertyuiopasdfghjklzxcvbnm"`)
+(Note: The app the will only work if you save a Guardian API key in a file within the `news-summary-challenge` folder called `api-key.js`, like so: `var apiKey = "qwertyuiopasdfghjklzxcvbnm"`)
 
 In that same location, in Terminal:
 
@@ -38,7 +36,7 @@ Clicking an article should show a larger image, a three paragraph summary of the
 
 The article cards and article summary views will adapt when viewed on a smartphone or tablet:
 
-![headlines-mobile](images/headlines-mobile.png)
+<img src='images/headlines-mobile.png' width='400'/>
 
 ## Running tests
 
