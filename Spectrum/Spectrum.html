@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <title>Spectrum</title>
 
-  <link rel="stylesheet" href="Spectrum.css">
+  <head>
+    <meta charset='utf-8' />
+    <title>Spectrum</title>
 
-  <!-- TEST FRAMEWORK -->
-  <script src="Spectrum.js"></script>
-  <script>
-    function Spectrum() { this.string = "" }; spectrum = new Spectrum();
-  </script>
+    <link rel='stylesheet' href='Spectrum.css'>
 
-  <!-- JACVASCRIPT FILES -->
-  <script src="../src/model/article-model.js"></script>
-  <script src="../src/view/article-view.js"></script>
-  <script src="../src/model/headlines-model.js"></script>
-  <script src="../src/view/headlines-view.js"></script>
-  <script src="../src/controller/controller.js"></script>
+    <!-- TEST FRAMEWORK -->
+    <script src='Spectrum.js'></script>
+    <script>
+      function Spectrum() { this.string = '' }
+      spectrum = new Spectrum()
+    </script>
 
-  <!-- HELPER FILES -->
-  <script src="../Spec/Cassette.js"></script>
+    <!-- JACVASCRIPT FILES -->
+    <script src='../src/controller/controller.js'></script>
+    <script src='../src/model/article-model.js'></script>
+    <script src='../src/model/headlines-model.js'></script>
+    <script src='../src/view/article-view.js'></script>
+    <script src='../src/view/headlines-view.js'></script>
 
-  <!-- SPEC FILES -->
-  <script src="../Spec/model/article-model-Spec.js"></script>
-  <script src="../Spec/view/article-view-Spec.js"></script>
-  <script src="../Spec/model/headlines-model-Spec.js"></script>
-  <script src="../Spec/view/headlines-view-Spec.js"></script>
-  <script src="../Spec/controller/controller-Spec.js"></script>
+    <!-- HELPER FILES -->
+    <script src='../Spec/Cassette.js'></script>
 
-  <!-- RENDER FRONT-END -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() { document.getElementById("spectrum").innerHTML = spectrum.string; })
-  </script>
+    <!-- SPEC FILES -->
+    <script src='../Spec/controller/controller-Spec.js'></script>
+    <script src='../Spec/model/article-model-Spec.js'></script>
+    <script src='../Spec/model/headlines-model-Spec.js'></script>
+    <script src='../Spec/view/article-view-Spec.js'></script>
+    <script src='../Spec/view/headlines-view-Spec.js'></script>
 
-</head>
-<body>
-  <div hidden id="test"></div>
-  <div id="spectrum"></div>
-</body>
+    <!-- RENDER FRONT-END -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('spectrum').innerHTML = spectrum.string
+      })
+    </script>
+
+  </head>
+  
+  <body>
+    <div hidden id='test'></div>
+    <div id='spectrum'></div>
+  </body>
+
 </html>

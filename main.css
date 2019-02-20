@@ -56,6 +56,7 @@ img {
   height: 150px;
   border-radius: 50px;
   background: #0088aa;
+  box-shadow: 0 10px 8px #888888;
 }
 
 .headline {

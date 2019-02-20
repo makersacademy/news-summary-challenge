@@ -16,18 +16,18 @@
 
     string += '<main>'
     for (i = 0; i < listLength; i++) {
-      string += "<div class='article-container'><a href='#article/"
+      string += '<div class="article-container"><a href="#article/'
       string += this.headlines.list[i].id
-      string += "'>"
+      string += '">'
       if (this.headlines.list[i].thumbnail !== undefined) {
-        string += "<div class='thumbnail'><img src='"
+        string += '<div class="thumbnail"><img src="'
         string += this.headlines.list[i].thumbnail
-        string += "' alt='article thumbnail'></div>"
+        string += '" alt="article thumbnail"></div>'
       }
       if (this.headlines.list[i].thumbnail === undefined) {
-        string += "<div class='thumbnail'></div>"
+        string += '<div class="thumbnail"></div>'
       }
-      string += "<p class='headline'><span class='section'>"
+      string += '<p class="headline"><span class="section">'
       string += this.headlines.list[i].section
       string += '</span> &#x2F; '
       string += this.headlines.list[i].headline

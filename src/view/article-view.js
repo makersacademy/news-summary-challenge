@@ -15,13 +15,13 @@
     string += this.article.section
     string += '</span> &#x2F;</p>'
     if (this.article.thumbnail !== undefined) {
-      string += "<img id='main-picture' src='"
+      string += '<img id="main-picture" src="'
       string += this.article.thumbnail
-      string += "' alt='article thumbnail'>"
+      string += '" alt="article thumbnail">'
     }
     if (this.article.thumbnail === undefined) {
-      string += "<img id='main-picture' src='"
-      string += "'>"
+      string += '<img id="main-picture" src="'
+      string += '">'
     }
     string += '<div id="main-headline">'
     string += this.article.headline

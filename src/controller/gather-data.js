@@ -4,7 +4,9 @@
 
   GatherData.prototype.askTheGuardian = function () {
     var address = 'https://content.guardianapis.com/'
-    var parameters = 'search?type=article&page-size=50&show-elements=image&show-fields=thumbnail,headline,body,byline&api-key='
+    var search = 'search?type=article&page-size=50&'
+    var elements = 'show-elements=image&'
+    var fields = 'show-fields=thumbnail,headline,body,byline&api-key='
     var myRequest = new XMLHttpRequest()
     myRequest.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -13,7 +15,7 @@
         buildTheArticles(query)
       }
     }
-    myRequest.open('GET', address + parameters + apiKey)
+    myRequest.open('GET', address + search + elements + fields + apiKey)
     myRequest.send()
   }
 
@@ -29,11 +31,23 @@
 
       paragraphs.innerHTML = query.response.results[i].fields.body
 
-      if (paragraphs.getElementsByTagName('p')[0] === undefined) { paragraphOne = '' } else { paragraphOne = paragraphs.getElementsByTagName('p')[0].innerHTML }
+      if (paragraphs.getElementsByTagName('p')[0] === undefined) {
+        paragraphOne = ''
+      } else {
+        paragraphOne = paragraphs.getElementsByTagName('p')[0].innerHTML
+      }
 
-      if (paragraphs.getElementsByTagName('p')[1] === undefined) { paragraphTwo = '' } else { paragraphTwo = paragraphs.getElementsByTagName('p')[1].innerHTML }
+      if (paragraphs.getElementsByTagName('p')[1] === undefined) {
+        paragraphTwo = ''
+      } else {
+        paragraphTwo = paragraphs.getElementsByTagName('p')[1].innerHTML
+      }
 
-      if (paragraphs.getElementsByTagName('p')[2] === undefined) { paragraphThree = '' } else { paragraphThree = paragraphs.getElementsByTagName('p')[2].innerHTML }
+      if (paragraphs.getElementsByTagName('p')[2] === undefined) {
+        paragraphThree = ''
+      } else {
+        paragraphThree = paragraphs.getElementsByTagName('p')[2].innerHTML
+      }
 
       headlines.addArticle(
         query.response.results[i].fields.thumbnail,
