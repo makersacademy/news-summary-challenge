@@ -1,5 +1,3 @@
-api-key.js
-article.json
-articles.json
-/node_modules
 .DS_Store
+node_modules/
+api-key.js
