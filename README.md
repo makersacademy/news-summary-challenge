@@ -1,75 +1,55 @@
 # News Summary Challenge
 
-This challenge was to create a news summary web app build with only JavaScript, html, and CSS.
+Makers Week 7 (Friday) - this project is a single page web app built and tested without existing frameworks.
 
-To try out the app, clone this repo:
+This challenge was to create a news summary web app using The Guardian API and build with only JavaScript, html, and CSS.
 
-```git clone git@github.com:alittlecross/news-summary-challenge.git```
+## Getting Started
 
-And run `index.html` from that folder.
+In the location of your choice, in Terminal:
 
-HOWEVER - the will only work if you save a Guardian API key in a file within that folder call `api-key.js`, like so:
+`git@github.com:alittlecross/news-summary-challenge.git`
 
-```var apiKey = "qwertyuiopasdfghjklzxcvbnm";```
+`cd` into the `news-summary-challenge` folder.
 
-## Screenshots ##
+Assuming you have Node.js and NPM installed, in that same location, in Terminal:
 
-When running, when viewing the homepage, it should look like this in browser:
+`npm install`
 
-![articles-fullscreen](images/articles-fullscreen.png)
+## Usage
 
-And like this on a mobile:
+(Note: The app the will only work if you save a Guardian API key in a file within that same location called `api-key.js`, like so: `var apiKey = "qwertyuiopasdfghjklzxcvbnm"`)
 
-![articles-mobile](images/articles-mobile.png)
+In that same location, in Terminal:
 
-When viewing an article summary, it should look like this in browser:
+`./node_modules/.bin/http-server`
+
+Then in the browser of your choice:
+
+`http://localhost:8080/`
+
+You should see article cards:
+
+![headlines-fullscreen](images/headlines-fullscreen.png)
+
+Clicking an article should show a larger image, a three paragraph summary of the story, along with a link to the full story:
 
 ![article-fullscreen](images/article-fullscreen.png)
 
-And like this on a mobile:
+The article cards and article summary views will adapt when viewed on a smartphone or tablet:
 
-![article-mobile](images/article-mobile.png)
+![headlines-mobile](images/headlines-mobile.png)
 
-## Testing ##
+## Running tests
 
-All code has been testing with my own testing framework, Spectrum.
+I used the test framework I wrote for my previous project, Spectrum.
 
-In the repo that you cloned, run `Spectrum.html` from the `Spectrum` folder.
+To run the tests locally, in that same location, in Terminal:
 
-## User Stories
+`open Spectrum/Spectrum.html`
 
-```
-As a busy politician
-I can see all of today's headlines in one place
-So I know what the big stories of the day are
-```
+## Linting
 
-```
-As a busy politician
-I can click a link to see the original news article
-So that I can get an in depth understanding of a very important story
-```
+In that same location, in Terminal:
 
-```
-As a busy politician
-I can see a summary of a news article
-So I can get a few more details about an important story
-```
-
-```
-As a busy politician
-I can see a picture to illustrate each news article when I browse headlines
-So that I have something nice to look at
-```
-
-```
-As a busy politician
-I can read the site comfortably on my phone
-Just in case my laptop breaks
-```
-
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
-```
+`./node_modules/.bin/eslint src`
