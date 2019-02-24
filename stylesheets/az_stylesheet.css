@@ -21,6 +21,10 @@ h1 {
   grid-gap: 5px;
 }
 
+a {
+  color: inherit;
+}
+
 p.headline {
   font-size: 30px;
   margin-bottom: 2px;
@@ -42,4 +46,9 @@ img {
   height: 200px;
   overflow: hidden;
   border-radius: 5px;
+}
+
+img.focus {
+  height: 400px;
+  overflow: hidden;
 }

@@ -19,8 +19,12 @@ addExamples();
 
 var i;
 for (i=0; i<storyList.stories.length; i++) {
+    var link = document.createElement('A')
+    document.getElementById('grid-container').appendChild(link)
+    link.setAttribute('href', '#' + storyList.stories[i].id)
+
     var newdiv = document.createElement('DIV')
-    document.getElementById('grid-container').appendChild(newdiv)
+    link.appendChild(newdiv)
     newdiv.className = 'storyDiv'
 
     var headlinep = document.createElement('P')
@@ -33,3 +37,9 @@ for (i=0; i<storyList.stories.length; i++) {
     img.setAttribute('src', storyList.stories[i].imgLoc)
     img.setAttribute('alt', 'Image for ' + storyList.stories[i].headline)
 }
+
+window.addEventListener('hashchange', function() {
+    storyId = window.location.hash.slice(1)
+    var focusStory = storyList.getStoryById(storyId);
+    document.getElementById('centering-div').innerHTML = SingleStoryView.prototype.makeView(focusStory);
+});
