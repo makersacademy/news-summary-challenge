@@ -7,6 +7,7 @@
   <body>
     <h1>You had me at: Hello World</h1>
     <p id="test"></p>
+    </form>
   </body>
 
   <script type='text/javascript' src='config.js'></script>
@@ -14,12 +15,16 @@
 
   function guardianListener() {
     var data = JSON.parse(this.responseText);
-    document.getElementById('test').innerHTML = data.response.content.fields.body;
+    console.log(data);
+    for (var i = 0; i < data.response.results.length; i++) {
+      document.getElementById('test').innerHTML += "<div><li>" + data.response.results[i].webTitle + "</li></div><br>";
+    }
+
   }
 
   var guardianRequest = new XMLHttpRequest();
   guardianRequest.addEventListener("load", guardianListener);
-  guardianRequest.open("GET", "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=" + config.MY_KEY);
+  guardianRequest.open("GET", "http://content.guardianapis.com/uk-news?api-key=" + config.MY_KEY);
   guardianRequest.send();
 
 </script>
