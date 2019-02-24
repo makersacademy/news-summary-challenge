@@ -1,32 +1,40 @@
+(function(exports) {
+
 function displayStories() {
+    document.getElementById('grid-container').innerHTML = ''
     var i;
-    for (i=0; i<storyList.stories.length; i++) {
+    for (i=(storyList.stories.length-1); i>=0; i--) {
         var story = storyList.stories[i]
 
-        var link = document.createElement('A')
-        document.getElementById('grid-container').appendChild(link)
-        link.setAttribute('href', '#stories/' + story.id)
-
         var newdiv = document.createElement('DIV')
-        link.appendChild(newdiv)
+        document.getElementById('grid-container').appendChild(newdiv)
         newdiv.className = 'storyDiv'
 
+        var link = document.createElement('A')
+        newdiv.appendChild(link)
+        link.setAttribute('href', '#stories/' + story.id)
+        link.className = 'storyLink'
+
         var headlinep = document.createElement('P')
-        newdiv.appendChild(headlinep)
+        link.appendChild(headlinep)
         headlinep.className = 'headline'
         headlinep.innerHTML = story.headline;
 
         var summaryp = document.createElement('P')
-        newdiv.appendChild(summaryp)
+        link.appendChild(summaryp)
         summaryp.className = 'summary'
         summaryp.innerHTML = story.summary
 
         var img = document.createElement('IMG')
-        newdiv.insertBefore(img, headlinep)
+        link.insertBefore(img, headlinep)
         img.setAttribute('src', story.imgLoc)
         img.setAttribute('alt', 'Image for ' + story.headline)
     };
   };
+
+  exports.displayStories = displayStories
+
+})(this)
 
 displayStories();
 

@@ -4,7 +4,7 @@
     }
 
     SingleStoryView.prototype.makeView = function(story) {
-        elements = ['<div class="storyDiv"><img class="focus" alt="Image for story" src="']
+        elements = ['<div class="individualStoryDiv"><img class="focus" alt="Image for story" src="']
         elements.push(story.imgLoc)
         elements.push('"/img><h1>')
         elements.push(story.headline)
