@@ -2,8 +2,9 @@
 
     var counter = 0;
 
-    function Story(headline, text, imgLoc) {
+    function Story(headline, summary, text, imgLoc) {
         this.headline = headline
+        this.summary = summary
         this.text = text
         this.imgLoc = imgLoc
         counter += 1
