@@ -17,7 +17,7 @@
     var data = JSON.parse(this.responseText);
     console.log(data);
     for (var i = 0; i < data.response.results.length; i++) {
-      document.getElementById('test').innerHTML += "<div><li>" + data.response.results[i].webTitle + "</li></div><br>";
+      document.getElementById('test').innerHTML += "<div><a href=" + data.response.results[i].webUrl +"><li>" + data.response.results[i].webTitle + "</li></a></div><br>";
     }
 
   }
