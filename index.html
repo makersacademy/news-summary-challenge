@@ -6,6 +6,23 @@
   </head>
   <body>
     <h1>You had me at: Hello World</h1>
-
+    <p id="test"></p>
   </body>
+
+  <script type='text/javascript' src='config.js'></script>
+  <script>
+
+  function guardianListener() {
+    var data = JSON.parse(this.responseText);
+    document.getElementById('test').innerHTML = data.response.content.fields.body;
+  }
+
+  var guardianRequest = new XMLHttpRequest();
+  guardianRequest.addEventListener("load", guardianListener);
+  guardianRequest.open("GET", "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=" + config.MY_KEY);
+  guardianRequest.send();
+
+</script>
+
+
 </html>
