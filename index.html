@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="stylesheet" href="./bootstrap-news-app.css">
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <body style="text-align: center;">
     <h1>You had me at: Hello World</h1>
-    <p id="test"></p>
-    </form>
   </body>
 
   <script type='text/javascript' src='config.js'></script>
@@ -15,11 +14,14 @@
 
   function guardianListener() {
     var data = JSON.parse(this.responseText);
+    console.log(data);
     for (var i = 0; i < data.response.results.length; i++) {
       var div = document.createElement("div");
       div.id = i.toString();
+      div.className = "card border-warning "
       document.body.appendChild(div);
-      document.getElementById(div.id).innerHTML += "<a href=" + data.response.results[i].webUrl +"><li>" + data.response.results[i].webTitle + "</li></a><br>";
+      document.getElementById(div.id).innerHTML += "<div class='card-header' style='display: inline-block;'><a href=" + data.response.results[i].webUrl +">" + data.response.results[i].webTitle + "</a></div><br>";
+      document.getElementById(div.id).innerHTML += "<div class='card-body style='display: inline-block;''><img src=" + data.response.results[i].fields.thumbnail + "></div>";
       summaryPrinter(data.response.results[i].webUrl, i)
     }
   }
@@ -31,13 +33,13 @@
     summaryRequest.send();
     function summaryListener() {
       var summary = JSON.parse(this.responseText);
-      document.getElementById(i.toString()).innerHTML += "<div>" + summary.sentences + "</div><br>";
+      document.getElementById(i.toString()).innerHTML += "<p class='card-body' style='display: inline-block;'>" + summary.sentences + "</p><br>";
     }
   }
 
   var guardianRequest = new XMLHttpRequest();
   guardianRequest.addEventListener("load", guardianListener);
-  guardianRequest.open("GET", "http://content.guardianapis.com/uk-news?api-key=" + config.MY_KEY);
+  guardianRequest.open("GET", "http://content.guardianapis.com/uk-news?show-fields=thumbnail&api-key=" + config.MY_KEY);
   guardianRequest.send();
 
 </script>
