@@ -1,47 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="./bootstrap-news-app.css">
+    <link rel="stylesheet" href="./public/bootstrap-news-app.css">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body style="text-align: center;">
     <h1 style="padding: 20px; font-size:80px; font-weight: bold; color: white;">You had me at: Hello World</h1>
   </body>
-
-  <script type='text/javascript' src='config.js'></script>
-  <script>
-
-  function guardianListener() {
-    var data = JSON.parse(this.responseText);
-    console.log(data);
-    for (var i = 0; i < data.response.results.length; i++) {
-      var div = document.createElement("div");
-      div.id = i.toString();
-      div.className = "card border-warning "
-      document.body.appendChild(div);
-      document.getElementById(div.id).innerHTML += "<div class='card-title' style='display: inline-block; font-size:25px;'><a href=" + data.response.results[i].webUrl +">" + data.response.results[i].webTitle + "</a></div><br>";
-      document.getElementById(div.id).innerHTML += "<div><img style='display: inline-block; padding: 15px; height: 100%; width: 100%;' src=" + data.response.results[i].fields.thumbnail + "></div>";
-      summaryPrinter(data.response.results[i].webUrl, i)
-    }
-  }
-
-  function summaryPrinter(url, i) {
-    // var summaryRequest = new XMLHttpRequest();
-    // summaryRequest.addEventListener("load", summaryListener);
-    // summaryRequest.open("GET", "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + url);
-    // summaryRequest.send();
-    // function summaryListener() {
-    //   var summary = JSON.parse(this.responseText);
-    //   document.getElementById(i.toString()).innerHTML += "<p class='card-body' style='display: inline-block;'>" + summary.sentences + "</p><br>";
-    // }
-    document.getElementById(i.toString()).innerHTML += "<p style='display: inline-block;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br>";
-  }
-
-  var guardianRequest = new XMLHttpRequest();
-  guardianRequest.addEventListener("load", guardianListener);
-  guardianRequest.open("GET", "http://content.guardianapis.com/uk-news?show-fields=thumbnail&api-key=" + config.MY_KEY);
-  guardianRequest.send();
-
-</script>
+  <script type='text/javascript' src='./src/config.js'></script>
+  <script type='text/javascript' src='./src/guardianAPI.js'></script>
+  <script type='text/javascript' src='./src/summaryAPI.js'></script>
 </html>

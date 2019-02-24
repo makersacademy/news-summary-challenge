@@ -46,11 +46,11 @@ To make my news reading more fun
 
 ### Individual story
 
-![Mockup of individual story](news-summary-challenge/images/individual-story.png)
+![Mockup of individual story](public/images/individual-story.png)
 
 ### Main page
 
-![Mockup of webpage](news-summary-challenge/images/full-page.png)
+![Mockup of webpage](public/images/full-page.png)
 
 ### Additional notes
 
