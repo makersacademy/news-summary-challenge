@@ -6,7 +6,7 @@
     <title></title>
   </head>
   <body style="text-align: center;">
-    <h1>You had me at: Hello World</h1>
+    <h1 style="padding: 20px; font-size:80px; font-weight: bold; color: white;">You had me at: Hello World</h1>
   </body>
 
   <script type='text/javascript' src='config.js'></script>
@@ -20,8 +20,8 @@
       div.id = i.toString();
       div.className = "card border-warning "
       document.body.appendChild(div);
-      document.getElementById(div.id).innerHTML += "<div class='card-header' style='display: inline-block;'><a href=" + data.response.results[i].webUrl +">" + data.response.results[i].webTitle + "</a></div><br>";
-      document.getElementById(div.id).innerHTML += "<div class='card-body style='display: inline-block;''><img src=" + data.response.results[i].fields.thumbnail + "></div>";
+      document.getElementById(div.id).innerHTML += "<div class='card-title' style='display: inline-block; font-size:25px;'><a href=" + data.response.results[i].webUrl +">" + data.response.results[i].webTitle + "</a></div><br>";
+      document.getElementById(div.id).innerHTML += "<div><img style='display: inline-block; padding: 15px;' src=" + data.response.results[i].fields.thumbnail + "></div>";
       summaryPrinter(data.response.results[i].webUrl, i)
     }
   }
