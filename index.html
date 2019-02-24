@@ -15,11 +15,24 @@
 
   function guardianListener() {
     var data = JSON.parse(this.responseText);
-    console.log(data);
     for (var i = 0; i < data.response.results.length; i++) {
-      document.getElementById('test').innerHTML += "<div><a href=" + data.response.results[i].webUrl +"><li>" + data.response.results[i].webTitle + "</li></a></div><br>";
+      var div = document.createElement("div");
+      div.id = i.toString();
+      document.body.appendChild(div);
+      document.getElementById(div.id).innerHTML += "<a href=" + data.response.results[i].webUrl +"><li>" + data.response.results[i].webTitle + "</li></a><br>";
+      summaryPrinter(data.response.results[i].webUrl, i)
     }
+  }
 
+  function summaryPrinter(url, i) {
+    var summaryRequest = new XMLHttpRequest();
+    summaryRequest.addEventListener("load", summaryListener);
+    summaryRequest.open("GET", "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + url);
+    summaryRequest.send();
+    function summaryListener() {
+      var summary = JSON.parse(this.responseText);
+      document.getElementById(i.toString()).innerHTML += "<div>" + summary.sentences + "</div><br>";
+    }
   }
 
   var guardianRequest = new XMLHttpRequest();
@@ -28,6 +41,4 @@
   guardianRequest.send();
 
 </script>
-
-
 </html>
