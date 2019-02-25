@@ -9,7 +9,7 @@
   <body>
   <div>
     <a href='/'><h1>News Summary Website for Busy Politicians</h1></a>
-    <button id='switch'>Click to Use Guardian API</button>
+    <button id='switch'>Click to Use Aylien Summary API</button>
     </div>
 
   <div id='centering-div'>
@@ -19,16 +19,18 @@
   <script src='models/g_storyList.js'></script>
   <script src='models/d_story.js'></script>
   <script src='models/k_singleStoryView.js'></script>
-  <script src='scripts/i_loadRealStoriesViaAPI.js'></script>
+  <script src='scripts/ah_loadRealStoriesViaAPI.js'></script>
   <script src='scripts/g_loadExamples.js'></script>
   <script>
     addExamples();
   </script>
-  <script src='scripts/au_indexscript.js'></script>
+  <script src='scripts/bi_indexscript.js'></script>
   <script>
     document.getElementById('switch').addEventListener('click', function(){
-      addStories();
-      displayStories();
+      real = true;
+      makeHttpRequest();
+      console.log('realStoryList in index', realStoryList)
+      displayStories(realStoryList);
     });
   </script>
   </body>

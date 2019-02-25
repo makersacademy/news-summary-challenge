@@ -1,10 +1,14 @@
 (function(exports) {
 
-function displayStories() {
+function displayStories(storylist) {
     document.getElementById('grid-container').innerHTML = ''
     var i;
-    for (i=(storyList.stories.length-1); i>=0; i--) {
-        var story = storyList.stories[i]
+    for (i=0; i<storylist.stories.length; i++) {
+        var story = storylist.stories[i]
+        console.log('i', i)
+        console.log('i>=0', i>=0)
+        console.log('length', storylist.stories.length)
+        console.log('storylist in displayStories', storylist)
 
         var newdiv = document.createElement('DIV')
         document.getElementById('grid-container').appendChild(newdiv)
@@ -36,14 +40,24 @@ function displayStories() {
 
 })(this)
 
-displayStories();
+var real = true;
+
+function getCorrectStoryList() {
+    if (!real) {
+        return storyList
+    } else {
+        return realStoryList
+    }
+}
+
+displayStories(getCorrectStoryList());
 
 window.addEventListener('hashchange', function() {
     if (window.location.hash == '') {
-        displayStories();
+        displayStories(getCorrectStoryList());
     } else {
         storyId = window.location.hash.slice(9)
-        var focusStory = storyList.getStoryById(storyId);
+        var focusStory = getCorrectStoryList().getStoryById(storyId);
         document.getElementById('centering-div').innerHTML = SingleStoryView.prototype.makeView(focusStory);
     }
 });

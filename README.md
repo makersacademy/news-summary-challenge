@@ -8,10 +8,13 @@
 
 ## How to use
 
-```npm install httpserver```
-```httpserver```
+```npm install http-server```
+```http-server```
 Navigate in a browser to localhost:8080
 APIs not requested until you click a button.
+APIs not yet implemented.
+
+NB: You will need to navigate back to a commit before I started implementing APIs.
 
 # Specification
 
