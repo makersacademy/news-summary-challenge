@@ -21,6 +21,36 @@ function addStories() {
     exports.storyList = storyList
   };
 
+  if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...
+      var httpRequest = new XMLHttpRequest();
+  } else if (window.ActiveXObject) { // IE 6 and older
+      var httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+function makeHttpRequest() {
+    httpRequest.open('GET', 'http://www.example.org/some.file', true);
+    httpRequest.send();
+}
+
+function processHttpResponse() {
+    console.log('HELLO')
+
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      // Everything is good, the response was received.
+        if (httpRequest.status === 200) {
+            console.log(httpRequest.responseXML)
+        } else {
+            console.log('There was a problem with the request. For example, the response may have a 404 (Not Found) or 500 (Internal Server Error) response code.')
+        }
+    } else {
+        // Not ready yet.
+    }
+}
+
+httpRequest.onreadystatechange = processHttpResponse;
+
+
   exports.addStories = addStories
+  exports.makeHttpRequest = makeHttpRequest
 
 })(this)

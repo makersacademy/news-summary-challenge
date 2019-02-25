@@ -1,5 +1,20 @@
 # News Summary challenge
 
+## Technologies
+
+- HTML/CSS
+- JavaScript
+- HttpServer
+
+## How to use
+
+```npm install httpserver```
+```httpserver```
+Navigate in a browser to localhost:8080
+APIs not requested until you click a button.
+
+# Specification
+
 * Challenge time: rest of the day and weekend, until Monday 9am.
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.

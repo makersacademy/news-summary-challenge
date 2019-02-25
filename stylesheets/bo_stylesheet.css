@@ -28,6 +28,14 @@ button {
 
 a {
   color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 2px 2px 5px;
+}
+
+a.storyLink {
 }
 
 p.headline {
@@ -40,20 +48,23 @@ div.storyDiv {
   background-color: #d8e7ff;
   border-radius: 5px;
   padding: 5px;
+  box-shadow: 5px 5px 5px;
+}
+
+div.storyDiv:hover {
+  background-color: #e8f0ff;
 }
 
 div.individualStoryDiv {
   background-color: #d8e7ff;
   border-radius: 5px;
   padding: 5px;
+  box-shadow: 5px 5px 5px;
   display: -webkit-flex; /* Safari */
   -webkit-align-items: center; /* Safari 7.0+ */
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-a.storyLink {
 }
 
 img {
