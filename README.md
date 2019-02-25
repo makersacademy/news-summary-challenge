@@ -1,5 +1,23 @@
 # News Summary challenge
 
+## Technologies
+
+- HTML/CSS
+- JavaScript
+- HttpServer
+
+## How to use
+
+```npm install http-server```
+```http-server```
+Navigate in a browser to localhost:8080
+APIs not requested until you click a button.
+APIs not yet implemented.
+
+NB: You will need to navigate back to a commit before I started implementing APIs.
+
+# Specification
+
 * Challenge time: rest of the day and weekend, until Monday 9am.
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.

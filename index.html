@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>News Summary</title>
+    <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+    <link rel="stylesheet" href="/stylesheets/bo_stylesheet.css">
+  </head>
+  <body>
+  <div>
+    <a href='/'><h1>News Summary Website for Busy Politicians</h1></a>
+    <button id='switch'>Click to Use Aylien Summary API</button>
+    </div>
+
+  <div id='centering-div'>
+    <div id='grid-container'></div>
+    </div>
+
+  <script src='models/g_storyList.js'></script>
+  <script src='models/d_story.js'></script>
+  <script src='models/k_singleStoryView.js'></script>
+  <script src='scripts/ah_loadRealStoriesViaAPI.js'></script>
+  <script src='scripts/g_loadExamples.js'></script>
+  <script>
+    addExamples();
+  </script>
+  <script src='scripts/bi_indexscript.js'></script>
+  <script>
+    document.getElementById('switch').addEventListener('click', function(){
+      real = true;
+      makeHttpRequest();
+      console.log('realStoryList in index', realStoryList)
+      displayStories(realStoryList);
+    });
+  </script>
+  </body>
+</html>
