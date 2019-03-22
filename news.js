@@ -5,11 +5,13 @@ function NewsController() {
   this.insertNewsIntoPage = function(newsJSON) {
     // return news
     this.newsData = newsJSON
+    this.showNewsSummary()
   }
 }
 
 NewsController.prototype.refreshNewsData = function() {
   this.apiCall.makeRequest(this.insertNewsIntoPage.bind(this))
+
 }
 
 NewsController.prototype.showNewsSummary = function() {

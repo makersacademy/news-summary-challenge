@@ -1,0 +1,11 @@
+testjson = { "response": {
+    "results": [
+      {"webTitle": "something here",
+        "fields": {
+          "thumbnail": "thumbnail here",
+          "body": "body here"
+        }
+      }
+    ]
+  }
+}

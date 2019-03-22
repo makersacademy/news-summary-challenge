@@ -5,18 +5,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
     <title></title>
+    <script src="../api-key.js"></script>
+    <script src="../models/data.js"></script>
+    <script src="../news.js"></script>
+    <script src="../spec/assert.js"></script>
+    <script src="../spec/news-controller-spec.js"></script>
     <script type="text/javascript">
+      var nc = new NewsController
+      nc.refreshNewsData()
+    </script>
+    <script type="text/javascript">
+
     </script>
   </head>
   <h1 id="header" class="container">Today's headlines:</h1>
-  <body >
-
-
-
     <div id="summary" class="container">
       <ul>
         <hr>
         <div id=0 class="container"></div>
+        <script type="text/javascript">
+        document.getElementById(0).addEventListener("click", function() {
+          nc.articleView(0)
+        });
+        </script>
         <hr>
         <div id=1 class="container"></div>
         <hr>
@@ -44,7 +55,4 @@
       <img src="../poweredbyguardianBLACK.png" alt="Guardian Logo">
     </a>
   </div>
-  <script src="../api-key.js"></script>
-  <script src="../models/data.js"></script>
-  <script src="../news.js"></script>
 </html>

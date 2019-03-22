@@ -5,5 +5,5 @@ var assert = {
     } else {
       console.log("Test passed: " + assertionToCheck);
     }
-  };
+  }
 };
