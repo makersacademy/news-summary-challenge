@@ -5,7 +5,7 @@
   }
 
   NewsListView.prototype.toHTML = function() {
-    return '<p><img class="" src="images/brexit.jpeg"></p><h1 class="headline">Brexit Cancelled</h1>';
+    return '<div class="newItem"><p><img class="" src="images/brexit.jpeg"></p><h1 class="headline">Brexit Cancelled</h1></div>';
   }
 
   context.NewsListView = NewsListView;
