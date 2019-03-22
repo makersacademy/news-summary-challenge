@@ -9,4 +9,4 @@ var newsItem = new NewsItem(headline,article,image_url);
 var newsItemList = new NewsItemList();
 newsItemList.addItem(newsItem);
 newsController.renderNewsToHTML();
-assert.areEqual(newsDiv.innerHTML, '<h1 class="headline">' + headline + '</h1><p><img class="" src="' + image_url + '"></p><p class="detail">' + article + '</p>');
+assert.areEqual(newsDiv.innerHTML, '<p><img class="" src="' + newsItem._image_url + '"></p><h1 class="headline">' + headline + '</h1>');
