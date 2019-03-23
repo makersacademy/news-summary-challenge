@@ -1,0 +1,25 @@
+client:Actor
+controller:Controller[a]
+models:Model[a]
+views:View[a]
+API:REST API[a]
+
+client:controller.initial list Request
+controller:models.request Data
+models:API.request Data (politic)
+models:return Data
+controller:return Data
+controller:formulate Output (newslist)=views.send Data from Model
+controller:client.Respond
+
+client:controller.specific list Request
+controller:return Data=models.request Data
+models:API.request Data (parameter)
+models:return Data
+controller:formulate Output (newslist)=views.send Data from Model
+controller:client.Respond
+
+client:controller.specific news Request
+controller:return news Data=models.request news Data
+controller:formulate Output (news)=views.send Data from Model
+controller:client.Respond

@@ -1,0 +1,35 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "* Challenge time: rest of the day and weekend, until Monday 9am. * Feel free to use Google, your notes, books, etc. but work on your own. * If you refer to the solution of another coach or student, please put a link to that in your README. * If you have a partial solution, **still check in a partial solution** and send in a pull request. * You must submit a pull request to this repo with your code by 9am Monday morning.",
+  "main": "index.js",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "jasmine-node": "^2.0.1",
+    "sinon": "^7.2.2",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "eslint": "^5.12.0",
+    "istanbul": "^0.4.5",
+    "jasmine-ajax": "^3.4.0",
+    "jscoverage": "^0.6.0",
+    "nodeunit": "^0.11.3"
+  },
+  "scripts": {
+    "test": "istanbul cover jasmine",
+    "report-coverage": "nyc --reporter=text-lcov jasmine | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EllyChanx/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "Elly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EllyChanx/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/EllyChanx/news-summary-challenge#readme"
+}
