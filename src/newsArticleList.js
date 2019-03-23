@@ -2,7 +2,6 @@
 (function(exports) {
     function NewsArticleList() {
         this.articles = []
-        console.log("articles " + this.articles)
         this.getData()
     }
     NewsArticleList.prototype.getData = function() {
@@ -13,7 +12,6 @@
             return response.json();
         })
         .then(function(data) {
-            console.log(data.response.results[0].webTitle)
             //TO DO: create newsArticle instances from results and put in articles array
         })
         .catch(function(error) {
