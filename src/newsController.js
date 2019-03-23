@@ -10,6 +10,7 @@
   }
 
   NewsController.prototype.renderNewsToHTML = function() {
+    console.log('LIST: ' + this._newsListView.getList().getItems());
     document.getElementById('app').innerHTML = this._newsListView.toHTML();
   }
 

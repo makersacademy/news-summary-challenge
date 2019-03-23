@@ -27,6 +27,15 @@ var assert = {
     } else {
       console.log('FAIL: "' + needle + '" is not present in "' + haystack + '"');
     }
-  }
+  },
+
+  arrayIncludes: function(haystack, needle) {
+    if (haystack.includes(needle)) {
+    console.log(`PASS: ${needle} is inside ${haystack}`)
+    } else {
+      console.log(`FAIL: ${needle} is not present in ${haystack}. This is a fail.`)
+    }
+
+   }
 
 }

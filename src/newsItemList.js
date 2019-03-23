@@ -8,5 +8,9 @@
     this._newsItems.push(newsItem);
   }
 
+  NewsItemList.prototype.getItems = function() {
+    return this._newsItems;
+  }
+
   context.NewsItemList = NewsItemList;
 })(this);

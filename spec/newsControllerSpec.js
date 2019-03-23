@@ -1,12 +1,8 @@
 // test a headline displays on homepage
 var newsDiv = document.getElementById('app');
-var newsController = new NewsController();
-
-var headline = 'Brexit Cancelled';
-var article = 'Theresa May has given-up. Rejoice!';
-var image_url = 'images/brexit.jpeg';
-var newsItem = new NewsItem(headline,article,image_url);
+var newsItem = new NewsItem('Brexit Cancelled', 'Theresa May has given-up. Rejoice!', 'images/brexit.jpeg');
 var newsItemList = new NewsItemList();
+var newsController = new NewsController(newsItemList);
 newsItemList.addItem(newsItem);
 newsController.renderNewsToHTML();
-assert.areEqual(newsDiv.innerHTML, '<div class="newItem"><p><img class="" src="' + newsItem._image_url + '"></p><h1 class="headline">' + headline + '</h1></div>');
+assert.areEqual(newsDiv.innerHTML, '<div class="newsItem"><p><img class="" src="images/brexit.jpeg"></p><h1 class="headline">Brexit Cancelled</h1></div>');

@@ -10,5 +10,13 @@
     return 'Theresa May has given-up. Rejoice!';
   }
 
+  NewsItem.prototype.headline = function() {
+    return 'Brexit Cancelled';
+  }
+
+  NewsItem.prototype.image_url = function() {
+    return 'images/brexit.jpeg';
+  }
+
   context.NewsItem = NewsItem;
 })(this);
