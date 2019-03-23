@@ -2,7 +2,6 @@
 
   function NewsListView(newsItemList) {
     this._newsItemList = newsItemList;
-    console.log('THE LIST IN THE NLV: ' + this._newsItemList);
   }
 
   NewsListView.prototype.getList = function() {
