@@ -14,7 +14,7 @@
     var newsHTML = '';
     
     this._newsItemList.getItems().forEach(item => {
-      newsHTML += '<div class="newsItem"><p><img class="" src="' + item.image_url() + '"></p><h1 class="headline">' + item.headline() + '</h1></div>';
+      newsHTML += '<div class="newsItem"><a href="#newsItem/' + item.id() + '"><img class="" src="' + item.image_url() + '"><h1 class="headline">' + item.headline() + '</h1></a></div>';
     });
 
     return newsHTML;

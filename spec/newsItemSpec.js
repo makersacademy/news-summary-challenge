@@ -11,3 +11,8 @@ assert.areEqual(newsItem.image_url(), image_url);
 
 // test .headline() returns its headline
 assert.areEqual(newsItem.headline(), headline);
+
+// ids are all unique
+aSeconNewsItem = new NewsItem('Headline', 'Article', 'Image');
+assert.isTypeOf(newsItem.id(), 'number');
+assert.areNotEqual(newsItem.id(), aSeconNewsItem.id());

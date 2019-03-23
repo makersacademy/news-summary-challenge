@@ -30,12 +30,28 @@ var assert = {
   },
 
   arrayIncludes: function(haystack, needle) {
-    if (haystack.includes(needle)) {
-    console.log(`PASS: ${needle} is inside ${haystack}`)
+    if(haystack.includes(needle)) {
+    console.log(`PASS: ${needle} is inside ${haystack}`);
     } else {
-      console.log(`FAIL: ${needle} is not present in ${haystack}. This is a fail.`)
+      console.log(`FAIL: ${needle} is not present in ${haystack}. This is a fail.`);
     }
 
-   }
+  },
+
+  isTypeOf: function(variableToCheck, typeExpected) {
+    if(typeof variableToCheck === typeExpected) {
+      console.log(`PASS: ${variableToCheck} is a ${typeExpected}`);
+    } else {
+      console.log(`FAIL: ${variableToCheck} is not a ${typeExpected}`);
+    }
+  },
+
+  areNotEqual: function(firstThing, secondThing) {
+    if(firstThing != secondThing) {
+      console.log(`PASS: ${firstThing} is not equal to ${secondThing}`);
+    } else {
+      console.log(`FAIL: ${firstThing} is equal to ${secondThing}`);
+    }
+  }
 
 }
