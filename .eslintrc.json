@@ -1,0 +1,8 @@
+{
+  "extends": "standard",
+  "globals": {
+      "describe": "readable",
+      "it": "readable",
+      "expect": "readable"
+  }
+}
