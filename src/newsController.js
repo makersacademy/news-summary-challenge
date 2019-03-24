@@ -13,6 +13,10 @@
     document.getElementById('app').innerHTML = this._newsListView.toHTML();
   }
 
+  NewsController.prototype.renderSingleNewsItemView = function(newsItemView) {
+    document.getElementById('app').innerHTML = newsItemView.toHTML();
+  }
+
   context.NewsController = NewsController;
 
 })(this);
