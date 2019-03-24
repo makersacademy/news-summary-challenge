@@ -17,7 +17,3 @@
 
   this.SingleHeadListView = SingleHeadListView ;
 })(this);
-
-singleHeadListView = new SingleHeadListView();
-
-singleHeadListView.showTheArticleSummary();

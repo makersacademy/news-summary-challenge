@@ -1,6 +1,5 @@
 (function(exports){
-  function HeadLineList(HeadLine){
-    this.HeadLine = HeadLine ;
+  function HeadLineList(){
     this.headLines = [] ;
   }
 
@@ -25,5 +24,4 @@
   this.HeadLineList = HeadLineList ;
 })(this);
 
- var headLineList = new HeadLineList(HeadLine)
- headLineList.getThePoliticalResultsFromGuardianAPI();
+ 
