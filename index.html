@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The News</title>
+    <style>
+      body {font-family: verdana;}
+      li {padding: 15px;}
+      ul {list-style-type: none;}
+      img {width: 170px; height: 100px;}
+    </style>
+  </head>
+  <body>
+    <h1>News Headlines</h1>
+    <ul></ul>
+    <script src="src/article.js"></script>
+    <script src="src/article-list.js"></script>
+    <script src="src/article-list-view.js"></script>
+    <script src="src/summarized-article-view.js"></script>
+    <script src="src/controller.js"></script>
+    <script>
+      var newsController = new NewsController();
+      newsController.render()
+      newsController.makeUrlChangeShowArticleForCurrentPage()
+    </script>
+  </body>
+</html>
