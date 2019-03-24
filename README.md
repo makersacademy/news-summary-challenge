@@ -70,6 +70,7 @@ To make my news reading more fun
   - Worked around this by signing up for my own API key and using the Guardian API directly.
   - Not being able to use the Makers API, but still wanting to manage complexity, I am using my own API key directly in the frontend. Ideally, I would use dotenv and load credentials from a .env file, but that complicates development and testing.
 - Populating storiesArray via HTTP requests with `XMLHttpRequest.onreadystatechange`, noticed it was doing it twice. Realised that get triggered twice since it fires on *any* ready-state change. Using `onload` to be more specific
+- Async issue? HeadlinesView.renderHTML doesn't have access to the populated array...
 
 ## Resources
 
