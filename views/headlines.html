@@ -13,41 +13,18 @@
     <script type="text/javascript">
       var nc = new NewsController
       nc.refreshNewsData()
+      nc.pageAddEventListener()
     </script>
     <script type="text/javascript">
 
     </script>
   </head>
+  <body>
+  <div id="home-button"><a href="#home">Home</a></div>
+
   <h1 id="header" class="container">Today's headlines:</h1>
     <div id="summary" class="container">
-      <ul>
-        <hr>
-        <div id=0 class="container"></div>
-        <script type="text/javascript">
-        document.getElementById(0).addEventListener("click", function() {
-          nc.articleView(0)
-        });
-        </script>
-        <hr>
-        <div id=1 class="container"></div>
-        <hr>
-        <div id=2 class="container"></div>
-        <hr>
-        <div id=3 class="container"></div>
-        <hr>
-        <div id=4 class="container"></div>
-        <hr>
-        <div id=5 class="container"></div>
-        <hr>
-        <div id=6 class="container"></div>
-        <hr>
-        <div id=7 class="container"></div>
-        <hr>
-        <div id=8 class="container"></div>
-        <hr>
-        <div id=9 class="container"></div>
-        <hr>
-      </ul>
+
     </div>
   </body>
   <div class="guardian-logo-and-link">
