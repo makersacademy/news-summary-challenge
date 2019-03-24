@@ -10,6 +10,8 @@
   }
 
   NewsController.prototype.renderNewsToHTML = function() {
+    console.log('controller is calling for api items...');
+    this._newsItemList.getNewsItemsFromAPI();
     document.getElementById('app').innerHTML = this._newsListView.toHTML();
   }
 
