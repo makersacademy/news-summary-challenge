@@ -2,10 +2,9 @@
 'use strict';
 window.addEventListener('load', function(){
     var news = new NewsArticleList()
-
     setTimeout(function() {
         var controller = new NewsController(news)
         controller.renderPage()
-    }, 100)
+    }, 11000)
 
 })

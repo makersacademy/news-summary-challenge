@@ -1,5 +1,6 @@
 var NewsArticleDouble = function(title){
     this.title = title
+    this.image = "https://pbs.twimg.com/profile_images/1061915596328263680/EcBjYl5z_400x400.jpg"
 }
 var NewsArticlesListDouble = function() {
     var articles = []
@@ -19,8 +20,12 @@ describe('NewsController', function(){
         articlesList = new NewsArticlesListDouble
         controller = new NewsController(articlesList)
         controller.renderPage()
-        html = "<p>Gibraltar v Republic of Ireland: Euro 2020 qualifier – live!</p>" +
-            "<p>Brexit march: '1 million' rally for people's vote - live updates</p>"
+        html = "<p>" + 
+            "<img src=\"https://pbs.twimg.com/profile_images/1061915596328263680/EcBjYl5z_400x400.jpg\" style=\"width:48px;height:48px;\">" +
+            "Gibraltar v Republic of Ireland: Euro 2020 qualifier – live!</p>" +
+            "<p>" + 
+            "<img src=\"https://pbs.twimg.com/profile_images/1061915596328263680/EcBjYl5z_400x400.jpg\" style=\"width:48px;height:48px;\">" +
+            "Brexit march: '1 million' rally for people's vote - live updates</p>"
         assert.isEqual(document.getElementById("app").innerHTML, html)
     })
 })
