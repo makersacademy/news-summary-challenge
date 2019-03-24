@@ -3,28 +3,41 @@ class NewsList {
     this.newsArray = [];
   }
 }
-  getNewsList() {
-    var date = this.formatDate();
-    var numberOfNews = 0;
-    var request = new XMLHttpRequest();
-    var urlAPI = 'https://content.guardianapis.com/search?api-key=9ffe918e-97c6-466d-949e-c4f06d7079df'
-    
-    request.open('GET', urlAPI, true)
-    request.onload = function() {
-      var result = JSON.parse(this.response)
-    numberOfNews = data.response.results.length
-    this.newsArray.push(data.response.results)
-   }
-    request.send()
-    return numberOfNews ;
-  };
-
-  formatDate() {
-    var currentDate = new Date();
-    var date = currentDate.getDate();
-    var month = currentDate.getMonth();
-    var year = currentDate.getFullYear();
-    var dateString = year + "-" + "0" + (month + 1) + "-" + date;
-    return dateString;
+  add(title, url, pic) {
+    this.newsArray.push(new News(title, url, pic));
   }
+  displayArticles () {
+    let div = document.createElement('div')
+    for (var i=0; i<this.articles.length; i++) {
+      div.appendChild(this.displayArticle(this.articles[i]))
+    }
+    return div
+  }
+
+  displayArticle(article) {
+    let newsDiv = document.createElement('div')
+    newsDiv.setAttribute("style", "margin-bottom: 3em")
+    let title = document.createElement('p')
+    let url = document.createElement('a')
+    let pic = document.createElement('img')
+
+    pic.setAttribute("src", news.pic)
+    newsDiv.appendChild(pic)
+
+    title.innerText = news.title
+    newsDiv.appendChild(title)
+
+    url.setAttribute("href", news.url)
+    url.innerText = "Read the article on the Guardian website"
+    newsDiv.appendChild(url)
+
+    newsDiv.addEventListener('click', function() {
+      var event = new CustomEvent('clicked_event', { detail: news } );
+      document.dispatchEvent(event);
+    })
+
+    return newsDiv
+  }
+
+
 }

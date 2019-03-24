@@ -1,7 +1,8 @@
 describe("News List", () => {
-  it('displays a list of news', () => {
-    let list1 = new NewsList
-    let result = list1.getNewsList()
-    expect(list1.newsArray.length).toEqual(result)
+  it('can add articles to the list of news', () => {
+    let list = new NewsList
+    list.add('First title', 'First url', 'First pic')
+    list.add('Second title', 'Second url', 'Second pic')
+    expect(list.newsArray.length).toEqual(2)
   })
 });
