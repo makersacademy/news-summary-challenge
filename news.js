@@ -2,32 +2,28 @@ function NewsController() {
   this.apiCall = new GetAPIData()
   this.newsData;
   // need to insert callback to controller
-  this.insertNewsIntoPage = function(newsJSON) {
+  this.callbackFunction = function(newsJSON) {
     // return news
-    this.newsData = newsJSON
+    this.newsData = newsJSON.response.results
     this.showNewsSummary()
     console.log(this.newsData);
   }
 }
 
 NewsController.prototype.refreshNewsData = function() {
-  this.apiCall.makeRequest(this.insertNewsIntoPage.bind(this))
+  this.apiCall.makeRequest(this.callbackFunction.bind(this))
 }
 
 NewsController.prototype.showNewsSummary = function() {
   document.getElementById("home-button").innerHTML = "<a href='#home'>Home</a>"
   document.getElementById("header").innerHTML = "Today's headlines: "
-  document.getElementById("summary").innerHTML = "<ul><hr><div id=0 class='container'></div><hr><div id=1 class='container'></div><hr><div id=2 class='container'></div><hr><div id=3 class='container'></div><hr><div id=4 class='container'></div><hr><div id=5 class='container'></div><hr><div id=6 class='container'></div><hr><div id=7 class='container'></div><hr><div id=8 class='container'></div><hr><div id=9 class='container'></div><hr></ul>"
-  for (i=0; i<this.newsData.response.results.length; i++) {
-    document.getElementById(i).innerHTML = "<a href='#" + i + "'>" + this.newsData.response.results[i].webTitle + "</a><br><img src=" + this.newsData.response.results[i].fields.thumbnail + ">"
-  }
+  document.getElementById("summary").innerHTML = generateSummaryString(this.newsData)
 }
 
-NewsController.prototype.articleView = function(artileId) {
+NewsController.prototype.articleView = function(articleId) {
   document.getElementById("home-button").innerHTML = "<a href='#home'>< Back to headlines</a>"
-  document.getElementById("header").innerHTML = this.newsData.response.results[artileId].webTitle + "<br><img src=" + this.newsData.response.results[artileId].fields.thumbnail + ">";
-   previewString = this.newsData.response.results[artileId].fields.trailText + "<br><br>" + this.newsData.response.results[artileId].fields.body.substring(0,this.newsData.response.results[artileId].fields.body.indexOf("</p>")) + "...<br><br>See the full article on <a href='" + this.newsData.response.results[artileId].webUrl + "'>The Guardian</a>";
-   document.getElementById("summary").innerHTML = previewString
+  document.getElementById("header").innerHTML = getArticleHeader(this.newsData,articleId)
+  document.getElementById("summary").innerHTML = getArticleSummary(this.newsData,articleId)
 }
 
 NewsController.prototype.pageAddEventListener = function() {
@@ -45,8 +41,4 @@ NewsController.prototype.showPage = function(article) {
 
 NewsController.prototype.changePagePath = function() {
   this.showPage(getPathFromURL(window.location));
-}
-
-getPathFromURL = function(location) {
-  return location.hash.split("#")[1];
 }
