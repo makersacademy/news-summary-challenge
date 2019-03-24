@@ -1,3 +1,4 @@
+console.log('newsControllerSpec.js...');
 // test a headline displays on homepage
 var newsDiv = document.getElementById('app');
 var newsItem = new NewsItem('Brexit Cancelled', 'Theresa May has given-up. Rejoice!', 'images/brexit.jpeg');

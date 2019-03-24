@@ -1,3 +1,5 @@
+console.log('newsListViewSpec.js...');
+
 var newsItemList = new NewsItemList();
 var newsItem = new NewsItem('Brexit Cancelled', 'Theresa May has given-up. Rejoice!', 'images/brexit.jpeg');
 newsItemList.addItem(newsItem);

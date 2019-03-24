@@ -1,3 +1,5 @@
+console.log('newsItemSpec.js...');
+
 var headline = 'Brexit Cancelled';
 var article = 'Theresa May has given-up. Rejoice!';
 var image_url = 'images/brexit.jpeg';

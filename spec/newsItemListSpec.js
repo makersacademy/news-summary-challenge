@@ -1,3 +1,5 @@
+console.log('newsListSpec.js...');
+
 // test a newsitem can be added to a newitemlist
 var headline = 'Brexit Cancelled';
 var article = 'Theresa May has given-up. Rejoice!';
