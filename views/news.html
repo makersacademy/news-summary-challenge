@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <title></title>
+    <script src="../api-key.js"></script>
+    <script src="../models/data.js"></script>
+    <script src="../controller-helper-methods.js"></script>
+    <script src="../newsController.js"></script>
+    <script src="../spec/assert.js"></script>
+    <script src="../spec/news-controller-spec.js"></script>
+    <script type="text/javascript">
+      var nc = new NewsController
+      nc.refreshNewsData()
+      nc.pageAddEventListener()
+    </script>
+    <script type="text/javascript">
+
+    </script>
+  </head>
+  <body>
+    <br>
+  <div id="home-button"><a href="#home">Home</a></div>
+
+
+  <h1 id="header" class="container">Today's headlines:</h1>
+    <div id="summary" class="container">
+
+    </div>
+  </body>
+  <div class="guardian-logo-and-link">
+    <a href="https://www.theguardian.com/uk">
+      <img src="../poweredbyguardianBLACK.png" alt="Guardian Logo">
+    </a>
+  </div>
+</html>

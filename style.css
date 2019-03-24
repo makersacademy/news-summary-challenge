@@ -1,0 +1,25 @@
+h1 {
+  text-align: center;
+}
+
+div {
+  text-align: center;
+  font-weight: bold;
+}
+
+div[id="home-button"] {
+  text-align: left;
+  font-weight: bold;
+  padding-left: 10%;
+}
+
+div {
+  padding-top: 1%;
+  padding-right: 1%;
+  padding-bottom: 4%;
+  padding-left: 1%;
+}
+
+img {
+
+}
