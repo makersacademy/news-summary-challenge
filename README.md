@@ -62,10 +62,17 @@ To make my news reading more fun
 
 ## An Initial Feature
 
-- On loading, the app should show the headlines, each with a picture
+- On loading, the app should show the headlines
 
 ## Issues
 
 - Attempting to make a request via the Makers News Summary API, I just get "Invalid authentication credentials". Perhaps the API that it is using is indeed invalid or expired?
   - Worked around this by signing up for my own API key and using the Guardian API directly.
-  - [dotenv](https://www.npmjs.com/package/dotenv) loads environment variables (i.e. my API key) from a .env file into process.env
+  - Not being able to use the Makers API, but still wanting to manage complexity, I am using my own API key directly in the frontend. Ideally, I would use dotenv and load credentials from a .env file, but that complicates development and testing.
+- Populating storiesArray via HTTP requests with `XMLHttpRequest.onreadystatechange`, noticed it was doing it twice. Realised that get triggered twice since it fires on *any* ready-state change. Using `onload` to be more specific
+
+## Resources
+
+- [Making HTTP requests](https://medium.freecodecamp.org/here-is-the-most-popular-ways-to-make-an-http-request-in-javascript-954ce8c95aaa)
+- [More about HTTP requests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- [Making sure StoryModel parameters are correctly assigned](http://2ality.com/2011/11/keyword-parameters.html)

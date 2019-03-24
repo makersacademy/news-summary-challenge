@@ -3,16 +3,26 @@ function TestStoryModel() {
 }
 
 TestStoryModel.prototype = {
-  canBeInstantiated: function () {
-    console.log("Tests that a StoryModel object can be instantiated");
+  canBeInstantiated: function() {
+    console.log("StoryModel object can be instantiated");
 
     let newStory = new StoryModel();
-  }
+    assert.isTrue(newStory instanceof StoryModel);
+  },
+
+  returnsStoryHeadline: function() {
+    console.log("StoryModel can return its headline");
+    let testHeadline = "StoryModel can return its headline!";
+    let newStory = new StoryModel({headline: testHeadline});
+
+    assert.isTrue(newStory.getHeadline() === testHeadline);
+  },
 };
 
 let testingStoryModel = new TestStoryModel();
 
 testingStoryModel.canBeInstantiated();
+testingStoryModel.returnsStoryHeadline();
 
 
 // Code is in a file called note-model.js.
