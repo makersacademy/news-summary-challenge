@@ -5,6 +5,7 @@ window.addEventListener('load', function(){
     setTimeout(function() {
         var controller = new NewsController(news)
         controller.renderPage()
+        controller.listen()
     }, 11000)
 
 })
