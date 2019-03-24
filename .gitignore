@@ -1,0 +1,5 @@
+testing.js
+node_modules
+.vscode/settings.json
+*.env
+.DS_Store
