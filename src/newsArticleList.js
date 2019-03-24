@@ -6,8 +6,8 @@
     }
     NewsArticleList.prototype.getData = function() {
         var self = this
-        // TO DO: make key secret
-        var url = "http://content.guardianapis.com/search?from-date=2019-03-23&api-key=686720e5-a46f-4832-b6be-e456aa0e4805"
+        var url = "http://content.guardianapis.com/search?from-date=2019-03-23&api-key=" +
+                    GUARDIAN_API_KEY
         fetch(url) 
         .then(function(response) {
             return response.json();
