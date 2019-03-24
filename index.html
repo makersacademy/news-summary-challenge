@@ -5,6 +5,21 @@
     <title></title>
   </head>
   <body>
-    
+    <div id = "app"></div>
+    <script src = './src/news-headline.js'></script>
+    <script src = './src/news-headlines-list.js'></script>
+    <script src = './src/news-headlines-list-view.js'></script>
+    <script>
+    var list = new NewsHeadlinesList(NewsHeadline);
+    async function getResponseFromApi(){
+      let promise = new Promise(function(resolve, reject){
+        setTimeout(() => resolve(true), 100)
+      });
+      let result = await promise;
+      var listView = new NewsHeadlinesListView(list);
+      document.getElementById("app").innerHTML = listView.view();
+    }
+    getResponseFromApi();
+    </script>
   </body>
 </html>

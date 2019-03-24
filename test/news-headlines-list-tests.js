@@ -7,23 +7,34 @@
       this.apiUrl = apiUrl;
     }
 
+  NewsHeadlinesList.prototype.fetchData = function(){
+    var self = this
+    fetch('headlines.json')
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(headlinesData){
+        headlinesData.response.results.forEach(function(headline){
+          self.headlines.push(new self.newsHeadlineFunction(self.id, headline.webTitle, headline.apiUrl))
+          self.id += 1
+          })
+    });
+}
+
   function testThatNewsHeadlinesIsObtainedAndStoredInNewsHeadlinesList(){
 
-    var responseData;
-    var aReq = new XMLHttpRequest();
-    aReq.addEventListener("load", function(){
-      responseData = aReq.responseText;
-      var headlinesData = JSON.parse(responseData)
       var headlinesList = new NewsHeadlinesList(NewsHeadlineDouble)
-      headlinesData.response.results.forEach(function(headline){
-        headlinesList.storeHeadline(headline.webTitle, headline.apiUrl)
-      })
-      assert.isTrue(headlinesList.getHeadlines()[0].webTitle === headlinesData.response.results[0].webTitle)
-      assert.isTrue(headlinesList.getHeadlines()[0].id === 0)
-      assert.isTrue(headlinesList.getHeadlines().length === headlinesData.response.results.length)
-    })
-    aReq.open("GET", 'headlines.json')
-    aReq.send()
-  }
+      async function getResponseFromApi(){
+        let promise = new Promise(function(resolve, reject){
+          setTimeout(() => resolve(true), 100)
+        });
+        let result = await promise;
+        assert.isTrue(headlinesList.getHeadlines()[0].webTitle === "Ministers deny plotting to oust May as Brexit rebels head for Chequers")
+        assert.isTrue(headlinesList.getHeadlines()[0].id === 0)
+        assert.isTrue(headlinesList.getHeadlines().length === 10)
+      }
+      getResponseFromApi();
+    };
+
   testThatNewsHeadlinesIsObtainedAndStoredInNewsHeadlinesList();
 })(this);
