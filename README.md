@@ -63,3 +63,15 @@ As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
 ```
+
+## Things Left To-Do
+1. Skin it with CSS
+2. Figure-out the kinks with getting and parsing the JSON.
+3. Use above-mentioned JSON to build news objects.
+
+## Running this repo
+1. Clone it: ```git clone git@github.com:acodeguy/news-summary-challenge.git```
+2. ```cd news-summary-challenge```
+3. Install http-server via NPM: ```npm install http-server --save```
+4. Run the server: ```node node_modules/http-server/bin/http-server```
+5. Visit ```http://localhost```
