@@ -1,9 +1,11 @@
 // on load, set up the controller, get data for headlines, show headline view
 'use strict';
-window.addEventListener('onclick', function(){
-    var news = new newsArticleList()
+window.addEventListener('load', function(){
+    var news = new NewsArticleList()
 
-    var controller = new NewsController(news)
-    controller.renderPage()
+    setTimeout(function() {
+        var controller = new NewsController(news)
+        controller.renderPage()
+    }, 100)
 
 })

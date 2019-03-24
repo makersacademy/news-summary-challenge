@@ -3,7 +3,7 @@
         this.newsArticlesList = newsArticlesList
         this.headlines = new HeadlinesView(this.newsArticlesList)
     }
-    NewsController.prototype.render = function(){
+    NewsController.prototype.renderPage = function(){
         document.getElementById("app").innerHTML = this.headlines.getHTML()
     }
     exports.NewsController = NewsController

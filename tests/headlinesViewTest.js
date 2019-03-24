@@ -1,7 +1,12 @@
+var NewsArticleDouble = function(title){
+    this.title = title
+}
 var NewsArticlesListDouble = function() {
     var articles = []
-    articles.push(exampleData.response.results[0].webTitle)
-    articles.push(exampleData.response.results[1].webTitle)
+    newsDouble1 = new NewsArticleDouble(exampleData.response.results[0].webTitle)
+    newsDouble2 = new NewsArticleDouble(exampleData.response.results[1].webTitle)
+    articles.push(newsDouble1)
+    articles.push(newsDouble2)
     this.articles = articles
 }
 

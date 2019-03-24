@@ -4,7 +4,7 @@
     }
     HeadlinesView.prototype.getHTML = function () {
         return this.articles.map(function(article) {
-            return "<p>" + article + "</p>"
+            return "<p>" + article.title + "</p>"
         }).join("")
     }
     exports.HeadlinesView = HeadlinesView
