@@ -2,19 +2,19 @@ class NewsList {
   constructor() {
     this.newsArray = [];
   }
-}
+
   add(title, url, pic) {
     this.newsArray.push(new News(title, url, pic));
   }
-  displayArticles () {
+  displayArticles() {
     let div = document.createElement('div')
-    for (var i=0; i<this.articles.length; i++) {
-      div.appendChild(this.displayArticle(this.articles[i]))
+    for (var i=0; i < this.newsArray.length; i++) {
+      div.appendChild(this.displayArticle(this.newsArray[i]))
     }
     return div
   }
 
-  displayArticle(article) {
+  displayArticle(news) {
     let newsDiv = document.createElement('div')
     newsDiv.setAttribute("style", "margin-bottom: 3em")
     let title = document.createElement('p')
@@ -38,6 +38,4 @@ class NewsList {
 
     return newsDiv
   }
-
-
 }

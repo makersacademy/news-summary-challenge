@@ -1,4 +1,6 @@
 # News Summary challenge
+Alina Goaga's work taken as an example: https://github.com/AlinaGoaga/NewsSummary
+
 ## How to use the app
 
 - clone the repository
