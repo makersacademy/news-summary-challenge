@@ -4,8 +4,8 @@ window.addEventListener('load', function() {
     var newsListView = new NewsListView(news)
     controller = new NewsAppController(newsListView)
     controller.insertIntoApp()
+    controller.showFullTextPage()
   });
-
 });
 
 (function(exports) {
@@ -17,8 +17,18 @@ window.addEventListener('load', function() {
     insertIntoApp: function() {
       document.getElementById("app").innerHTML = this.formattedList()
     },
-    formattedList: function(newsListView) {
+    formattedList: function() {
       return this._newsListView.format()
+    },
+    showFullTextPage: function(page) {
+      var page = this.findPage()
+      var self = this
+      window.addEventListener("hashchange", function() {
+        document.getElementById("app").innerHTML = self._newsListView._list[page].body
+      })
+    },
+    findPage: function() {
+      return window.location.hash.split("#news/")[1];
     }
   };
 

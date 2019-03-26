@@ -8,7 +8,7 @@
     format: function() {
       var text = ""
       this._list.forEach(newsStory => {
-        text += "<li><div>" + newsStory.title + "</div></li>"
+        text += "<li><div><a href='#news/" + newsStory.id + "'>" + newsStory.title + "</a></div></li>"
       })
       return "<ul>" + text + "</ul>"
     }

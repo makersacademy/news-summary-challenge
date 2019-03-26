@@ -6,7 +6,6 @@ function NewsStoriesDouble() {
 it("formats a list of news stories", function() {
   newsStories = new NewsStoriesDouble();
   newsListView = new NewsListView(newsStories);
-  console.log(newsListView.format())
-  console.log("<ul><li><div>story1</div></li><li><div>story2</div></li></ul>")
-  assert.isEqual(newsListView.format(), "<ul><li><div>story1</div></li><li><div>story2</div></li></ul>")
-});
+  var str = "<ul><li><div><a href='#news/0'>story1</a></div></li><li><div><a href='#news/1'>story2</a></div></li></ul>"
+  assert.isEqual(newsListView.format(), str)
+})
