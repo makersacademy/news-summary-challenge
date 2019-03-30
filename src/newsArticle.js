@@ -5,20 +5,20 @@
         this.newsUrl = newsUrl
         this.summary = ""
         this.image = ""
-        this.getArticleDetails()
     }
-    NewsArticle.prototype.getArticleDetails = function (){
+    NewsArticle.prototype.getArticleDetails = async function (){
         var self = this
         var url = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=" 
                     + "https://api.aylien.com/api/v1/extract?url=" 
                     + self.newsUrl 
-        fetch(url) 
+        await fetch(url) 
         .then(function(response) {
             return response.json();
         })
         .then(function(data) { 
             self.summary = data.article
             self.image = (data.image != "") ? data.image : DEFAULT_IMAGE
+            console.log("C")
         })
         .catch(function(error) {
             console.log(error)
