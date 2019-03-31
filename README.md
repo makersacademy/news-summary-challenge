@@ -1,3 +1,41 @@
+News App
+========
+A Makers week 7 weekend challenge (details below).
+
+Instructions
+------------
+To run tests: open testRunner.html in a browser, which uses a test framework I developed while pairing with Steve Kahn during the Week 7 Notes App challenge.
+
+To run on http-server:  
+* Install node
+* Install http-server from npm
+* Run `http-server` to open index.html
+
+Note: You will need to create a `secrets.js` file at the top level as index.html contains
+`<script src="./secrets.js"></script>` which is not available on github.   The file should
+contain `var GUARDIAN_API_KEY = "<your own api key>"`
+
+Approach
+--------
+* From the user stories, I sketched a rough outline of the views and api calls that would be 
+needed.   
+* I followed a similar approach to the week's Notes App challenge, using TDD
+and the constructor/prototype pattern to build 'classes' for a NewsArticle and NewsArticleList.
+* I read the documentation for the Guardian and Aylien APIs.
+* I read about how to call APIs and decided to use `fetch`.
+* I used a personal key for Guardian as I got an authorisation error when using the Makers API.  
+However I was successful in using the Makers API for Aylien.
+* I used console.log frequently to get visibility of the data and order of completion of async functions.   As a result, I used timeouts to ensure that api calls had completed before other dependent functions ran.
+* Because of the requirement to see a picture with the headlines, I decided to get all the data for each news article from Aylien before showing the headlines view.   This means there is a bit of a wait to see that view, but there is then no need for an API call when clicking on a headline to view the full article.
+* I found that Aylien did not always return an image so I coded a default image to use when the API did not return one.
+
+If had more time I would....
+----------------------------
+* Add a back button on the single article view to return to the headlines view.
+* Add html and css to add headings and styling.
+* Look at the final 2 user stories (animation and browsing on a phone)
+
+---------------------------------------------------------------------------------------------
 # News Summary challenge
 
 * Challenge time: rest of the day and weekend, until Monday 9am.
