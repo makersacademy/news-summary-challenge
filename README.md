@@ -63,3 +63,22 @@ var config = {
 ```
 
 * The Makers summary API has a limit on requests. We wished for our text to still be populated and therefore needed to add text which did not send a request to the API. We have commented out our working function and replaced it with 'lorem ipsum' generated text.  
+
+#### screenshots of final product
+
+##### Homepage
+![Homepage](public/images/Homepage.png)
+
+##### 2 by 2 card loop styling
+![2by2](public/images/2by2cards.png)
+
+#### Run the program
+
+To run this you need to:
+
+- Clone the repo
+- Run 'node node_modules/http-server/bin/http-server'
+- Run the suggested link in your terminal such as:
+  - Available on:
+    - http://127.0.0.1:8080
+    - http://192.168.1.227:8080
