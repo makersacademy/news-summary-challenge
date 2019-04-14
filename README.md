@@ -46,11 +46,19 @@ To make my news reading more fun
 
 ### Individual story
 
+<<<<<<< HEAD
 ![Mockup of individual story](public/images/individual-story.png)
 
 ### Main page
 
 ![Mockup of webpage](public/images/full-page.png)
+=======
+![Mockup of individual story](./images/individual-story.png)
+
+### Main page
+
+![Mockup of webpage](./images/full-page.png)
+>>>>>>> 5d76f8e8fef76ce190884d421f936c30d2db43ad
 
 ### Additional notes
 
