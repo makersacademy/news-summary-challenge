@@ -77,4 +77,4 @@ Note how the `apiRequestUrl` parameter value is just the request you would have 
 ## My diagram
 
 At the beginning of the project, I used this diagram to help me plan my flow.
-![](https://github.com/clarepins/news-summary-challenge/edit/master/news_app_diagram.JPG)
+![](https://github.com/clarepins/news-summary-challenge/blob/master/news_app_diagram.JPG)
