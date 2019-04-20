@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/micosmin/news-summary-challenge#readme",
   "devDependencies": {
+    "eslint": "^5.16.0",
     "http-server": "^0.11.1"
   }
 }

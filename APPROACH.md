@@ -198,6 +198,70 @@ let Home = {
 };
 ```
 
+## Build testing framework
+
+I have used the following approach:
+
+[Hackernoon article](https://hackernoon.com/learn-assert-by-building-a-javascript-testing-library-370b34634182)
+
+### Steps
+
+1. Creates testing-framework.js file
+
+> Discussion: a testing framework is a collection of functions which take callback functions as their parameters and usually a text to identify the test
+
+2. Build describe, it and expect functions
+
+- **describe** takes 2 parameters (string and function)
+- **it** takes 2 parameters (string and function)
+- **expect** takes 1 parameter and return several functions, which are our usual **matchers** (toEqual, toBe, toBeTruthy..etc). I only have a toEqual matcher. Will add more if necessary.
+
+3. The article suggests to use the built in library assert, however i have built my own assert object which I'm using in this test framework
+
+4. Implement an error handling in the **it function**. This will represent the output of my tests. If there is no error i get a success message, If there is an error, it is caught and i can use it in my Fail message.
+
+5. The assert object's toEqual method will throw an error if the comparison between the actual and expected values returns false. This is needed in the it function
+
+6. Testing framework exports describe, it and expect. These are imported in the testing file
+
+**EXTRA: Implement colors in your terminal**
+
+[Link to colorful text in terminal page](https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script)
+
+```js
+You can print colorful text to command when run nodejs application.
+
+console.log('\x1b[36m%s\x1b[0m', info);  //cyan
+console.log('\x1b[33m%s\x1b[0m: ', path);  //yellow
+Here is reference of colors and other characters:
+
+Reset = "\x1b[0m"
+Bright = "\x1b[1m"
+Dim = "\x1b[2m"
+Underscore = "\x1b[4m"
+Blink = "\x1b[5m"
+Reverse = "\x1b[7m"
+Hidden = "\x1b[8m"
+
+FgBlack = "\x1b[30m"
+FgRed = "\x1b[31m"
+FgGreen = "\x1b[32m"
+FgYellow = "\x1b[33m"
+FgBlue = "\x1b[34m"
+FgMagenta = "\x1b[35m"
+FgCyan = "\x1b[36m"
+FgWhite = "\x1b[37m"
+
+BgBlack = "\x1b[40m"
+BgRed = "\x1b[41m"
+BgGreen = "\x1b[42m"
+BgYellow = "\x1b[43m"
+BgBlue = "\x1b[44m"
+BgMagenta = "\x1b[45m"
+BgCyan = "\x1b[46m"
+BgWhite = "\x1b[47m"
+```
+
 ## Create Articles and Article models
 
 - This are needed in order to map data received from the api and display it on page

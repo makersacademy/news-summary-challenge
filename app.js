@@ -1,7 +1,8 @@
 'use strict';
 
-import { Home, ArticleShow } from './views/pages/pages.mjs';
+import { Home, ArticleShow, Error404 } from './views/pages/pages.mjs';
 import Navbar from './views/components/navbar.mjs';
+import Utils from './services/helper-methods.mjs';
 
 //Module
 const routes = {

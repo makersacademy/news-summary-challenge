@@ -16,3 +16,5 @@ const Utils = {
     return request;
   }
 };
+
+export default Utils;

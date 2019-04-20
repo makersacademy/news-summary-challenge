@@ -9,7 +9,6 @@ let Home = {
   },
   after_render: function() {
     document.getElementById('myBtn').addEventListener('click', () => {
-      console.log('Yo');
       alert('Yo');
     });
   }

@@ -1,5 +1,7 @@
 # News Summary challenge
 
+Approach detailed [here](https://github.com/micosmin/news-summary-challenge/blob/master/APPROACH.md)
+
 ## App pictures
 
 ### Headlines page
