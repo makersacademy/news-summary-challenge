@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-console */
 'use strict';
+
 var { describe, it, expect } = require('./testing-framework');
 
 describe('Testing a sum', function() {

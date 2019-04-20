@@ -224,6 +224,8 @@ I have used the following approach:
 
 6. Testing framework exports describe, it and expect. These are imported in the testing file
 
+- using the require function to import module
+
 **EXTRA: Implement colors in your terminal**
 
 [Link to colorful text in terminal page](https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script)
@@ -264,12 +266,13 @@ BgWhite = "\x1b[47m"
 
 ## Create Articles and Article models
 
-- This are needed in order to map data received from the api and display it on page
+- These are needed in order to map data received from the api and display it on page
+- Article model will have _text and image properties_ as well as a _getText_ and _getImage_ methods to retrieve the text and image
+  - create article.js model
+  - create article-test.js model
+- Articles will have a _list_ property to hold articles and a method _getArticle_ to retrieve 1 article and _getArticles_ to retrieve all articles
 
-- Article model will have text and image properties as well as a getData function to retrieve the text and image
-- Articles will have a list to hold articles and a method to retrieve 1 or all articles
-
-Rendering:
+## Rendering:
 
 - Home page will render all the articles
   - require the list of article objects
