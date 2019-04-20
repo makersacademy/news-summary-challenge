@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 'use strict';
 
-var { describe, it, expect } = require('./testing-framework');
+var { describe, it, expect } = require('../services/testing-framework');
 
 describe('Testing a sum', function() {
   it('Success: 2+5 to equal 7', function() {

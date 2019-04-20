@@ -29,6 +29,8 @@ Clicking on a headline will show a summary of the article.
 
 Single page app built with **JavaScript, CSS and HTML**  
 Using **Bootstrap** for quick styling
+Using **ESlint** for static analysis of code to check adherence to style guidelines
+Using own testing framework for TDD unit tests
 
 ### Serving your app
 

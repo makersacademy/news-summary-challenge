@@ -20,11 +20,17 @@ var assert = {
       throw `${actual} is not an instance of ${expected}`;
     }
     return true;
+  },
+  length: function(actual, expected) {
+    if (actual.length != expected) {
+      throw `The length ${actual.length} is not equal to ${expected}`;
+    }
+    return true;
   }
 };
 
 function describe(testCase, callback) {
-  console.log('\x1b[33mTest case: ' + testCase + '\x1b[0m');
+  console.log('\x1b[33mTest suite: ' + testCase + '\x1b[0m');
   callback();
 }
 
@@ -48,13 +54,10 @@ function expect(actual) {
     },
     toRespondTo(expected) {
       assert.toRespondTo(actual, expected);
+    },
+    toHaveLength(expected) {
+      assert.length(actual, expected);
     }
-    // toBeTruthy() {
-    //   assert.ok(actual);
-    // },
-    // toHaveLength(expected) {
-    //   assert.length(actual.length === expected);
-    // }
   };
 }
 

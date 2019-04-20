@@ -222,9 +222,13 @@ I have used the following approach:
 
 5. The assert object's toEqual method will throw an error if the comparison between the actual and expected values returns false. This is needed in the it function
 
-6. Testing framework exports describe, it and expect. These are imported in the testing file
+6. Testing framework exports describe, it and expect. These are imported in the testing file via the require method (testing through node needs require)
 
-- using the require function to import module
+7. [After ARTICLE class] Testing framework expanded to account for testing if an object is and instanceof a class and if it has an expected method
+
+8. [After ARTICLE LIST class] Testing framework extended to cover length of an object
+
+[How to check if an object has a method](https://stackoverflow.com/questions/47301877/check-if-method-exists-in-a-class-in-typescript?rq=1)
 
 **EXTRA: Implement colors in your terminal**
 
@@ -267,10 +271,8 @@ BgWhite = "\x1b[47m"
 ## Create Articles and Article models
 
 - These are needed in order to map data received from the api and display it on page
-- Article model will have _text and image properties_ as well as a _getText_ and _getImage_ methods to retrieve the text and image
-  - create article.js model
-  - create article-test.js model
-- Articles will have a _list_ property to hold articles and a method _getArticle_ to retrieve 1 article and _getArticles_ to retrieve all articles
+- Article model will have _text, image and id properties_ as well as a _getText_ and _getImage_ and _getId_ methods to retrieve the text and image.
+- Articles will have a _list_ property to hold articles and _, \_getArticle(id)_ to retrieve 1 article and _getArticles_ to retrieve all articles.
 
 ## Rendering:
 

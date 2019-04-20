@@ -4,7 +4,7 @@
   "description": "## App pictures",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/article-test.js & node test/article-list-test.js"
   },
   "repository": {
     "type": "git",
