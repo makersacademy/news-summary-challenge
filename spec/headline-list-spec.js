@@ -23,9 +23,32 @@
     headlineList.add(options2)
 
     assert.isTrue(
-      optionsReceived.includes(options1) && optionsReceived.includes(options2),
+      optionsReceived.includes(options1) &&
+      optionsReceived.includes(options2),
       description
     )
-  })()
+  })();
+
+  (function() {
+    var description = "HeadlineList.all returns an array of Headline objects"
+
+    function HeadlineMock(options) {
+      this.option = options.option
+    }
+
+    var headlineList = new HeadlineList(HeadlineMock)
+
+    headlineList.add({option: "First headline"})
+    headlineList.add({option: "Second headline"})
+
+    var list = headlineList.all()
+
+    assert.isTrue(
+      list[0].option === "First headline" &&
+      list[1].option === "Second headline" &&
+      list.length === 2,
+      description
+    )
+  })();
 
 })()
