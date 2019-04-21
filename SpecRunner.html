@@ -4,8 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>Hivemind's Spec Runner</title>
-        <script src="lib/hiveminds-test-framework.js"></script>
-        <script src="spec/tests.js"></script>
         <style>
             html {
                 font-family: sans-serif;
@@ -33,5 +31,16 @@
                                                                                                    
         </pre>
         <div id="results"></div>
+
+        <!-- test framework -->
+        <script src="lib/hiveminds-test-framework.js"></script>
+
+        <!-- source files -->
+        <script src="src/models/headline-model.js"></script>
+        <script src="src/models/headline-list-model.js"></script>
+
+        <!-- test files -->
+        <script src="spec/headline-spec.js"></script>
+        <script src="spec/headline-list-spec.js"></script>
     </body>
 </html>
