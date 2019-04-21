@@ -1,3 +1,15 @@
+body{
+  background-color: powderblue;
+}
 h1{
-  color: rebeccapurple;
+  color: hsl(3, 49%, 8%);
+  border: 10px solid rgb(22, 32, 34);
+  margin: 20px;
+  text-align: center;
+}
+h2{
+  color: rgb(167, 31, 126);
+}
+p {
+  color: hsl(262, 58%, 25%);
 }
