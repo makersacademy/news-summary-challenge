@@ -13,3 +13,6 @@ h2{
 p {
   color: hsl(262, 58%, 25%);
 }
+.hidden{
+  display: none;
+}
