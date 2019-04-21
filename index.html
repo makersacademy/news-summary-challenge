@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Hivemind's News Wire</title>
+    <script src="src/guardian-api-key.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      
+    </div>
+    <script>
+      var request = new XMLHttpRequest();
+      request.open('GET', `https://content.guardianapis.com/search?api-key=${guardianApiKey}`, true);
+      request.onload = function () {
+        var data = JSON.parse(this.response);
+        console.log(data);
+        data.response.results.forEach(news => {
+          console.log(news);
+        });
+      };
+      request.send();
+    </script>
+  </body>
+</html>
