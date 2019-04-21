@@ -12,7 +12,6 @@
 
     var headline = new HeadlineMock({ headline: "This is the news" })
     var view = new HeadlineView(headline)
-    console.log(view)
     assert.isTrue(
       view.getHTML() === '<div class="headline">This is the news</div>',
       description

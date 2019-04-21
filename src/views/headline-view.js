@@ -5,8 +5,11 @@
 
   HeadlineView.prototype = {
     getHTML: function () {
-      console.log(this.headline)
-      return `<div class="headline">${this.headline.getHeadline()}</div>`
+      return wrapHTML({
+        content: this.headline.getHeadline(),
+        element: "div",
+        classes: ["headline"]
+      })
     }
   }
   
