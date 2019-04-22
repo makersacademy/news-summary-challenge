@@ -8,6 +8,8 @@ To create an app that will grab all the headlines from the Guardian newspaper AP
 
 See full instructions on the original repo [here](https://github.com/makersacademy/news-summary-challenge).
 
+As the Makers API credentials were maxed out when I began work on this challenge, I requested an API key from the _Guardian_ directly and used a method devised by my esteemed colleague Paul Martin of hiding my API key. See his commit for this [here](https://github.com/Hives/news-summary-challenge/commit/0cf29a44b54ab235bbe888e574854bceec2a3050).
+
 ## Getting started
 
 `git clone https://github.com/amyj0rdan/news-summary-challenge`
