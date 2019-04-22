@@ -12,7 +12,9 @@ request.onload = function () {
 
     console.log(article.webTitle)
   })
-} 
+} else {
+  console.log('error')
+}
 
 }
 
