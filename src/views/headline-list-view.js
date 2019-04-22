@@ -6,9 +6,10 @@
 
   HeadlineListView.prototype = {
     getHTML: function () {
+      var that = this
       var headlineViews = []
       this.headlineList.all().forEach(function(headline) {
-        var view = new this.HeadlineView(headline)
+        var view = new that.HeadlineView(headline)
         headlineViews.push(view.getHTML())
       })
       return wrapHTML({
