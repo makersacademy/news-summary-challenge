@@ -9,11 +9,12 @@ class Article {
   static nextId() {
     id += 1;
   }
-  constructor(text, image) {
+  constructor(text, image, url) {
     nextId();
     this.id = id;
-    this.text = text;
+    this.text = text; //change this to title
     this.image = image;
+    this.url = url; //test this
   }
 
   getText() {
@@ -28,5 +29,5 @@ class Article {
     return this.id;
   }
 }
-module.exports = Article;
-('node test/*.js');
+// module.exports = Article;
+export default Article;

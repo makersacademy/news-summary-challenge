@@ -4,7 +4,8 @@
   "description": "## App pictures",
   "main": "app.js",
   "scripts": {
-    "test": "node test/article-test.js & node test/article-list-test.js"
+    "test": "node test/article-test.js & node test/article-list-test.js",
+    "run": "node node_modules/.bin/http-server "
   },
   "repository": {
     "type": "git",

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 class ArticleList {
   constructor() {
     this.list = [];
@@ -16,5 +17,5 @@ class ArticleList {
     return this.list;
   }
 }
-
-module.exports = ArticleList;
+// module.exports = ArticleList;
+export default ArticleList;

@@ -16,14 +16,23 @@ Approach detailed [here](https://github.com/micosmin/news-summary-challenge/blob
 
 Setup instructions
 
-```
-//commands
-```
+Clone repo:
+
+`https://github.com/micosmin/news-summary-challenge.git`
+
+Install dependencies
+`npm-install`
+
+Run local server
+`npm start`
+
+Go to to local server at port 8080:
+`127.0.0.1:8080`
 
 ## Project overview
 
-App will grab all the headlines from the Guardian newspaper API and display them on a page.  
-Clicking on a headline will show a summary of the article.
+App will grab all the headlines from the Guardian newspaper API and display them on a page with picture and link towards a summary page.  
+Clicking on the summary button will show a summary of the article on a different page #
 
 ### Technologies
 
@@ -32,10 +41,20 @@ Using **Bootstrap** for quick styling
 Using **ESlint** for static analysis of code to check adherence to style guidelines
 Using own testing framework for TDD unit tests
 
-### Serving your app
+###Serving your app
 
-App is using a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve the HTML, CSS and JavaScript files.  
+## Server
+
+Front end app is using a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve the HTML, CSS and JavaScript files.  
 Requests are sent to an API to get data from the Guardian and to summarise text.
+
+API:
+
+- Built in node.js and express
+- Hosted on Heroku
+- Frontend page makes calls to this server at a specific route
+- Server handles requests to Guardian API and authentication
+- Uses CORS policy to only allow access to the get request from one source
 
 > The API is hosted on an external server
 > Only need a static web server. That's why this type of architecture is called "serverless".
