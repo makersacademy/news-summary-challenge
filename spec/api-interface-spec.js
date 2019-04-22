@@ -17,7 +17,7 @@
 
     var apiInterface = new APIInterface(HeadlineListMock)
 
-    var headlineList = apiInterface.getHeadlines(exampleSearchResponse)
+    var headlineList = apiInterface.getHeadlines()
     var headlines = headlineList.all()
 
     assert.isTrue(

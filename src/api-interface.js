@@ -4,11 +4,11 @@
   }
 
   APIInterface.prototype = {
-    getHeadlines: function (optionalResponse) {
+    getHeadlines: function () {
       var response
-      if (typeof optionalResponse === 'undefined') {
+      if (testEnvironment) {
+        response = JSON.parse(exampleSearchResponse)
       } else {
-        response = JSON.parse(optionalResponse)
       }
       var list = new this.HeadlineListModel()
       response.response.results.forEach(function(story) {
