@@ -1,11 +1,11 @@
 (function() {
 
   (function() {
-    var description = "HeadlinesController.display gets the headlines via APIInterface, applies HeadlineListView, and displays them"
+    var description = "HeadlinesController.display basically just passes a callback through to APIInterface.getHeadlines()"
 
     function APIInterfaceMock () {
-      this.getHeadlines = function () {
-        return "the headlines"
+      this.getHeadlines = function (callback) {
+        callback("the headlines")
       }
     }
 

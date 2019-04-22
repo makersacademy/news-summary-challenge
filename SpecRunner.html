@@ -9,6 +9,7 @@
                 font-family: sans-serif;
             }
             #title {
+                font-size: 20px;
                 color: magenta;
                 font-weight: bold;
                 text-shadow: limegreen 3px 3px;
@@ -19,24 +20,40 @@
             .fail {
                 color: magenta;
             }
+            #the-testing-zone {
+              margin: 50px;
+              padding: 20px;
+              border: 2px solid magenta;
+            }
+            #app {
+              padding: 20px;
+              border: 2px solid limegreen;
+            }
         </style>
     </head>
     <body>
         <pre id="title">
-    __  ___                      _           ___          __            __                _ __     
-   / / / (_)   _____  ____ ___  (_)___  ____/ ( )_____   / /____  _____/ /_   _______  __(_) /____ 
-  / /_/ / / | / / _ \/ __ `__ \/ / __ \/ __  /|// ___/  / __/ _ \/ ___/ __/  / ___/ / / / / __/ _ \
- / __  / /| |/ /  __/ / / / / / / / / / /_/ /  (__  )  / /_/  __(__  ) /_   (__  ) /_/ / / /_/  __/
-/_/ /_/_/ |___/\___/_/ /_/ /_/_/_/ /_/\__,_/  /____/   \__/\___/____/\__/  /____/\__,_/_/\__/\___/ 
-                                                                                                   
+  ________            ______          __     _____                  
+ /_  __/ /_  ___     /_  __/__  _____/ /_   /__  /  ____  ____  ___ 
+  / / / __ \/ _ \     / / / _ \/ ___/ __/     / /  / __ \/ __ \/ _ \
+ / / / / / /  __/    / / /  __(__  ) /_      / /__/ /_/ / / / /  __/
+/_/ /_/ /_/\___/    /_/  \___/____/\__/     /____/\____/_/ /_/\___/ 
+                                                                    
         </pre>
 
         <div id="results"></div>
 
-        <div id="app"></div>
+        <div id="the-testing-zone">
+          <h2>#app:</h2>
+          <div id="app"></div>
+        </div>
 
         <!-- test framework -->
         <script src="lib/hiveminds-test-framework.js"></script>
+
+        <!-- test environment -->
+        <script> var environment = "test" </script>
+        <script src="spec/helpers/exampleGuardianApiResponse.js"></script>
 
         <!-- source files -->
         <script src="src/models/headline-model.js"></script>
@@ -46,10 +63,9 @@
         <script src="src/views/headline-list-view.js"></script>
         <script src="src/api-interface.js"></script>
         <script src="src/controllers/headlines-controller.js"></script>
+        <script src="src/app.js"></script>
 
         <!-- test files -->
-        <script> var testEnvironment = true </script>
-        <script src="spec/helpers/exampleGuardianApiResponse.js"></script>
         <script src="spec/modelSpecs/headline-model-spec.js"></script>
         <script src="spec/modelSpecs/headline-list-model-spec.js"></script>
         <script src="spec/viewSpecs/view-helpers-spec.js"></script>
@@ -57,5 +73,6 @@
         <script src="spec/viewSpecs/headline-list-view-spec.js"></script>
         <script src="spec/api-interface-spec.js"></script>
         <script src="spec/controllerSpecs/headlines-controller-spec.js"></script>
+        <script src="spec/featureSpecs/feature-spec.js"></script>
     </body>
 </html>

@@ -1,16 +1,20 @@
 (function(exports) {
   function HeadlinesController(optionalHeadlineListView, optionalAPIInterface) {
     this.HeadlineListView = optionalHeadlineListView || HeadlineListView
-    var APIInterface = optionalAPIInterface || APIInterface
-    this.apiInterface = new APIInterface()
+    var APIInterfaceConstructor = optionalAPIInterface || APIInterface
+    this.apiInterface = new APIInterfaceConstructor()
   }
 
   HeadlinesController.prototype = {
     display: function (optionalTarget) {
       var target = optionalTarget || document.getElementById('app')
-      var headlineList = this.apiInterface.getHeadlines()
-      var headlineListView = new this.HeadlineListView(headlineList)
-      target.innerHTML = headlineListView.getHTML()
+      var that = this
+
+      this.apiInterface.getHeadlines(function(headlineList) {
+        var headlineListView = new that.HeadlineListView(headlineList)
+        target.innerHTML = headlineListView.getHTML()
+      })
+
     }
   }
 

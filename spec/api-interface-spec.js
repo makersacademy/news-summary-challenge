@@ -1,6 +1,6 @@
 (function(){
   (function() {
-    var description = "APIInterface.getHeadlines() returns a HeadlineList of Guardian stories"
+    var description = "APIInterface.getHeadlines() gets stories from the API and passes them to a callback function"
 
     function HeadlineListMock () {
       this.list = []
@@ -15,14 +15,18 @@
       }
     }
 
+    function callbackMock (headlineList) {
+      var that = this
+      that.headlineList = headlineList.list
+    }
+
     var apiInterface = new APIInterface(HeadlineListMock)
 
-    var headlineList = apiInterface.getHeadlines()
-    var headlines = headlineList.all()
+    var headlineList = apiInterface.getHeadlines(callbackMock)
 
     assert.isTrue(
-      headlines[0].getHeadline() === "Sri Lanka attacks: several arrested after 207 killed at hotels and churches on Easter Sunday – live" &&
-      headlines.length === 10,
+      this.headlineList[0].getHeadline() === "Sri Lanka attacks: several arrested after 207 killed at hotels and churches on Easter Sunday – live" &&
+      this.headlineList.length === 10,
       description
     )
 

@@ -4,19 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Hivemind's News Wire</title>
-    <script src="src/guardian-api-key.js"></script>
   </head>
   <body>
     <div id="app">
       
     </div>
-     <!-- source files -->
-     <script src="src/models/headline-model.js"></script>
-     <script src="src/models/headline-list-model.js"></script>
-     <script src="src/views/view-helpers.js"></script>
-     <script src="src/views/headline-view.js"></script>
-     <script src="src/views/headline-list-view.js"></script>
-     <script src="src/controllers/headlines-controller.js"></script>
-     <script src="src/app.js"></script>
+
+    <script> var environment = "local" </script>
+    <!-- source files -->
+    <script src="src/helpers/guardian-api-key.js"></script>
+    <script src="src/models/headline-model.js"></script>
+    <script src="src/models/headline-list-model.js"></script>
+    <script src="src/views/view-helpers.js"></script>
+    <script src="src/views/headline-view.js"></script>
+    <script src="src/views/headline-list-view.js"></script>
+    <script src="src/api-interface.js"></script>
+    <script src="src/controllers/headlines-controller.js"></script>
+    <script src="src/app.js"></script>
   </body>
 </html>

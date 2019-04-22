@@ -4,17 +4,31 @@
   }
 
   APIInterface.prototype = {
-    getHeadlines: function () {
-      var response
-      if (testEnvironment) {
-        response = JSON.parse(exampleSearchResponse)
+    getHeadlines: function (callback) {
+      var request, response, that = this
+
+      if (environment === "test") {
+        this._parseResultsAndRunCallback(exampleSearchResponse, callback)
       } else {
+
+        request = new XMLHttpRequest()
+        request.open('GET', `https://content.guardianapis.com/search?section=business|education|environment|inequality|law|politics|uk-news|world&api-key=${guardianApiKey}`, true);
+
+        request.onload = function () {
+          that._parseResultsAndRunCallback(this.response, callback)
+        };
+
+        request.send();
       }
+    },
+
+    _parseResultsAndRunCallback: function(response, callback) {
       var list = new this.HeadlineListModel()
-      response.response.results.forEach(function(story) {
+      var data = JSON.parse(response)
+      data.response.results.forEach(function(story) {
         list.add({ headline: story.webTitle })
       })
-      return list
+      callback(list)
     }
   }
 
