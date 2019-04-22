@@ -669,7 +669,7 @@ Next stage:
 
 ```js
 app.use((req, res, next) => {
-  res.append('Access-Control-Allow-Origin', ['http://127.0.0.1:8080']);
+  res.append('Access-Control-Allow-Origin', '*');
   res.append('Access-Control-Allow-Methods', 'GET');
   res.append('Access-Control-Allow-Headers', 'Content-Type');
   next();
@@ -687,12 +687,19 @@ app.use((req, res, next) => {
 - As i was using node to test my objects, the export default syntax does not work with node
 - There is a conflict here which i need to resolve: either a way of working with exports for both front end and back end or do my tests in the front end
 
+## Created route on api for calling Aylien summarizer
+
+- this route receives a get request from the front end with a URL
+- the api uses the url to send a request to Aylien
+- the response is then sent back to the frontend api.mjs file, which will call a helper method to build the page that will be displayed on the summary page
+- there is a listener on app.js for changes to hashchange which will call the router when #summary/id page shows app and will render the summary page
+
 ## Next
 
-- test the api
-- update test for article as I've added new fields
+- change tests to work in the browser
+- test the 2 requests sent to my endpoints
+  - getArticles
+  - createSummary
+- update test for article object as I've added new fields
 - test my helper methods
-- check objects methods as I am not using them....
-- add a summary button to link to #articlePage
-  - this will send a request to aylien - which will be a link
-  - the request response will update the articleSummary page
+- check objects methods as I am not using them....??

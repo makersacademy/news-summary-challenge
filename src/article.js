@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 'use strict';
 
-var id = 0;
+var id = -1;
 function nextId() {
   id += 1;
 }

@@ -1,12 +1,9 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-console */
 import Utils from './helper-methods.mjs';
-
+let xhr = new XMLHttpRequest();
 let api = {
   getArticles: function() {
     let category = 'politics';
     let url = `http://localhost:5000/articles?category=${category}`;
-    let xhr = new XMLHttpRequest();
 
     xhr.open('GET', url, true);
     xhr.send();
@@ -23,10 +20,24 @@ let api = {
     };
   },
 
-  getSummary: function(articleUrl) {
-    console.log('here');
-    // let articleUrl = url;
-    console.log(articleUrl);
+  createSummary: function(articleId) {
+    // let articleLink = articleId;
+
+    let articleLink = Utils.getLink(articleId);
+
+    let url = `http://localhost:5000/summary?link=${articleLink}`;
+
+    xhr.open('GET', url, true);
+    xhr.send();
+    xhr.onload = function() {
+      if (xhr.status != 200) {
+        alert(`Error ${xhr.status}: ${xhr.statusText}`);
+      } else {
+        let summary = xhr.response;
+
+        Utils.outputSummary(articleId, summary);
+      }
+    };
   }
 };
 

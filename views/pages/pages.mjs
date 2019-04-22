@@ -1,4 +1,5 @@
 import { api } from '../../services/api.mjs';
+import Utils from '../../services/helper-methods.mjs';
 
 let Home = {
   render: function() {
@@ -6,19 +7,8 @@ let Home = {
     <h3> Head line page </h3>
     </section>
     `;
-
     api.getArticles();
-
     return view;
-  },
-  after_render: function() {
-    // console.log(document.getElementById('articles'));
-    document.getElementById('articles').addEventListener('click', event => {
-      if (event.target.id == 'summary') {
-        window.location.href = '#/summary';
-        api.getSummary();
-      }
-    });
   }
 };
 
@@ -28,9 +18,14 @@ let ArticleShow = {
     <h3> Summary </h3>
     </section>
     `;
+
+    let article = Utils.parseRequestURL();
+    api.createSummary(article.id);
+
     return view;
   }
 };
+
 let Error404 = {};
 
 export { Home, ArticleShow, Error404 };
