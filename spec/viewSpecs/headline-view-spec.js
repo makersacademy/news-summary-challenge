@@ -4,6 +4,7 @@
     var description = "HeadlineView turns a Headline object into a string of HTML"
 
     // is this a good idea??
+    // seems to work
     function HeadlineMock(options) {
       this.getHeadline = function () {
         return options.headline
