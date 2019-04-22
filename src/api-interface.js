@@ -26,7 +26,10 @@
       var list = new this.HeadlineListModel()
       var data = JSON.parse(response)
       data.response.results.forEach(function(story) {
-        list.add({ headline: story.webTitle })
+        list.add({
+          headline: story.webTitle,
+          url: story.webUrl
+        })
       })
       callback(list)
     }
