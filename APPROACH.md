@@ -703,3 +703,4 @@ app.use((req, res, next) => {
 - update test for article object as I've added new fields
 - test my helper methods
 - check objects methods as I am not using them....??
+- deploy front end on heroku
