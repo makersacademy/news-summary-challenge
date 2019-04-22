@@ -6,11 +6,11 @@ Approach detailed [here](https://github.com/micosmin/news-summary-challenge/blob
 
 ### Headlines page
 
-![placeholder]
+![Main](https://github.com/micosmin/news-summary-challenge/blob/master/images/Screenshot%202019-04-22%20at%2014.44.02.png?raw=true)
 
 ### Article summary page
 
-![placeholder]
+![Summary](https://github.com/micosmin/news-summary-challenge/blob/master/images/Screenshot%202019-04-22%20at%2014.44.55.png?raw=true)
 
 ## Installing
 
