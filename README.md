@@ -7,7 +7,7 @@ headlines from the Guardian newspaper API and displaying them on a page. Clickin
 on a page will show a summary of the article. The API is hosted on an external
 server, which makes this 'serverless architecture'.
 
-### Motivation
+## Motivation
 
 This project was created to develop my skills in HTML, CSS and front end Javascript.
 
@@ -62,11 +62,11 @@ An apple macbook was used to write code using VSCode as an editor and;
 
 I will use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve the HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
 
-#### Code style
+### Code style
 
 ESlinting will be used for styling the code, to run it, please use:
 
-- $ ./node_modules/.bin/eslint yourfile.js
+* $ ./node_modules/.bin/eslint yourfile.js
 
 #### Tests
 
@@ -90,5 +90,7 @@ Full credit given to Makers Academy who suggested the project.
 [Some guidance came from Makers Academy's rescommended resources re API](https://github.com/makersacademy/news-summary-api)
 
 [Further guidance from Makers on creating a single page app](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)
+
+[Support taken from this site])https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/)
 
 No contributions are required at this time, as this is a training exercise.
