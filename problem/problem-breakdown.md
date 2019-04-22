@@ -2,17 +2,31 @@
 
 Some of these stories will need decomposing if they seem too large.
 
+
+#### User story 1: List view
 ```
 As a busy politician,
 so I know what the big stories of the day are
 I want to see all of today's headlines in one place.
 ```
 
+- Articles list model
+- Articles list view
+- 
+
+------
+
+#### User story 2: Article view
 ```
 As a busy politician,
 so that I can get an in depth understanding of a very important story,
 I want to be able to click a link to see the original news article.
 ```
+
+- Article model and view
+- Single page routing
+
+------
 
 ```
 As a busy politician,

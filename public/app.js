@@ -15,7 +15,7 @@ console.log("Welcome from app.js")
 
 var request = new XMLHttpRequest()
 
-var apiKey = "Replace with api key from .env"
+var apiKey = "Replace with api key in .env"
 request.open('GET', `https://content.guardianapis.com/search?q=cycling&api-key=${apiKey}`, true)
 
 request.onload = function() {
