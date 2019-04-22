@@ -8,6 +8,18 @@ To create an app that will grab all the headlines from the Guardian newspaper AP
 
 See full instructions on the original repo [here](https://github.com/makersacademy/news-summary-challenge).
 
+## Getting started
+
+`git clone https://github.com/amyj0rdan/news-summary-challenge`
+
+## Usage
+
+To be updated
+
+## Running tests
+
+Open `test-runner.html` in browser and open Console to see results
+
 ## Technologies
 
 - Single page web app using frontend JavaScript, CSS and HTML
