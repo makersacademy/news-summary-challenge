@@ -47,7 +47,7 @@ The app will focus on:
 - reliant on th # - fragment identifier [WIKI link](https://en.wikipedia.org/wiki/Fragment_identifier)
 - when browser hits this char, they skip everything after it, which means that sending the user to a different page is our responsability, not the browser's
 
-`localhost:8080/#/something` or `localhost:8080/#/somewhere` are the same for the browser and it dosen't send a server request to fetch a route
+`localhost:8080/#something` or `localhost:8080/#somewhere` are the same for the browser and it dosen't send a server request to fetch a route
 
 ### Steps:
 
@@ -624,7 +624,7 @@ Roll back releases
 - combination of slug and configuration is called a release
 - releases are automatically persisted in a ledger
 - use heroku releases command to see the audit
-  - everytime an application is deployed a new slug is created and a release is generated
+  - every time an application is deployed a new slug is created and a release is generated
   - can roll back releases
   - any material change will result in a new release being created
 
@@ -685,7 +685,7 @@ app.use((req, res, next) => {
 - As i was using node to test my objects, the export default syntax does not work with node
 - There is a conflict here which i need to resolve: either a way of working with exports for both front end and back end or do my tests in the front end
 
-## Created route on api for calling Aylien summarizer
+## Created route on api for calling Aylien summariser
 
 - this route receives a get request from the front end with a URL
 - the api uses the url to send a request to Aylien
@@ -694,12 +694,14 @@ app.use((req, res, next) => {
 
 ## Next
 
-- put node server for this api up and link to it
+- upload on github the node server for this api and link to it
 - change tests to work in the browser
+  - there is an issue with **modules export import require**
+  - there are conflicts between modules in node (CommonJS) and modules in the browser (ES5)
+  - i have to change the export type from exports { } to module.exports = { } in order to have my tests work via node
 - test the 2 requests sent to my endpoints
   - getArticles
   - createSummary
 - update test for article object as I've added new fields
 - test my helper methods
 - check objects methods as I am not using them....??
-- deploy front end on heroku

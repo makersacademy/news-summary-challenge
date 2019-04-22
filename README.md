@@ -2,6 +2,10 @@
 
 Approach detailed [here](https://github.com/micosmin/news-summary-challenge/blob/master/APPROACH.md)
 
+## Try the app at this link
+
+https://micosmin.github.io/news-summary-challenge/
+
 ## App pictures
 
 ### Headlines page
@@ -29,26 +33,33 @@ Run local server
 Go to to local server at port 8080:
 `127.0.0.1:8080`
 
-Wait a few seconds until heroku restarts the dyno and delivers the data to the api
+However, the the api this app is calling is set to only accept request coming from the application itself - link below.  
+App is also accessible at this link: https://micosmin.github.io/news-summary-challenge/
 
 ## Project overview
 
-App will grab all the headlines from the Guardian newspaper API and display them on a page with picture and link towards a summary page.  
-Clicking on the summary button will show a summary of the article on a different page #
+App retrieves headlines from the Guardian newspaper API and displays them on a page with pictures and links towards a summary page and the full page article on Guardian.
 
-As the API is hosted on heroku or run locally from my machine access is not immediate upon downloading this repo
+Clicking on the summary button will direct the user to a #summary page where a summary of the article is retrieved from the Aylien API
 
-### Technologies
+## Technologies used
+
+JavaScript / CSS / HTML  
+Node.js / Express  
+Heroku
 
 ### Frontend
 
 Single page app built with **JavaScript, CSS and HTML**  
 Using **Bootstrap** for quick styling  
 Using **ESlint** for static analysis of code to check adherence to style guidelines
-Using own testing framework for TDD unit tests
+Using own testing framework for TDD unit tests. Check it out at this [link](https://github.com/micosmin/news-summary-challenge/blob/master/services/testing-framework.js)
 
-Front end app is using a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve the HTML, CSS and JavaScript files.  
-Requests are sent to an API to get data from the Guardian and to summarise text.
+Front end app is using a static web server ([http-server](https://www.npmjs.com/package/http-server)) to serve the HTML, CSS and JavaScript files. I've set up a script in the package.json to start the serveer by running `npm start`
+
+When user hits '/' route a request is sent to my API hosted on Heroku which sends a get request to the Guardian API. Once that request is fulfilled, my api sends back in json format to the front end api which calls several helper methods to build the html page based on that response.
+
+There is a similar process happening when the summary button is clicked. The only difference is that the Aylien api is called in this case.
 
 ### Server
 
@@ -58,15 +69,12 @@ API:
 - Hosted on Heroku
 - Frontend page makes calls to this server at 2 specific routes (articles and summary)
 - Server handles requests to Guardian API and Aylien API as well as the authentication
-- Uses CORS policy to only allow access to the get request from one source
-
-> The API is hosted on an external server
-> Only need a static web server. That's why this type of architecture is called "serverless".
+- Uses CORS policy to only allow access to the get request of the server if it is coming the app itself
 
 ## Testing
 
-Built own framework to test js objects.  
-It uses describe, it, expect to build the tests
+Built own framework to test JS objects.  
+It uses describe, it, expect to build the tests.
 
 It has available the following matchers:
 
@@ -84,7 +92,7 @@ Testing is done by running the following command `node test`
 I'm using my own server built with node/express to access the guardian api.
 [link to repo]
 
-For testing purposes this server is run locally, however it is deployed on heroku as well and can be accessed from there as well.
+For testing purposes this server is run locally, however it is deployed on Heroku as well and can be accessed from there as well.
 
 **Guardian articles**
 
@@ -106,4 +114,5 @@ The output (usually an array of strings) is passed back to the frontend api whic
 
 - [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
 - [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
+
 ```
