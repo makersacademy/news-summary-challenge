@@ -12,11 +12,14 @@ As the Makers API credentials were maxed out when I began work on this challenge
 
 ## Getting started
 
-`git clone https://github.com/amyj0rdan/news-summary-challenge`
+Install `node` and `npm` if not already installed     
+`git clone https://github.com/amyj0rdan/news-summary-challenge`     
+`npm install`
 
 ## Usage
 
-To be updated
+Run command `node node_modules/http-server/bin/http-server`     
+Open in browser `localhost:8080`
 
 ## Running tests
 
