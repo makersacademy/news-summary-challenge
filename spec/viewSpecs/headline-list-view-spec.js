@@ -23,7 +23,6 @@
 
     var headlineList = new HeadlineListMock()
     var view = new HeadlineListView(headlineList, HeadlineViewMock)
-    console.log(view.getHTML())
     assert.isTrue(
       view.getHTML() === '<div id="headline-list">' +
                            '<div class="headline">Headline 1</div>' +
