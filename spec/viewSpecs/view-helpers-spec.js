@@ -26,6 +26,20 @@
   })();
 
   (function() {
+    var description = "wrapHTML() takes an optional targetBlank tag to open links in a new tab"
+
+    assert.isTrue(
+      wrapHTML({
+        content: "This is the news",
+        element: "a",
+        href: "google.com",
+        targetBlank: true
+      }) === '<a href="google.com" target="_blank">This is the news</a>',
+      description
+    )
+  })();
+
+  (function() {
     var description = "wrapHTML() takes an optional id tag"
 
     assert.isTrue(
@@ -52,7 +66,7 @@
   })();
 
   (function() {
-    var description = "wrapHTML() can accept all three attributes together"
+    var description = "wrapHTML() can accept all attributes together"
 
     assert.isTrue(
       wrapHTML({
@@ -60,8 +74,9 @@
         element: "element",
         id: "news",
         classes: ["one", "two", "three"],
-        href: "google.com"
-      }) === '<element href="google.com" id="news" class="one two three">This is the news</element>',
+        href: "google.com",
+        targetBlank: true
+      }) === '<element href="google.com" target="_blank" id="news" class="one two three">This is the news</element>',
       description
     )
   })()

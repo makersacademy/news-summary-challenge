@@ -21,7 +21,7 @@
     var view = new HeadlineView(headline)
 
     assert.isTrue(
-      view.getHTML() === '<div class="headline"><a href="google.com">This is the news</a></div>',
+      view.getHTML() === '<div class="headline"><a href="google.com" target="_blank">This is the news</a></div>',
       description
     )
   })()

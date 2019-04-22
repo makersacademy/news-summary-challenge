@@ -10,6 +10,7 @@
       link = wrapHTML({
         content: this.headline.getHeadline(),
         element: "a",
+        targetBlank: true,
         href: this.headline.getURL()
       })
 
