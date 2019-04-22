@@ -1,152 +1,122 @@
 # News Summary challenge
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+Approach detailed [here](https://github.com/micosmin/news-summary-challenge/blob/master/APPROACH.md)
 
-## Challenge
+## Try the app at this link
 
-As usual please start by forking this repo.
+https://micosmin.github.io/news-summary-challenge/
 
-You'll create an app that summarises the news.
-
-### Guidance
-
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
-
-## Project overview
-
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
-
-### Technologies
-
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
-
-## User Stories
-
-Some of these stories will need decomposing if they seem too large.
-
-```
-As a busy politician
-I can see all of today's headlines in one place
-So I know what the big stories of the day are
-```
-
-```
-As a busy politician
-I can click a link to see the original news article
-So that I can get an in depth understanding of a very important story
-```
-
-```
-As a busy politician
-I can see a summary of a news article
-So I can get a few more details about an important story
-```
-
-```
-As a busy politician
-I can see a picture to illustrate each news article when I browse headlines
-So that I have something nice to look at
-```
-
-```
-As a busy politician
-I can read the site comfortably on my phone
-Just in case my laptop breaks
-```
-
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
-```
-
-## Mockups
+## App pictures
 
 ### Headlines page
 
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
+![Main](https://github.com/micosmin/news-summary-challenge/blob/master/images/Screenshot%202019-04-22%20at%2014.44.02.png?raw=true)
 
 ### Article summary page
 
-![Article page mockup](/images/news-summary-project-article-page-mockup.png)
+![Summary](https://github.com/micosmin/news-summary-challenge/blob/master/images/Screenshot%202019-04-22%20at%2014.44.55.png?raw=true)
 
-## API
+### Mobile picture
 
-### API authentication
+![Mobile](https://github.com/micosmin/news-summary-challenge/blob/master/images/1200c336-fb05-4d6d-b99b-4e36b847f3d6.jpeg?raw=true)
 
-So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
+## Installing
 
-> Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
+Setup instructions
 
-### API request rate limits and stubbing
+Clone repo:
 
-The Guardian and Aylien text summarisation APIs are severely rate-limited.
+`https://github.com/micosmin/news-summary-challenge.git`
 
-**Please stub your tests so we don't exceed the daily limit.  Otherwise, all requests will be rejected and everyone's apps will stop working!**
+Install dependencies
+`npm-install`
 
-### API Overview
+Run local server
+`npm start`
 
-The basic idea is to send an `apiRequestUrl` query parameter to the News Summary API.  The value of this parameter is the URL of the request you *would* have made to the Guardian or Aylien API, minus any API credentials.
+Go to to local server at port 8080:
+`127.0.0.1:8080`
 
-### Guardian API example
+However, the the api this app is calling is set to only accept request coming from the application itself - link below.  
+App is also accessible at this link: https://micosmin.github.io/news-summary-challenge/
 
-**Please stub your tests to avoid exceeding the API rate limit**
+## Project overview
 
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.  Notice how it has a query parameter for `api-key`.
+App retrieves headlines from the Guardian newspaper API and displays them on a page with pictures and links towards a summary page and the full page article on Guardian.
+
+Clicking on the summary button will direct the user to a #summary page where a summary of the article is retrieved from the Aylien API
+
+## Technologies used
+
+JavaScript / CSS / HTML  
+Node.js / Express  
+Heroku
+
+### Frontend
+
+Single page app built with **JavaScript, CSS and HTML**  
+Using **Bootstrap** for quick styling  
+Using **ESlint** for static analysis of code to check adherence to style guidelines
+Using own testing framework for TDD unit tests. Check it out at this [link](https://github.com/micosmin/news-summary-challenge/blob/master/services/testing-framework.js)
+
+Front end app is using a static web server ([http-server](https://www.npmjs.com/package/http-server)) to serve the HTML, CSS and JavaScript files. I've set up a script in the package.json to start the serveer by running `npm start`
+
+When user hits '/' route a request is sent to my API hosted on Heroku which sends a get request to the Guardian API. Once that request is fulfilled, my api sends back in json format to the front end api which calls several helper methods to build the html page based on that response.
+
+There is a similar process happening when the summary button is clicked. The only difference is that the Aylien api is called in this case.
+
+### Server
+
+API:
+
+- Built in node.js and express
+- Hosted on Heroku
+- Frontend page makes calls to this server at 2 specific routes (articles and summary)
+- Server handles requests to Guardian API and Aylien API as well as the authentication
+- Uses CORS policy to only allow access to the get request of the server if it is coming the app itself
+
+## Testing
+
+Built own framework to test JS objects.  
+It uses describe, it, expect to build the tests.
+
+It has available the following matchers:
+
+- equal
+- toBeInstanceof
+- toRespondTo
+- length
+
+[Testing framework repo link](https://github.com/micosmin/news-summary-challenge/blob/master/services/testing-framework.js)
+
+Testing is done by running the following command `node test`
+
+## API Overview
+
+I'm using my own server built with node/express to access the guardian api.
+[link to repo]
+
+For testing purposes this server is run locally, however it is deployed on Heroku as well and can be accessed from there as well.
+
+**Guardian articles**
+
+Request is sent via an XMLHttpRequest() to the following endpoint on the server:  
+`local-route/articles`
+
+The output is passed to a helper method which renders the page with all the articles retrieved form the api (api uses pagination: retrieving 10 articles at a time)
+
+### Accessing Aylien text summarisation API example
+
+Request is sent via an XMLHttpRequest() to the following endpoint on the server:  
+`local-route/summary`
+
+The output (usually an array of strings) is passed back to the frontend api which uses helper methods to process the response and build the page
 
 ```
-curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this:
-
-```
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-```
-
-Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
-
-### Aylien text summarisation API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make.  Notice how it has headers to authenticate with the Aylien API.
-
-```
-curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
-  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
-  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this.
-
-```
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
-```
-
-Note how the `apiRequestUrl` parameter is just the request you would have made to the Aylien API.  Notice how you don't have to send authentication headers.
-
-### Code
-
-If you're interested, you can see the code for the News Summary API in this repo: https://github.com/makersacademy/news-summary-api
 
 ## Resources
 
-* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-* [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+- [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
+- [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
+
+```

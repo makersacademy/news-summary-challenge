@@ -1,0 +1,24 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "## App pictures",
+  "main": "app.js",
+  "scripts": {
+    "test": "node test/article-test.js & node test/article-list-test.js",
+    "start": "node node_modules/http-server/bin/http-server -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micosmin/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/micosmin/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/micosmin/news-summary-challenge#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "http-server": "^0.11.1"
+  }
+}
