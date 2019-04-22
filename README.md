@@ -16,6 +16,10 @@ https://micosmin.github.io/news-summary-challenge/
 
 ![Summary](https://github.com/micosmin/news-summary-challenge/blob/master/images/Screenshot%202019-04-22%20at%2014.44.55.png?raw=true)
 
+### Mobile picture
+
+![Mobile](https://github.com/micosmin/news-summary-challenge/blob/master/images/1200c336-fb05-4d6d-b99b-4e36b847f3d6.jpeg?raw=true)
+
 ## Installing
 
 Setup instructions
