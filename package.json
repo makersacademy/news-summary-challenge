@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/WardahTarar/news-summary-challenge#readme",
   "dependencies": {
+    "aylien_textapi": "^0.7.0",
     "http-server": "^0.11.1"
   }
 }
