@@ -1,5 +1,5 @@
 (function(exports) {
-  
+
   function Article({title, url, thumbnail}) {
     this.title = title;
     this.url = url;

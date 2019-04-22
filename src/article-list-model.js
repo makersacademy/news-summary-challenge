@@ -1,5 +1,5 @@
 (function(exports) {
-  
+
   function ArticleList() {
     this.articles = []
   }
