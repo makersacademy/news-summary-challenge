@@ -628,8 +628,6 @@ Roll back releases
   - can roll back releases
   - any material change will result in a new release being created
 
-# UPDATE FORM HERE
-
 ## Step 3 Make request to Guardian API from node app
 
 - create env variables for the guardianAPI keys
@@ -696,6 +694,7 @@ app.use((req, res, next) => {
 
 ## Next
 
+- put node server for this api up and link to it
 - change tests to work in the browser
 - test the 2 requests sent to my endpoints
   - getArticles

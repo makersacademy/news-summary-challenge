@@ -3,7 +3,7 @@ let xhr = new XMLHttpRequest();
 let api = {
   getArticles: function() {
     let category = 'politics';
-    let url = `http://localhost:5000/articles?category=${category}`;
+    let url = `https://ancient-falls-57405.herokuapp.com/articles?category=${category}`;
 
     xhr.open('GET', url, true);
     xhr.send();
@@ -25,7 +25,7 @@ let api = {
 
     let articleLink = Utils.getLink(articleId);
 
-    let url = `http://localhost:5000/summary?link=${articleLink}`;
+    let url = `https://ancient-falls-57405.herokuapp.com/summary?link=${articleLink}`;
 
     xhr.open('GET', url, true);
     xhr.send();

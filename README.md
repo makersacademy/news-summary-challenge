@@ -29,6 +29,8 @@ Run local server
 Go to to local server at port 8080:
 `127.0.0.1:8080`
 
+Wait a few seconds until heroku restarts the dyno and delivers the data to the api
+
 ## Project overview
 
 App will grab all the headlines from the Guardian newspaper API and display them on a page with picture and link towards a summary page.  

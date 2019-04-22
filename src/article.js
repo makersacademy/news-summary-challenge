@@ -29,5 +29,7 @@ class Article {
     return this.id;
   }
 }
+
 // module.exports = Article;
+
 export default Article;
