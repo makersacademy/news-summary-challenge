@@ -1,6 +1,6 @@
 (function(){
   (function() {
-    var description = "APIInterface.getHeadlines() gets stories from the API and passes them to a callback function. Resulting Headline objects should have a headline and a URL"
+    var description = "APIInterface.getHeadlines() gets stories from the API and passes them to a callback function. Resulting Headline objects should have a headline, a URL and a thumbnail"
 
     function HeadlineListMock () {
       this.list = []
@@ -13,8 +13,12 @@
           getURL: function() {
             return this.url
           },
+          getThumbnail: function() {
+            return this.thumbnail
+          },
           headline: options.headline,
-          url: options.url
+          url: options.url,
+          thumbnail: options.thumbnail
         })
       }
     }
@@ -29,8 +33,9 @@
     var headlineList = apiInterface.getHeadlines(callbackMock)
 
     assert.isTrue(
-      this.headlineList[0].getHeadline() === "Sri Lanka attacks: several arrested after 207 killed at hotels and churches on Easter Sunday – live" &&
-      this.headlineList[0].getURL() === "https://www.theguardian.com/world/live/2019/apr/21/sri-lanka-explosions-dozens-killed-and-hundreds-injured-in-church-and-hotel-blasts" &&
+      this.headlineList[0].getHeadline() === "Bolsonaro's motorbike escapade provokes helmet backlash" &&
+      this.headlineList[0].getURL() === "https://www.theguardian.com/world/2019/apr/22/brazil-president-jair-bolsonaros-motorbike-video-may-backfire" &&
+      this.headlineList[0].getThumbnail() === "https://media.guim.co.uk/9daa1ed862f91d0a99219d26b89282b0f90060c6/0_192_2000_1199/500.jpg" &&
       this.headlineList.length === 10,
       description
     )

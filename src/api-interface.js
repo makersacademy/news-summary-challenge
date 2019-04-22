@@ -12,7 +12,7 @@
       } else {
 
         request = new XMLHttpRequest()
-        request.open('GET', `https://content.guardianapis.com/search?section=business|education|environment|inequality|law|politics|uk-news|world&api-key=${guardianApiKey}`, true);
+        request.open('GET', `https://content.guardianapis.com/search?section=business|education|environment|inequality|law|politics|uk-news|world&show-fields=thumbnail&api-key=${guardianApiKey}`, true);
 
         request.onload = function () {
           that._parseResultsAndRunCallback(this.response, callback)
@@ -28,7 +28,8 @@
       data.response.results.forEach(function(story) {
         list.add({
           headline: story.webTitle,
-          url: story.webUrl
+          url: story.webUrl,
+          thumbnail: story.fields.thumbnail
         })
       })
       callback(list)
