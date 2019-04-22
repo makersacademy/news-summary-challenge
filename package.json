@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "node test/article-test.js & node test/article-list-test.js",
-    "start": "node node_modules/.bin/http-server "
+    "start": "node node_modules/http-server/bin/http-server -p 8080"
   },
   "repository": {
     "type": "git",
