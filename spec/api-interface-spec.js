@@ -20,8 +20,6 @@
     var headlineList = apiInterface.getHeadlines(exampleSearchResponse)
     var headlines = headlineList.all()
 
-    console.log(headlines[0].getHeadline())
-
     assert.isTrue(
       headlines[0].getHeadline() === "Sri Lanka attacks: several arrested after 207 killed at hotels and churches on Easter Sunday – live" &&
       headlines.length === 10,

@@ -1,23 +1,29 @@
-// (function() {
+(function() {
 
-//   (function() {
-//     var description = "HeadlinesController.display gets the headlines from the Guardian API, applies HeadlineListView, and displays them"
+  (function() {
+    var description = "HeadlinesController.display gets the headlines via APIInterface, applies HeadlineListView, and displays them"
 
-//     function headlineListViewMock (headlineList) {
-//       this.getHTML = function() {
-//         return headlineList + " converted to HTML"
-//       }
-//     }
+    function APIInterfaceMock () {
+      this.getHeadlines = function () {
+        return "the headlines"
+      }
+    }
 
-//     var headlinesController = new HeadlinesController(headlineListMock, headlineListViewMock)
-//     var target = document.createElement('div')
-//     headlinesController.display(target)
-//     var contents = target.innerHTML
-//     assert.isTrue(
-//       contents === "headline list converted to HTML",
-//       description
-//     )
+    function headlineListViewMock (headlineList) {
+      this.getHTML = function() {
+        return headlineList + " converted to HTML"
+      }
+    }
 
-//   })()
+    var headlinesController = new HeadlinesController(headlineListViewMock, APIInterfaceMock)
+    var target = document.createElement('div')
+    headlinesController.display(target)
+    var contents = target.innerHTML
+    assert.isTrue(
+      contents === "the headlines converted to HTML",
+      description
+    )
 
-// })()
+  })()
+
+})()
