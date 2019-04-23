@@ -17,7 +17,8 @@
 
       summary = wrapHTML({
         content: this.summary.getSummary(),
-        element: 'div'
+        element: 'div',
+        id: 'summary-text'
       })
 
       backLink = wrapHTML({
