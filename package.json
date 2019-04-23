@@ -1,0 +1,30 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": " A news summary app built as a weekend challenge at Makers Academy",
+  "main": "server.js",
+  "scripts": {
+    "test": "open test-runner.html",
+    "server": "node ./node_modules/http-server/bin/http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saypop/news-summary-challenge.git"
+  },
+  "keywords": [
+    "news",
+    "aggregator",
+    "web",
+    "app",
+    "api"
+  ],
+  "author": "saypop",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/saypop/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/saypop/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
