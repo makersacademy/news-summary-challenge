@@ -4,6 +4,7 @@
     this._headline = options.headline
     this._url = options.url
     this._thumbnail = options.thumbnail
+    this._id = options.id
   }
 
   Headline.prototype = {
@@ -15,6 +16,9 @@
     },
     getThumbnail: function () {
       return this._thumbnail
+    },
+    getID: function () {
+      return this._id
     }
   }
 

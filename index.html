@@ -15,7 +15,7 @@
       h1 {
         font-family: 'Alfa Slab One', sans-serif;
       }
-      .headline {
+      .headline, #summary {
         border: thin solid grey;
         margin-bottom: 8px;
         padding: 8px;
@@ -24,10 +24,13 @@
       .headline img {
         width: 100%;
         display: block;
-        margin-bottom: 8px
+        margin: 5px 0;
       }
       .headline a {
         font-size: 1.2rem;
+      }
+      a.summary {
+        font-size: 0.8rem;
       }
     </style>
   </head>
@@ -42,11 +45,13 @@
     <script src="src/helpers/guardian-api-key.js"></script>
     <script src="src/models/headline-model.js"></script>
     <script src="src/models/headline-list-model.js"></script>
+    <script src="src/models/summary-model.js"></script>
     <script src="src/views/view-helpers.js"></script>
     <script src="src/views/headline-view.js"></script>
     <script src="src/views/headline-list-view.js"></script>
+    <script src="src/views/summary-view.js"></script>
     <script src="src/api-interface.js"></script>
-    <script src="src/controllers/headlines-controller.js"></script>
+    <script src="src/controllers/controller.js"></script>
     <script src="src/app.js"></script>
   </body>
 </html>

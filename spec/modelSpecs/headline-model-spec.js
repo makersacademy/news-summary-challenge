@@ -40,5 +40,20 @@
       headline.getThumbnail() === "Thumbnail url",
       description
     )
+  })();
+
+  (function() {
+    var description = "A Headline object has an id"
+
+    var headline = new Headline({
+      headline:  "",
+      url: "",
+      thumbnail: "Thumbnail url",
+      id: "headline id"
+    })
+    assert.isTrue(
+      headline.getID() === "headline id",
+      description
+    )
   })()
 })()

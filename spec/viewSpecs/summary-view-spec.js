@@ -25,7 +25,6 @@
 
   (function() {
     var description = "... and a summary"
-    console.log(view.getHTML())
     assert.isTrue(
       view.getHTML().includes('a summary'),
       description

@@ -5,7 +5,7 @@
 
   HeadlineView.prototype = {
     getHTML: function () {
-      var headline, image
+      var headline, image, summaryLink
 
       headline = wrapHTML({
         content: this.headline.getHeadline(),
@@ -16,8 +16,15 @@
 
       image = `<img src="${this.headline.getThumbnail()}">`
 
+      summaryLink = wrapHTML({
+        content: "View summary",
+        element: "a",
+        href: `#${this.headline.getID()}`,
+        classes: ['summary']
+      })
+
       return wrapHTML({
-        content: image + headline,
+        content: headline + image + summaryLink,
         element: "div",
         classes: ["headline"]
       })
