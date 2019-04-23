@@ -32,6 +32,10 @@ If I was going to continue I would work on displaying the article summary. I wou
 
 I would also love to develop my test framework, implementing `it`, `describe` and `context` blocks, and more advanced matchers.
 
+### Update, Monday morning
+
+I've spiked a solution to user story 3 - users can click through to see a summary of each article. I did it as described above. See [this commit message](https://github.com/Hives/news-summary-challenge/commit/a6eac0335422a099912fddfe48e133f3c90c5b9d) for more details. The implementation is quick and nasty in places - I put the API call for getting the summary in the controller, whereas the API call for getting the headlines is in an `APIInterface` object. It would be good to come back and refactor stuff like this to be more consistent. And to test-drive the whole thing of course!
+
 ## Reflection
 
 Completing the first user story took a very long time. This was because of the complexity involved in making my tests independent. I have a hierarchy of objects - a headline model, a headline list model, a headline view, a headline list view, a headline controller, an API interface and an app runner, which all interact, and I wanted to be sure I was only testing the specific responsibility of each module. This meant I had to create a lot of doubles which were only mocking the minimal amount of functionality of the other objects in order for the tests to run, which was quite time consuming to set up.
