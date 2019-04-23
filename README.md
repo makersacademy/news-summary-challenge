@@ -65,7 +65,6 @@ Links to requirements, problem breakdown, and models
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 
-
 ------
 
 [Original challenge README](https://github.com/makersacademy/news-summary-challenge/blob/master/README.md)
