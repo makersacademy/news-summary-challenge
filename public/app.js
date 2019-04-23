@@ -1,5 +1,3 @@
-console.log("Welcome from app.js")
-
 // window.addEventListener('load', function() {
 //   // missing an articlesList component (with view and model) I think
   
@@ -20,7 +18,6 @@ var apiKey = "91fa1184-3660-4b00-9e8f-e88868d8d66d"
 request.open('GET', `https://content.guardianapis.com/search?q=cycling&api-key=${apiKey}`, true)
 
 request.onload = function() {
-  console.log("Response received")
   var data = JSON.parse(this.response)
   
   var html = "<ul>"

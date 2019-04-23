@@ -15,7 +15,7 @@
   }
 
   ArticlesList.prototype.returnList = function() {
-    return listArray
+    return this.listArray
   }
 
   exports.ArticlesList = ArticlesList
