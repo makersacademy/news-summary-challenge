@@ -1,6 +1,10 @@
 var request = new XMLHttpRequest()
+var effedNews = []
+// function goToArticle(storyID) {
+//   console.log('works');
+// }
 
-request.open('GET', 'https://content.guardianapis.com/search?format=json&page=1&page-size=99&show-tags=keyword&show-fields=all&show-blocks=body:latest&show-elements=all&api-key=08e548e8-f799-4168-9ca3-7905fde4f823', true)
+request.open('GET', 'https://content.guardianapis.com/search?format=json&page=1&page-size=99&show-tags=keyword&show-fields=all&show-blocks=body:latest&show-elements=all&api-key=' + config.apiKey, true)
 
 request.onload = function() {
 
@@ -15,6 +19,7 @@ request.onload = function() {
 
       const card = document.createElement('div')
       card.setAttribute('class', 'card')
+      card.setAttribute('value', story.fields.id)
 
       const img = document.createElement('img')
       img.src = story.fields.thumbnail
@@ -37,10 +42,12 @@ request.onload = function() {
       const fThis = document.createElement('BUTTON')
       const ftText = document.createTextNode("F-THIS!")
       fThis.appendChild(ftText)
+      fThis.setAttribute('onclick', 'return this.parentNode.parentNode.remove();')
 
       const read = document.createElement('BUTTON')
       const readText = document.createTextNode("Read more")
       read.appendChild(readText)
+      // .addEventListener("click", goToArticle(story.id))
 
       buttons.appendChild(fThis)
       buttons.appendChild(read)
@@ -63,6 +70,8 @@ request.onload = function() {
 }
 
 request.send()
+
+
 
 const app = document.getElementById('root')
 
