@@ -7,7 +7,8 @@
 function createsListArrayFromResponse() {
   var testDescription = "createsListArrayFromResponse"
   var articlesList = new ArticlesList()
-  console.log(articlesList.returnList())
-  assert.isTrue(articlesList.returnList() instanceof Array, testDescription)
+  setTimeout(function() {
+    assert.isTrue(articlesList.listArray.length > 0, testDescription)
+  }, 1000)
 }
 createsListArrayFromResponse()

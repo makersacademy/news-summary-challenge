@@ -44,6 +44,8 @@ Click `ok` to any tests that prompt alerts. -->
 
 <!-- Copy the path to `index.html` into your browser, and start adding scores -->
 
+To run server, run the following in the terminal `node node_modules/http-server/bin/http-server`
+
 ------
 
 ## Problem breakdown

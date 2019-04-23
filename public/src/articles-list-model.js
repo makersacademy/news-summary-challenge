@@ -1,20 +1,21 @@
 (function(exports) {
+  
   function ArticlesList() {
-    this.listArray = [];
+    this.listArray = []
     that = this
     var request = new XMLHttpRequest()
     request.open('GET', `https://content.guardianapis.com/search?q=cycling&api-key=${apiKey}`, true)
     request.onload = function() {
       var data = JSON.parse(this.response)
-      console.log(data.response.results)
-      that.listArray.push(data.response.results)
+      for (var i = 0; i < data.response.results.length; i++) {
+        that.listArray.push(data.response.results[i]);
+      }
     }
     request.send()
   }
 
   ArticlesList.prototype.returnList = function() {
-    console.log(this.listArray)
-    return this.listArray
+    return listArray
   }
 
   exports.ArticlesList = ArticlesList
