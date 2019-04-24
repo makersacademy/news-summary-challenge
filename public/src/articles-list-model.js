@@ -3,6 +3,7 @@
   function ArticlesList() {
     this.listArray = []
     that = this
+    var apiKey = "Replace with api key in .env"
     var request = new XMLHttpRequest()
     request.open('GET', `https://content.guardianapis.com/search?q=cycling&api-key=${apiKey}`, true)
     request.onload = function() {
@@ -12,10 +13,6 @@
       }
     }
     request.send()
-  }
-
-  ArticlesList.prototype.returnList = function() {
-    return this.listArray
   }
 
   exports.ArticlesList = ArticlesList
