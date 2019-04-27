@@ -33,18 +33,16 @@ This JavaScript single page app allows users to view a list of headlines from th
 
 ------
 
-## To run tests
-
-<!-- After forking and cloning repo, open the path to `SpecRunner.html` in your browser.
-Click `ok` to any tests that prompt alerts. -->
-
-------
-
 ## To use app
 
-<!-- Copy the path to `index.html` into your browser, and start adding scores -->
-
 To run server, run the following in the terminal `node node_modules/http-server/bin/http-server`
+
+Then open your browser and navigate to `http://localhost:8080/`
+
+
+#### To run tests
+
+With the app running at `http://localhost:8080/` open the console to inspect and the test output will be displayed
 
 ------
 

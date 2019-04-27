@@ -2,8 +2,9 @@
   
   function ArticlesList() {
     this.listArray = []
-    that = this
-    var apiKey = "Replace with api key in .env"
+    var that = this
+    // var apiKey = "Replace with api key in .env"
+    var apiKey = "91fa1184-3660-4b00-9e8f-e88868d8d66d"
     var request = new XMLHttpRequest()
     request.open('GET', `https://content.guardianapis.com/search?q=cycling&api-key=${apiKey}`, true)
     request.onload = function() {
@@ -14,6 +15,6 @@
     }
     request.send()
   }
-
+  
   exports.ArticlesList = ArticlesList
 })(this)

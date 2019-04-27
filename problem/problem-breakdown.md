@@ -23,16 +23,22 @@ so that I can get an in depth understanding of a very important story,
 I want to be able to click a link to see the original news article.
 ```
 
-- Article model and view
-- Single page routing
+- Adding in an anchor tag to the webUrl
 
 ------
 
+#### User story 3: Summary view of single article
 ```
 As a busy politician,
 so I can get a few more details about an important story,
 I want to see a summary of a news article.
 ```
+
+- Single page routing
+- Link from headline to a summary page of the news article
+
+
+------
 
 ```
 As a busy politician,
