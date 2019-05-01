@@ -12,16 +12,19 @@
     <script>
     var list = new NewsHeadlinesList(NewsHeadline, 'https://content.guardianapis.com/politics?order-by=newest&api-key=f67ebf16-cebc-42d4-bfad-a91971cd21f5');
     console.log('1')
-    async function getResponseFromApi(){
+    
+
+      var createView = function(aList){
+        var listView = new NewsHeadlinesListView(aList);
+        console.log('4')
+        document.getElementById("app").innerHTML = listView.view();
+        console.log('5')
+      }
+
       console.log('2')
-      await list.fetchData()
+      list.fetchData(createView)
       console.log('3')
-      var listView = new NewsHeadlinesListView(list);
-      console.log('4')
-      document.getElementById("app").innerHTML = listView.view();
-      console.log('5')
-    }
-    getResponseFromApi();
+
     </script>
   </body>
 </html>

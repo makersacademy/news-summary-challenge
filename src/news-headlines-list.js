@@ -5,30 +5,30 @@
     this.newsHeadlineFunction = NewsHeadline;
     this.headlines = [];
     this.dataSource = dataSource;
-    // this.fetchData();
+    
   }
   NewsHeadlinesList.prototype ={
-      fetchData: async function(){
+      fetchData: function(createView){
         var self = this
+        var buildList = function(){
+          console.log(oReq.responseText)
+          var response = JSON.parse(oReq.responseText)
+          console.log(response)
+          console.log('c')
+          response.response.results.forEach(function(headline){
+            self.headlines.push(new self.newsHeadlineFunction(self.id, headline.webTitle, headline.apiUrl))
+            self.id += 1
+            console.log('d')
+          })
+          createView(self)
+          }
+        
         console.log('a')
-        await fetch(this.dataSource)
-        .then(function(response){
-          console.log('b')
-          return response.json();
-        })
-        .then(function(headlinesData){
-            console.log('c')
-            headlinesData.response.results.forEach(function(headline){
-              self.headlines.push(new self.newsHeadlineFunction(self.id, headline.webTitle, headline.apiUrl))
-              self.id += 1
-              console.log('d')
-              })
-        })
-        .catch(function(error) {
-          console.log('Error:', error)
-          console.log('Datasource is:', dataSource)
-        });
-    },
+        var oReq = new XMLHttpRequest();
+        oReq.addEventListener("load", buildList);
+        oReq.open("GET", `https://content.guardianapis.com/politics?order-by=newest&api-key=f67ebf16-cebc-42d4-bfad-a91971cd21f5`)
+        oReq.send();
+      },
 
       getHeadlines: function(){
         console.log('e')
