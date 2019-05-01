@@ -5,19 +5,23 @@
     this.newsHeadlineFunction = NewsHeadline;
     this.headlines = [];
     this.dataSource = dataSource;
-    this.fetchData();
+    // this.fetchData();
   }
   NewsHeadlinesList.prototype ={
-      fetchData: function(){
+      fetchData: async function(){
         var self = this
-        fetch(this.dataSource)
+        console.log('a')
+        await fetch(this.dataSource)
         .then(function(response){
+          console.log('b')
           return response.json();
         })
         .then(function(headlinesData){
+            console.log('c')
             headlinesData.response.results.forEach(function(headline){
               self.headlines.push(new self.newsHeadlineFunction(self.id, headline.webTitle, headline.apiUrl))
               self.id += 1
+              console.log('d')
               })
         })
         .catch(function(error) {
@@ -27,6 +31,7 @@
     },
 
       getHeadlines: function(){
+        console.log('e')
         return this.headlines;
       }
   }
