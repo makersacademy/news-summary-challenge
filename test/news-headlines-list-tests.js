@@ -7,23 +7,9 @@
       this.apiUrl = apiUrl;
     }
 
-  NewsHeadlinesList.prototype.fetchData = function(){
-    var self = this
-    fetch('headlines.json')
-    .then(function(response){
-      return response.json();
-    })
-    .then(function(headlinesData){
-        headlinesData.response.results.forEach(function(headline){
-          self.headlines.push(new self.newsHeadlineFunction(self.id, headline.webTitle, headline.apiUrl))
-          self.id += 1
-          })
-    });
-}
-
   function testThatNewsHeadlinesIsObtainedAndStoredInNewsHeadlinesList(){
 
-      var headlinesList = new NewsHeadlinesList(NewsHeadlineDouble)
+      var headlinesList = new NewsHeadlinesList(NewsHeadlineDouble, 'headlines.json')
       async function getResponseFromApi(){
         let promise = new Promise(function(resolve, reject){
           setTimeout(() => resolve(true), 100)
