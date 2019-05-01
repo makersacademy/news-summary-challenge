@@ -8,27 +8,32 @@
     
   }
   NewsHeadlinesList.prototype ={
-      fetchData: function(createView){
+      fetchData: function(){
         var self = this
-        var buildList = function(){
-          console.log(oReq.responseText)
-          var response = JSON.parse(oReq.responseText)
+        return new Promise(function(resolve, reject){
+          var oReq = new XMLHttpRequest();
+          oReq.open("GET", `https://content.guardianapis.com/politics?order-by=newest&api-key=f67ebf16-cebc-42d4-bfad-a91971cd21f5`)
+          oReq.onload = function(){
+            var response = JSON.parse(oReq.responseText)
           console.log(response)
           console.log('c')
           response.response.results.forEach(function(headline){
             self.headlines.push(new self.newsHeadlineFunction(self.id, headline.webTitle, headline.apiUrl))
             self.id += 1
             console.log('d')
-          })
-          createView(self)
+            resolve(self)
           }
-        
-        console.log('a')
-        var oReq = new XMLHttpRequest();
-        oReq.addEventListener("load", buildList);
-        oReq.open("GET", `https://content.guardianapis.com/politics?order-by=newest&api-key=f67ebf16-cebc-42d4-bfad-a91971cd21f5`)
-        oReq.send();
-      },
+
+        )}
+
+        oReq.onerror = function(){
+          reject(Error('Error'))
+        }
+
+        oReq.send()
+
+      })
+    },
 
       getHeadlines: function(){
         console.log('e')
