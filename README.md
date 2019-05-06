@@ -5,8 +5,6 @@ News Summary Challenge
 
 This JavaScript single page app allows users to view a list of headlines from the Guardian newspaper API. Clicking on a headline will show a summary of the article.
 
-![demo gif]()
-
 ------
 
 ### Technologies used
@@ -51,10 +49,6 @@ With the app running at `http://localhost:8080/` open the console to inspect and
 Links to requirements, problem breakdown, and models
 
 [User stories and problem breakdown](https://github.com/mattTea/news-summary-challenge/blob/master/problem/problem-breakdown.md)
-
-[Model tbc]()
-
-[Diagram tbc]()
 
 ------
 
