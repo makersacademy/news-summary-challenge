@@ -1,33 +1,22 @@
 (function(){
 
-  var summary = new Summary({
-    thumbnail: "the thumbnail",
-    headline: "the headline",
-    summary: "the summary"
-  });
+  describe('A summary object', function() {
+    var summary = new Summary({
+      thumbnail: "the thumbnail",
+      headline: "the headline",
+      summary: "the summary"
+    });
 
-  (function(){
-    var description = "A Summary object has a thumbnail"
-    assert.isTrue(
-      summary.getThumbnail() === "the thumbnail",
-      description
-    )
-  })();
+    it("has a thumbnail", function() {
+      expect(summary.getThumbnail()).toBe('the thumbnail')
+    })
 
-  (function(){
-    var description = "A Summary object has a headline"
-    assert.isTrue(
-      summary.getHeadline() === "the headline",
-      description
-    )
-  })();
+    it("has a headline", function() {
+      expect(summary.getHeadline()).toBe('the headline')
+    })
 
-  (function(){
-    var description = "A Summary object has a summary"
-    assert.isTrue(
-      summary.getSummary() === "the summary",
-      description
-    )
-  })();
-
+    it("has a summary", function() {
+      expect(summary.getSummary()).toBe('the summary')
+    })
+  })
 })()

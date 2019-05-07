@@ -1,54 +1,51 @@
 (function() {
 
-  (function() {
-    var description = "HeadlineList.add passes options through to Headline constructor"
+  describe("HeadlineList", function() {
+    describe(".add()", function() {
+      it("passes options through to the Headline constructor", function() {
+        var optionsReceived = []
+        function HeadlineMock(options) {
+          optionsReceived.push(options)
+        }
 
-    var optionsReceived = []
-    function HeadlineMock(options) {
-      optionsReceived.push(options)
-    }
+        var options1 = {
+          option1: "This is an option",
+          option2: "This is another option"
+        }
 
-    var options1 = {
-      option1: "This is an option",
-      option2: "This is another option"
-    }
-    var options2 = {
-      option1: "This is a third option",
-      option2: "Yet another option"
-    }
+        var options2 = {
+          option1: "This is a third option",
+          option2: "Yet another option"
+        }
 
-    var headlineList = new HeadlineList(HeadlineMock)
+        var headlineList = new HeadlineList(HeadlineMock)
 
-    headlineList.add(options1)
-    headlineList.add(options2)
+        headlineList.add(options1)
+        headlineList.add(options2)
 
-    assert.isTrue(
-      optionsReceived.includes(options1) &&
-      optionsReceived.includes(options2),
-      description
-    )
-  })();
+        expect(optionsReceived).toContain(options1)
+        expect(optionsReceived).toContain(options2)
+      })
+    })
 
-  (function() {
-    var description = "HeadlineList.all returns an array of Headline objects"
+    describe(".all()", function() {
+      it("returns an array of Headline objects", function() {
+        function HeadlineMock(options) {
+          this.option = options.option
+        }
 
-    function HeadlineMock(options) {
-      this.option = options.option
-    }
+        var headlineList = new HeadlineList(HeadlineMock)
 
-    var headlineList = new HeadlineList(HeadlineMock)
+        headlineList.add({option: "First headline"})
+        headlineList.add({option: "Second headline"})
 
-    headlineList.add({option: "First headline"})
-    headlineList.add({option: "Second headline"})
+        var list = headlineList.all()
 
-    var list = headlineList.all()
-
-    assert.isTrue(
-      list[0].option === "First headline" &&
-      list[1].option === "Second headline" &&
-      list.length === 2,
-      description
-    )
-  })();
+        expect(list[0].option).toBe("First headline")
+        expect(list[1].option).toBe("Second headline")
+        expect(list.length).toBe(2)
+      })
+    })
+  })
 
 })()

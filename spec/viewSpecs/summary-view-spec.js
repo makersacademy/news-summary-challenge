@@ -1,34 +1,25 @@
 (function() {
 
-  var summary = {
-    getThumbnail: function() { return "a thumbnail" },
-    getHeadline: function() { return "a headline" },
-    getSummary: function() { return "a summary" }
-  }
-  var view = new SummaryView(summary);
+  describe("SummaryView", function() {
+    var summary = {
+      getThumbnail: function() { return "a thumbnail" },
+      getHeadline: function() { return "a headline" },
+      getSummary: function() { return "a summary" }
+    }
+    var view = new SummaryView(summary);
+    
+    describe("turns a Summary object into HTML including...", function() {
+      it("a thumbnail", function() {
+        expect(view.getHTML()).toContain('<img src="a thumbnail">')
+      })
 
-  (function() {
-    var description = "SummaryView turns a Summary object into a string of html including a thumbnail"
-    assert.isTrue(
-      view.getHTML().includes('<img src="a thumbnail">'),
-      description
-    )
-  })();
+      it("a headline", function() {
+        expect(view.getHTML()).toContain('a headline')
+      })
 
-  (function() {
-    var description = "... and a headline"
-    assert.isTrue(
-      view.getHTML().includes('a headline'),
-      description
-    )
-  })();
-
-  (function() {
-    var description = "... and a summary"
-    assert.isTrue(
-      view.getHTML().includes('a summary'),
-      description
-    )
-  })();
-
+      it("a summary", function() {
+        expect(view.getHTML()).toContain('a summary')
+      })
+    })
+  })
 })()

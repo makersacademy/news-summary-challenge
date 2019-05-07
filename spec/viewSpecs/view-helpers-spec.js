@@ -1,83 +1,62 @@
 (function(){
 
-  (function() {
-    var description = "wrapHTML() wraps a string in an html element"
-
-    assert.isTrue(
-      wrapHTML({
-        content: "This is the news",
+  describe('wrapHTML()', function() {
+    it('wraps a string in an HTML element', function () {
+      var wrapped = wrapHTML({
+        content: "the content",
         element: "element"
-      }) === "<element>This is the news</element>",
-      description
-    )
-  })();
+      })
+      expect(wrapped).toBe("<element>the content</element>")
+    })
 
-  (function() {
-    var description = "wrapHTML() takes an optional href tag (only for use with links obvs)"
+    it('takes an optional id tag', function () {
+      var wrapped = wrapHTML({
+        content: "the content",
+        element: "element",
+        id: "the-id"
+      })
+      expect(wrapped).toBe('<element id="the-id">the content</element>')
+    })
 
-    assert.isTrue(
-      wrapHTML({
-        content: "This is the news",
+    it('takes an optional array of classes', function () {
+      var wrapped = wrapHTML({
+        content: "the content",
+        element: "element",
+        classes: ["one", "two", "three"]
+      })
+      expect(wrapped).toBe('<element class="one two three">the content</element>')
+    })
+
+    it('takes an optional href tag for use with links', function () {
+      var wrapped = wrapHTML({
+        content: "the content",
         element: "a",
         href: "google.com"
-      }) === '<a href="google.com">This is the news</a>',
-      description
-    )
-  })();
+      })
+      expect(wrapped).toBe('<a href="google.com">the content</a>')
+    })
 
-  (function() {
-    var description = "wrapHTML() takes an optional targetBlank tag to open links in a new tab"
-
-    assert.isTrue(
-      wrapHTML({
-        content: "This is the news",
+    it('takes an optional targetBlank tag to open links in a new tab', function () {
+      var wrapped = wrapHTML({
+        content: "the content",
         element: "a",
         href: "google.com",
         targetBlank: true
-      }) === '<a href="google.com" target="_blank">This is the news</a>',
-      description
-    )
-  })();
-
-  (function() {
-    var description = "wrapHTML() takes an optional id tag"
-
-    assert.isTrue(
-      wrapHTML({
-        content: "This is the news",
-        element: "element",
-        id: "news"
-      }) === '<element id="news">This is the news</element>',
-      description
-    )
-  })();
-
-  (function() {
-    var description = "wrapHTML() takes an optional array of classes"
-
-    assert.isTrue(
-      wrapHTML({
-        content: "This is the news",
-        element: "element",
-        classes: ["one", "two", "three"]
-      }) === '<element class="one two three">This is the news</element>',
-      description
-    )
-  })();
-
-  (function() {
-    var description = "wrapHTML() can accept all attributes together"
-
-    assert.isTrue(
-      wrapHTML({
+      })
+      expect(wrapped).toBe('<a href="google.com" target="_blank">the content</a>')
+    })
+    
+    it('can take all of the above together', function () {
+      var wrapped = wrapHTML({
         content: "This is the news",
         element: "element",
         id: "news",
         classes: ["one", "two", "three"],
         href: "google.com",
         targetBlank: true
-      }) === '<element href="google.com" target="_blank" id="news" class="one two three">This is the news</element>',
-      description
-    )
-  })()
+      })
+      expect(wrapped).toBe('<element href="google.com" target="_blank" id="news" class="one two three">This is the news</element>')
+    })
+  });
+
 })()

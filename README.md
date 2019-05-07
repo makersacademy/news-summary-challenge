@@ -45,3 +45,5 @@ But on the other hand, once I'd completed that, it was very simple to update my 
 My `HeadlineController` has very little responsibility, and therefore possibly shouldn't exist. When I started I didn't anticipate that the API interface would return its response asynchronously, forcing me to pass a callback function through to display the fetched data. When I got to implementing this part it broke my design as I'd conceived it, with the result that the headline controller was almost redundant. If I was going to continue I might merge those two objects into one.
 
 Making the test framework was a lot of fun, and I'd love to develop that further.
+
+Should also look into using JavaScript promises rather than passing through callback functions.

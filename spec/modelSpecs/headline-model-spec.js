@@ -1,59 +1,25 @@
 (function() {
 
-  (function() {
-    var description = "A Headline object has a headline"
-
-    var headline = new Headline({
-      headline: "This is a headline.",
-      url: "",
-      thumbnail: ""
+  describe("A headline object", function() {
+    it("can have a headline", function() {
+      var headline = new Headline({ headline: "This is a headline" })
+      expect(headline.getHeadline()).toBe("This is a headline")
     })
-    assert.isTrue(
-      headline.getHeadline() === "This is a headline.",
-      description
-    )
-  })();
 
-  (function() {
-    var description = "A Headline object has a url"
-
-    var headline = new Headline({
-      headline:  "",
-      url: "Ceci n'est pas un url.",
-      thumbnail: ""
+    it("can have a url", function() {
+      var headline = new Headline({ url: "This is a URL" })
+      expect(headline.getURL()).toBe("This is a URL")
     })
-    assert.isTrue(
-      headline.getURL() === "Ceci n'est pas un url.",
-      description
-    )
-  })();
 
-  (function() {
-    var description = "A Headline object has a thumbnail"
-
-    var headline = new Headline({
-      headline:  "",
-      url: "",
-      thumbnail: "Thumbnail url"
+    it("can have a thumbnail", function() {
+      var headline = new Headline({ thumbnail: "This is a thumbnail" })
+      expect(headline.getThumbnail()).toBe("This is a thumbnail")
     })
-    assert.isTrue(
-      headline.getThumbnail() === "Thumbnail url",
-      description
-    )
-  })();
 
-  (function() {
-    var description = "A Headline object has an id"
-
-    var headline = new Headline({
-      headline:  "",
-      url: "",
-      thumbnail: "Thumbnail url",
-      id: "headline id"
+    it("can have an id", function() {
+      var headline = new Headline({ id: "This is an ID" })
+      expect(headline.getID()).toBe("This is an ID")
     })
-    assert.isTrue(
-      headline.getID() === "headline id",
-      description
-    )
-  })()
+  })
+
 })()
