@@ -3,6 +3,7 @@
   function Articles(url = "https://content.guardianapis.com/search?section=politics&api-key=9d90cbae-c5fb-426d-87ec-7df30ffbcd6c" ){
     this.url = url;
     this.articles = [];
+    this.summaryApiUrl = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=";
   };
 
   Articles.prototype.getDataFromURL = function() {
@@ -23,16 +24,22 @@
       });
     };
 
+    Articles.prototype.getSummary = function(url){
+      var self = this;
+      return new Promise(function(resolve, reject) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", self.summaryApiUrl + url, true);
 
-   Articles.prototype.getArticle = function() {
-         var self = this;
-       this.getDataFromURL().then(function(value) {
-          self.articles = value;
+        xhttp.onload = function() {
+          if (this.readyState == 4 && this.status == 200) {
+
+            var summary = JSON.parse(this.response).sentences.join();
+            resolve(summary)
+          };
+        };
+        xhttp.send();
       });
-
-      return self.articles
     };
-
 
 exports.Articles = Articles;
 })(this);
