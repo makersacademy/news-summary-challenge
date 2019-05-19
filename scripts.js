@@ -7,7 +7,7 @@ app.appendChild(container)
 
 var request = new XMLHttpRequest()
 
-request.open('GET','[your API Key] &show-fields=thumbnail', true)
+request.open('GET','<your api here> &show-fields=thumbnail', true)
 
 request.onload = function() {
   var data = JSON.parse(this.response)
