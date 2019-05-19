@@ -10,6 +10,7 @@
 
      this.articles.getDataFromURL().then(function(value) {
        value.map(function(item){
+         console.log(item)
          var articleTitle = item.webTitle;
          var articleWebUrl = item.webUrl;
          var apiUrl = item.apiUrl;
