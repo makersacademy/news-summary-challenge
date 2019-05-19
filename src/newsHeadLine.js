@@ -4,5 +4,10 @@
     this.title = title;
     this.API = API;
   }
+
+  
+
+
+
   exports.NewsHeadline = NewsHeadline;
 })(this);

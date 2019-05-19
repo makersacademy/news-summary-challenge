@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Xa1n/news-summary-challenge/issues"
   },
-  "homepage": "https://github.com/Xa1n/news-summary-challenge#readme"
+  "homepage": "https://github.com/Xa1n/news-summary-challenge#readme",
+  "dependencies": {
+    "node": "^12.2.0"
+  }
 }
