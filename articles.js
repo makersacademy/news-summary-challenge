@@ -1,25 +1,38 @@
 (function(exports){
 
-  function Articles(){
-    this.url = "https://content.guardianapis.com/search?section=politics&api-key=9d90cbae-c5fb-426d-87ec-7df30ffbcd6c"
-    this.articles = articles
+  function Articles(url = "https://content.guardianapis.com/search?section=politics&api-key=9d90cbae-c5fb-426d-87ec-7df30ffbcd6c" ){
+    this.url = url;
+    this.articles = [];
   };
 
-Articles.prototype.getArticles = function() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", url, true);
+  Articles.prototype.getDataFromURL = function() {
+    var self = this;
+      return new Promise(function(resolve, reject) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", self.url, true);
 
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var results = JSON.parse(this.response).response.results;
-      results.forEach(article => {
-      articles.push(article)
-    })
-    }
-  };
+        xhttp.onload = function() {
+          if (this.readyState == 4 && this.status == 200) {
 
-  xhttp.send();
-};
+            self.articles = JSON.parse(this.response).response.results;
+
+            resolve(self.articles)
+          };
+        };
+        xhttp.send();
+      });
+    };
+
+
+   Articles.prototype.getArticle = function() {
+         var self = this;
+       this.getDataFromURL().then(function(value) {
+          self.articles = value;
+      });
+
+      return self.articles
+    };
+
 
 exports.Articles = Articles;
 })(this);
