@@ -2,7 +2,7 @@
 var request = new XMLHttpRequest()
 
 // Open a new connection, using the GET request on the URL endpoint
-request.open('GET', 'API KEY', true)
+request.open('GET', 'api', true)
 
 request.onload = function() {
   // Begin accessing JSON data here
@@ -11,7 +11,9 @@ request.onload = function() {
 
   if(request.status >= 200 && request.status < 400) {
     data.response.results.forEach(article => {
+      console.log(article.sectionName)
       console.log(article.webTitle)
+      console.log(article.webURL)
     })
   } else {
     console.log('error')
@@ -21,3 +23,5 @@ request.onload = function() {
 // Send request
 
 request.send()
+
+const app = document.getElementById('root')
