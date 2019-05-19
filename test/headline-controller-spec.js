@@ -4,7 +4,6 @@
     headlineList.add("World says Hello");
     headlineList.add("Hello says World");
     var controller = new HeadlineController(headlineList);
-
     assert.contains(
       controller.updateHTML(),
       "<p>World says Hello</p><p>Hello says World</p>"
