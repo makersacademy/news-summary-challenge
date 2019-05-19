@@ -15,7 +15,7 @@ You won't use any libraries or frameworks. But, feel free to use the test framew
 * Enter `node node_modules/http-server/bin/http-server` from the command line and you will see a list of the latest headlines displayed:
 
 <div align="center">
-    <img src="NewsScreenshot.png" width="800px"</img>
+    <img src="ScreenshotNewsApp.png" width="800px"</img>
 </div>
 
 ## What I gained from this challenge
