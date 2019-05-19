@@ -7,7 +7,7 @@ app.appendChild(container)
 
 var request = new XMLHttpRequest()
 
-request.open('GET','your api', true)
+request.open('GET','[your API Key] &show-fields=thumbnail', true)
 
 request.onload = function() {
   var data = JSON.parse(this.response)
@@ -23,6 +23,9 @@ request.onload = function() {
       const h2 = document.createElement('h2')
       h2.textContent = article.webTitle
 
+      const img = document.createElement('img')
+      img.src = `${article.fields.thumbnail}`
+
       const a = document.createElement('a')
       a.href = `${article.webUrl}`
       a.innerHTML = "CLICK HERE TO READ THIS ARTICLE"
@@ -31,6 +34,7 @@ request.onload = function() {
 
       card.appendChild(h1)
       card.appendChild(h2)
+      card.appendChild(img)
       card.appendChild(a)
 
     })
