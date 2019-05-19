@@ -7,14 +7,13 @@ app.appendChild(container)
 
 var request = new XMLHttpRequest()
 
-request.open('GET', 'YOUR API KEY HERE', true)
+request.open('GET','your api', true)
 
 request.onload = function() {
   var data = JSON.parse(this.response)
 
   if(request.status >= 200 && request.status < 400) {
     data.response.results.forEach(article => {
-      // create a div with a card class
       const card = document.createElement('div')
       card.setAttribute('class', 'card')
 
@@ -24,14 +23,15 @@ request.onload = function() {
       const h2 = document.createElement('h2')
       h2.textContent = article.webTitle
 
-      const p = document.createElement('p')
-      p.textContent = article.webUrl
+      const a = document.createElement('a')
+      a.href = `${article.webUrl}`
+      a.innerHTML = "CLICK HERE TO READ THIS ARTICLE"
 
       container.appendChild(card)
 
       card.appendChild(h1)
       card.appendChild(h2)
-      card.appendChild(p)
+      card.appendChild(a)
 
     })
   } else {
