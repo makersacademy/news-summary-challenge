@@ -1,42 +1,36 @@
 # News Summary challenge
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+Week 7 Makers Academy weekend challenge. The task is as follows:
 
-## Challenge
+"Your app will grab all the headlines from the Guardian newspaper API and display them on a page. You will write a single page web app. You'll write your code in frontend JavaScript, CSS and HTML. You won't use Ruby or backend JavaScript.
 
-As usual please start by forking this repo.
+You won't use any libraries or frameworks. But, feel free to use the test framework you wrote during the week!"
 
-You'll create an app that summarises the news.
+### Using this app
+* Clone this repo
+* Install node if you haven't installed already
+* From the command line, run `npm install http-server`
+* You will need to sign up for a Guardian API key = https://open-platform.theguardian.com/access/
+* In the `scripts.js` file, replace the text `api key` with your API key from The Guardian. Add `&show-fields=thumbnail` to the end of this request URL to see pictures displayed. Save the file.
+* Enter `node node_modules/http-server/bin/http-server` from the command line and you will see a list of the latest headlines displayed:
 
-### Guidance
+<div align="center">
+    <img src="ScreenshotNewsApp.png" width="800px"</img>
+</div>
 
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+## What I gained from this challenge
+I chose to attempt this challenge for the following reasons:
+* I wanted more experience using APIs and understanding them. After following a tutorial and successfully connecting to The Guardian's API, I am happy that I have a better understanding of how they work and what is happening.
+* After this week's Notes-App challenge, I wanted to practice vanilla JavaScript.
+* This challenge helped me towards the goals **I can learn by myself** and **I can debug anything**. I have never tried to use an API in this context and doing so was quite challenging. It gave me the opportunity to debug new types of errors and I used `console.log()` a lot to gain visibility.
 
-## Project overview
+## To work on
+I am happy that an MVP has been achieved but I would like to work on the following:
 
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
-
-### Technologies
-
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+* I spiked this app - I would like to write tests for it. My reason for doing this was because my main goals were to practice JavaScript and improve my  understanding of APIs and I felt that spiking the app better served these goals. However, I would like to try and TDD this and stub my tests to avoid exceeding the daily limit.
+* I would also like to figure out how to encrypt my API key.
 
 ## User Stories
-
-Some of these stories will need decomposing if they seem too large.
 
 ```
 As a busy politician
@@ -74,79 +68,11 @@ I can see whizzy animations in the app
 To make my news reading more fun
 ```
 
-## Mockups
+## Build Status
+I believe I have achieved an MVP here. All the headlines, summaries, links and pictures display on one page, categorised into the type of news that they are e.g. "Sport", "Politics" etc. Out of the user stories, I have successfully completed the first 4 but have not incorporated animations.
 
-### Headlines page
-
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
-
-### Article summary page
-
-![Article page mockup](/images/news-summary-project-article-page-mockup.png)
-
-## API
-
-### API authentication
-
-So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
-
-> Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
-
-### API request rate limits and stubbing
-
-The Guardian and Aylien text summarisation APIs are severely rate-limited.
-
-**Please stub your tests so we don't exceed the daily limit.  Otherwise, all requests will be rejected and everyone's apps will stop working!**
-
-### API Overview
-
-The basic idea is to send an `apiRequestUrl` query parameter to the News Summary API.  The value of this parameter is the URL of the request you *would* have made to the Guardian or Aylien API, minus any API credentials.
-
-### Guardian API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.  Notice how it has a query parameter for `api-key`.
-
-```
-curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this:
-
-```
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-```
-
-Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
-
-### Aylien text summarisation API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make.  Notice how it has headers to authenticate with the Aylien API.
-
-```
-curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
-  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
-  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this.
-
-```
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
-```
-
-Note how the `apiRequestUrl` parameter is just the request you would have made to the Aylien API.  Notice how you don't have to send authentication headers.
-
-### Code
-
-If you're interested, you can see the code for the News Summary API in this repo: https://github.com/makersacademy/news-summary-api
-
-## Resources
-
-* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-* [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+## Credits/Acknowledgments
+- Makers Academy Week 7 Challenge
+- Jordan Roberts
+- In order to learn how to connect to an API using vanilla JavaScript (something I had never done before), I followed this very helpful tutorial:
+https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/
