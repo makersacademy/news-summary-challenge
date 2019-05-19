@@ -1,17 +1,14 @@
 (function(exports) {
   function anArrayOfHeadlines() {
-    headline = new Headline("World says Hello");
-    headlineTwo = new Headline("Hello says World");
     headlineList = new HeadlineList();
-    headlineList.add(headline);
-    headlineList.add(headlineTwo);
+    headlineList.add("World says Hello");
+    headlineList.add("Hello says World");
     assert.isArray(headlineList.all());
   }
 
   function headlinesHaveText() {
-    headline = new Headline("World says Hello");
     headlineList = new HeadlineList();
-    headlineList.add(headline);
+    headlineList.add("World says Hello");
     assert.contains(headlineList.all()[0].headline, "World says Hello");
   }
 

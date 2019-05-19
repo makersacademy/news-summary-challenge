@@ -5,7 +5,7 @@
 
   HeadlineList.prototype = {
     add: function(headline) {
-      this.headlineList.push(headline);
+      this.headlineList.push(new Headline(headline));
     },
 
     all: function() {
