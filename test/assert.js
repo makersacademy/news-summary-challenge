@@ -5,7 +5,7 @@ var assert = {
         "assertion failed: " + assertionToCheck + " is not truthy"
       );
     } else {
-      ("Test passed");
+      console.log("Test passed");
     }
   },
 
@@ -15,7 +15,7 @@ var assert = {
         "assertion failed: " + assertionToCheck + " is not an Array"
       );
     } else {
-      ("Test passed");
+      console.log("Test passed");
     }
   },
 
@@ -23,7 +23,7 @@ var assert = {
     if (!assertionOne.includes(assertionTwo)) {
       throw new Error(`${assertionOne} does not contain ${assertionTwo}`);
     } else {
-      ("Test passed");
+      console.log("Test passed");
     }
   }
 };

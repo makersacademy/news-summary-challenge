@@ -10,6 +10,10 @@
     // and then returns them
     generate: function() {
       return "This is a fake headline";
+    },
+
+    getText: function() {
+      return this.headline;
     }
   };
 

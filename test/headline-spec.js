@@ -3,10 +3,10 @@
 // So I know what the big stories of the day are
 
 (function(exports) {
-  function showsHeadline() {
+  function generatesHeadline() {
     headline = new Headline();
     assert.isTrue(headline.generate() === "This is a fake headline");
   }
 
-  showsHeadline();
+  generatesHeadline();
 })(this);
