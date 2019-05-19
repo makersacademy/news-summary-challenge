@@ -15,17 +15,31 @@ request.onload = function() {
   if (request.status >= 200 && request.status < 400) {
     results.forEach(result => {
       headlineList.add(result);
-      // const card = document.createElement("div");
-      // const h1 = document.createElement("h1");
-      // h1.textContent = result.webTitle;
-      // container.appendChild(card);
-      // card.appendChild(h1);
     });
     controller = new HeadlineController(headlineList);
-    console.log(headlineList);
     document.getElementById("app").innerHTML = controller.updateHTML();
   } else {
     console.log("error");
   }
 };
 request.send();
+
+headlineList.forEach(function(headline) {
+  console.log(headline);
+  var summary = new XMLHttpRequest();
+  var sentences = [];
+  request.open(
+    "GET",
+    `http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${
+      headline.headline.webUrl
+    }`,
+    true
+  );
+  request.onload = function() {
+    var data = JSON.parse(this.response);
+    // sentences.push(data.sentences);
+    // headlineList.addSummary(sentences);
+  };
+  // console.log(sentences);
+  request.send();
+});
