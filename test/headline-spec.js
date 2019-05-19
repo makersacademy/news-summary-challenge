@@ -5,7 +5,7 @@
 (function(exports) {
   function showsHeadline() {
     headline = new Headline();
-    assert.isTrue(headline.display() === "This is a fake headline");
+    assert.isTrue(headline.generate() === "This is a fake headline");
   }
 
   showsHeadline();
