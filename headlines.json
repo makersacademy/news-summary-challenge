@@ -1,0 +1,145 @@
+
+  {
+    "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 14607,
+    "startIndex": 1,
+    "pageSize": 10,
+    "currentPage": 1,
+    "pages": 1461,
+    "orderBy": "relevance",
+    "results": [
+      {
+        "id": "world/2019/apr/01/semi-naked-climate-protesters-disrupt-brexit-debate",
+        "type": "article",
+        "sectionId": "world",
+        "sectionName": "World news",
+        "webPublicationDate": "2019-04-01T17:46:23Z",
+        "webTitle": "Semi-naked climate protesters disrupt Brexit debate",
+        "webUrl": "https://www.theguardian.com/world/2019/apr/01/semi-naked-climate-protesters-disrupt-brexit-debate",
+        "apiUrl": "https://content.guardianapis.com/world/2019/apr/01/semi-naked-climate-protesters-disrupt-brexit-debate",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2018/dec/01/may-v-corbyn-on-brexit-the-debate-over-the-debate",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2018-12-01T07:00:15Z",
+        "webTitle": "May v Corbyn on Brexit: the debate over the debate",
+        "webUrl": "https://www.theguardian.com/politics/2018/dec/01/may-v-corbyn-on-brexit-the-debate-over-the-debate",
+        "apiUrl": "https://content.guardianapis.com/politics/2018/dec/01/may-v-corbyn-on-brexit-the-debate-over-the-debate",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2019/feb/26/a-guide-to-labours-brexit-tribes",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2019-02-26T20:13:42Z",
+        "webTitle": "Competing divisions of Labour's Brexit debate",
+        "webUrl": "https://www.theguardian.com/politics/2019/feb/26/a-guide-to-labours-brexit-tribes",
+        "apiUrl": "https://content.guardianapis.com/politics/2019/feb/26/a-guide-to-labours-brexit-tribes",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2019/may/15/university-uwe-bristol-cancels-eu-election-debate-over-ukip-candidate-carl-benjamin",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2019-05-15T17:34:38Z",
+        "webTitle": "University cancels EU election debate over Ukip candidate",
+        "webUrl": "https://www.theguardian.com/politics/2019/may/15/university-uwe-bristol-cancels-eu-election-debate-over-ukip-candidate-carl-benjamin",
+        "apiUrl": "https://content.guardianapis.com/politics/2019/may/15/university-uwe-bristol-cancels-eu-election-debate-over-ukip-candidate-carl-benjamin",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "media/2019/feb/01/get-stuck-into-the-marmalade-debate",
+        "type": "article",
+        "sectionId": "media",
+        "sectionName": "Media",
+        "webPublicationDate": "2019-02-01T16:34:10Z",
+        "webTitle": "Get stuck into the marmalade debate | Brief letters",
+        "webUrl": "https://www.theguardian.com/media/2019/feb/01/get-stuck-into-the-marmalade-debate",
+        "apiUrl": "https://content.guardianapis.com/media/2019/feb/01/get-stuck-into-the-marmalade-debate",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2019/jan/29/mps-best-quotes-from-the-brexit-debate",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2019-01-29T20:57:19Z",
+        "webTitle": "MPs' best quotes from the Brexit debate",
+        "webUrl": "https://www.theguardian.com/politics/2019/jan/29/mps-best-quotes-from-the-brexit-debate",
+        "apiUrl": "https://content.guardianapis.com/politics/2019/jan/29/mps-best-quotes-from-the-brexit-debate",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2019/apr/01/wiggling-buttocks-enliven-existential-hell-of-brexit-debate",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2019-04-01T20:20:30Z",
+        "webTitle": "Wiggling buttocks enliven existential hell of Brexit debate | John Crace",
+        "webUrl": "https://www.theguardian.com/politics/2019/apr/01/wiggling-buttocks-enliven-existential-hell-of-brexit-debate",
+        "apiUrl": "https://content.guardianapis.com/politics/2019/apr/01/wiggling-buttocks-enliven-existential-hell-of-brexit-debate",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "commentisfree/2019/mar/31/stop-looking-for-gotacha-moment-in-public-debate",
+        "type": "article",
+        "sectionId": "commentisfree",
+        "sectionName": "Opinion",
+        "webPublicationDate": "2019-03-31T06:00:08Z",
+        "webTitle": "Stop looking for the ‘Gotcha!’ moment in public debate | Kenan Malik",
+        "webUrl": "https://www.theguardian.com/commentisfree/2019/mar/31/stop-looking-for-gotacha-moment-in-public-debate",
+        "apiUrl": "https://content.guardianapis.com/commentisfree/2019/mar/31/stop-looking-for-gotacha-moment-in-public-debate",
+        "isHosted": false,
+        "pillarId": "pillar/opinion",
+        "pillarName": "Opinion"
+      },
+      {
+        "id": "politics/2019/mar/08/manuel-valls-and-len-mccluskey-rev-up-the-brexit-debate",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2019-03-08T16:45:09Z",
+        "webTitle": "Manuel Valls and Len McCluskey rev up the Brexit debate | Letters",
+        "webUrl": "https://www.theguardian.com/politics/2019/mar/08/manuel-valls-and-len-mccluskey-rev-up-the-brexit-debate",
+        "apiUrl": "https://content.guardianapis.com/politics/2019/mar/08/manuel-valls-and-len-mccluskey-rev-up-the-brexit-debate",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2019/jan/27/what-is-the-next-commons-brexit-debate-about",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2019-01-27T16:39:53Z",
+        "webTitle": "What is the next Commons Brexit debate about?",
+        "webUrl": "https://www.theguardian.com/politics/2019/jan/27/what-is-the-next-commons-brexit-debate-about",
+        "apiUrl": "https://content.guardianapis.com/politics/2019/jan/27/what-is-the-next-commons-brexit-debate-about",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+    ]
+  }
+}
