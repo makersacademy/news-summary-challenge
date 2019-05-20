@@ -5,9 +5,11 @@
     this.API = API;
   }
 
-  
+
 
 
 
   exports.NewsHeadline = NewsHeadline;
 })(this);
+
+
