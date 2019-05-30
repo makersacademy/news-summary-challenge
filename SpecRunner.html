@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Hivemind's Spec Runner</title>
+        <style>
+            html {
+                font-family: sans-serif;
+            }
+            #title {
+                font-size: 17px;
+                color: magenta;
+                font-weight: bold;
+                text-shadow: limegreen 3px 3px;
+            }
+            #results ul {
+              padding-left: 20px;
+               list-style-type: none;
+            }
+            #results ul.test-result {
+              list-style-type: disc;
+            }
+            .pass {
+                color: limegreen;
+            }
+            .fail {
+                color: magenta;
+            }
+            #the-testing-zone {
+              margin: 50px;
+              padding: 20px;
+              border: 2px solid magenta;
+            }
+            #app {
+              padding: 20px;
+              border: 2px solid limegreen;
+            }
+        </style>
+    </head>
+    <body>
+        <pre id="title">
+  ________            ______          __     _____                  
+ /_  __/ /_  ___     /_  __/__  _____/ /_   /__  /  ____  ____  ___ 
+  / / / __ \/ _ \     / / / _ \/ ___/ __/     / /  / __ \/ __ \/ _ \
+ / / / / / /  __/    / / /  __(__  ) /_      / /__/ /_/ / / / /  __/
+/_/ /_/ /_/\___/    /_/  \___/____/\__/     /____/\____/_/ /_/\___/ 
+                                                                    
+        </pre>
+
+        <div id="results"></div>
+
+        <div id="the-testing-zone">
+          <h2>#app:</h2>
+          <div id="app"></div>
+        </div>
+
+        <!-- test framework -->
+        <script src="lib/the-test-zone.js"></script>
+
+        <!-- test environment -->
+        <script> var environment = "test" </script>
+        <script src="spec/helpers/exampleGuardianApiResponse.js"></script>
+
+        <!-- source files -->
+        <script src="src/models/headline-model.js"></script>
+        <script src="src/models/headline-list-model.js"></script>
+        <script src="src/models/summary-model.js"></script>
+        <script src="src/views/view-helpers.js"></script>
+        <script src="src/views/headline-view.js"></script>
+        <script src="src/views/headline-list-view.js"></script>
+        <script src="src/views/summary-view.js"></script>
+        <script src="src/api-interface.js"></script>
+        <script src="src/controllers/controller.js"></script>
+        <script src="src/app.js"></script>
+
+        <!-- test files -->
+        <script src="spec/modelSpecs/headline-model-spec.js"></script>
+        <script src="spec/modelSpecs/headline-list-model-spec.js"></script>
+        <script src="spec/modelSpecs/summary-model-spec.js"></script>
+        <script src="spec/viewSpecs/view-helpers-spec.js"></script>
+        <script src="spec/viewSpecs/headline-view-spec.js"></script>
+        <script src="spec/viewSpecs/headline-list-view-spec.js"></script>
+        <script src="spec/viewSpecs/summary-view-spec.js"></script>
+        <script src="spec/api-interface-spec.js"></script>
+        <script src="spec/controllerSpecs/controller-spec.js"></script>
+        <script src="spec/featureSpecs/feature-spec.js"></script>
+    </body>
+</html>
