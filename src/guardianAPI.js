@@ -6,5 +6,7 @@ guardianRequest.send();
 
 function guardianListener() {
   var json = JSON.parse(this.responseText);
-  document.getElementById('news-data').innerHTML = json.response.results[0].webTitle;
-}
+  for (var i = 0; i < json.response.results.length; i++) {
+    document.getElementById('news-container').innerHTML += "<div><li>" + json.response.results[i].webTitle + "</li></div><br>";
+  }
+};
