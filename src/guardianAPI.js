@@ -5,11 +5,14 @@ guardianRequest.open("GET", "https://content.guardianapis.com/search?q=content&s
 guardianRequest.send();
 
 function guardianListener() {
-  var json = JSON.parse(this.responseText);
-  for (var i = 0; i < json.response.results.length; i++) {
-    document.getElementById('news-container').innerHTML += 
-      "<a href="+ json.response.results[i].webUrl + "><li>"
-      + json.response.results[i].webTitle+ "</li><br>";
+  var story = JSON.parse(this.responseText).response.results;
+  for (var i = 0; i < story.length; i++) {
+
+    document.getElementById('news-container').innerHTML +=
+
+      "<a href=" + story[i].webUrl + "><p>"
+      + story[i].webTitle + 
+      "</p><img src=" + story[i].fields.thumbnail + "><br>";
   }
 };
 
@@ -18,4 +21,4 @@ function guardianListener() {
 // guardianRequest.open("GET", "https://content.guardianapis.com/search?q=politics&show-fields=bodyText,thumbnail&api-key=" + MY_API_KEY)
 // guardianRequest.send();
 // var json = JSON.parse(guardianRequest.responseText);
-// json.response.results
+// var story = json.response.results
