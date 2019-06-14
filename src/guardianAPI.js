@@ -1,7 +1,7 @@
 
 var guardianRequest = new XMLHttpRequest();
 guardianRequest.addEventListener("load", guardianListener);
-guardianRequest.open("GET", "https://content.guardianapis.com/search?q=politics&api-key=" + MY_API_KEY)
+guardianRequest.open("GET", "https://content.guardianapis.com/search?q=content&show-fields=thumbnail&api-key=" + MY_API_KEY)
 guardianRequest.send();
 
 function guardianListener() {
@@ -15,7 +15,7 @@ function guardianListener() {
 
 
 // var guardianRequest = new XMLHttpRequest();
-// guardianRequest.open("GET", "https://content.guardianapis.com/search?q=politics&api-key=" + MY_API_KEY)
+// guardianRequest.open("GET", "https://content.guardianapis.com/search?q=politics&show-fields=bodyText,thumbnail&api-key=" + MY_API_KEY)
 // guardianRequest.send();
 // var json = JSON.parse(guardianRequest.responseText);
 // json.response.results
