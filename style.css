@@ -7,9 +7,6 @@
 }
 .navbar-brand {float:none;}
 
-.img {
-  max-width: 10%
-}
 .jumbotron {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -31,4 +28,10 @@ body {
   line-height: 1.4;
   color: #333333;
   background-color: #fff;
+}
+
+.resize-fit-center {
+    max-width:100%;
+    max-height:100%;
+    vertical-align: middle;
 }
