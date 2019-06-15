@@ -30,6 +30,14 @@ var setupResponse = function(responseText = "") {
   };
 };
 
+function FakeNewsService(expectedHeadlines) {
+  this._expectedHeadlines = expectedHeadlines;
+};
+
+FakeNewsService.prototype.getHeadlines = function(onHeadlinesReadyCallback) {
+  onHeadlinesReadyCallback(this._expectedHeadlines);
+}
+
 var generateHeadlinesJson = function(headlines) {
   var titles = [];
 
