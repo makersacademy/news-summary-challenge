@@ -9,5 +9,4 @@ describe("Article List Model", function(){
     list.add("test title", "test url");
     assert(list.list.length, 1);
   });
-
 });
