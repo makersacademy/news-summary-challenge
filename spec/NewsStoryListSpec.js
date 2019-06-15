@@ -9,6 +9,6 @@ describe("News Story List", function(){
 
   it("can return a list of stories", function(){
     storylist.addStory(story);
-    assert(storylist.viewAll(), story);
+    assert("Headline", story._headline);
   });
 });
