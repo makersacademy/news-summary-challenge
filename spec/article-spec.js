@@ -1,5 +1,5 @@
 describe("Article Model", function(){
-  var article = new Article("test article", "test url", "test thumbnail");
+  var article = new Article({title: "test article", url: "test url", thumbnail: "test thumbnail"});
 
   it("initialises with an title and a url", function(){
     assert(article.title, "test article");
