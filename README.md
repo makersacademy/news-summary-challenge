@@ -3,7 +3,22 @@
 ### GETTING STARTED
 
 * `git clone` the repo.
-* run `node node_modules/http-server/bin/http-server`. This allows you to run a local server from the command line.
+* Run `node node_modules/http-server/bin/http-server`. This allows you to run a local server from the command line.
+* Visit [The Guardian Open Platform](https://open-platform.theguardian.com/) and apply for an API key.
+* With your new API key input it in the config_EXAMPLE.js file and remove the `_EXAMPLE` from the title.
+* You should now be good to go by running `open index.html` in the terminal to open the app in a browser.
+
+### HOW TO USE
+
+Here are some gifs to show you around the app.
+
+1. You can scroll the homepage and click on a link that you like.
+
+![Homepage](./images/makers_gazette_click_link)
+
+2. When you've finished reading your article you can click the 'BACK' button to return to the homepage.
+
+![Summary page](./images/makers_gazette_back)
 
 
 
