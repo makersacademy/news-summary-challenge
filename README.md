@@ -10,8 +10,6 @@ Create an app that summarises the news; it will grab all the headlines from the 
 
 ## User Stories
 
-Some of these stories will need decomposing if they seem too large.
-
 ```
 As a busy politician
 I can see all of today's headlines in one place
@@ -50,6 +48,6 @@ To make my news reading more fun
 
 ## Thoughts
 
-Although was unable to finish the app, I understood the mocking/doubles in the test framework. If I had more time, I would have used the Guardian API to display the titles, image and summary of the articles, each article with its own link.
+Although was unable to finish the app, I understood how to apply mocking/doubles in the test framework. I used my own Guardian API, however for some reason it did not work, although tests are all passing. If I had more time, I would have dug deeper into fixing this issue and also add images and summary of each article.
 
 
