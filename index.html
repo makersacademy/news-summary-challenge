@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>Makers News Summary</title>
+  <link rel="stylesheet" type="text/css" href="./public/style.css" />
   <script type='text/javascript' src='config.js'></script>
 </head>
 <body>
-  <h1>Makers Gazette</h1>
-  <div id="news-container"></div>
-  <div id="news-summary">
-    <div id="body-text"></div>
-    <a id='back-button' href='#home' style='display:none'>Back</a>
+  <div id='banner'>
+    <h1 id="header">Makers Gazette</h1>
+  </div>
+  
+  <div class="news-block" id="list-news"></div>
+
+  <div class="news-block">
+    <h2 id="summary-header"></h2>
+    <img class="image" id="summary-image" src="">
+    <div id="summary-body-text"></div>
+    <a id='summary-back-button' href='#home' style='display:none'>Back</a>
   </div>
 
-  
 </body>
 <script type='text/javascript' src='./src/guardianAPI.js'></script>
 </html>
