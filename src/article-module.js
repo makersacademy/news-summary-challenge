@@ -1,13 +1,13 @@
 (function(exports) {
-  function Article(headline, url, image, body) {
-    this.headline = headline;
+  function Article(title, url, image, body) {
+    this.title = title;
     this.url = url;
     this.image = image;
     this.body = body;
   }
 
-  Article.prototype.getHeadline = function() {
-    return this.headline;
+  Article.prototype.getTitle = function() {
+    return this.title;
   }
   exports.Article = Article;
 })(this);
