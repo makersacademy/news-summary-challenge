@@ -7,6 +7,7 @@ I aimed to use this project to further my understanding of JavScript concepts an
 I have ran out of time and so have had to spike the entirety of my article list view function, and so this has not been tested. If I had more time I would have gone back and re written this using a test driven approach. Some of the user stories below have not been satisfied, and so currently the user can see the headlines on the web app and these contain a hyperlink to the page as opposed to a summary. If I had more time I would have rectified this to keep it inline with the below user stories.
 
 ## Instructions for Use
+
 - In your command line, run:
 ```
 git clone https://github.com/samkitchen94/news-summary-challenge.git
