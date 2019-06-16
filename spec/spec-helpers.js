@@ -42,7 +42,7 @@ function FakeHeadlinesView(expectedHTML) {
   this._expectedHTML = expectedHTML;
 };
 
-FakeHeadlinesView.prototype.createHTML = function() {
+FakeHeadlinesView.prototype.createHTML = function(headlines) {
   return this._expectedHTML;
 }
 
