@@ -1,7 +1,7 @@
- {
+{
   "name": "news-summary-challenge",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create an app that summarises the news; it will grab all the headlines from the Guardian newspaper API and display them on a page. Clicking on a headline will show a summary of the article.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/VladC24/news-summary-challenge.git"
   },
-  "author": "Vlad Chiriac",
+  "author": "VladC24",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/VladC24/news-summary-challenge/issues"
   },
   "homepage": "https://github.com/VladC24/news-summary-challenge#readme"
+}
+
+"dependencies": {
+   "http-server": "^0.11.1"
 }
