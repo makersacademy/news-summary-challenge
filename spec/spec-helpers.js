@@ -38,6 +38,22 @@ FakeNewsService.prototype.getHeadlines = function(onHeadlinesReadyCallback) {
   onHeadlinesReadyCallback(this._expectedHeadlines);
 }
 
+function FakeHeadlinesView(expectedHTML) {
+  this._expectedHTML = expectedHTML;
+};
+
+FakeHeadlinesView.prototype.createHTML = function() {
+  return this._expectedHTML;
+}
+
+function FakeElement() {};
+  
+FakeElement.prototype.textContent = "";
+
+var fakeElement = new FakeElement();
+
+document.getElementById = function(id) { return fakeElement; };
+
 var generateHeadlinesJson = function(headlines) {
   var titles = [];
 
