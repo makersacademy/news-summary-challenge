@@ -6,7 +6,7 @@ window.onload = function() {
     var data = JSON.parse(this.response);
     var articlesLength = data.response.results.length
     for (var i = 0; i < articlesLength; i++) {
-      articleList.add({title: data.response.results[i].webTitle, url: data.response.results[i].webUrl, thumbnail: data.response.results[i].fields.thumbnail})
+      articleList.add({title: data.response.results[i].webTitle, url: data.response.results[i].webUrl, thumbnail: data.response.results[i].thumbnail})
     }
     var articleListView = new ArticleListView(articleList)
     document.getElementById('app').innerHTML = articleListView.createHTML()
