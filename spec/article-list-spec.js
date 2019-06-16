@@ -6,7 +6,7 @@ describe("Article List Model", function(){
   });
 
   it("adds a new article to the list", function(){
-    list.add("test title", "test url");
+    list.add("test title", "test url", "test thumbnail");
     assert(list.list.length, 1);
   });
 });

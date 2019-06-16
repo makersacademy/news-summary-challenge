@@ -1,12 +1,16 @@
 window.onload = function() {
+  var articleList = new ArticleList();
   var request = new XMLHttpRequest();
-  var list = new ArticleList;
-
-  request.open('GET', 'https://content.guardianapis.com/search?api-key=INSERT API KEY HERE AS A VARIABLE', true)
-  request.onload = function() {
-    // Begin accessing JSON data here
+  request.open('GET', `https://content.guardianapis.com/search?api-key=${apiKey}&show-fields=thumbnail`, true);
+  request.onload = function () {
     var data = JSON.parse(this.response);
-    console.log(data)
+    var articlesLength = data.response.results.length
+    for (var i = 0; i < articlesLength; i++) {
+      articleList.add({title: data.response.results[i].webTitle, url: data.response.results[i].webUrl, thumbnail: data.response.results[i].fields.thumbnail})
+    }
+    var articleListView = new ArticleListView(articleList)
+    document.getElementById('app').innerHTML = articleListView.createHTML()
   };
-request.send()
-};
+
+  request.send();
+}
