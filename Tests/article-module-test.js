@@ -2,7 +2,7 @@ function ArticleHasHeadlineAndURL() {
 	var headline = "Article title";
 	var url = "url";
 	var image = "image";
-	var body = "Displays the body of the article";
+	var body = "Body of the article";
 	var article = new Article(headline, url, image, body);
 	assert.isTrue(article.headline === headline)
 	assert.isTrue(article.url === url)
