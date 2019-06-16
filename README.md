@@ -14,11 +14,11 @@ Here are some gifs to show you around the app.
 
 1. You can scroll the homepage and click on a link that you like.
 
-![Homepage](./images/makers_gazette_click_link)
+![Homepage](./images/makers_gazette_click_link.gif)
 
 2. When you've finished reading your article you can click the 'BACK' button to return to the homepage.
 
-![Summary page](./images/makers_gazette_back)
+![Summary page](./images/makers_gazette_back.gif)
 
 
 
