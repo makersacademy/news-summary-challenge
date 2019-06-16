@@ -12,7 +12,7 @@ function renderHeadlineListView() {
 
   document.getElementById("list-news").style.display = "block"
   document.getElementById("summary-body-text").innerHTML = "";
-  document.getElementById("summary-back-button").style.display = "none"
+  document.getElementById("summary-news-block").style.display = "none"
   document.getElementById("summary-header").innerHTML = "";
   document.getElementById("summary-image").setAttribute("src", "")
 
@@ -45,7 +45,7 @@ function renderSummaryView() {
   document.getElementById("summary-header").innerHTML = story.webTitle;
   document.getElementById("summary-image").setAttribute("src", story.fields.thumbnail)
   document.getElementById("summary-body-text").innerHTML = story.fields.bodyText;
-  document.getElementById("summary-back-button").style.display = "block"
+  document.getElementById("summary-news-block").style.display = "block"
 
   function findObjectByKey(array, key, value) {
     for (var i = 0; i < array.length; i++) {

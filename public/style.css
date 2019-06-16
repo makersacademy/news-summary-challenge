@@ -46,15 +46,14 @@ body {
   margin-right: auto;
   padding: 10px;
   max-width: 100%;
-  /* margin: 10px auto; */
 }
 
 #list-header {
   padding: 0px 10px 10px 10px;
 }
 
-#summar-header {
-  padding: 0px 10px 10px 10px;
+#summary-body-text {
+  font-family: Arial;
 }
 
 #summary-back-button {
