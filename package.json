@@ -1,0 +1,19 @@
+ {
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladC24/news-summary-challenge.git"
+  },
+  "author": "Vlad Chiriac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladC24/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/VladC24/news-summary-challenge#readme"
+}
