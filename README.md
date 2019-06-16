@@ -47,3 +47,9 @@ As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
 ```
+
+## Thoughts
+
+Although was unable to finish the app, I understood the mocking/doubles in the test framework. If I had more time, I would have used the Guardian API to display the titles, image and summary of the articles, each article with its own link.
+
+

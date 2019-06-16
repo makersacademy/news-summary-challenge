@@ -1,17 +1,19 @@
 (function(exports) {
 
-	function ArticleController() {
-		this.articleList = new ArticleList();
-		this.articleListView = new ArticleListView(this.articleList);
+	function ArticleController(articleList, articleListView) {
+		this.articleList = articleList || new ArticleList();
+		this.articleListView = articleListView || new ArticleListView(this.articleList);
 	}
 
-	ArticleController.prototype.updateHTML = function() {
-		htmlArticle = document.getElementById("headlines");
-		htmlArticle.innerHTML = this.articleListView.toHTML();
+	ArticleController.prototype.updatePageWithTitles = function(element) {
+		document.getElementById(element).innerHTML = this.articleListView.toHTML();
 	}
 
-	ArticleController.prototype.newArticle = function(title) {
-		this.articleList.newArticle(title);
+	ArticleController.prototype.loadTitles = function(element) {
+		var self = this;
+		this.articleList.getArticles(function() {
+			self.updatePageWithTitles(element)
+		});
 	};
 
 	exports.ArticleController = ArticleController;

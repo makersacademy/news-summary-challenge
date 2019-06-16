@@ -1,27 +1,22 @@
-function TestInstanceOfArticleController() {
-	var articleController = new ArticleController();
-	assert.isTrue(articleController instanceof ArticleController)
-};
+function TestArticleController() {
 
-TestInstanceOfArticleController();
+	function ArticleListDouble() {};
 
-function HTMLDisplaysTitles() {
-
-	var articleController = new ArticleController();
-
-	function ArticleListViewDouble() {}
-	
-	ArticleListViewDouble.prototype = {
-		toHTML: function() {
-			return "<ul><li><div>First Title</div></li></ul>"
-		}
+	ArticleListDouble.prototype.updatePageWithTitles = function() {
+			return "Article Title"
 	};
 
+	function ArticleListViewDouble() {};
+
+	ArticleListViewDouble.prototype.toHTML = function() {
+		return "<ul><li>Article Title</li></ul>"
+	};
+
+	var articleListDouble = new ArticleListDouble();
 	var articleListViewDouble = new ArticleListViewDouble();
-	articleController.articleListView = articleListViewDouble;
-	articleController.updateHTML();
-	htmlArticle = document.getElementById("headlines");
-	assert.isTrue(htmlArticle.innerHTML === articleListViewDouble.toHTML())
+	var controller = new ArticleController(articleListDouble, articleListViewDouble);
+	controller.updatePageWithTitles("headlines");
+	assert.isTrue(document.getElementById("headlines").innerHTML === "<ul><li>Article Title</li></ul>", "Article title displayed on page")
 };
 
-HTMLDisplaysTitles();
+TestArticleController();
