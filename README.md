@@ -24,6 +24,8 @@ http-server
 ```
 - Go to either of the addresses returned in the command line and begin using the app!
 
+- To view the tests, open index.html and open the console. This will show the passing tests and will give you a better understanding of the testing framework I created and how it works.
+
 
 ## User Stories
 ```
