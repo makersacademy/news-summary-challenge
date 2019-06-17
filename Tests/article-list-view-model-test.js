@@ -1,7 +1,7 @@
-function HTMLDisplaysTitlesAsLinks() {
+function HTMLDisplaysTitlesAsLinksWithPhotos() {
 	var articleList = new ArticleList();
 
-	function ArticleDouble(title, url, body) {};
+	function ArticleDouble(title, url, image, body) {};
 
 	ArticleDouble.prototype = {
 		getTitle: function() {
@@ -10,6 +10,10 @@ function HTMLDisplaysTitlesAsLinks() {
 
 		getURL: function() {
 			return "http://www.news.example"
+		},
+
+		getImage: function() {
+			return "image"
 		}
 	};
 
@@ -23,4 +27,4 @@ function HTMLDisplaysTitlesAsLinks() {
 
 };
 
-HTMLDisplaysTitlesAsLinks();
+HTMLDisplaysTitlesAsLinksWithPhotos();

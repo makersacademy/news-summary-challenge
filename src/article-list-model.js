@@ -18,7 +18,7 @@
       if (newsRequest.status = 200 && newsRequest.status < 400) {
         var data = JSON.parse(newsRequest.responseText)
         data.response.results.forEach(function(result) {
-          self.addArticle(new Article(result.webTitle, result.webUrl));
+          self.addArticle(new Article(result.webTitle, result.webUrl, result.fields.thumbnail));
            // 'result.fields.thumbnail' to be implemented above and into the article list view
         });
 

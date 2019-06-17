@@ -13,7 +13,12 @@
 			article.getURL(), 
 			"'>",
 			article.getTitle(),
-			"</a></div>"
+			"</a>",
+			"<br>",
+			"<img src='",
+			article.getImage(),
+			"'>",
+			"</div>"
 			]
 			
 			list += eachArticle.join("");

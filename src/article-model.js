@@ -1,7 +1,8 @@
 (function(exports) {
-  function Article(title, url, body) {
+  function Article(title, url, image, body) {
     this.title = title;
     this.url = url;
+    this.image = image;
     this.body = body;
   }
 
@@ -15,6 +16,10 @@
 
   Article.prototype.getBody = function() {
     return this.body
+  };
+
+  Article.prototype.getImage = function() {
+    return this.image
   };
 
   exports.Article = Article;
