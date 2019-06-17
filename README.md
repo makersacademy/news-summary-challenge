@@ -7,6 +7,22 @@ Create an app that summarises the news; it will grab all the headlines from the 
 - Vanilla Javascript
 - HTML
 - CSS
+- Guardian API
+
+
+## Run the app
+
+- clone the repo
+```
+$ git clone https://github.com/VladC24/news-summary-challenge.git
+```
+- visit The Guardian API and register for a new API
+- go into the 'article-list-model.js' and replace the API with yours
+- run and visit in your browser 'localhost:8080'
+```
+$ node node_modules/http-server/bin/http-server
+```
+
 
 ## User Stories
 
