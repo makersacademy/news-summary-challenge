@@ -9,6 +9,7 @@ describe("News Story List", function(){
 
   it("can return a list of stories", function(){
     storylist.addStory(story);
-    assert("Headline", story._headline);
+    console.log(storylist.viewAll())
+    assert(storylist.viewAll(), "Headline");
   });
 });

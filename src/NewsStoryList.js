@@ -7,14 +7,11 @@
     this._stories.push(story);
   };
 
-  // view all is currently printing Headline 1 and Story 2?
   NewsStoryList.prototype.viewAll = function() {
-    // for (var i = 0; i < this._stories.length; ++i) {
-    //   return this._stories[0];
-    // };
     this._stories.forEach(function(i) {
       return i._headline;
     });
   };
+  
   exports.NewsStoryList = NewsStoryList;
 })(this);
