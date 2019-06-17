@@ -5,19 +5,19 @@
 
 	ArticleListView.prototype.toHTML = function() {
 
-		var list = '<ul>';
+		var list = '';
 
 		this.articleList.articles.forEach(function(article) {
 			var eachArticle = [
-			"<li><div><a href='", 
+			"<div><a href='", 
 			article.getURL(), 
 			"'>",
 			article.getTitle(),
-			"</a></div></li>"
+			"</a></div>"
 			]
 			
 			list += eachArticle.join("");
-			list += "</ul>"
+			
 		});
 
 		return list

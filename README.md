@@ -48,6 +48,7 @@ To make my news reading more fun
 
 ## Thoughts
 
-Although was unable to finish the app, I understood how to apply mocking/doubles in the test framework. I used my own Guardian API, however for some reason it did not work, although tests are all passing. If I had more time, I would have dug deeper into fixing this issue and also add images and summary of each article.
+Although was unable to finish the app, I understood how to apply mocking/doubles in the test framework.
+If I had more time, I would have dug deeper into adding images and summary of each article.
 
 
