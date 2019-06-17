@@ -12,14 +12,16 @@
     var newsRequest = new XMLHttpRequest();
     var self = this;
 
-    newsRequest.open("GET", "https://content.guardianapis.com/search?api-key=80f2e23b-35ed-4933-8ce6-3330e67b642f", true);
+    newsRequest.open("GET", "https://content.guardianapis.com/search?q=content&show-fields=thumbnail,bodyText&api-key=80f2e23b-35ed-4933-8ce6-3330e67b642f", true);
     newsRequest.send();
     newsRequest.onload = function() {
       if (newsRequest.status = 200 && newsRequest.status < 400) {
         var data = JSON.parse(newsRequest.responseText)
         data.response.results.forEach(function(result) {
           self.addArticle(new Article(result.webTitle, result.webUrl));
+           // 'result.fields.thumbnail' to be implemented above and into the article list view
         });
+
         if (callback) {
           callback();
         }
@@ -28,7 +30,7 @@
       }
     };
 
-    newsRequest.send();
+
   };
 
   exports.ArticleList = ArticleList;
