@@ -64,7 +64,6 @@ To make my news reading more fun
 
 ## Thoughts
 
-Although was unable to finish the app, I understood how to apply mocking/doubles in the test framework.
+Although was unable to fully finish the app, it is still functional and directs the user to the article selected. 
+By creating the app, I understood how to apply mocking/doubles in a newly created testing framework.
 If I had more time, I would have dug deeper into adding the summary of each article.
-
-
