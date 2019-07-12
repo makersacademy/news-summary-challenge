@@ -6,7 +6,7 @@
 * Install the node dependencies.
 
 ```console
-npm install
+admin$ npm install
 ```
 
 ## How to Run
@@ -14,11 +14,16 @@ npm install
 * Start the static web server.
 
 ```console
-node node_modules/http-server/bin/http-server
+admin$ node node_modules/http-server/bin/http-server
 ```
 
-* Navigate to the index page.
+* In the browser, navigate to the index page.
 
 ```
 localhost:8080/index.html
 ```
+
+## How to Test
+
+* Open spec-runner.html in the browser.
+* Open the Javascript console to view the test results.
