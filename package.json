@@ -1,0 +1,23 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "## How to Install",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zepherine2006DEV/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zepherine2006DEV/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/zepherine2006DEV/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
