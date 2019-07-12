@@ -1,15 +1,3 @@
-Week 7.
-Pure JS. No other frameworks, testing libraries......nothing.
-Build a tested single page new app that has a news summary page and on click gives the full article.
-
-......work in progress
-
-
-
-
-
-
-
 # News Summary challenge
 
 * Challenge time: rest of the day and weekend, until Monday 9am.
