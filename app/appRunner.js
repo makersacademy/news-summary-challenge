@@ -4,11 +4,17 @@ window.addEventListener('load',function(){
 
   // get a list of headlines (all news summary) - NewsSummaryModel, NewsSummaryView
   // click on one to get individual summary -  NewsArticleModel, NewsArticleView
+  // start with just summary
 
+  // var newsArticle = NewsArticleModel;
+  var newsHeadlines = NewsSummaryModel;
+
+  // var newsArticleView = NewsArticleView;
+
+  var newsHeadlineView = NewsHeadlineView;
 
 
   var controller = new NewsController()
   controller.updateDOM()
-
 
 })
