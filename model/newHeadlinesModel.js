@@ -1,6 +1,6 @@
 (function (exports){
 
-  function NewsHeadlinesModel(fetchGuardianHeadlines = FetchGuardianFrontAPI, headline = Headline){
+  function NewsHeadlinesModel(fetchGuardianHeadlines = FetchGuardianFrontAPI, headline = NewsHeadlineModel){
     this.headlines = []
     this.fetchGuardianHeadlines = fetchGuardianHeadlines
     this.headline = headline
