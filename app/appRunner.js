@@ -7,14 +7,14 @@ window.addEventListener('load',function(){
   // start with just summary
 
   // var newsArticle = NewsArticleModel;
-  var newsHeadlines = NewsSummaryModel;
+  var newsHeadlines = NewsHeadlinesModel;
 
   // var newsArticleView = NewsArticleView;
 
-  var newsHeadlineView = NewsHeadlineView;
+  var newsHeadlinesView = NewsHeadlinesView;
 
 
-  var controller = new NewsController()
+  var controller = new NewsController(newsHeadlines, newsHeadlinesView)
   controller.updateDOM()
 
 })
