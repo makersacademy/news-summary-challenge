@@ -15,6 +15,5 @@ window.addEventListener('load',function(){
 
 
   var controller = new NewsController(newsHeadlines, newsHeadlinesView)
-  controller.updateDOM()
-
+  
 })

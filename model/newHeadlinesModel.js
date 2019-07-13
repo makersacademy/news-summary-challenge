@@ -10,10 +10,14 @@
   }
 
   NewsHeadlinesModel.prototype._fetchHeadlines = function(){
-    return new this.fetchGuardianHeadlines
+    articlesApiObject = new this.fetchGuardianHeadlines
+    json = articlesApiObject._fetchHeadlines();
+    console.log(json)
+    return json
   }
 
   NewsHeadlinesModel.prototype._createHeadlines = function(rawJson){
+    console.log(rawJson)
     var self = this
     var headlines = rawJson.collections.filter(d => d.displayName === "Headlines")
     headlines[0].content.forEach(function(article){
