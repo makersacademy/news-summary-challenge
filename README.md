@@ -1,36 +1,50 @@
 # News Summary challenge
 
+![notes screenshot](./images/notebook_screenshot.png)
+
 ### GETTING STARTED
 
 * `git clone` the repo.
 * Run `node node_modules/http-server/bin/http-server`. This allows you to run a local server from the command line.
 * Visit [The Guardian Open Platform](https://open-platform.theguardian.com/) and apply for an API key.
-* With your new API key input it in the config_EXAMPLE.js file and remove the `_EXAMPLE` from the title.
-* You should now be good to go by running `open index.html` in the terminal to open the app in a browser.
+* Input your new API key into the config_EXAMPLE.js file and rename it `config.js`.
+* You should now be good to go by running `open index.html` in the terminal to open the app in your default browser.
 
-### HOW TO USE
+### HOW TO USE THE APP
 
 Here are some gifs to show you around the app.
 
 1. You can scroll the homepage and click on a link that you like.
 
-![Homepage](./images/makers_gazette_click_link.gif)
-
 2. When you've finished reading your article you can click the 'BACK' button to return to the homepage.
 
-![Summary page](./images/makers_gazette_back.gif)
+### USER STORIES
 
+```
+As a busy politician
+I can see all of today's headlines in one place
+So I know what the big stories of the day are
 
+As a busy politician
+I can click a link to see the original news article
+So that I can get an in depth understanding of a very important story
 
+As a busy politician
+I can see a summary of a news article
+So I can get a few more details about an important story
 
+As a busy politician
+I can see a picture to illustrate each news article when I browse headlines
+So that I have something nice to look at
 
+As a busy politician
+I can read the site comfortably on my phone
+Just in case my laptop breaks
 
-
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+As a busy politician
+I can see whizzy animations in the app
+To make my news reading more fun
+```
 
 ## Challenge
 
@@ -60,41 +74,29 @@ You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package
 
 > The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
 
-## User Stories
-
-Some of these stories will need decomposing if they seem too large.
+### USER STORIES
 
 ```
 As a busy politician
 I can see all of today's headlines in one place
 So I know what the big stories of the day are
-```
 
-```
 As a busy politician
 I can click a link to see the original news article
 So that I can get an in depth understanding of a very important story
-```
 
-```
 As a busy politician
 I can see a summary of a news article
 So I can get a few more details about an important story
-```
 
-```
 As a busy politician
 I can see a picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
-```
 
-```
 As a busy politician
 I can read the site comfortably on my phone
 Just in case my laptop breaks
-```
 
-```
 As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
