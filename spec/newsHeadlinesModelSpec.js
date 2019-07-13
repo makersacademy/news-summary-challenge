@@ -89,9 +89,10 @@ var exampleJson = {
 };
 
 // setup doubles
-function FetchGuardianFrontAPIDouble(){
+function FetchGuardianFrontAPIDouble(){};
+FetchGuardianFrontAPIDouble.prototype._fetchHeadlines = function(){
   return exampleJson;
-};
+}
 
 function HeadlineDouble(image, headline, id){
   this.image = image;

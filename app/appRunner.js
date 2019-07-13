@@ -10,10 +10,9 @@ window.addEventListener('load',function(){
   var newsHeadlines = NewsHeadlinesModel;
 
   // var newsArticleView = NewsArticleView;
-
   var newsHeadlinesView = NewsHeadlinesView;
 
 
   var controller = new NewsController(newsHeadlines, newsHeadlinesView)
-  
+
 })
