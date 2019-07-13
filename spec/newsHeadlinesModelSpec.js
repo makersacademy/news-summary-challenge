@@ -89,17 +89,15 @@ var exampleJson = {
 };
 
 // setup doubles
-function FetchGuardianFrontAPIDouble(){}
-FetchGuardianFrontAPIDouble.prototype.fetchAllFront = function(){
+function FetchGuardianFrontAPIDouble(){
   return exampleJson;
 };
 
-function HeadlineDouble(){
-  this.image;
-  this.headline;
-  this.id;
+function HeadlineDouble(image, headline, id){
+  this.image = image;
+  this.headline = headline;
+  this.id = id;
 };
-
 
 (function (){
   headlines = new NewsHeadlinesModel(FetchGuardianFrontAPIDouble, HeadlineDouble);
