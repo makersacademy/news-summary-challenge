@@ -1,5 +1,5 @@
 (function(exports) {
-  function Headlines (headline = Headline, callReturn) {
+  function Headlines (callReturn, headline = Headline) {
     var headline = headline
     var callReturn = callReturn
     var headlines = []

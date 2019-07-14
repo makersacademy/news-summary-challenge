@@ -1,15 +1,15 @@
 (function (exports) {
-  function ApiCall (xmlHttpRequest = XMLHttpRequest) {
+  function ApiCall () {
     var headlineApiURL = 'https://api.nextgen.guardianapps.co.uk/uk/lite.json'
 
-    function getHeadlines () {
+    function fetchHeadlines () {
       return fetch(headlineApiURL)
         .then(response => response.json())
-        .then(data => data.collections)
+        .then(data => data.collections[0].content)
     }
 
     return {
-      getHeadlines: getHeadlines,
+      fetchHeadlines: fetchHeadlines,
     }
   }
 

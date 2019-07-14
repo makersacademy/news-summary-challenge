@@ -13,7 +13,7 @@
   function HeadlineMock() {}
   var callReturnMock = [{headline: 'test headline1', shortUrl: 'www.testlink.com', thumbnail: 'www.piclink.com'},
     {headline: 'test headline2', shortUrl: 'www.testlink.com', thumbnail: 'www.piclink.com'}]
-  var headlines = new Headlines(HeadlineMock, callReturnMock)
+  var headlines = new Headlines(callReturnMock, HeadlineMock)
   headlines.storeHeadlines()
   assert.isTrue(true, testName)
   assert.isTrue(headlines.getHeadlines().length === 2,'check length of arrray')

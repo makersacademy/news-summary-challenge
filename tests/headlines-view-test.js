@@ -7,5 +7,5 @@
   var headlinesView = new HeadlinesView(headlines)
   var render = `<ul><li><img src="www.piclink.com"><a href="#1">test head line</a></li></ul>`
 
-  assert.isTrue(headlinesView.render() === render, testName)
+  assert.isTrue(headlinesView.returnHTML() === render, testName)
 })();

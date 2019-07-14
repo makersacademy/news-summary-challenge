@@ -3,7 +3,7 @@
     var html = []
     var headlines = headlines
 
-    function render () {
+    function returnHTML () {
       html = headlines.map(function(headline) {
         return (`<li><img src="${headline.getPicLink()}"><a href="#${headline.getId()}">${headline.getHeadline()}</a></li>`)
       })
@@ -11,7 +11,7 @@
     }
 
     return {
-      render: render
+      returnHTML: returnHTML
     }
   }
   exports.HeadlinesView = HeadlinesView
