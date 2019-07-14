@@ -1,6 +1,8 @@
-# news-summary-challenge
+# :newspaper: News Summary challenge :newspaper:
 
-> A Vue.js project
+An app that summarises the news built with Vue.js
+
+---
 
 ## Build Setup
 
@@ -23,5 +25,4 @@ npm run unit
 # run all tests
 npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+---
