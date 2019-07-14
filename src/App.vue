@@ -24,11 +24,39 @@
 
 </template>
 <script>
+
+
+import axios from 'axios' // importing the axios (a HTTP library) to connects the app with the News API
+import MainContent from './components/MainContent.vue' // import the Main Content component
+
 export default {
-  data () {
+
+  components: {
+        MainContent, // Register the component
+  },
+
+  data() {
     return {
-      drawer: true,
+      drawer: false, // false = Vuetify automatically "do the right thing" to show/hide the drawer
+      api_key: '3e84f1dafcba4c869e3b2ee5773fcbe3', // Your API Key go here
+      articles: [],
+      errors: [] 
     }
   },
-}
+  created () {
+    axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=3e84f1dafcba4c869e3b2ee5773fcbe3')
+      .then(response => {
+        //this.articles = response.data.articles
+        this.articles = response.data.articles
+        console.log('data:')
+        console.log(response.data.articles) // This will give you access to the full object
+      })
+      .catch(e => {
+        this.errors.push(e)
+      })
+  },
+
+
+  }
+
 </script>
