@@ -5,7 +5,7 @@
 
     function returnHTML () {
       html = headlines.map(function(headline) {
-        return (`<li><img src="${headline.getPicLink()}"><br><a href="#${headline.getId()}">${headline.getHeadline()}</a></li><br><br>`)
+        return (`<img src="${headline.getPicLink()}"><br><a href="${headline.getLink()}">${headline.getHeadline()}</a><br><br>`)
       })
       return `<ul>${html.join('')}</ul>`
     }

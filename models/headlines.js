@@ -8,11 +8,11 @@
       return headlines
     }
 
-    function storeHeadlines() {
+    (function _storeHeadlines() {
       callReturn.forEach(function(entry) {
         _addHeadline(entry)
       })
-    }
+    })()
 
     function _addHeadline(entry) {
       var newHeadline = new Headline(entry.headline, entry.shortUrl, entry.thumbnail)
@@ -20,8 +20,7 @@
     }
 
     return {
-      getHeadlines: getHeadLines,
-      storeHeadlines: storeHeadlines
+      getHeadlines: getHeadLines
     }
   }
 

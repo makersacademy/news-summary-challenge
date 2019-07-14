@@ -8,7 +8,6 @@
     async function frontPage () {
       var result = await apiCall.fetchHeadlines ()
       var news = new headlines(result)
-      news.storeHeadlines()
       _renderHTML(news.getHeadlines())
     }
 
