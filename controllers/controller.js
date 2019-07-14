@@ -15,7 +15,6 @@
     function _renderHTML(result) {
       var render = new headlinesView(result)
       var html = render.returnHTML()
-        console.log(html)
       var element = document.getElementById(documentId)
       element.innerHTML = html;
     }
