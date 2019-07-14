@@ -2,18 +2,18 @@
 
   var id = 0
 
-  function Article (headline, summary, link) {
+  function Headline (headline, link, picLink) {
     var headline = headline
-    var summary = summary
     var link = link
+    var picLink = picLink
     id ++
 
     function getHeadline() {
       return headline
     }
 
-    function getSummary() {
-      return summary
+    function getPicLink() {
+      return picLink
     }
 
     function getLink() {
@@ -26,12 +26,12 @@
 
     return {
       getHeadline: getHeadline,
-      getSummary: getSummary,
+      getPicLink: getPicLink,
       getLink: getLink,
       getId: getId
     }
 
   }
 
-  exports.Article = Article
+  exports.Headline = Headline
 })(this)

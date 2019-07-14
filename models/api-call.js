@@ -47,6 +47,6 @@
 })(this)
 
 
-var api = new ApiCall()
-api = api.getHeadlines()
-console.log(api)
+// var api = new ApiCall()
+// api = api.getHeadlines()
+// console.log(api)
