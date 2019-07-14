@@ -40,7 +40,7 @@
                   </v-btn>
                   <v-spacer></v-spacer>
 
-         <v-btn small replace color="info" v-bind:href="article.url" target="_blank" >Read More</v-btn>
+         <v-btn small replace color="warning" v-bind:href="article.url" target="_blank" >Read More</v-btn>
                 </v-card-actions>
               </v-card>
             </div>
