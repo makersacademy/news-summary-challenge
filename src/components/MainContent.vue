@@ -2,7 +2,7 @@
     <v-layout row wrap align-center>
           <v-flex xs8  offset-md2>
             <div v-for="article in articles" :key="article.title">
-              <v-card class="my-3" hover>
+              <v-card class="my-3" hover data-aos="zoom-in" data-aos-easing="ease">
                 <v-img
                   height="350px"
                   v-bind:src="article.urlToImage"
