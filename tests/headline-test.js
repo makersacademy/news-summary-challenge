@@ -1,6 +1,6 @@
 (function() {
   function testHeadlineHasText() {
-    var string = "Flowers Good For Bees, Reports Say"
+    var string = "US beekeepers lost 40% of honeybee colonies over past year, survey finds";
     var headline = new Headline(string);
 
     var expected = string;
@@ -12,5 +12,5 @@
       console.log("passed: testHeadlineHasText")
     };
   }
-  testHeadlineHasText()
+  testHeadlineHasText();
 })(this);
