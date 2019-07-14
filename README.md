@@ -2,6 +2,26 @@
 
 This will be an app that collects headlines from the Guardian newspaper API.  The app will display the headlines on a webpage as links to a summary of the article.
 
+## Run the app
+
+use [http-server](https://www.npmjs.com/package/http-server) from the command line:
+```shell
+$ npm install http-server --save
+$ npx http-server
+```
+or [live-server](https://www.npmjs.com/package/live-server) from the command line:
+```shell
+$ npm install live-server --save
+$ npx live-server
+```
+
+### In the console
+
+![](https://thepracticaldev.s3.amazonaws.com/i/1s50acblqwttreissgmk.png)
+
+The top of the console shows all passing tests.
+Underneath I've created a Newslist with three headlines, and displayed them in the browser window on the right.
+
 ## Technologies
 
 Everything will be written in frontend JavaScript (including tests), CSS, and HTML.
