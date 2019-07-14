@@ -4,10 +4,6 @@ An app that summarizes the news built with Vue.js It grabs all the headlines fro
 
 ---
 
-Still waiting for an API key from the Guardian newspaper, so I am using a key from 'https://newsapi.org/sources'.
-
----
-
 ## Technologies used
 
 - Javascipt
@@ -25,6 +21,7 @@ Still waiting for an API key from the Guardian newspaper, so I am using a key fr
 - [x] Displaying a summary of the article
 - [x] Pictures for illustation 
 - [x] Responsive design
+- [ ] Whizzy animations in the app
 
 ## User Stories
 
@@ -90,18 +87,22 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
 # run unit tests
 npm run unit
 
 # run all tests
 npm test
 ```
+
+---
+
+## Challenges
+
+- Still waiting for an API key from the Guardian newspaper, so I am using a key from 'https://newsapi.org/sources'
+- Learning Vue.js
+- npm dependency issues
+- Using eslint
+
 ---
 
 ## Resources

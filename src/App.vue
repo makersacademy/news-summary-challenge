@@ -76,7 +76,6 @@ export default {
           this.errors.push(e)
         })
      },
-     //add the methodes events hadler with setResource() function
       methods: {
             setResource(source){             axios.get('https://newsapi.org/v2/top-headlines?sources='+source+'&apiKey='+this.api_key)
               .then(response => {
