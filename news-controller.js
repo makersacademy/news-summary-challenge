@@ -11,3 +11,4 @@
 
   exports.NewsController = NewsController;
 })(this);
+
