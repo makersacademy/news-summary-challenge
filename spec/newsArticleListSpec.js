@@ -4,35 +4,24 @@ describe('NewsArticleList', function() {
     expect(newsArticleList.articles.length).toEqual(0);
   });
 
-  describe('#addArticle', function() {
-    it('creates a news article', function() {
-      let newsArticleList = new NewsArticleList();
-      let headline = 'Novak Djokovic v Roger Federer – live!';
-      let imageUrl = 'http://www.example.com/example.jpg';
-      let url = 'http://www.example.com';      
-      let article = newsArticleList.addArticle(headline, url, imageUrl);
-     
+  describe('#addArticle', function() {  
+    it('creates a news article', function() {   
+      let newsArticleList = new NewsArticleList();  
+      let article = setupArticleList(newsArticleList);        
       expect(newsArticleList.articles()).toInclude(article);
     });
 
     it('adds an id to the news article', function() {
       let newsArticleList = new NewsArticleList();
-      let headline = 'Novak Djokovic v Roger Federer – live!';
-      let imageUrl = 'http://www.example.com/example.jpg';
-      let url = 'http://www.example.com';
-      let article = newsArticleList.addArticle(headline, url, imageUrl);
-
+      let article = setupArticleList(newsArticleList);  
       expect(article.id).toEqual(0);
     });
 
-    it('adds consecutive id\'s to articles', function() {
-      let newsArticleList = new NewsArticleList();
-      let headline = 'Novak Djokovic v Roger Federer – live!';
-      let imageUrl = 'http://www.example.com/example.jpg';
-      let url = 'http://www.example.com';
-      let article1 = newsArticleList.addArticle(headline, url, imageUrl);
-      let article2 = newsArticleList.addArticle(headline, url, imageUrl);
-      let article3 = newsArticleList.addArticle(headline, url, imageUrl);
+    it('article id\'s are consecutive', function() {
+      let newsArticleList = new NewsArticleList();  
+      let article1 =  setupArticleList(newsArticleList);
+      let article2 =  setupArticleList(newsArticleList);
+      let article3 =  setupArticleList(newsArticleList);
 
       expect(article1.id).toEqual(0);
       expect(article2.id).toEqual(1);
@@ -40,7 +29,32 @@ describe('NewsArticleList', function() {
     });
   });
 
-  describe('#', function() {
+  describe('#convertToHTML', function() {
+    let newsArticleList = new NewsArticleList();
+    let article1 = setupArticleList(newsArticleList);
+    let article2 = setupArticleList(newsArticleList);
+    let article3 = setupArticleList(newsArticleList);
 
+    let htmlString = 
+    '<ul>' + 
+      `<li id="${article1.id}"><a href="#articles/${article1.id}">` +
+      `<h3>${article1.headline}</h3>` +
+      '</a></li>' +
+      `<li id="${article2.id}"><a href="#articles/${article2.id}">` +
+      `<h3>${article2.headline}</h3>` +
+      '</a></li>' +
+      `<li id="${article3.id}"><a href="#articles/${article3.id}">` +
+      `<h3>${article3.headline}</h3>` +
+      '</a></li>' +
+    '</ul>'
+
+    it('returns view for article list', function() {
+      expect(newsArticleList.convertToHTML()).toEqual(htmlString);
+    });
+
+    it('returns message if articles are unavailable', function() {
+      let newsArticleList = new NewsArticleList();
+      expect(newsArticleList.convertToHTML()).toEqual("<ul>Unable to show any stories</ul>");
+    });
   });
 })
