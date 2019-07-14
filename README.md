@@ -1,20 +1,32 @@
 # :newspaper: News Summary challenge :newspaper:
 
-An app that summarizes the news built with Vue.js . It will grab all the headlines from a news API and display them on a page.  Clicking on a headline will show a summary of the article.
+An app that summarizes the news built with Vue.js It grabs all the headlines from a news API and display them on a page.  Clicking on a headline redirects to the article.
 
 ---
 
-Since I still haven't got an API key from the Guardian newspaper, I am using a key from 'https://newsapi.org/sources'.
+Still waiting for an API key from the Guardian newspaper, so I am using a key from 'https://newsapi.org/sources'.
+
+---
 
 ## Technologies used
 
 - Javascipt
+- HTML
 - Vue.js
 - Vuetify
 - Axios server
 
-## User Stories
+---
 
+## Functionalities
+
+- [x] Displaying the headlines
+- [x] Redirecting to the original article
+- [x] Displaying a summary of the article
+- [x] Pictures for illustation 
+- [x] Responsive design
+
+## User Stories
 
 ```
 As a busy politician
@@ -103,3 +115,5 @@ npm test
 
 <img width="910" src="https://user-images.githubusercontent.com/23095774/61187587-22f98480-a66b-11e9-912f-56c46b54f5a8.png">
 
+
+<img width="524" src="https://user-images.githubusercontent.com/23095774/61187741-f5153f80-a66c-11e9-835b-3d88253bf36a.png">
