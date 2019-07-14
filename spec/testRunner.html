@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- ------------------Import Test Framework----------------- -->
+  <script src="./lib/testScript.js"></script>
+
+  <title>Tests Checker</title>
+</head>
+<body id ='body'>
+
+<p>Please open the console to view test results and errors</p>
+
+</body>
+
+  
+  <!-- ------------------Controller Scripts----------------- -->
+  <script src="../app/newsController.js"></script>
+
+  <!-- ------------------Model Scripts----------------- -->
+  <script src="../model/newHeadlinesModel.js"></script>
+  <script src="../model/newsHeadlineModel.js"></script>
+
+  <!-- ------------------View Scripts----------------- -->
+  <script src="../app/view/newsHeadlineView.js"></script>
+
+
+  <!-- ------------------Spec Scripts----------------- -->
+  <script src="./newsControllerSpec.js"></script>
+  <script src="./newHeadlinesViewSpec.js"></script>
+  <script src="./newsHeadlinesModelSpec.js"></script>
+  <script src="./headlineModelSpec.js"></script>
+
+</html>
