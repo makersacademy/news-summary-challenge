@@ -4,7 +4,7 @@
 
 ## INTRODUCTION
 
-I undertook this project to challenge my understanding of how to create a single page web app with vanilla JavaScript, CSS and HTML. I have avoided the use of any backend JavaScript and Ruby throughout.
+I undertook this project to challenge my understanding of how to create a single page web app with vanilla JavaScript, CSS and HTML. I have avoided the use of any backend JavaScript and Ruby.
 
 The app grabs all the headlines from the Guardian newspaper API and displays them on a page, clicking on a headline will show a summary of the relevant article.
 
