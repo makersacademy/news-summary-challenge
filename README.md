@@ -66,7 +66,7 @@ Here's where I became unstuck. The app relies on only the testing framework incl
 
 ## APPROACH
 
-I decided to follow the hand rail of MVC. The controller is the `interface.js` which hold the function that looks for a hash change in the url. Depending on the state of the hash change it will either render the summary article view or the headline list view.
+The controller is the `interface.js` which hold the function that looks for a hash change in the url. Depending on the state of the hash change it will either render the summary article view or the headline list view.
 
 The largest learning curve was linking the Guardian API to the app. How to request the data and understanding the state in which it was returned was (for an API newbie) challenging. I created a separate file to handle all the interaction with the Guardian API, it I had more time I would try and make it more descriptive so users of the code could understand what each line is doing.
 
