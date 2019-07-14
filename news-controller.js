@@ -1,5 +1,5 @@
-function NewsController() {
-
+function NewsController(storyView) {
+  this.storyView = storyView
 }
 
 NewsController.prototype = {

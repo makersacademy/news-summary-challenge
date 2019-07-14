@@ -5,7 +5,7 @@ Makers News Summary Challenge. Note that the challenge is not complete.
 * There is a static HTML server included.
 * There is a basic controller, with unit test.
 * There is a simple model (NewsStory) with test for headline property.
-* There is a basic model view with unit test.
+* There is a basic model view with unit tests.
 * Guardian API is not used.
 
 ## How to Install
