@@ -1,6 +1,6 @@
 # :newspaper: News Summary challenge :newspaper:
 
-An app that summarises the news built with Vue.js
+An app that summarizes the news built with Vue.js
 
 ---
 
