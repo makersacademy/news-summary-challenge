@@ -1,6 +1,7 @@
 {
   "name": "news",
   "version": "1.0.0",
+  "type": "module",
   "description": "an app for news",
   "main": "app.js",
   "scripts": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/aniasobo/news-summary-challenge#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "request": "^2.88.0"
   }
 }

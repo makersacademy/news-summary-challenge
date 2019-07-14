@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Manuale';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/manuale/v3/f0X20eas_8Z-TFZdNPHOwuvF-ac.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'News Cycle';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/newscycle/v15/CSR64z1Qlv-GDxkbKVQ_fOAKTfl8tOQ.woff2) format('woff2');
+}
+
+body {
+  font-family: 'News Cycle';
+}
+
+h1 {
+  font-family: 'Manuale';
+  text-align: center;
+  font-size: 5rem;
+}
+
+#feed {
+  display: grid;
+/*  grid-template-columns: 50px auto 50px; */
+  grid-template-columns: minmax(300px, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  grid-row-gap: 10px;
+  opacity: 0.2;
+  border-radius: 10px;
+}
