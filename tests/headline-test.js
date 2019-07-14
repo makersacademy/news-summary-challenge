@@ -7,7 +7,7 @@
     var got = headline.text
 
     if (expected !== got) {
-      throw new Error(`Expected ${expected}, got ${got}`)
+      throw new Error(`Expected "${expected}", got "${got}"`)
     } else {
       console.log("passed: testHeadlineHasText")
     }
