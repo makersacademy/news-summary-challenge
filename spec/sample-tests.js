@@ -27,6 +27,16 @@ var testSuite = function() {
       var newsView = new NewsView(stories)
       assert.equal(newsView.stories.length,2)
     });
+
+    it("render all headlines in a very basic string", function() {
+      var story1 = mock.makeDouble("Story 1")
+      var story2 = mock.makeDouble("Story 2")
+      story1.headline = "Here's a headline!"
+      story2.headline = "Here's another headline!"
+      var stories = [story1, story2]
+      var newsView = new NewsView(stories)
+      assert.equal(newsView.render(),"Here's a headline! Here's another headline!")
+    });
   });
 }
 
