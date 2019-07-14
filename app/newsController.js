@@ -1,7 +1,7 @@
 (function (exports){
 
-  function NewsController(newsHeadlines = NewsHeadlinesModel, newsHeadlinesView = NewsHeadlinesView, element = document.getElementById('headlines')){
-    this.newsHeadlines = new newsHeadlines();
+  function NewsController(newsHeadlines = NewsHeadlinesModel, newsHeadlinesView = NewsHeadlinesView, headlineJSON, element = document.getElementById('headlines')){
+    this.newsHeadlines = new newsHeadlines(headlineJSON);
     this.newsHeadlinesView = new newsHeadlinesView(this.newsHeadlines);
     this._renderAllHeadlines(element);
   };

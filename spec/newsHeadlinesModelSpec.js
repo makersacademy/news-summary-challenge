@@ -88,12 +88,6 @@ var exampleJson = {
   ]
 };
 
-// setup doubles
-function FetchGuardianFrontAPIDouble(){};
-FetchGuardianFrontAPIDouble.prototype._fetchHeadlines = function(){
-  return exampleJson;
-}
-
 function HeadlineDouble(image, headline, id){
   this.image = image;
   this.headline = headline;
@@ -101,11 +95,11 @@ function HeadlineDouble(image, headline, id){
 };
 
 (function (){
-  headlines = new NewsHeadlinesModel(FetchGuardianFrontAPIDouble, HeadlineDouble);
+  headlines = new NewsHeadlinesModel(exampleJson, HeadlineDouble);
   assert.isTrue(headlines.allHeadlines().length === 3, 'headlines repsonse has created 3 headlines')
 })();
 
 (function (){
-  headlines = new NewsHeadlinesModel(FetchGuardianFrontAPIDouble, HeadlineDouble)
+  headlines = new NewsHeadlinesModel(exampleJson, HeadlineDouble)
   assert.isTrue(headlines.allHeadlines()[2].headline === "Man found guilty of murdering passenger on Surrey train", "headline of 3 article is as expected")
 })();

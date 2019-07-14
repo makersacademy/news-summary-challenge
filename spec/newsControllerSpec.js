@@ -9,8 +9,12 @@ var mockHeadlines = `<div>
 <a href="#world/2019/jul/12/iran-warns-western-powers-to-leave-region-amid-gulf-crisis"><h1>UK to step up military presence in Gulf</h1></a>
 </div>
 `
+
 // creating some mocks
-function NewsHeadlinesDouble(){};
+
+function NewsHeadlinesDouble(json){
+  this.json = json
+};
 
 function NewsHeadlinesViewDouble(){};
 NewsHeadlinesViewDouble.prototype.htmlAllHeadlines = function(){
@@ -18,6 +22,8 @@ NewsHeadlinesViewDouble.prototype.htmlAllHeadlines = function(){
 }
 
 var mockElement = {};
+var exampleJson = {};
+
 
 
 
@@ -25,12 +31,12 @@ var mockElement = {};
 //tests......
 
 (function (exports){
-  newsController = new NewsController(NewsHeadlinesDouble, NewsHeadlinesViewDouble, mockElement)
+  newsController = new NewsController(NewsHeadlinesDouble, NewsHeadlinesViewDouble, exampleJson, mockElement)
   assert.isTrue(newsController.constructor.name === "NewsController", "test to verify correct type is created")
 })();
 
 (function (exports){
-  newsController = new NewsController(NewsHeadlinesDouble, NewsHeadlinesViewDouble, mockElement)
+  newsController = new NewsController(NewsHeadlinesDouble, NewsHeadlinesViewDouble, exampleJson, mockElement)
   assert.isTrue(mockElement.innerHTML === mockHeadlines, 'test to verify controller can print headlines to element')
 })();
 
