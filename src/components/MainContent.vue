@@ -19,24 +19,10 @@
                   {{ article.description }}
                 </v-card-text>
                 <v-card-actions>
-                  <v-chip small color="secondary" class="white--text">
+                  <v-chip small color="primary" class="white--text">
                     {{article.source.name}}
                   </v-chip>
                   <v-spacer></v-spacer>
-                  <v-btn icon class="red--text">
-                    <v-icon small>fa-reddit</v-icon>
-                  </v-btn>
-                  <v-btn icon class="light-blue--text">
-                    <v-icon small>fa-twitter</v-icon>
-                  </v-btn>
-                  <v-btn icon class="blue--text text--darken-4">
-                    <v-icon small>fa-facebook</v-icon>
-                  </v-btn>
-                  <v-btn icon class="red--text">
-                    <v-icon small>fa-google-plus</v-icon>
-                  </v-btn>
-                  <v-btn icon class="blue--text text--darken-4">
-                    <v-icon small>fa-linkedin</v-icon>
                   </v-btn>
                   <v-spacer></v-spacer>
 

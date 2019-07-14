@@ -101,5 +101,5 @@ npm test
 
 ## Screenshot
 
-<img width="913" src="https://user-images.githubusercontent.com/23095774/61187111-b334cb00-a665-11e9-81a0-2b9549922ff4.png">
+<img width="910" src="https://user-images.githubusercontent.com/23095774/61187587-22f98480-a66b-11e9-912f-56c46b54f5a8.png">
 

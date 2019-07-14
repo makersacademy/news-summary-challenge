@@ -2,8 +2,30 @@
 <v-app light>
   <!--The SideMenu Component go here-->  
   <v-toolbar fixed app light clipped-left color="warning" class="elevation-2">
+
+    <v-toolbar-side-icon class="white--text">
+      
+    </v-toolbar-side-icon>
+
     <v-toolbar-title class="white--text">News Summary App</v-toolbar-title>
+  
+    <v-spacer></v-spacer>
+
+    <v-btn icon class="white--text" value="Home">
+      <v-icon>home</v-icon>
+    </v-btn>
+
+    <v-btn icon class="white--text" value="Refresh Page" onClick="window.location.href=window.location.href">
+      <v-icon>refresh</v-icon>
+    </v-btn>
+
+
+
   </v-toolbar>
+  
+
+
+
 
   <v-content>
     <v-container fluid>
@@ -44,7 +66,7 @@ export default {
       }
     },
     created () {
-      axios.get('https://newsapi.org/v2/top-headlines?sources=cnn&apiKey='+this.api_key)
+      axios.get('https://newsapi.org/v2/top-headlines?sources=google-news&apiKey='+this.api_key)
         .then(response => {
           this.articles = response.data.articles
           console.log('data:')
