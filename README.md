@@ -115,5 +115,6 @@ npm test
 
 <img width="910" src="https://user-images.githubusercontent.com/23095774/61187587-22f98480-a66b-11e9-912f-56c46b54f5a8.png">
 
+---
+<img width="833" src="https://user-images.githubusercontent.com/23095774/61187770-8389c100-a66d-11e9-8cca-824ce9a1b974.png">
 
-<img width="524" src="https://user-images.githubusercontent.com/23095774/61187741-f5153f80-a66c-11e9-835b-3d88253bf36a.png">
