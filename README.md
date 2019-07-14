@@ -99,3 +99,7 @@ npm test
 * [NewsAPI.org](https://newsapi.org/sources)
 
 
+## Screenshot
+
+<img width="913" src="https://user-images.githubusercontent.com/23095774/61187111-b334cb00-a665-11e9-81a0-2b9549922ff4.png">
+
