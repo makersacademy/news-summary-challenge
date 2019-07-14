@@ -1,6 +1,6 @@
 # news-summary-challenge
 
-> A Vue.js project
+> Single Page News App
 
 ## Build Setup
 
