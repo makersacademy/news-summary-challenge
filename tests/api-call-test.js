@@ -6,4 +6,4 @@ async function fullTestOfApiHeadlinesReturn () {
 }
 // this is a full test of api. Use only if neccesary
 
-fullTestOfApiHeadlinesReturn()
+// fullTestOfApiHeadlinesReturn()
