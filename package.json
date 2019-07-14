@@ -2,7 +2,7 @@
   "name": "news-summary-challenge",
   "version": "1.0.0",
   "description": "This app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article. You can find the original challenge [here](https://github.com/makersacademy/news-summary-challenge).",
-  "main": "controller.js",
+  "main": "index.html",
   "directories": {
     "test": "tests"
   },
