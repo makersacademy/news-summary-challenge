@@ -4,6 +4,3 @@
 
 Clone or download this repo. Open the `index.html` in your browser.
 
-## To run tests:
-
-`$ npm test`
