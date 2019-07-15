@@ -21,12 +21,14 @@ Run `open specRunner.html`. Once it opens in your browser, open up your develope
 
 ### User Stories
 
+#### In Progress
+
 ```
 As a busy politician
 I can see all of today's headlines in one place
 So I know what the big stories of the day are
 ```
-
+#### To Do
 ```
 As a busy politician
 I can click a link to see the original news article

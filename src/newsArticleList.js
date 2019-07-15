@@ -1,7 +1,7 @@
 (function(exports) {
   function NewsArticleList() {
     var _articles = [];
-    var counter = 0;
+    var _counter = 0;
 
     function articles() {
       return _articles;
@@ -23,8 +23,8 @@
 
     // private functions
     function _addID(article) {
-      article.id = counter;
-      counter++;
+      article.id = _counter;
+      _counter++;
       return article;
     }
 
