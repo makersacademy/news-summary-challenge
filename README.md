@@ -12,7 +12,12 @@ Build a single page app that summarises the news
 * Self made test framework
 
 ### Instructions
-To run the tests, go to the terminal. From the project folder run `open specRunner.html`. Once it opens in your browser, open up your developer tools and click on the `console` tab. Passing tests print out in green, failing tests will be red.
+Fork the repo & clone locally.
+#### Run tests
+Go to the project folder in the terminal.
+Run `open specRunner.html`. Once it opens in your browser, open up your developer tools and click on the `console` tab. Passing tests print out in green, failing tests will be red.
+
+![screenshot](images/test_output_example.png)
 
 ### User Stories
 
@@ -54,6 +59,30 @@ To make my news reading more fun
 
 ## Progress + Challenges
 
+**NewsArticle** 
+
+-> Has details for each news story:
+- headline
+- url
+- imageUrl
+- id (will use for routing)
+
+**NewsArticleList**
+
+-> Stores NewsArticles
+
+-> Queries APIs for News & summaries (may need to extract into separate class)
+
+-> Produces a view for headlines
+
+ToDos
+------
+* Implement NewsController to display stories on the page
+* Produce a view for summary of each article
+* Display summary for each article
+  * Include headline, image, summary
+
 Resources
+--------- 
 ---------
----------
+[Henry Cooksley Solution](https://github.com/hnryjmes/news-summary-challenge)

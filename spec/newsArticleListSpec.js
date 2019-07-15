@@ -53,7 +53,7 @@ describe('NewsArticleList', function() {
     });
 
     it('returns message if articles are unavailable', function() {
-      let newsArticleList = new NewsArticleList();
+      // let newsArticleList = new NewsArticleList();
       expect(newsArticleList.convertToHTML()).toEqual("<ul>Unable to show any stories</ul>");
     });
   });
