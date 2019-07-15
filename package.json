@@ -1,9 +1,8 @@
 {
   "name": "news",
   "version": "1.0.0",
-  "type": "module",
   "description": "an app for news",
-  "main": "app.js",
+  "main": "lib/interface.js",
   "scripts": {
     "start": "node app.js",
     "test": "node spec/test-runner.js"
