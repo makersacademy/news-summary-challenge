@@ -2,8 +2,19 @@
   "extends": ["airbnb-base", "prettier"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error"
     // add exceptions or alter settinngs for default rules
     // e.g. "no-unused-vars": "warn" -> instead of default error
+    "prettier/prettier": "error",
+    "no-undef": "off",
+    "func-names": "off",
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "no-use-before-define": "off",
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ]
   }
 }

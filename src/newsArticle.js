@@ -3,7 +3,7 @@
     this.headline = headline;
     this.url = url;
     this.imageUrl = imageUrl;
-    this.id = id;   
+    this.id = id;
   }
 
   exports.NewsArticle = NewsArticle;
