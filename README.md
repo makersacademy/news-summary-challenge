@@ -1,19 +1,34 @@
 # News Summary App
 
 ### Description
+
 Build a single page app that summarises the news
 
 ### Tech Stack
-* JavaScript 
-* HTML
-* CSS
-* http-server (Static web server)
-* Makers News Summary API (The Guardian & Ayelian text summarisation API's)
-* Self made test framework
+
+- JavaScript
+- HTML
+- CSS
+- http-server (Static web server)
+- Makers News Summary API (The Guardian & Ayelian text summarisation API's)
+- Self made test framework
+- ESLint (AirBnb Style guide)
+- Prettier (Code formatting)
+- npm
 
 ### Instructions
-Fork the repo & clone locally.
+
+Clone the app, install the packages & run the server:
+
+```
+$ git clone https://github.com/Danielandro/news-summary-challenge.git
+$ cd news-summary-challenge
+$ npm install
+$ npm start
+```
+
 #### Run tests
+
 Go to the project folder in the terminal.
 Run `open specRunner.html`. Once it opens in your browser, open up your developer tools and click on the `console` tab. Passing tests print out in green, failing tests will be red.
 
@@ -28,7 +43,9 @@ As a busy politician
 I can see all of today's headlines in one place
 So I know what the big stories of the day are
 ```
+
 #### To Do
+
 ```
 As a busy politician
 I can click a link to see the original news article
@@ -61,9 +78,10 @@ To make my news reading more fun
 
 ## Progress + Challenges
 
-**NewsArticle** 
+**NewsArticle**
 
 -> Has details for each news story:
+
 - headline
 - url
 - imageUrl
@@ -77,14 +95,17 @@ To make my news reading more fun
 
 -> Produces a view for headlines
 
-ToDos
-------
-* Implement NewsController to display stories on the page
-* Produce a view for summary of each article
-* Display summary for each article
-  * Include headline, image, summary
+## ToDos
+
+- Implement NewsController to display stories on the page
+- Produce a view for summary of each article
+- Display summary for each article
+  - Include headline, image, summary
 
 Resources
---------- 
----------
+
+---
+
+---
+
 [Henry Cooksley Solution](https://github.com/hnryjmes/news-summary-challenge)
