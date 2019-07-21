@@ -33,5 +33,4 @@ describe('NewsController', function() {
     expect(element.innerHTML).toEqual(htmlString);
   });
 
-
 });
