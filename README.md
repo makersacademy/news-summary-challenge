@@ -98,6 +98,8 @@ To make my news reading more fun
 ## ToDos
 
 - Implement NewsController to display stories on the page
+  - Pull stories into NewsArticleList from Guardian/Makers API
+  - show headlines on Index page when server is started
 - Produce a view for summary of each article
 - Display summary for each article
   - Include headline, image, summary
