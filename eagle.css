@@ -1,0 +1,12 @@
+body {
+  /* background-color: black; */
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/19/%C3%81guila_calva.jpg");
+  color: white;
+}
+
+.passColour {
+  background-color: green;
+}
+.failColour {
+  background-color: purple;
+}
