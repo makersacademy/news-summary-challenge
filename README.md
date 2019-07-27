@@ -26,7 +26,7 @@ The app grabs all the headlines from the Guardian newspaper API and displays the
 
 ## USER STORIES
 
-Here are the user stories the Makers Academy provided for the challenge. I was able to implement all but the final user story (asking for 'whizzy animations') before running out of time.
+Here are the user stories Makers Academy provided for the challenge. I was able to implement all but the final user story (asking for 'whizzy animations') before running out of time.
 
 ```
 As a busy politician
@@ -62,7 +62,7 @@ To make my news reading more fun
 
 ## TESTING
 
-Here's where I became unstuck. The app relies on only the testing framework included in Google DevTools. Due to the time constraint I wanted to focus on the mechanics of the code as opposed to structuring a reliable testing framework. In hindsight I would have used the framework we had developed in the previous week during my [notes_js](https://github.com/marbuthnott/notes_js) project, and possibly implement some of the thinking in this useful [blog](https://medium.com/@giltayar/testing-your-frontend-code-part-i-introduction-7e307eac4446).
+The app relies on only the testing framework included in Google DevTools. Due to the time constraint I wanted to focus on the mechanics of the code as opposed to structuring a reliable testing framework. In hindsight I would have used the framework we had developed in the previous week during my [notes_js](https://github.com/marbuthnott/notes_js) project, and possibly implement some of the thinking in this useful [blog](https://medium.com/@giltayar/testing-your-frontend-code-part-i-introduction-7e307eac4446).
 
 ## APPROACH
 
