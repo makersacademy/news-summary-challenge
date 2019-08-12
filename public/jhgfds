@@ -1,5 +1,0 @@
-https://content.guardianapis.com/search?q=12%20years%20a%20slave&format=json&tag=film/film,tone/reviews&from-date=2010-01-01&show-tags=contributor&show-fields=starRating,headline,thumbnail,short-url&show-refinements=all&order-by=relevance
-
-http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=politics&show-elements=image&show-fields=thumbnail
-
-https://content.guardianapis.com/search?section=politics&show-elements=image&show-fields=thumbnail&api-key=3cb091b4-2661-48b5-932c-0bba1f68621e

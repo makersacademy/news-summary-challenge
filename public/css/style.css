@@ -44,12 +44,13 @@
 
 }
 .image {
-
+width: 100%;
+height: auto;
 }
 body {
   background-image: url("https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_1280.jpg");
   background-repeat: no-repeat;
-  background-size: 100%
+  background-size: 100%;
 }
    .list-news {
  background-color: white;
