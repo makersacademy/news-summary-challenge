@@ -1,6 +1,10 @@
 // framework from https://github.com/aniasobo/notes-app.git 
 // credit to https://github.com/maryrosecook/notes-exemplar/tree/master/js/test
 
+// TODO:
+// refactor to exports
+// import to a test unit file
+
 "use strict";
 
   function describe(caseUnderTest, describeBlockExecutable) {
