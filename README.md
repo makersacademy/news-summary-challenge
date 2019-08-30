@@ -98,7 +98,7 @@ npm test
 
 ## Challenges
 
-- Still waiting for an API key from the Guardian newspaper, so I am using a key from 'https://newsapi.org/sources'
+- API key from 'https://newsapi.org/sources'
 - Learning Vue.js
 - npm dependency issues
 - Using eslint
