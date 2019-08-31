@@ -29,8 +29,11 @@ $ npm start
 
 #### Run tests
 
-Go to the project folder in the terminal.
-Run `open specRunner.html`. Once it opens in your browser, open up your developer tools and click on the `console` tab. Passing tests print out in green, failing tests will be red.
+Go to the project directory in the terminal.
+
+Run `open specRunner.html` (for Linux/Bash on Windows, run `xdg-open specRunner.html`)
+
+Once it opens in your browser, open up your developer tools and click on the `console` tab. Passing tests print out in green, failing tests will be red.
 
 ![screenshot](images/test_output_example.png)
 
