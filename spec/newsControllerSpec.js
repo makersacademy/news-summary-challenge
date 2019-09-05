@@ -7,6 +7,7 @@ describe('NewsController', function() {
   });
 
   describe('#renderHeadlines', function() {
+    // const apiResponse =
     const htmlString =
       '<ul>' +
       '<li id="1">' +
@@ -24,7 +25,8 @@ describe('NewsController', function() {
     const newsArticleListDouble = {
       convertToHTML() {
         return htmlString;
-      }
+      },
+      fetchHeadlines() {}
     };
 
     const element = {};
@@ -32,7 +34,9 @@ describe('NewsController', function() {
 
     it('displays headlines on page', function() {
       newsController.renderHeadlines(element);
-      expect(element.innerHTML).toEqual(htmlString);
+      setTimeout(function() {
+        expect(element.innerHTML).toEqual(htmlString);
+      }, 1000);
     });
   });
 });

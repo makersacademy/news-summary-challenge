@@ -59,4 +59,51 @@ describe('NewsArticleList', function() {
       );
     });
   });
+
+  describe('#fetchHeadlines', function() {
+    // SETUP
+    const fetchMock = function() {
+      return new Promise(function(resolve, reject) {
+        resolve(mockApiData);
+      });
+    };
+
+    const mockApiData = {
+      json: () => {
+        return new Promise(function(resolve, reject) {
+          resolve(apiResponse);
+        });
+      }
+    };
+
+    const mockArticles = [
+      { title: 'article 1', url: 'stories/1', urlToImage: 'stories/1.png' },
+      { title: 'article 2', url: 'stories/2', urlToImage: 'stories/2.png' },
+      { title: 'article 3', url: 'stories/3', urlToImage: 'stories/3.png' }
+    ];
+
+    const apiResponse = {
+      articles: mockArticles
+    };
+
+    it('fetches headlines, adds to list', function() {
+      const newsArticleList = new NewsArticleList();
+      const originalFetch = window.fetch;
+      window.fetch = fetchMock;
+
+      // ACT
+      newsArticleList.fetchHeadlines();
+
+      // ASSERT
+      setTimeout(() => {
+        expect(newsArticleList.articles().length).toEqual(3);
+        expect(newsArticleList.articles()[0].headline).toEqual('article 1');
+        expect(newsArticleList.articles()[1].headline).toEqual('article 2');
+        expect(newsArticleList.articles()[2].headline).toEqual('article 3');
+      }, 1100);
+
+      // reset fetch to original
+      window.fetch = originalFetch;
+    });
+  });
 });
