@@ -6,7 +6,7 @@ describe('NewsController', function() {
     expect(newsController.list).toEqual(newsArticleList);
   });
 
-  it('displays headlines on page', function() {
+  describe('#renderHeadlines', function() {
     const htmlString =
       '<ul>' +
       '<li id="1">' +
@@ -20,6 +20,7 @@ describe('NewsController', function() {
       '</a>' +
       '</li>' +
       '</ul>';
+
     const newsArticleListDouble = {
       convertToHTML() {
         return htmlString;
@@ -29,7 +30,9 @@ describe('NewsController', function() {
     const element = {};
     const newsController = new NewsController(newsArticleListDouble);
 
-    newsController.renderHeadlines(element);
-    expect(element.innerHTML).toEqual(htmlString);
+    it('displays headlines on page', function() {
+      newsController.renderHeadlines(element);
+      expect(element.innerHTML).toEqual(htmlString);
+    });
   });
 });

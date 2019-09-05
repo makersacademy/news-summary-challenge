@@ -21,6 +21,21 @@
       return `<ul>${_listInHTML()}</ul>`;
     }
 
+    function fetchHeadlines() {
+      let url = `https://newsapi.org/v2/top-headlines?country=gb&apiKey=${newsApiKey}`;
+      fetch(url)
+        .then(data => data.json())
+        .then(res => {
+          res.articles.map(article => {
+            const headline = article.title;
+            const url = article.url;
+            const imageUrl = article.urlToImage;
+
+            addArticle(headline, url, imageUrl);
+          });
+        });
+    }
+
     // private functions
     function _addID(article) {
       article.id = _counter;
@@ -43,7 +58,8 @@
     return {
       addArticle,
       articles,
-      convertToHTML
+      convertToHTML,
+      fetchHeadlines
     };
   }
 

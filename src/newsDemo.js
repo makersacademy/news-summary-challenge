@@ -5,11 +5,6 @@
 // create new article list
 const demoArticleList = new NewsArticleList();
 
-// add 5 articles ot the list
-for (let i = 0; i < 5; i++) {
-  setupArticleList(demoArticleList);
-}
-
 // create new controller, passing in the list
 const demoNewsController = new NewsController(demoArticleList);
 
