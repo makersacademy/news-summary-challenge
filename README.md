@@ -18,14 +18,22 @@ Build a single page app that summarises the news
 
 ### Instructions
 
-Clone the app, install the packages & run the server:
+- Clone the app & install the packages:
 
 ```
 $ git clone https://github.com/Danielandro/news-summary-challenge.git
 $ cd news-summary-challenge
 $ npm install
-$ npm start
 ```
+
+- Register for an API key from [News API](https://newsapi.org/).
+
+- You must create this file: `./apiKeys.js` and add the key with this format:  
+   `const newsApiKey = 'YOUR-NEWS-API-KEY';`
+
+- Run the server `npm start`
+
+- Open the app at `http://localhost:8080/`
 
 #### Run tests
 
