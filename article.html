@@ -5,10 +5,48 @@
 	<title>News Article</title>
   <meta charset='UTF-8' />
   <style>
+    @font-face {
+      font-family: 'News Cycle';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/newscycle/v16/CSR64z1Qlv-GDxkbKVQ_fOAKTfl8tOQ.woff2) format('woff2');
+    }
+      
+    @font-face {
+      font-family: 'News Cycle';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/newscycle/v16/CSR54z1Qlv-GDxkbKVQ_dFsvWNReuc4nG2o.woff2) format('woff2');
+    }
+
     body {
       background-image: url("newsroom.jpeg");
+      background-position: center;
       background-color: #fff;
+      background-repeat: no-repeat;
+      font-family: 'News Cycle';
+      font-weight: 400;
+      font-size: 1rem;
     }
+
+    h1 {
+      font-family: 'News Cycle';
+      font-weight: 700;
+      font-size: 50px;
+      background-color: #fff;
+      opacity: 0.5;
+    }
+
+    .js-article {
+      border-radius: 10px;
+      background-color: #fff;
+      line-height: 1rem;
+      padding: 5px 5px;
+      opacity: 0.5;
+    }
+
   </style>
 </head>
 
