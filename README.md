@@ -1,152 +1,79 @@
 # News Summary challenge
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+![notes screenshot](./images/notebook_screenshot.png)
 
-## Challenge
+## INTRODUCTION
 
-As usual please start by forking this repo.
+I undertook this project to challenge my understanding of how to create a single page web app with vanilla JavaScript, CSS and HTML. I have avoided the use of any backend JavaScript and Ruby.
 
-You'll create an app that summarises the news.
+The app grabs all the headlines from the Guardian newspaper API and displays them on a page, clicking on a headline will show a summary of the relevant article.
 
-### Guidance
 
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+## GETTING STARTED
 
-## Project overview
+* `git clone` the repo.
+* Go to the project root with `cd news-summary-challenge`.
+* Run `node node_modules/http-server/bin/http-server`. This allows you to run a local server from the command line.
+* Visit [The Guardian Open Platform](https://open-platform.theguardian.com/) and apply for an API key.
+* Input your new API key into the config_EXAMPLE.js file and rename it `config.js`.
+* You will now be able to run the app in your default browser by running `open index.html`.
 
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
+## HOW TO USE THE APP
 
-### Technologies
+1. You can scroll the homepage and click on a link that you like.
 
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
+2. When you've finished reading your article you can click the 'BACK' button to return to the homepage.
 
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
+## USER STORIES
 
-But, feel free to use the test framework you wrote during the week!
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
-
-## User Stories
-
-Some of these stories will need decomposing if they seem too large.
+Here are the user stories Makers Academy provided for the challenge. I was able to implement all but the final user story (asking for 'whizzy animations') before running out of time.
 
 ```
 As a busy politician
 I can see all of today's headlines in one place
 So I know what the big stories of the day are
-```
 
-```
 As a busy politician
 I can click a link to see the original news article
 So that I can get an in depth understanding of a very important story
-```
 
-```
 As a busy politician
 I can see a summary of a news article
 So I can get a few more details about an important story
-```
 
-```
 As a busy politician
 I can see a picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
-```
 
-```
 As a busy politician
 I can read the site comfortably on my phone
 Just in case my laptop breaks
-```
 
-```
 As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
 ```
 
-## Mockups
+## TECH/FRAMEWORK USED
 
-### Headlines page
+**Primary programming language:** *JavaScript*
 
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
+**Other programming languages:** *HTML* and *CSS*
 
-### Article summary page
+## TESTING
 
-![Article page mockup](/images/news-summary-project-article-page-mockup.png)
+The app relies on only the testing framework included in Google DevTools. Due to the time constraint I wanted to focus on the mechanics of the code as opposed to structuring a reliable testing framework. In hindsight I would have used the framework we had developed in the previous week during my [notes_js](https://github.com/marbuthnott/notes_js) project, and possibly implement some of the thinking in this useful [blog](https://medium.com/@giltayar/testing-your-frontend-code-part-i-introduction-7e307eac4446).
 
-## API
+## APPROACH
 
-### API authentication
+The controller is the `interface.js` which hold the function that looks for a hash change in the url. Depending on the state of the hash change it will either render the summary article view or the headline list view.
 
-So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
+The largest learning curve was linking the Guardian API to the app. How to request the data and understanding the state in which it was returned was (for an API newbie) challenging. I created a separate file to handle all the interaction with the Guardian API, it I had more time I would try and make it more descriptive so users of the code could understand what each line is doing.
 
-> Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
+Finally I created an `src` directory to hold the functions to render the two views. This was a case of playing with the various elements HTML `display` characteristic and also creating a loop to display all headlines within the API. While it has functionality the code quality within the files is poor and could do with significant refactoring (again I had run out of time).
 
-### API request rate limits and stubbing
+## WHAT I WOULD HAVE DONE DIFFERENTLY
 
-The Guardian and Aylien text summarisation APIs are severely rate-limited.
+I was only just able to complete this project in the allocated 2 day time limit, and so had to cut short my refactoring.
 
-**Please stub your tests so we don't exceed the daily limit.  Otherwise, all requests will be rejected and everyone's apps will stop working!**
-
-### API Overview
-
-The basic idea is to send an `apiRequestUrl` query parameter to the News Summary API.  The value of this parameter is the URL of the request you *would* have made to the Guardian or Aylien API, minus any API credentials.
-
-### Guardian API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.  Notice how it has a query parameter for `api-key`.
-
-```
-curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this:
-
-```
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-```
-
-Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
-
-### Aylien text summarisation API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make.  Notice how it has headers to authenticate with the Aylien API.
-
-```
-curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
-  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
-  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this.
-
-```
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
-```
-
-Note how the `apiRequestUrl` parameter is just the request you would have made to the Aylien API.  Notice how you don't have to send authentication headers.
-
-### Code
-
-If you're interested, you can see the code for the News Summary API in this repo: https://github.com/makersacademy/news-summary-api
-
-## Resources
-
-* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-* [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+In order to improve this project I would focus on the view rendering files. I would create separate methods to handle the 'hiding' of elements and another to 'show' elements. There is also scope to tidy the code within the `headlineList.js` file, and in particular the HTML code for each list element; most likely this would be in the form of a private function to handle producing the HTML code for an individual list item.
