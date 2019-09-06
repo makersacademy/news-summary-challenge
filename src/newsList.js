@@ -9,5 +9,12 @@
 
   }
 
+  NewsList.prototype.add = function(newsItem){
+
+    this.allNews.push(newsItem)
+  }
+
+
+
   exports.NewsList = NewsList;
   })(this);
