@@ -28,7 +28,7 @@ $ npm install
 
 - Register for an API key from [News API](https://newsapi.org/).
 
-- You must create this file: `./apiKeys.js` and add the key with this format:  
+- You must create this file: `src/apiKeys.js` and add the key with this format:  
    `const newsApiKey = 'YOUR-NEWS-API-KEY';`
 
 - Run the server `npm start`
