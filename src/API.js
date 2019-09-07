@@ -8,7 +8,7 @@ function append(parent,el){
 
 
 const ul = document.getElementById('app'); // Get the list where we will place our authors
-  const url = 'https://content.guardianapis.com/search?show-fields=all&show-elements&api-key=79e705af-3678-45d4-bb69-c209643b81ee'; // Get 10 random users
+  const url = 'https://content.guardianapis.com/search?show-fields=all&show-elements=all&api-key=79e705af-3678-45d4-bb69-c209643b81ee'; // Get 10 random users
 
 
 
@@ -21,7 +21,7 @@ console.log(authors)
     var i
 
         for(i=0; i < 10; i++){
-          ul.innerHTML = "<ul>"+(authors.map( x => "<li><div><a href='#" + i++ + "'>" + x.webTitle + "</a></div></li>").join(""))+"</ul>"
+          ul.innerHTML = "<ul>"+(authors.map( x => "<li><div><a href='#" + i++ + "'><div><img src=" + x.fields.thumbnail + " width='350' height='200'></div>" + x.webTitle + "</a></div></li>").join(""))+"</ul>"
 
         }
 
@@ -37,7 +37,6 @@ console.log(authors)
     ul.innerHTML = this.authors[id].fields.bodyText
   }
 
-  //// so instead of webTitle we just need the full story
 
 // this works
 // fetch(url)
