@@ -8,14 +8,14 @@ function append(parent,el){
 
 
 const ul = document.getElementById('app'); // Get the list where we will place our authors
-  const url = 'https://content.guardianapis.com/search?api-key=79e705af-3678-45d4-bb69-c209643b81ee'; // Get 10 random users
+  const url = 'https://content.guardianapis.com/search?show-fields=all&show-elements&api-key=79e705af-3678-45d4-bb69-c209643b81ee'; // Get 10 random users
 
 
 
 fetch(url)
 .then((resp) => resp.json())
 .then(function(data){
-let authors = data.response.results;
+this.authors = data.response.results;
 console.log(authors)
   return authors.map(function(author){
     var i
@@ -28,6 +28,16 @@ console.log(authors)
   })
   })
 
+
+
+  window.addEventListener("hashchange", showNewsItem);
+
+  function showNewsItem(){
+    var id = Number(location.hash.split("#")[1])
+    ul.innerHTML = this.authors[id].fields.bodyText
+  }
+
+  //// so instead of webTitle we just need the full story
 
 // this works
 // fetch(url)
