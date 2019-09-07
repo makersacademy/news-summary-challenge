@@ -16,24 +16,32 @@
       codeToRun()
     } catch (error) {
       testDiv.appendChild(displayFail("LEMON: " + error + " UNACCEPTABLE!!!"))
-      testDiv.setAttribute("style", "color: red")
+      testDiv.setAttribute("style", "color: yellow")
       return testDiv
     }
 
     testDiv.appendChild(displayPass())
-    testDiv.setAttribute("style", "color: green")
+    testDiv.setAttribute("style", "color: lightblue")
     return testDiv
   }
 
   function displayFail(failMessage) {
     let failedTest = document.createElement('ul')
     failedTest.textContent = failMessage
+    let lemon = document.createElement('IMG')
+    lemon.setAttribute('src', './lemonsOrLemonade/lemon.png')
+    lemon.setAttribute('height', '30px')
+    failedTest.appendChild(lemon)
     return failedTest
   }
 
   function displayPass() {
     let passedTest = document.createElement('ul')
     passedTest.textContent = "LEMONADE"
+    let lemonade = document.createElement('IMG')
+    lemonade.setAttribute('src', './lemonsOrLemonade/lemonade.png')
+    lemonade.setAttribute('height', '30px')
+    passedTest.appendChild(lemonade)
     return passedTest
   }
 
@@ -44,6 +52,7 @@
     
     let header = document.createElement('h3');
     header.textContent = unitTested;
+    header.setAttribute("style", "color: lightblue")
 
     new_div.appendChild(header);
 
