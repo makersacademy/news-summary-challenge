@@ -21,8 +21,15 @@
     }
 
     testDiv.appendChild(displayPass())
-    testDiv.setAttribute("style", "color: lightblue")
+    testDiv.setAttribute("style", "color: lightblue");
     return testDiv
+  }
+
+  function xtest(description, codeToRun) {
+    let pendingTest = document.createElement('li');
+    pendingTest.textContent = ("Testing: " + description + " pending");
+    pendingTest.setAttribute("style", "color: white")
+    return pendingTest;
   }
 
   function displayFail(failMessage) {
@@ -91,4 +98,5 @@
   exports.expect = expect;
   exports.spec = spec;
   exports.test = test;
+  exports.xtest = xtest;
 }(this))
