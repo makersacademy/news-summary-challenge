@@ -34,7 +34,8 @@ console.log(authors)
 
   function showNewsItem(){
     var id = Number(location.hash.split("#")[1])
-    ul.innerHTML = this.authors[id].fields.bodyText
+    ul.innerHTML = "<div><img src=" + this.authors[id].fields.thumbnail + "></div>" + this.authors[id].fields.bodyText
+
   }
 
 
