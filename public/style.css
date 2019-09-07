@@ -1,0 +1,12 @@
+ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  /* border: 20px solid red; */
+}
+
+#app li {
+  border: 2px solid black;
+  text-align: center;
+  list-style: none;
+}

@@ -22,7 +22,7 @@
     }
 
     function fetchHeadlines() {
-      let url = `https://newsapi.org/v2/top-headlines?country=gb&apiKey=${newsApiKey}`;
+      let url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&sources=google-news-uk&apiKey=${newsApiKey}`;
       fetch(url)
         .then(data => data.json())
         .then(res => {
@@ -46,7 +46,7 @@
     function _listInHTML() {
       return articles()
         .map(function(article) {
-          return `<li id="${article.id}"><a href="#articles/${article.id}"><h3>${article.headline}</h3></a></li>`;
+          return `<li id="${article.id}"><img src="${article.imageUrl}" alt="${article.headline}"><a href="#articles/${article.id}"><h3>${article.headline}</h3></a></li>`;
         })
         .join('');
     }
