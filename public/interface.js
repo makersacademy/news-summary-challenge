@@ -1,7 +1,11 @@
 // The JS required to make the page dynamic.
 
-window.onload = load
+let newsManager = new NewsManager()
+newsManager.getArticles()
+newsManager.displayArticles()
 
-function load() {
-  
-}
+var mainDiv = document.getElementById("mainDiv")
+
+setTimeout(function(){
+  mainDiv.appendChild(articlesDiv)
+}, 5000)
