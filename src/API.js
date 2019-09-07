@@ -8,21 +8,38 @@ function append(parent,el){
 
 
 const ul = document.getElementById('app'); // Get the list where we will place our authors
-  const url = 'https://randomuser.me/api/?results=10'; // Get 10 random users
+  const url = 'https://content.guardianapis.com/search?api-key=79e705af-3678-45d4-bb69-c209643b81ee'; // Get 10 random users
 
 fetch(url)
 .then((resp) => resp.json())
 .then(function(data){
-  let authors = data.results;
+let authors = data.response.results;
   return authors.map(function(author){
     let li = createNode('li'),
-    img = createNode('img'),
+    // img = createNode('img'),
     span = createNode('span');
-    img.src = author.picture.medium;
-    span.innerHTML = `${author.name.first} ${author.name.last}`;
-    append(li, img);
+    // img.src = author.picture.medium;
+    span.innerHTML = `${author.webTitle}`;
+    // append(li, img);
     append(li, span);
     append(ul, li);
   })
+  })
 
-})
+ // })
+
+
+// fetch(url)
+// .then((resp) => resp.json())
+// .then(function(data){
+//   let authors = data.results;
+//   return authors.map(function(author){
+//     let li = createNode('li'),
+//     img = createNode('img'),
+//     span = createNode('span');
+//     img.src = author.picture.medium;
+//     span.innerHTML = `${author.name.first} ${author.name.last}`;
+//     append(li, img);
+//     append(li, span);
+//     append(ul, li);
+//   })
