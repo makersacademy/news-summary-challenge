@@ -1,0 +1,23 @@
+* {
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 20px;
+    ;
+}
+
+body {
+    background: url(https://previews.dropbox.com/p/thumb/AAhLEy9cU08K26hfz-jBwuUd3yiq8l1vMhVKJuf4B7n3ou9uM4GNT5pV7_W-9VfG9b43O492XnFfIHy4_vQpLz9yOjqha0iayGYA9Y_EwhvC3wmmTwMM6RpAXDrFrRuvfdU1YxOQWTeJMtpXU1D6rOBYxnJBJIzo0GMY6Rqy7NC0sECI6qa0N1dpa10j1T8IR2SSLQM0jfb_W2OJywS2VmzzO7JH7EDolcqOrysGK_njVwhjnV4aDPeIHNrz0R4bqL-MuObjTrMlBoCzBnj6gW2bxYz6BWje_UkM-tUe3G2YqHE0EPANnmEOI7-3qlgNeeXrIW5AdOOV-BZt3N79XmcN/p.jpeg?fv_content=true&size_mode=5)
+}
+
+.image-parent {
+    max-width: 300vw;
+}
+
+.list-group-item {
+    margin: 30px;
+    opacity: 0.9;
+}
+
+.img-fluid {
+    opacity: 1;
+}
