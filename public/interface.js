@@ -17,8 +17,19 @@ var hideFullList = function() {
   fullList.setAttribute('hidden', 'hidden')
 }
 
+var hideArticle = function(id) {
+  console.log(id)
+  var article = document.getElementById(id)
+  article.setAttribute('hidden', 'hidden')
+}
+
 var showArticle = function(index) {
   console.log('article-' + index)
   var article = document.getElementById('article-' + index)
+  article.removeAttribute('hidden')
+}
+
+var showFullList = function() {
+  var article = document.getElementById('fullList')
   article.removeAttribute('hidden')
 }
