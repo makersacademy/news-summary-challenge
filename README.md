@@ -3,6 +3,10 @@
 
 [click](https://news_summary_kierepkae.surge.sh)
 
+```
+Simply click on the header of articles that interests you and read full article
+```
+
 ## User Stories
 
 
