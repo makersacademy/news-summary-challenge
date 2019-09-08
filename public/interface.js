@@ -2,34 +2,27 @@
 
 var newsManager = new NewsManager()
 newsManager.getArticles()
-newsManager.displayArticles()
-newsManager.displayStories()
+
+setTimeout(function(){
+  var articlesDiv = newsManager.displayArticles()
+  console.log(articlesDiv)
+
+  setTimeout(function(){
+    mainDiv.appendChild(articlesDiv)
+  }, 500)
+}, 1000)
+
 
 var mainDiv = document.getElementById("mainDiv")
 
-setTimeout(function(){
-  mainDiv.appendChild(articlesDiv)
-  mainDiv.appendChild(fullArticlesDiv)
-}, 1500)
-
-var hideFullList = function() {
-  var fullList = document.getElementById('fullList')
-  fullList.setAttribute('hidden', 'hidden')
-}
-
-var hideArticle = function(id) {
-  console.log(id)
-  var article = document.getElementById(id)
-  article.setAttribute('hidden', 'hidden')
-}
-
 var showArticle = function(index) {
-  console.log('article-' + index)
-  var article = document.getElementById('article-' + index)
-  article.removeAttribute('hidden')
+  var fullArticleView = newsManager.displayStory(index)
+  var articlesView = document.getElementById('fullList')
+  articlesView.parentNode.replaceChild(fullArticleView, articlesView)
 }
 
 var showFullList = function() {
-  var article = document.getElementById('fullList')
-  article.removeAttribute('hidden')
+  var shortArticlesView = newsManager.displayArticles()
+  var fullArticleView = document.getElementById('singleArticle')
+  fullArticleView.parentNode.replaceChild(shortArticlesView, fullArticleView)
 }
