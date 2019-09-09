@@ -1,8 +1,14 @@
 
+## See how it works here: 
+
+[click](https://news_summary_kierepkae.surge.sh)
+
+```
+Simply click on the header of article that interests you and read full text.
+```
 
 ## User Stories
 
-Some of these stories will need decomposing if they seem too large.
 
 ```
 As a busy politician
