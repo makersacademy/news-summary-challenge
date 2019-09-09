@@ -1,5 +1,6 @@
 const APIkey = '505aaccc-6eff-47f2-86d7-0c370f9a2dad';
-const newsQuery = 'https://content.guardianapis.com/search?q=news&api-key=505aaccc-6eff-47f2-86d7-0c370f9a2dad&show-fields=thumbnail,bodyText';
+const date = new Date().toJSON().slice(0, 10);
+const newsQuery = `https://content.guardianapis.com/search?q=news,today&api-key=505aaccc-6eff-47f2-86d7-0c370f9a2dad&show-fields=thumbnail,bodyText&from-date=${date}`;
 const headlines_container = document.getElementById('headlines');
 const headlines_list = document.getElementById('headlines_list');
 const newsCollection = [];
@@ -55,16 +56,15 @@ const createHeadlines = () => {
 }
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  fetch(newsQuery)
+    .then(response => {
+      return response.json();
+    })
+    .then(response => {
+      newsCollection.push(response['response']['results']);
+    })
+    .then(() => createHeadlines())
 
-
-fetch(newsQuery)
-  .then(response => {
-    return response.json();
-  })
-  .then(response => {
-    newsCollection.push(response['response']['results']);
-  })
-  .then(() => createHeadlines())
-
-
+})
 
