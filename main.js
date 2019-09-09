@@ -59,7 +59,11 @@ const createHeadlines = () => {
 document.addEventListener('DOMContentLoaded', () => {
   fetch(newsQuery)
     .then(response => {
-      return response.json();
+      if (response.ok) {
+        return response.json();
+      }
+      throw Error(response.status)
+      alert(response.status)
     })
     .then(response => {
       newsCollection.push(response['response']['results']);
