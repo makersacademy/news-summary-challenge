@@ -10,7 +10,8 @@ fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://conte
     for (let i of data) {
       const title = i.webTitle;
       const p = document.createElement("p");
-      container.append(title, p);
+      x = container.append(title, p);
     }
+    // console.log(container.x)
     console.log(container.childNodes)
   })
