@@ -1,59 +1,42 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-  // lazy loading lines 4-27
-  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));;
-
-  if ("IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype) {
-    let lazyImageObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target;
-          $.get("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/extract?url=https://www.theguardian.com/world/live/2019/oct/01/china-anniversary-nation-marks-70-years-of-communism-amid-hong-kong-protests-live", function (data) {
-            lazyImage.src = data.image
-          })
-          $.get("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/extract?url=https://www.theguardian.com/world/live/2019/oct/01/china-anniversary-nation-marks-70-years-of-communism-amid-hong-kong-protests-live", function (data) {
-            lazyImage.srcset = data.image
-          });
-          lazyImage.classList.remove("lazy");
-          lazyImageObserver.unobserve(lazyImage);
-        }
-      });
-    });
-    lazyImages.forEach(function (lazyImage) {
-      lazyImageObserver.observe(lazyImage);
-    });
-  }
+window.addEventListener("hashchange", function (event) {
+  event.preventDefault();
+  var selected_news_id = location.hash.split("/")[1]
+  var all_ids = document.querySelectorAll('[id^="containerid"]')
+  all_ids.forEach(function (unique_id) {
+    if (unique_id.id !== `containerid${selected_news_id}`) {
+      document.getElementById(`${unique_id.id}`).innerHTML = ""
+    }
+  })
 });
+
 
 $(document).ready(function () {
 
   $.get('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=2019-10-03&to-date=2019-10-03', function (data) {
-    console.log(data)
     array = data.response.results
 
     // change 2 in the loop initiator below to array.length when ready to stop testing...
     for (let i = 0; i < 2; i++) {
-      // headline block generator, can grow this out to include images etc.
       let $dynamiccontainer = $("<div/>")
-      $individualborder = $("<div/>", {class: "news-container"})
+      $individualborder = $("<div/>", { class: "news-container" })
+      $namingdiv = $("<div/>", { id: `containerid${i}` })
       $headline = $("<h1/>", { id: `headline${i}` })
       $summary = $("<h3/>", { id: `summary${i}` })
-      $image = $("<img/>", { id: `image${i}` , class:'news-image'})
-      $link = $("<a/>", {id: `link${i}`, href: `#article/${i}`})
-      $dynamiccontainer.append($individualborder.append($link.append($headline), $image, $summary)).appendTo('#headlines')
+      $image = $("<img/>", { id: `image${i}`, class: 'news-image' })
+      $link = $("<a/>", { id: `link${i}`, href: `#article/${i}` })
+      $dynamiccontainer.append($namingdiv.append($individualborder.append($link.append($headline), $image, $summary))).appendTo('#headlines')
 
-      // gets the headline from Guardian API
+      // gets the standard dataset from Guardian API
       $.get("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/extract?url=" + array[i].webUrl, function (data) {
         $(`#headline${i}`).text(data.title)
         if (data.image !== '') {
           $(`#image${i}`).attr('src', data.image)
         }
-        console.log(data)
       });
 
       // gets summary from Guardian API via Aylien
       $.get(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${array[i].webUrl}&sentences_number=3`, function (data) {
-        $(`#summary${i}`).text(data.sentences.slice(0,2).join(' '))
+        $(`#summary${i}`).text(data.sentences.slice(0, 2).join(' '))
       })
     }
   });
