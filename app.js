@@ -1,12 +1,18 @@
 window.addEventListener("hashchange", function (event) {
   event.preventDefault();
-  var selected_news_id = location.hash.split("/")[1]
-  var all_ids = document.querySelectorAll('[id^="containerid"]')
-  all_ids.forEach(function (unique_id) {
-    if (unique_id.id !== `containerid${selected_news_id}`) {
-      document.getElementById(`${unique_id.id}`).innerHTML = ""
-    }
+  var all_ids = document.querySelectorAll('[id^="containerid"]');
+  all_ids.forEach(function(node){
+    document.getElementById(`${node.id}`).innerHTML = ""
   })
+
+  // **** below can be used for clearing all headlines except the one clicked****
+  // var selected_news_id = location.hash.split("/")[1]
+  // var all_ids = document.querySelectorAll('[id^="containerid"]')
+  // all_ids.forEach(function (unique_id) {
+  //   if (unique_id.id !== `containerid${selected_news_id}`) {
+  //     document.getElementById(`${unique_id.id}`).innerHTML = ""
+  //   }
+  // })
 });
 
 
