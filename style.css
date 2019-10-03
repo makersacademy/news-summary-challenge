@@ -2,9 +2,11 @@
   border: 20px solid;
   border-radius: 6px;
   border-color: cornflowerblue;
-  border-width: 50%;
   padding: 2rem;
-  margin: 4.5rem;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
   text-align: center;
 }
 
