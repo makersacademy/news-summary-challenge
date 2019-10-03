@@ -48,12 +48,12 @@ $(document).ready(function () {
       });
 
       // gets summary from Guardian API via Aylien
-      $.get("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + array[i].webUrl + "?sentences_number=2?", function (data) {
-        console.log(data)
-        $(`#summary${i}`).text(data.sentences)
+      $.get(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${array[i].webUrl}&sentences_number=3`, function (data) {
+        $(`#summary${i}`).text(data.sentences.slice(0,2).join(' '))
       })
     }
   });
 
 });
 
+"The worry is that these latest readings appear to confirm worst fears that the manufacturing slump is leaching into the services sector with falling confidence, investment and now activity."
