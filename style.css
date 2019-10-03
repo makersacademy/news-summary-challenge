@@ -1,0 +1,15 @@
+.news-container {
+  border: 20px solid;
+  border-radius: 6px;
+  border-color: cornflowerblue;
+  border-width: 50%;
+  padding: 2rem;
+  margin: 4.5rem;
+  text-align: center;
+}
+
+.news-image {
+  width: 50%;
+  max-height: 100%;
+  text-align: center;
+}

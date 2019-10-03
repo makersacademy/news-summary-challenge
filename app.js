@@ -32,18 +32,22 @@ $(document).ready(function () {
     array = data.response.results
 
     // change 2 in the loop initiator below to array.length when ready to stop testing...
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 2; i++) {
       // headline block generator, can grow this out to include images etc.
       let $dynamiccontainer = $("<div/>")
+      $individualborder = $("<div/>", {class: "news-container"})
       $headline = $("<h1/>", { id: `headline${i}` })
       $summary = $("<h3/>", { id: `summary${i}` })
-      $image = $("<img/>", { id: `image${i}` })
-      $dynamiccontainer.append($headline, $image, $summary).appendTo('#headlines')
+      $image = $("<img/>", { id: `image${i}` , class:'news-image'})
+      $link = $("<a/>", {id: `link${i}`, href: `#article/${i}`})
+      $dynamiccontainer.append($individualborder.append($link.append($headline), $image, $summary)).appendTo('#headlines')
 
       // gets the headline from Guardian API
       $.get("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/extract?url=" + array[i].webUrl, function (data) {
         $(`#headline${i}`).text(data.title)
-        $(`#image${i}`).attr('src', data.image)
+        if (data.image !== '') {
+          $(`#image${i}`).attr('src', data.image)
+        }
         console.log(data)
       });
 
@@ -55,5 +59,3 @@ $(document).ready(function () {
   });
 
 });
-
-"The worry is that these latest readings appear to confirm worst fears that the manufacturing slump is leaching into the services sector with falling confidence, investment and now activity."
