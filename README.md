@@ -1,3 +1,27 @@
+# Project Considerations/Reflection
+
+I decided I wanted to dedicate some time to producing this using both JQuery and purely front-end JS/CSS/HTML, so that I could explore the differences/limitations/advantages of both. I also thought it would be useful to spike the app using Jquery, which I'm quite confident using, and use it to inform a strict TDD process for the Front-End JS based App.
+
+I tried (and I think I succeeded) to create a very simple testing suite, which the user can build in string based assertions, so that visibility of tests passing failing was very good. The limitations of this, and something I'd consider in the future, is that the errors produced by the test suite aren't super-helpful (they're primarily pass or fail). If I had more time to dedicate to this, I'd build out different types of comparators/assertions (similar to RSpec/Capybara - to Eq, to Be, Kind_Of, etc.)
+
+I'm pleased with the end product, and feel that I've kept the development of the controller, in particular, very lean.
+
+## Using The Test Suite
+
+* Open the Option folder you'd like to write tests in e.g. `./FrontEndJavaOption/tests/`
+* Create a file based on module, as in `example-spec.js`
+* Open SpecRunner.html in your text editor, and include your new testing file by adding `<script src='YOUR_FILENAME_HERE'></script>`
+* Write each test using the following syntax (use example-spec.js as a guide):
+
+```
+describe(function/query_as_a_string, 
+  it(assertion_as_a_string, 
+    (BOOLEAN_EVALUATION)
+  )
+)
+```
+* Run SpecRunner.html in your browser (Chrome/Firefox etc.) to see which tests passed/failed.
+
 # News Summary challenge
 
 * Challenge time: rest of the day and weekend, until Monday 9am.
