@@ -7,7 +7,6 @@ window.addEventListener("hashchange", function (event) {
   var selected_news_id = location.hash.split("/")[1]
   var url_to_retrieve = article_array[selected_news_id].webUrl
   $.get("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/extract?url=" + url_to_retrieve, function(data) {
-    console.log(data)
     $('#summary-headline').text(data.title)
     $('#summary-image').text(data.image)
     $('#summary-article').text(data.article)
@@ -18,8 +17,13 @@ window.addEventListener("hashchange", function (event) {
 
 
 $(document).ready(function () {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0');
+  var yyyy = today.getFullYear();
 
-  $.get('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=2019-10-03&to-date=2019-10-03', function (data) {
+  today = yyyy + '-' + mm + '-' + dd;
+  $.get(`http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=${today}&to-date=${today}`, function (data) {
     article_array = data.response.results
 
     // change 2 in the loop initiator below to array.length when ready to stop testing...
