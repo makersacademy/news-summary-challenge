@@ -2,7 +2,7 @@ let newsagg = new NewsAggregator;
 
 describe("getAllArticles",
   it("fetches articles and populates this._allNews",
-    (newsagg._allNews !== [])
+    (newsagg.getAllArticles() !== [])
   )
 )
 

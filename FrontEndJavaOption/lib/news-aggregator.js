@@ -1,18 +1,28 @@
 function NewsAggregator() {
-  this._API = new APICaller();
-  this._allNews = [];
+  API = new APICaller();
+  allNews = [];
 
   NewsAggregator.prototype.getAllArticles = function () {
-    this._API.fetchTodayData();
-    for (i = 0; i < 10; i++) {
-      this._allNews.push(
-        new NewsTagGenerator(
-          this._API.generateHeadline(i),
-          this._API.generateArticleBody(i),
-          this._API.generateImageTag(i)
-        )
-      );
-    }
+
+    data = API.fetchTodayData();
+    setTimeout(function () {
+      for (let i = 0; i < 10; i++) {
+        allNews.push(
+          (new NewsTagGenerator(
+            API.retrieveHeadline(i),
+            API.retrieveArticleSummary(i),
+            API.retrieveImageTag(i)
+          ))
+        );
+      }
+    }, 1000)
+    console.log(data)
+    console.log(allNews)
+    return allNews
+  }
+
+  NewsAggregator.prototype.displayArticles = function (index) {
+
   }
 
 
