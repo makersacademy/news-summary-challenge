@@ -23,7 +23,7 @@ $(document).ready(function () {
     article_array = data.response.results
 
     // change 2 in the loop initiator below to array.length when ready to stop testing...
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < article_array.length; i++) {
       let $dynamiccontainer = $("<div/>")
       $individualborder = $("<div/>", { class: "news-container" })
       $namingdiv = $("<div/>", { id: `containerid${i}` })
