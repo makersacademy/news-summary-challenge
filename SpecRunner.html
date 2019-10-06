@@ -8,6 +8,7 @@
     <!-- include dependencies here... -->
     <script src="spec/SpecFramework.js"></script>
     <script src="lib/jquery-3.4.1.js"></script>
+    <script src="./src/config.js"></script>
 
     <!-- include src files here... -->
     <script src="src/article-list-model.js"></script>
@@ -26,7 +27,9 @@
 
 <script>
     $(document).ready(function(){
-        // $("#results").append("<li>" + testCreateNoteWithText()+"</li>");
+        $("#results").append("<li>" + testArticleListReturnArticles()+"</li>");
+        $("#results").append("<li>" + testArticleListViewReturnHTML()+"</li>");
+        $("#results").append("<li>" + testNewsControllerReturnHTML()+"</li>");
     });
 </script>
 
