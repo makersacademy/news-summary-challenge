@@ -37,7 +37,7 @@ function NewsAggregator() {
       var newsitemcontainer = document.createElement('div')
       newsitemcontainer.setAttribute('id', `news-container`)
       newsitemcontainer.appendChild(allNews[i].generateLink(i));
-      newsitemcontainer.appendChild(allNews[i].generateImage());
+      newsitemcontainer.appendChild(allNews[i].generateImageTag());
       newsitemcontainer.appendChild(allNews[i].generateArticleSummary());
       headlines.appendChild(newsitemcontainer);
     }

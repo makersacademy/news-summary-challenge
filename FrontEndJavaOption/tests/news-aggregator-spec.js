@@ -1,22 +1,24 @@
-let newsagg = new NewsAggregator;
+let newsaggregator = new NewsAggregator;
+let newstag = new NewsTagGenerator("Boris Johnson", "Wow, bad dude", "Wow", "http://notevenaurlwow.com/");
+allNews = []
+allNews.push( newstag );
 
-describe("getAllArticles",
-  it("fetches articles and populates this._allNews",
-    (newsagg.getAllArticles() !== [])
-  )
-)
+// calls API so uncomment if you want to test all of these functions!
+
+// describe("getAllArticles",
+//   it("fetches articles and populates this._allNews",
+//     (newsagg.getAllArticles() !== [])
+//   )
+// )
 
 describe("displaySummaryArticles",
   it("takes the articles and formats each of their respective elements",
-    (newsagg.displaySummaryArticles() !== '')
+    (newsaggregator.displaySummaryArticles().includes('Boris Johnson'))
   )
 )
 
 describe("displayFullArticle",
   it("creates div/img/body elements and displays all of an article's info",
-    function () {
-      newsagg.displayAllNewsArray() = [["<div>Wow what a headline</div>", "<img src=http://fakenews.com>", "<body>LONG ARTICLE</body>"]]
-      return (newsagg.displayFullArticle(0).includes("<div>Wow what a headline</div>"))
-    }
+    (newsaggregator.displayFullArticle().includes('Wow, bad dude') )
   )
 )
