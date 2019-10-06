@@ -1,6 +1,6 @@
-// Stub NewsMachine.makeApiRequest method so that
+// Stub NewsSummary.makeApiRequest method so that
 // we don't make a request to the News Summary API
-NewsMachine.prototype.makeApiRequest = async function(guardianApiUrl) {
+NewsSummary.prototype.makeApiRequest = async function(guardianApiUrl) {
     const newsJson = {
         response: {
             content: {
@@ -12,5 +12,5 @@ NewsMachine.prototype.makeApiRequest = async function(guardianApiUrl) {
     return newsJson.response;
 };
 
-const news = new NewsMachine();
+const news = new NewsSummary();
 news.displayNews();
