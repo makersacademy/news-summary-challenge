@@ -1,31 +1,33 @@
 function NewsAggregator() {
-  API = new APICaller();
+  API = new APICaller;
   allNews = [];
 
-  NewsAggregator.prototype.getAllArticles = function () {
+  NewsAggregator.prototype.getAllArticles = function() {
 
-    data = API.fetchTodayData();
+    API.fetchTodayData();
+
+    setTimeout(function() {
+      API.fetchSummariesFromAylien();
+    }, 580);
+
     setTimeout(function () {
+      
       for (let i = 0; i < 10; i++) {
         allNews.push(
           (new NewsTagGenerator(
             API.retrieveHeadline(i),
             API.retrieveArticleSummary(i),
-            API.retrieveImageTag(i)
+            API.retrieveImage(i)
           ))
         );
       }
-    }, 1000)
-    console.log(data)
-    console.log(allNews)
-    return allNews
+    }, 1400)
   }
 
   NewsAggregator.prototype.displayArticles = function (index) {
+    
 
   }
-
-
 
 
 }
