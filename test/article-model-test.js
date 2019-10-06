@@ -1,15 +1,15 @@
 (function() {
 	describe('article model');
-	
+    
+    console.log("canBeInstantiated:");
 	function canBeInstantiated() {
-		console.log("canBeInstantiated:");
-		var article = new Article("Headline", "URL.com");
+		var article = new Article("Headline");
 		assert.isTrue(article !== undefined);
 	}
     canBeInstantiated();
     
+    console.log("returnsHeadline:");
     function returnsHeadline() {
-		console.log("returnsHeadline:");
 		var article = new Article("Headline");
 		assert.isTrue(article.getHeadline() === "Headline");
 	}
