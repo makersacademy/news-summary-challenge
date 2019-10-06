@@ -1,0 +1,23 @@
+body {
+    background-color: #c3d7f5;
+    font-family: 'Lucida Sans';
+    color: #181e29;
+  }
+  
+  #header {
+    position: relative;
+    left: 15%;
+    top: 10%;
+    padding: 20px;
+    width: 100%;   
+    font-family: 'Lucida Sans';
+  }
+  
+  #list-container {
+    position: relative;
+    left: 10%;
+    right: 10%;
+    padding: 10px;
+    margin: 15px;
+    width: 66%;   
+  }
