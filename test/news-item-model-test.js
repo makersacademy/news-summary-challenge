@@ -11,5 +11,7 @@
   it('has a title')
   assert.isTrue(newsItem.webTitle, title)
 
+  it('has a url')
+  assert.isTrue(newsItem.webURL, url)
 
 })();
