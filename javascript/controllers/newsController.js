@@ -2,7 +2,7 @@
 
     function NewsController() {
 
-    }
+    };
 
     NewsController.prototype.displayIndexPage = async function() {
         const newsItemsModel = new NewsItemsModel();
