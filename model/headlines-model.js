@@ -10,18 +10,22 @@
   Headlines.prototype.displayArray = function(){
     return this.newsArray
   }
-  Headlines.prototype.createNewsItemArray = function(){
-
+  Headlines.prototype.createNewsItems = function(apiResponse){
+    let array = this.newsArray;
+    apiResponse.forEach(function(response){
+      let newsItem = new NewsItem(response.webTitle, response.webUrl);
+      array.push(newsItem);
+    })
+    this.newsArray = array;
   }
 
-  Headlines.prototype.callGuardianApi = function(path, success, error){
+  Headlines.prototype.callGuardianApi = function(path, error){
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function(){
           if (xhr.readyState === XMLHttpRequest.DONE) {
-              if (xhr.status === 200 && success) {
-                  this.apiResults = JSON.parse(xhr.responseText).response.results
-                  console.log(this.apiResults)
-                  return responseText = this.apiResults
+              if (xhr.status === 200) {
+                  let results = JSON.parse(xhr.responseText).response.results
+                  return responseText = results
               } else {
                   if (error)
                       error(xhr);

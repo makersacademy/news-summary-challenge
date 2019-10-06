@@ -1,7 +1,7 @@
 (function(exports){
   function NewsItem(title, url){
-    this.webTitle = title
-    this.webURL = url
+    this._webTitle = title
+    this._webURL = url
 
   };
   exports.NewsItem = NewsItem;

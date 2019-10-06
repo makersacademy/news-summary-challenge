@@ -9,9 +9,9 @@
   assert.isInstanceOf(newsItem, NewsItem)
 
   it('has a title')
-  assert.isTrue(newsItem.webTitle, title)
+  assert.isTrue(newsItem._webTitle, title)
 
   it('has a url')
-  assert.isTrue(newsItem.webURL, url)
+  assert.isTrue(newsItem._webURL, url)
 
 })();
