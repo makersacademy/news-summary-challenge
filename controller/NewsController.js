@@ -14,6 +14,4 @@
     }; 
 
     exports.NewsController = NewsController;
-    exports.ApiCaller = ApiCaller;
 })(this);
-

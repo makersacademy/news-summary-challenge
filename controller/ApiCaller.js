@@ -1,4 +1,9 @@
 (function(exports) {
+
+    function ApiCaller() {
+
+    }
+    
     ApiCaller.prototype.getGuardian = function() {
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
