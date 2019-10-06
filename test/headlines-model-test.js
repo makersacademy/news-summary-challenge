@@ -7,11 +7,12 @@
   assert.isInstanceOf(headlines, Headlines)
 
   it('contains an array of NewsItems')
-  // mocking here to ensure api call performed when instantiating Headlines retrieves sample json
-  let exampleJSON  = loadJSON('test/example-api-response.json',
-                              function(data) { console.log(data); },
+  let testApiPath = 'test/example-api-response.json'
+  headlines.callGuardianApi(testApiPath,
+                              function(data) { let responseText = data; },
                               function(xhr) { console.error(xhr); }
                               );
-  assert.isTrue(headlines.array[0].title, "Jennifer Arcuri came late to the party. But the Johnson franchise is unthinkable without her now | Marina Hyde")
+  let expectedTitle = "Jennifer Arcuri came late to the party. But the Johnson franchise is unthinkable without her now | Marina Hyde"
+  assert.isTrue(responseText[0].webTitle, expectedTitle)
 
 })();
