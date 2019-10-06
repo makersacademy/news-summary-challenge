@@ -1,20 +1,29 @@
 (function(exports) {
-    function NewsController(articleList, apiCaller) {
+    function NewsController(articleList) {
         this.articleList = articleList;
         this.articleListView = new ArticleListView(articleList);
-        this.apiCaller = apiCaller;
     }
 
     NewsController.prototype.getArticleList = function() {
         return this.articleList;
     };
 
-    NewsController.prototype.populateListFromJson = function() {
-        console.log(this.apiCaller.getGuardian());
-        var data = this.apiCaller.getGuardian();
-        for (i=0; i<data.response.results.length; i++) {
-            this.articleList.addArticle(data.response.results[i].webTitle);
-        }
+    NewsController.prototype.populateListFromApiResponse = function() {
+        var self = this;
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {  
+                var data = JSON.parse(this.responseText);
+                self.isReady = 'YES';
+                for (i=0; i<data.response.results.length; i++) {
+                    self.articleList.addArticle(data.response.results[i].webTitle);
+                }
+                console.log(self.articleList);
+                self.displayHeadlines();
+            }
+        };
+        xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=from-date=" + "2019-05-10", true);
+        xhttp.send();
     };
 
     NewsController.prototype.displayHeadlines = function() {
@@ -24,3 +33,7 @@
 
     exports.NewsController = NewsController;
 })(this);
+
+var al = new ArticleList();
+var nc = new NewsController(al);
+nc.populateListFromApiResponse();

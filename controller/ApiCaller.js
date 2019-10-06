@@ -1,8 +1,6 @@
 (function(exports) {
 
     function ApiCaller() {
-        // this.date = date;
-        var self = this;
     }
 
     ApiCaller.prototype.getGuardian = function() {
