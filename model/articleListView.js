@@ -7,7 +7,8 @@
       var output = '';
       for (var i = 0; i< this.articleList.getList().length; i++){
         var headline = this.articleList.getList()[i].getHeadline();
-        output += ("<li>" + headline + "</li>");
+        var url = this.articleList.getList()[i].getUrl();
+        output += ("<li><a href=" + url + ">" + headline + "</a></li>");
       }
       output = ("<ul>" + output + "</ul>");
       return output;

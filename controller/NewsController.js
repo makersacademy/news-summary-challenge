@@ -30,7 +30,6 @@
 
     NewsController.prototype.displayHeadlines = function() {
         document.getElementById("headline-list").innerHTML = this.articleListView.outputHtmlString();
-        console.log(this.articleListView.outputHtmlString());
     }; 
 
     exports.NewsController = NewsController;
