@@ -3,8 +3,15 @@
 	
 	function canBeInstantiated() {
 		console.log("canBeInstantiated:");
-		var testClass = new Article("Headline", "URL.com");
-		assert.isTrue(testClass !== undefined);
+		var article = new Article("Headline", "URL.com");
+		assert.isTrue(article !== undefined);
 	}
-	canBeInstantiated();
+    canBeInstantiated();
+    
+    function returnsHeadline() {
+		console.log("returnsHeadline:");
+		var article = new Article("Headline");
+		assert.isTrue(article.getHeadline() === "Headline");
+	}
+    returnsHeadline();
 })();
