@@ -1,10 +1,18 @@
 <html>
   <head>
-    <script src="src/stubGuardianApi.js"></script>
-    <script src="src/main.js"></script>
+    <script src="js/stub-guardian-api.js"></script>
+    <!-- <script src="src/guardian-api.js"></script> -->
+    <script src="js/headlines-view.js"></script>
+    <script src="js/headlines-controller.js"></script>
+    <script src="js/main.js" defer></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
   </head>
   
   <body>
-    <h1>Hi</h1>
+    <h1><div>Headlines of today</div></h1>
+    <div id="headlines"></div>
   </body>
 </html>
