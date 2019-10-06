@@ -5,5 +5,5 @@
     assert.equals(document.getElementById("newsContent"), ncgd);
   }
 
-  testNoteObjectReturnsText();
+  testHeadlinesAreDisplayed();
 })(this);

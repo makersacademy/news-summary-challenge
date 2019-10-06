@@ -4,7 +4,7 @@ $(document).ready(function() {
     displayHTML = ""
 
     latestNews.forEach(function(story) {
-      displayHTML += ("<p>" + story.webTitle + "</br>" + story.webURl + "</p>")
+      displayHTML += ("<p>" + story.webTitle + "</br>" + "<a href=" + story.webUrl + ">read more</a></p>")
     });
 
     document.getElementById("newsContent").innerHTML = displayHTML;
