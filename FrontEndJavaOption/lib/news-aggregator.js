@@ -12,7 +12,8 @@ function NewsAggregator() {
 
     setTimeout(function () {
       
-      for (let i = 0; i < 10; i++) {
+      // change 1 to 10 when done testing...
+      for (let i = 0; i < 1; i++) {
         allNews.push(
           (new NewsTagGenerator(
             API.retrieveHeadline(i),
@@ -21,8 +22,14 @@ function NewsAggregator() {
           ))
         );
       }
-    }, 1400)
-  }
+          allNews.forEach(function(element) {
+      element._headline = element._headline.webTitle,
+      element._articlebody = element._articlebody.sentences[0] + " " + element._articlebody.sentences[1],
+      element._imageurl = element._imageurl.image;
+          });
+          console.log(allNews)
+    }, 2800)
+  };
 
   NewsAggregator.prototype.displayArticles = function (index) {
     
