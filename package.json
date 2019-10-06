@@ -1,0 +1,26 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "Makers Acadamy Week7 Weekend Challenge",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariacuffaro/news-summary-challenge.git"
+  },
+  "author": "Maria Cuffaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariacuffaro/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/mariacuffaro/news-summary-challenge#readme"
+}

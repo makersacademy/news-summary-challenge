@@ -178,3 +178,11 @@ browser->browser: rendered headlines
 politician->browser: selects news item
 browser->browser: renders summary
 ```
+
+## Terminal instructions for downloading and testing the app
+
+* git clone git@github.com:mariacuffaro/news-summary-challenge.git
+* node -v (to check node installed if not, run 'brew install node' command)
+* npm install http-server --save
+* node node_modules/http-server/bin/http-server
+* in the browser navigate to http://localhost:8080/TestRunner.html

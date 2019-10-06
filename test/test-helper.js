@@ -48,3 +48,28 @@ var assert = {
  function it(description){
    document.getElementById('description').insertAdjacentHTML('beforeend', `____${description}`)
  }
+
+
+ function loadJSON(path, success, error)
+ {
+     var xhr = new XMLHttpRequest();
+     xhr.onreadystatechange = function()
+     {
+         if (xhr.readyState === XMLHttpRequest.DONE) {
+           console.log('readyState')
+             if (xhr.status === 200) {
+
+                 console.log('status 200')
+                 if (success)
+                     success(JSON.parse(xhr.responseText));
+             } else {
+
+                 console.log(xhr.status)
+                 if (error)
+                     error(xhr);
+             }
+         }
+     };
+     xhr.open("GET", path, true);
+     xhr.send();
+ }
