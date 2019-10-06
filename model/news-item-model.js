@@ -1,5 +1,6 @@
 (function(exports){
-  function NewsItem(){
+  function NewsItem(title, url){
+    this.webTitle = title
 
   };
   exports.NewsItem = NewsItem;
