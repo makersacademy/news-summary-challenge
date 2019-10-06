@@ -6,6 +6,10 @@ I tried (and I think I succeeded) to create a very simple testing suite, which t
 
 I'm pleased with the end product, and feel that I've kept the development of the controller, in particular, very lean.
 
+The main setback I had is that in using the Makers Heroku App, I couldn't validate that the Front-End program actually worked, since everyone in my cohort was using it at the same time, and the request limit prevented API fetches being successful!
+
+I'm confident that it does work though, given the TDD process I followed.
+
 ## Using The Test Suite
 
 * Open the Option folder you'd like to write tests in e.g. `./FrontEndJavaOption/tests/`
