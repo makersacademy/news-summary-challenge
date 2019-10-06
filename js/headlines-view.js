@@ -8,16 +8,16 @@
       let length = results.length;
       let HTMLString = '';
       for (let i = 0; i < length; i++) {
-        let id = results[i].id;
+        let webUrl = results[i].webUrl;
         let headline = results[i].fields.headline;
         let thumbnail = results[i].fields.thumbnail;
-        HTMLString += `<div><a href="#${id}"><img src="${thumbnail}"><br>${headline}</a></div><br>`;
+        HTMLString += `<div><a href="${webUrl}"><img src="${thumbnail}"><br>${headline}</a></div><br>`;
       }
       return HTMLString;
     }
 
-    insertHTMLString(obj, string) {
-      obj.innerHTML = string;
+    insertHTMLString(obj, htmlString) {
+      obj.innerHTML = htmlString;
     }
   }
 
