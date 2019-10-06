@@ -1,6 +1,7 @@
 function APICaller() {
-  array_data = []
+  array_guardiandata = []
   array_ayliensummary = []
+  array_aylienextract = []
 
   APICaller.prototype.fetchTodayData = function () {
     var today = new Date();
@@ -12,48 +13,56 @@ function APICaller() {
     fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=' + today + '&to-date=' + today)
       .then(function (response) {
         response.json().then(function (data) {
-          array_data = data.response.results;
-          return array_data
+          array_guardiandata = data.response.results;
+          return array_guardiandata
         })
       })
   };
 
   APICaller.prototype.fetchSummariesFromAylien = function () {
-    for (i = 0; i < 10 - 1; i++) {
+    for (let i = 0; i < 10; i++) {
       currenturl = this.retrieveURL(i);
       fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/extract?url=${currenturl}&sentences_number=3`)
         .then(function (response) {
           response.json().then(function (data) {
-            array_ayliensummary.push(data);
+            array_aylienextract.push(data);
             
             })
+        })
+      fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${currenturl}&sentences_number=3`)
+        .then(function (response) {
+          response.json().then(function (data) {
+            array_ayliensummary.push(data);
+
+          })
         })
     }
   }
 
   APICaller.prototype.retrieveHeadline = function (index) {
-    return array_data[index]
+    return array_guardiandata[index]
   };
 
   APICaller.prototype.retrieveArticleSummary = function (index) {
+    console.log(array_ayliensummary)
     return array_ayliensummary[index]
   };
 
   APICaller.prototype.retrieveFullArticle = function (index) {
-    return array_data[index]
+    return array_guardiandata[index]
   }
 
   APICaller.prototype.retrieveImage = function (index) {
-    console.log(array_ayliensummary)
-    return array_ayliensummary[index]
+    console.log(array_aylienextract)
+    return array_aylienextract[index]
   }
 
   APICaller.prototype.retrieveAuthor = function (index) {
-    return array_data[index]
+    return array_guardiandata[index]
   }
 
   APICaller.prototype.retrieveURL = function (index) {
-    return array_data[index].webUrl
+    return array_guardiandata[index].webUrl
   }
 
 };

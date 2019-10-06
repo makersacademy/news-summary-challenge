@@ -8,7 +8,7 @@ function NewsAggregator() {
 
     setTimeout(function() {
       API.fetchSummariesFromAylien();
-    }, 580);
+    }, 670);
 
     setTimeout(function () {
       
