@@ -31,7 +31,7 @@
     NewsTagGenerator.prototype.generateLink = function(index) {
       linktag = document.createElement('a')
       linktag.appendChild(generateHeadline());
-      linktag.setAttribute('id', index)
+      linktag.setAttribute('id', `#article/${index}`)
       return linktag
     };
 

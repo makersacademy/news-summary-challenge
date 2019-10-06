@@ -28,22 +28,20 @@ function NewsAggregator() {
   };
 
   NewsAggregator.prototype.displaySummaryArticles = function () {
-    for (i = 0; i < 10; i++) {
+    for (let i = 0; i < 1; i++) {
       var headlines = document.getElementById('headlines-list');
       var newsitemcontainer = document.createElement('div')
       newsitemcontainer.setAttribute('id', `newsitem${i}`)
-      newsitemcontainer.appendChild(allNews[i])
-      newsitemcontainer.appendChild(allNews[i].generateHeadline());
+      newsitemcontainer.appendChild(allNews[i].generateLink(i));
       newsitemcontainer.appendChild(allNews[i].generateImage());
       newsitemcontainer.appendChild(allNews[i].generateArticleSummary());
+      headlines.appendChild(newsitemcontainer);
     }
     return headlines
   };
 
   NewsAggregator.prototype.displayFullArticle = function (index) {
-    document
     document.getElementById('full-headline').textContent = (allNews[index].generateHeadline());
-    
     document.getElementById('full-image').setAttribute('src', allNews[index].generateImage());
     document.getElementById('full-article').textContent = (allNews[index].generateFullArticle());
   };
