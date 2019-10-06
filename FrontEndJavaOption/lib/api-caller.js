@@ -40,25 +40,24 @@ function APICaller() {
   }
 
   APICaller.prototype.retrieveHeadline = function (index) {
-    return array_guardiandata[index]
+    return array_aylienextract[index]['title']
   };
 
   APICaller.prototype.retrieveArticleSummary = function (index) {
-    console.log(array_ayliensummary)
-    return array_ayliensummary[index]
+    return array_ayliensummary[index]['sentences'].slice(0, 2).join(' ')
   };
 
   APICaller.prototype.retrieveFullArticle = function (index) {
-    return array_guardiandata[index]
+    return array_aylienextract[index]['article']
   }
 
   APICaller.prototype.retrieveImage = function (index) {
     console.log(array_aylienextract)
-    return array_aylienextract[index]
+    return array_aylienextract[index]['image']
   }
 
   APICaller.prototype.retrieveAuthor = function (index) {
-    return array_guardiandata[index]
+    array_aylienextract[index]['author']
   }
 
   APICaller.prototype.retrieveURL = function (index) {
