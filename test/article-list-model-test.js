@@ -1,4 +1,4 @@
-(function(exports) {
+(function() {
     describe('article list model');
 
     console.log("canBeInstantiated:");
@@ -15,4 +15,4 @@
 		assert.isTrue(articleList.getList()[0].getHeadline() === "Headline");
 	}
     canAddAnArticleToList();
-  })(this);
+})();

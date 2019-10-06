@@ -1,4 +1,4 @@
-(function(exports) {
+(function() {
     describe('article list view');
 
     console.log("canBeInstantiated:");
@@ -17,4 +17,4 @@
         assert.isTrue(articleListView.outputHtmlString() === htmlString);
     }
     canOutputHtmlString();
-  })(this);
+})();
