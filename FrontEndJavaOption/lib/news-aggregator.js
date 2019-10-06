@@ -2,6 +2,10 @@ function NewsAggregator() {
   API = new APICaller;
   allNews = [];
 
+  NewsAggregator.prototype.displayAllNewsArray = function () {
+    return allNews;
+  }
+
   NewsAggregator.prototype.getAllArticles = function () {
 
     API.fetchTodayData();

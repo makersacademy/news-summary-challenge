@@ -1,4 +1,4 @@
-let news = new NewsTagGenerator("Boris Johnson", "Wow, bad dude", "http://notevenaurlwow.com/");
+let news = new NewsTagGenerator("Boris Johnson", "Wow, bad dude", "Wow", "http://notevenaurlwow.com/");
 
 describe("generateHeadline",
   it("Returns a headline for a given news object",
@@ -6,9 +6,9 @@ describe("generateHeadline",
   )
 )
 
-describe("generateArticleBody",
+describe("generateArticleSummary",
   it("Returns the body of the article for a given news object",
-    (news.generateArticleBody().textContent === 'Wow, bad dude')
+    (news.generateArticleSummary().textContent === 'Wow')
   )
 )
 
@@ -20,6 +20,6 @@ describe("generateImageTag",
 
 describe("generateLink",
   it("Returns a link tag for the given headline/story",
-    (news.generateLink(0).id == 0 && news.generateLink(0).textContent == "Boris Johnson")
+    (news.generateLink(0).textContent == "Boris Johnson")
   )
 )
