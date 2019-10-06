@@ -27,16 +27,16 @@
 	}
     putsHeadlinesInDom();
 
-    console.log("AddsHeadlinesFromJson:");
-	function AddsHeadlinesFromJson() {
-        var articleList = new ArticleList();
-        var mockApiCaller = new MockApiCaller();
-        var newsController = new NewsController(articleList, mockApiCaller);
-        newsController.populateListFromJson();
-        newsController.displayHeadlines();
-        var htmlString = "<ul><li>The 10 biggest books of autumn 2019</li><li>10 timeless fashion trends that never date</li><li>Thor! Blade! Picard! The 10 biggest surprises from Comic-Con 2019</li><li>Edinburgh festival 2019: the 10 best jokes</li><li>Edinburgh fringe 2019: 10 essential shows</li></ul>";
-        console.log(document.getElementById("headline-list").innerHTML);
-        assert.isTrue(document.getElementById("headline-list").innerHTML === htmlString);
-	}
-    AddsHeadlinesFromJson();
+    // console.log("AddsHeadlinesFromJson:");
+	// function AddsHeadlinesFromJson() {
+    //     var articleList = new ArticleList();
+    //     var mockApiCaller = new MockApiCaller();
+    //     var newsController = new NewsController(articleList, mockApiCaller);
+    //     newsController.populateListFromJson();
+    //     newsController.displayHeadlines();
+    //     var htmlString = "<ul><li>The 10 biggest books of autumn 2019</li><li>10 timeless fashion trends that never date</li><li>Thor! Blade! Picard! The 10 biggest surprises from Comic-Con 2019</li><li>Edinburgh festival 2019: the 10 best jokes</li><li>Edinburgh fringe 2019: 10 essential shows</li></ul>";
+    //     console.log(document.getElementById("headline-list").innerHTML);
+    //     assert.isTrue(document.getElementById("headline-list").innerHTML === htmlString);
+	// }
+    // AddsHeadlinesFromJson();
 })(this);

@@ -11,8 +11,9 @@
     console.log("canAddAnArticleToList:");
 	function canAddAnArticleToList() {
         var articleList = new ArticleList();
-        articleList.addArticle("Headline");
-		assert.isTrue(articleList.getList()[0].getHeadline() === "Headline");
+        articleList.addArticle("Headline", "URL");
+        assert.isTrue(articleList.getList()[0].getHeadline() === "Headline");
+        assert.isTrue(articleList.getList()[0].getUrl() === "URL");
 	}
     canAddAnArticleToList();
 })();

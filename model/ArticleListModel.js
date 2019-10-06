@@ -3,8 +3,8 @@
         this.articles = [];
     }
 
-    ArticleList.prototype.addArticle = function(headline) {
-        this.articles.push(new Article(headline));
+    ArticleList.prototype.addArticle = function(headline, url) {
+        this.articles.push(new Article(headline, url));
     };
 
     ArticleList.prototype.getList = function() {

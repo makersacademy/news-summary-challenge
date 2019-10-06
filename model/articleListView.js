@@ -5,7 +5,7 @@
     
     ArticleListView.prototype.outputHtmlString = function(){
       var output = '';
-      for(var i = 0; i< this.articleList.getList().length; i++){
+      for (var i = 0; i< this.articleList.getList().length; i++){
         var headline = this.articleList.getList()[i].getHeadline();
         output += ("<li>" + headline + "</li>");
       }

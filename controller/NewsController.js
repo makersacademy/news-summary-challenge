@@ -14,9 +14,11 @@
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {  
                 var data = JSON.parse(this.responseText);
-                self.isReady = 'YES';
+                console.log(data);
                 for (i=0; i<data.response.results.length; i++) {
-                    self.articleList.addArticle(data.response.results[i].webTitle);
+                    var title = data.response.results[i].webTitle;
+                    var url = data.response.results[i].webUrl;
+                    self.articleList.addArticle(title, url);
                 }
                 console.log(self.articleList);
                 self.displayHeadlines();
