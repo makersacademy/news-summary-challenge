@@ -25,6 +25,7 @@
     NewsTagGenerator.prototype.generateImageTag = function() {
       imagetag = document.createElement('img')
       imagetag.setAttribute('src', this._imageurl)
+      imagetag.setAttribute('class', 'news-image')
       return imagetag
     };
 

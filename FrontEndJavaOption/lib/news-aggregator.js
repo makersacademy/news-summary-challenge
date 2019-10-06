@@ -31,7 +31,7 @@ function NewsAggregator() {
     for (let i = 0; i < 1; i++) {
       var headlines = document.getElementById('headlines-list');
       var newsitemcontainer = document.createElement('div')
-      newsitemcontainer.setAttribute('id', `newsitem${i}`)
+      newsitemcontainer.setAttribute('id', `news-container`)
       newsitemcontainer.appendChild(allNews[i].generateLink(i));
       newsitemcontainer.appendChild(allNews[i].generateImage());
       newsitemcontainer.appendChild(allNews[i].generateArticleSummary());

@@ -1,7 +1,5 @@
 (function (exports) {
 
-
-
   function describe(desc_description, it_function) {
     testsDiv = document.getElementById('tests')
     testDiv = document.createElement('div');
