@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Spec Tester v1.0.0</title>
+
+    <!-- include dependencies here... -->
+    <script src="spec/SpecFramework.js"></script>
+    <script src="lib/jquery-3.4.1.js"></script>
+
+    <!-- include src files here... -->
+    <script src="src/article-list-model.js"></script>
+    <script src="src/article-list-view.js"></script>
+    <script src="src/news-controller.js"></script>
+    <script src="src/single-article-view.js"></script>
+
+
+    <!-- include spec files here... -->
+    <script src="spec/article-list-model-spec.js"></script>
+    <script src="spec/article-list-view-spec.js"></script>
+    <script src="spec/news-controller-spec.js"></script>
+    <script src="spec/single-article-view-spec.js"></script>
+
+</head>
+
+<script>
+    $(document).ready(function(){
+        // $("#results").append("<li>" + testCreateNoteWithText()+"</li>");
+    });
+</script>
+
+<body>
+
+<ol id='results'> </ol>
+
+</body>
+
+</html>
