@@ -1,3 +1,4 @@
-news = new NewsAggregator();
+this.news = new NewsAggregator();
 
-news.getAllArticles();
+this.news.getAllArticles();
+this.news.displaySummaryArticles();

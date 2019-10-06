@@ -26,14 +26,12 @@ function APICaller() {
         .then(function (response) {
           response.json().then(function (data) {
             array_aylienextract.push(data);
-            
-            })
+          })
         })
       fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${currenturl}&sentences_number=3`)
         .then(function (response) {
           response.json().then(function (data) {
             array_ayliensummary.push(data);
-
           })
         })
     }
@@ -52,7 +50,6 @@ function APICaller() {
   }
 
   APICaller.prototype.retrieveImage = function (index) {
-    console.log(array_aylienextract)
     return array_aylienextract[index]['image']
   }
 
