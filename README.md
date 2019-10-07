@@ -1,38 +1,29 @@
 # News Summary challenge
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
-
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that summarises the news.
-
-### Guidance
-
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+Create an app that summarises the news.
 
 ## Project overview
 
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
+This app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
 
 ### Technologies
 
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
+A single page web app written in frontend JavaScript, CSS and HTML.  A custom JavaScript test library will be used.
 
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
 
-But, feel free to use the test framework you wrote during the week!
+## Terminal instructions for downloading and testing the app
+
+* git clone git@github.com:mariacuffaro/news-summary-challenge.git
+* node -v (to check node installed if not, run 'brew install node' command)
+* npm install http-server --save
+* node node_modules/http-server/bin/http-server
+* in the browser navigate to http://localhost:8080/TestRunner.html
 
 ### Serving your app
 
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
+[http-server](https://www.npmjs.com/package/http-server)) is used to serve HTML, CSS and JavaScript files.  Requests will be sent to an API to get data from the Guardian and to summarise text.
 
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+> The API is hosted on an external server that we don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
 
 ## User Stories
 
@@ -73,7 +64,43 @@ As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
 ```
+## Technical Approach:
+-----
+```
+NewsItem is a single news item - it has a title and a url
 
+Headlines gets the json returned from the Guardian api and creates an array of NewsItems.
+
+HeadlinesView is instantiated with a Headlines object and extracts each NewsItem (title and url) and wraps it in html so that they appear as a list on the screen.
+
+NewsItemSummary is instantiated with a news item and uses an api call (Aylien) to get the summary text for the news NewsItem
+
+SummaryView is instantiated with a NewsItemSummary and wraps the text in html to display on the page
+
+*** Controllers ***
+
+headline-controller creates an instance of the Headlines object and then a HeadlinesView object and displays title and url for each of the headines on the screen.
+
+summary-controller is called by the headline-controller if a url is clicked on the main page.  It creates a NewsItemSummary and SummaryView for the NewsItem that has been selected and renders them to the page.
+
+item-controller is called by the headline or summary controller if the 'full article' link is selected.  It makes an api call to retrieve the entire article???
+
+```
+
+Notes on functionality (once all user stories are implemented):
+------
+
+## Domain model
+
+**Access Page and show headlines**
+```sequence {theme="hand"}
+politician->browser: open app
+browser->localhost(server): url route ('./')
+localhost(server)->browser: headlines
+browser->browser: rendered headlines
+politician->browser: selects news item
+browser->browser: renders summary
+```
 ## Mockups
 
 ### Headlines page
@@ -88,9 +115,7 @@ To make my news reading more fun
 
 ### API authentication
 
-So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
-
-> Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
+So that this project can focus on the front-end, Makers provided an API that you can  talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, we don't have to store API keys in the front-end app.
 
 ### API request rate limits and stubbing
 
