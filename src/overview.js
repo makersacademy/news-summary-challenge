@@ -33,5 +33,5 @@
   }
   exports.newsOverview = newsOverview;
   var overviewLoaded = new Event('buildOverview');
-  document.addEventListener('buildOverview', function () { exports.newsOverview.displayOverview() }, false);
+  document.addEventListener('buildOverview', function () { exports.newsOverview.displayOverview()}, false);
 })(this);
