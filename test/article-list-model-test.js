@@ -16,4 +16,14 @@
         assert.isTrue(articleList.getList()[0].getUrl() === "URL");
 	}
     canAddAnArticleToList();
+
+    console.log('givesNewArtcielsId');
+    function givesNewArtcielsId() {
+        var articleList = new ArticleList();
+        articleList.addArticle('hl1', 'url1');
+        articleList.addArticle('hl2', 'url2');
+        assert.isTrue(articleList.getList()[0].getId() === 1);
+        assert.isTrue(articleList.getList()[1].getId() === 2);
+    }
+    givesNewArtcielsId();
 })();

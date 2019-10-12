@@ -4,7 +4,7 @@
   }
   
   ArticleSummaryView.prototype.outputHtmlString = function(){
-    var output = "<div>" + this._note.text()+ "</div>";
+    var output = "<div>" + this.article.text()+ "</div>";
     return output;
   };
   

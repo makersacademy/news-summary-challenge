@@ -7,7 +7,8 @@
         window.addEventListener("hashchange", function(event) {
             event.preventDefault();
             this.console.log('click');
-            self.displayArticleSummary();   
+            var articleId = parseInt(window.location.hash.split("/")[1]);
+            self.displayArticleSummary(articleId);   
             });
         }
 
@@ -40,7 +41,7 @@
         document.getElementById("headline-list").innerHTML = this.articleListView.outputHtmlString();
     }; 
 
-    NewsController.prototype.displayArticleSummary = function() {
+    NewsController.prototype.displayArticleSummary = function(articleId) {
         var self = this;
         console.log('display');
     };
