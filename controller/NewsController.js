@@ -2,7 +2,15 @@
     function NewsController(articleList) {
         this.articleList = articleList;
         this.articleListView = new ArticleListView(articleList);
-    }
+        var self = this;
+
+        window.addEventListener("hashchange", function(event) {
+            event.preventDefault();
+            this.console.log('click');
+            self.displayArticleSummary();   
+            });
+        }
+
 
     NewsController.prototype.getArticleList = function() {
         return this.articleList;
@@ -32,9 +40,16 @@
         document.getElementById("headline-list").innerHTML = this.articleListView.outputHtmlString();
     }; 
 
+    NewsController.prototype.displayArticleSummary = function() {
+        var self = this;
+        console.log('display');
+    };
+
+
+
     exports.NewsController = NewsController;
 })(this);
 
-var al = new ArticleList();
-var nc = new NewsController(al);
-nc.populateListFromApiResponse();
+// var al = new ArticleList();
+// var nc = new NewsController(al);
+// nc.populateListFromApiResponse();
