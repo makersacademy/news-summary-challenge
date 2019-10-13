@@ -1,7 +1,8 @@
 
 ## See how it works here: 
 
-[click](https://news_summary_kierepkae.surge.sh)
+[Click in the link to see it live](https://news_summary_kierepkae.surge.sh)
+- simply click the title o to view full article
 
 ```
 Simply click on the header of article that interests you and read full text.
