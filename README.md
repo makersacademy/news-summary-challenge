@@ -1,12 +1,14 @@
-# News Summary challenge
+# News Summary App
 
-A very biased news summary app, delivering you the latest Guardian items tagged with `president` & `tapes`. 100% vanilla JS.   
+A very biased news summary app, delivering you the latest Guardian missives tagged with `president` & `tapes`. 100% vanilla JS.  
 
-**Work in progress**
+This app uses Aylien news summary API.
 
-* CSS is in the works
-* API-mocking in tests 
-* tests using the custom testing framework
+**TODOs:**
+
+* Add API-mocking in tests 
+* full test coverage using the custom testing framework
+* Heroku deployment
 
 ## To run this app locally:
 
