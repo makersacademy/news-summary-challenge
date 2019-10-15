@@ -1,4 +1,4 @@
-// copied from https://github.com/maryrosecook/notes-exemplar/blob/master/test/unit/run-all-tests.js
+// taken from https://github.com/maryrosecook/notes-exemplar/blob/master/test/unit/run-all-tests.js
 
 "use strict";
 
