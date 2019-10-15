@@ -23,36 +23,64 @@
     }
 
     body {
+      background-color: #efefef;
+      font-size: 100%;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 8px;
+      grid-auto-flow: column;   
       background-image: url("men.png");
-      background-position: center;
-      background-color: #fff;
       background-repeat: no-repeat;
-      font-family: 'News Cycle';
-      font-size: 1rem;
-      margin-top: 200px;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.8; 
     }
 
     h1 {
+      grid-column-start: 2;
+      grid-row: 1 / span 1;
       font-family: 'News Cycle';
       font-weight: 700;
-      font-size: 50px;
-      background-color: #fff;
-      opacity: 0.5;
+      font-size: 3.8rem;
+      text-align: center;
+      color: #0c0b0b;
     }
 
     .js-results {
-      background-color: #fff;
-      border: 3px solid red;
-      opacity: 0.5;
+      padding: 10px 10px;
+      font-family: 'News Cycle';
+      font-weight: 400;
+      font-size: 1.2rem;
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+      border-radius: 15px;
+      background-color: rgba(128,128,128,0.9);
+    }
+
+    ul {
+      display: grid;
+      grid: auto-flow / auto 1fr;
+    }
+
+    li {
+      grid-column: span 2;
+      display: grid;
+      grid: subgrid;
     }
 
   </style>
 </head>
 <body>
-  <h1>News for you</h1>
-    <ul class='js-results'>
-      <li>Loading…</li>
-    </ul>
-    <script src='lib/get-feed.js'></script>
+  <div class='grid-container'>
+    <h1>News Summariser</h1>
+      <ul class='js-results'>
+        <li>Loading…</li>
+      </ul>
+      <script src='lib/get-feed.js'></script>
+  </div>
 </body>
 </html>
