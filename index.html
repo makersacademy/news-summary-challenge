@@ -23,36 +23,48 @@
     }
 
     body {
-      background-image: url("men.png");
-      background-position: center;
-      background-color: #fff;
-      background-repeat: no-repeat;
+      background-color: #efefef;
       font-family: 'News Cycle';
-      font-size: 1rem;
-      margin-top: 200px;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .container {
+      background-image: url("men.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.5;
+      margin-top: 20px;
+	    width:75%;
+	    margin-left: auto ;
+      margin-right: auto ;
+      height: auto;
     }
 
     h1 {
       font-family: 'News Cycle';
       font-weight: 700;
       font-size: 50px;
-      background-color: #fff;
-      opacity: 0.5;
+      text-align: center;
+      background-color: white;
+      height: 75px;
     }
 
     .js-results {
-      background-color: #fff;
       border: 3px solid red;
-      opacity: 0.5;
+      color: darkgray;
+      height: auto;
     }
 
   </style>
 </head>
 <body>
   <h1>News for you</h1>
+  <div class='container'>
     <ul class='js-results'>
       <li>Loading…</li>
     </ul>
     <script src='lib/get-feed.js'></script>
+  </div>
 </body>
 </html>
