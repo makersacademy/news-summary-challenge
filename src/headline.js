@@ -6,10 +6,11 @@
     this.title = item.webTitle
     this.url = item.webUrl
     this.date = getStringDate(item)
+    this.body = ""
   }
 
-  Headline.prototype.seeSummary = function(detail) {
-    return detail
+  Headline.prototype.setBody = function(body) {
+    this.body = body
   }
 
   exports.Headline = Headline
