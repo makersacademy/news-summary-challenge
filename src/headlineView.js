@@ -5,10 +5,10 @@
   }
 
   HeadlineView.prototype.returnSummary = function() {
-    return "<h2>" + this.headline.title + "</h2>" + '<img src="' +
+    return '<div class="single-new"><h2>' + this.headline.title + "</h2>" + '<img src="' +
             this.headline.thumbnail + '"><p>' +
-            this.headline.summary + '</p><a href="' +
-            this.headline.url + '">Read more...</a><p><a href="#">Home Page</a></p>'
+            this.headline.summary + '</p><a class="link" target="_blank" href="' +
+            this.headline.url + '">Read more...</a><p><a class="link" href="#">Home Page</a></p></div>'
   }
 
   exports.HeadlineView = HeadlineView

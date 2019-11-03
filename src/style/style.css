@@ -1,3 +1,39 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: block;
+  margin-bottom: 50px;
+}
+
+h1 {
+  display: inline;
+}
+
+h2 {
+  line-height: 0;
+}
+
+.guardian-logo {
+  padding-left: 25px;
+  padding-top: 20px;
+}
+
+.guardian-logo img {
+  margin-right: 20px;
+}
+
 .thumbnail {
   width: 25%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: underline;
+  color: blue;
 }

@@ -12,7 +12,6 @@
 
   function displayNews() {
     var news = getNewsFromUrl(window.location)
-    console.log(news)
 
     displayListNews("https://content.guardianapis.com/search?&show-fields=thumbnail,trailText&api-key=").then(function(data) {
       headlinesList = new HeadlinesList(data)
