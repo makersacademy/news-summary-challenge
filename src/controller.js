@@ -1,48 +1,48 @@
 (function(exports) {
 
   function Controller() {
+    var headline = null
+    var headlineView = null
+    var headlinesList = null
+    var headlinesListView = null
 
-    displayNews("https://content.guardianapis.com/search?&show-fields=thumbnail,trailText&api-key=").then(function(data) {
-      this.headlinesList = new HeadlinesList(data)
-      this.headlinesListView = new HeadlinesListView(this.headlinesList)
-      this.headlinesList.addHeadlines()
-      displayHTML(this.headlinesListView.returnHTML())
-    })
-    window.addEventListener("hashchange", viewSingleNews)
+    displayNews()
+    window.addEventListener("hashchange", displayNews)
     }
 
-  function viewSingleNews() {
+  function displayNews() {
     var news = getNewsFromUrl(window.location)
-    if (news === undefined) {
-      displayHTML(this.headlinesListView.returnHTML())
-    } else {
-      singleNews(news).then(function(data) {
-        var headline = this.headlinesList.getHeadlineByUrl(news.substring(1))
-        headline.setSummary(data.trailText)
-        // headline.setThumbnail(data.thumbnail)
-        // console.log(data.thumbnail)
-        var headlineView = new HeadlineView(headline)
-        displayHTML(headlineView.returnSummary())
-      })
-    }
+    console.log(news)
+
+    displayListNews("https://content.guardianapis.com/search?&show-fields=thumbnail,trailText&api-key=").then(function(data) {
+      headlinesList = new HeadlinesList(data)
+      headlinesListView = new HeadlinesListView(headlinesList)
+      headlinesList.addHeadlines()
+      displayHTML(headlinesListView.returnHTML())
+
+      if (news !== undefined) {
+        displaySingleNews(news).then(function(data) {
+          headline = headlinesList.getHeadlineByUrl(news.substring(1))
+          headline.setSummary(data.trailText)
+          headlineView = new HeadlineView(headline)
+          displayHTML(headlineView.returnSummary())
+        })
+      }
+    })
   }
 
   function getNewsFromUrl(location){
     return location.hash.split("#news")[1]
   }
 
-  function singleNews(id) {
-    return fetch('secret.txt').then(function(response) {
-      return response.text();
-    }).then(function(response) {
+  function displaySingleNews(id) {
+    return fetchSecret().then(function(response) {
       var url = "https://content.guardianapis.com/" + id + "?api-key=" + response + "&show-fields=trailText"
-      return fetch(url).then(function(response) {
-        return response.json().then(function(data) {
+      return fetchNews(url).then(function(data) {
           return data.response.content.fields
         })
       })
-    })
-  }
+    }
 
   function displayHTML(content) {
     var element = document.getElementById('news')
@@ -55,18 +55,18 @@
     })
   }
 
-  function fetchNewsList(url) {
+  function fetchNews(url) {
     return fetch(url).then(function(response) {
       return response.json()
     })
   }
 
-  function displayNews(content) {
+  function displayListNews(content) {
 
     return fetchSecret().then(function(response) {
       var url = content + response
 
-      return fetchNewsList(url).then(function(data) {
+      return fetchNews(url).then(function(data) {
           return data.response.results
         });
       })
