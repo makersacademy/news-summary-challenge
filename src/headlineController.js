@@ -15,6 +15,7 @@
     window.addEventListener("hashchange", this.showArticleForCurrentPage.bind(this));
   }
   headlineController.prototype.showArticleForCurrentPage = function() {
+    console.log(this)
     this.showArticle(this.getArticleFromUrl(window.location));
   }
   headlineController.prototype.getArticleFromUrl = function(link) {
@@ -24,10 +25,10 @@
     var url = `${this.view.API.allUrls()[articleNumber]}`
     console.log(url)
     this.view.API.textSummary(url)
-    console.log(this.view.API.summary);
-    document
-      .getElementById('headlines')  
-      .innerHTML = url
+    console.log(this.view.API.summary)
+    // document
+    //   .getElementById('headlines')  
+    //   .innerHTML = `${this.view.API.summary}`
       
   }
 
