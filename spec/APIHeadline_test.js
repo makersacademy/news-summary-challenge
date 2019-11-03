@@ -5,6 +5,7 @@ function testAPIHeadline()  {
 
   testapi = APITestOutput()
   
-  assert.isTrue('Takes API response and stores headlines', api.allHeadlines()[0] === testapi[0]['webTitle'] )
+  assert.isTrue('Takes API response and stores headlines',
+     api.allHeadlines()[0] === testapi[0]['webTitle'] )
 }
 testAPIHeadline()
