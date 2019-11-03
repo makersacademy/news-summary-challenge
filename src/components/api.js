@@ -13,8 +13,8 @@
 // }
 export async function getArticles() {
   const result = fetch(
-    "https://newsapi.org/v2/top-headlines?" +
-      "country=us&" +
+    "https://newsapi.org/v2/everything?" +
+      "q=robots&" +
       "apiKey=2ab10248d6ea4276b5ccd96cc3fa8f20"
   )
     .then(response => {
