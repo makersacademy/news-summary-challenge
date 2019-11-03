@@ -12,10 +12,11 @@
 //   }
 // }
 export async function getArticles() {
+  console.log(process.env.REACT_APP_NEWS_API_KEY);
+
+  const apiKey = process.env.REACT_APP_NEWS_API_KEY;
   const result = fetch(
-    "https://newsapi.org/v2/everything?" +
-      "q=robots&" +
-      "apiKey=2ab10248d6ea4276b5ccd96cc3fa8f20"
+    `https://newsapi.org/v2/everything?q=robots&apiKey=${apiKey}`
   )
     .then(response => {
       return response.json();

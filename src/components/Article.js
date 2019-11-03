@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import ArticleList from "./ArticleList";
 import Button from "react-bootstrap/Button";
 
 class Article extends Component {
@@ -42,9 +41,9 @@ class Article extends Component {
               Original Article
             </Button>
           </a>
-          <Button variant="secondary" size="sm" className="mx-2 ">
+          {/* <Button variant="secondary" size="sm" className="mx-2 ">
             Summary
-          </Button>
+          </Button> */}
         </div>
       </div>
     );

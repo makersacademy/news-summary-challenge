@@ -17,6 +17,7 @@ class ArticleList extends Component {
         articles: data.articles
       });
     });
+
     getSummary().then(data => {
       this.setState({
         summary: data
@@ -37,6 +38,7 @@ class ArticleList extends Component {
                 urlToImage={item.urlToImage}
                 description={item.description}
                 url={item.url}
+                summary={this.state.summary.sentences}
               />
               {/* <p>{this.state.summary.sentences}</p> */}
             </div>
