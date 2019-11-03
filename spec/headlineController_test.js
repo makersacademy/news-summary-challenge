@@ -15,6 +15,6 @@ function testHeadlineController() {
   view = new View(api)
   headlineController = new headlineController(view)
   assert.isTrue('Inserts HTML on page',
-    headlineController.insertHTML(documentDouble) === '<ul><li><div>Headline 1</div></li><li><div>Headline 2</div></li></ul>')
+    headlineController.insertHTML(documentDouble) === '<ul><li><div><a href="#0">Headline 1</div></li><li><div><a href="#1">Headline 2</div></li></ul>')
 }
 testHeadlineController()

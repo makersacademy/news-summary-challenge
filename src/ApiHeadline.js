@@ -2,6 +2,9 @@
   function APIHeadline() {
     this.data = []
     this.headlines = []
+    this.urls = []
+    this.summary = []
+    this.images = []
   }
 
   APIHeadline.prototype.getData = function () {
@@ -11,7 +14,7 @@
         return response.json();
       })
        .then(function(myJson) {
-         self.data = myJson.response.results;
+         self.data = myJson.response.results
       });
     },
 
@@ -23,11 +26,48 @@
     return this.headlines
   }
 
+  APIHeadline.prototype.allUrls = function () {
+    return this.urls
+  }
+
   APIHeadline.prototype.getHeadlines = function() {
     let self = this
     this.allData().forEach(function(headline) {
     self.headlines.push(headline['webTitle'])
     })
+  }
+
+  APIHeadline.prototype.getimages = function() {
+    let self = this
+    this.allData().forEach(function(headline) {
+    self.images.push(headline['fields']['thumbnail'])
+    })
+  }
+
+  APIHeadline.prototype.allimages = function () {
+    return this.images
+  }
+
+
+
+  APIHeadline.prototype.getUrl = function() {
+    let self = this
+    this.allData().forEach(function(headline) {
+      self.urls.push(headline['webUrl'])
+    })
+}
+
+  APIHeadline.prototype.textSummary = function () {
+    let self = this
+    this.urls.forEach(function (url) {
+      console.log(fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${url}`))
+      .then(function(response) {
+        self.summary = response.json();
+        })
+      .then(function(myJson) {
+        self.summary = myJson.response.results
+        });
+     })
   }
 
   exports.APIHeadline = APIHeadline
