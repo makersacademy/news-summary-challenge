@@ -50,18 +50,6 @@ I can see whizzy animations in the app
 To make my news reading more fun
 ```
 
-## Mockups
-
-### Headlines page
-
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
-
-### Article summary page
-
-![Article page mockup](/images/news-summary-project-article-page-mockup.png)
-
-## API
-
 ### API authentication
 
 So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
