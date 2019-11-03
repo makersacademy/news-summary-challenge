@@ -6,12 +6,18 @@
     this.title = item.webTitle
     this.url = item.webUrl
     this.date = getStringDate(item)
-    this.body = ""
+    this.summary = ""
+    this.thumbnail = item.fields.thumbnail
+    this.summary = item.fields.trailText
   }
 
-  Headline.prototype.setBody = function(body) {
-    this.body = body
+  Headline.prototype.setSummary = function(summary) {
+    this.summary = summary
   }
+
+  // Headline.prototype.setThumbnail = function(thumbnail) {
+  //   this.thumbnail = thumbnail
+  // }
 
   exports.Headline = Headline
 })(this)

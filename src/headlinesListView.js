@@ -13,8 +13,12 @@
       var title = item.title
       var url = item.url
       var date = item.date
+      var thumbnail = item.thumbnail
 
-      headlines += '<div id="' + id + '"><ul><li><a href="#news/' + headlineId + '" id="' + id+ '">' + title + ' - published on ' + date + ' </a></li></ul></div>'
+      headlines += '<div id="' + id + '"><ul><li><h2><a href="#news/' +
+      headlineId + '" id="' + id+ '">' +
+      title + '</h2><img class="thumbnail" src="' +
+      thumbnail + '"></a><br> Published on ' + date + '</li></ul></div>'
     })
     return headlines
   }
