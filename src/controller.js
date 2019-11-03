@@ -13,7 +13,7 @@
   function displayNews() {
     var news = getNewsFromUrl(window.location)
 
-    displayListNews("https://content.guardianapis.com/search?&show-fields=thumbnail,trailText&api-key=").then(function(data) {
+    displayListNews("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail").then(function(data) {
       headlinesList = new HeadlinesList(data)
       headlinesListView = new HeadlinesListView(headlinesList)
       headlinesList.addHeadlines()
@@ -22,9 +22,11 @@
       if (news !== undefined) {
         displaySingleNews(news).then(function(data) {
           headline = headlinesList.getHeadlineByUrl(news.substring(1))
-          headline.setSummary(data.trailText)
-          headlineView = new HeadlineView(headline)
-          displayHTML(headlineView.returnSummary())
+          getSummary(headline.url).then(function(data) {
+            headline.setSummary(data)
+            headlineView = new HeadlineView(headline)
+            displayHTML(headlineView.returnSummary())
+          })
         })
       }
     })
@@ -35,23 +37,23 @@
   }
 
   function displaySingleNews(id) {
-    return fetchSecret().then(function(response) {
-      var url = "https://content.guardianapis.com/" + id + "?api-key=" + response + "&show-fields=trailText"
+      var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/" + id
       return fetchNews(url).then(function(data) {
           return data.response.content.fields
         })
-      })
     }
+
+  function getSummary(summaryUrl) {
+    var url = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + summaryUrl
+
+    return fetchNews(url).then(function(data) {
+      return data.sentences.join('<br>')
+    })
+  }
 
   function displayHTML(content) {
     var element = document.getElementById('news')
     element.innerHTML = content
-  }
-
-  function fetchSecret() {
-    return fetch('secret.txt').then(function(response) {
-      return response.text()
-    })
   }
 
   function fetchNews(url) {
@@ -60,15 +62,11 @@
     })
   }
 
-  function displayListNews(content) {
-
-    return fetchSecret().then(function(response) {
-      var url = content + response
+  function displayListNews(url) {
 
       return fetchNews(url).then(function(data) {
           return data.response.results
         });
-      })
     }
 
   exports.Controller = Controller

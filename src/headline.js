@@ -6,9 +6,12 @@
     this.title = item.webTitle
     this.url = item.webUrl
     this.date = getStringDate(item)
+    if (item.fields === undefined) {
+      this.thumbnail = undefined
+    } else {
+      this.thumbnail = item.fields.thumbnail
+    }
     this.summary = ""
-    this.thumbnail = item.fields.thumbnail
-    this.summary = item.fields.trailText
   }
 
   Headline.prototype.setSummary = function(summary) {

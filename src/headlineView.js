@@ -5,6 +5,9 @@
   }
 
   HeadlineView.prototype.returnSummary = function() {
+    if (this.headline.thumbnail === undefined) {
+      this.headline.thumbnail = "/images/thumbnail.jpeg"
+    }
     return '<div class="single-new"><h2>' + this.headline.title + "</h2>" + '<img src="' +
             this.headline.thumbnail + '"><p>' +
             this.headline.summary + '</p><a class="link" target="_blank" href="' +
