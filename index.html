@@ -8,12 +8,17 @@
 </head>
 <body>
   <center><div><h1>News Headlines</h1></div></center>
-  <div id="headlines">Headlines</div>
-  <div>
+  <center>
+    <div>
       <form id="refresh" action="/headlines" method="post">
-        <input type="submit" name="refresh" value="Refresh Headlines">
+        <input type="submit" name="refresh" value="Current Headlines">
       </form>
-  </div>
+    </div>
+  </center>
+  
+  <br>
+  <div id="headlines"></div>
+ 
 
   <script src="src/ApiHeadline.js"></script>
   <script src="src/headlineView.js"></script>

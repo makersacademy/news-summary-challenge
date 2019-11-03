@@ -12,7 +12,7 @@
   }
 
   headlineController.prototype.makeUrlChangeShowArticleForCurrentPage = function() {
-    window.addEventListener("hashchange", this.showArticleForCurrentPage.bind(this));
+    window.addEventListener("hashchange", this.showArticleForCurrentPage.bind(this))
   }
   headlineController.prototype.showArticleForCurrentPage = function() {
     console.log(this)
@@ -31,9 +31,7 @@
     //   .innerHTML = `${this.view.API.summary}`
       
   }
-
   controller.makeUrlChangeShowArticleForCurrentPage();
-
 
   function listenForRefreshEvent() {
     document.getElementById('refresh').addEventListener('submit', function() {
