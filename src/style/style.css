@@ -12,7 +12,7 @@ h1 {
 }
 
 h2 {
-  line-height: 0;
+  line-height: 1.2;
 }
 
 .guardian-logo {
@@ -37,3 +37,5 @@ a {
   text-decoration: underline;
   color: blue;
 }
+
+/**/

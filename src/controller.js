@@ -54,6 +54,7 @@
   function displayHTML(content) {
     var element = document.getElementById('news')
     element.innerHTML = content
+    window.scrollTo(0, 0);
   }
 
   function fetchNews(url) {
