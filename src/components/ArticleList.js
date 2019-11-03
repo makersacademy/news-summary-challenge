@@ -38,7 +38,7 @@ class ArticleList extends Component {
                 description={item.description}
                 url={item.url}
               />
-              <p>{this.state.summary.sentences}</p>
+              {/* <p>{this.state.summary.sentences}</p> */}
             </div>
           );
         })}
