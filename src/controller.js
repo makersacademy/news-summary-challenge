@@ -49,19 +49,28 @@
     element.innerHTML = content
   }
 
+  function fetchSecret() {
+    return fetch('secret.txt').then(function(response) {
+      return response.text()
+    })
+  }
+
+  function fetchNewsList(url) {
+    return fetch(url).then(function(response) {
+      return response.json()
+    })
+  }
+
   function displayNews(content) {
 
-    return fetch('secret.txt').then(function(response) {
-      return response.text();
-    }).then(function(response) {
+    return fetchSecret().then(function(response) {
       var url = content + response
 
-      return fetch(url).then(function(response) {
-        return response.json().then(function(data) {
+      return fetchNewsList(url).then(function(data) {
           return data.response.results
         });
       })
-    })
-  }
+    }
+
   exports.Controller = Controller
 })(this)
