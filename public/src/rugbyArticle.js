@@ -1,10 +1,10 @@
 "use strict";
 
 (function(exports) {
-  function RugbyArticle(webTitle, webUrl) {
+  function RugbyArticle(webTitle, webUrl, id) {
     this.title = webTitle;
     this.url = webUrl;
-    this.id = null
+    this.id = id
   };
 
   exports.RugbyArticle = RugbyArticle;
