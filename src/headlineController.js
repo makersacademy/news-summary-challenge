@@ -26,10 +26,9 @@
     console.log(url)
     this.view.API.textSummary(url)
     console.log(this.view.API.summary)
-    // document
-    //   .getElementById('headlines')  
-    //   .innerHTML = `${this.view.API.summary}`
-      
+    document
+      .getElementById('headline title')  
+      .innerHTML = `<h2>${this.view.API.allHeadlines()[articleNumber]}</h2>`
   }
   controller.makeUrlChangeShowArticleForCurrentPage();
 
@@ -41,13 +40,6 @@
   };
 
   listenForRefreshEvent()
-
-  // headlineController.prototype.refresh = function () {
-  //   let self = this
-  //   self.view.API.getData()
-  //     .then(function () {
-  //       self.insertHTML()
-  //     })
-  // }
+  
   exports.headlineController = headlineController
 })(this)

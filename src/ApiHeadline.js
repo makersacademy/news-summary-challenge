@@ -36,6 +36,10 @@
     return this.headlines
   }
 
+  APIHeadline.prototype.specificHeadline = function (index) {
+    return this.allHeadlines()[index]
+  }
+
   APIHeadline.prototype.allUrls = function () {
     return this.urls
   }
@@ -67,7 +71,7 @@
     })
 }
 
-  APIHeadline.prototype.textSummary = function (url) {
+  APIHeadline.prototype.textSummary = function (url, articleNumber) {
     let self = this
       fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${url}`)
       .then(function(response) {
@@ -77,13 +81,18 @@
         self.summaryData = myJson
         })
       .then (function() {
-        return self.summary = self.summaryData['sentences'].join("<br>\n<br>")
+        self.summary = self.summaryData['sentences'].join("<br>\n<br>")
       })
       .then(function() {
         document
       .getElementById('headlines')  
       .innerHTML = `${self.summary}`
       })
+      // .then(function() {
+      //   document
+      // .getElementById('headline title')  
+      // .innerHTML = "headline title"
+      // })
      }
 
   exports.APIHeadline = APIHeadline

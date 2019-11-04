@@ -34,5 +34,4 @@ So that I can get an in depth understanding of a very important story
 ```
 As a busy politician
 I can see a picture to illustrate each news article when I browse headlines
-So that I have something nice to look at
-```
+So that cd ..
