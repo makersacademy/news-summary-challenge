@@ -16,8 +16,11 @@
 
     setTimeout(function(){
       var rugbyArticles = articleList.allArticles();
-      var view = new View(rugbyArticles);
-    }, 1000);
+      var view = new View();
+      rugbyArticles.forEach(function(article) {
+        view.addToList(article);
+      });
+    }, 100);
 
   };
 

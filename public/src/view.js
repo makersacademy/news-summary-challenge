@@ -2,16 +2,32 @@
 
 (function (exports) {
 
-  function View (rugbyArticles) {
+  function View () {
 
-    console.log(rugbyArticles);
+    return {
+      addToList: addToList,
+    }
 
-    rugbyArticles.forEach(function(article, index) {
-      console.log( article.id +1 );
-      console.log( article.title );
-      console.log( article.url );
-    });
+    function addToList (article) {
+      var list = document.getElementById('populate_articles');
+      list.appendChild(createArticleHTML(article));
+    };
+
+    function createArticleHTML (article) {
+      var htmlElement = document.createElement('li');
+      htmlElement.setAttribute('id', article.id );
+      htmlElement.appendChild(titleLink(article));
+      return htmlElement;
+    }
+
+    function titleLink (article) {
+      var htmlElement = document.createElement('a');
+      var linkText = document.createTextNode(article.title);
+      htmlElement.setAttribute('href', article.url);
+      htmlElement.appendChild(linkText);
+      return htmlElement;
+    }
+
   };
-
   exports.View = View;
 })(this);

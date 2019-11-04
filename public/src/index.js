@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(function(){
     var articleData = guardianAPI.returnArticleData();
     var controller = new Controller(articleData)
-  }, 500);
+  }, 300);
 
 });
 
