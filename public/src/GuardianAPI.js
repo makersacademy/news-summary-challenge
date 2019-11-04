@@ -26,7 +26,3 @@
   }
   exports.GuardianAPI = GuardianAPI;
 })(this);
-
-// var guardianAPI = new GuardianAPI();
-// guardianAPI.fetchArticleData();
-// setTimeout(function(){ console.log(guardianAPI.returnArticleData()); }, 1000);

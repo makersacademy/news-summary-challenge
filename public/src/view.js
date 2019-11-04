@@ -2,10 +2,13 @@
 
 (function (exports) {
 
-  function View () {
+  function View (articleList) {
 
-  }
-  exports.View = View
-})(this)
+    var articles = articleList.allArticles();
 
-// var view = new View()
+    
+
+  };
+
+  exports.View = View;
+})(this);
