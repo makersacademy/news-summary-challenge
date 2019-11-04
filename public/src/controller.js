@@ -2,8 +2,8 @@
 
 (function (exports) {
 
-  function Controller() {
-    
+  function Controller(articleData) {
+    console.log(articleData)
   };
 
   exports.Controller = Controller;
