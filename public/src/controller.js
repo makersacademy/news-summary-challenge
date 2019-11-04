@@ -3,7 +3,10 @@
 (function (exports) {
 
   function Controller(articleData) {
-    console.log(articleData)
+    articleData.forEach(function(article, index) {
+      console.log(article.webTitle)
+      console.log(article.webUrl)
+    });
   };
 
   exports.Controller = Controller;
