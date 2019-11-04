@@ -14,7 +14,11 @@
       articleList.addArticle(rugbyArticle);
     });
 
-    console.log(articleList.allArticles());
+    setTimeout(function(){
+      var rugbyArticles = articleList.allArticles();
+      var view = new View(rugbyArticles);
+    }, 1000);
+
   };
 
   exports.Controller = Controller;

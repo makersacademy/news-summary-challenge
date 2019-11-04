@@ -2,12 +2,15 @@
 
 (function (exports) {
 
-  function View (articleList) {
+  function View (rugbyArticles) {
 
-    var articles = articleList.allArticles();
+    console.log(rugbyArticles);
 
-    
-
+    rugbyArticles.forEach(function(article, index) {
+      console.log( article.id +1 );
+      console.log( article.title );
+      console.log( article.url );
+    });
   };
 
   exports.View = View;
