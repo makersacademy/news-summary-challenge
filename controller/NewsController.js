@@ -12,13 +12,15 @@
             });
         }
 
-
     NewsController.prototype.getArticleList = function() {
         return this.articleList;
     };
 
     NewsController.prototype.populateListFromApiResponse = function() {
         var self = this;
+        date = new Date();
+        dateString = date.getFullYear() + '-' +  date.getMonth() + '-' + date.getDate();
+        console.log(dateString);
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {  
@@ -33,9 +35,7 @@
                 self.displayHeadlines();
             }
         };
-         xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=from-date=" + "2019-05-10", true);
-        // xhttp.open("GET", "http://www.mocky.io/v2/5da1fc432f00002d00f418ed");
-        // xhttp.open("PUT", "https://www.mocky.io/v2/5185415ba171ea3a00704eed");
+         xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=from-date=" + dateString, true);
         xhttp.send();
     };
 
@@ -60,8 +60,6 @@
         xhttp.open("GET", "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + articleUrl, true);
         xhttp.send();
     };
-
-
 
     exports.NewsController = NewsController;
 })(this);
