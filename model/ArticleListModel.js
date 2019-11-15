@@ -17,5 +17,5 @@
     };
 
     exports.ArticleList = ArticleList;
-  })(this);
+})(this);
   
