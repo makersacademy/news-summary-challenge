@@ -16,4 +16,4 @@ My focus for this project was on building an MVC front end, and doing OOD with t
 
 I spent a while diagramming to understand what was needed, then built each object test-first using the custom testing framework. 
 
-<img src="https://github.com/mikjw/news-summary-challenge/blob/master/docs/objects.png" width=60% alt="object diagram" width=50%>
+<img src="https://github.com/mikjw/news-summary-challenge/blob/master/docs/objects.png" width=100% alt="object diagram" width=50%>
