@@ -2,20 +2,18 @@
 
 The application calls two APIs: first, the Guardian to fetch the day's headlines, then the Aylien API to provide a summary of each article's full text. 
 
-<img src="" alt="screenshot" width=50%>
-
 ### To run 
 * Clone this repo and navigate to the root folder
 * Open `index.html` in your browser!
 
 #### Running the tests
 
-The projects uses a simple custom testing framework, built in vanilla JS, which outputs to the JavaScript console. Open `test-runner.html` in your browser and open developer tools to see it. 
+The projects uses a simple custom testing framework, built in vanilla JS, which outputs to the JavaScript console. Open `test-runner.html` in your browser and open developer tools to see the results. 
 
 ### My approach
 
-My focus for this project was on doing object oriented design in JavaScript, using the (ES5) module and prototype pattern. 
+My focus for this project was on building an MVC front end, and doing OOD with the JavaScript prototype model. 
 
-I spent a while diagramming to arrive at a modular design, then built each class test-first using the custom testing framework: 
+I spent a while diagramming to understand what was needed, then built each object test-first using the custom testing framework. 
 
-<img src="" alt="object diagram" width=50%>
+<img src="https://github.com/mikjw/news-summary-challenge/blob/master/docs/objects.png" width=60% alt="object diagram" width=50%>
