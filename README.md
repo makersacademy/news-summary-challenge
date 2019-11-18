@@ -1,6 +1,6 @@
 # News Summary challenge
 
-The application calls two APIs: first, the Guardian to fetch the day's headlines, then the Ayelian API to provide a summary of each article's full text. 
+The application calls two APIs: first, the Guardian to fetch the day's headlines, then the Aylien API to provide a summary of each article's full text. 
 
 <img src="" alt="screenshot" width=50%>
 
