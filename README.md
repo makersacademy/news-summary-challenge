@@ -28,7 +28,7 @@ Requests are sent to:
 ## Resources
 
 * Makers Academy [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md) on creating a frontend single page app.
-* Notes on APIs
+* Makers Academy [notes on APIs](https://github.com/emmavanoss/news-summary-challenge/blob/master/api-notes.md)
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
