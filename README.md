@@ -17,7 +17,7 @@ Tests are written using a testing framework I developed during the week - see
 the tests folder and the 'helpers' file to get a view of this framework.
 
 I'm using a static web server [http-server](https://www.npmjs.com/package/http-server) to serve my HTML, CSS and JavaScript files.
-To do the same, run the following:
+To do the same, run the following:  
 `npm install http-server -g`
 
 This will allow you to run the server directly from the command line with
