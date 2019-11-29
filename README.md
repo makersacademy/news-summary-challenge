@@ -24,12 +24,10 @@ To do the same, run:
 This will allow you to run the server directly from the command line with
 `http-server`
 
-Requests are sent to:
+Requests are sent to the Makers News Summary API. This adds API credentials and
+makes the request to the relevant place:
 * Guardian API to get data  
 * Aylien to summarise text  
-
-## Setup
-
 
 ## Resources
 
