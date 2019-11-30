@@ -1,3 +1,3 @@
-function Story(story) {
-  
+function Story() {
+
 }
