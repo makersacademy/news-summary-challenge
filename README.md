@@ -54,13 +54,13 @@ I can click a link to see the original news article
 So that I can get an in depth understanding of a very important story
 ```
 
-To implement:
-
 ```
 As a busy politician
 I can see a summary of a news article
 So I can get a few more details about an important story
 ```
+
+To implement:
 
 ```
 As a busy politician
