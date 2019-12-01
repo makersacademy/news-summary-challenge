@@ -28,6 +28,7 @@ const renderSummary = (html, elementID) => {
   node.appendChild(textNode)
   document
     .getElementById(elementID)
+    .parentNode
     .appendChild(node)
 }
 
