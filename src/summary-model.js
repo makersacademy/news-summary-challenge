@@ -1,9 +1,9 @@
-const BASEURL = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url='
+const BASEURL = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=https://www.theguardian.com/'
 
-const createURL = (articleURL) => BASEURL + articleURL
+const createURL = (articleID) => BASEURL + articleID
 
-const getSummary = (articleURL) => {
-  return fetch(createURL(articleURL))
+const getSummary = (articleID) => {
+  return fetch(createURL(articleID))
     .then(res => res.json())
 }
 
