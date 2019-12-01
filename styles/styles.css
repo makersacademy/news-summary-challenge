@@ -1,3 +1,7 @@
+body {
+  background-color: #f2f7f4;
+}
+
 #landingButton {
   display: flex;
   justify-content: center;
@@ -22,6 +26,7 @@ ul {
   list-style-type:none;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .articleHeadline {
@@ -31,4 +36,5 @@ ul {
 
 .newsItem {
   margin: 10px;
+  padding: 5px;
 }
