@@ -22,14 +22,40 @@ const createSummary = (summaryData) => {
   return summaryData.sentences.join(' ')
 }
 
-const renderSummary = (html, elementID) => {
+const addHideLink = (elementID) => {
+  let newLink = document.createElement('a');
+  newLink.setAttribute('class', 'hide');
+  newLink.appendChild(document.createTextNode('Hide summary'));
+  newLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    document
+      .getElementById(elementID)
+      .parentNode
+      .getElementsByClassName('summaryText')[0]
+      .style
+      .display = 'none'
+    document
+      .getElementById(elementID)
+      .parentNode
+      .getElementsByClassName('hide')[0]
+      .remove()
+  })
+  document
+    .getElementById(elementID)
+    .parentNode
+    .appendChild(newLink)
+}
+
+const renderSummary = (summaryText, elementID) => {
   const node = document.createElement('DIV');
-  const textNode = document.createTextNode(html)
+  node.setAttribute('class', 'summaryText')
+  const textNode = document.createTextNode(summaryText)
   node.appendChild(textNode)
   document
     .getElementById(elementID)
     .parentNode
     .appendChild(node)
+  addHideLink(elementID)
 }
 
 const makeSummaryLinkClickShowSummary = () => {
@@ -39,7 +65,7 @@ const makeSummaryLinkClickShowSummary = () => {
       event.preventDefault()
       window.getSummary(element.id)
         .then(summaryData => createSummary(summaryData))
-        .then(html => renderSummary(html, element.id))
+        .then(summaryText => renderSummary(summaryText, element.id))
     })
   })
 }

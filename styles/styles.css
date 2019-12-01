@@ -2,6 +2,14 @@ body {
   background-color: #f2f7f4;
 }
 
+a {
+  color: darkslategrey;
+  text-decoration: none;
+  font-style: italic;
+  cursor: pointer;
+}
+
+
 #landingButton {
   display: flex;
   justify-content: center;
