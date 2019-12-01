@@ -2,7 +2,8 @@ const createNewsItems = (articleData) => {
   const items = articleData.response.results
   let itemsHtml = '<ul>'
   itemsHtml += items
-    .map(x => `<li><div>${x.webTitle} 
+    .map(x => `<li><div class='newsItem'>
+      <p class='articleHeadline'>${x.webTitle}</p> 
       <a href='' id='${x.id}' class='summaryLink'>Summary</a> 
       <a href='${x.webUrl}'>Full article</a>
       </div></li>`)

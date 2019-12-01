@@ -17,3 +17,18 @@ button:focus {
   outline:0;
   filter: brightness(85%);
 }
+
+ul {
+  list-style-type:none;
+  display: flex;
+  flex-direction: column;
+}
+
+.articleHeadline {
+  font-family: 'Times Header';
+  font-weight: bold;
+}
+
+.newsItem {
+  margin: 10px;
+}
