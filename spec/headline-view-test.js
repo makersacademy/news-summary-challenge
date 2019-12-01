@@ -3,7 +3,7 @@ function testReturnOneHTML() {
   var headline = new Headline("The Title", "The Article", "The Image Link");
   headlineList.createAndStore(headline);
   var headlineView = new HeadlineView(headlineList);
-  assert.isTrue(headlineView.returnHTML() === "<ul><li><div>" + headline.title + " " + headline.article + " " + headline.imageLink + "</div></li></ul>");
+  assert.isTrue(headlineView.returnHTML() === "<ul><li><div>" + headline.title + ", " + headline.article + ", " + headline.imageLink + "</div></li></ul>");
 };
 testReturnOneHTML();
 
@@ -14,7 +14,7 @@ function testReturnMultipleHTML() {
   headlineList.createAndStore(headline);
   headlineList.createAndStore(headline1);
   var headlineView = new HeadlineView(headlineList);
-  assert.isTrue(headlineView.returnHTML() === "<ul><li><div>" + headline.title + " " + headline.article + " " + headline.imageLink + "</div></li><li><div>" + headline1.title + " " + headline1.article + " " + headline1.imageLink + "</div></li></ul>");
+  assert.isTrue(headlineView.returnHTML() === "<ul><li><div>" + headline.title + ", " + headline.article + ", " + headline.imageLink + "</div></li><li><div>" + headline1.title + ", " + headline1.article + ", " + headline1.imageLink + "</div></li></ul>");
 };
 testReturnMultipleHTML();
 
