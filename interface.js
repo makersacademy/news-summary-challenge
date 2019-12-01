@@ -74,7 +74,7 @@ const getHeadlinesAndRender = () => {
   window.getNewsData()
     .then(articleData => createNewsItems(articleData))
     .then(html => renderHeadlines(html))
-    .then(x => makeSummaryLinkClickShowSummary())
+    .then(_ => makeSummaryLinkClickShowSummary())
 }
 
 document
