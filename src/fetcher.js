@@ -1,11 +1,9 @@
-const Fetcher = function(api, url) {
-  this.baseUrl = `http://news-summary-api.herokuapp.com/${api}?apiRequestUrl=`
-  this.url = url
-  this.api = api
+const Fetcher = function() {
+  this.baseUrl = `http://news-summary-api.herokuapp.com`
 }
 
-Fetcher.prototype.concatUrl = function() {
-  return `http://news-summary-api.herokuapp.com/${this.api}?apiRequestUrl=${this.url}`
+Fetcher.prototype.concatUrl = function(api, url) {
+  return `${this.baseUrl}/${api}?apiRequestUrl=${url}`
 }
 
 exports.Fetcher = Fetcher
