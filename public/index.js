@@ -1,6 +1,6 @@
-var mykey = config.MY_KEY;
+var key = config.MY_KEY;
 
-var url = 'https://content.guardianapis.com/search?api-key=' + mykey;
+var url = 'https://content.guardianapis.com/search?api-key=' + key;
 
 var req = new Request(url);
 
