@@ -1,4 +1,4 @@
-const Fetcher = require("../src/fetcher.js").Fetcher
+const UrlFormatter = require("../src/UrlFormatter.js").UrlFormatter
 const expect = require("../lib/tester.js").expect
 const scenario = require("../lib/tester.js").scenario
 const describe = require("../lib/tester.js").describe
@@ -20,9 +20,9 @@ var gaurdianResult = {
   "pillarName": "Sport"
 }
 
-var fetch = new Fetcher()
+var fetch = new UrlFormatter()
 
-describe(".Fetcher", function() {
+describe(".UrlFormatter", function() {
   scenario("It returns the string for the Aylien Api", function() {
 
     expect(fetch.concatUrl("aylien", "sample_url")).toEqual("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=sample_url")
