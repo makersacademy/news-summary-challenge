@@ -1,0 +1,11 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: hsl(17, 72%, 83%);
+}
+
+
+form { 
+    text-align: center;
+    margin: 0 auto; 
+    width:250px;
+    }
