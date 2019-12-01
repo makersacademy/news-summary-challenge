@@ -2,16 +2,26 @@ const Render = function() {
   this.root = document.getElementById("root")
 }
 
-Render.prototype.renderSummaryDiv = function(gResult, aySummary){
+Render.prototype.renderSummaryDiv = function(gResult, aylienSummary){
   parentDiv = document.createElement("DIV")
-  console.log(gResult)
+
+  thumbnail = document.createElement("IMG")
+  if (gResult.thumbnailUrl) {
+    thumbnail.setAttribute("src", gResult.thumbnailUrl)
+  } else {
+    thumbnail.setAttribute("src", "https://www.readjunk.com/wp-content/uploads/2015/09/no-image-found1-900x600.png")
+  }
+  
   headlineEl = this.renderH(2, gResult.title)
   a = document.createElement("A")
   a.setAttribute("href", gResult.webUrl)
   a.innerHTML = headlineEl.outerHTML
-  parentDiv.appendChild(a)
+
   summary = document.createElement("P")
-  summary.innerHTML = aySummary
+  summary.innerHTML = aylienSummary
+
+  parentDiv.appendChild(a)
+  parentDiv.appendChild(thumbnail)
   parentDiv.appendChild(summary)
   return parentDiv
 }

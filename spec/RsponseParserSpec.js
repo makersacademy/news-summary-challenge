@@ -1,8 +1,3 @@
-const ResponseParser = require("../src/ResponseParser.js").ResponseParser
-const expect = require("../lib/tester.js").expect
-const it = require("../lib/tester.js").it
-const describe = require("../lib/tester.js").describe
-const context = require("../lib/tester.js").context
 
 var guardianResult = {
   "id": "uk-news/2019/dec/01/gogglebox-pulled-over-salmond-sexual-assault-case-contempt-fears",

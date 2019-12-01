@@ -1,9 +1,3 @@
-const UrlFormatter = require("../src/UrlFormatter.js").UrlFormatter
-const expect = require("../lib/tester.js").expect
-const it = require("../lib/tester.js").it
-const describe = require("../lib/tester.js").describe
-const context = require("../lib/tester.js").context
-
 
 var formatter = new UrlFormatter()
 
