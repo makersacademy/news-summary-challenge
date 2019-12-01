@@ -42,8 +42,6 @@ makes the request to the relevant place:
 
 Implemented:
 
-To implement:
-
 ```
 As a busy politician
 I can see all of today's headlines in one place
@@ -55,6 +53,8 @@ As a busy politician
 I can click a link to see the original news article
 So that I can get an in depth understanding of a very important story
 ```
+
+To implement:
 
 ```
 As a busy politician
