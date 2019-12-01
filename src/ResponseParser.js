@@ -1,26 +1,26 @@
 const ResponseParser = function(result, api) {
-  this.result = result
+  this.guardianResult = result
   this.api = api
 }
 
 ResponseParser.prototype.getApiUrl = function() {
-  return this.result.apiUrl
+  return this.guardianResult.apiUrl
 }
 
 ResponseParser.prototype.getWebUrl = function() {
-  return this.result.webUrl
+  return this.guardianResult.webUrl
 }
 
 ResponseParser.prototype.getThumbnailUrl = function () {
-  return this.result.fields.thumbnail
+  return this.guardianResult.fields.thumbnail
 }
 
 ResponseParser.prototype.getTitle = function () {
-  return this.result.webTitle
+  return this.guardianResult.webTitle
 }
 
 ResponseParser.prototype.getBody = function () {
-  return this.result.fields.body
+  return this.guardianResult.fields.body
 }
 
 ResponseParser.prototype.parseGuardianResponse = function() {
@@ -38,12 +38,9 @@ ResponseParser.prototype.getAylienSentences = function(result) {
 }
 
 ResponseParser.prototype.returnHtmlStringFromSentences = function(sentences) {
-  console.log(sentences.length)
   htmlString = ""
   sentences.forEach(function(sent) {
     htmlString += `<br>${sent}</br>`
   })
   return htmlString
 }
-
-exports.ResponseParser = ResponseParser

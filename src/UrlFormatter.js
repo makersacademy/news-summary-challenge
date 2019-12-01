@@ -1,8 +1,8 @@
-const fs = require("fs")
-
 const UrlFormatter = function() {
   this.baseUrl = `http://news-summary-api.herokuapp.com`
   this.headlinesUrl = "http://content.guardianapis.com/search?"
+
+  //Had to use a key since makers API was being unreliable
   this.gkey = "113271b1-2b3a-4cf3-8de8-5312329f29c5"
 }
 
@@ -34,5 +34,3 @@ UrlFormatter.prototype.getThumbnailUrl = function (result) {
 UrlFormatter.prototype.getTitle = function (result) {
   return result.webTitle
 }
-
-exports.UrlFormatter = UrlFormatter
