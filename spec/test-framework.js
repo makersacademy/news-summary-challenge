@@ -35,6 +35,15 @@ const isArray = (x) => {
   }
 }
 
+const isObject = (x) => {
+  if (typeof x !== 'object') {
+    console.log(typeof x)
+    throw new Error('Test failed - not of expected type Object')
+  } else {
+    console.log('.. passed')
+  }
+}
+
 const includes = (x, y) => {
   if (!x || !Array.isArray(x) || !x.includes(y)) {
     console.log(`Failing values: ${x}, ${y}`)

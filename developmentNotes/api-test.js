@@ -16,9 +16,9 @@
 // METHOD 2: FETCH
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
-
+// const url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search'
 fetch(url)
 .then(data => { return data.json() })
-.then(res => { console.log(JSON.stringify(res)) })
+.then(res => { console.log(res) })
 
 // ---------------------------------------------------------
