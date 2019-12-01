@@ -1,12 +1,5 @@
-const renderItems = (html) => {
-  document
-    .getElementById('headlines')
-    .innerHTML = html;
-};
-
 const createNewsItems = (articleData) => {
   const items = articleData.response.results
-  console.log(items)
   let itemsHtml = '<ul>'
   itemsHtml += items
     .map(x => `<li><div>${x.webTitle} 
@@ -18,14 +11,23 @@ const createNewsItems = (articleData) => {
   return itemsHtml
 }
 
+const renderHeadlines = (html) => {
+  document
+    .getElementById('headlines')
+    .innerHTML = html;
+};
+
 const createSummary = (summaryData) => {
-  const sentences = summaryData.sentences
-  console.log(`<p>${sentences.join(' ')}</p>`)
-  return `<p>${sentences.join(' ')}</p>`
+  return summaryData.sentences.join(' ')
 }
 
-const renderSummary = () => {
-  console.log('renderSummary called')
+const renderSummary = (html, elementID) => {
+  const node = document.createElement('DIV');
+  const textNode = document.createTextNode(html)
+  node.appendChild(textNode)
+  document
+    .getElementById(elementID)
+    .appendChild(node)
 }
 
 const makeSummaryLinkClickShowSummary = () => {
@@ -34,11 +36,8 @@ const makeSummaryLinkClickShowSummary = () => {
     element.addEventListener('click', (event) => {
       event.preventDefault()
       window.getSummary(element.id)
-        .then(summaryData => {
-          createSummary(summaryData)
-        })
-        .then(html => renderSummary(html))
-        .then(x => console.log('summary rendered'))
+        .then(summaryData => createSummary(summaryData))
+        .then(html => renderSummary(html, element.id))
     })
   })
 }
@@ -46,7 +45,7 @@ const makeSummaryLinkClickShowSummary = () => {
 const getHeadlinesAndRender = () => {
   window.getNewsData()
     .then(articleData => createNewsItems(articleData))
-    .then(html => renderItems(html))
+    .then(html => renderHeadlines(html))
     .then(x => makeSummaryLinkClickShowSummary())
 }
 
