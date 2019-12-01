@@ -1,0 +1,19 @@
+#landingButton {
+  display: flex;
+  justify-content: center;
+}
+
+#noozeButton {
+  background-color: red;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  padding: 30px 30px;
+  display: inline-block;
+  border-radius: 30px;
+}
+
+button:focus {
+  outline:0;
+  filter: brightness(85%);
+}
