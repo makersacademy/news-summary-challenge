@@ -33,4 +33,17 @@ ResponseParser.prototype.parseGuardianResponse = function() {
   }
 }
 
+ResponseParser.prototype.getAylienSentences = function(result) {
+  return result.sentences
+}
+
+ResponseParser.prototype.returnHtmlStringFromSentences = function(sentences) {
+  console.log(sentences.length)
+  htmlString = ""
+  sentences.forEach(function(sent) {
+    htmlString += `<br>${sent}</br>`
+  })
+  return htmlString
+}
+
 exports.ResponseParser = ResponseParser

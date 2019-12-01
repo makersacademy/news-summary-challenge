@@ -11,7 +11,7 @@ UrlFormatter.prototype.concatUrl = function(api, url) {
 }
 
 UrlFormatter.prototype.getAylienUrl = function(url) {
-  return `https://api.aylien.com/api/v1/summarize?url=/${url}`
+  return `https://api.aylien.com/api/v1/summarize?url=${url}`
 }
 
 UrlFormatter.prototype.formatGuardianBaseUrl = function(key){
