@@ -1,19 +1,15 @@
 ## Project overview
 
-An app that grabs all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
+An app that grabs all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article - also provided through an API.
 
-### Setup
+### Run App
 Git clone this repo<br>
 Run ``` $ http-server```<br>
-Open http://localhost:8080/ port in your browser
+Open http://localhost:8080/ in your browser
 
 ### Technologies
 
 A single page web app, written in frontend JavaScript, CSS and HTML. There is not making use of any backend JavaScript and or any libraries or frameworks (including testing frameworks)! The only exception to this is a simple node library to serve the app.
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
 
 ## User Stories
 
