@@ -23,6 +23,7 @@ const makeSummaryLinkClickShowSummary = () => {
   Array.from(links).forEach(element => {
     element.addEventListener('click', (event) => {
       event.preventDefault()
+      // show summary
       console.log('default clickEvent prevented')
     })
   })
