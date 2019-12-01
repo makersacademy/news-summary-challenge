@@ -10,7 +10,7 @@ function testReturnOneHTML() {
   var headline = new Headline("English man does a shop", "He was in tesco, buying a meal deal no less", "Link to Image" );
   headlineList.addHeadline(headline);
   var headlineView = new HeadlineView(headlineList);
-  eval.isTrue(headlineView.returnHTML() === "<ul><li><div>" + headline.title + " " + headline.article + " " + headline.imageLink + "</div></li></ul>");
+  eval.isTrue(headlineView.returnHTML() === "<ul><li><div>" + headline.title + "<br></br>" + headline.article + "<br></br>" + headline.image + "</div></li><br></br></ul>");
 };
 testReturnOneHTML();
 
@@ -21,6 +21,6 @@ function testReturnMultipleHTML() {
   headlineList.addHeadline(headline1);
   headlineList.addHeadline(headline2);
   var headlineView = new HeadlineView(headlineList);
-  eval.isTrue(headlineView.returnHTML() === "<ul><li><div>" + headline1.title + " " + headline1.article + " " + headline1.imageLink + "</div></li><li><div>" + headline2.title + " " + headline2.article + " " + headline2.imageLink + "</div></li></ul>");
+  eval.isTrue(headlineView.returnHTML() === "<ul><li><div>" + headline1.title + "<br></br>" + headline1.article + "<br></br>" + headline1.image + "</div></li><br></br><li><div>" + headline2.title + "<br></br>" + headline2.article + "<br></br>" + headline2.image + "</div></li><br></br></ul>");
 };
 testReturnMultipleHTML();

@@ -21,7 +21,7 @@
     var aStringOfHTML = []
 
     for (var i = 0; i < this.headlineList.array.length; i++) {
-      aStringOfHTML.push("<li><div>" + this.headlineList.array[i].title + " " + this.headlineList.array[i].article + " " + this.headlineList.array[i].imageLink + "</div></li>")
+      aStringOfHTML.push("<li><div>" + this.headlineList.array[i].title + "<br></br>" + this.headlineList.array[i].article + "<br></br>" + this.headlineList.array[i].image + "</div></li><br></br>")
     };
 
     aStringOfHTML.unshift("<ul>")
