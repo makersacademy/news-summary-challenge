@@ -1,12 +1,39 @@
-const http = new XMLHttpRequest()
-const url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
+var http = new XMLHttpRequest()
+var url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/news"
 http.open("GET", url)
 http.send()
 
-var hhhh = "PPP"
-var testpage = function () {
+http.onreadystatechange=function(){
+  if (this.readyState==4 && this.status==200) {
+    var guardianContent = JSON.parse(http.responseText)
 
-var pageRenTest = document.getElementById('page')
-pageRenTest.innerHTML = http.responseText
 
+    titles = guardianContent.response.results
+    page = document.getElementById('page')
+    titles.forEach(function(headline){
+      a = document.createElement("a")
+      br = document.createElement("BR")
+      a.setAttribute("href", "#")
+      a.innerHTML = headline.webTitle
+      page.appendChild(a)
+        page.appendChild(br)
+
+    })
+
+
+    console.log(JSON.parse(http.responseText))
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
 }
