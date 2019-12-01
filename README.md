@@ -3,8 +3,8 @@
 An app that grabs all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
 
 ### Setup
-Git clone this repo
-```http-server```
+Git clone this repo<br>
+Run ``` $ http-server```<br>
 Open http://localhost:8080/ port in your browser
 
 ### Technologies
