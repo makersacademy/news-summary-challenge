@@ -40,7 +40,7 @@ ResponseParser.prototype.getAylienSentences = function(result) {
 ResponseParser.prototype.returnHtmlStringFromSentences = function(sentences) {
   htmlString = ""
   sentences.forEach(function(sent) {
-    htmlString += `<br>${sent}</br>`
+    htmlString += `${sent}`
   })
   return htmlString
 }

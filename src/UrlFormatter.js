@@ -10,13 +10,17 @@ UrlFormatter.prototype.concatUrl = function(api, url) {
   return `${this.baseUrl}/${api}?apiRequestUrl=${url}`
 }
 
+UrlFormatter.prototype.returnGuardianHeadlinesUrl = function() {
+  return this.concatUrl("guardian", this.headlinesUrl)
+}
+
 UrlFormatter.prototype.getAylienUrl = function(url) {
   return `https://api.aylien.com/api/v1/summarize?url=${url}`
 }
 
 UrlFormatter.prototype.formatGuardianBaseUrl = function(key){
   apiKey = key || this.gkey
-  return `${this.headlinesUrl}api-key=${apiKey}&show-fields=thumbnail`
+  return `${this.headlinesUrl}api-key=${apiKey}&show-fields=body,thumbnail`
 }
 
 UrlFormatter.prototype.getHeadlineApiUrl = function(result) {

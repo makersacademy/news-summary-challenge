@@ -27,9 +27,49 @@ var guardianResult = {
   "pillarName": "News"
 }
 
+const guardianHttp = new XMLHttpRequest();
+
+urlMaker = new UrlFormatter()
+gApiUrl = urlMaker.returnGuardianHeadlinesUrl()
+
+guardianHttp.open("GET", urlMaker.formatGuardianBaseUrl())
+guardianHttp.send()
+
+guardianHttp.onreadystatechange = function () {
+  if(guardianHttp.readyState === XMLHttpRequest.DONE && guardianHttp.status === 200) {
+
+        guardianResults = JSON.parse(guardianHttp.responseText).response.results
+        guardianResults.forEach(function(result) {
+          console.log(result)
+          i = 0
+          guardianObj = new ResponseParser(result)
+          guardianParsed = guardianObj.parseGuardianResponse()
+          aylienUrl = urlMaker.getAylienUrl(guardianParsed.webUrl)
+          makersApiUrl = urlMaker.concatUrl("aylien", aylienUrl)
+          const aylienHttp = new XMLHttpRequest();
+          aylienHttp.open("GET", makersApiUrl)
+          aylienHttp.send()
+          aylienHttp.onreadystatechange = function () {
+            if(aylienHttp.readyState === XMLHttpRequest.DONE && aylienHttp.status === 200) { 
+              try {
+                render = new Render()
+                guardianObj = new ResponseParser(result)
+                guardianParsed = guardianObj.parseGuardianResponse()
+                aylienResponse = JSON.parse(aylienHttp.responseText)
+                sentences = new ResponseParser().getAylienSentences(aylienResponse)
+                sentencesHTML = new ResponseParser().returnHtmlStringFromSentences(sentences)
+                summaryEl = render.renderSummaryDiv(guardianParsed, sentencesHTML)
+                render.appendToDiv("root", summaryEl)
+              } catch(err) {
+                console.log(err)
+              }
+            }
+        }
+      })
+      }
+};
+
 guardianObj = new ResponseParser(guardianResult)
-guardianParsed = guardianObj.parseGuardianResponse(guardianResult)
-sentencesHTML = guardianObj.returnHtmlStringFromSentences(aylienResult.sentences)
-render = new Render()
-summary = render.renderSummaryDiv(guardianParsed, sentencesHTML)
-render.appendToDiv("root", summary)
+
+
+

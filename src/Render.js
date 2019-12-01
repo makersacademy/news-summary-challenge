@@ -2,13 +2,17 @@ const Render = function() {
   this.root = document.getElementById("root")
 }
 
-Render.prototype.renderSummaryDiv = function(gResult, ayResult){
+Render.prototype.renderSummaryDiv = function(gResult, aySummary){
   parentDiv = document.createElement("DIV")
+  console.log(gResult)
   headlineEl = this.renderH(2, gResult.title)
-  parentDiv.appendChild(headlineEl)
-  p = document.createElement("P")
-  p.innerHTML = gResult.body
-  parentDiv.appendChild(p)
+  a = document.createElement("A")
+  a.setAttribute("href", gResult.webUrl)
+  a.innerHTML = headlineEl.outerHTML
+  parentDiv.appendChild(a)
+  summary = document.createElement("P")
+  summary.innerHTML = aySummary
+  parentDiv.appendChild(summary)
   return parentDiv
 }
 
