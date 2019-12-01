@@ -7,6 +7,7 @@ a {
   text-decoration: none;
   font-style: italic;
   cursor: pointer;
+  font-family: 'arial';
 }
 
 
@@ -40,9 +41,16 @@ ul {
 .articleHeadline {
   font-family: 'Times Header';
   font-weight: bold;
+  font-size: 20px;
 }
 
 .newsItem {
   margin: 10px;
   padding: 5px;
+}
+
+.summaryText {
+  font-family: 'arial';
+  font-size: 14;
+  margin: 8px;
 }
