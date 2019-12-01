@@ -4,17 +4,20 @@ const scenario = require("../lib/tester.js").scenario
 const describe = require("../lib/tester.js").describe
 
 var gaurdianResult = {
-  "id": "uk-news/2019/dec/01/how-get-hitched-feminist-mixed-sex-civil-partnerships-begin-england-wales",
-  "type": "article",
-  "sectionId": "uk-news",
-  "sectionName": "UK news",
-  "webPublicationDate": "2019-12-01T14:58:33Z",
-  "webTitle": "'This is how you get hitched as a feminist': mixed-sex civil unions to begin",
-  "webUrl": "https://www.theguardian.com/uk-news/2019/dec/01/how-get-hitched-feminist-mixed-sex-civil-partnerships-begin-england-wales",
-  "apiUrl": "https://content.guardianapis.com/uk-news/2019/dec/01/how-get-hitched-feminist-mixed-sex-civil-partnerships-begin-england-wales",
+  "id": "football/live/2019/dec/01/norwich-city-v-arsenal-premier-league-live",
+  "type": "liveblog",
+  "sectionId": "football",
+  "sectionName": "Football",
+  "webPublicationDate": "2019-12-01T15:26:51Z",
+  "webTitle": "Norwich City v Arsenal: Premier League – live!",
+  "webUrl": "https://www.theguardian.com/football/live/2019/dec/01/norwich-city-v-arsenal-premier-league-live",
+  "apiUrl": "https://content.guardianapis.com/football/live/2019/dec/01/norwich-city-v-arsenal-premier-league-live",
+  "fields": {
+  "thumbnail": "https://media.guim.co.uk/3032f432181dee886132a4047175944a17c73a7a/0_154_3500_2100/500.jpg"
+  },
   "isHosted": false,
-  "pillarId": "pillar/news",
-  "pillarName": "News"
+  "pillarId": "pillar/sport",
+  "pillarName": "Sport"
 }
 
 var fetch = new Fetcher()
@@ -49,5 +52,11 @@ describe("#getHeadlineApiUrl", function() {
 describe("#getHeadlineWebUrl", function() {
   scenario("It returns the web url for an article", function(){
     expect(fetch.getHeadlineWebUrl(gaurdianResult)).toEqual(gaurdianResult.webUrl)
+  })
+})
+
+describe("#getThumbnailUrl", function() {
+  scenario("It returns the thumbnail url for an article", function(){
+    expect(fetch.getThumbnailUrl(gaurdianResult)).toEqual(gaurdianResult.fields.thumbnail)
   })
 })
