@@ -7,7 +7,7 @@ var expect = function(valueA) {
         throw Error(`Expected ${ValueB}, but got ${valueA}`)
       }
     },
-    toInclude: function (ValueB) {
+    toInclude: function (valueB) {
       if (valueA.includes(valueB)) {
         return "Pass"
       } else {
