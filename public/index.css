@@ -9,3 +9,10 @@ form {
     margin: 0 auto; 
     width:250px;
     }
+
+    img {
+        border: 1px solid #ddd; /* Gray border */
+        border-radius: 4px;  /* Rounded border */
+        padding: 5px; /* Some padding */
+        width: 250px; /* Set a small width */
+      }
