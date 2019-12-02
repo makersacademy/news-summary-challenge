@@ -1,4 +1,14 @@
 # News Summary challenge
+---------
+## Development
+I started with a basic implementation of a list of headlines, to be able to display the list in the view in a structured html string, iterating over the single headline.
+As soon as the view was working correctly, talking to the headlines list and to the single headline I implemented the Guardian API using vanilla JS for http requests. I implemented headline id, url, thumbnail, date and summary for each headline in the list to be able to display them individually in a different page. I implemented the Aylien text summarisation API for single headline and a link to the official Guardian news page.
+
+## Start Application
+Clone the repo and open the file index.html in a browser.
+
+---------
+## Makers Instructions
 
 * Challenge time: rest of the day and weekend, until Monday 9am.
 * Feel free to use Google, your notes, books, etc. but work on your own.
