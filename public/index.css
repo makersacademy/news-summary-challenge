@@ -1,18 +1,19 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: hsl(17, 72%, 83%);
+    text-align: center;
 }
 
 
 form { 
     text-align: center;
     margin: 0 auto; 
-    width:250px;
+    width:200px;
     }
 
-    img {
-        border: 1px solid #ddd; /* Gray border */
-        border-radius: 4px;  /* Rounded border */
-        padding: 5px; /* Some padding */
-        width: 250px; /* Set a small width */
-      }
+img {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 250px; /* Set a small width */
+    }
