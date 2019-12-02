@@ -1,28 +1,13 @@
-var key = config.MY_KEY;
 
-var url = 'https://content.guardianapis.com/search?api-key=' + key +'&show-fields=thumbnail';
+document.addEventListener("DOMContentLoaded", apiCallGuardian, false)
 
-var req = new Request(url);
 
-fetch(req)
-    .then(function(response) {
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log(event)
+ 
+    makeUrlChangeShowSummary();
 
-            if (response.status === 200) {
-                return response.json();
-            }
-            else {
-                throw new Error ("wrong")
-            }        
-    })
-    .then(data => {
-  
-        var articles = data.response.results;
-        console.log(articles)
-        var listView = new ListView(articles)
+    event.preventDefault();
+}, false);
 
-        document.getElementById('headlines-list').innerHTML = listView.displayHtml()
 
-    })
-    .catch(error => {
-        console.error(error)
-    });

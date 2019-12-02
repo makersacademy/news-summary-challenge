@@ -4,27 +4,22 @@
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="index.css">
     <script src='config.js'></script>
-    <script src="index.js"></script>
-
 
   </head>
   <body>
     <h1 style = "text-align: center;"> News Summary</h1>
- 
-    <p> You can click on the button to view a summary of the article [feature not yet implemented], 
-      or you can click on the hyperlink to view the full story on The Guardian.</p>
 
-    <h3 style = "text-align: center;">Main headlines</h3>
+    <h3 style = "text-align: center;">Main headlines from The Guardian</h3>
     <div id='headlines-list'>
-  
-    </div>
 
-
-    <!-- JS CODE: -->
-    <script src="./src/list-view.js"></script>
     <!-- TESTS: -->
     <script src="./tests/assert.js"></script>
     <script src="./tests/list-view-test.js"></script>
 
+    <!-- JS CODE: -->
+    <script src="./src/list-view.js"></script>
+    <script src="api.js"></script>
+    <script src="summary.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
