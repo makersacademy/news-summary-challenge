@@ -9,9 +9,8 @@ function fetchNewsData(){
     articles.response.results.forEach(function(article) {
       output += `
       <li>
-      <a href="${article.webUrl}">
       ${article.webTitle}
-      </a>
+      <a href="${article.webUrl}">Read article</a>
       </li>
       `;
     });
