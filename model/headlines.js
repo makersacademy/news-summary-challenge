@@ -1,19 +1,30 @@
-function Headlines(api) {
-  this.api = api
-}
+function Headlines(url) {
+  this.url = url
+  this.headlines = []
+};
 
-Headlines.prototype.getHeadlines = function () {
-  var request = new XMLHttpRequest()
+Headlines.prototype.getHeadlines = function() {
+  var request = new XMLHttpRequest();
+  var response
+  var headlines = []
+  request.onload = function() {
+    var response = JSON.parse(request.response);
+    console.log(response.response.results)
+    for(i = 0; i < response.response.results.length; i++) {
+      headlines.push(response.response.results[i])
+    };
+  };
+  request.open("GET", this.url, true);
+  request.send();
+  this.addNewHeadlines(headlines);
+};
 
-  request.open('GET', this.api, true)
+Headlines.prototype.addNewHeadlines = function(headlines) {
+  this.headlines = headlines
+};
 
-  var returnedData = request.onload = function() {
-    var data = JSON.parse(this.response)
-
-    var titles = data.response.results.forEach(result => {
-      console.log(result.webTitle)
-    })
-  }
-
-  request.send()
+Headlines.prototype.printHeadlines = function() {
+  for(i = 0; i < this.headlines.length; i++) {
+    console.log(this.headlines[i].webTitle);
+  };
 };
