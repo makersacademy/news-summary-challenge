@@ -8,7 +8,13 @@ A single page web app, written in frontend JavaScript, CSS and HTML. There is no
 
 ### Serving your app
 
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
+The app uses a static web server to serve HTML, CSS and JavaScript files. It sends requests to an API to get data from the Guardian and to summarise text.
+
+To run, first clone this repo
+
+run ```http-server```
+
+open localhost:8080 in browser
 
 ## User Stories
 
