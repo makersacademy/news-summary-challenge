@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>News Summary</title>
+</head>
+<body>
+  <center><div><h1>News Headlines</h1></div></center>
+  <center>
+    <div>
+      <form id="refresh" action="/headlines" method="post">
+        <input type="submit" name="refresh" value="Current Headlines">
+      </form>
+    </div>
+  </center>
+  
+  <br>
+  <div id="headline title"></h1></div>
+  <br>
+  <div id="headlines"></div>
+ 
+
+  <script src="src/ApiHeadline.js"></script>
+  <script src="src/headlineView.js"></script>
+  <script src="src/headlineController.js"></script>
+</body>
+</html>
