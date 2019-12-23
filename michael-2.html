@@ -1,0 +1,57 @@
+<html lang="en-gb">
+<head>
+  <title>News Summary</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      ​
+      class Article {
+        constructor(headline, url) {
+          this.headline = headline;
+          this.url = url;
+        }
+      }
+      ​
+      let articles = [];
+      ​
+      console.log(1);
+      function getArticlesFromGuardian(){
+        console.log(2);
+        let guardianURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search";
+        let request = new XMLHttpRequest();
+        ​
+        request.open('GET', guardianURL);
+        request.send();
+        ​
+        request.onload = function() {
+          let parsedResponse = JSON.parse(this.responseText);
+          let results = parsedResponse.response.results;
+          let articlesList = document.getElementById('articles');
+          ​
+          results.forEach(function(res) {
+            newArticle = new Article(res.webTitle, res.webUrl);
+            articles.push(newArticle)
+          });
+          ​
+          articles.forEach(function(article) {
+            let node = document.createElement("li");
+            let textNode = document.createTextNode(article.headline);
+            node.appendChild(textNode);
+            articlesList.appendChild(node)
+          });
+          ​
+        };
+      }
+      ​
+      console.log(3);
+      ​
+      getArticlesFromGuardian();
+      ​
+      console.log(5)
+      ​
+    });
+  </script>
+</head>
+<body>
+  <ul id="articles"></ul>
+</body>
+</html>
