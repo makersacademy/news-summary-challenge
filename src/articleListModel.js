@@ -1,7 +1,8 @@
 (function(object) {
   class ArticleList {
-    constructor() {
+    constructor(ArticleClass = Article) {
       this._articles = []
+      this._ArticleClass = ArticleClass
     }
 
     articles() {
@@ -9,7 +10,7 @@
     }
 
     addArticle(title) {
-      this._articles.push(new Article(title))
+      this._articles.push(new this._ArticleClass(title))
     }
   }
 
