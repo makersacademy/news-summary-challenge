@@ -98,6 +98,7 @@ var headlines = new Headlines({
       "pillarName":"Arts"}]}})
 
 function separateHeadlines() {
+  var request = new GetHTTP();
   assert.isTrue(headlines.individualHeadlines()[0] === "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/football/live/2020/jan/12/brighton-v-arsenal-womens-super-league-live?show-fields=body")
 }
 separateHeadlines();
