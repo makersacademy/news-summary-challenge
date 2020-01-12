@@ -1,3 +1,15 @@
-// curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-//
-// curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
+(function(exports) {
+  function NewsController(api) {
+    this._api = api;
+    this._headlines = new HeadlinesView(api);
+  };
+
+  NewsController.prototype = {
+    render: function(element = document.getElementById("headlines")) {
+      element.innerHTML = this._headlines.html();
+    }
+  };
+
+  exports.NewsController = NewsController;
+
+})(this);
