@@ -13,3 +13,4 @@ class HeadlineView {
     return list.join("");
   }
 }
+
