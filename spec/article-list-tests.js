@@ -1,4 +1,4 @@
-var article = new Article({
+var testArticle1 = new Article({
   "response":{
     "status":"ok",
     "userTier":"developer",
@@ -13,15 +13,11 @@ var article = new Article({
       "webUrl":"https://www.theguardian.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live",
       "apiUrl":"https://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live",
       "fields":{
-        "body":"<p>Alistair Darling, the leader of the no campaign, has put out this statement in response to Salmond’s speech:</p> <blockquote> <p>Alex Salmond is pretending the last week never happened."}}}}
-        )
+        "body":"<p>Alistair Darling, the leader of the no campaign, has put out this statement in response to Salmond’s speech:</p> <blockquote> <p>Alex Salmond is pretending the last week never happened."}}}})
 
-function generateArticleTitle() {
-  assert.isTrue(article.readTitle() === "Alex Salmond speech – first minister hits back over Scottish independence")
-};
-generateArticleTitle();
+var testArticle2 = new Article()
 
-function generateArticleBody() {
-  assert.isTrue(article.readBody() === "<p>Alistair Darling, the leader of the no campaign, has put out this statement in response to Salmond’s speech:</p> <blockquote> <p>Alex Salmond is pretending the last week never happened.")
-};
-generateArticleBody();
+function articlesAreAdded() {
+  var articleList = new ArticleList;
+  articleList.add()
+}
