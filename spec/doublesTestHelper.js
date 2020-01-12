@@ -20,7 +20,7 @@ class ArticleListDouble {
   }
   articles() {
     this.articlesCallCount++;
-    return [new ArticleDouble(), new ArticleDouble()]
+    return [new ArticleDouble()]
   }
   addArticle() {
     this.addArticleCallCount++
@@ -34,7 +34,7 @@ class ArticleListViewDouble {
   }
   toHtml() {
     this.toHtmlCallCount++
-    return '<li><a href="www.url.com">Title</a></li><li><a href="www.url.com">Title</a></li>'
+    return '<li><a href="www.url.com">Title</a></li>'
   }
 
   updateArticleList() {
@@ -44,7 +44,7 @@ class ArticleListViewDouble {
 
 class XMLHttpRequestDouble {
   constructor() {
-    this.response = '{"response":{"results":[{"title":"Title"},{"title":"Title"}]}}'
+    this.response = '{"response":{"results":[{"title":"Title"}]}}'
     this.openCallCount = 0
     this.onloadCallCount = 0
     this.sendCallCount = 0

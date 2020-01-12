@@ -19,7 +19,7 @@
     var articleListView = new ArticleListView(articleList)
     var guardianApiRequest = new XMLHttpRequest()
     var articleListController = new ArticleListController(articleList, articleListView, guardianApiRequest)
-    articleListController.createArticleList()
+    articleListController.fetchArticleList()
     setTimeout(function() {
       articleListController.renderArticleList()
     }, 1000)
