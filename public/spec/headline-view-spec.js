@@ -1,8 +1,7 @@
 describe('HeadlineView', () => {
   it('can turn headlines to html format', () => {
     var testHeadlineView = new HeadlineView(["Taiwan presidential election"]);
-    // testHeadlineView.add("Taiwan presidential election")
-    expectHeadlineView = "<ul><li><div>Taiwan presidential election</div></li></ul>"
+    expectHeadlineView = "<ul><li><div><a href='test'>Taiwan presidential election</a></div></li></ul>"
     expect(testHeadlineView.getHTML()).toEq(expectHeadlineView)
   });
 });

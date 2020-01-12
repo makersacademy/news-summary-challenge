@@ -4,8 +4,12 @@ class HeadlineView {
   }
 
   getHTML() {
-    return "<ul>" + this.headlines.map(headline => {
-      return "<li><div>" + headline + "</div></li>"
-    }).join("") + "</ul>"
+    var list = []
+    this.headlines.forEach((result) => {
+      list.push("<li><div><a href=" + result.webUrl + ">" + result.webTitle + "</a></div></li>")
+    })
+    list.unshift("<ul>")
+    list.push("</ul>")
+    return list.join("");
   }
 }

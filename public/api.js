@@ -8,15 +8,13 @@ function getNewsTitle() {
   })
   .then((Json) => {
     console.log(Json)
-    var headers = []
-    Json.response.results.forEach(headline => {
-      console.log(headline.webTitle)
-      headers.push(headline.webTitle)
-    });
-    console.log(headers)
+    var titles = Json.response.results;
+    console.log(titles)
+    var headlineView = new HeadlineView(titles);
+    document.getElementById("title").innerHTML = headlineView.getHTML();
+
+    console.log(headlineView.getHTML())
   })
 };
 
-var getapi = new getNewsTitle();
- 
-// console.log(getapi.response.json());
+getNewsTitle();
