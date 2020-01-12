@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ajbacon/news-summary-challenge#readme",
   "dependencies": {
+    "curl": "^0.1.4",
     "http-server": "^0.12.1"
   }
 }

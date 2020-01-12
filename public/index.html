@@ -8,5 +8,11 @@
 </head>
 <body>
   <h1>Hello!</h1>
+
+  <script src="./js/article-controller.js"></script>
+  <script>
+    controller = new ArticleController()
+    controller.showArticles("https://content.guardianapis.com/search?api-key=9e621e73-3cac-4e49-a10d-be1474bcf2ef&show-fields=thumbnail")
+  </script>
 </body>
 </html>
