@@ -1,13 +1,13 @@
 var testCreateArticleList = (function() {
   var articleListDouble = new ArticleListDouble()
   var articleListViewDouble = new ArticleListViewDouble(articleListDouble)
-  var requestDouble = new XMLHttpRequestDouble()
-  var articleListController = new ArticleListController(articleListDouble, articleListViewDouble, requestDouble)
+  var guardianApiRequestDouble = new XMLHttpRequestDouble()
+  var articleListController = new ArticleListController(articleListDouble, articleListViewDouble, guardianApiRequestDouble)
   articleListController.createArticleList()
   assert.isTrue(articleListController._articleList.articles().length === 2)
   assert.isTrue(articleListController._articleList.addArticleCallCount === 2)
-  assert.isTrue(articleListController._request.openCallCount === 1)
-  assert.isTrue(articleListController._request.sendCallCount === 1)
+  assert.isTrue(articleListController._guardianApiRequest.openCallCount === 1)
+  assert.isTrue(articleListController._guardianApiRequest.sendCallCount === 1)
   // assert.isTrue(articleListController._request.onloadCallCount === 1)
 })()
 

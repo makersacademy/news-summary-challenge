@@ -17,8 +17,8 @@
   <script>
     var articleList = new ArticleList();
     var articleListView = new ArticleListView(articleList)
-    var request = new XMLHttpRequest()
-    var articleListController = new ArticleListController(articleList, articleListView, request)
+    var guardianApiRequest = new XMLHttpRequest()
+    var articleListController = new ArticleListController(articleList, articleListView, guardianApiRequest)
     articleListController.createArticleList()
     setTimeout(function() {
       articleListController.renderArticleList()
