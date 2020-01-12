@@ -30,6 +30,31 @@
     element.innerHTML = this.articleListView.displayHTML();
   }
 
+  ArticleController.prototype.getArticleById = function(id) {
+    return this.articleListView.articleList.findById(id)
+  }
+
+  ArticleController.prototype.urlChange = function(id) {
+    window.addEventListener("hashchange", showArticleForCurrentPage);
+
+    function showArticleForCurrentPage() {
+      showArticle(getArticleFromUrl(window.location))
+    }
+
+    function getArticleFromUrl(location) {
+      var id = location.hash.slice(-1)
+      return articleController.getArticleById(id);
+    }
+
+    function showArticle(article) {
+      document.getElementById("app").innerHTML = article.readSummary();
+    }
+  }
+
+
+
+
+
   exports.ArticleController = ArticleController;
 
 

@@ -41,3 +41,11 @@ function articlesAreShown() {
   assert.isTrue(articleList.showArticles()[0]["title"] === new Article(testArticle1)["title"])
 }
 articlesAreShown();
+
+function getArticleById() {
+  const articleList = new ArticleList();
+  articleList.add(testArticle1)
+  const id = articleList.articles[0].id
+  assert.isTrue(articleList.findById(id) === articleList.articles[0])
+}
+getArticleById();

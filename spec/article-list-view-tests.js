@@ -20,7 +20,6 @@ function displaysHTML() {
   articleList.add(testArticle3)
   var id = articleList.articles[0].id
   const articleListView = new ArticleListView(articleList);
-  console.log(articleListView.displayHTML())
   assert.isTrue(articleListView.displayHTML().includes(`<li><a href='#articles/${id}'>Alex Salmond speech – first minister hits back over Scottish independence</a></li>`))
 }
 displaysHTML();
