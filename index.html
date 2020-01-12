@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>News Summary API</title>
+  <script src="src/articleModel.js"></script>
+  <script src="src/articleListModel.js"></script>
+  <script src="src/articleListView.js"></script>
+  <script src="src/articleListController.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Today's latests news from the Guardian</h1>
+    <ul id="article-list"></ul>
+  </div>
+
+  <script>
+    var articleList = new ArticleList();
+    var articleListView = new ArticleListView(articleList)
+    var guardianApiRequest = new XMLHttpRequest()
+    var articleListController = new ArticleListController(articleList, articleListView, guardianApiRequest)
+    articleListController.fetchArticleList()
+    setTimeout(function() {
+      articleListController.renderArticleList()
+    }, 1000)
+  </script>
+</body>
+</html>
