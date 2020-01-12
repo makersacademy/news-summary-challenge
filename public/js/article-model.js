@@ -1,18 +1,18 @@
 (function (exports) {
   var idCounter = 0
-  function ArticleModel (articleData) {
+  function Article (articleData) {
     this._articleData = articleData
     this._id = idCounter
     idCounter++
   }
 
-  ArticleModel.prototype.getId = function () {
+  Article.prototype.getId = function () {
     return this._id
   }
 
-  ArticleModel.prototype.getData = function () {
+  Article.prototype.getData = function () {
     return this._articleData
   }
 
-  exports.ArticleModel = ArticleModel
+  exports.Article = Article
 })(this)

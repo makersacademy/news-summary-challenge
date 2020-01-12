@@ -17,11 +17,18 @@
         console.log(`%c     Failed. (expect ${exp} to equal ${val})`, 'color: #ff0000')
       }
     },
-    isInstanceOf: (val) => {
+    toBeInstanceOf: (val) => {
       if (exp instanceof val) {
         console.log('%c     passed', 'color: #00ff00')
       } else {
         console.log(`%c     Failed. (expect ${exp} to be instance of ${val})`, 'color: #ff0000')
+      }
+    },
+    toHaveLength: (val) => {
+      if (exp.length === val) {
+        console.log('%c     passed', 'color: #00ff00')
+      } else {
+        console.log(`%c     Failed. (expect length of ${exp.length} to be ${val})`, 'color: #ff0000')
       }
     }
   })
