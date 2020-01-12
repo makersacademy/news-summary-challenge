@@ -4,10 +4,11 @@
       this._articleList = articleList
     }
 
-    htmlString() {
-      return this._articleList.articles().reduce(function(htmlString, article) {
+    toHtml() {
+      return this._articleList.articles().reduce((htmlString, article) => {
         return htmlString + `<li>${article.title()}</li>`
       }, "")
+      return test
     }
 
     updateArticleList(articleList) {

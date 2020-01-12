@@ -22,7 +22,7 @@
 
     renderArticleList() {
       this._articleListView.updateArticleList(this._articleList)
-      document.getElementById("article-list").innerHTML = this._articleListView.htmlString()
+      document.getElementById("article-list").innerHTML = this._articleListView.toHtml()
     }
   }
 

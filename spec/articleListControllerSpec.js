@@ -17,6 +17,6 @@ testRenderArticleList = (function() {
   var articleListController = new ArticleListController(articleListDouble, articleListViewDouble)
   articleListController.renderArticleList()
   assert.isTrue(document.getElementById("article-list").innerHTML === "<li>Title</li><li>Title</li>")
-  assert.isTrue(articleListViewDouble.htmlStringCallCount === 1)
+  assert.isTrue(articleListViewDouble.toHtmlCallCount === 1)
   assert.isTrue(articleListViewDouble.updateArticleListCallCount === 1)
 })()

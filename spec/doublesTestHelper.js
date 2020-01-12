@@ -24,11 +24,11 @@ class ArticleListDouble {
 
 class ArticleListViewDouble {
   constructor() {
-    this.htmlStringCallCount = 0
+    this.toHtmlCallCount = 0
     this.updateArticleListCallCount = 0
   }
-  htmlString() {
-    this.htmlStringCallCount++
+  toHtml() {
+    this.toHtmlCallCount++
     return "<li>Title</li><li>Title</li>"
   }
 
