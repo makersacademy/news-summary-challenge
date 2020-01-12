@@ -8,6 +8,10 @@
         this.titles.push(new Title(title))
     };
 
+    TitleList.prototype.returnTitles = function () {
+        return this.titles;
+    };
+
     exports.TitleList = TitleList;
 
 })(this);
