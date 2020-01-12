@@ -19,3 +19,8 @@ function generateArticleTitle() {
   assert.isTrue(article.title === "Alex Salmond speech – first minister hits back over Scottish independence")
 };
 generateArticleTitle();
+
+function generateArticleBody() {
+  assert.isTrue(article.body === "<p>Alistair Darling, the leader of the no campaign, has put out this statement in response to Salmond’s speech:</p> <blockquote> <p>Alex Salmond is pretending the last week never happened.")
+};
+generateArticleBody();
