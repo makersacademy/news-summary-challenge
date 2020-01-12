@@ -14,14 +14,17 @@ function addTitle() {
     assert.isTrue(titleList.titles[1].returnText() === "string2")
 };
 
+function testReturnTitles(){
+    titles = titleList.returnTitles();
+    assert.isTrue(titles[0].returnText() === "string1")
+    assert.isTrue(titles[1].returnText() === "string2")
+};
 
-testTitlesArray();
+
+// testTitlesArray();
 addTitle();
+testReturnTitles();
 
-// function testReturnTitles(){
-//     titles = titleList.returnTitles();
-//     assert.isTrue(titles[0])
-// };
 
 ///
 
