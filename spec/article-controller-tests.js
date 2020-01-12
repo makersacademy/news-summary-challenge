@@ -1,4 +1,4 @@
-const testArticle3 = {
+const testArticle4 = {
   "response":{
     "status":"ok",
     "userTier":"developer",
@@ -15,12 +15,13 @@ const testArticle3 = {
       "fields":{
         "body":"<p>Alistair Darling, the leader of the no campaign, has put out this statement in response to Salmond’s speech:</p> <blockquote> <p>Alex Salmond is pretending the last week never happened."}}}}
 
-function displaysHTML() {
+function controllerChangesHTML() {
   const articleList = new ArticleList();
-  articleList.add(testArticle3)
+  articleList.add(testArticle4)
   var id = articleList.articles[0].id
-  const articleListView = new ArticleListView(articleList);
-  console.log(articleListView.displayHTML())
-  assert.isTrue(articleListView.displayHTML().includes(`<li><a href='#articles/${id}'>Alex Salmond speech – first minister hits back over Scottish independence</a></li>`))
+  const articleController = new ArticleController(articleList)
+  element = { innerHTML: 'Original' }
+  articleController.changeHTML(element)
+  assert.isTrue(element.innerHTML.includes(`<li><a href='#articles/${id}'>Alex Salmond speech – first minister hits back over Scottish independence</a></li>`))
 }
-displaysHTML();
+controllerChangesHTML();

@@ -4,7 +4,9 @@
   }
 
   ArticleListView.prototype.displayHTML = function() {
-    return "<ul><li><div>" + this.articleList.showArticles().map(article => article["title"]) + "</div></li></ul>"
+    return "<ul>" + this.articleList.showArticles().map(article => {
+      return `<li><a href='#articles/${article.id}'>` + article.readTitle() + "</a></li>"
+    }).join("") + "</ul>"
   }
 
   exports.ArticleListView = ArticleListView;
