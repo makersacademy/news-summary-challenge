@@ -1,12 +1,12 @@
 // Test with no stub:
 
-function testGetApi() {
+function testGetUrl() {
   var api = new GuardianApi();
-  var expected = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/?section=uk-news%26from-date=2020-01-11%26show-fields=headline,thumbnail"
-  assert.eq(expected, api.getApi("2020-01-11"));
+  var expected = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=uk-news%26from-date=2020-01-11%26show-fields=headline,thumbnail"
+  assert.eq(expected, api.getUrl("2020-01-11"));
 };
 
-testGetApi();
+testGetUrl();
 
 // Test with stub:
 

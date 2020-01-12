@@ -4,12 +4,17 @@
     <meta charset="utf-8">
     <script src="lib/guardian-api.js"></script>
     <!-- Test suite -->
-    <!-- <script src="lib/guardian-api-stub.js"></script> -->
+    <!-- <script src="lib/guardian-api-stub.js"></script>
     <script src="spec/assert.js"></script>
-    <script src="spec/guardian-api-test.js"></script>
+    <script src="spec/guardian-api-test.js"></script> -->
     <title>News Headlines</title>
   </head>
   <body>
+
+    <script>
+      var api = new GuardianApi();
+      api.getHeadlines();
+    </script>
 
     <div id="main">
       <h1>Today's Guardian Headlines</h1>
