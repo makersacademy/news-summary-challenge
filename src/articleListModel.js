@@ -9,8 +9,8 @@
       return this._articles
     }
 
-    addArticle(title) {
-      this._articles.push(new this._ArticleClass(title))
+    addArticle(title, url) {
+      this._articles.push(new this._ArticleClass(title, url))
     }
   }
 

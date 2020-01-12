@@ -6,9 +6,8 @@
 
     toHtml() {
       return this._articleList.articles().reduce((htmlString, article) => {
-        return htmlString + `<li>${article.title()}</li>`
+        return htmlString + `<li><a href="${article.url()}">${article.title()}</a></li>`
       }, "")
-      return test
     }
 
     updateArticleList(articleList) {

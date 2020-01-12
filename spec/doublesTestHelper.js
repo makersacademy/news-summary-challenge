@@ -1,10 +1,15 @@
 class ArticleDouble {
   constructor() {
     this.titleCallCount = 0
+    this.urlCallCount = 0
   }
   title() {
     this.titleCallCount++
     return "Title"
+  }
+  url() {
+    this.urlCallCount++
+    return "www.url.com"
   }
 }
 
@@ -17,7 +22,7 @@ class ArticleListDouble {
     this.articlesCallCount++;
     return [new ArticleDouble(), new ArticleDouble()]
   }
-  addArticle(title) {
+  addArticle() {
     this.addArticleCallCount++
   }
 }
@@ -29,7 +34,7 @@ class ArticleListViewDouble {
   }
   toHtml() {
     this.toHtmlCallCount++
-    return "<li>Title</li><li>Title</li>"
+    return '<li><a href="www.url.com">Title</a></li><li><a href="www.url.com">Title</a></li>'
   }
 
   updateArticleList() {

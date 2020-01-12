@@ -13,8 +13,10 @@
       self._request.open("GET", url, true)
       self._request.onload = function() {
         JSON.parse(this.response).response.results.forEach(function(articleJson) {
+          // console.log(articleJson)
           var title = articleJson.webTitle
-          self._articleList.addArticle(title)
+          var url = articleJson.webUrl
+          self._articleList.addArticle(title, url)
         })
       }
       self._request.send()
