@@ -8,4 +8,5 @@ var testAddArticle = (function() {
   articleList.addArticle("Title")
   assert.isTrue(articleList.articles().length === 1)
   assert.isTrue(articleList.articles()[0].title() === "Title")
+  assert.isTrue(articleList.articles()[0].titleCallCount === 1)
 })()

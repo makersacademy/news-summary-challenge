@@ -9,6 +9,10 @@
         return htmlString + `<li>${article.title()}</li>`
       }, "")
     }
+
+    updateArticleList(articleList) {
+      this._articleList = articleList
+    }
   }
 
   object.ArticleListView = ArticleListView

@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>News Summary API</title>
+  <script src="src/articleModel.js"></script>
+  <script src="src/articleListModel.js"></script>
+  <script src="src/articleListView.js"></script>
 </head>
 <body>
   <div id="app">
     <h1>Today's news from the Guardian</h1>
-    <ul id="articles-unordered-list"></ul>
+    <ul id="article-list"></ul>
   </div>
+
+  <script>
+    var articleList = new ArticleList();
+    var articleListView = new ArticleListView(articleList)
+  </script>
 </body>
 </html>
