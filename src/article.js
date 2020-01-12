@@ -1,5 +1,7 @@
 (function(exports) {
-  function Article() {
-
+  function Article(article) {
+    this.title = article['response']['content']['webTitle']
   }
-})
+
+  exports.Article = Article;
+})(this);
