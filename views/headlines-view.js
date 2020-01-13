@@ -7,7 +7,7 @@
   HeadlinesView.prototype = {
     html: function() {
       var list = this._headlines.response;
-      var result = "<ul>";
+      var result = '<ul id="list">';
       for (var i = 0; i < list.results.length; i++) {
         var img = list.results[i].fields.thumbnail;
         var title = list.results[i].fields.headline;
