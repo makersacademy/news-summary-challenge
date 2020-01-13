@@ -10,8 +10,8 @@ describe("ArticleListView", () => {
       id1 = articleList.getArticles()[0].getId()
       id2 = articleList.getArticles()[1].getId()
 
-      var article1ListItem = `<li><img src="https://media.guim.co.uk/627be5c20c09e4c908231a72f6ec9c6c86b56d50/0_152_5300_3180/500.jpg" alt="image"><a href="#articles/${id1}">Film: Lullaby review – a no-thrills thriller</a></li>`
-      var article2ListItem = `<li><img src="https://media.guim.co.uk/4fe3ce5411249888cb3606cb68d1b9f39b9a1045/0_91_4116_2470/500.jpg" alt="image"><a href="#articles/${id2}">World news: Nordic countries at odds with EU over minimum wage</a></li>`
+      var article1ListItem = `<li><img src="https://media.guim.co.uk/009ead9ae11d4c5d56bd8684d5559b4b51adf0da/0_319_4783_2870/500.jpg" alt="image"><a href="#articles/${id1}">UK news: Harry and Meghan seek global trademark for 'Sussex Royal' brand</a></li>`
+      var article2ListItem = `<li><img src="https://media.guim.co.uk/6bbb9da43fab99a678b7686dc4db1f0165fecea3/0_84_4019_2411/500.jpg" alt="image"><a href="#articles/${id2}">World news: Iran deploys riot police as backlash against government grows</a></li>`
       var expected = '<ul>' + article1ListItem + article2ListItem + '</ul>'
       expect(articleListView.createHtml()).toEq(expected)
     });

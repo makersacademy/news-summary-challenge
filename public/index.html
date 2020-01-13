@@ -7,12 +7,17 @@
   <title>News Summary</title>
 </head>
 <body>
-  <h1>Hello!</h1>
+  <div id="app">Update Text</div>
 
+  <script src="./js/keys.js"></script>
   <script src="./js/article-controller.js"></script>
+  <script src="./js/article-model.js"></script>
+  <script src="./js/article-list-model.js"></script>
+  <script src="./js/article-list-view-model.js"></script>
   <script>
     controller = new ArticleController()
-    controller.showArticles("https://content.guardianapis.com/search?api-key=9e621e73-3cac-4e49-a10d-be1474bcf2ef&show-fields=thumbnail")
+    controller.hashChange(`https://content.guardianapis.com/search?api-key=${config.api}&show-fields=thumbnail`)
+    // controller.showArticleByUrl()
   </script>
 </body>
 </html>
