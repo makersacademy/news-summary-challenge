@@ -10,12 +10,24 @@
         var linkText = document.createTextNode(title.title);
         htmlElem.setAttribute('href', title.url);
         htmlElem.appendChild(linkText);
+        return this.htmlElem;
 
     };
 
     View.prototype.createTitleHtml = function (title) {
-        
+        var htmlElem = document.createElement('li');
+        htmlElem.setAttribute('id', title.id);
+        htmlElem.appendChild(this.createTitleLink(title));
+        return htmlElem;
+
     };
+
+    View.prototype.addToList = function (title) {
+        var list = document.getElementById('title-list');
+        list.appendChild(this.createTitleHtml(title));
+    };
+
+
 
 
     exports.View = View;
