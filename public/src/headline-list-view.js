@@ -6,14 +6,14 @@ HeadlineListView.prototype.returnList = function() {
   return this.list.returnList()
 }
 
-HeadlineListView.prototype.add = function(headline) {
-  this.list.add(headline);
+HeadlineListView.prototype.add = function(headline, url) {
+  this.list.add(headline, url);
 }
 
 HeadlineListView.prototype.getHTML = function() {
   var htmlString = "<ul>"
   this.returnList().forEach(headline => {
-    htmlString += `<li>${headline}</li>`
+    htmlString += `<li><a href="${headline.url}">${headline.title}</a></li>`
   });
   return htmlString + "</ul>"
 }

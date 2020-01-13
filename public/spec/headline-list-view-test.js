@@ -1,19 +1,19 @@
 describe(".headlineListView", () => {
 
-  var headlineListView = new HeadlineListView();
+  var headlineListViewTest = new HeadlineListView();
 
   it("It should return an array of headlines", () => {
-    assert.isTrue(Array.isArray(headlineListView.returnList()));
+    assert.isTrue(Array.isArray(headlineListViewTest.returnList()));
   });
 
   it("It should add a new headline", () => {
-    headlineListView.add("Sweetness");
-    assert.isEqual(headlineListView.returnList()[0], "Sweetness");
+    headlineListViewTest.add("Sweetness", "www.sweetness.com");
+    assert.isEqual(headlineListViewTest.returnList()[0].title, "Sweetness");
   });
 
   it("It should return a string of HTML", () => {
-    html = "<ul><li>Sweetness</li></ul>"
-    assert.isEqual(headlineListView.getHTML(), html);
+    html = `<ul><li><a href="www.sweetness.com">Sweetness</a></li></ul>`
+    assert.isEqual(headlineListViewTest.getHTML(), html);
   });
 
 });
