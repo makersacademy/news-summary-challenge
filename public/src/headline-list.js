@@ -5,3 +5,7 @@ function HeadlineList() {
 HeadlineList.prototype.add = function(headline) {
   this.list.push(headline);
 } 
+
+HeadlineList.prototype.returnList = function() {
+  return this.list;
+}

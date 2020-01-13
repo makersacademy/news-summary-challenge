@@ -11,4 +11,8 @@ describe(".HeadlineList", () => {
     assert.isTrue(headlineList.list.includes("Brand New"));
   });
 
+  describe("It should return an array of headlines", () => {
+    assert.isEqual(headlineList.returnList()[0], "Brand New");
+  });
+
 });
