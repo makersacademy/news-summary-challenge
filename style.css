@@ -1,0 +1,38 @@
+#root {
+  max-width: 1200px;
+  margin: 100 auto;
+  border: 100;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+a {
+  padding: 1.5rem 2.5rem;
+  margin: 0 0 2rem 0;
+  font-size: 1.25rem;
+  color: black;
+}
+img {
+  padding: 1;
+  margin: 1
+}
+
+.report {
+  margin: 1rem;
+  border: 10px solid gray;
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
+}
