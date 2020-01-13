@@ -1,3 +1,5 @@
+if anyone is assessing this, give me until Tuesday and this will be fully tested with mocks etc (had a busy weekend!)
+
 # News Summary challenge
 
 * Challenge time: rest of the day and weekend, until Monday 9am.

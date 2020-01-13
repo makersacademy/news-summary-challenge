@@ -19,5 +19,9 @@
     this._summaryData = data
   }
 
+  Article.prototype.getSummaryData = function () {
+    return this._summaryData
+  }
+
   exports.Article = Article
 })(this)

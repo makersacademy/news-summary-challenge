@@ -54,14 +54,12 @@
     request.send()
   }
 
-  // ArticleController.prototype.showArticleByUrl = function (windowObject = window, element = document.getElementById("app")) {
-  //   var self = this;
-  //   windowObject.addEventListener("hashchange", showIndividualArticle)
-
-  //   function showIndividualArticle () {
-  //     console.log(self)
-  //   }
-  // }
+  ArticleController.prototype.renderSingleArticleHtml = function (article) {
+    var self = this
+    singleArticleView = new SingleArticleView(article)
+    document.getElementById("app").innerHTML = singleArticleView.createHtml()
+    // document.getElementById("app").innerHTML = articleListView.createHtml()
+  }
 
 
   ArticleController.prototype.renderArticleListHtml = function () {
