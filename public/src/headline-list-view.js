@@ -9,3 +9,11 @@ HeadlineListView.prototype.returnList = function() {
 HeadlineListView.prototype.add = function(headline) {
   this.list.add(headline);
 }
+
+HeadlineListView.prototype.getHTML = function() {
+  var htmlString = "<ul>"
+  this.returnList().forEach(headline => {
+    htmlString += `<li>${headline}</li>`
+  });
+  return htmlString + "</ul>"
+}

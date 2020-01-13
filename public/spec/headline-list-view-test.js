@@ -11,10 +11,9 @@ describe(".headlineListView", () => {
     assert.isEqual(headlineListView.returnList()[0], "Sweetness");
   });
 
-  // describe("It should return a string of HTML", () => {
-  //   headlineListView.getHTML(
-  //     assert
-  //   )
-  // });
+  describe("It should return a string of HTML", () => {
+    html = "<ul><li>Sweetness</li></ul>"
+    assert.isEqual(headlineListView.getHTML(), html);
+  });
 
 });
