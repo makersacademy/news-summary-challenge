@@ -1,6 +1,6 @@
-var headline = new Headline("New News!!!");
-
 describe("When 'New News!!!' is passed as an argument", () => {
+
+  var headline = new Headline("New News!!!");
   
   describe("It should have text 'New News!!!'", () => {
     assert.isEqual(headline.text, "New News!!!");

@@ -1,0 +1,3 @@
+function HeadlineList() {
+  this.list = [];
+}

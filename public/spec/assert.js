@@ -4,8 +4,8 @@ var failedTests = 0;
 var describe = (description, assertion) => {
   console.log(description);
   assertion();
-  passedTests == 1 ? console.log("1 Test Has Passed") : console.log(`${passedTests} Tests Have Passed`)
-  failedTests == 1 ? console.log("1 Test Has Failed") : console.log(`${failedTests} Tests Have Failed`)
+  passedTests == 1 ? console.log("%c1 Test Has Passed", 'color: rgb(34,139,34); background-color: rgba(34,139,34,0.1)') : console.log(`%c${passedTests} Tests Have Passed`, 'color: rgb(34,139,34); background-color: rgba(34,139,34,0.1)')
+  failedTests == 1 ? console.log("%c1 Test Has Failed", 'color: rgb(255,0,0); background-color: rgba(255,0,0,0.1)') : console.log(`%c${failedTests} Tests Have Failed`, 'color: rgb(255,0,0); background-color: rgba(255,0,0,0.1)')
   console.log("==========");
 }
 
@@ -13,12 +13,12 @@ var assert = {
   isTrue: function (assertionToCheck) {
 
       if (!assertionToCheck) {
-        console.log(`${assertionToCheck} is false`.toUpperCase());
+        console.log(`%c${assertionToCheck}`, 'color: rgb(255,0,0); background-color: rgba(255,0,0,0.1)');
         failedTests ++;
         // throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
       } else {
         console.log("==========");
-        console.log(`${assertionToCheck} is true`);
+        console.log(`%c${assertionToCheck}`, 'color: rgb(34,139,34); background-color: rgba(34,139,34,0.1)');
         passedTests ++;
       }
 
@@ -28,10 +28,10 @@ var assert = {
 
     if (output == expectedOutput) {
       console.log("==========");
-      console.log(`${output} is equal to ${expectedOutput}`);
+      console.log(`%c${output} is equal to ${expectedOutput}`, 'color: rgb(34,139,34); background-color: rgba(34,139,34,0.1)');
       passedTests ++;
     } else {
-      console.log(`${output} is not equal to ${expectedOutput}`.toUpperCase());
+      console.log(`%c${output} is not equal to ${expectedOutput}`, 'color: rgb(255,0,0); background-color: rgba(255,0,0,0.1)');
       failedTests ++;
       // throw new Error(`${output} and ${expectedOutput} are not equal`);
     }
