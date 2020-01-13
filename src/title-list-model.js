@@ -12,6 +12,10 @@
         return this.titles;
     };
 
+    TitleList.prototype.selectTitle = function (index) {
+        return this.titles[index];
+    };
+
     exports.TitleList = TitleList;
 
 })(this);

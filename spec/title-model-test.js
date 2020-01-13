@@ -1,16 +1,16 @@
-(function () {
+// (function () {
 
-    var title = new Title("First headline of the newsfeed");
+//     var title = new Title("First headline of the newsfeed");
 
-    function testTitleText() {
-        assert.isTrue(title.text === "First headline of the newsfeed");
-    };
+//     function testTitleText() {
+//         assert.isTrue(title.title === "First headline of the newsfeed");
+//     };
 
-    function testReturnText() {
-        assert.isTrue(title.returnText() === "First headline of the newsfeed");
-    }
+//     function testReturnTitles() {
+//         assert.isTrue(title.returnTitles() === "First headline of the newsfeed");
+//     }
 
-    testTitleText();
-    testReturnText();
+//     testTitleText();
+//     testReturnTitles();
 
-})(this);
+// })(this);

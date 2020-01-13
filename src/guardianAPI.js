@@ -11,7 +11,7 @@
 
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    var response = JSON.parse(xhr.response)
+                    var response = JSON.parse(xhr.response.results)
                     guardianData = callback(response);
                 }
             }

@@ -1,11 +1,9 @@
 (function (exports) {
 
-    function Title(text) {
-        this.text = text;
-    };
-
-    Title.prototype.returnText = function () {
-        return this.text;
+    function Title(webTitle, webUrl, id) {
+        this.title = webTitle;
+        this.url = webUrl;
+        this.id = id
     };
 
     exports.Title = Title;
