@@ -10,8 +10,8 @@ a page. Clicking on a headline shows a summary of the article.
 
 ## Setup
 
-Clone and install this repo
-Run `open index.html`
+* Clone and install this repo
+* Run `open index.html`
 
 ## Technologies
 
