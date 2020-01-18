@@ -8,6 +8,11 @@ news.
 It grabs all the headlines from the Guardian newspaper API and displays them on
 a page. Clicking on a headline shows a summary of the article.
 
+## Setup
+
+Clone and install this repo
+Run `open index.html`
+
 ## Technologies
 
 Code is written in frontend JavaScript, with a little HTML and CSS. I intend to
