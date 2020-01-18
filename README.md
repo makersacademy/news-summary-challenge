@@ -13,6 +13,14 @@ a page. Clicking on a headline shows a summary of the article.
 * Clone and install this repo
 * Run `open index.html`
 
+## Screenshots
+
+Here's what loads when you "hit the nooze button":
+![screenshot1](/images/screenshot1.png)
+
+And when you click 'summary' under an article:
+![screenshot1](/images/screenshot2.png)
+
 ## Technologies
 
 Code is written in frontend JavaScript, with a little HTML and CSS. I intend to
