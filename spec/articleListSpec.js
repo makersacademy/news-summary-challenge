@@ -1,12 +1,20 @@
 (function (exports) {
   let articleList
-  let article
+  let article = new Article('Storm Ciara to bring severe gales to UK', 'https://www.bbc.co.uk/news/uk-51425482')
 
-  (function addArticleToList () {
+  function addArticleToList () {
     console.log('addArticleToList')
-    article = new Article('Storm Ciara to bring severe gales to UK', 'https://www.bbc.co.uk/news/uk-51425482')
     articleList = new ArticleList
-    expect(articleList.addArticle(article)).toEqual(1) 
-  })()
+    expect(articleList.add(article)).toEqual(1) 
+  }
 
+  function returnArticleList () {
+    console.log('returnArticleList')
+    articleList = new ArticleList
+    articleList.add(article)
+    expect(articleList.list).toInclude(article)
+  }
+  
+  addArticleToList()
+  returnArticleList()
 })(this)

@@ -4,8 +4,12 @@
       this._list = []
     }
 
-    addArticle (article) {
+    add (article) {
       return this._list.push(article)
+    }
+
+    get list () {
+      return this._list
     }
   }
 
