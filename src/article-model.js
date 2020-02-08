@@ -1,12 +1,12 @@
 (function(exports){
 
-  function Article(title){
-    this.title = title;
+  function Article(headline){
+    this.headline = headline;
   }
 
 
-  Article.prototype.showTitle = function(){
-    return(this.title)
+  Article.prototype.showHeadline = function(){
+    return(this.headline);
   }
 
   exports.Article = Article;
