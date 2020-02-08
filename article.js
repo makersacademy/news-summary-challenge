@@ -1,5 +1,6 @@
 (function(exports) {
   function Article() {
+    this.id = 0
     this.body = "a"
     this.title = "b"
   }

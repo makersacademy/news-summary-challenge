@@ -63,9 +63,22 @@ xhr.onreadystatechange = function () {
 //     raps = (myJson);
 //   });
 
-async function getInfo() {
-  let response = await fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world/2020/feb/08/coronavirus-five-new-cases-in-france-are-british-nationals');
-  let data = await response.json()
-  return data;
-}
-getInfo().then(data => console.log(data))
+// async function getInfo() {
+//   let response = await fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world/2020/feb/08/coronavirus-five-new-cases-in-france-are-british-nationals');
+//   let data = await response.json()
+//   return data;
+// }
+// getInfo().then(data => console.log(data))
+
+fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search").then(response => {
+   return response.json();
+ }).then(data => {
+   // Work with JSON data here
+   console.log(data);
+   let body = data.response.results;
+   console.log(body)
+   document.body.innerHTML = body;
+ }).catch(err => {
+   // Do something for an error here
+   console.log("Whoopsie");
+ });
