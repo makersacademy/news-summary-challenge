@@ -12,10 +12,10 @@ function extractInfoFromApi() {
 }
 
 
-var data = fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world')
-  .then((response) => {
-    return response.json();
-  })
-  .then((myJson) => {
-    return(myJson);
-  });
+// data = fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/world')
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((myJson) => {
+//     return(myJson);
+//   });
