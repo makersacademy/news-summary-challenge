@@ -16,6 +16,6 @@ function testSummaryView() {
   controller.view.list.list = [article1, article2]
   var div = document.getElementById("summary")
   controller.summaryView()
-  assert.isTrue(div.innerHTML === '<div id="0"><h1>Title One</h1><br><p>Body One</p></div><br><div id="1"><h1>Title Two</h1><br><p>Body Two</p></div><br>')
+  assert.isTrue(div.innerHTML === '<div id="0"><h1>Title One</h1><br></div><br><div id="1"><h1>Title Two</h1><br></div><br>')
 }
 testSummaryView();
