@@ -4,3 +4,7 @@
   }
   exports.ArticleList = ArticleList
 })(this);
+
+ArticleList.prototype.createAndStore = function(article) {
+  this.list.push(article)
+}
