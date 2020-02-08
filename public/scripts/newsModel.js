@@ -1,3 +1,3 @@
-var NewsModel =function() {
+function NewsModel() {
   this.newsArray = [];
 };
