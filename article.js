@@ -8,7 +8,7 @@
 })(this);
 
 Article.prototype.renderTitle = function() {
-  return ("<h1>" + this.title + "</h1>")
+  return ("<h3>" + this.title + "</h3>")
 }
 
 Article.prototype.renderBody = function() {

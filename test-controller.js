@@ -5,6 +5,7 @@ function testControllerInstantiatedWithArticleView() {
 testControllerInstantiatedWithArticleView();
 
 function testSummaryView() {
+  document2Builder();
   var controller = new Controller();
   var articleView = new ArticleView();
   var article1 = new Article();
@@ -14,8 +15,21 @@ function testSummaryView() {
   article2.title = "Title Two"
   article2.body = "Body Two"
   controller.view.list.list = [article1, article2]
-  var div = document.getElementById("summary")
-  controller.summaryView()
-  assert.isTrue(div.innerHTML === '<div id="0"><h1>Title One</h1><br></div><br><div id="1"><h1>Title Two</h1><br></div><br>')
+  var div = document2.getElementById("summary")
+  div.innerHTML = controller.view.render()
+  assert.isTrue(div.innerHTML === '<div class="n0"><h3>Title One</h3><br></div><br><div class="n1"><h3>Title Two</h3><br></div><br>')
 }
 testSummaryView();
+
+function document2Builder() {
+  document2 = document.implementation.createHTMLDocument()
+  var div = document2.createElement('div')
+  div.id = "summary"
+  document2.body.append(div)
+  return document2
+}
+
+function testloadUp() {
+  var controller = controller()
+  assert.isTrue(document.getElementsByClassName('n3') === controller.view.list.list[2].title)
+}

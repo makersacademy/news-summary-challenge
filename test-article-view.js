@@ -13,7 +13,7 @@ function testRender() {
   article2.title = "Title Two"
   article2.body = "Body Two"
   articleView.list.list = [article1, article2]
-  assert.isTrue(articleView.render() === "<div id='0'><h1>Title One</h1><br></div><br><div id='1'><h1>Title Two</h1><br></div><br>")
+  assert.isTrue(articleView.render() === "<div class='n0'><h3>Title One</h3><br></div><br><div class='n1'><h3>Title Two</h3><br></div><br>")
 }
 testRender();
 

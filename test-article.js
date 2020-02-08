@@ -9,7 +9,7 @@ function testRenderTitle() {
     var article = new Article();
     article.title = "The Title!"
     article.body = "The body of the article itself"
-    assert.isTrue(article.renderTitle() === "<h1>The Title!</h1>")
+    assert.isTrue(article.renderTitle() === "<h3>The Title!</h3>")
   }
 testRenderTitle();
 

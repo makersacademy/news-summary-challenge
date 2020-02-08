@@ -51,4 +51,9 @@ Controller.prototype.articleBuilder = function() {
   });
   })
 }
-controller.articleBuilder()
+
+function loadUp() {
+  controller.articleBuilder();
+  controller.summaryView();
+}
+loadUp()
