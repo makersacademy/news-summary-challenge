@@ -1,13 +1,18 @@
 (function(exports) {
   function NewsController(newsListModel) {
     this.newsListModel = newsListModel
+    this.getArticles()
+    var self = this
     
-    this.displayHeadlines()
+    setTimeout(function() { 
+      self.displayHeadlines(); 
+    }, 3000);
+      
   }
 
   NewsController.prototype = {
-    addArticle: function(article) {
-      this.newsListModel.addArticle(article)
+    getArticles: function() {
+      this.newsListModel.getAPIData()
     },
     displayHeadlines: function() {
       var headlinesView = new HeadlinesView(this.newsListModel)
