@@ -58,7 +58,7 @@
     }).then(() => {
       document.getElementById('idNumber2').click()
       expect(element.innerHTML).toInclude('I am body number 2')
-      // document.body.removeChild(element)
+      document.body.removeChild(element)
     })
   }
 
