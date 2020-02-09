@@ -22,18 +22,22 @@
 
   Controller.prototype.getArticle = function() {
     var request = new XMLHttpRequest();
-    request.open('GET', 'myservice/username?id=some-unique-id');
+    request.open('GET', 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search', true);
     request.onload = function() {
         if (request.status === 200) {
-            console.log(request.response.results);
+          var data = JSON.parse(request.response)
+          console.log(data.response.results[0].webTitle)
+          // data.results.results.forEach(function(result) {
+          //   console.log(result.webTitle)
+          //   // self.addStory(result.webTitle);
+          // });
         }
         else {
-            console.log('Request failed. Returned status:' + request.status);
+          console.log('Request failed. Returned status:' + request.status);
         }
     };
     request.send();
   }
-
 
   exports.Controller = Controller
 })(this);
