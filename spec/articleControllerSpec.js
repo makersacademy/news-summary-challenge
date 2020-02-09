@@ -9,6 +9,8 @@
       expect(data[0].title).toEqual("Alex Salmond speech – first minister hits back over Scottish independence")
       expect(data[1].title).toEqual("Brighton 1-1 Watford: Premier League – as it happened")
       expect(data[0].body).toInclude("I am body number 1")
+      expect(data[0].summary).toEqual("Scotland’s first minister Alex Salmond mounts defence of key aspects of independence plan after week of pressure over whether the country could keep sterling or remain in EU")
+      expect(data[1].summary).toEqual("I am the second trail text, howdy?")
     })
   }
 
@@ -18,6 +20,7 @@
     articleController.fetchSingleArticle('/public/mockJson/mockSingleArticleAPI.json').then((data) => {
       expect(data.title).toEqual("Alex Salmond speech – first minister hits back over Scottish independence")
       expect(data.body).toInclude("Alex Salmond has a responsibility to tell us")
+      expect(data.summary).toEqual("Scotland’s first minister Alex Salmond mounts defence of key aspects of independence plan after week of pressure over whether the country could keep sterling or remain in EU")
     })
   }
 

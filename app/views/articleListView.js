@@ -6,7 +6,7 @@
 
     display () {
       return this._articleList.list.map(article => {
-        return `<div class='article'><div class='title'>${article.title}</div><div class='body'>${article.body}</div></div>`
+        return `<div class='article'><div class='title'>${article.title}</div><div class='body'>${article.summary}</div></div>`
       }).join('')
     }
   }
