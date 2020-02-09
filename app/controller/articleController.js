@@ -1,8 +1,9 @@
 (function (exports) {
   class ArticleController {
-    constructor (articleList, listView) {
+    constructor (articleList, listView, singleView) {
       this._articleList = articleList
       this._listView = new listView(this._articleList)
+      this._singleView = singleView
     }
 
     get articleList () {
@@ -52,6 +53,23 @@
       element.innerHTML = this._listView.display()
     }
 
+    listenToHash (elementID) {
+      window.addEventListener('hashchange', () => { this.displaySingleArticle(elementID) })
+    }
+
+    displaySingleArticle (elementID) {
+      if (window.location.hash === "") {
+        this.displayArticlesList(elementID)
+      } else {
+      let element = document.getElementById(elementID)
+      let articleId = this.getIdFromUrl()
+      element.innerHTML = this._singleView.display(this._articleList.find(articleId))
+      }
+    }
+
+    getIdFromUrl () {
+      return window.location.hash.split('#articles/')[1]
+    }
   }
 
   exports.ArticleController = ArticleController

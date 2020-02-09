@@ -38,12 +38,34 @@
 
     articleController3.fetchArticles('/public/mockJson/mockMultipleArticlesAPI.json').then((data) => {
       articleController3.displayArticlesList('articles')
+      expect(element.innerHTML).toInclude('Premier League')
+      document.body.removeChild(element)
+    })
+  }
+
+  function displaySingleArticle () {
+    console.log('displaySingleArticle')
+    let articleController4 = new ArticleController(new ArticleList, ListView, new SingleView)
+
+    let element = document.createElement('div')
+    element.id = 'articles-test'
+    element.innerHTML = 'Test'
+    document.body.appendChild(element)
+
+    articleController4.fetchArticles('/public/mockJson/mockMultipleArticlesAPI.json').then(() => {
+      articleController4.displayArticlesList('articles-test')
+      articleController4.listenToHash('articles-test')
+    }).then(() => {
+      document.getElementById('idNumber2').click()
+      expect(element.innerHTML).toInclude('I am body number 2')
+      // document.body.removeChild(element)
     })
   }
 
   fetchArticlesFromApi()
   fetchSingleArticleFromApi()
   addArticlesList()
+  displaySingleArticle()
 })(this)
 
 // Guardian query example

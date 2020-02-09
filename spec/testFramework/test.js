@@ -8,7 +8,7 @@
       console.log('%cTest PASSED', 'color: green')
     } else {
       console.log('%cTest FAILED', 'color: red')
-      console.log('%cExpected ' + `%c${this.value}` + `%cto equal ` + `%c${thingToTest}`, 'color: yellow', 'color: none', 'color: yellow', 'color: none')
+      console.log('%cExpected ' + `%c${this.value} ` + `%cto equal ` + `%c${thingToTest}`, 'color: yellow', 'color: none', 'color: yellow', 'color: none')
     }
   }
 
@@ -17,7 +17,7 @@
       console.log('%cTest PASSED', 'color: green')
     } else {
       console.log('%cTest FAILED', 'color: red')
-      console.log('%cExpected ' + `%c${this.value}` + `%cto include ` + `%c${thingToTest}`, 'color: yellow', 'color: none', 'color: yellow', 'color: none')
+      console.log('%cExpected ' + `%c${this.value} ` + `%cto include ` + `%c${thingToTest}`, 'color: yellow', 'color: none', 'color: yellow', 'color: none')
     }
   }
 
@@ -28,7 +28,7 @@
       console.log('%cTest PASSED', 'color: green')
     } else {
       console.log('%cTest FAILED', 'color: red')
-      console.log('%cExpected ' + `%c${value}` + `%cto be a ` + `%c${thing}`, 'color: yellow', 'color: none', 'color: yellow', 'color: none')
+      console.log('%cExpected ' + `%c${value} ` + `%cto be a ` + `%c${thing}`, 'color: yellow', 'color: none', 'color: yellow', 'color: none')
     }
   }
 
@@ -37,7 +37,7 @@
       console.log('%cTest PASSED', 'color: green')
     } else {
       console.log('%cTest FAILED', 'color: red')
-      console.log('%cExpected ' + `%c${this.value}` + `%cnot to include ` + `%c${thingToTest}`, 'color: yellow', 'color: none', 'color: yellow', 'color: none')
+      console.log('%cExpected ' + `%c${this.value} ` + `%cnot to include ` + `%c${thingToTest}`, 'color: yellow', 'color: none', 'color: yellow', 'color: none')
     }
   }
 

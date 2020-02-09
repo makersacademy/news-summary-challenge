@@ -12,6 +12,9 @@
       return this._list.push(article)
     }
 
+    find(articleId) {
+      return this._list.find(article => article.id === articleId)
+    }
   }
 
   exports.ArticleList = ArticleList

@@ -6,6 +6,29 @@
   <title>News Summary API</title>
 </head>
 <body>
-  <div class="app"></div>
+  <div id="app"></div>
+
+  <button onclick="goBack()">Go Back</button>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+  
+  <script src="app/modules/article.js"></script>
+  <script src="app/modules/articleList.js"></script>
+  <script src="app/views/articleSingleView.js"></script>
+  <script src="app/views/articleListView.js"></script>
+  <script src="app/controller/articleController.js"></script>
+
+  <script>
+    let controller = new ArticleController(new ArticleList, ListView, new SingleView)
+    controller.fetchArticles("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=trailText,body").then(() => {
+    // controller.fetchArticles('/public/mockJson/mockMultipleArticlesAPI.json').then(() => { 
+      controller.displayArticlesList("app")
+      controller.listenToHash('app')
+    })
+  </script>
 </body>
 </html>
