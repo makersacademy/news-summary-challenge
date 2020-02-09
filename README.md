@@ -1,5 +1,12 @@
 # News Summary challenge
 
+A single page webapp that shows news article titles, and when clicked on, a summary of the article os shown.
+
+
+#Tests
+Run specRunner.html is browser to check tests.
+
+
 * Challenge time: rest of the day and weekend, until Monday 9am.
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
