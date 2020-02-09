@@ -16,7 +16,11 @@
         }
         const data = await response.json().then((data) => {
           let content = data.response.results
-            return content.map((article) => this._articleList.add(new Article(article.webTitle, article.apiUrl)))
+          return content.map((article) => {
+            article = new Article(article.webTitle, article.apiUrl, article.fields.body)
+            this._articleList.add(article)
+            return article
+          })
         })
         return data
       } catch (error) {
@@ -32,7 +36,9 @@
         }
         const data = await response.json().then((data) => {
           let content = data.response.content
-            return this._articleList.add(new Article(content.webTitle, content.apiUrl))
+          let article = new Article(content.webTitle, content.apiUrl, content.fields.body)
+          this._articleList.add(article)
+          return article
         })
         return data
       } catch (error) {

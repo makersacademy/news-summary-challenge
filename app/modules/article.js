@@ -1,8 +1,9 @@
 (function (exports) {
   class Article {
-    constructor (title, url) {
+    constructor (title, url, body) {
       this._title = title
       this._url = url
+      this._body = body
     }
     
     get title () {
@@ -11,6 +12,10 @@
     
     get url () {
       return this._url
+    }
+
+    get body () {
+      return this._body
     }
   }
 

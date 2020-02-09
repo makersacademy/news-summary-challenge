@@ -3,10 +3,16 @@
     "status": "ok",
     "results": [{
       "webTitle": "Alex Salmond speech – first minister hits back over Scottish independence",
-      "apiUrl": "https://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live"
+      "apiUrl": "https://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live",
+      "fields": {
+        "body": "I am body number 1, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi posuere finibus gravida. Phasellus elementum nisi at aliquet posuere. Mauris vitae urna risus. Mauris sed bibendum dui. Proin mattis ornare rhoncus. Morbi sit amet dui nec metus rutrum mattis. Suspendisse facilisis lectus interdum lacus auctor ultrices. Nunc at leo in ante ultricies gravida. Vestibulum consequat orci ex. Sed facilisis, est at pulvinar scelerisque, tellus eros ullamcorper nisi, sed faucibus elit purus sit amet felis. Pellentesque lobortis porttitor sem a mattis. Proin sed consectetur diam. Maecenas pellentesque diam vel mauris consequat rutrum. Vivamus lacinia ex at sem venenatis tempus. Sed pretium augue vel mi tincidunt, vitae tincidunt nibh congue. Aliquam erat volutpat. Pellentesque id lacus magna. Curabitur aliquam gravida metus eget ullamcorper. Quisque venenatis tristique magna ut fermentum. Vivamus bibendum purus ipsum, ut volutpat libero lacinia nec. Praesent elementum ante ut mauris mollis, in euismod elit dignissim. Nullam molestie odio sem, a tristique tellus malesuada a. Pellentesque luctus consequat ipsum, ut consectetur nisl hendrerit ut."
+      }
     }, {
       "webTitle": "Brighton 1-1 Watford: Premier League – as it happened",
-      "apiUrl": "https://content.guardianapis.com/football/live/2020/feb/08/brighton-v-watford-premier-league-live"
+      "apiUrl": "https://content.guardianapis.com/football/live/2020/feb/08/brighton-v-watford-premier-league-live",
+      "fields": {
+        "body": "I am body number 2, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi posuere finibus gravida. Phasellus elementum nisi at aliquet posuere. Mauris vitae urna risus. Mauris sed bibendum dui. Proin mattis ornare rhoncus. Morbi sit amet dui nec metus rutrum mattis. Suspendisse facilisis lectus interdum lacus auctor ultrices. Nunc at leo in ante ultricies gravida. Vestibulum consequat orci ex. Sed facilisis, est at pulvinar scelerisque, tellus eros ullamcorper nisi, sed faucibus elit purus sit amet felis. Pellentesque lobortis porttitor sem a mattis. Proin sed consectetur diam. Maecenas pellentesque diam vel mauris consequat rutrum. Vivamus lacinia ex at sem venenatis tempus. Sed pretium augue vel mi tincidunt, vitae tincidunt nibh congue. Aliquam erat volutpat. Pellentesque id lacus magna. Curabitur aliquam gravida metus eget ullamcorper. Quisque venenatis tristique magna ut fermentum. Vivamus bibendum purus ipsum, ut volutpat libero lacinia nec. Praesent elementum ante ut mauris mollis, in euismod elit dignissim. Nullam molestie odio sem, a tristique tellus malesuada a. Pellentesque luctus consequat ipsum, ut consectetur nisl hendrerit ut."
+      }
     }]
   }
 }
