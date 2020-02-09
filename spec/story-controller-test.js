@@ -60,14 +60,7 @@
   assert.isTrue(document.getElementById('app').innerHTML.includes("Test"))
 })();
 
-// (function TestUrlChange() {
-//   var controller = new Controller();
-
-//   controller.addStory("Favourite food: pesto");
-//   controller.addStory("Favourite drink: orange juice");
-
-//   controller.printDiv();
-  
-//   controller.makeUrlChangeShowStoryOnCurrentPage();
-// })();
-
+(function TestAPIRequest() {
+  var controller = new Controller()
+  controller.getArticle()
+})();

@@ -20,25 +20,21 @@
     this.document.getElementById(divId).innerHTML = string
   }
 
-  // // Url Change
-  
-  // Controller.prototype.makeUrlChangeShowStoryOnCurrentPage = function() {
-  //   window.addEventListener("hashchange", this.showStoryOnCurrentPage());
-  // }
+  Controller.prototype.getArticle = function() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'myservice/username?id=some-unique-id');
+    request.onload = function() {
+        if (request.status === 200) {
+            console.log(request.response.results);
+        }
+        else {
+            console.log('Request failed. Returned status:' + request.status);
+        }
+    };
+    request.send();
+  }
 
-  // Controller.prototype.showStoryOnCurrentPage = function() {
-  //   this.showStory(this.getIDFromUrl(window.location));
-  // }
-
-  // Controller.prototype.getIDFromUrl = function(location) {
-  //   return location.hash.split("#")[1];
-  // }
-
-  // Controller.prototype.showStory = function(storyId) {
-  //   console.log(this.list.array[storyId])
-  //   // var string = this.list.array[storyId].text
-  //   // this.document.getElementById('story').innerHTML = string
-  // }
 
   exports.Controller = Controller
 })(this);
+
