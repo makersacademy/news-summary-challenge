@@ -52,7 +52,27 @@ Controller.prototype.articleBuilder = function() {
   })
 }
 
+Controller.prototype.articleThumbnailAdder = function() {
+  var array = this.view.list.list
+  array.forEach((article) => {
+    var url= "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/" + article.id + "?show-fields=thumbnail"
+    console.log(url)
+    fetch(url).then(response => {
+   return response.json();
+  }).then(data => {
+   // Work with JSON data here
+     console.log("ARTICLE THUMBNAIL ADDER", data);
+     let littleImage = data.response.content.fields.thumbnail;
+     article.thumbnail = "<img src='" + littleImage + "' style='width:120px;height:72px;'>";
+  }).catch(err => {
+   // Do something for an error here
+   console.log("Whoopsie");
+  });
+  })
+}
+
 function loadUp() {
+  controller.articleThumbnailAdder();
   controller.articleBuilder();
   controller.summaryView();
   summaryButton = document.getElementsByClassName("gohome")[0]
@@ -61,11 +81,11 @@ function loadUp() {
 }
 loadUp()
 
-function enumerateArticles(array) {
-  for (var i=0; i<array.length; i++) {
-    array[i].number = i
-  }
-}
+// function enumerateArticles(array) {
+//   for (var i=0; i<array.length; i++) {
+//     array[i].number = i
+//   }
+// }
 
 Controller.prototype.waitToShowSingleArticle = function() {
   window.addEventListener("hashchange", controller.viewArticle)

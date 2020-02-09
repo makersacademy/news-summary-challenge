@@ -4,6 +4,7 @@
     this.body = "a"
     this.title = "b"
     this.number = 0
+    this.thumbnail = 2
   }
   exports.Article = Article
 })(this);
