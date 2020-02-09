@@ -12,10 +12,18 @@ NewsModel.prototype = (function(exports) {
     this._articleId++
     var article = {'id': id, 'title': title,'text': fullText}
     this.newsArray.push(article)
-  }
+  };
+
+  function returnArticle(id) {
+    var findArticle = function(article) {
+      return article['id'] == id 
+    }
+    var result = this.newsArray.find(findArticle)
+    return result
+  };
 
   return {
-    addArticle: addArticle
+    addArticle: addArticle, returnArticle: returnArticle
   };
 
 })();

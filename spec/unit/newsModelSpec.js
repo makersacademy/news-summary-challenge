@@ -11,3 +11,5 @@ describe('article id is 1', expect(newsModel.newsArray[0]['id']).toEq(1))
 newsModel.addArticle('Another news title', 'Another news article summary.');
 
 describe('article id increments by 1 each article', expect(newsModel.newsArray[1]['id']).toEq(2))
+
+describe('returns article by id', expect(newsModel.returnArticle(1)['id']).toEq(1))
