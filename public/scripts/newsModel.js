@@ -1,29 +1,29 @@
 "use strict";
 
-function NewsModel() {
+(function(exports) {
+  function NewsModel() {
   this._articleId = 1;
   this.newsArray = [];
-}
-
-NewsModel.prototype = (function(exports) {
-
-  function addArticle(title, fullText) {
-    var id = this._articleId
-    this._articleId++
-    var article = {'id': id, 'title': title,'text': fullText}
-    this.newsArray.push(article)
   };
 
-  function returnArticle(id) {
-    var findArticle = function(article) {
-      return article['id'] == id 
+  NewsModel.prototype = {
+
+    addArticle: function(title, fullText) {
+      var id = this._articleId
+      this._articleId++
+      var article = {'id': id, 'title': title,'text': fullText}
+      this.newsArray.push(article)
+    },
+
+    returnArticle: function (id) {
+      var findArticle = function(article) {
+        return article['id'] == id 
+      }
+      var result = this.newsArray.find(findArticle)
+      return result
     }
-    var result = this.newsArray.find(findArticle)
-    return result
+
   };
 
-  return {
-    addArticle: addArticle, returnArticle: returnArticle
-  };
-
-})();
+  exports.NewsModel = NewsModel;
+})(this);
