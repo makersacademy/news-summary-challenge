@@ -10,7 +10,7 @@ function loadDoc() {
       headlines.forEach(print);
 
       function print(headline, index) {
-        document.getElementById("app").innerHTML +=  "<a href='http://localhost:8080#" + index + "'>" + headline.webTitle + "</a><div class=headline_image><img src='" + headline.fields.thumbnail + "'></div><br>";
+        document.getElementById("app").innerHTML +=  "<a href='http://localhost:8080#" + index + "'>" + translate(headline.webTitle) + "</a><div class=headline_image><img src='" + headline.fields.thumbnail + "'></div><br>";
       }
 
       function makeUrlChangeShowArticleOnCurrentPage() {
@@ -29,7 +29,7 @@ function loadDoc() {
   
         document
           .getElementById("app")
-          .innerHTML = "<div class=headline_image><img src='" + headlines[parseInt(ID)].fields.thumbnail + "'></div><br>" + headlines[parseInt(ID)].fields.body;
+          .innerHTML = "<div class=headline_image><img src='" + headlines[parseInt(ID)].fields.thumbnail + "'></div><br>" + translate(headlines[parseInt(ID)].fields.body);
       }
 
       makeUrlChangeShowArticleOnCurrentPage();
@@ -43,3 +43,11 @@ function loadDoc() {
 
 loadDoc();
 
+function translate(HTML) {
+
+  var translation = HTML.replace(/President Trump/gi, "Cheeto Man");
+  translation = translation.replace(/Donald Trump/gi, "Cheeto Man");
+  translation = translation.replace(/Trump/gi, "Cheeto Man");
+
+  return translation
+}
