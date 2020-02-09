@@ -25,6 +25,9 @@ div.n1, div.n0, div.n2, div.n3, div.n4, div.n5, div.n6, div.n7, div.n8, div.n9, 
     border-radius: 10px;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div#space {
@@ -37,4 +40,8 @@ div.article {
     background-color: rgba(255,255,255,0.95);
     border-radius: 10px;
     font-family: 'Quicksand', sans-serif;
+}
+
+img {
+    border-radius: 10px;
 }

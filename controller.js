@@ -9,7 +9,7 @@ var controller = new Controller();
 
 Controller.prototype.summaryView = function() {
   var el = document.getElementById("summary")
-  el.innerHTML = this.view.render()
+  el.innerHTML = controller.view.render()
 }
 
 Controller.prototype.refresh = function() {
@@ -63,7 +63,7 @@ Controller.prototype.articleThumbnailAdder = function() {
    // Work with JSON data here
      console.log("ARTICLE THUMBNAIL ADDER", data);
      let littleImage = data.response.content.fields.thumbnail;
-     article.thumbnail = "<img src='" + littleImage + "' style='width:120px;height:72px;'>";
+     article.thumbnail = "<img src='" + littleImage + "' style='width:133px;height:80px;' border:'5'>";
   }).catch(err => {
    // Do something for an error here
    console.log("Whoopsie");
@@ -72,14 +72,13 @@ Controller.prototype.articleThumbnailAdder = function() {
 }
 
 function loadUp() {
-  controller.articleThumbnailAdder();
   controller.articleBuilder();
-  controller.summaryView();
+  controller.articleThumbnailAdder();
+  setTimeout (controller.summaryView, 1500);
   summaryButton = document.getElementsByClassName("gohome")[0]
   summaryButton.style.visibility = 'hidden'
   window.addEventListener("hashchange", controller.viewArticle)
 }
-loadUp()
 
 // function enumerateArticles(array) {
 //   for (var i=0; i<array.length; i++) {
@@ -107,6 +106,5 @@ function goHome() {
   window.reload()
   summaryButton = document.getElementsByClassName("gohome")[0]
   summaryButton.style.visibility = 'hidden'
-  button = document.getElementsByClassName("loadup")[0]
-  button.click()
+  controller.summaryView();
 }
