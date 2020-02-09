@@ -24,6 +24,10 @@
           <h2> Headlines </h2>
           <ul class ="articlesList"></div>
         </div>
+
+        <div class='modal'>
+          <div class='window'></div>
+        </div>
       </div>`;
     },
 
@@ -40,8 +44,32 @@
           `;
         })
       }
-    }
-  }
+    },
+
+    renderShowArticle: function(article) {
+      var showArticle = document.querySelector('.window');
+      showArticle.innerHTML = `
+          <div class="modal-content">
+            <div class="modal-header">
+              ${article.id} : ${article.title}
+            </div>
+            <div class="modal-body">
+              ${article.text}
+            </div>
+            <div class=modal-footer>
+              <button class="close" id="closeWindow">Close</button>
+            </div>
+          </div>
+        `;
+      var modal = document.querySelector('.modal');
+      modal.style.display = 'block';
+	  },
+
+	  renderCloseArticle: function() {
+      var modal = document.querySelector('.modal');
+      modal.style.display = 'none';
+	  }
+}
   
   exports.NewsView = NewsView;
 })(this);
