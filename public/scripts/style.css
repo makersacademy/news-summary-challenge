@@ -1,0 +1,203 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outliner: 0;
+}
+
+header,
+footer,
+nav,
+article,
+aside,
+ul,
+li {
+	/* HTML5 asigns blocks to all elements*/
+	display: block;
+}
+
+h1 {
+	font-size: 55px;
+}
+
+body {
+	background:rgb(120, 178, 230);
+	color: #201e1e;
+	font-family: Roboto, sans-serif;
+	font-size: 14px; /*1em*/
+}
+
+/* Modal Header */
+.modal-header {
+	position: relative;
+	display: block;
+	height: 5%;
+	padding: 2px 16px;
+	font-family: Arial, sans-serif;
+	text-align: left;
+	letter-spacing: 0.2em;
+	line-spacing: 1.4em;
+	font-size: 1.2em;
+	color: #332d2d;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Body */
+.modal-body,
+.newNoteForm {
+	position: relative;
+	display: block;
+	padding: 2px 16px;
+	/* background: blue; */
+	height: 75%;
+	overflow: auto;
+	font-family: Arial, sans-serif;
+	text-align: left;
+	letter-spacing: 0.2em;
+	line-spacing: 1.2em;
+	font-size: 1em;
+	color: #332d2d;
+}
+
+/* Modal Footer */
+.modal-footer {
+	position: absolute;
+	display: block;
+	bottom: 0px;
+	right: 0px;
+	height: 15%;
+	padding: 2px 16px;
+	/* background: #5cb85c; */
+	color: white;
+}
+
+/* Modal Content */
+.modal-content {
+	position: relative;
+	background-color: antiquewhite;
+	overflow: auto;
+	margin: 20%;
+	border: 1px solid #888;
+	height: 60%;
+	width: 60%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	animation-name: animatetop;
+	animation-duration: 0.4s;
+}
+
+@media all and (max-width: 767px) /*phone as 1 less than iPad pixel width*/ {
+	#toggle {
+		display: block;
+	}
+
+	.menu {
+		display: none;
+	}
+
+	.main,
+	.navigationHolder,
+	.menu {
+		width: 100%;
+		flex-flow: column;
+		-webkit-flex-flow: column;
+		-ms-flex-flow: column;
+	}
+
+
+	.menu li {
+		border-right: 0;
+		height: 45px;
+	}
+
+	.logoParent {
+		padding-bottom: 0 0 15px 20px; /*top right bottom left*/
+	}
+
+	.tagLine {
+		font-size: 40px;
+	}
+
+	.tagLineDes {
+		font-size: 20px;
+	}
+	/*second page*/
+	.pageHeader {
+		padding: 40px 0px 0px 150px;
+		font-size: 30px;
+	}
+
+	.columns2,
+	.thirdColumns2,
+	.forthPage {
+		width: 100%;
+		flex-flow: column;
+		-webkit-flex-flow: column;
+		-ms-flex-flow: column;
+	}
+
+	.smallText .whiteHead {
+		font-size: 10px;
+	}
+
+	.right {
+		width: 100%;
+		flex-flow: column;
+		-webkit-flex-flow: column;
+		-ms-flex-flow: column;
+	}
+}
+
+/*end of media script*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+	/*ipad width*/
+
+	.main {
+		width: 100%;
+		height: auto;
+		flex-flow: row wrap;
+		-webkit-flex-flow: row wrap;
+		-ms-flex-flow: row wrap;
+	}
+
+	.menu a:link {
+		padding: 8px 15px;
+		font-size: 0.8em;
+	}
+
+	/*second page*/
+	.pageHeader {
+		padding: 40px 0px 0px 150px;
+		font-size: 40px;
+	}
+
+	.smallText .whiteHead {
+		font-size: 12px;
+	}
+}
+
+.listItem{
+  line-height: 1;    
+  text-align:center;     
+  width: 275px;    
+  margin: 25px;    
+  min-height:150px;
+  max-height:150px;
+  padding-top:35px;
+  position:relative;   
+  border:1px solid #E8E8E8;     
+  font-size:22px;     
+  display:inline-block;
+};
