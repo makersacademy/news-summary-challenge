@@ -1,8 +1,12 @@
 {
   "response": {
-    "content": {
+    "status": "ok",
+    "results": [{
       "webTitle": "Alex Salmond speech – first minister hits back over Scottish independence",
       "apiUrl": "https://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live"
-    }
+    }, {
+      "webTitle": "Brighton 1-1 Watford: Premier League – as it happened",
+      "apiUrl": "https://content.guardianapis.com/football/live/2020/feb/08/brighton-v-watford-premier-league-live"
+    }]
   }
 }
