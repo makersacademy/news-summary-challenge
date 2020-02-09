@@ -1,6 +1,8 @@
 (function(exports) {
-  function NewsArticle(headline, id) {
+  function NewsArticle(headline, image, body, id) {
     this.headline = headline
+    this.image = image
+    this.body = body
     this.id = id
   }
 
