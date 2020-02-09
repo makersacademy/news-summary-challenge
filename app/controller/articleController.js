@@ -18,7 +18,7 @@
         const data = await response.json().then((data) => {
           let content = data.response.results
           return content.map((article) => {
-            article = new Article(article.webTitle, article.apiUrl, article.fields.body, article.fields.trailText)
+            article = new Article(article.webTitle, article.apiUrl, article.fields.body, article.fields.trailText, article.id)
             this._articleList.add(article)
             return article
           })
@@ -37,7 +37,7 @@
         }
         const data = await response.json().then((data) => {
           let content = data.response.content
-          let article = new Article(content.webTitle, content.apiUrl, content.fields.body, content.fields.trailText)
+          let article = new Article(content.webTitle, content.apiUrl, content.fields.body, content.fields.trailText, content.id)
           this._articleList.add(article)
           return article
         })

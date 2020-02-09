@@ -6,6 +6,8 @@
     let articleController2 = new ArticleController(new ArticleList, ListView)
     articleController2.fetchArticles('/public/mockJson/mockMultipleArticlesAPI.json').then((data) => {
       expect(data.length).toEqual(2)
+      expect(data[0].id).toEqual("politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live")
+      expect(data[1].id).toEqual("idNumber2")
       expect(data[0].title).toEqual("Alex Salmond speech – first minister hits back over Scottish independence")
       expect(data[1].title).toEqual("Brighton 1-1 Watford: Premier League – as it happened")
       expect(data[0].body).toInclude("I am body number 1")
@@ -18,6 +20,7 @@
     console.log('fetchSingleArticleFromApi')
     articleController = new ArticleController(new ArticleList, ListView)
     articleController.fetchSingleArticle('/public/mockJson/mockSingleArticleAPI.json').then((data) => {
+      expect(data.id).toEqual("politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live")
       expect(data.title).toEqual("Alex Salmond speech – first minister hits back over Scottish independence")
       expect(data.body).toInclude("Alex Salmond has a responsibility to tell us")
       expect(data.summary).toEqual("Scotland’s first minister Alex Salmond mounts defence of key aspects of independence plan after week of pressure over whether the country could keep sterling or remain in EU")
