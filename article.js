@@ -3,6 +3,7 @@
     this.id = 0
     this.body = "a"
     this.title = "b"
+    this.number = 0
   }
   exports.Article = Article
 })(this);

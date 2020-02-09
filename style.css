@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300');
 body {
-    background: #000000 url(https://i.stack.imgur.com/spmUM.gif) left repeat-x;
+    background: #000000 url(https://i.stack.imgur.com/spmUM.gif) repeat-x top center;
 }
 .header {
     position: relative;
@@ -14,14 +14,27 @@ body {
     text-shadow: 0 0 20px #B3F5FF;
     font-family: 'Quicksand', sans-serif;
 }
+button {
+    margin: auto;
+    display: block;
+}
 div.n1, div.n0, div.n2, div.n3, div.n4, div.n5, div.n6, div.n7, div.n8, div.n9, div.n10 {
+    padding: 5px;
     color: black;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.8);
     border-radius: 10px;
     font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
 }
 
 div#space {
     height: 200px;
     width: 600px;
+}
+div.article {
+    padding: 10px;
+    color: black;
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif;
 }

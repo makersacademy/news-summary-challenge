@@ -55,5 +55,38 @@ Controller.prototype.articleBuilder = function() {
 function loadUp() {
   controller.articleBuilder();
   controller.summaryView();
+  summaryButton = document.getElementsByClassName("gohome")[0]
+  summaryButton.style.visibility = 'hidden'
+  window.addEventListener("hashchange", controller.viewArticle)
 }
 loadUp()
+
+function enumerateArticles(array) {
+  for (var i=0; i<array.length; i++) {
+    array[i].number = i
+  }
+}
+
+Controller.prototype.waitToShowSingleArticle = function() {
+  window.addEventListener("hashchange", controller.viewArticle)
+}
+
+Controller.prototype.viewArticle = function() {
+  var urlId = location.hash.split('#piece/')[1]
+  var selectedArticle = controller.view.list.list[urlId]
+  var singlePieceViewer = new SinglePieceViewer(selectedArticle)
+  el = document.getElementById("summary")
+  el.innerHTML = singlePieceViewer.viewSinglePiece()
+  button = document.getElementsByClassName("loadup")
+  button[0].style.visibility = 'hidden'
+  summaryButton = document.getElementsByClassName("gohome")[0]
+  summaryButton.style.visibility = 'visible'
+}
+
+function goHome() {
+  window.reload()
+  summaryButton = document.getElementsByClassName("gohome")[0]
+  summaryButton.style.visibility = 'hidden'
+  button = document.getElementsByClassName("loadup")[0]
+  button.click()
+}
