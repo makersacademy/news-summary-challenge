@@ -3,7 +3,7 @@
 
   function fetchArticlesFromApi () {
     console.log('fetchArticlesFromApi')
-    let articleController2 = new ArticleController(new ArticleList)
+    let articleController2 = new ArticleController(new ArticleList, ListView)
     articleController2.fetchArticles('/public/mockJson/mockMultipleArticlesAPI.json').then((data) => {
       expect(data.length).toEqual(2)
       expect(data[0].title).toEqual("Alex Salmond speech – first minister hits back over Scottish independence")
@@ -16,7 +16,7 @@
 
   function fetchSingleArticleFromApi () {
     console.log('fetchSingleArticleFromApi')
-    articleController = new ArticleController(new ArticleList)
+    articleController = new ArticleController(new ArticleList, ListView)
     articleController.fetchSingleArticle('/public/mockJson/mockSingleArticleAPI.json').then((data) => {
       expect(data.title).toEqual("Alex Salmond speech – first minister hits back over Scottish independence")
       expect(data.body).toInclude("Alex Salmond has a responsibility to tell us")
@@ -24,8 +24,23 @@
     })
   }
 
+  function addArticlesList () {
+    console.log('addArticlesList')
+    let articleController3 = new ArticleController(new ArticleList, ListView)
+
+    let element = document.createElement('div')
+    element.id = 'articles'
+    element.innerHTML = 'Test'
+    document.body.appendChild(element)
+
+    articleController3.fetchArticles('/public/mockJson/mockMultipleArticlesAPI.json').then((data) => {
+      articleController3.displayArticlesList('articles')
+    })
+  }
+
   fetchArticlesFromApi()
   fetchSingleArticleFromApi()
+  addArticlesList()
 })(this)
 
 // Guardian query example

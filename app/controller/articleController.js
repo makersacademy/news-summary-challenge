@@ -1,7 +1,8 @@
 (function (exports) {
   class ArticleController {
-    constructor (articleList) {
+    constructor (articleList, listView) {
       this._articleList = articleList
+      this._listView = new listView(this._articleList)
     }
 
     get articleList () {
@@ -44,6 +45,11 @@
       } catch (error) {
         console.log('Fetch error:', error)
       }
+    }
+
+    displayArticlesList (elementID) {
+      let element = document.getElementById(elementID)
+      element.innerHTML = this._listView.display()
     }
 
   }
