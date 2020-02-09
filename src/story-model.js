@@ -1,17 +1,14 @@
 'use strict';
 
 (function(exports) {
-  function Story() {
-    this.title = ""
+  function Story(text, id) {
+    this.text = text
+    this.id = id
   }
 
-  Story.prototype.addTitle = function(title) {
-    this.title = title
+  Story.prototype.showText = function() {
+    return this.text
   }
 
-  Story.prototype.showTitle = function() {
-    return (this.title)
-  }
-
-  exports.Story = Story
-})(this);
+  exports.Story = Story;
+})(this)
