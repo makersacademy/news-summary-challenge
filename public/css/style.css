@@ -14,7 +14,7 @@ img {
 }
 
 a {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #header {
@@ -28,3 +28,14 @@ a {
   width: 300px;
   margin: auto;
 }
+
+#summary-header {
+  padding: 20px 0 10px 0;
+  font-size: 30px;
+  text-align: center;
+}
+
+#summary {
+  text-align: center;
+}
+

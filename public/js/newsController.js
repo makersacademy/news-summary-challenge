@@ -27,12 +27,15 @@
 
       window.onhashchange = function() {
         var articleID = location.hash.split("#articles/")[1]
-        var summaryView = new SummaryView(model.list[articleID])
-        // console.log(view)
-        // var articleBody = model.list[articleID].body
-        document
-          .getElementById("app")
-          .innerHTML = summaryView.displayArticle()
+        var summary = new NewsSummary(model.list[articleID])
+        summary.getSummaryAPIData()
+        var summaryView = new SummaryView(summary.details)
+        setTimeout(function() { 
+          document
+            .getElementById("app")
+            .innerHTML = summaryView.displayArticle(); 
+        }, 500);
+        
       }
     },
   }

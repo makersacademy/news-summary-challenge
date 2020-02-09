@@ -1,9 +1,10 @@
 (function(exports) {
-  function NewsArticle(headline, image, body, id) {
+  function NewsArticle(headline, image, body, apiURL, id) {
     this.headline = headline
     this.image = image
     this.body = body
     this.id = id
+    this.apiURL = apiURL
   }
 
   NewsArticle.prototype = {
