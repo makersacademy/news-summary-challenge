@@ -12,12 +12,30 @@
     }
   }
 
+  Test.prototype.toNotEqual = function(thingToTest) {
+    if (this.value !== thingToTest) {
+      console.log('Test PASSED')
+    } else {
+      console.log('Test FAILED')
+      console.log(`Expected ${this.value} to not equal ${thingToTest}`)
+    }
+  }
+
   Test.prototype.toInclude = function(thingToTest) {
     if (this.value.includes(thingToTest)) {
       console.log('Test PASSED')
     } else {
       console.log('Test FAILED')
       console.log(`Expected ${this.value} to include ${thingToTest}`)
+    }
+  }
+
+  Test.prototype.toHaveProperty = function(thingToTest) {
+    if (this.value.thingToTest) {
+      console.log('Test PASSED')
+    } else {
+      console.log('Test FAILED')
+      console.log(`Expected ${this.value} to have property ${thingToTest}`)
     }
   }
 

@@ -12,7 +12,7 @@
           var headline = this.newsList.list[i].headline
           var image = this.newsList.list[i].image
           var id = this.newsList.viewAll()[i].id
-          output.push(`<div id='article'><img src=${image}><br><a href="#articles/${id}">${headline}</a></div>`)
+          output.push(`<div id='article'><img src=${image}><br><a href='#articles/${id}'>${headline}</a></div>`)
           }
           return `<ul>${output.join("")}</ul>`
       } else {

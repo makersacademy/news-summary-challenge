@@ -1,29 +1,43 @@
-// (function(exports) {
-//   var newsList = new NewsList()
+(function(exports) {
 
-//   function addArticleToArray() {
-//     console.log('addArticleToArray')
-//     newsList.addArticle('Headline 1')
-//     expect(newsList.list[0].viewNote()).toEqual('Headline 1')
-//   }
+  function DoubleAPIData() {
+      this.results
+    }
+    DoubleAPIData.prototype.getRequest = function() {
+      var articleData = {
+        webTitle: "Headline",
+        fields: {thumbnail: 'image'},
+        apiUrl: 'apiUrl'
+      }
+      this.results = [articleData, articleData]
+    }
 
-//   function viewAllArticles() {
-//     console.log('viewAllArticles')
-//     newsList.addArticle('Headline 1')
-//     expect(newsList.viewAll()[0]).toBe(new NewsArticle)
-//   }
+  var apiData = new DoubleAPIData()
 
-//   function addUniqueId() {
-//     console.log('addUniqueId')
+  var newsList = new NewsList(apiData, 'fakeAPIRequestURL')
+  newsList.getAPIData()
 
-//     newsList.addArticle('Headline 1')
-//     expect(newsList.list[0].id).toEqual(0)
+  function getAPIDataAddsArticlesToList() {
+    console.log('getAPIDataAddsArticlesToList')
+    expect(newsList.list[0].headline).toEqual(apiData.results[0].webTitle)
+  }
 
-//     newsList.addArticle('Headline 2')
-//     expect(newsList.list[1].id).toEqual(1)
-//   }
+  function viewAllArticles() {
+    console.log('viewAllArticles')
+    expect(newsList.viewAll()[0]).toBe(new NewsArticle)
+  }
 
-//   addArticleToArray()
-//   viewAllArticles()
-//   addUniqueId()
-// })(this)
+  function addUniqueId() {
+    console.log('addUniqueId')
+    expect(newsList.list[0].id).toEqual(0)
+    expect(newsList.list[1].id).toEqual(1)
+  }
+
+  setTimeout(function() {
+    getAPIDataAddsArticlesToList()
+    viewAllArticles()
+    addUniqueId()
+  }, 300)
+
+
+})(this)

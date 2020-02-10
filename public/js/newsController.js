@@ -1,6 +1,6 @@
 (function(exports) {
-  function NewsController(newsListModel) {
-    this.newsListModel = newsListModel
+  function NewsController(newsList) {
+    this.newsList = newsList
     this.getArticles()
     this.showArticleOnLinkClick()
     var self = this
@@ -12,10 +12,10 @@
 
   NewsController.prototype = {
     getArticles: function() {
-      this.newsListModel.getAPIData()
+      this.newsList.getAPIData()
     },
-    displayHeadlines: function() {
-      var headlinesView = new HeadlinesView(this.newsListModel)
+    displayHeadlines: function(headlinesView = new HeadlinesView(this.newsList)) {
+      var headlinesView = headlinesView
       this.changeHTML(headlinesView.displayHeadlines())  
     },
     changeHTML: function(headline) {
@@ -23,19 +23,19 @@
       element.innerHTML = headline;
     },
     showArticleOnLinkClick: function() {
-      var model = this.newsListModel
-
+      var newsList = this.newsList
       window.onhashchange = function() {
         var articleID = location.hash.split("#articles/")[1]
-        var summary = new NewsSummary(model.list[articleID])
-        summary.getSummaryAPIData()
-        var summaryView = new SummaryView(summary.details)
-        setTimeout(function() { 
-          document
-            .getElementById("app")
-            .innerHTML = summaryView.displayArticle(); 
-        }, 500);
+        var summary = new NewsSummary(newsList.list[articleID])
+        var summaryView
+        setTimeout(function() {
+          summary.getSummaryAPIData()
+          summaryView = new SummaryView(summary.details)
+        }, 5000)
         
+        // setTimeout(function() { 
+        //   this.changeHTML(summaryView.displayArticle())
+        // }, 2002);
       }
     },
   }

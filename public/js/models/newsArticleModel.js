@@ -1,15 +1,31 @@
 (function(exports) {
-  function NewsArticle(headline, image, body, apiURL, id) {
+  function NewsArticle(headline, image, URL, apiURL, id) {
     this.headline = headline
     this.image = image
-    this.body = body
     this.id = id
+    this.URL = URL
     this.apiURL = apiURL
   }
 
   NewsArticle.prototype = {
-    viewNote: function() {
+    viewHeadline: function() {
       return this.headline
+    },
+
+    viewApiURL: function() {
+      return this.apiURL
+    },
+
+    viewImage: function() {
+      return this.image
+    },
+
+    viewId: function() {
+      return this.id
+    },
+
+    viewURL: function() {
+      return this.URL
     }
   }
 
