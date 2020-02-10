@@ -2,7 +2,7 @@
 
 A single page news summary app built in Javascript. Shows top political news stories of the day and allows user to click into the article to see a summary of the article.
 
-## User Stories
+## User Stories Completed
 
 ```
 As a busy politician
@@ -26,18 +26,6 @@ So I can get a few more details about an important story
 As a busy politician
 I can see a picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
-```
-
-```
-As a busy politician
-I can read the site comfortably on my phone
-Just in case my laptop breaks
-```
-
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
 ```
 
 ## Running the program
