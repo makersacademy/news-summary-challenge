@@ -1,42 +1,8 @@
-# News Summary challenge
+# News Summary
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+A single page news summary app built in Javascript. Shows top political news stories of the day and allows user to click into the article to see a summary of the article.
 
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that summarises the news.
-
-### Guidance
-
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
-
-## Project overview
-
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
-
-### Technologies
-
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
-
-## User Stories
-
-Some of these stories will need decomposing if they seem too large.
+## User Stories Completed
 
 ```
 As a busy politician
@@ -62,17 +28,52 @@ I can see a picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
 ```
 
-```
-As a busy politician
-I can read the site comfortably on my phone
-Just in case my laptop breaks
-```
+## Running the program
 
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
-```
+### View in Browser
+
+Use [http-server](https://www.npmjs.com/package/http-server) to run the program in the browser
+
+## Running the tests
+
+To run tests for this program, run:
+
+1. Tests built using Javascript (see TestFramework.js)
+2. Open ```SpecRunner.html``` in Chrome
+
+
+## Built With
+
+* Javascript
+* HTML/CSS
+* Gaurdian API (for news articles)
+* Aylien API (for news summaries)
+
+----------
+
+### Guidance
+
+Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+
+## Project overview
+
+Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
+
+### Technologies
+
+You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
+
+**And, as is the theme for this week, you won't use any libraries or frameworks!**
+
+But, feel free to use the test framework you wrote during the week!
+
+### Serving your app
+
+You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
+
+> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+
+
 
 ## Mockups
 
