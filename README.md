@@ -1,3 +1,14 @@
+WEEKEND 7 CHALLENGE - SINGLE PAGE NEWS UPDATE WEBAPP
+```
+First few user stories completed. The app can load up ten divs each complete with a headline and a thumbnail image taken from the Guardian API, and a link to get to the full article. The link opens up a page with the body of the article, again taken from the Guardian API. Didn't spend any time dealing with how it's formatter/rendered, it's what the API gives. There's a button to go back to where the user started from the single-article page.
+
+Haven't implememnted any stories about videos or animation due to time constraint, but they would probably work like the thumbnail images: they can be queried through the API just like the thumbnails were. The API can yield what media is involved in the articles.
+```
+
+
+
+
+
 # News Summary challenge
 
 * Challenge time: rest of the day and weekend, until Monday 9am.
