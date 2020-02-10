@@ -1,3 +1,20 @@
+I enjoyed this weekends challenge. I focused first of all on using the weeks afternoon challenge and refactoring it into a concise and DRY program with seperate .js files. I then focused on inheritance and injecting into each 'class' rather than instantiating new objects at each parent occurance.
+
+After building the basic framework i then focused on breaking down the user stories and using the guardian API. 
+
+I experimented a while, accessing the object returned from the ap. I noticed that the return object from the XMLHttpRequest was an array containing 10 JS Objects. Each object contained all of the information needed for this task - the title, summary, picture and body of the article. 
+
+I spent some time accessing this object and seeing how to extract it. it took me a while to understand the scope of what was avaliable inside the functions and prototypes. I managed to extract the object webTitle infomration first, and intergrate this in to my controller and project it to the screen. 
+
+I will no focus on making these headlines links, creating a dropdown summary of each article and if clicked on, taking tot he full body of the text.
+
+
+
+
+
+
+
+
 # News Summary challenge
 
 * Challenge time: rest of the day and weekend, until Monday 9am.

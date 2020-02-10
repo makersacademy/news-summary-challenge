@@ -13,10 +13,10 @@
 
     ArticleController.prototype.getArticles = function(){
 
-      var that = this
-      var request = new XMLHttpRequest()
+      var that = this;
+      var request = new XMLHttpRequest();
 
-      request.open('GET', 'https://content.guardianapis.com/search?api-key=test', true)
+      request.open('GET', 'https://content.guardianapis.com/search?api-key=', true)
 
       request.onload = function(){
 
@@ -24,10 +24,9 @@
 
           if (request.status >= 200 && request.status < 300) {
 
-            var articles = data.response.results
+            var articles = data.response.results;
 
             for(var index = 0; index < articles.length; index++){
-              articles[index].webTitle
               that.articleListView.articleList.listOfArticles.push(new Article(articles[index].webTitle))
               }
 

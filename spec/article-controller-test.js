@@ -23,3 +23,19 @@
   articleController.insert()
   assert.isTrue(fakeDiv.innerHTML.includes("Test"));
 })();
+
+(function testGetArticles(){
+    var fakeDiv = {
+      innerHTML: ""
+    }
+    var fakeDocument = {
+      getElementById: function(){
+        return fakeDiv
+      }
+    }
+  var articleList = new ArticleList();
+  var articleListView = new ArticleListView(articleList);
+  var articleController = new ArticleController(articleListView,fakeDocument);
+  articleController.getArticles()
+  assert.isTrue(fakeDiv.innerHTML.includes(""))
+})();
