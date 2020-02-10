@@ -36,7 +36,7 @@ function loadDoc() {
 
     }
   }
-  xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail,body&&api-key=22b33ae2-8f2d-49c8-8781-1940fb4dae90");
+  xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail,body");
   xhttp.send();
 
 }
