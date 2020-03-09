@@ -1,6 +1,6 @@
 # News Summary challenge 📰
 
-
+Check it out right now, [click here](http://news-summary-js.surge.sh/)!
 
 ## Challenge
 
