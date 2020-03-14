@@ -6,7 +6,7 @@ Check it out right now, [click here](http://news-summary-js.surge.sh/)!
 
 [Objective](#Objective) |  [Installation](#Installation) | [Technologies](#Technologies) | | [User Stories](#user_stories) | [Mockups](#Mockups) | [Further adjustments](#further_adjustment)
 
-## <a name="Objecrtive">Objective</a>
+## <a name="Objective">Objective</a>
 
 Create a single page web app that summarises the news. It sources all the headlines from the Guardian newspaper API and display them on a page.  
 Clicking on a headline will show a summary of the article, using the Aylien text summary API.
