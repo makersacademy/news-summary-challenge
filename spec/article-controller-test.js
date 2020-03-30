@@ -1,41 +1,47 @@
-(function newArticleController(){
+(function newArticleController() {
   var articleList = new ArticleList();
   var articleListView = new ArticleListView(articleList);
   var articleController = new ArticleController(articleListView);
   articleList.addArticle("Test 1");
   articleList.addArticle("Test 2");
-  assert.isTrue(articleController.articleListView.htmlIfy() === "<ul><li><div>Test 1</div></li><li><div>Test 2</div></li></ul>")
+  assert.isTrue(
+    articleController.articleListView.htmlIfy() ===
+      "<ul><li><div>Test 1</div></li><li><div>Test 2</div></li></ul>"
+  );
+  console.log("Test 6 Passing");
 })();
 
-(function testInsert(){
+(function testInsert() {
   var fakeDiv = {
     innerHTML: ""
-  }
+  };
   var fakeDocument = {
-    getElementById: function(){
-      return fakeDiv
+    getElementById: function() {
+      return fakeDiv;
     }
-  }
+  };
   var articleList = new ArticleList();
   var articleListView = new ArticleListView(articleList);
   var articleController = new ArticleController(articleListView, fakeDocument);
   articleList.addArticle("Test");
-  articleController.insert()
+  articleController.insert();
   assert.isTrue(fakeDiv.innerHTML.includes("Test"));
+  console.log("Test 7 Passing");
 })();
 
-(function testGetArticles(){
-    var fakeDiv = {
-      innerHTML: ""
+(function testGetArticles() {
+  var fakeDiv = {
+    innerHTML: ""
+  };
+  var fakeDocument = {
+    getElementById: function() {
+      return fakeDiv;
     }
-    var fakeDocument = {
-      getElementById: function(){
-        return fakeDiv
-      }
-    }
+  };
   var articleList = new ArticleList();
   var articleListView = new ArticleListView(articleList);
-  var articleController = new ArticleController(articleListView,fakeDocument);
-  articleController.getArticles()
-  assert.isTrue(fakeDiv.innerHTML.includes(""))
+  var articleController = new ArticleController(articleListView, fakeDocument);
+  articleController.getArticles();
+  assert.isTrue(fakeDiv.innerHTML.includes(""));
+  console.log("Test 8 Passing");
 })();

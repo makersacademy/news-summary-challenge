@@ -1,14 +1,18 @@
-
-(function newArticleListView(){
+(function newArticleListView() {
   var articleList = new ArticleList();
   var articleListView = new ArticleListView(articleList);
-  assert.isTrue(articleListView.articleList instanceof ArticleList)
+  assert.isTrue(articleListView.articleList instanceof ArticleList);
+  console.log("Test 2 Passing");
 })();
 
-(function testHTMLIfy(){
+(function testHTMLIfy() {
   var articleList = new ArticleList();
   var articleListView = new ArticleListView(articleList);
   articleList.addArticle("Test");
   articleList.addArticle("Test two");
-  assert.isTrue(articleListView.htmlIfy() === "<ul><li><div>Test</div></li><li><div>Test two</div></li></ul>")
+  assert.isTrue(
+    articleListView.htmlIfy() ===
+      "<ul><li><div>Test</div></li><li><div>Test two</div></li></ul>"
+  );
+  console.log("Test 3 Passing");
 })();
