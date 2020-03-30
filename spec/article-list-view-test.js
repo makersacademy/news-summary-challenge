@@ -6,13 +6,12 @@
 })();
 
 (function testHTMLIfy() {
-  var articleList = new ArticleList("www.test.com");
+  var articleList = new ArticleList("www.test.com", "image");
   var articleListView = new ArticleListView(articleList);
   articleList.addArticle("Test");
-  articleList.addArticle("Test two");
   assert.isTrue(
     articleListView.htmlIfy() ===
-      "<ul><div><a href='www.test.com'>Test</a></div><div><a href='www.test.com'>Test two</a></div></ul>"
+      "<div id='article'><img src='image'/><br><a href='www.test.com'>Test</a></div>"
   );
   console.log("Test 3 Passing");
 })();

@@ -17,7 +17,7 @@
 
     request.open(
       "GET",
-      `https://content.guardianapis.com/search?api-key=${this.apiKey}`,
+      `https://content.guardianapis.com/search?api-key=${this.apiKey}&show-fields=thumbnail,body`,
       true
     );
 
@@ -30,7 +30,12 @@
         for (var index = 0; index < articles.length; index++) {
           var id = that.articleListView.articleList.listOfArticles.length;
           that.articleListView.articleList.listOfArticles.push(
-            new Article(articles[index].webTitle, id, articles[index].webUrl)
+            new Article(
+              articles[index].webTitle,
+              id,
+              articles[index].webUrl,
+              articles[index].fields.thumbnail
+            )
           );
         }
 

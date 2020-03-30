@@ -4,14 +4,16 @@
   }
 
   ArticleListView.prototype.htmlIfy = function() {
-    var array = ["<ul>"];
+    var array = [];
     for (
       var article = 0;
       article < this.articleList.showArticles().length;
       article++
     ) {
       array.push(
-        "<div>" +
+        "<div id='article'><img src='" +
+          this.articleList.showArticles()[article].showImage() +
+          "'/><br>" +
           "<a href='" +
           this.articleList.showArticles()[article].showUrl() +
           "'>" +
@@ -19,7 +21,6 @@
           "</a></div>"
       );
     }
-    array.push("</ul>");
     return array.join("");
   };
 
