@@ -1,0 +1,20 @@
+html,
+head {
+  background-color: aqua;
+}
+
+body {
+  background-color: rgb(21, 255, 0);
+
+  font-size: 20px;
+  font-family: Georgia, serif;
+}
+
+#header {
+  background-color: rgb(255, 0, 128);
+
+  font-family: Georgia, serif;
+  padding: 20px 0 10px 0;
+  font-size: 50px;
+  text-align: center;
+}

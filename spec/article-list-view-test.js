@@ -12,7 +12,7 @@
   articleList.addArticle("Test two");
   assert.isTrue(
     articleListView.htmlIfy() ===
-      "<ul><li><div><a href='www.test.com'>Test</a></div></li><li><div><a href='www.test.com'>Test two</a></div></li></ul>"
+      "<ul><div><a href='www.test.com'>Test</a></div><div><a href='www.test.com'>Test two</a></div></ul>"
   );
   console.log("Test 3 Passing");
 })();

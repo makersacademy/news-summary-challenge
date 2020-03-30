@@ -64,12 +64,12 @@ Just in case my laptop breaks
 
 #### Headline
 
-<img src='./images/headline.png' />
+<img src='./public/images/headline.png' />
 
 #### Summary
 
-<img src='./images/summary.png' />
+<img src='./public/images/summary.png' />
 
 #### Article
 
-<img src='./images/article.png' />
+<img src='./public/images/article.png' />

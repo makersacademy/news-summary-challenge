@@ -6,7 +6,7 @@
   articleList.addArticle("Test 2");
   assert.isTrue(
     articleController.articleListView.htmlIfy() ===
-      "<ul><li><div><a href='www.test.com'>Test 1</a></div></li><li><div><a href='www.test.com'>Test 2</a></div></li></ul>"
+      "<ul><div><a href='www.test.com'>Test 1</a></div><div><a href='www.test.com'>Test 2</a></div></ul>"
   );
   console.log("Test 6 Passing");
 })();

@@ -11,12 +11,12 @@
       article++
     ) {
       array.push(
-        "<li><div>" +
+        "<div>" +
           "<a href='" +
           this.articleList.showArticles()[article].showUrl() +
           "'>" +
           this.articleList.showArticles()[article].showHeadline() +
-          "</a></div></li>"
+          "</a></div>"
       );
     }
     array.push("</ul>");
