@@ -12,8 +12,8 @@
     ) {
       array.push(
         "<li><div>" +
-          "<a href='#" +
-          this.articleList.listOfArticles[article].id +
+          "<a href='" +
+          this.articleList.showArticles()[article].showUrl() +
           "'>" +
           this.articleList.showArticles()[article].showHeadline() +
           "</a></div></li>"

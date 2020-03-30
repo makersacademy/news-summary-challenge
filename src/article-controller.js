@@ -25,11 +25,12 @@
 
       if (request.status >= 200 && request.status < 300) {
         var articles = data.response.results;
+        console.log(articles);
 
         for (var index = 0; index < articles.length; index++) {
           var id = that.articleListView.articleList.listOfArticles.length;
           that.articleListView.articleList.listOfArticles.push(
-            new Article(articles[index].webTitle, id)
+            new Article(articles[index].webTitle, id, articles[index].webUrl)
           );
         }
 
