@@ -7,8 +7,7 @@
     return this.listOfArticles;
   };
   ArticleList.prototype.addArticle = function(headline) {
-    var id = this.listOfArticles.length;
-    var article = new Article(headline, id);
+    var article = new Article(headline);
     this.listOfArticles.push(article);
   };
 
