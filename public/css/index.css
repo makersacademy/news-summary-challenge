@@ -1,21 +1,24 @@
 html,
 head {
-  background-color: rgba(0, 255, 255, 0.219);
+  background-color: rgb(89, 164, 199);
+  font-weight: lighter;
 }
 
-body {
+img {
+  width: 300px;
+  height: 200px;
 }
-
 #header {
   font-family: Georgia, serif;
   padding: 20px 0 10px 0;
   font-size: 50px;
   text-align: center;
+  font-weight: lighter;
 }
 
 #article {
   font-family: Georgia, serif;
   text-align: center;
   font-size: 20px;
-  background-color: rgba(71, 102, 117, 0.082);
+  font-weight: lighter;
 }

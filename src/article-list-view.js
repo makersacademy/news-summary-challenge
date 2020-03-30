@@ -5,6 +5,7 @@
 
   ArticleListView.prototype.htmlIfy = function() {
     var array = [];
+
     for (
       var article = 0;
       article < this.articleList.showArticles().length;

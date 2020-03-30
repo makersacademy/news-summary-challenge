@@ -28,7 +28,7 @@ This App uses a test library I made myself, using the [_assert_](assert.js) func
 
 ## Brief
 
-The app will grab headlines from the Guardian newspaper API and display them on a page. Clicking on a headline will show **a summary of the article.**
+The app will grab headlines from the Guardian newspaper API and display them on a page. Each of the 10 news articles shows the corrosponding image of the story above. Clicking on a headline will show **a summary of the article.**
 
 ```
 As a busy politician
