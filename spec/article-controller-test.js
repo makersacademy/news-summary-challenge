@@ -1,12 +1,12 @@
 (function newArticleController() {
-  var articleList = new ArticleList();
+  var articleList = new ArticleList("www.test.com");
   var articleListView = new ArticleListView(articleList);
   var articleController = new ArticleController(articleListView);
   articleList.addArticle("Test 1");
   articleList.addArticle("Test 2");
   assert.isTrue(
     articleController.articleListView.htmlIfy() ===
-      "<ul><li><div><a href='#0'>Test 1</a></div></li><li><div><a href='#1'>Test 2</a></div></li></ul>"
+      "<ul><li><div><a href='www.test.com'>Test 1</a></div></li><li><div><a href='www.test.com'>Test 2</a></div></li></ul>"
   );
   console.log("Test 6 Passing");
 })();

@@ -1,6 +1,7 @@
 (function(exports) {
-  function ArticleList() {
+  function ArticleList(url) {
     this.listOfArticles = [];
+    this.url = url;
   }
 
   ArticleList.prototype.showArticles = function() {
@@ -8,7 +9,8 @@
   };
   ArticleList.prototype.addArticle = function(headline) {
     var id = this.listOfArticles.length;
-    var article = new Article(headline, id);
+    var url = this.url;
+    var article = new Article(headline, id, url);
     this.listOfArticles.push(article);
   };
 

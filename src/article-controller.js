@@ -2,6 +2,7 @@
   function ArticleController(articleListView, doc = document) {
     this.articleListView = articleListView;
     this.doc = doc;
+    this.apiKey = config.APIKEY;
   }
 
   ArticleController.prototype.insert = function(divId = "app") {
@@ -16,7 +17,7 @@
 
     request.open(
       "GET",
-      "https://content.guardianapis.com/search?api-key=",
+      `https://content.guardianapis.com/search?api-key=${this.apiKey}`,
       true
     );
 
@@ -25,7 +26,6 @@
 
       if (request.status >= 200 && request.status < 300) {
         var articles = data.response.results;
-        console.log(articles);
 
         for (var index = 0; index < articles.length; index++) {
           var id = that.articleListView.articleList.listOfArticles.length;
