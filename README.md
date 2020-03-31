@@ -28,7 +28,7 @@ This App uses a test library I made myself, using the [_assert_](assert.js) func
 
 ## Brief
 
-The app will grab headlines from the Guardian newspaper API and display them on a page. Each of the 10 news articles shows the corrosponding image of the story above. Clicking on a headline will show **a summary of the article.**
+The app will grab the top 10 headlines from the Guardian newspaper API and display them on the homepage. Each of the 10 news articles shows the corrosponding image of the story above the link. Clicking on the link will take you to the news article on the Guardian Website. **Summary?**
 
 ```
 As a busy politician
@@ -40,12 +40,6 @@ So I know what the big stories of the day are
 As a busy politician
 I can click a link to see the original news article
 So that I can get an in depth understanding of a very important story
-```
-
-```
-As a busy politician
-I can see a summary of a news article
-So I can get a few more details about an important story
 ```
 
 ```
@@ -65,10 +59,6 @@ Just in case my laptop breaks
 #### Headline
 
 <img src='./public/images/headline.png' />
-
-#### Summary
-
-<img src='./public/images/summary.png' />
 
 #### Article
 
