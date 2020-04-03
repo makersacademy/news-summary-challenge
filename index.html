@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>web new api</title>
+  <link rel="stylesheet" href="">
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+  </script>
+</head>
+<body>
+  <div>
+    <h1>Stories</h1>
+    <ul id="stories">
+      <li>sample title</li>
+    </ul>
+  </div>
+  <script> 
+    const url = 'https://content.guardianapis.com/search?q=debate%20AND%20economy&tag=politics/politics&from-date=2014-01-01&api-key=4b6d5417-9229-4bb3-8182-3d724bebcfe7'
+    // function addTitle(title) {
+    //   var storyList = document.getElementById('stories');
+    //   var titleElement = document.createElement('LI');
+    //   var titleText = document.createTextNode(title);
+    //   titleElement.appendChild(titleText);
+    //   storyList.appendChild(titleElement);
+    // }
+    function addTitle(title) {
+      $('#stories').append(`<li>${title}</li>`)
+    }
+
+    function updateTitles() {
+      $.get(url, function(data) {
+        const articles = data.response.results;
+        articles.forEach((article) => {
+          addTitle(article.webTitle);
+        })
+      })
+    }
+    updateTitles();
+  </script>
+</body>
+</html>
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Frontend, single page app</title>
+  </head>
+
+  <body>
+
+    Hello there 
+    <p> Hello again the date is <?php echo date('Y');?> </p>
+    <?php 
+
+  </body>
+</html>
+ -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Daily Notes</title>
+</head>
+<body>
+  <div id="app">
+    Hello
+  </div>
+  <div id="box">
+    
+  </div>
+<script src="src/single-note-view.js"></script>
+<script src="src/note-model.js"></script>
+<script src="src/note-list-model.js"></script>
+<script src="src/note-controller.js"></script>
+<script src="src/notes.css"></script>
+<script src="src/note-list-view.js"></script>
+
+<script src="spec/assert.js"></script>
+<script src="spec/single-note-view-test.js"></script>
+<script src="spec/note-controller-test.js"></script>
+<script src="spec/note-model-tests.js"></script>
+<script src="spec/note-list-model-tests.js"></script>
+<script src="spec/note-list-view-tests.js"></script>
+
+
+</body>
+
+</html>
+ -->
+
