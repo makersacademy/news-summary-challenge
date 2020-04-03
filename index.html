@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News summary</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="head">
+    <div class="headerobjectswrapper">
+      <div class="weatherforcastbox">
+        <span style="font-style: italic;"></span>Weatherforecast for today: Plenty of Sunshine</span>
+        <br><span>Wind: 7km/h SSE; Ther: 21°C; Hum: 82%</span>
+      </div>
+      <header>The Daily Wongz</header>
+    </div>
+    <div class="subhead">London, England - Sunday March 8, 2020</div>
+  </div>
+
+  </br>
+  <div style="font-weight: 400; font-style: italic;font-size: 36px;">
+    <div class="head"><span class="headline hl3"><div id="app">articles to go here</div></span>
+  </div>
+  
+  </br>
+  <div class="collumn">
+    <p><span class="headline hl4">Editor: Jason Wong</span></p>  
+  </div>
+  
+
+  <!-- JavaScript files -->
+  <script src="./lib/models/api-data.js"></script>
+  <script src="./lib/models/article-summary.js"></script>
+  
+  <script src="./lib/models/article.js"></script>
+  <script src="./lib/models/article-list.js"></script>
+  
+
+  <script src="./lib/views/article-list-view.js"></script>
+  <script src="./lib/views/single-article-view.js"></script>
+
+  <script src="./lib/article-controller.js"></script>  
+  
+  <!-- Test framework -->
+  <script src='./spec/test_framework.js'></script>
+
+  <!-- Tests -->
+  <script src='./spec/article_spec.js'></script>
+  <script src='./spec/article-list_spec.js'></script>
+  <script src='./spec/article-list-view_spec.js'></script>
+  <script src='./spec/article-controller_spec.js'></script>
+  <script src='./spec/single-article-view_spec.js'></script>
+  
+</body>
+</html>
