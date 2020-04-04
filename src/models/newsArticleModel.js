@@ -1,8 +1,13 @@
 'use strict';
 
 (function(exports) {
-  function NewsArticle(headline) {
+  function NewsArticle(headline, id) {
     this.headline = headline;
+    this.id = id;
+  }
+
+  NewsArticle.prototype.viewHeadline = function() {
+    return this.headline;
   }
 
   exports.NewsArticle = NewsArticle;
