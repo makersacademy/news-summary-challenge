@@ -1,6 +1,6 @@
 'use strict';
 
-(function(exports) {
+(function() {
   var headline = 'I am a headline';
   var article = new NewsArticle(headline);
 

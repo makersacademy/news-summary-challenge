@@ -1,25 +1,23 @@
 'use strict';
 
-(function(exports) {
+(function() {
   var newsList = new NewsList();
+  newsList.addArticle('I am the first article');
+  newsList.addArticle('I am the second article');
 
   function createArticleInNewsListWithHeading() {
     console.log('createArticleInNewsListWithHeading');
-    newsList.addArticle('I am a headline');
-    expect(newsList.list[0].viewHeadline()).toEqual('I am a headline');
+    expect(newsList.list[0].viewHeadline()).toEqual('I am the first article');
   }
 
   function createArticleInNewsListWithUniqueID() {
     console.log('createArticleInNewsListWithUniqueID');
-    newsList.addArticle('I am the first article');
-    newsList.addArticle('I am the second article');
     expect(newsList.list[0].id).toEqual(0);
     expect(newsList.list[1].id).toEqual(1);
   }
 
   function viewAllArticlesInList() {
     console.log('viewAllArticlesInList');
-    newsList.addArticle('I am a headline');
     expect(newsList.viewList()[0]).toBe(new NewsArticle);
   }
 
