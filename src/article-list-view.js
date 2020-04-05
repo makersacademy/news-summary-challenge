@@ -1,15 +1,16 @@
 class Articlelistview {
+
   constructor() {
     this.articlelist = new Articlelist();
   }
 
   viewArticleListAsHTML() {
-    console.log(this.articlelist.list);
-      let x =  this.articlelist.list.map(article => {
-         return (`<a href="${article.url}"><li><div>${article.headline}</div></li></a>`);
-       });
+    console.log("count: " + this.articlelist.count)
+    let x =  this.articlelist.list.map(article => {
+        let y = article.url.substr(0,20);
+        return (`<a href="${y}"><li><div>${article.headline}</div></li></a>`);
+    });
        x = `<ul>${x.join('')}</ul>`;
-       console.log(x);
        return x;
    }
 
