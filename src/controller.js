@@ -1,13 +1,18 @@
 class Controller {
-  constructor(apirequester) {
-    this.apirequest = new Apirequester
+  constructor() {
+    this.apirequester = new ApiRequester;
   }
 
-  renderHTMLHeadlines() {
-    this.apirequest.sendRequest()
+  returnHeadlines() {
+    this.apirequester.sendRequest()
   }
 
   renderHTMLArticleSummaries() {
 
   }
 }
+let article = new Article;
+let articlelitview = new Articlelistview;
+let articlelist = new Articlelist;
+let controller = new Controller()
+controller.returnHeadlines();
