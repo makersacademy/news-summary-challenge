@@ -79,7 +79,6 @@ Single article view: responsible for outputting a summary of an article to HTML
 API requester: responsible to handling requests and responses to the Guardian API
 Controller: responsible for directing other modules to render views on the page
 
-
 ## API
 
 ### Guardian API example
@@ -120,17 +119,12 @@ curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.ayl
 
 Note how the `apiRequestUrl` parameter is just the request you would have made to the Aylien API.  Notice how you don't have to send authentication headers.
 
-### API Code
-
-API:
-
-https://github.com/makersacademy/news-summary-api
-
 ## Resources
 
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
-* https://gomakethings.com/how-to-use-the-fetch-api-with-vanilla-js/
+* [Go Make Things Blog](https://gomakethings.com/how-to-use-the-fetch-api-with-vanilla-js/)
+* [Makers API](https://github.com/makersacademy/news-summary-api)
 
 ## Notes on implementation
 
@@ -143,3 +137,6 @@ on how to use fetch successfully to make the call. Previously I'd only ever achi
 The advice included using a chained then() method to deal with a successful or unsuccessful request to the API.
 
 It was not necessary in this case to use JSON.parse on the response. Instead we could use the .json() method to extract the json object from the returned stream (which is what the fetch api returned). Calling json parse on the entire response raised an error since it already contained json data.
+
+## Future additions
+* To add dynamic date options to the api call so it always fetched news for today's date.

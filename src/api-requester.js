@@ -17,7 +17,7 @@ class ApiRequester {
     });
 
       function mapResult(data) {
-      for (let i = 0; i < data.response.results.length; i++) {
+        for (let i = 0; i < data.response.results.length; i++) {
         let headline = data.response.results[i].webTitle;
         let url = data.response.results[i].webUrl;
         apirequester.articlelistview.articlelist.addArticle(headline, url);
