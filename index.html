@@ -2,29 +2,122 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
   <title>News Summary</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="key.js"></script>
+  <link rel="stylesheet"
+   href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" 
+   />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+
+  h1 {
+    text-align: center;
+  } 
+
+  #header, #footer {
+    height: 30px;
+    width: 100%;
+    text-align: center;
+  } 
+
+  #footer {
+    position: fixed;
+    bottom: 0px;
+  }
+
+  .wrap {
+    white-space: normal !important;
+  }
+
+  #detImg img {
+    width: 100%;
+  }
+  </style>  
 </head>
+  <body>
 
-  <body>  
-    <section>
-      <h1>News Summary</h1>
-      <div id = "Headliners" ><p>Headliners</p></div> 
-      <form id = "text" action = #newnote method = "POST" >
-      <input id = "submit-button" type = "submit" value = "submit" > 
-      </form>
-    <textarea name = "text" id = "input" form = "text" rows="8" cols="80" ></textarea>
-    </section>
+    <!-- Master page -->
 
-    <script src="tests/unit/assert-tests.js"></script>
-    <script src="src/model/article.js"></script>
-    <script src="tests/unit/article-tests.js"></script>
-    <script src="src/model/newspaper.js"></script>
-    <script src="tests/unit/newspaper-tests.js"></script>
-    <script src=""></script>
-    <script src=""></script>
-    <script src=""></script>
-    <script src=""></script>
-  </body>
+<div data-role="page" id="master">
+  <div data-role="header" id="header">News Summary</div>
+  <div data-role="content"><h1>Top News Stories</h1></div>
+  <div id="stories">
+    <ul id="storyList" data-role="listview"></ul>
+  </div>
+  <div data-role="footer" id="footer">&copy; 2020 Guardian News</div>
+  </div>
 
-  </html>
+    <!-- Detail Page -->
+
+    <div data-role="page" id="detail">
+      <div data-role="header" id="header">News Summary</div> 
+      <div data-role="content">
+        <div id="detTitle"></div>
+        <div id="detInfo"></div>
+        <div id="detImg"></div>
+        <div id="detStory"></div>
+        <div id="fullStoryLink"></div>
+        <a href="#master"><button>All Stories</button></a>
+        </div>
+        <div data-role="footer" id="footer">&copy; 2020 Guardian News</div>
+        </div>
+
+        <script>
+          let url = "https://content.guardianapis.com/search?api-key=" + key
+          let out = "";
+          let articles = [];
+          $.getJSON(url, function(data) {
+            console.log(data);
+            articles = data.response.results;
+            console.log(articles)
+            for(let x = 0; x < articles.length; x++) {
+              displayStory(articles[x], x);
+              $("#storyList").html(out);
+              $("#storyList").listview("refresh");
+            }
+          });
+
+        function displayStory(story,storyNum){
+        const number = storyNum;
+        const title = story.id;
+        const source = story.type;
+        // const image = story.urlToImage;
+        const storyTime = story.webPublicationDate;
+        const description = story.webTitle;
+        out += "<li onclick='populateDetail(" + number + ")' class='wrap'>";
+        out += "<a href='#detail'>";
+        // out += "<img src='" + image + "'/>";
+        out += "<strong>" + title + "</strong>";
+        out += "<br />" + storyTime + " | " + source;
+        out += "<p class='wrap'>" + description + "</p>"
+        out += "</a><li>";
+        }
+
+        function populateDetail(storyNum)
+        {
+          const story = articles[storyNum];
+          console.log(story);
+          $('#detTitle').html("<h1>" + story.id + "</h1>");
+          $('#detInfo').html(story.type + " | " + story.webPublicationDate);
+          // $('#detImg').html("<img src='" + story)
+          $('#detStory').html("<p>" + story.content + "</p>");
+          $('#fullStoryLink').html("<a href='" + story.webUrl + "'>FullStory</a>");
+        }
+    </script>
+   
+  <script src="tests/unit/assert-tests.js"></script>
+  <script src="src/model/article.js"></script>
+  <script src="tests/unit/article-tests.js"></script>
+  <script src="src/model/newspaper.js"></script>
+  <script src="tests/unit/newspaper-tests.js"></script>
+  <script src="src/views/newspaper-view.js"></script>
+  <script src="tests/unit/newspaper-view-tests.js"></script>
+  <script src=""></script>
+  <script src=""></script>
+
+</body>
+</html>
