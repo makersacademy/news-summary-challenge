@@ -6,22 +6,26 @@
     this.headlinesView = new HeadlinesView(this.newsList);
   }
 
-  NewsController.prototype.addArticle = function(headline) {
-    this.newsList.addArticle(headline);
+  NewsController.prototype.getArticles = function(headline) {
+    this.newsList.getApiData();
   }
 
   NewsController.prototype.displayHeadlines = function() {
     var html = this.headlinesView.displayHeadlines();
 
     document.getElementById('app').innerHTML = html;
-
   }
 
   exports.NewsController = NewsController
+
 })(this);
 
 
 var controller = new NewsController;
-controller.addArticle('I am the first article');
-controller.addArticle('I am the second article');
-controller.displayHeadlines();
+controller.getArticles();
+// controller.displayHeadlines()
+
+// Why doesn't it work without the timer ??
+setTimeout(function() {
+  controller.displayHeadlines();
+}, 3000);
