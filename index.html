@@ -18,6 +18,12 @@
     text-align: center;
   } 
 
+  body {
+    background-image: url(https://motionarray.imgix.net/preview-71394-QPEqMFIKcW_0009.jpg);
+    background-size: contain;
+    opacity: 0.65;
+  }
+
   #header, #footer {
     height: 30px;
     width: 100%;
@@ -85,12 +91,12 @@
         const number = storyNum;
         const title = story.id;
         const source = story.type;
-        // const image = story.urlToImage;
+        // const image = story. 
         const storyTime = story.webPublicationDate;
         const description = story.webTitle;
         out += "<li onclick='populateDetail(" + number + ")' class='wrap'>";
         out += "<a href='#detail'>";
-        // out += "<img src='" + image + "'/>";
+        out += "<img src='https://evckmir.files.wordpress.com/2020/01/mgn_1280x960_00121c00-xryah.jpg?w=1120' height='80' width='155'>"
         out += "<strong>" + title + "</strong>";
         out += "<br />" + storyTime + " | " + source;
         out += "<p class='wrap'>" + description + "</p>"
