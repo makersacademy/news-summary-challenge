@@ -82,21 +82,6 @@ Controller: responsible for directing other modules to render views on the page
 
 ## API
 
-### API authentication
-
- Guardian API and the Aylien text summarisation API.
-
-
-### API request rate limits and stubbing
-
-The Guardian and Aylien text summarisation APIs are severely rate-limited.
-
-**Please stub your tests so we don't exceed the daily limit.  Otherwise, all requests will be rejected and everyone's apps will stop working!**
-
-### API Overview
-
-The basic idea is to send an `apiRequestUrl` query parameter to the News Summary API.  The value of this parameter is the URL of the request you *would* have made to the Guardian or Aylien API, minus any API credentials.
-
 ### Guardian API example
 
 **Please stub your tests to avoid exceeding the API rate limit**
@@ -135,13 +120,26 @@ curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.ayl
 
 Note how the `apiRequestUrl` parameter is just the request you would have made to the Aylien API.  Notice how you don't have to send authentication headers.
 
-### Code
+### API Code
 
-If you're interested, you can see the code for the News Summary API in this repo: https://github.com/makersacademy/news-summary-api
+API:
+
+https://github.com/makersacademy/news-summary-api
 
 ## Resources
 
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+* https://gomakethings.com/how-to-use-the-fetch-api-with-vanilla-js/
+
+## Notes on implementation
+
+It was interesting to go back to API calls. This time I used the helpful advice from this blog:
+
+https://gomakethings.com/how-to-use-the-fetch-api-with-vanilla-js/
+
+on how to use fetch successfully to make the call. Previously I'd only ever achieved it in JQuery, and with a simple callback function in JS.
+
+The advice included using a chained then() method to deal with a successful or unsuccessful request to the API.
+
+It was not necessary in this case to use JSON.parse on the response. Instead we could use the .json() method to extract the json object from the returned stream (which is what the fetch api returned). Calling json parse on the entire response raised an error since it already contained json data.

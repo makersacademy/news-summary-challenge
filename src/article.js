@@ -1,5 +1,7 @@
 class Article {
-  constructor() {
+  constructor(headline, url) {
+    this.headline = headline;
+    this.url = url;
   }
 
 }
