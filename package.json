@@ -1,0 +1,20 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "New aggregator app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node node_modules/http-server/bin/http-server",
+    "test": "open testRunner.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naeglinghaff/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naeglinghaff/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/naeglinghaff/news-summary-challenge#readme"
+}
