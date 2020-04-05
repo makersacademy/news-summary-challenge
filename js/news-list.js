@@ -1,4 +1,4 @@
-function NewsList(newsItem){
+function NewsList(){
     this.newsItem = newsItem;
     this.list = []
 }
