@@ -26,5 +26,5 @@ function testNewsListCreate(){
     assert.isTrue(newsList.list[0].image === "test image", "news list item 0 has image");
 }
 
-testNewsListIntanciation();
-testNewsListCreate();
+// testNewsListIntanciation();
+// testNewsListCreate();

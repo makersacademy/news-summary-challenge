@@ -1,5 +1,4 @@
 function NewsList(){
-    this.newsItem = newsItem;
     this.list = []
 }
 
@@ -7,8 +6,16 @@ NewsList.prototype = (function(){
     function create(title, link, summary, image){
         this.list.push(new NewsItem(title, link, summary, image));
     }
+    function htmlWrap(){
+        htmlList = [];
+        this.list.forEach(e => {
+            htmlList.push("<p><a href='"+e.link+"' target='_blank'>"+e.title+"</a></p>");
+        });
+        return htmlList.join("");
+    }
 
     return {
-        create: create
+        create: create,
+        htmlWrap: htmlWrap
     }
 })()
