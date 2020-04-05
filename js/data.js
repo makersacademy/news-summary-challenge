@@ -6,12 +6,12 @@ fetch("http://content.guardianapis.com/search?from-date="+ date +"&show-elements
     response.text().then(function(text) {
       console.log(text);
       var news = JSON.parse(text)
+      console.log(news.response.results[0].blocks.body[0].bodyHtml)
       //console.log(news.response.results[0].webTitle);
 
       news.response.results.forEach(i => {
         //   console.log(i.webTitle);
-          newsList.create(i.webTitle, i.webUrl, i.webTitle, i.webUrl);
-            console.log(newsList.list[0]);
+          newsList.create(i.webTitle, i.webUrl, i.blocks.body[0].bodyHtml.substring(0,100) + "...", i.webUrl);
           document.getElementById("news").innerHTML = newsList.htmlWrap();
       })
     });
