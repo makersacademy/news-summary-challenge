@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Views</title>
+<script src="key.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+    #header, #footer{
+        height: 30px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #footer{
+        position: fixed;
+        bottom: 0px;
+    }
+    .wrap{
+        white-space: normal !important;
+    }
+    #detImg img{
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+
+    <!-- Front page -->
+    <div data-role="page" id="master">
+        <div data-role="header" id="header">News Views</div>
+        <div data-role="content"><h1>News Views</h1></div>
+        <div id="stories">
+            <ul id="storyList" data-role="listview"></ul>
+            </div>
+            <div data-role="footer" id="footer">&copy; 2020 Magnegro Television Studios</div>
+    </div>
+
+    <!-- Full story page -->
+    <div data-role="page" id="detail">
+        <div data-role="header" id="header">News Views</div> 
+        <div data-role="content">
+            <div id="detTitle"></div>
+            <div id="detInfo"></div>
+            <!-- <div id="detImg"></div> -->
+            <div id="detStory"></div>
+            <div id="fullStoryLink"></div>
+            <a href="#master"><button>All stories</button></a>
+        </div>
+        <div data-role="footer" id="footer">&copy; 2020 Magnegro Television Studios</div>
+        </div>
+
+        <script>
+            let url = "https://content.guardianapis.com/search?api-key=" + key;
+            let out = "";
+            let articles = []
+            $.getJSON(url, function(data){
+                console.log(data);
+                articles = data.response.results;
+                
+                for (let x = 0; x < articles.length; x++) {
+                    displayStory(articles[x],x);
+                    $("#storyList").html(out);
+                    $("#storyList").listview("refresh");
+                    
+                }
+                console.log(articles);
+            });
+
+            function displayStory(story,storyNum){
+                const number = storyNum;
+                const title = story.id;
+                const source = story.type;
+                // const image = story.urlToImage;
+                const storyTime = story.webPublicationDate;
+                const description = story.webTitle;
+
+                out += "<li onclick='populateDetail(" + number + ")' class='wrap'>";
+                out += "<a href='#detail'>";
+                // out += "<img src='" + image + "'/>";
+                out += "<strong>" + title + "</strong>";
+                out += "<br />" + storyTime + " | " + source;
+                out += "<p class='wrap'>" + description + "</p>"
+                out += "</a><li>";
+
+            }
+
+            function populateDetail(storyNum) {
+
+                const story = articles[storyNum];
+                console.log(story);
+                $('#detTitle').html("<h1>" + story.id + "</h1>");
+                $('#detInfo').html(story.type + " | " + story.webPublicationDate);
+                // $('#detImg').html("<img src='" + story.urlToImage + "'/>");
+                $('#detStory').html("<p>" + story.content + "</p>");
+                $('#fullStoryLink').html("<a href='" + story.webUrl + "'>FullStory</a>");
+
+            }
+
+        </script>
+    
+</body>
+</html>
