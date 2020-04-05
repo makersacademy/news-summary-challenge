@@ -2,7 +2,7 @@
   "name": "news-summary-challenge",
   "version": "1.0.0",
   "description": "New aggregator app",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "start": "node node_modules/http-server/bin/http-server",
     "test": "open testRunner.html"

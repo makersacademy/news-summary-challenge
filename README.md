@@ -2,24 +2,23 @@
 
 ## Running the app
 
+Clone or download the repo to your local files. Then run the following command in the root directory:
+
+```
+npm start
+```
+
 ## Running the tests
+
+```
+npm test
+```
 
 ## Challenge
 
 To create an application which fetches headlines from the Guardian newspaper API and display them on a page. The application should be able to reveal a summary of the article when you click on the headline. This summary should render on the same page.
 
-• Technologies used include JavaScript, CSS and HTML
-
-### Guidance
-
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
-
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+• Technologies used include JavaScript, CSS and HTML. • Tested using a local framework
 
 ## User Stories
 
@@ -68,6 +67,18 @@ To make my news reading more fun
 ### Article summary page
 
 ![Article page mockup](/images/news-summary-project-article-page-mockup.png)
+
+## Plan of attack
+
+The required modules are as follows:
+
+Article: responsible for storing it's headline, image, and text.
+Article list: responsible for storing article objects
+Article list view: responsible for outputting article headlines into html links
+Single article view: responsible for outputting a summary of an article to HTML
+API requester: responsible to handling requests and responses to the Guardian API
+Controller: responsible for directing other modules to render views on the page
+
 
 ## API
 
