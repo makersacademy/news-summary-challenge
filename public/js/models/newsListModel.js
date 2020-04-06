@@ -18,6 +18,9 @@
     request.onload = function() {
       var data = JSON.parse(this.response);
       data.response.results.forEach(article => {
+        // var headline = article.webTitle;
+        // var image = article.fields.thumbnail;
+        // var body = article.fields.body;
         list.push(new NewsArticle(article.webTitle, list.length));
       })
     }

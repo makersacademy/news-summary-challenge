@@ -3,6 +3,8 @@
 (function(exports) {
   function NewsArticle(headline, id) {
     this.headline = headline;
+    // this.image = image;
+    // this.body = body;
     this.id = id;
   }
 

@@ -28,4 +28,4 @@ controller.getArticles();
 // Why doesn't it work without the timer ??
 setTimeout(function() {
   controller.displayHeadlines();
-}, 3000);
+}, 500);

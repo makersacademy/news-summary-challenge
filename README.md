@@ -6,11 +6,28 @@
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
 * You must submit a pull request to this repo with your code by 9am Monday morning.
 
+## TO DO
+- Page after click shows a summary of the new (singleNewView)
+- Main page displays images
+- Update readme
+
 ## Challenge
 
 As usual please start by forking this repo.
 
 You'll create an app that summarises the news.
+
+## Domain Model
+![Domain Model](NewsApp-Domain-Model.png)
+
+## Current Status
+- Done: Main page displays a list of headlines from The Guardian API (culture section)
+- Done: Each headline is a link that changes the path to its own page without refreshing.
+- ToDo: display an image with each headline.
+- ToDo: Display a summary of each new on its own page.
+- ToDo: TDD the NewsController functionality.
+- ToDo: Make some nice views.
+
 
 ### Guidance
 
