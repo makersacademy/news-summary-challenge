@@ -6,8 +6,9 @@ class ApiRequester {
   sendRequest() {
 
     let api = this;
+    let request = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=2020-01-04&to-date=2020-04-05&q=politics?show-fields=body'
 
-    fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=2020-01-04&to-date=2020-04-05&q=politics?show-fields=body').then(function(response) {
+    fetch(request).then(function(response) {
         return response.json();
       }).then(function(data) {
           mapResult(data);
