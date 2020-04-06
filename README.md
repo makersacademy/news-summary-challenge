@@ -18,7 +18,7 @@ As usual please start by forking this repo.
 You'll create an app that summarises the news.
 
 ## Domain Model
-![Domain Model](NewsApp-Domain-Model.png)
+![Domain Model](/images/NewsApp-Domain-Model.png)
 
 ## Current Status
 - Done: Main page displays a list of headlines from The Guardian API (culture section)
