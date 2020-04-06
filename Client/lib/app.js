@@ -38,7 +38,7 @@ container.setAttribute('id', 'container')
 app.appendChild(container)
 
 let request = new XMLHttpRequest()
-let apiKey = "XXXXX"
+let apiKey = "&api-key=XXX"
 let testUrl = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01" + apiKey
 let url = "https://content.guardianapis.com/"
 let searchQuery = "search?q=&"
