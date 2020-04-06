@@ -16,5 +16,5 @@ function testNewsItemDisplay(){
     assert.isTrue(newsItemDisplay[3] === "test image", "news item display has image");
 }
 
-// testNewsItemInstanciation();
-// testNewsItemDisplay();
+ testNewsItemInstanciation();
+ testNewsItemDisplay();
