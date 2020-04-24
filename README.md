@@ -2,9 +2,10 @@
 
 ## Running the app
 
-Clone or download the repo to your local files. Then run the following command in the root directory:
+Clone or download the repo to your local machine. Then run the following command in the root directory:
 
 ```
+npm install
 npm start
 ```
 
@@ -16,11 +17,11 @@ npm test
 
 ## Challenge
 
-To create an application which fetches headlines from the Guardian newspaper API and display them on a page. The application should be able to reveal a summary of the article when you click on the headline. This summary should render on the same page.
+To create an application which fetches headlines from the Guardian newspaper API and display them on a single page application. The application should be able to reveal a summary of the article when you click on the headline. This summary should render on the same page.
 
-• Technologies used include JavaScript, CSS and HTML. • Tested using a local framework
+• Technologies used include JavaScript, CSS and HTML. • Tested using a local framework, created by moi.
 
-## User Stories
+## User stories
 
 ```
 As a busy politician
@@ -72,12 +73,12 @@ To make my news reading more fun
 
 The required modules are as follows:
 
-Article: responsible for storing it's headline, image, and text.
-Article list: responsible for storing article objects
-Article list view: responsible for outputting article headlines into html links
-Single article view: responsible for outputting a summary of an article to HTML
-API requester: responsible to handling requests and responses to the Guardian API
-Controller: responsible for directing other modules to render views on the page
+* Article: responsible for storing it's headline, image, and text.
+* Article list: responsible for storing article objects
+* Article list view: responsible for outputting article headlines into html links
+* Single article view: responsible for outputting a summary of an article to HTML
+* API requester: responsible to handling requests and responses to the Guardian API
+* Controller: responsible for directing other modules to render views on the page
 
 ## Resources
 
@@ -98,9 +99,10 @@ The advice included using a chained then() method to deal with a successful or u
 
 It was not necessary in this case to use JSON.parse on the response. Instead we could use the .json() method to extract the json object from the returned stream (which is what the fetch api returned). Calling json parse on the entire response raised an error since it already contained json data.
 
-I ran into some trouble across different browsers. My mapping method was returning the correct result in firefox but not in chrome. After several hours of debugging, I worked out that the error was resulting in the order of the api request call. Moving the call to update the inner HTML of the page inside that method solved the problem, since the call was able to properly return before it moved on to mapping the results.
+I ran into some trouble across different browsers. My mapping method was returning the correct result in Firefox but not in Chrome. After several hours of debugging, I worked out that the error was resulting in the order of the API request call. Moving the call to update the inner HTML inside that method solved the problem, since the call was able to properly return before it moved on to mapping the results.
 
 ## Future additions
-* To add dynamic date options to the api call so it always fetched news for today's date.
+* To add dynamic date options to the API call so it always fetched news for today's date.
 * To add news summmarys using the single page view model
+* To use Bootstrap to style the page
 * To write more in-depth tests and practice stubbing with my own test framework
