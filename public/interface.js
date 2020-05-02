@@ -1,1 +1,4 @@
-console.log(process.env.PERSONAL_API_KEY)
+document.addEventListener('DOMContentLoaded', function(event) {
+  console.log(thing)
+  getApi();
+})
