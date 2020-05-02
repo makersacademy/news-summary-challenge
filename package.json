@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/FayeCarter/news-summary-challenge#readme",
   "dependencies": {
+    "guardian-js": "^3.0.0",
     "http-server": "^0.12.3"
   }
 }
