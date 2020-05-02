@@ -1,0 +1,1 @@
+console.log(process.env.PERSONAL_API_KEY)
