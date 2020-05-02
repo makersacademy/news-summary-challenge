@@ -142,31 +142,63 @@ Steps:
 - [x] Print to html as a list 
 
 
+# Research - API
+
+### relates to feature test 1 
+## Guardian API research and experimentation
+
+![](pictures/guardian-example-response.png)
+<https://open-platform.theguardian.com/documentation/search>
+
+
+
+```javascript
+results = parsedResponse.response.results
+```
+![](pictures/guardian-example.png)
+
+- array with objects 
+- Can access objects with keys 
+- need webTitle 
+
+![](pictures/guardian-fields.png)
+
+
+-------------------------------------------------------------------------------------------
+
 **Feature Test 2**: User Story 2
 - [ ] User can click on link 
 - [ ] Link will show full story 
 
 - Steps 
-- [ ] make link work
-  - button?
-- [ ] research how to access how article
+- [X] Add href
+- [ ] research how to access content of article
 - [ ] link to new article on the same page
+- [x] Find solution to bug - only showing some links
+
+
+## Research
+**href**:
+![](pictures/href.png)
+- href is the link 
+- text is  between tags 
+
+**How to access content**:
+- Test with ```webUrl``` (The URL of the html content) √
+- ```apiUrl``` - The URL of the raw content  
+  - {"message":"No API key found in request"}
+  -  "apiUrl": "https://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live"
+
+## bug 
+
+``` javascript
+// missed out on single quotes between  interpolated javascript
+ headLineList.innerHTML += `<a href='${result.webTitle}>${result.webTitle}'</a>`
+ headLineList.innerHTML += `<a href='${result.webTitle}'>'${result.webTitle}'</a>`;
+ ```
 ---------------------------------------------------------------------------
 
 
 
 
-# Research 
-
-### relates to feature test 1 
-## Guardian API research and experimentation
-<https://open-platform.theguardian.com/documentation/search>
-
-![](guardian-example.png)
-
-- array with hashes 
-- Can access hashes with keys 
-- need webTitle 
-
-![](pictures/guardian-fields.png)
 

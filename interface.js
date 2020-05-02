@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function getRequestToGuardian(callBack) {
     let guardianURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search"
     var request = new XMLHttpRequest();
+    var herokuappURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl="
     console.log(request)
     
 
@@ -12,22 +13,27 @@ document.addEventListener("DOMContentLoaded", function() {
       let parsedResponse = JSON.parse(this.responseText)
       let results = parsedResponse.response.results
       let headLineList = document.getElementById('headlines')
-      results.forEach(function(result){
-
-        headLineList.innerHTML += result.webTitle
-        headLineList.innerHTML += '<br>' + '<br>'
-      })
+     
+      populateHeadlineList(results ,headLineList)
     
     }
     request.open('GET', guardianURL)
     request.send()
+    request.open('Get', contentLink)
+    request.UNSENT()
   } 
 
   getRequestToGuardian()
-  console.log("hi")
 });
 //}
-
+function populateHeadlineList(results ,headLineList) { 
+  results.forEach(function(result){
+    //contentLink = herokuappURL  + result.apiUrl
+    //console.log(contentLink)
+    headLineList.innerHTML += `<a href='${result.webTitle}'>'${result.webTitle}'</a>`
+    headLineList.innerHTML += '<br>' + '<br>'
+  })
+}
 
 
 

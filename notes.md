@@ -2,7 +2,7 @@
 
 <https://open-platform.theguardian.com/documentation/search>
 
-![](guardian-example.png)
+![](pictures/guardian-example.png)
 
 - array with hashes 
 - Can access hashes with keys 
