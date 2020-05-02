@@ -31,10 +31,8 @@ function it(description, test) {
     } finally {
       document.getElementById('tests').append(output)
     }
-    
   });
 }
-
 
 function prepareElement(element, text) {
   text = document.createTextNode(text);
