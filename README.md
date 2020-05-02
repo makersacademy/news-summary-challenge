@@ -112,4 +112,32 @@ I will test driving a Story class using a test framework of my own design (as th
 
 Wrote a test for the Story class to be initialised with a headline and be able to return that headline. Red.
 
-- 
+- Created a class with constructor accepting a headline.
+
+Green.
+
+Wrote a test that the Story.headlineComponent should return a headline component (an li with an h2 in it). Red.
+
+- Wrote headlineComponent method to create and return the relevant html with headline inserted.
+
+Green.
+
+Refactored the testing framework to use a new custom matcher "returnHTML" using the outerHTML method.
+
+Next to create an html page with an interface.
+
+I created an `index.html`, sourcing `storyHandler.js`, `interface.js` and `story.js`
+
+`index.html` has a basic title, and a section containing an empty ul with id of articles-list.
+
+`storyHandler.js` has class StoryHandler with several methods:
+
+- Its `constructor` takes an argument of apiURL, defaulting to the guardian's ape url, so that other routes can be injected for testing purposes.  
+It also calculates a correctly formatted date string, and sets other constants for interpolation into the query string.  
+It assigns CONFIG with a `getJSON` call for the config.json file (containing the hidden api-key).
+It also assigns its stories with a call of `fetchStories`
+- `fetchStories` is an async function that waits for CONFIG to be fetched , then fetches from the api url plus the resulting secret api-key. It returns a map over the responses results array which contains the story data, and creating new Story instances from them.
+- `getJSON` is an async function that fetches a json from the specified path, waits for that to resolve, then parses and returns the json.
+- `renderHeadlines` is another async function, that awaits the stories to be assigned with `fetchStories`, which grabs the element with id of articles and gets its first element child (the ul), then iterates over the stories appending the story.headlineComponent.
+
+`interface.js` simply creates a new instance of StoryHandler, then adds an event listener for the COM content loaded, then calls the storyHandler.renderHeadlines
