@@ -8,6 +8,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   background-color: #000;
   color: #fff;
+  font-weight: 900;
 }
 
 li {
@@ -17,9 +18,13 @@ li {
 
 
 .pass {
-  color: #0f0;
+  color: #00b600;
 }
 
 .fail {
-  color: #f00;
+  color: #cf0000;
+}
+
+.alert {
+  color: #ffff00;
 }

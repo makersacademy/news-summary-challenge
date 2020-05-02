@@ -1,37 +1,45 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-  intro = prepareElement('h1', 'Starting tests...')
-  tests = document.createElement('ul')
-  tests.setAttribute('id','tests')
-  document.body.append(intro, tests)
+  intro = prepareElement("h1", "Starting tests...");
+  tests = document.createElement("ul");
+  tests.setAttribute("id", "tests");
+  document.body.append(intro, tests);
 });
 
 function it(description, test) {
   window.addEventListener("DOMContentLoaded", (event) => {
-    let assertions = [];
-
-    function expect(a) {
-      return {
-        toEqual: (b) => {
-          assertions.push(a === b);
-        },
-      };
-    }
+    assertions = [];
 
     let result;
     let output;
 
     try {
       test();
-      result = assertions.indexOf(false) === -1 || assertions.length === 0 ? 'pass' : 'fail';
-      output = prepareElement('li', description)
-      output.setAttribute('class', result)
+      if (assertions.length === 0) {
+        output = prepareElement("li", description + " - No expects");
+        output.setAttribute("class", 'alert');
+      } else {
+        result =
+          assertions.indexOf(false) === -1 && assertions.indexOf(true) !== -1
+            ? "pass"
+            : "fail";
+        output = prepareElement("li", description);
+        output.setAttribute("class", result);
+      }
     } catch (error) {
-      output = prepareElement('li', description + " - " + error)
-      output.setAttribute('class', 'fail')
+      output = prepareElement("li", description + " - " + error);
+      output.setAttribute("class", "fail");
     } finally {
-      document.getElementById('tests').append(output)
+      document.getElementById("tests").append(output);
     }
   });
+}
+
+function expect(a) {
+  return {
+    toEqual: (b) => {
+      assertions.push(a === b);
+    },
+  };
 }
 
 function prepareElement(element, text) {
