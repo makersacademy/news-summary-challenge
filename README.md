@@ -13,12 +13,8 @@ Must have:
 > I can see all of today's headlines in one place
 
 > As a busy politician  
-> So I can explore an headline that interests me  
-> I can click on a headline to see a summary
-
-> As a busy politician  
 > So I can get a few more details about an important story  
-> I can see a summary of a news article
+> I can click on a headline to see a summary of a news article
 
 > As a busy politician  
 > So that I can get an in depth understanding of a very important story  
@@ -140,4 +136,29 @@ It also assigns its stories with a call of `fetchStories`
 - `getJSON` is an async function that fetches a json from the specified path, waits for that to resolve, then parses and returns the json.
 - `renderHeadlines` is another async function, that awaits the stories to be assigned with `fetchStories`, which grabs the element with id of articles and gets its first element child (the ul), then iterates over the stories appending the story.headlineComponent.
 
-`interface.js` simply creates a new instance of StoryHandler, then adds an event listener for the COM content loaded, then calls the storyHandler.renderHeadlines
+`interface.js` simply creates a new instance of StoryHandler, then adds an event listener for the COM content loaded, then calls the storyHandler.renderHeadlines.
+
+_I would've liked to TDD the StoryHandler, but as it relies on asynchronous functions my testing framework wasn't appropriate for it, so I spiked it._
+
+### User Story 2
+
+> As a busy politician  
+> So I can get a few more details about an important story  
+> I can click on a headline to see a summary of a news article
+
+For this user story, the headlines need to be able to be clicked.
+
+For this I could either add ids of the story's id to each li, and add event listeners to check do something when they have been clicked, or use an anchor linking to a hash link of the story's id, and listen for hashchange.
+
+In either case, the story needs to have its own unique id.
+
+Fortunately the JSON returned from the guardian includes a unique id for each story, so we can use that.
+
+Updated the tests for the Story to be constructed with an id alongside the headline. Red.
+
+- Added a new parameter to Story constructor for id.
+- Adjusted the created  
+
+Green.
+
+
