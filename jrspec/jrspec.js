@@ -39,6 +39,9 @@ function expect(a) {
     toEqual: (b) => {
       assertions.push(a === b);
     },
+    returnHTML: (b) => {
+      assertions.push(a.outerHTML === b);
+    }
   };
 }
 

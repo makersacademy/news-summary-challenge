@@ -5,5 +5,5 @@ it('Story should have a headline', () => {
 
 it('Story.headlineComponent returns html headline component', () => {
   let story = new Story(headline='Some News')
-  expect(story.headlineComponent().outerHTML).toEqual("<li><h2>Some News</h2></li>")
+  expect(story.headlineComponent()).returnHTML("<li><h2>Some News</h2></li>")
 });
