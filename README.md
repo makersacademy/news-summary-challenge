@@ -108,7 +108,8 @@ With this implementation it would be simple for the interface to make the AJAX r
 
 For this I expect a page to be able to show a series of headlines.
 
-I will test driving a Story class using a test framework of my own devising (as this is a no library project).
+I will test driving a Story class using a test framework of my own design (as this is a no library project).
 
+Wrote a test for the Story class to be initialised with a headline and be able to return that headline. Red.
 
-
+- 
