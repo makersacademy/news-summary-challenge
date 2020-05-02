@@ -1,5 +1,5 @@
 # To do List
 
 - [X] Add testing Framework
-- [ ] Set up Static server
+- [X] Set up Static server
 - [ ] Add api
