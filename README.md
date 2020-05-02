@@ -1,20 +1,63 @@
 # News Summary challenge
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
 
-## Challenge
 
-As usual please start by forking this repo.
 
-You'll create an app that summarises the news.
 
-### Guidance
 
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+
+# static web server
+## Setting up a node server
+
+###  Section one
+
+Make sure you have node installed on your computer.
+To check you can run
+```
+node -v
+```
+
+If you don't have node run:
+```
+brew update
+brew install node
+```
+
+
+Run these commands in your root folder:
+```
+$ cd root/of/your-project/
+$ npm install http-server --save
+
+// This is obselete in the below scenario
+$ node node_modules/http-server/bin/http-server
+```
+
+Create server.js and add in the following code
+```javascript
+var path = require("path");
+
+var pathToHtmlAndJsFiles = path.join(__dirname, "path/from/current/dir/to/html/and/js/files");
+var server = httpServer.createServer({ root: pathToHtmlAndJsFiles });
+server.listen(3000);
+```
+Then run
+```
+node server
+```
+And visit ```localhost:3000```
+
+
+--------------------
+
+###  Section two
+
+run
+```
+npm init -y
+```
+
+---------------------------------------------------------------------
 
 ## Project overview
 
@@ -22,11 +65,11 @@ Your app will grab all the headlines from the Guardian newspaper API and display
 
 ### Technologies
 
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
+- Single page web app. 
+- You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
 
 **And, as is the theme for this week, you won't use any libraries or frameworks!**
 
-But, feel free to use the test framework you wrote during the week!
 
 ### Serving your app
 
