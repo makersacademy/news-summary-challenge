@@ -7,23 +7,34 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 function it(description, test) {
   window.addEventListener("DOMContentLoaded", (event) => {
-    assertions = [];
-    test();
-    result = assertions.indexOf(false) === -1 ? 'pass' : 'fail';
-    output = prepareElement('li', description)
-    output.setAttribute('class', result)
-    document.getElementById('tests').append(output)
-    count++
+    let assertions = [];
+
+    function expect(a) {
+      return {
+        toEqual: (b) => {
+          assertions.push(a === b);
+        },
+      };
+    }
+
+    let result;
+    let output;
+
+    try {
+      test();
+      result = assertions.indexOf(false) === -1 || assertions.length === 0 ? 'pass' : 'fail';
+      output = prepareElement('li', description)
+      output.setAttribute('class', result)
+    } catch (error) {
+      output = prepareElement('li', description + " - " + error)
+      output.setAttribute('class', 'fail')
+    } finally {
+      document.getElementById('tests').append(output)
+    }
+    
   });
 }
 
-function expect(a) {
-  return {
-    toEqual: (b) => {
-      assertions.push(a === b);
-    },
-  };
-}
 
 function prepareElement(element, text) {
   text = document.createTextNode(text);
