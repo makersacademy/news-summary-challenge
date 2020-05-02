@@ -1,4 +1,25 @@
-# Frontend, single page app guidance
+# Goals 
+- Focus on process 
+  - Planning 
+    - [ ] organising user stories
+    - [ ] Breakdown user stories
+    - [ ] checklists
+    - [ ] diagraming & tables 
+  - Refractoring
+    - [ ] Methods broken down
+    - [ ] Classes 
+    - [ ] Names
+    - [ ] public/ private
+  - TDD
+    - [ ] commit Red, Green, Refractor
+    - [ ] Test first
+    - [ ] Use console
+  - Documentation
+    - [ ] Document learning by writing notes 
+    - [ ] Document process 
+
+
+## Frontend, single page app guidance
 
 - How will you serve your app?
 
@@ -23,7 +44,7 @@
 - [x] Basic mock up sketch with HTML elements
 - [x] Research server for app
 - [x] Add server
-- [ ] Decide on testing
+- [X] Decide on testing
 - [x] Research requests to external API's
 - [ ] User stories - headlines
 
@@ -66,10 +87,8 @@ curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://conten
 
 Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
 
-## User journey
-
-- user reads titles
-- user clicks on title link and it shows the full story
+## Decide on testing
+- going to start with Jasmine as want to focus on process and refractoring and my testing framework at the moment needs updating, I will come back to this challenge and use my own testing framework
 
 ## User stories
 
@@ -84,12 +103,11 @@ Note how the `apiRequestUrl` parameter value is just the request you would have 
     I can click a link to see the original news article
     So that I can get an in depth understanding of a very important story
 ```
+###  What is the user doing with the data?
 
-What is the user doing with the data?
-
-- View headlines 
-- Selects headlines 
-- Views story
+- **Views** headlines 
+- **Selects** headlines 
+- **Views** story
   
 --> user does NOT need access to functions when viewing - methods can be **private**
 --> user does need access to function when selecting - methods must be **public**
@@ -100,3 +118,5 @@ What is the user doing with the data?
 | views headlines    | X                                  | X               | titles       |
 | click on headlines | Listen for click -> Select link id | change to story | full story   |
 |                    |                                    |                 |              |
+
+
