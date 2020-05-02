@@ -1,13 +1,14 @@
-# Goals 
-- Focus on process 
-  - Planning 
-    - [ ] organising user stories
+# Goals
+
+- Focus on process
+  - Planning
+    - [x] organising user stories
     - [ ] Breakdown user stories
     - [ ] checklists
-    - [ ] diagraming & tables 
+    - [ ] diagraming & tables
   - Refractoring
     - [ ] Methods broken down
-    - [ ] Classes 
+    - [ ] Classes
     - [ ] Names
     - [ ] public/ private
   - TDD
@@ -15,9 +16,8 @@
     - [ ] Test first
     - [ ] Use console
   - Documentation
-    - [ ] Document learning by writing notes 
-    - [ ] Document process 
-
+    - [ ] Document learning by writing notes
+    - [ ] Document process
 
 ## Frontend, single page app guidance
 
@@ -44,9 +44,10 @@
 - [x] Basic mock up sketch with HTML elements
 - [x] Research server for app
 - [x] Add server
-- [X] Decide on testing
+- [x] Decide on testing
 - [x] Research requests to external API's
-- [ ] User stories - headlines
+- [x] User Story - headlines
+- [ ] User Story - news article
 
 ## Organise user stories based on piority
 
@@ -73,22 +74,30 @@ The basic idea is to send an `apiRequestUrl` query parameter to the News Summary
 
 **Please stub your tests to avoid exceeding the API rate limit**
 
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make. Notice how it has a query parameter for `api-key`.
+If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make. 
 
 ```
 curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
 ```
+- parameters: body & `api-key`
 
 To make this request via the Makers News Summary API with cURL, you could do something like this:
 
 ```
 curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-```
+
+``` 
+- http://news-summary-api.herokuapp.com/guardian?apiRequestUrl
+- parameter value: http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
+
+- parameters only body, no `api-key`
 
 Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
 
 ## Decide on testing
+
 - going to start with Jasmine as want to focus on process and refractoring and my testing framework at the moment needs updating, I will come back to this challenge and use my own testing framework
+- Feature tests are manual tests with checklists
 
 ## User stories
 
@@ -103,20 +112,61 @@ Note how the `apiRequestUrl` parameter value is just the request you would have 
     I can click a link to see the original news article
     So that I can get an in depth understanding of a very important story
 ```
-###  What is the user doing with the data?
 
-- **Views** headlines 
-- **Selects** headlines 
+### What is the user doing with the data?
+
+- **Views** headlines
+- **Selects** headlines
 - **Views** story
-  
+
 --> user does NOT need access to functions when viewing - methods can be **private**
 --> user does need access to function when selecting - methods must be **public**
 
+| User               | DOM                                | HTML               | Guardian api |
+| ------------------ | ---------------------------------- | ------------------ | ------------ |
+| views headlines    | X                                  | headline container | headlines    |
+| click on headlines | Listen for click -> Select link id | change to story    | full story   |
+|                    |                                    |                    |              |
 
-| User               | DOM                                | HTML            | Guardian api |
-| ------------------ | ---------------------------------- | --------------- | ------------ |
-| views headlines    | X                                  | X               | titles       |
-| click on headlines | Listen for click -> Select link id | change to story | full story   |
-|                    |                                    |                 |              |
 
+ 
+ **Feature Test 1**:  User story 1
+- [x] User can see headlines from guardian
+- [x] User can see headlines printed as a list 
+  
+
+Steps: 
+- [x] Create html with headline container
+- [x] Get API working
+- [x] Add to headline container - interface
+- [x] Print to html as a list 
+
+
+**Feature Test 2**: User Story 2
+- [ ] User can click on link 
+- [ ] Link will show full story 
+
+- Steps 
+- [ ] make link work
+  - button?
+- [ ] research how to access how article
+- [ ] link to new article on the same page
+---------------------------------------------------------------------------
+
+
+
+
+# Research 
+
+### relates to feature test 1 
+## Guardian API research and experimentation
+<https://open-platform.theguardian.com/documentation/search>
+
+![](guardian-example.png)
+
+- array with hashes 
+- Can access hashes with keys 
+- need webTitle 
+
+![](pictures/guardian-fields.png)
 
