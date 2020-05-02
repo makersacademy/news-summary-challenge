@@ -1,0 +1,40 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 98,
+    "startIndex": 1,
+    "pageSize": 20,
+    "currentPage": 1,
+    "pages": 5,
+    "orderBy": "newest",
+    "results": [
+      {
+        "id": "football/live/2020/may/02/blackpool-v-bolton-wanderers-1953-fa-cup-final-live",
+        "type": "liveblog",
+        "sectionId": "football",
+        "sectionName": "Football",
+        "webPublicationDate": "2020-05-02T14:30:38Z",
+        "webTitle": "Test Title 1",
+        "webUrl": "https://www.theguardian.com/football/live/2020/may/02/blackpool-v-bolton-wanderers-1953-fa-cup-final-live",
+        "apiUrl": "https://content.guardianapis.com/football/live/2020/may/02/blackpool-v-bolton-wanderers-1953-fa-cup-final-live",
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "world/2020/may/02/auschwitz-memorial-condemns-nazi-slogan-illinois-coronavirus-rally",
+        "type": "article",
+        "sectionId": "world",
+        "sectionName": "World news",
+        "webPublicationDate": "2020-05-02T14:27:32Z",
+        "webTitle": "Test Title 2",
+        "webUrl": "https://www.theguardian.com/world/2020/may/02/auschwitz-memorial-condemns-nazi-slogan-illinois-coronavirus-rally",
+        "apiUrl": "https://content.guardianapis.com/world/2020/may/02/auschwitz-memorial-condemns-nazi-slogan-illinois-coronavirus-rally",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+    ]
+  }
+}
