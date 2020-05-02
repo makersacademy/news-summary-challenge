@@ -9,20 +9,13 @@ document.addEventListener("DOMContentLoaded", function() {
     
 
     request.onload = function(){
-      //console.log(this.responseText)
       let parsedResponse = JSON.parse(this.responseText)
       let results = parsedResponse.response.results
       let headLineList = document.getElementById('headlines')
-      let node = document.createElement('p');
-      let nodeNewLine = document.createElement('br')
-      console.log(results)
-      console.log()
       results.forEach(function(result){
-        let textNode = document.createTextNode(result.webTitle)
-        console.log(textNode)
+
         headLineList.innerHTML += result.webTitle
-        headLineList.innerHTML += '<br>'
-        headLineList.innerHTML += '<br>'
+        headLineList.innerHTML += '<br>' + '<br>'
       })
     
     }
