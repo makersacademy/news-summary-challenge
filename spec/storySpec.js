@@ -1,5 +1,6 @@
 it('Story should have a headline', () => {
-  let story = new Story(headline='Some News')
+  let story = new Story(id='some-id', headline='Some News')
+  expect(story.id).toEqual('some-id')
   expect(story.headline).toEqual('Some News')
 });
 
