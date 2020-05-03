@@ -1,10 +1,36 @@
-const Newspage = require('./src/newspage.js')
-let news = new Newspage();
+var httpServer = require("http-server");
+var path = require("path");
 
 const http = require("http");
-const url = require("url");
+const https = require("https");
+//const url = require("url");
+const fs = require("fs")
 const StringDecoder = require("string_decoder").StrongDecoder;
 
+var pathToHtmlAndJsFiles = path.join(__dirname, "./");
+var server = httpServer.createServer({ root: pathToHtmlAndJsFiles });
+
+const url = "https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=e9aeaed39a4b618ef9b6fd8b0bc4930d#"
+  https.get(url, res => {
+    let data = "";
+    res.on("data", chunk => {
+      data += chunk;
+    })
+    res.on("end", () => {
+      let url = JSON.parse(data);
+       console.log(url);
+       res.write("<p>Today is<p>");
+       res.send();
+    })
+    .on("error", err => {
+      console.log("error: " + err.message);
+    })
+})
+
+
+server.listen(3000);
+
+/*
 const server = http.createServer(function(req, res) {
   let parsedURL = url.parse(req.url, true);
   let path = parsedURL.pathname;
@@ -13,11 +39,33 @@ const server = http.createServer(function(req, res) {
   let headers = req.headers;
   let method = req.method.toLowerCase();
 
+  if (path == "") {
+    path = "index.html";
+  }
+
+  console.log(`Requested path ${path}`);
+
+  let file = __dirname + "/public" + path;
+  
+  fs.readFile(file, function(err, content) {
+    if(err) {
+      console.log(`File note found ${file}`);
+      res.writeHead(404);
+      res.end();
+    } else {
+      console.log(`Returning ${path}`);
+      res.setHeader("X-Content_TYpe-Options", "nosniff");
+
+    }
+  })
+
+
   req.on("data", function(){
     console.log("got some news");
 
   })
 
+  
   req.on("end", function(){
     let route = 
       typeof routes[path] != "undefined" ? routes[path] : routes["notFound"];
@@ -29,7 +77,7 @@ const server = http.createServer(function(req, res) {
     };
     route(data, res);
   })
-    
+ 
 }) 
 
 server.listen(1234, function() {
@@ -37,12 +85,14 @@ server.listen(1234, function() {
   console.log("Listening on port 1234");
 })
 
+
+
 const routes = {
-  //this function gets called is the user is in newspage view
+  //this function gets called is the user is in headlines view
   //this is a get request
   home: function(data, res) {
     let newsPage = {
-      headlinesList: articles
+      headlinesView: articles
     }
     let newsPageStr = JSON.stringify(newsPage);
     res.setHeader("Content-Type", "application/json");
@@ -57,3 +107,4 @@ const routes = {
 
   }
 }
+   */

@@ -1,6 +1,6 @@
 class Newspage {
   constructor() {
-    this.articles = [1];
+    this.articles = [];
   }
   list(){
     return this.articles.map( (article) => { return article.slice(0, 20); } )

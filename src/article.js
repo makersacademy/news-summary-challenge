@@ -1,11 +1,11 @@
 class Article {
   constructor() {
-    this.headline = ""
+    this.standfirst = ""
     this.image = ""
     this.content = ""
   }
   displayHeadline(){
-    return this.headline
+    return this.standfirst
   }
   displayNote() {
     return this.content
