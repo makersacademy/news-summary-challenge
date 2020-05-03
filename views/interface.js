@@ -1,46 +1,44 @@
 document.addEventListener('DOMContentLoaded', function(event) {
     console.log("DOM content loaded")
-    var newsArray = []
-        
-    function getNews() {
-        
-        for(var i=0; i < 5; i++) {
-            newsArray.push(new Article(45, "henry"))
-        }
-    }
 
-    getNews()
-    
-    function updateNews() {
-        var newsArticle = document.getElementById('news')
-        for(var i = 0; i < newsArray.length; i++) {
-        var article = newsArray[i]
-        var newspiece = document.createElement('div', {
-            'id' : article['id'],
-            'type': article['type'],
-        })
-        
-        newspiece.setAttribute("id", "john")
-        newspiece.innerHTML = "<b>" + article['type'] + "</b>  " + article['id'];
-        newsArticle.appendChild(newspiece)
-        console.log("working!")
-
-        }
-        console.log("Hello")
-    }
-
-    updateNews()
-
-
-    // testRun(article)
-
-    // function testRun() {
-    //     var articleContainer = document.getElementById('actual-article')
-    //     for(var i = 0; i < 2; i++) {
-    //     var id = document.createElement('id-num')
-    //     id.innerHTML = article['id']
-    //     articleContainer.appendChild(id);
-    //     console.log("hello")
-    //     }
-    // }
+    otherApiFunction()
+    console.log(newsdata)
 });
+
+var newsArray = []
+console.log(newsArray)
+
+function updateNews() {
+    var newsArticle = document.getElementById('news')
+    for(var i = 0; i < newsArray.length; i++) {
+    var article = newsArray[i]
+
+    var newspiece = document.createElement('div', {
+        'id' : article['id'],
+        'type': article['type'],
+        'sectionId': article['sectionId'],
+        'sectionName': article['sectionName'],
+        'webPublicationDate': article['webPublicationDate'],
+
+        'webUrl': article['webUrl'],
+        'apiUrl': article['apiUrl']
+    })
+    
+    var title = document.createElement('div', {
+        'webTitle': article['webTitle'],
+    })
+
+    newspiece.setAttribute("id", "john")
+    newspiece.innerHTML = article['sectionName'] + " " + article['webPublicationDate'];
+    title.innerHTML = article['webTitle']
+    newsArticle.appendChild(newspiece)
+    newspiece.appendChild(title)
+    console.log("working!")
+
+    }
+    console.log("Hello")
+}
+
+updateNews()
+
+

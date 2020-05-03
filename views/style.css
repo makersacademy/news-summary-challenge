@@ -29,14 +29,15 @@ body {
 #news {
     padding: 20px;
     margin: 20px;
-
+    display: flex;
+    flex-box: wrap;
+    flex-direction: row;
 }
 
 #john {
     margin: 5px;
     border: 2px solid green;
+    color: red;
 
-    display: flex;
-    flex-direction: row;
     
 }
