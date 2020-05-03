@@ -6,7 +6,7 @@ The app grabs all the headlines from the Guardian newspaper API and display them
 
 ## Visit the site
 
-The site is available for viewing [here](http://guardian-summariser.surge.sh/)
+The site is available for viewing [here](http://guardian-summariser.surge.sh/).
 
 ## Screen Previews
 
