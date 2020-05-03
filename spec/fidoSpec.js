@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded',function() {
   it('is able to query the api and return a result', function () {
-    var worked = false
-    var result = getApi()
-    setTimeout(function(){ 
-      if(result) worked = true;
-      console.log(worked);
-      console.log(result);
-      expect(worked).toEqual(true)
-      }, 3000);
+    const result;
+    try {
+      result = await getApi()
+    } catch (error) {
+      
+    } finally {
+
+    }
 })
 });
 
