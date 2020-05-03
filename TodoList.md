@@ -9,4 +9,7 @@ I can see all of today's headlines in one place
 So I know what the big stories of the day are
 ```
 - [X] Add api getter
-- [ ] Add Controller
+- [X] Add Controller
+- [X] Stub out API
+- [X] Add Article Object
+- [X] Create Content

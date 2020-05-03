@@ -1,14 +1,26 @@
-
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
+
+html {
+  line-height: 1.6;
+}
+
 body {
   padding: 0 2em 0 2em;
   background-color: rgb(245, 245, 238);
+};
+
+#feed {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-#header {
+#header, #date {
   font-family: 'OldEnglishFive';
   text-align: center;
 }
@@ -21,8 +33,47 @@ hr {
   border-top: medium double #333;
 }
 
+h2 {
+  text-align: center;
+  font-size: 25px;
+}
 
+.container {
+  font-family: 'Times New Roman', Times, serif;
+  overflow: hidden;
+}
+
+.card {
+  margin: 1rem;
+  width: 20rem;
+  height: 34rem;
+}
+
+.card:hover {
+  background-color: rgba(94, 13, 63, 0.3);
+  font-style: italic;
+  color: white;
+}
+
+a {
+  margin: 0;
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  padding: 0 1rem 1rem;
+  margin: 0;
+  text-align: justify;
+}
+
+img {
+  margin: 0;
+  width: 100%;
+  filter: grayscale(100%);
+}
 
 @font-face {
   font-family: 'OldEnglishFive';
 }
+
