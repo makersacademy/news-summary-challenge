@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             text = article.getbodyTextHTML(),
             thumbnail = article.getThumbnailHTML();
             container.id = index;
+            container.classList.add('article-shell')
             shell = document.getElementById('news-spot');
             shell.appendChild(container);
             container.appendChild(thumbnail);
