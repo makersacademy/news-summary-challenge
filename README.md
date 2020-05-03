@@ -223,7 +223,7 @@ This is all CSS based subjective style improvements. There's a lot of tinkering 
 - Styled the scrollbar too.
 - Font size scales with viewport width between a min and max value.
 
-### Retrospective
+## Retrospective
 
 - I don't like not using TDD. I spiked a lot of features for the front end, setting my own expectations for the behaviour I wanted to create. After creating a couple of features in particular (the story's `summaryComponent`) I realised this could have been TDDd.
 - I could've organised the CSS a bit better, but for this small project and given the little I had to write it, it will serve.
