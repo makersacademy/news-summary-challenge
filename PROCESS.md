@@ -229,8 +229,9 @@ API
   HTML 
 - [X] Research best html elements to show new content on one page apps
 - [X] Make the headlines clickable
-- [ ] Display test content on the same page
-- [ ] Delete all other content
+- [X] Display test content on the same page
+- [X] Delete all other content
+- [X] Bring back all other content
 
 Connected 
 - [ ] Display content of the article
@@ -344,5 +345,13 @@ I thought this needed a href to work but it seems to work with just onclick
     headLineList.innerHTML += `<button  id='headline-button' type='button' onclick='${displaySummary()}'> ${result.webTitle}  </button> <br>`
 ```
 - but the problem was I had passed the displaySummary as javascript not html and thus it ran the method 
+
+
+
+## Ideation: Bring back all other content
+
+- button 
+  - created a button which  onclick  #goBack executes
+  - #goBack uses #location.reload which reloads the page
 
 --------------------------------------------------------------------------------

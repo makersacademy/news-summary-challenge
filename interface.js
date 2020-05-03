@@ -27,19 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function populateHeadlineList(results, headLineList) {
   results.forEach(function (result) {
-    let summary = document.getElementById("summary");
     //let aylienURL = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + result.webUrl
-    //console.log(aylienURL)
-    //console.log(result.webUrl)
     //var request = new XMLHttpRequest();
 
     
-    headLineList.innerHTML += `<a onclick="showSummary()" class='headline'>${result.webTitle}<br></a>`;
+    headLineList.innerHTML += `<p onclick="showSummary()" class='headline'>${result.webTitle}<br></p>`;
 
   
 
-    summary.innerHTML += "<p> summary test </p>";
-    summary = "<p> summary test </p>";
+
     addGuardianLink(result, headLineList);
   });
   //request.open('Get', aylienURL)
@@ -54,5 +50,14 @@ function addGuardianLink(result, headLineList) {
 }
 
 function showSummary() {
+  let headLineList = document.getElementById("headlines")
+  let summary = document.getElementById("summary");
   console.log("in display summary");
+  summary.innerHTML = `<p> summary test </p>  <button onclick="goBack()"> back </button>`;
+  headLineList.innerHTML = "<p>  </p>"
+  //summary = "<p> summary test </p>";
+}
+
+function goBack(){
+  location.reload()
 }
