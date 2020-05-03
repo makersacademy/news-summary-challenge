@@ -229,3 +229,4 @@ This is all CSS based subjective style improvements. There's a lot of tinkering 
 - I could've organised the CSS a bit better, but for this small project and given the little I had to write it, it will serve.
 - I Feel I have got to grips with asynchronous functions, especially async await.
 - I'm a bit miffed that I couldn't find a solution to get the image, but never mind.
+- Why is getting a JSON into a js file so difficult??
