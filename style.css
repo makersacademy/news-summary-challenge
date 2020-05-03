@@ -24,10 +24,11 @@ h2 {
   text-align: center;
   padding: 1.5rem 2.5rem;
   background-color: rgb(16, 64, 70);
-  margin: 0 0 2rem 0;
+  margin: 0;
   font-size: 1rem;
   color: white;
 }
+
 
 .card {
   margin: 1rem;
@@ -35,7 +36,8 @@ h2 {
   box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
   border-radius: 12px;
   overflow: hidden;
-  width: 25rem;
+  width: 23rem;
+  height: 34rem;
 }
 
 .container {
@@ -44,15 +46,23 @@ h2 {
   justify-content: center;
 }
 
-a {
-  padding: 0 2.5rem 2.5rem;
+p {
+  padding: 0 1rem 1rem;
   margin: 0;
-  text-align: center;
-  display: block;
+  text-align: justify;
+}
+
+img {
+  margin: 0;
+  width: 100%;
+}
+
+a {
+  margin: 0;
   text-decoration: none;
   color: #666;
 }
 .card:hover {
   box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }

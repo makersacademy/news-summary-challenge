@@ -2,27 +2,38 @@
 
 var request = new XMLHttpRequest()
 
-request.open('Get', 'https://content.guardianapis.com/search?q=headlines&api-key=1cca0ba4-fb88-457c-904c-1517fac2b7f1')
+request.open('Get', 'http://content.guardianapis.com/search?q=headlines&show-fields=headline,thumbnail,body,shortUrl,bodyText&api-key=test')
 
 request.onload = function() {
   var data = JSON.parse(this.response)
 
   if (request.status >= 200 && request.status <400) {
-    data.response.results.forEach(a => {
-      console.log(a)
+    data.response.results.forEach(group => {
+      console.log(group)
+      article = group.fields
+      const link = document.createElement('a')
+      link.href = article.shortUrl
+
       const card = document.createElement('div')
       card.setAttribute('class', 'card')
+      card.href = article.shortUrl
 
       const h2 = document.createElement('h2')
-      h2.textContent = a.webTitle
+      h2.textContent = article.headline
 
-      const more = document.createElement('a')
-      more.textContent = "click here for more"
-      more.href = a.webUrl
+      const img = document.createElement('img')
+      img.src = article.thumbnail
+  
 
-      container.appendChild(card)
+      const p = document.createElement('p')
+      p.textContent = article.bodyText.substring(0,300) +'...'
+
+      container.appendChild(link)
+      link.appendChild(card)
       card.appendChild(h2)
-      card.appendChild(more)
+      card.appendChild(img)
+      card.appendChild(p)
+
     })
   }
 }
