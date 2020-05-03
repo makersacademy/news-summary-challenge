@@ -48,7 +48,7 @@
 - [x] Research requests to external API's
 - [x] User Story - headlines
 - [x] User Story - link to news article on guardian website
-- [ ] User Story -  summary
+- [ ] User Story - summary
 
 ## Organise user stories based on piority & ease of implementation
 
@@ -75,11 +75,12 @@ The basic idea is to send an `apiRequestUrl` query parameter to the News Summary
 
 **Please stub your tests to avoid exceeding the API rate limit**
 
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make. 
+If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.
 
 ```
 curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
 ```
+
 - parameters: body & `api-key`
 
 To make this request via the Makers News Summary API with cURL, you could do something like this:
@@ -87,7 +88,8 @@ To make this request via the Makers News Summary API with cURL, you could do som
 ```
 curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
 
-``` 
+```
+
 - http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=
 - parameter value: http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
 
@@ -99,6 +101,22 @@ Note how the `apiRequestUrl` parameter value is just the request you would have 
 
 - going to start with Jasmine as want to focus on process and refractoring and my testing framework at the moment needs updating, I will come back to this challenge and use my own testing framework
 - Feature tests are manual tests with checklists
+
+### What is the user doing with the data?
+
+- **Views** headlines
+- **Selects** headlines
+- **Views** story
+
+--> user does NOT need access to functions when viewing - methods can be **private**
+--> user does need access to function when selecting - methods must be **public**
+
+| User                             | DOM                  | HTML                                                         | api              |
+| -------------------------------- | -------------------- | ------------------------------------------------------------ | ---------------- |
+| views headlines                  | on load sets up page | headline container                                           | guardian - title |
+| click on link for guardian story | on load sets up page | headline container                                           | guardian - link  |
+| click on headlines for summary   | listen to user?      | change to summary containter <br> headline container removed | Aylien link      |
+|                                  |                      |                                                              |                  |
 
 # User stories
 
@@ -114,142 +132,189 @@ Note how the `apiRequestUrl` parameter value is just the request you would have 
     So that I can get an in depth understanding of a very important story
 ```
 
-### What is the user doing with the data?
+**Feature Test 1**: User story 1
 
-- **Views** headlines
-- **Selects** headlines
-- **Views** story
-
---> user does NOT need access to functions when viewing - methods can be **private**
---> user does need access to function when selecting - methods must be **public**
-
-| User               | DOM                                | HTML               | Guardian api |
-| ------------------ | ---------------------------------- | ------------------ | ------------ |
-| views headlines    | X                                  | headline container | headlines    |
-| click on headlines | Listen for click -> Select link id | change to story    | full story   |
-|                    |                                    |                    |              |
-
-
- 
- **Feature Test 1**:  User story 1
 - [x] User can see headlines from guardian
-- [x] User can see headlines printed as a list 
-  
+- [x] User can see headlines printed as a list
 
-Steps: 
+Steps:
+
 - [x] Create html with headline container
 - [x] Get API working
 - [x] Add to headline container - interface
-- [x] Print to html as a list 
-
+- [x] Print to html as a list
 
 # Research - API
 
-### relates to feature test 1 
+### relates to feature test 1
+
 ## Guardian API research and experimentation
 
 ![](pictures/guardian-example-response.png)
 <https://open-platform.theguardian.com/documentation/search>
 
-
-
 ```javascript
-results = parsedResponse.response.results
+results = parsedResponse.response.results;
 ```
+
 ![](pictures/guardian-example.png)
 
-- array with objects 
-- Can access objects with keys 
-- need webTitle 
+- array with objects
+- Can access objects with keys
+- need webTitle
 
 ![](pictures/guardian-fields.png)
 
-
--------------------------------------------------------------------------------------------
+---
 
 **Feature Test 2**: User Story 2
-- [ ] User can click on link 
-- [ ] Link will show full story 
 
-- Steps 
-- [X] Add href
+- [ ] User can click on link
+- [ ] Link will show full story
+
+- Steps
+- [x] Add href
 - [x] research how to access content of article
 - [x] link to guardian website
 - [x] Find solution to bug - only showing some links
 
-
 ## Research
+
 **href**:
 ![](pictures/href.png)
-- href is the link 
-- text is  between tags 
+
+- href is the link
+- text is between tags
 
 **How to access content**:
-- Test with ```webUrl``` (The URL of the html content) √
-- ```apiUrl``` - The URL of the raw content  
+
+- Test with `webUrl` (The URL of the html content) √
+- `apiUrl` - The URL of the raw content
   - {"message":"No API key found in request"}
-  -  "apiUrl": "https://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live"
+  - "apiUrl": "https://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live"
 
-## bug 
+## bug
 
-``` javascript
+```javascript
 // missed out on single quotes between  interpolated javascript
- headLineList.innerHTML += `<a href='${result.webTitle}>${result.webTitle}'</a>`
- headLineList.innerHTML += `<a href='${result.webTitle}'>'${result.webTitle}'</a>`;
- ```
----------------------------------------------------------------------------
+headLineList.innerHTML += `<a href='${result.webTitle}>${result.webTitle}'</a>`;
+headLineList.innerHTML += `<a href='${result.webTitle}'>'${result.webTitle}'</a>`;
+```
+
+---
 
 ```
 3.  As a busy politician
     I can see a summary of a news article
     So I can get a few more details about an important story
-````
+```
 
 **Feature Test 2**: User Story 3
-- [ ] User can click on on the headlines 
+
+| USER                           | DOM             | HTML                                                         | API         |
+| ------------------------------ | --------------- | ------------------------------------------------------------ | ----------- |
+| click on headlines for summary | listen to user? | change to summary containter <br> headline container removed | Aylien link |
+
+- [ ] User can click on on the headlines
 - [ ] Headlines will show only the content of the article on the same page
-  
 
+### Steps
 
-### Steps 
+API
 - [x] Research Aylien summary API
-- [x] Get the parameter value for url and save it to a variable 
+- [x] Get the parameter value for url and save it to a variable
 - [ ] Request, open + send Aylien API request
-- [ ] Research best html elements to show new content on  one page apps 
-- [ ] Make the headlines clickable  
-- [ ] Display content of the article on the same page  
-- [ ] Delete all other content 
+- [ ] turn json into javascript
+  
+  HTML 
+- [ ] Research best html elements to show new content on one page apps
+- [X] Make the headlines clickable
+- [ ] Display content on the same page
+- [ ] Delete all other content
 
+Connected 
+- [ ] Display content of the article
 
-
-
-
-------------------------------------------------------------------------------------------
+---
 
 ## Research - Aylien summary API
 
-**Aylien API** 
+**Aylien API**
 
 ```
 curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
   -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
   -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
-  ```
+```
 
-  -  Uses headers to authenticate with the Aylien API.
+- Uses headers to authenticate with the Aylien API.
 
 **Makers News Summary API with cURL**
+
 ```
 curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
 ```
 
-- herokuapp 
+- herokuapp
   - http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=
-- **parameter value of  herokuapp** - api request --> aylien api 
-  -  https://api.aylien.com/api/v1/summarize?url=
-- **Parameter value ** - url to summarise 
+- **parameter value of herokuapp** - api request --> aylien api
+  - https://api.aylien.com/api/v1/summarize?url=
+- **Parameter value ** - url to summarise
+
   - http://worrydream.com/MediaForThinkingTheUnthinkable/note.html
 
-- same request to the Aylien API but no authentication headers 
+- same request to the Aylien API but no authentication headers
 
-------------
+---
+## Research -  Research best html elements to show new content on one page apps
+- Experiment with a ```button``` & if it does not work will try ```href```
+  
+  ``` html
+  <input id="submit-note" onclick="showEntireNore(event)" type="submit" value="Make note">
+  ```
+
+  ``` javascript
+  function showEntireNote() {
+  let noteAddress = findNoteAddress();
+  let index = findIndexOfNoteClicked(noteAddress);
+  displayNoteView(index);
+  hideNotesListView();
+}
+```
+
+
+**Buttons: **
+
+```javascript
+document.getElementById("individual-note-view").style.display = "none";
+populateNoteList();
+window.addEventListener("hashchange", showEntireNote);
+```
+
+Problem - in populateHeadlist  added button with function 
+```javascript
+    headLineList.innerHTML += `<button  id='headline-button' type='button' onclick='${displaySummary()}'> ${result.webTitle}  </button> <br>`
+```
+- but runs method method so it is 'clicking' without being clicked 
+
+
+Need to experiment with buttons more:
+- **Experiment 1:**
+- put in html before script is called - this now only runs when clicked but only one button as it not created with  for loop  
+
+```html
+ <button  id='headline-button' type='button' onclick=displaySummary()>   </button> <br>
+ ```
+
+ **Research**
+ - Research lead me to addEventListener method 
+
+<https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
+<https://www.w3schools.com/jsref/event_onclick.asp>
+
+```javascript
+object.addEventListener("click", myscript)
+
+```
+
+![](pictures/on_click_event_listener.png)
