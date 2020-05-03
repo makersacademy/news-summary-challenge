@@ -227,9 +227,9 @@ API
 - [ ] turn json into javascript
   
   HTML 
-- [ ] Research best html elements to show new content on one page apps
+- [X] Research best html elements to show new content on one page apps
 - [X] Make the headlines clickable
-- [ ] Display content on the same page
+- [ ] Display test content on the same page
 - [ ] Delete all other content
 
 Connected 
@@ -316,5 +316,33 @@ Need to experiment with buttons more:
 object.addEventListener("click", myscript)
 
 ```
-
 ![](pictures/on_click_event_listener.png)
+
+
+- tried this method but it only worked for first headline 
+- I then tried examples from here which are meant to add multiple event handlers <https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/>
+- But also only worked for first headline 
+  
+- Then went back and looked at what Thomas had done for our notes-app project. This worked   √   
+  - /Users/ginafrankel/Projects/group/notes-app
+  - branch - toms-super-amazing-branch)  
+  - interface.js - line 32
+  - index.html - line 13
+  - 
+``` javascript
+testList.innerHTML += `<a onclick="viewNote('${index}','${notes.fullList}')" id='${note}'>${note}<br></a>`;
+```
+- <a></a>  - anchor element 
+- onclick=viewNote() - runs a the function viewNote on click 
+
+I thought this needed a href to work but it seems to work with just onclick 
+- does it ned an <a></a>
+- maybe it will work with any element -- test  √ works with <p></p>
+- Looking at my notes above I  realised I had tried something very similar 
+
+```javascript
+    headLineList.innerHTML += `<button  id='headline-button' type='button' onclick='${displaySummary()}'> ${result.webTitle}  </button> <br>`
+```
+- but the problem was I had passed the displaySummary as javascript not html and thus it ran the method 
+
+--------------------------------------------------------------------------------
