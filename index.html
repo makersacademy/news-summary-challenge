@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="stylesheet" href="main.css">
   <script src="config.js"></script>
   <script src="lib/story.js"></script>
   <script src="lib/storyHandler.js"></script>
@@ -15,7 +16,14 @@
 </head>
 
 <body>
-  <h1>Summary Of Today's News</h1>
+  <header class="sticky">
+    <div class="container fr">
+      <h1>News</h1>
+      <nav>
+        <button id="listButton">Headlines</button>
+      </nav>
+    </div>
+  </header>
 
   <section id="main">
     <ul id="article-list">
@@ -26,4 +34,3 @@
 </body>
 
 </html>
-
