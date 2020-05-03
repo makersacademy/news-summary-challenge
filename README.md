@@ -205,5 +205,9 @@ _Sometimes it takes a very short while to fetch the summary in order to display 
 > So that I can get an in depth understanding of a very important story  
 > I can click a link to see the original news article
 
-So, once the user has clicked through to the summary, there could be a link tot he full article. Fortunately this is quite simple to implement as we already have the route to the article represented as the storys' id, and we know they are all going to need the Guardian's base URL.
+So, once the user has clicked through to the summary, there could be a link tot he full article. Fortunately this is quite simple to implement as we already have the route to the article represented as the story's id, and we know they are all going to need the Guardian's base URL.
+
+- Added a method `createLink`  to Story which takes text and and url as parameters, it creates an a element, settings its href attribute with the passed url. It then creates a new text node with the text passed, and appends that to the a element, and returns it.
+
+- Added to the `summaryComponent` method a variable articleLink, which uses the `createLink` method, passing in the text 'Read original article' and `this.LINK_URL` which is assigned with 'https://www.theguardian.com/' and the story id concatenated. the articleLink is appended onto the component before it is returned.
 
