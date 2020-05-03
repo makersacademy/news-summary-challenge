@@ -4,6 +4,14 @@ This is a project to practice Single page Web Apps, and AJAX requests, using van
 
 The app grabs all the headlines from the Guardian newspaper API and display them on a page. Clicking on a headline will show a summary of the article.
 
+## Visit the site
+
+The site is available for viewing [here](http://guardian-summariser.surge.sh/)
+
+## Screen Previews
+
+![Screen Previews](images/guardian-summariser-preview.gif)
+
 ## User Stories
 
 Must have:
@@ -232,3 +240,22 @@ Given that we aren't allowed to use server side backend JS I cannot write my own
 > As a busy politician  
 > To make my news reading more fun  
 > I can see whizzy animations in the app
+
+Strictly speaking, unstyled HTML is fully responsive, but I see what this user story is driving at.
+
+This is all CSS based subjective style improvements. There's a lot of tinkering and trying different styles involved, so rather than go through everything I tried here is a summary of what I ended up with:
+
+- Added a header element, containing the h1 and the nav.
+- Nav element has a single button to restore the headlines list.
+- Arranged the header and the section using flexbox.
+- Added a color scheme and font (I swear I didn't make it look like the guardian deliberately, it was completely coincidental)
+- Gave buttons and headlines hover effects with animations for emphasis.
+- Styled the scrollbar too.
+- Font size scales with viewport width between a min and max value.
+
+### Retrospective
+
+- I don't like not using TDD. I spiked a lot of features for the front end, setting my own expectations for the behaviour I wanted to create. After creating a couple of features in particular (the story's `summaryComponent`) I realised this could have been TDDd.
+- I could've organised the CSS a bit better, but for this small project and given the little I had to write it, it will serve.
+- I Feel I have got to grips with asynchronous functions, especially async await.
+- I'm a bit miffed that I couldn't find a solution to get the image, but never mind.
