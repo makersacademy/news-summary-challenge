@@ -195,9 +195,9 @@ Now the interface needs to be able to track when and which of the headlines is c
 
 - `findById` simply loops through the `stories` array and filters them for one that matches the id passed.
 
-It now works.
+It now works, but sometimes it takes a short while to fetch the summary in order to display it, but I think this a fair trade off as summaries are fetched when required to limit API calls. It would be possible to pre-load all of the story summaries, but that would result in many many more API calls, which may lead to rate limiting.
 
-_Sometimes it takes a very short while to fetch the summary in order to display it, but I think this a fair tradeoff as summaries are fetched when required to limit API calls. It would be possible to preload all of the story summaries, but that would result in many many more API calls, which may lead to rate limiting._
+To reassure the user that the story is in fact loading, I added to the `renderSummary` method to change the section's innerHTML to an h2 tag of "Loading..." before the section is replaced with the story's `summaryComponent`.
 
 ### User Story 3
 
@@ -209,5 +209,16 @@ So, once the user has clicked through to the summary, there could be a link tot 
 
 - Added a method `createLink`  to Story which takes text and and url as parameters, it creates an a element, settings its href attribute with the passed url. It then creates a new text node with the text passed, and appends that to the a element, and returns it.
 
-- Added to the `summaryComponent` method a variable articleLink, which uses the `createLink` method, passing in the text 'Read original article' and `this.LINK_URL` which is assigned with 'https://www.theguardian.com/' and the story id concatenated. the articleLink is appended onto the component before it is returned.
+- Added to the `summaryComponent` method a variable articleLink, which uses the `createLink` method, passing in the text 'Read original article' and `this.LINK_URL` which is assigned with the base url for the guardian and the story id concatenated together. The articleLink is appended onto the component before it is returned.
 
+### User Story 4
+
+> As a busy politician  
+> So that I have something nice to look at  
+> I can see a picture to illustrate each news article when I browse headlines
+
+This I have found a bit tricky. Viewing the Guardian's articles you can clearly see good images to grab the url of, however the Alyien Article Extraction API, which offers a way to extract an image url among other data from articles, doesn't seem to be able to decide which to return, so it returns none.
+
+
+
+curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/extract?url=https://www.theguardian.com/world/2020/may/02/auschwitz-memorial-condemns-nazi-slogan-illinois-coronavirus-rally&language=en"
