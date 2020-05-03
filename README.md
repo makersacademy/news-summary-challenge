@@ -138,6 +138,8 @@ It also assigns its stories with a call of `fetchStories`
 
 `interface.js` simply creates a new instance of StoryHandler, then adds an event listener for the COM content loaded, then calls the storyHandler.renderHeadlines.
 
+I used the [Guardian's helpful API explorer](https://open-platform.theguardian.com/explore/) to work out how I wanted to use their API. I decided on 20 articles from today, ordered newest first.
+
 _I would've liked to TDD the StoryHandler, but as it relies on asynchronous functions my testing framework wasn't appropriate for it, so I spiked it._
 
 ### User Story 2
@@ -157,8 +159,39 @@ Fortunately the JSON returned from the guardian includes a unique id for each st
 Updated the tests for the Story to be constructed with an id alongside the headline. Red.
 
 - Added a new parameter to Story constructor for id.
-- Adjusted the created  
+- Adjusted the other test to pass an id to its story also.
 
 Green.
 
+Also updated the StoryHandler `fetchStories` method to pass the stories it creates an id too.
+
+I decided to go down the route of ids on each li, rather than links. I updated the test for `headlineComponent` to expect that the li returned has an id with the value of the id passed to the story. Red.
+
+- Updated the `headlineComponent` method to set an id attribute on the li element before adding to DOM.
+
+Green.
+
+Now the Story needs to be able to represent itself as an article summary.
+
+- Wrote an async function `summaryComponent`, that creates a section element, appending to it h2 with the story's title, and p element for each of the story's `summarySentences`.
+
+- The `summarySentences` are generated from another async function, `summary`. This function checks if `summarySentences` is not yet defined, and if so uses the story's `ARTICLE_SUMMARISER` to `fetchById` with the story's id. This returns an array of strings which summarise the article.  
+As the strings come through from what I assume is a machine learning algorithm they can have some issues with newlines, and unnecessary date stamps coming through. The sentences are mapped through, using regex replace to remove the newline characters and date stamps, and the resulting array assigned to the story's `summarySentences`.  
+If `summarySentences` is already defined it simply returns that. This helps prevent unnecessary API calls.
+
+- The story's `ARTICLE_SUMMARISER` is an injected `ArticleSummariser` class. The `ArticleSummariser` has a function `fetchById` which fetches from the helpfully provided news-summary-api heroku server with an implementation of Alyien.  
+
+_I did try to implement this myself, however due to Cross Origin Request Blocking by the browser, the call to the Alyien API needs to be done with a server, hence the news-summary-api heroku server._
+
+- `fetchById` interpolates the passed id onto the base url for the api, then parses the resulting JSON, unpacks the sentences and returns them as an array (which `story.summary` can use).
+
+Now the interface needs to be able to track when and which of the headlines is clicked, and the storyHandler needs to be able to get the correct story to provide its `summaryComponent` and render that to the page.
+
+- In `interface.js` after the StoryHandler has rendered the headlines, the `addClickListeners` method is called in a chained then.
+
+- `addClickListeners` gets all the elements with class name 'headline', and loops through them adding click event listeners that make a call to `storyHandler.renderSummary` passing in the event current target's id (i.e. the story id).
+
+- `storyHandler.renderSummary` is an async function that takes an argument of id, and finds the correct story using the `findById` async function. It then awaits the found story's `summaryComponent` (as this may involve an API call), and grabs the main section of the page. it then replaces the main section with the `summaryComponent`.
+
+- `findById` simply loops through the `stories` array and filters them for one that matches the id passed.
 
