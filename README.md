@@ -195,3 +195,15 @@ Now the interface needs to be able to track when and which of the headlines is c
 
 - `findById` simply loops through the `stories` array and filters them for one that matches the id passed.
 
+It now works.
+
+_Sometimes it takes a very short while to fetch the summary in order to display it, but I think this a fair tradeoff as summaries are fetched when required to limit API calls. It would be possible to preload all of the story summaries, but that would result in many many more API calls, which may lead to rate limiting._
+
+### User Story 3
+
+> As a busy politician  
+> So that I can get an in depth understanding of a very important story  
+> I can click a link to see the original news article
+
+So, once the user has clicked through to the summary, there could be a link tot he full article. Fortunately this is quite simple to implement as we already have the route to the article represented as the storys' id, and we know they are all going to need the Guardian's base URL.
+
