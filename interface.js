@@ -1,5 +1,4 @@
-var test = '/example-guardian-api-call.json'
-const storyHandler = new StoryHandler(test);
+const storyHandler = new StoryHandler();
 var homePage;
 
 window.addEventListener("DOMContentLoaded",() => {
