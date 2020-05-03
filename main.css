@@ -22,6 +22,7 @@ body {
   color: var(--main-color);
   background-color: var(--off-white);
   font-family: Merriweather;
+  font-size: clamp(.8em, .9vw ,1em);
   line-height: 1.6;
 }
 
