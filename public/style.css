@@ -1,0 +1,28 @@
+
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0 2em 0 2em;
+  background-color: rgb(245, 245, 238);
+}
+
+#header {
+  font-family: 'OldEnglishFive';
+  text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+hr {
+  border-top: medium double #333;
+}
+
+
+
+@font-face {
+  font-family: 'OldEnglishFive';
+}
