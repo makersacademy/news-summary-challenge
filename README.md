@@ -219,6 +219,16 @@ So, once the user has clicked through to the summary, there could be a link tot 
 
 This I have found a bit tricky. Viewing the Guardian's articles you can clearly see good images to grab the url of, however the Alyien Article Extraction API, which offers a way to extract an image url among other data from articles, doesn't seem to be able to decide which to return, so it returns none.
 
+I have made some attempt with other APIs, however their rate limiting is crippling. You can see a start at an image scraper in `imageScraper.js`. The idea is that it would use the api to return the HTML of the page, then use regex to match the first appropriate image from the page.
 
+Given that we aren't allowed to use server side backend JS I cannot write my own web scraper, and existing APIs are either prohibitive in their rate limiting, cost money, or require the use of an SDK, it seems this is a lost cause.
 
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/extract?url=https://www.theguardian.com/world/2020/may/02/auschwitz-memorial-condemns-nazi-slogan-illinois-coronavirus-rally&language=en"
+### User Stories 5 & 6
+
+> As a busy politician  
+> Just in case my laptop breaks  
+> I can read the site comfortably on my phone
+
+> As a busy politician  
+> To make my news reading more fun  
+> I can see whizzy animations in the app
