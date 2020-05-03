@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function getRequestToGuardian(callBack) {
     let guardianURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search"
     var request = new XMLHttpRequest();
-    var herokuappURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl="
+    //var herokuappURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl="
     console.log(request)
     
 
@@ -19,20 +19,32 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     request.open('GET', guardianURL)
     request.send()
-    request.open('Get', contentLink)
-    request.UNSENT()
   } 
 
   getRequestToGuardian()
 });
 //}
+
+
 function populateHeadlineList(results ,headLineList) { 
   results.forEach(function(result){
-    //contentLink = herokuappURL  + result.apiUrl
-    //console.log(contentLink)
-    headLineList.innerHTML += `<a href='${result.webTitle}'>'${result.webTitle}'</a>`
-    headLineList.innerHTML += '<br>' + '<br>'
+    //let aylienURL = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + result.webUrl
+    //console.log(aylienURL)
+    //console.log(result.webUrl)
+   
+    var request = new XMLHttpRequest();
+  
+
+    headLineList.innerHTML += result.webTitle + '<br>' 
+    addGuardianLinks(result, headLineList)
   })
+  //request.open('Get', aylienURL)
+  //request.send()
+}
+
+function addGuardianLink(result, headLineList){
+  headLineList.innerHTML += `<a href='${result.webUrl}'> Link to original news article </a>`
+  headLineList.innerHTML += '<br>' + '<br>'
 }
 
 

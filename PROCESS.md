@@ -47,9 +47,10 @@
 - [x] Decide on testing
 - [x] Research requests to external API's
 - [x] User Story - headlines
-- [ ] User Story - news article
+- [x] User Story - link to news article on guardian website
+- [ ] User Story -  summary
 
-## Organise user stories based on piority
+## Organise user stories based on piority & ease of implementation
 
 ![](pictures/2020-05-02-12-52-49.png)
 (organised in order, yellow tag = mvp )
@@ -87,7 +88,7 @@ To make this request via the Makers News Summary API with cURL, you could do som
 curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
 
 ``` 
-- http://news-summary-api.herokuapp.com/guardian?apiRequestUrl
+- http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=
 - parameter value: http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
 
 - parameters only body, no `api-key`
@@ -99,7 +100,7 @@ Note how the `apiRequestUrl` parameter value is just the request you would have 
 - going to start with Jasmine as want to focus on process and refractoring and my testing framework at the moment needs updating, I will come back to this challenge and use my own testing framework
 - Feature tests are manual tests with checklists
 
-## User stories
+# User stories
 
 ```
 1.  As a busy politician
@@ -172,8 +173,8 @@ results = parsedResponse.response.results
 
 - Steps 
 - [X] Add href
-- [ ] research how to access content of article
-- [ ] link to new article on the same page
+- [x] research how to access content of article
+- [x] link to guardian website
 - [x] Find solution to bug - only showing some links
 
 
@@ -198,7 +199,57 @@ results = parsedResponse.response.results
  ```
 ---------------------------------------------------------------------------
 
+```
+3.  As a busy politician
+    I can see a summary of a news article
+    So I can get a few more details about an important story
+````
+
+**Feature Test 2**: User Story 3
+- [ ] User can click on on the headlines 
+- [ ] Headlines will show only the content of the article on the same page
+  
+
+
+### Steps 
+- [x] Research Aylien summary API
+- [x] Get the parameter value for url and save it to a variable 
+- [ ] Request, open + send Aylien API request
+- [ ] Research best html elements to show new content on  one page apps 
+- [ ] Make the headlines clickable  
+- [ ] Display content of the article on the same page  
+- [ ] Delete all other content 
 
 
 
 
+
+------------------------------------------------------------------------------------------
+
+## Research - Aylien summary API
+
+**Aylien API** 
+
+```
+curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
+  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
+  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
+  ```
+
+  -  Uses headers to authenticate with the Aylien API.
+
+**Makers News Summary API with cURL**
+```
+curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
+```
+
+- herokuapp 
+  - http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=
+- **parameter value of  herokuapp** - api request --> aylien api 
+  -  https://api.aylien.com/api/v1/summarize?url=
+- **Parameter value ** - url to summarise 
+  - http://worrydream.com/MediaForThinkingTheUnthinkable/note.html
+
+- same request to the Aylien API but no authentication headers 
+
+------------
