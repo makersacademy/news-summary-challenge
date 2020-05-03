@@ -107,9 +107,9 @@ I created an `index.html`, sourcing `storyHandler.js`, `interface.js` and `story
 `storyHandler.js` has class StoryHandler with several methods:
 
 - Its `constructor` takes an argument of apiURL, defaulting to the guardian's ape url, so that other routes can be injected for testing purposes.  
-It also calculates a correctly formatted date string, and sets other constants for interpolation into the query string.  
-It assigns CONFIG with a `getJSON` call for the config.json file (containing the hidden api-key).
-It also assigns its stories with a call of `fetchStories`
+  It also calculates a correctly formatted date string, and sets other constants for interpolation into the query string.  
+  It assigns CONFIG with a `getJSON` call for the config.json file (containing the hidden api-key).  
+  It also assigns its stories with a call of `fetchStories`.  
 - `fetchStories` is an async function that waits for CONFIG to be fetched , then fetches from the api url plus the resulting secret api-key. It returns a map over the responses results array which contains the story data, and creating new Story instances from them.
 - `getJSON` is an async function that fetches a json from the specified path, waits for that to resolve, then parses and returns the json.
 - `renderHeadlines` is another async function, that awaits the stories to be assigned with `fetchStories`, which grabs the element with id of articles and gets its first element child (the ul), then iterates over the stories appending the story.headlineComponent.
@@ -154,10 +154,10 @@ Now the Story needs to be able to represent itself as an article summary.
 - Wrote an async function `summaryComponent`, that creates a section element, appending to it h2 with the story's title, and p element for each of the story's `summarySentences`.
 
 - The `summarySentences` are generated from another async function, `summary`. This function checks if `summarySentences` is not yet defined, and if so uses the story's `ARTICLE_SUMMARISER` to `fetchById` with the story's id. This returns an array of strings which summarise the article.  
-As the strings come through from what I assume is a machine learning algorithm they can have some issues with newlines, and unnecessary date stamps coming through. The sentences are mapped through, using regex replace to remove the newline characters and date stamps, and the resulting array assigned to the story's `summarySentences`.  
-If `summarySentences` is already defined it simply returns that. This helps prevent unnecessary API calls.
+  As the strings come through from what I assume is a machine learning algorithm they can have some issues with newlines, and unnecessary date stamps coming through. The sentences are mapped through, using regex replace to remove the newline characters and date stamps, and the resulting array assigned to the story's `summarySentences`.  
+  If `summarySentences` is already defined it simply returns that. This helps prevent unnecessary API calls.
 
-- The story's `ARTICLE_SUMMARISER` is an injected `ArticleSummariser` class. The `ArticleSummariser` has a function `fetchById` which fetches from the helpfully provided news-summary-api heroku server with an implementation of Alyien.  
+- The story's `ARTICLE_SUMMARISER` is an injected `ArticleSummariser` class. The `ArticleSummariser` has a function `fetchById` which fetches from the helpfully provided news-summary-api heroku server with an implementation of Alyien.
 
 _I did try to implement this myself, however due to Cross Origin Request Blocking by the browser, the call to the Alyien API needs to be done with a server, hence the news-summary-api heroku server._
 
@@ -185,7 +185,7 @@ To reassure the user that the story is in fact loading, I added to the `renderSu
 
 So, once the user has clicked through to the summary, there could be a link tot he full article. Fortunately this is quite simple to implement as we already have the route to the article represented as the story's id, and we know they are all going to need the Guardian's base URL.
 
-- Added a method `createLink`  to Story which takes text and and url as parameters, it creates an a element, settings its href attribute with the passed url. It then creates a new text node with the text passed, and appends that to the a element, and returns it.
+- Added a method `createLink` to Story which takes text and and url as parameters, it creates an a element, settings its href attribute with the passed url. It then creates a new text node with the text passed, and appends that to the a element, and returns it.
 
 - Added to the `summaryComponent` method a variable articleLink, which uses the `createLink` method, passing in the text 'Read original article' and `this.LINK_URL` which is assigned with the base url for the guardian and the story id concatenated together. The articleLink is appended onto the component before it is returned.
 
