@@ -11,8 +11,32 @@ body {
 #app-title {
     text-align: center;
     font-size: x-large;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: darkviolet;
-    background-color: lightblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    border: 2px solid black;
 }
 
+#content-padding {
+    padding: 0 3%;
+    margin: 18px auto;
+}
+
+#hello-world {
+    color: black;
+    font-size: x-large;
+}
+
+#news {
+    padding: 20px;
+    margin: 20px;
+
+}
+
+#john {
+    margin: 5px;
+    border: 2px solid green;
+
+    display: flex;
+    flex-direction: row;
+    
+}
