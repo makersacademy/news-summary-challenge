@@ -32,10 +32,10 @@ function updateNews() {
     // newspiece.setAttribute('href', article['webUrl'])
     newspiece.setAttribute("id", "story")
     newspiece.setAttribute("class", "cell")
-    newspiece.setAttribute("onclick", article['webUrl'])
-    newspiece.addEventListener("click", function() {
-        window.location = article['webUrl']
-    })
+    newspiece.setAttribute("onclick", "gotoLink('" + article['webUrl'] + "')")
+    // newspiece.addEventListener("click", function() {
+    //     window.location = article['webUrl']
+    // })
     newspiece.innerHTML = article['sectionName'];
     title.innerHTML = article['webTitle']
     newsArticle.appendChild(newspiece)
@@ -47,3 +47,7 @@ function updateNews() {
 }
 
 updateNews()
+
+function gotoLink(link) {
+    window.location = link
+}
