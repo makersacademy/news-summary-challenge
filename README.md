@@ -1,9 +1,44 @@
 # News Summary challenge
 
 
+My focus was on process, please see [PROCESS](/PROCESS.md) for documentation of  process
+
+  ## Process Goals 
+  - Planning
+    - [x] organising user stories
+    - [x] Breakdown user stories
+    - [x] checklists
+    - [x] diagraming & tables
+  - Refractoring
+    - [x] Methods broken down
+    - [ ] Classes
+    - [x] Names
+    - [ ] public/ private
+  - TDD
+    - [ ] commit Red, Green, Refractor
+    - [x] Test first
+      - wrote manual feature tests
+      - should I have written unit tests?  I did not as everything is still the interface
+    - [ ] Use console
+  - Documentation
+    - [x] Document process including research
 
 
 
+## Completed 
+- [x] Organise user stories based on priority
+- [x] Basic mock up sketch with HTML elements
+- [x] Research server for app
+- [x] Add server
+- [x] Decide on testing
+- [x] Research requests to external API's
+- [x] User Story 1- headlines
+- [x] User Story 2 - link to news article on guardian website
+- [ ] User Story 3 - summary 
+  - frontend is set up 
+
+## To do next
+  - need  to connect alyien api to complete User Story 3
 
 
 # static web server
