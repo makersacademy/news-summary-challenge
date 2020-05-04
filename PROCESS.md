@@ -3,21 +3,22 @@
 - Focus on process
   - Planning
     - [x] organising user stories
-    - [ ] Breakdown user stories
-    - [ ] checklists
-    - [ ] diagraming & tables
+    - [x] Breakdown user stories
+    - [x] checklists
+    - [x] diagraming & tables
   - Refractoring
-    - [ ] Methods broken down
+    - [x] Methods broken down
     - [ ] Classes
-    - [ ] Names
+    - [x] Names
     - [ ] public/ private
   - TDD
     - [ ] commit Red, Green, Refractor
-    - [ ] Test first
+    - [x] Test first
+      - wrote manual feature tests
+      - should I have written unit tests?  I did not as everything is still the interface
     - [ ] Use console
   - Documentation
-    - [ ] Document learning by writing notes
-    - [ ] Document process
+    - [x] Document process including research
 
 ## Frontend, single page app guidance
 
@@ -48,7 +49,9 @@
 - [x] Research requests to external API's
 - [x] User Story - headlines
 - [x] User Story - link to news article on guardian website
-- [ ] User Story - summary
+- [ ] User Story - summary 
+  - frontend is set up 
+  - need  to connect alyien api
 
 ## Organise user stories based on piority & ease of implementation
 
@@ -169,8 +172,8 @@ results = parsedResponse.response.results;
 
 **Feature Test 2**: User Story 2
 
-- [ ] User can click on link
-- [ ] Link will show full story
+- [x] User can click on link
+- [x] Link will show full story
 
 - Steps
 - [x] Add href
@@ -201,7 +204,10 @@ headLineList.innerHTML += `<a href='${result.webTitle}>${result.webTitle}'</a>`;
 headLineList.innerHTML += `<a href='${result.webTitle}'>'${result.webTitle}'</a>`;
 ```
 
----
+
+
+![](pictures/userStory-1-&-2.png)
+------------------------------------------------------------------------------------------------------
 
 ```
 3.  As a busy politician
@@ -209,14 +215,18 @@ headLineList.innerHTML += `<a href='${result.webTitle}'>'${result.webTitle}'</a>
     So I can get a few more details about an important story
 ```
 
-**Feature Test 2**: User Story 3
+**Feature Tests**: User Story 3
+
+- [x] User can click on on the headlines and will remain on the same page
+- [ ] Headlines will show only the content of the article on the same page
+
+  /* should have been a test for: 'user can press back to get to previous content'
 
 | USER                           | DOM             | HTML                                                         | API         |
 | ------------------------------ | --------------- | ------------------------------------------------------------ | ----------- |
 | click on headlines for summary | listen to user? | change to summary containter <br> headline container removed | Aylien link |
 
-- [ ] User can click on on the headlines
-- [ ] Headlines will show only the content of the article on the same page
+
 
 ### Steps
 
@@ -232,9 +242,11 @@ API
 - [X] Display test content on the same page
 - [X] Delete all other content
 - [X] Bring back all other content
+- [x] Test showing different content with arrays/hashes & id 
+
 
 Connected 
-- [ ] Display content of the article
+- [ ] Display summary  of the article
 
 ---
 
@@ -284,7 +296,7 @@ curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.ayl
 ```
 
 
-**Buttons: **
+**Buttons:**
 
 ```javascript
 document.getElementById("individual-note-view").style.display = "none";
@@ -354,4 +366,77 @@ I thought this needed a href to work but it seems to work with just onclick
   - created a button which  onclick  #goBack executes
   - #goBack uses #location.reload which reloads the page
 
+
+### Ideation:  displaying summary 
+
+API 
+![](pictures/planUserStory-3.png)
+
+Showing content of API
+![](pictures/planUserStory-3b.png)
+
+
+### Breakdown of step - showinng different content 
+- Test showing different content with arrays/hashes & id 
+  - [x] For each loop - all id are named to match index/hash
+    - start at  0 = index 
+  - [ ] make each one print to html something different based on index with logic when press on text
+
+**Index method** 
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var a = fruits.indexOf("Apple");
+
+  fruits[0] = "Banana
+
+**To get the id on click**
+  event.srcElement.id
+
+  ![](pictures/onclick-id.png)
+
+----------------------------------------------------------------------------------------------------------------
+### Diagram User Story 1,2,3: 
+![](pictures/userStory-3.png)
 --------------------------------------------------------------------------------
+
+## Refractoring 
+
+- #populateHeadlineList(results, headLineList)
+- #addGuardianLink(result, headLineList) 
+- #showSummary()
+- #goBack()
+
+-  perhaps should go in newsSummary.app as could be considered componants ?
+-  research componant architecture 
+
+![](pictures/componant.png)
+![](pictures/componant-2.png)
+
+- In above example from Alice's workshop ```interface.js``` starts when the page loads and relates to anything to do with interaction 
+  - event listeners
+  - accessing document elements  (```getElement...```)
+  - adding elements to  html tree (```container.appendChild(note.toDOMElement```))
+- ```notes.js```
+  - methods that manipulate the data  
+  - how the data is formatted (creating html elements) 
+  
+
+To make  a componant file ```news.js```
+#showSummary
+  - has getElementById but this could be passed on  as an arguement
+Most methods:
+  - Adding elements to  html tree (the elements they are adding can be passed as an argument from news.js)
+
+
+### Ideation
+
+- news class 
+  - #summaryToDomElement() 
+  - #HeadlineListToDomElement(result) - tied to Guardian api 
+  - #GuardianLinkToDomElement() - tied to Guardian api 
+
+- Is it going to make things simpler? 
+  - X - it would be making  a new file for half a line per method 
+  - √ - it is seperating  functionality 
+
+### Summary 
+- at  this stage leaving it  
