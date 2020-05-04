@@ -7,7 +7,6 @@ function newsItem(apiResponseElement,articleID) {
 }
 
 newsItem.prototype.getHeadlineHTML= function() {
-  // var headline = `<a href='${this.shortUrl}' class='headline' id='Article #${this.id} headline'>${this.headline}</a>`;
   var headline = document.createElement('a')
   headline.href = this.shortUrl;
   headline.classList.add('headline');
@@ -17,7 +16,6 @@ newsItem.prototype.getHeadlineHTML= function() {
 };
 
 newsItem.prototype.getbodyTextHTML= function() {
-  // var bodyText = `<div id='Article #${this.id} bodytext'>${this.bodyText.substr(0,150)}</div>`;
   var bodyText = document.createElement('p');
   bodyText.id = `Article #${this.id} bodytext`;
   bodyText.classList.add('body')
@@ -26,7 +24,6 @@ newsItem.prototype.getbodyTextHTML= function() {
 };
 
 newsItem.prototype.getThumbnailHTML = function() {
-  // var thumbnail = `<img id='Article #${this.id} image' src='${this.thumbnail}'>`;
   var thumbnail = document.createElement('img');
   thumbnail.classList.add('thumbnail')
   thumbnail.id = `Article #${this.id} image`;
