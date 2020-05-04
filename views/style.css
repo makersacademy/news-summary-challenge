@@ -1,3 +1,9 @@
+
+.css-selector {
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Alice', serif;
+}
+
 body {
     color: navy;
     text-size-adjust: 100%;
@@ -11,7 +17,7 @@ body {
 #app-title {
     text-align: center;
     font-size: x-large;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Alice' serif;
     color: black;
     border: 2px solid black;
 }
@@ -29,15 +35,17 @@ body {
 #news {
     padding: 20px;
     margin: 20px;
-    display: flex;
-    flex-box: wrap;
-    flex-direction: row;
+    text-align: center;
 }
 
-#john {
+#story {
     margin: 5px;
-    border: 2px solid green;
-    color: red;
+    border: 2px solid rgb(221, 9, 193);
+    color: black;
+}
 
-    
+#story:hover {
+    background-color: rgba(136, 213, 236, 0.466);
+    cursor: pointer;
+
 }

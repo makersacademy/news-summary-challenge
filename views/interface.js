@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(event) {
     console.log("DOM content loaded")
 
-    otherApiFunction()
+    getApi()
     console.log(newsdata)
 });
 
@@ -19,17 +19,24 @@ function updateNews() {
         'sectionId': article['sectionId'],
         'sectionName': article['sectionName'],
         'webPublicationDate': article['webPublicationDate'],
-
         'webUrl': article['webUrl'],
         'apiUrl': article['apiUrl']
     })
-    
+    console.log(article['apiUrl'])
     var title = document.createElement('div', {
         'webTitle': article['webTitle'],
     })
 
-    newspiece.setAttribute("id", "john")
-    newspiece.innerHTML = article['sectionName'] + " " + article['webPublicationDate'];
+    
+
+    // newspiece.setAttribute('href', article['webUrl'])
+    newspiece.setAttribute("id", "story")
+    newspiece.setAttribute("class", "cell")
+    newspiece.setAttribute("onclick", article['webUrl'])
+    newspiece.addEventListener("click", function() {
+        window.location = article['webUrl']
+    })
+    newspiece.innerHTML = article['sectionName'];
     title.innerHTML = article['webTitle']
     newsArticle.appendChild(newspiece)
     newspiece.appendChild(title)
@@ -40,5 +47,3 @@ function updateNews() {
 }
 
 updateNews()
-
-
