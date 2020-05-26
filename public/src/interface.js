@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // Headder elements
-  let headder = document.createElement('headder');
-  document.body.appendChild(headder);
-  let h1_headder = document.createElement('h1');
-  h1_headder.innerHTML = "THE GUARDIAN NEWS SUMMARY"
-  headder.appendChild(h1_headder);
+  let header = document.createElement('header');
+  document.body.appendChild(header);
+  let h1_header = document.createElement('h1');
+  h1_header.innerHTML = "THE GUARDIAN NEWS SUMMARY"
+  header.appendChild(h1_header);
 
 
 
