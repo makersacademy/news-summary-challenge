@@ -7,17 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
   h1_header.innerHTML = "THE GUARDIAN NEWS SUMMARY"
   header.appendChild(h1_header);
 
-
-
   // Main container
-
   let div_element = document.createElement('div');
-  div_element.setAttribute('id', 'main-div');
-  div_element.innerHTML = 'Hello'
+  div_element.setAttribute('id', 'container');
 
   document.body.appendChild(div_element);
-
-
 
 
 

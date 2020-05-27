@@ -6,9 +6,11 @@ header {
   border-bottom: 4px #000 solid;
   margin-bottom: 10px;
 }
-.main-div {
-  font-size: 17px;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f4f4;
-  line-height: 1.5em;
+#container {
+  width: 90%;
+  height: 90vh;
+  margin: auto;
+  padding: 10px;
+  background: #f1f1f1;
+  color: #fff;
 }

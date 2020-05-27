@@ -56,6 +56,15 @@ I can see whizzy animations in the app
 To make my news reading more fun
 ```
 
+## Model view
+
+`ArticleSummary` |
+:--- |
+getArticles(article, url) |
+viewAllArticles() |
+viewSingleArticle() |
+getPreviewArticle() |
+
 ## API
 
 ### API authentication
