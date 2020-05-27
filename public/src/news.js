@@ -1,7 +1,9 @@
 
 class News {
 
-  constructor(body) {
-    this.body = body
+  constructor(newsBody) {
+    this.newsBody = newsBody
+    this.newsArray = []
   }
+
 }
