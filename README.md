@@ -60,7 +60,7 @@ To make my news reading more fun
 
 `ArticleSummary` |
 :--- |
-getArticles(article, url) |
+getArticles(article, img_url) |
 viewAllArticles() |
 viewSingleArticle() |
 getPreviewArticle() |
