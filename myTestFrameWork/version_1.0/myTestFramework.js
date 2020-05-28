@@ -82,6 +82,17 @@ Result.prototype.toEqual = function(expectation) {
   }
 }
 
+Result.prototype.notToEqual = function(expectation) {
+  if(this.assertion !== expectation) {
+    passed()
+  } else {
+    failed(function() {
+      printMessage(`Expected ${this.assertion} NOT to equal ${expectation}`)
+      printMessage(`But equals ${this.assertion}`)
+    }.bind(this))
+  }
+}
+
 Result.prototype.toBe = function(expectation) {
   if(typeof this.assertion !== 'boolean' || typeof expectation !== 'boolean') {
     return matcherError(function() {

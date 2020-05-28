@@ -13,6 +13,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.body.appendChild(div_element);
 
-
-
 })

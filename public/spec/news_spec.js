@@ -17,4 +17,11 @@ describe('News App', () => {
     expect(news.newsArray.length).toEqual(0)
   })
 
+  it('should be able to retrieved data from API', () => {
+    expect(news.getData()).notToEqual(undefined)
+  })
+
+  // news.receiveNews()
+  // expect(news.newsArray.length).notToEqual(0)
+
 })
