@@ -40,9 +40,11 @@ function loadNews(once) {
   let headlines = data.newsArray[0]['sentences']
   headlines.forEach(function (item, index) {
     let pHeader = document.createElement('p')
-    let headlineList = pHeader.innerHTML += (index + 1) + ':' + item + '</br>'
+    let previewHeadline = new News(item)
+    let headlineList = pHeader.innerHTML += (index + 1) + ':' + previewHeadline.preview() + '</br>'
+
     pageOneView.appendChild(pHeader)
-    // console.log(headlineList)
+    console.log(pHeader)
   })
 
 
