@@ -14,7 +14,7 @@ class NewsData {
     // .then(data => console.log(data.text)); //log the data;
     return dataAPI
   }
-
+  
 }
 
 // async function getData() {

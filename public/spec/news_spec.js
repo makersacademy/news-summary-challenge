@@ -1,7 +1,7 @@
 describe('News App', () => {
 
   var news;
-  var headline = 'This is Braeking News'
+  var headline = 'Todays News: breaking news, features, analysis and debate plus audio and video content from England, Scotland, Wales and Northern Ireland.'
 
   beforeEach(function(){
     news = new News(headline)
@@ -12,6 +12,10 @@ describe('News App', () => {
     it('should be able to create news Object', () => {
       // console.log('Logging this ', news.newsBody)
       expect(news.newsBody).toEqual(headline)
+    })
+
+    it('should be able to return news object as 40 charackters long', () => {
+      expect(news.preview()).toEqual('Todays News: breaking news, features, an...')
     })
 
   })
@@ -25,11 +29,6 @@ describe('News App', () => {
       expect(data.getData()).notToEqual(undefined)
     })
 
-    // news.receiveNews()
-    // expect(news.newsArray.length).notToEqual(0)
-
   })
-
-
 
 })

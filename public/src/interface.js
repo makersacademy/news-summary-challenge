@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function loadNews(event) {
-  news = new News
-  news.pushToArray()
+  event.preventDefault()
+  data = new NewsData
+  data.getData()
   let h1 = document.createElement('h1')
   h1.innerHTML = "SUMMARY"
   document.body.appendChild(h1)
-  event.preventDefault()
 }
