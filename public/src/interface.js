@@ -34,9 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function loadNews(event) {
   event.preventDefault()
-  let button = document.querySelector('#get-data')
-  button.style.display = 'none'
-  // pageTwoView.style.display = 'block'
+  document.querySelector('#get-data').style.display = 'none'
   let container = document.querySelector('#container')
   pageOneView.setAttribute('class', 'page-view')
   pageOneView.setAttribute('id', 'page-one')
@@ -59,16 +57,28 @@ function loadNews(event) {
     pageOne.style.display = 'none'
     let fullHeadlineView = document.createElement('p')
     fullHeadlineView.setAttribute('class', 'center')
+    fullHeadlineView.setAttribute('class', 'full-header')
     fullHeadlineView.innerHTML = `${data.newsArray[0]['sentences'][this.id]}`
     pageTwoView.setAttribute('class', 'page-view')
     pageTwoView.setAttribute('id', 'page-two')
     let button = document.createElement('button')
     button.setAttribute('class', 'center')
     button.innerHTML = 'Back To View Todays Headlines'
+    button.addEventListener('click', takeToPageOne)
     container.appendChild(pageTwoView)
     pageTwoView.appendChild(fullHeadlineView)
     pageTwoView.appendChild(document.createElement('br'))
     pageTwoView.appendChild(button)
+    document.querySelector('#page-two').style.display = 'block'
+  }
+
+  function takeToPageOne() {
+    let pageTwoView = document.querySelector('#page-two')
+    pageTwoView.style.display = 'none'
+    while(pageTwoView.firstChild) {
+      pageTwoView.removeChild(pageTwoView.lastChild)
+    }
+    document.querySelector('#page-one').style.display = 'block'
   }
 
 }
