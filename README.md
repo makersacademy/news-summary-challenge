@@ -3,9 +3,11 @@
 Domain Modelling: 
 
 Model: 
-- image
-- title
-- description
+- headline
+- link
+- summary
+- picture
+- mobile responsiveness
 
 methods: 
 shorten title
