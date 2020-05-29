@@ -35,18 +35,27 @@ document.addEventListener('DOMContentLoaded', () => {
 function loadNews(event) {
   event.preventDefault()
   document.querySelector('#get-data').style.display = 'none'
+  // Add pageOneView to main div
   let container = document.querySelector('#container')
   pageOneView.setAttribute('class', 'page-view')
   pageOneView.setAttribute('id', 'page-one')
   container.appendChild(pageOneView)
   let headlines = data.newsArray[0]['sentences']
+  // Iterating through fetched data array to display all elements
   headlines.forEach(function (item, index) {
+    // Add link to display heading
     let headerLink = document.createElement('a')
     headerLink.setAttribute('id', `${index}`)
+    headerLink.setAttribute('class', 'center')
     headerLink.setAttribute('href', '#')
     headerLink.addEventListener('click', loadFullView)
     let previewHeadline = new News(item)
-    let headlineList = headerLink.innerHTML += (index + 1) + ':' + previewHeadline.preview() + '</br>'
+    headerLink.innerHTML += (index + 1) + ':' + previewHeadline.preview() + '</br>'
+    // Add image div for every heading title 
+    let image = document.createElement('div')
+    image.innerHTML = `Image ${index}`
+    image.setAttribute('class', 'image')
+    pageOneView.appendChild(image)
     pageOneView.appendChild(headerLink)
     console.log(headerLink)
   })

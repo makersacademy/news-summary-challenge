@@ -20,24 +20,25 @@ You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package
 
 ## User Stories
 
+:white_check_mark:
 ```
 As a busy politician
 I can see all of today's headlines in one place
 So I know what the big stories of the day are
 ```
-
+:white_check_mark:
 ```
 As a busy politician
 I can click a link to see the original news article
 So that I can get an in depth understanding of a very important story
 ```
-
+:white_check_mark:
 ```
 As a busy politician
 I can see a summary of a news article
 So I can get a few more details about an important story
 ```
-
+:white_check_mark:
 ```
 As a busy politician
 I can see a picture to illustrate each news article when I browse headlines
