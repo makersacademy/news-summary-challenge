@@ -34,8 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function loadNews(event) {
   event.preventDefault()
+  let button = document.querySelector('#get-data')
+  button.style.display = 'none'
+  // pageTwoView.style.display = 'block'
   let container = document.querySelector('#container')
   pageOneView.setAttribute('class', 'page-view')
+  pageOneView.setAttribute('id', 'page-one')
   container.appendChild(pageOneView)
   let headlines = data.newsArray[0]['sentences']
   headlines.forEach(function (item, index) {
@@ -51,13 +55,20 @@ function loadNews(event) {
 
   function loadFullView() {
     event.preventDefault()
+    let pageOne = document.querySelector('#page-one')
+    pageOne.style.display = 'none'
     let fullHeadlineView = document.createElement('p')
     fullHeadlineView.setAttribute('class', 'center')
     fullHeadlineView.innerHTML = `${data.newsArray[0]['sentences'][this.id]}`
     pageTwoView.setAttribute('class', 'page-view')
+    pageTwoView.setAttribute('id', 'page-two')
+    let button = document.createElement('button')
+    button.setAttribute('class', 'center')
+    button.innerHTML = 'Back To View Todays Headlines'
     container.appendChild(pageTwoView)
     pageTwoView.appendChild(fullHeadlineView)
     pageTwoView.appendChild(document.createElement('br'))
+    pageTwoView.appendChild(button)
   }
 
 }
