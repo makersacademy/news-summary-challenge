@@ -5,23 +5,31 @@ describe('News App', () => {
 
   beforeEach(function(){
     news = new News(headline)
+    data = new NewsData()
   })
 
-  it('should be able to create news Object', () => {
-    // console.log('Logging this ', news.newsBody)
-    expect(news.newsBody).toEqual(headline)
+  describe('News Model', () => {
+    it('should be able to create news Object', () => {
+      // console.log('Logging this ', news.newsBody)
+      expect(news.newsBody).toEqual(headline)
+    })
+
   })
 
-  it('should be able to have news array empty at start', () => {
-    // console.log(news.newsArray)
-    expect(news.newsArray.length).toEqual(0)
+  describe('NewsData Model', () => {
+    it('should be able to have news array empty at start', () => {
+      expect(data.newsArray.length).toEqual(0)
+    })
+
+    it('should be able to retrieved data from API', () => {
+      expect(data.getData()).notToEqual(undefined)
+    })
+
+    // news.receiveNews()
+    // expect(news.newsArray.length).notToEqual(0)
+
   })
 
-  it('should be able to retrieved data from API', () => {
-    expect(news.getData()).notToEqual(undefined)
-  })
 
-  // news.receiveNews()
-  // expect(news.newsArray.length).notToEqual(0)
 
 })

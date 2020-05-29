@@ -14,3 +14,8 @@ header {
   background: #f1f1f1;
   color: #fff;
 }
+.center {
+  text-align: center;
+  margin:auto;
+  display:block;
+}
