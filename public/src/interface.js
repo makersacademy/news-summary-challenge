@@ -32,20 +32,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
-function loadNews(once) {
+function loadNews(event) {
   event.preventDefault()
   let container = document.querySelector('#container')
   pageOneView.setAttribute('class', 'page-view')
   container.appendChild(pageOneView)
   let headlines = data.newsArray[0]['sentences']
   headlines.forEach(function (item, index) {
-    let pHeader = document.createElement('p')
+    let headerLink = document.createElement('a')
+    headerLink.setAttribute('id', `${index}`)
+    headerLink.setAttribute('href', '#')
+    headerLink.addEventListener('click', loadFullView)
     let previewHeadline = new News(item)
-    let headlineList = pHeader.innerHTML += (index + 1) + ':' + previewHeadline.preview() + '</br>'
-
-    pageOneView.appendChild(pHeader)
-    console.log(pHeader)
+    let headlineList = headerLink.innerHTML += (index + 1) + ':' + previewHeadline.preview() + '</br>'
+    pageOneView.appendChild(headerLink)
+    console.log(headerLink)
   })
 
+  function loadFullView() {
+    event.preventDefault()
+    let fullHeadlineView = document.createElement('p')
+    fullHeadlineView.setAttribute('class', 'center')
+    fullHeadlineView.innerHTML = `${data.newsArray[0]['sentences'][this.id]}`
+    pageTwoView.setAttribute('class', 'page-view')
+    container.appendChild(pageTwoView)
+    pageTwoView.appendChild(fullHeadlineView)
+    pageTwoView.appendChild(document.createElement('br'))
+  }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// </br>
