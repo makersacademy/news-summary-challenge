@@ -1,11 +1,20 @@
+'use strict';
+
+const data = new NewsData()
+const news = new News()
+const pageOneView = document.createElement('div')
+const pageTwoView = document.createElement('div')
+
 document.addEventListener('DOMContentLoaded', () => {
 
+  // fetching data from API after DOM loads
+  data.getData()
   // Headder elements
   let header = document.createElement('header')
   document.body.appendChild(header)
-  let h1_element = document.createElement('h1')
-  h1_element.innerHTML = "THE GUARDIAN NEWS SUMMARY"
-  header.appendChild(h1_element)
+  let headerMainText = document.createElement('h1')
+  headerMainText.innerHTML = "THE GUARDIAN NEWS SUMMARY"
+  header.appendChild(headerMainText)
 
   // Main container
   let div_element = document.createElement('div')
@@ -25,9 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function loadNews(event) {
   event.preventDefault()
-  data = new NewsData
-  data.getData()
-  let h1 = document.createElement('h1')
-  h1.innerHTML = "SUMMARY"
-  document.body.appendChild(h1)
+  let container = document.querySelector('#container')
+  pageOneView.setAttribute('class', 'page-view')
+  container.appendChild(pageOneView)
+  let headlines = data.newsArray[0]['sentences']
+  headlines.forEach(function (item, index) {
+    let pHeader = document.createElement('p')
+    let headlineList = pHeader.innerHTML += (index + 1) + ':' + item + '</br>'
+    pageOneView.appendChild(pHeader)
+    console.log(headlineList)
+  })
+
+
 }
