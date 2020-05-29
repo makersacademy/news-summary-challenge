@@ -1,7 +1,7 @@
 'use strict';
 
-const data = new NewsData()
-const news = new News()
+let data = new NewsData()
+let news = new News()
 const pageOneView = document.createElement('div')
 const pageTwoView = document.createElement('div')
 
@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
   button.innerHTML = 'Get Todays News'
   div_element.appendChild(button)
 
-  button.addEventListener('click', loadNews)
+  button.addEventListener('click', loadNews, {once: true})
 
 })
 
-function loadNews(event) {
+function loadNews(once) {
   event.preventDefault()
   let container = document.querySelector('#container')
   pageOneView.setAttribute('class', 'page-view')
@@ -42,7 +42,7 @@ function loadNews(event) {
     let pHeader = document.createElement('p')
     let headlineList = pHeader.innerHTML += (index + 1) + ':' + item + '</br>'
     pageOneView.appendChild(pHeader)
-    console.log(headlineList)
+    // console.log(headlineList)
   })
 
 
