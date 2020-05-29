@@ -35,3 +35,13 @@ header {
   background-image: url('../../images/theGuardian.png');
   background-size: auto 100%;
 }
+
+@media all and (max-width: 620px) {
+  /* For mobile phones: */
+  header {
+    background: #888;
+  }
+  .image {
+    display: none;
+  }
+}
