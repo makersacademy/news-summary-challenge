@@ -1,24 +1,3 @@
-class Article {
-
-  constructor(headline) {
-    this.headline = headline
-    this.array = []
-  }
-
-  all(){
-    return this.array;
-  }
-
-}
-  // save into articles array 
-  // .headline
-  // .summary
-  // .fullArticle
-  // .link
-  // .imgsrc
-
-  
-
 // save the variables
 const ul = document.getElementById('articles');
 //const url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body'
@@ -47,7 +26,7 @@ fetch(guardianURL)
 
       console.log(article.webTitle)
       let li = createNode('li');
-      let span = createNode('span');
+      let span = createNote('span');
       // img = createNote('img'); 
       // img.src = author.picture.medium;
       span.innerHTML = `${article.webTitle}`;
