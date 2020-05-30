@@ -2,9 +2,9 @@ function makeHeadlineDiv(response, index){
 	let url = removeS(response[index].apiUrl);
     getImage(url, 'image' + index);
 	let div = document.createElement('div');
-    div.setAttribute("class", "summary"); 
-    div.setAttribute("class", "mainHeadline"); 
-    div.setAttribute("onclick", `loadArticle("${url}")`); 
+    div.setAttribute("class", "summary");
+    div.setAttribute("class", "mainHeadline");
+    div.setAttribute("onclick", `loadArticle("${url}")`);
     let headline = document.createElement('h2');
     headline.innerHTML = response[index].webTitle.toUpperCase();
     let topic = document.createElement('h3');
@@ -22,7 +22,7 @@ function makeHeadlineDiv(response, index){
 function buildArticle(response){
 
 	let div = document.createElement('div');
-	div.setAttribute("class", "article"); 
+	div.setAttribute("class", "article");
 	let summary = document.createElement('div');
 	summary.setAttribute('class', 'summary');
 	let button = document.createElement('button');

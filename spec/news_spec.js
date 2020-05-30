@@ -1,9 +1,23 @@
-let headlinesDouble;
-let articleDouble:
-let urlDouble:
+// let headlinesDouble = {
 
-describe('makeHeadlineDiv', function(){
-	it('returns a div', function(){
-		
-	})
-})
+// 	0: {
+// 		apiUrl: "https://www.test.com",
+// 		webTitle: "title",
+// 		sectionName: "section"
+// 	]
+// }
+
+
+
+
+
+
+
+// // let articleDouble:
+// // let urlDouble:
+
+// describe('makeHeadlineDiv', function(){
+// 	it('returns a div', function(){
+
+// 	})
+// })
