@@ -5,7 +5,7 @@
 
   let headline = new Headline(webTitle, webUrl);
 
-  function testHeadlineInstantiatesWithTitleUrlAndId() {
+  function testInstantiatesWithTitleAndUrl() {
     console.log(guardian.onload().response.results[0]);
 
     assert.isTrue(headline.webTitle === webTitle);
@@ -25,7 +25,7 @@
     assert.isTrue(headline.title === headline.webTitle);
   }
 
-  testHeadlineInstantiatesWithTitleUrlAndId();
+  testInstantiatesWithTitleAndUrl();
   testHeadlineInstanceHasAnUniqueId();
   testGetterTitle();
 })();

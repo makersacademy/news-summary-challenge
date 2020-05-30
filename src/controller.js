@@ -1,1 +1,7 @@
-document.getElementsByTagName('h1')[0].innerHTML = 'Hello World!';
+(function (exports) {
+  function Controller(headlinesListView) {
+    this.view = headlinesListView;
+  }
+
+  exports.Controller = Controller;
+})(this);
