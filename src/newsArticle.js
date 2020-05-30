@@ -40,9 +40,6 @@ fetch(guardianURL)
 
   .then(function(data){
     var articles = data.response.results;
-    // console.log(articles)
-    //  create and append to li's
-
     return articles.map(function(article) {
       let li = createNode('li');
       let headline = createNode('span');
@@ -51,13 +48,22 @@ fetch(guardianURL)
       
       link.setAttribute("href", `${article.webUrl}`);
       link.innerHTML = `${article.webUrl}`;
-      console.log(link)
       headline.innerHTML = `${article.webTitle}`;
       // img = createNote('img'); 
       // img.src = author.picture.medium;
 
-      let text = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + `${article.webUrl}`
-      summary.innerHTML = "placeholder summary goes here"
+      var articleApiUrl = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + `${article.webUrl}`
+      summary.innerHTML = getSummary(articleApiUrl);
+
+      function getSummary(url) {
+        fetch(url)
+        .then(response => response.json()) // change into json
+        .then(function getSentence(data){
+          // var fullText = data.text 
+          var sentence = data.sentences; // array
+          console.log(sentence)
+        });
+      }
       
       append(li,headline);
       append(li,summary);
@@ -69,19 +75,3 @@ fetch(guardianURL)
     console.log(error);
   });
 
-
-
-
-
-
-  // "id": "football/live/2020/may/29/freiburg-v-bayer-leverkusen-bundesliga-live-updates",
-  // "type": "liveblog",
-  // "sectionId": "football",
-  // "sectionName": "Football",
-  // "webPublicationDate": "2020-05-29T20:24:34Z",
-  // "webTitle": "Freiburg v Bayer Leverkusen: Bundesliga – live updates!",
-  // "webUrl": "https://www.theguardian.com/football/live/2020/may/29/freiburg-v-bayer-leverkusen-bundesliga-live-updates",
-  // "apiUrl": "https://content.guardianapis.com/football/live/2020/may/29/freiburg-v-bayer-leverkusen-bundesliga-live-updates",
-  // "isHosted": false,
-  // "pillarId": "pillar/sport",
-  // "pillarName": "Sport"
