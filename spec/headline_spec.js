@@ -2,6 +2,7 @@
   let guardian = new Guardian();
   let webTitle = guardian.onload().response.results[0].webTitle;
   let webUrl = guardian.onload().response.results[0].webUrl;
+
   let headline = new Headline(webTitle, webUrl);
 
   function testHeadlineInstantiatesWithTitleUrlAndId() {
@@ -11,5 +12,14 @@
     assert.isTrue(headline.webUrl === webUrl);
   }
 
+  function testHeadlineInstanceHasAnUniqueId() {
+    let webTitle = guardian.onload().response.results[1].webTitle;
+    let webUrl = guardian.onload().response.results[1].webUrl;
+    let newHeadline = new Headline(webTitle, webUrl);
+
+    assert.isTrue(newHeadline.id === 2);
+  }
+
   testHeadlineInstantiatesWithTitleUrlAndId();
+  testHeadlineInstanceHasAnUniqueId();
 })();
