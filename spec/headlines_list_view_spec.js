@@ -17,7 +17,6 @@
     headlinesList.addHeadline(headline1);
     headlinesList.addHeadline(headline2);
     html = '<div><ul><li>' + title1 + '</li><li>' + title2 + '</li></ul></div>';
-    console.log(html);
 
     assert.isTrue(headlinesListView.addHTMLTags() === html);
   }

@@ -6,6 +6,12 @@
     this.webUrl = webUrl;
     this.id = ++count;
     console.log(this.id);
+
+    Object.defineProperty(this, 'title', {
+      get() {
+        return this.webTitle;
+      },
+    });
   }
 
   exports.Headline = Headline;

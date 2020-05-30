@@ -21,6 +21,11 @@
     assert.isTrue(newHeadline.id === 2);
   }
 
+  function testGetterTitle() {
+    assert.isTrue(headline.title === headline.webTitle);
+  }
+
   testHeadlineInstantiatesWithTitleUrlAndId();
   testHeadlineInstanceHasAnUniqueId();
+  testGetterTitle();
 })();
