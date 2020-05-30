@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/makersacademy/news-summary-challenge/issues"
   },
-  "homepage": "https://github.com/makersacademy/news-summary-challenge#readme"
+  "homepage": "https://github.com/makersacademy/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
 }
