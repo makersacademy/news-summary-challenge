@@ -4,7 +4,7 @@
   }
 
   Controller.prototype.insertView = function () {
-    let element = document.getElementById('app');
+    let element = document.getElementById('headlines');
     element.innerHTML = this.view.addHTMLTags();
   };
 

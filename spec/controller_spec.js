@@ -14,7 +14,7 @@
 
   function testInsertView() {
     controller.insertView();
-    let element = document.getElementById('app');
+    let element = document.getElementById('headlines');
 
     assert.isTrue(element.innerHTML === headlinesListView.addHTMLTags());
   }
