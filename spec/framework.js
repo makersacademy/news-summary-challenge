@@ -14,21 +14,21 @@ const matchers = (exp) => ({
     }
   },
 
-  toBeAnInstanceOf: (value) => {
-    if(exp.constructor === value){
+  toIncludeHTMLContent: (value) => {
+    if (exp.outerHTML.includes(value)){
       console.log('     pass')
-    }else{
+    } else {
       console.log('     fail')
     }
   },
 
-  toInclude: (value) => {
-    if(exp.includes(value)){
+  toBeHTMLNode: () => {
+    if(exp instanceof Element || exp instanceof HTMLDocument){
       console.log('     pass')
     }else{
       console.log('     fail')
     }
-  },
+  }
 })
 
 const expect = (exp) => matchers(exp);

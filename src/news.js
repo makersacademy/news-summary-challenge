@@ -15,7 +15,6 @@ function makeHeadlineDiv(response, index){
     div.append(topic);
     div.append(image);
     div.append(headline);
-    console.log(response);
     return div;
 }
 
@@ -53,14 +52,4 @@ function toTitleCase(str) {
     return str.replace(/\w\S*/g, function(txt){
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
-}
-
-function clear(){
-	document.getElementById('body').innerHTML = "";
-	return document.getElementById('body'); //For test
-}
-
-function load(html){
-	document.getElementById('body').appendChild(html);
-	return document.getElementById('body'); //For test
 }
