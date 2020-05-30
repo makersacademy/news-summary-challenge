@@ -35,6 +35,13 @@ header {
   background-image: url('../../images/theGuardian.png');
   background-size: auto 100%;
 }
+#animation-div {
+  width: 90%;
+  height: 20vh;
+  margin: auto;
+  background-image: url('../../images/lama.gif');
+  background-size: auto 100%;
+}
 
 @media all and (max-width: 620px) {
   /* For mobile phones: */
@@ -42,6 +49,9 @@ header {
     background: #888;
   }
   .image {
+    display: none;
+  }
+  #animation-div {
     display: none;
   }
 }

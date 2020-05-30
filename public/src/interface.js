@@ -17,16 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
   header.appendChild(headerMainText)
 
   // Main container
-  let div_element = document.createElement('div')
-  div_element.setAttribute('id', 'container')
-  document.body.appendChild(div_element)
+  let divElement = document.createElement('div')
+  divElement.setAttribute('id', 'container')
+  document.body.appendChild(divElement)
 
   // Content for Main container
+  const imageElement = document.createElement('div')
+  imageElement.setAttribute('id', 'animation-div')
   let button = document.createElement('button')
   button.setAttribute('id', 'get-data')
   button.setAttribute('class', 'center')
   button.innerHTML = 'Get Todays News'
-  div_element.appendChild(button)
+  divElement.appendChild(imageElement)
+  divElement.appendChild(button)
 
   button.addEventListener('click', loadNews, {once: true})
 

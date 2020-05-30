@@ -44,13 +44,13 @@ As a busy politician
 I can see a picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
 ```
-
+:white_check_mark:
 ```
 As a busy politician
 I can read the site comfortably on my phone
 Just in case my laptop breaks
 ```
-
+:white_check_mark:
 ```
 As a busy politician
 I can see whizzy animations in the app
