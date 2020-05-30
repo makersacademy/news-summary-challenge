@@ -6,14 +6,11 @@
   let headline = new Headline(webTitle, webUrl);
 
   function testInstantiatesWithTitleAndUrl() {
-    console.log(guardian.onload().response.results[0]);
-
     assert.isTrue(headline.webTitle === webTitle);
     assert.isTrue(headline.webUrl === webUrl);
   }
 
   function testHeadlineInstanceHasAnUniqueId() {
-    console.log(guardian.onload().response.results[1]);
     let webTitle = guardian.onload().response.results[1].webTitle;
     let webUrl = guardian.onload().response.results[1].webUrl;
     let newHeadline = new Headline(webTitle, webUrl);
