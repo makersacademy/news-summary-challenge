@@ -1,4 +1,17 @@
-function oneEqualsOne(){
-  return expect(1, "to equal one").eq(1)
+var articleDouble = { response: {
+  content: {
+    apiUrl: "api",
+    webTitle: "Title",
+    fields: {
+      body: "This is an article"
+      }
+    }
+  }
 }
-tests.push(oneEqualsOne)
+
+var article = new Article(articleDouble)
+
+function articleHasTitle(){
+  return expect(article.title, "article.title should return title of article").eq("Title")
+}
+tests.push(articleHasTitle)
