@@ -68,12 +68,10 @@ function animate() {
 
 function clear(){
 	document.getElementById('body').innerHTML = "";
-	return document.getElementById('body'); //For test
 }
 
 function load(html){
 	document.getElementById('body').appendChild(html);
-	return document.getElementById('body'); //For test
 }
 
 window.onload = function(){
