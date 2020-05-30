@@ -13,6 +13,7 @@
   }
 
   function testHeadlineInstanceHasAnUniqueId() {
+    console.log(guardian.onload().response.results[1]);
     let webTitle = guardian.onload().response.results[1].webTitle;
     let webUrl = guardian.onload().response.results[1].webUrl;
     let newHeadline = new Headline(webTitle, webUrl);
