@@ -4,7 +4,7 @@ describe('test', function() {
     expect(2+2).toEqual(4)
   });
   it('[] is an array', function(){     
-    expect([]).toBeAnArray()                 
+    expect([]).ToBeAnArray()                 
   });
 });
 
