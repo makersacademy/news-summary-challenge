@@ -1,5 +1,4 @@
 const describe = (desc, fn) => {
-  subject = eval('new ' + describedClass);
   console.log(desc);
   fn();
 }
@@ -32,4 +31,4 @@ const matchers = (exp) => ({
   },
 })
 
-const expect = (exp) => matchers(exp)
+const expect = (exp) => matchers(exp);
