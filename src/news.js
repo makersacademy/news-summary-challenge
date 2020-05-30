@@ -1,4 +1,5 @@
 function makeHeadlineDiv(response, index){
+
 	let url = removeS(response[index].apiUrl);
     getImage(url, 'image' + index);
 	let div = document.createElement('div');
@@ -43,12 +44,14 @@ function buildArticle(response){
 }
 
 function removeS(url){
+
 	let part1 = url.substring(0, 4);
  	let part2 = url.substring(5, url.length);
  	return part1 + part2;
 }
 
 function toTitleCase(str) {
+	
     return str.replace(/\w\S*/g, function(txt){
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
