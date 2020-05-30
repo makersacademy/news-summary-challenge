@@ -7,5 +7,9 @@
     this.headlines.push(headline);
   };
 
+  HeadlinesList.prototype.returnHeadlines = function () {
+    return this.headlines;
+  };
+
   exports.HeadlinesList = HeadlinesList;
 })(this);

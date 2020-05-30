@@ -1,5 +1,6 @@
 (function () {
   let headlinesList = new HeadlinesList();
+  let headline = new Headline();
 
   function testStartsWithAnEmptyList() {
     assert.isTrue(Array.isArray(headlinesList.headlines));
@@ -7,8 +8,6 @@
   }
 
   function testAddHeadlineToHeadlinesList() {
-    let headline = new Headline();
-
     headlinesList.addHeadline(headline);
 
     assert.isTrue(headlinesList.headlines.length !== 0);
@@ -16,6 +15,12 @@
     assert.isTrue(headlinesList.headlines.includes(headline));
   }
 
+  function testReturnHeadlines() {
+    assert.isTrue(headlinesList.returnHeadlines() === headlinesList.headlines);
+    assert.isTrue(headlinesList.returnHeadlines()[0] === headline);
+  }
+
   testStartsWithAnEmptyList();
   testAddHeadlineToHeadlinesList();
+  testReturnHeadlines();
 })();
