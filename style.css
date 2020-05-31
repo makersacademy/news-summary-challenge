@@ -1,0 +1,146 @@
+* {
+	margin:none;
+	padding:none;
+  	font-family: 'News Cycle', sans-serif;
+}
+
+body {
+	background-image: url("clean-gray-paper.png");
+	margin:0px;
+	min-width: 400px;
+}
+
+#body {
+	max-width: 800px;
+}
+
+.mainHeadline:hover{
+	cursor: pointer;
+}
+
+.mainHeadline:active{
+	position: relative;
+	top: 1px;
+}
+
+img {
+  	max-width: 300px;
+  	height:auto;
+	border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 1px 2px 7px rgba(66,66,66,.5);
+    display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	margin-top: 50px;
+  	margin-bottom: 50px;
+}
+
+.headlineImage{
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+#body > * {
+	margin: 10px;
+	padding:25px;
+	border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 1px 2px 7px rgba(66,66,66,.5);
+	max-width: 800px;
+	text-align:justify;
+  	word-break:keep-all;
+}
+
+a {
+	color:red;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #ff7f54;
+	background:linear-gradient(to bottom, #ff1919 5%, #f22800 100%);
+	background-color:#ff1919;
+	border-radius:3px;
+	border:1px solid #bfa29d;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:16px;
+	padding:3px 24px 4px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffa27a;
+	outline: none;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	font-weight: bold;
+}
+
+.myButton:hover {
+	background:linear-gradient(to bottom, #f22800 5%, #ff1919 100%);
+	background-color:#f22800;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+h1 {
+	font-size: 100px;
+	margin:0px;
+	padding: 0px;
+	line-height: 100px;
+	color: #FFFFFF;
+	text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px;
+}
+
+#title {
+	position: relative;
+	bottom:100px;
+}
+
+#sub-header{
+	opacity: 0;
+	transition: 1s;
+}
+
+h2 {
+	font-size: 30px;
+	padding: 0px;
+	line-height: 30px;
+}
+
+h3 {
+	margin: 0px;
+	line-height: 18px;
+}
+
+#header h3 {
+	text-shadow: -2px 2px 3px #ff2d95;
+	margin:5px;
+}
+
+p {
+	line-height: 16px;
+}
+
+#header{
+	background: rgb(157,60,52);
+	background: linear-gradient(57deg, rgba(157,60,52,1) 0%, rgba(253,29,29,1) 50%, rgba(182,47,34,1) 100%);
+	color:white;
+	margin:none;
+	padding-bottom: 5px;
+	border-bottom: 1px solid maroon;
+}
+
+header {
+	margin:none;
+}
