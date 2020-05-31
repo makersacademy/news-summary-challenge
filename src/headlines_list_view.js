@@ -4,7 +4,7 @@
   }
 
   HeadlinesListView.prototype.addHTMLTags = function () {
-    string = '<div><ul>';
+    let string = '<div><ul>';
     this.list.returnHeadlines().forEach((item) => {
       string += '<li>' + item.title + '</li>';
     });
