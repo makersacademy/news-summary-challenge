@@ -12,7 +12,6 @@
     articleController.insertHTML();
     let app = document.getElementById('app')
     assert.isTrue(app.innerHTML === '<ul><li><a id="0" href="#articles/0"><div>This is a headline</div></a></li></ul>')
-    // assert.isTrue(articleController.articleListView.returnHTMLstring() === '<ul><li><div>This is a headline</div></li></ul>')
   }
 
   function testDisplaysSingleArticle() {
