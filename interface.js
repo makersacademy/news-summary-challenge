@@ -1,21 +1,17 @@
-// save the variables
 const ul = document.getElementById('articles');
 const fullArticle = document.getElementById('full-article');
 const guardianURL = 'https://content.guardianapis.com/search?api-key=19158819-ba32-4e1f-a54c-d75a65fad4ab'
 
 function createNode(element) {
-  return document.createElement(element); // creates element
+  return document.createElement(element);
 }
  
 function append(parent, el) {
-  return parent.appendChild(el); // adds element to parent 
+  return parent.appendChild(el);
 }
 
-
-
-
 fetch(guardianURL)
-  .then((resp) => resp.json()) // change to json
+  .then((resp) => resp.json())
 
   .then(function(data){
     var articles = data.response.results;
@@ -63,6 +59,7 @@ fetch(guardianURL)
     fullArticle.style.display = "block";
     fullArticle.innerHTML = this.fullText;
     var button = document.createElement("button");
+    button.setAttribute("class", "btn btn-secondary btn-lg");
     button.innerText = "Go Back"
     append(fullArticle, button);
     button.addEventListener ("click", function() {
@@ -70,11 +67,3 @@ fetch(guardianURL)
       fullArticle.style.display = "none";
     });
   }
-
-
-
-
-
-  
-
- // var fullText = data.text 
