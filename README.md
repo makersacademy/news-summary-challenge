@@ -3,9 +3,9 @@
 Domain Modelling: 
 
 Model: 
-- headline
-- link
-- summary
+- headline done
+- link done
+- summary tomorrow
 - picture
 - mobile responsiveness
 
