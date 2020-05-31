@@ -21,6 +21,10 @@
       article = new Article(jsonStub);
 
       it("Gets an instance of an article", function() {
+        return expect(article.id).toEqual(1)
+      });
+
+      it("Gets an instance of an article", function() {
         return expect(article.constructor.name).toEqual("Article")
       });
 

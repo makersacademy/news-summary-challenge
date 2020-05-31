@@ -1,7 +1,8 @@
 class Article {
   constructor(object) {
-    this.object = object;
     Articles.add(this)
+    this.object = object;
+    this.id = Articles.all.length
   }
 
   get webTitle() {
