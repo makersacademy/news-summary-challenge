@@ -16,8 +16,8 @@
     let headline2 = new Headline(title2, url2);
     headlinesList.addHeadline(headline1);
     headlinesList.addHeadline(headline2);
-    html = '<div><ul><li><h3>' + title1 + `</h3><p>Follow this <span><a href="${url1}l">link</a></span> to find out more.</p></li><li><h3>` + title2 + `</h3><p>Follow this <span><a href="${url2}l">link</a></span> to find out more.</p></li></ul></div>`;
-    console.log(url1);
+    html = `<div><ul><li><h3><a href="#headlines/${headline1.id}">` + title1 + `</a></h3><p>Follow this <span><a href="${url1}l">link</a></span> to find out more.</p></li><li><h3><a href="#headlines/${headline2.id}">` + title2 + `</a></h3><p>Follow this <span><a href="${url2}l">link</a></span> to find out more.</p></li></ul></div>`;
+    console.log(html);
     assert.isTrue(headlinesListView.addHTMLTags() === html);
   }
 
