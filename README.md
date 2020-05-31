@@ -60,10 +60,12 @@ To make my news reading more fun
 
 `News` |
 :--- |
+this.newsBody |
 preview() |
 
-`News` |
+`NewsData` |
 :--- |
+this._storedNewsData |
 viewAllNews() |
 getDataFromAPI() |
 
