@@ -10,9 +10,6 @@ function listArticles() {
     let p =  document.createElement("p")
     let webTitle = document.createTextNode(`${article.webTitle}`)
     p.appendChild(webTitle)
-    //let webTitleLink = document.createElement("A")
-    //webTitleLink.setAttribute("onclick", showArticle(`${article.id}`))
-    //webTitleLink.appendChild(webTitle)
 
     let thumbnail = document.createElement("img")
     var x = document.createElement("A")
@@ -23,7 +20,6 @@ function listArticles() {
     let container = document.getElementById("container")
     let div = document.createElement('div')
     div.className = 'article'
-
 
     div.appendChild(x)
     addLinesTo(div)
@@ -36,8 +32,7 @@ function listArticles() {
 }
 
 function showArticle(id) {
-  document.getElementById("header").innerText = ""
-  document.getElementById("container").innerHTML = "";
+  document.getElementById("header").innerText = "";
 
   let selectedArticle = document.getElementById("selectedArticle")
   article = Articles.all[id - 1]
@@ -65,6 +60,7 @@ function showArticle(id) {
   selectedArticle.appendChild(p)
 
   window.scrollTo(0, 0);
+  document.getElementById("container").innerHTML = "";
 }
 
 function addBackButton() {
