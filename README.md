@@ -12,6 +12,7 @@
 ![domain model diagram](images/models.png)
 * Set up folder structure
 
+
 ## Challenge
 
 As usual please start by forking this repo.
