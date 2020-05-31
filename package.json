@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/makersacademy/news-summary-challenge#readme",
   "dependencies": {
-    "http-server": "^0.12.3"
+    "http-server": "^0.12.3",
+    "node-sumuparticles": "^0.1.4"
   }
 }
