@@ -12,6 +12,12 @@
         return this.webTitle;
       },
     });
+
+    Object.defineProperty(this, 'url', {
+      get() {
+        return this.webUrl;
+      },
+    });
   }
 
   exports.Headline = Headline;

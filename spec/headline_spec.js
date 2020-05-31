@@ -22,7 +22,12 @@
     assert.isTrue(headline.title === headline.webTitle);
   }
 
+  function testGetterUrl() {
+    assert.isTrue(headline.url === headline.webUrl);
+  }
+
   testInstantiatesWithTitleAndUrl();
   testHeadlineInstanceHasAnUniqueId();
   testGetterTitle();
+  testGetterUrl();
 })();
