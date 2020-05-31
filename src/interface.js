@@ -19,11 +19,16 @@ function listArticles() {
     x.appendChild(thumbnail)
 
     let container = document.getElementById("container")
+    let div = document.createElement('div')
+    div.className = 'article'
 
-    container.appendChild(x)
-    addLinesTo(container)
 
-    container.appendChild(webTitle)
+    div.appendChild(x)
+    addLinesTo(div)
+
+    div.appendChild(webTitle)
+
+    container.appendChild(div)
     addLinesTo(container, 3)
   }
 }

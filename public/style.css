@@ -1,0 +1,12 @@
+#header {
+  margin: auto;
+  width: 500px;
+  padding: 10px;
+}
+
+.article {
+  margin: auto;
+  width: 500px;
+  border: 3px solid #8ca4dd;
+  padding: 10px;
+}
