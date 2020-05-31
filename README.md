@@ -16,7 +16,7 @@
 * Add article list model & tests
 * Add article list view & tests
 * Add article controller & tests
-
+* Add article view & tests
 
 ## Challenge
 
