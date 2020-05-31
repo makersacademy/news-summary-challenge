@@ -45,6 +45,18 @@ function createArticles(url){
     xhttp.send();
   }
 
+  function apiGrabber(json, callback){
+    apis.add(json)
+    callback()
+  }
+
+  function runArticleCreator(){
+      console.log(apis.apis);
+      for(i = 0; i < 10; i++){
+      createArticles(apis.apis[i])
+    }
+  }
+
 // function printArticles(url, i){
 //   //Articles.instance()
 //   console.log(url)

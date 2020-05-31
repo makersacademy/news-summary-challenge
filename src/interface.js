@@ -1,3 +1,6 @@
+Articles.instance();
+var apis = new Api()
+
 function getArticles(callback){
 let xhttp = new XMLHttpRequest();
 xhttp.open("GET", "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?format=json&from-date=2020-05-30&order-by=newest", true);
@@ -7,27 +10,27 @@ xhttp.onreadystatechange = function() {
       let response = JSON.parse(this.response);
       let results = response.response.results
       console.log(results)
-      callback(results)
+      callback(results, runArticleCreator)
       }
     }
 xhttp.send();
 }
 
-var apis = new Api()
-
-function apiGrabber(json){
-  apis.add(json)
+function showArticles(){
+  console.log("Yo we in dis bitch?")
+  for(article of Articles.all){
+    var x = document.createElement("A")
+    var headline = document.createTextNode(`${article.title}`);
+    x.setAttribute("href", `#${article.title}`);
+    x.setAttribute("id", `${article.title}`);
+    x.appendChild(headline);
+    var list = document.createElement("LI");
+    list.appendChild(x);
+    document.getElementById("headlineList").appendChild(list);
+  }
 }
 
-
 getArticles(apiGrabber)
-Articles.instance();
 setTimeout(function(){
-    console.log(apis.apis);
-    for(i = 0; i < 10; i++){
-    createArticles(apis.apis[i])
-  }
-}, 1000)
-
-//console.log(apis.apis.length);
-//;
+  showArticles();
+}, 1500);
