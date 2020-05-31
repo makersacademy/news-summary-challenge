@@ -5,37 +5,18 @@
     <title>Newsy News</title>
   </head>
   <body>
-    <h1>List of news articles</h1>
+    <h1 id="header">List of news articles</h1>
 
-    <!--
-    - Lists all content of single article -
-    Conditions:
-    1. Hidden by default
-    2. Make it visible when article's headline is clicked on
+    <form id="backForm" action="#" onclick="backHome();">
+      <input type="submit" name="" value="Back">
+    </form>
 
-    Elements to Add:
-    1. Article Headline
-    2. Article Thumbnail
-    3. Article Body
-    -->
     <div id="selectedArticle">
-
     </div>
 
-    <!--
-    - Lists all articles -
-    Conditions:
-    1. Visible by default
-    2. Hide list and show article that is clicked on
-
-    Elements to Add:
-    1. Article Headline
-    2. Article Thumbnail
-    -->
     <div id="container">
-
     </div>
-    
+
     <script type="text/javascript" src="src/article.js"></script>
     <script type="text/javascript" src="src/api.js"></script>
     <script type="text/javascript" src="src/interface.js"></script>

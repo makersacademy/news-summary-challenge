@@ -1,4 +1,11 @@
 function interface() {
+  listArticles()
+}
+
+function listArticles() {
+  document.getElementById("header").innerText = "List of Articles"
+  document.getElementById("backForm").style.visibility = "hidden";
+
   for (article of Articles.all) {
     let webTitle = document.createTextNode(`${article.webTitle}`)
     //let webTitleLink = document.createElement("A")
@@ -22,8 +29,9 @@ function interface() {
 }
 
 function showArticle(id) {
-  document.getElementById("container").style.visibility = "hidden"
-  //document.getElementById("selectedArticle").style.visibility = "visible"
+  document.getElementById("header").innerText = "Current Article"
+  document.getElementById("container").innerHTML = "";
+  document.getElementById("backForm").style.visibility = "visible";
 
   let selectedArticle = document.getElementById("selectedArticle")
   article = Articles.all[id - 1]
@@ -44,10 +52,17 @@ function showArticle(id) {
   addLinesTo(selectedArticle)
 
   selectedArticle.appendChild(bodyText)
+
+  window.scrollTo(0, 0);
 }
 
 function addLinesTo(element, times = 1) {
   for (var i = 0; i < times; i++) {
     element.appendChild(document.createElement("br"));
   }
+}
+
+function backHome(){
+  document.getElementById("selectedArticle").innerHTML = "";
+  listArticles()
 }
