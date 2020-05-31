@@ -7,4 +7,8 @@ class Article {
     return this.object.webTitle;
   }
 
+  get thumbnail() {
+    return this.object.fields.thumbnail
+  }
+
 }
