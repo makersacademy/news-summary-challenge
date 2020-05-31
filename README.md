@@ -6,6 +6,12 @@
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
 * You must submit a pull request to this repo with your code by 9am Monday morning.
 
+## My approach
+
+* Created a domain model diagram
+![domain model diagram](images/models.png)
+* Set up folder structure
+
 ## Challenge
 
 As usual please start by forking this repo.
