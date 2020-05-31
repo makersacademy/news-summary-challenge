@@ -8,7 +8,7 @@ const pageTwoView = document.createElement('div')
 document.addEventListener('DOMContentLoaded', () => {
 
   // fetching data from API after DOM loads
-  data.getData()
+  data.getDataFromAPI()
   // Headder elements
   let header = document.createElement('header')
   document.body.appendChild(header)
@@ -43,7 +43,7 @@ function loadNews(event) {
   pageOneView.setAttribute('class', 'page-view')
   pageOneView.setAttribute('id', 'page-one')
   container.appendChild(pageOneView)
-  let headlines = data.newsArray[0]['sentences']
+  let headlines = data.viewAllNews()[0].sentences
   // Iterating through fetched data array to display all elements
   headlines.forEach(function (item, index) {
     // Add link to display heading
@@ -60,7 +60,7 @@ function loadNews(event) {
     image.setAttribute('class', 'image')
     pageOneView.appendChild(image)
     pageOneView.appendChild(headerLink)
-    console.log(headerLink)
+    // console.log(headerLink)
   })
 
   function loadFullView() {
@@ -70,7 +70,7 @@ function loadNews(event) {
     let fullHeadlineView = document.createElement('p')
     fullHeadlineView.setAttribute('class', 'center')
     fullHeadlineView.setAttribute('class', 'full-header')
-    fullHeadlineView.innerHTML = `${data.newsArray[0]['sentences'][this.id]}`
+    fullHeadlineView.innerHTML = `${data.viewAllNews()[0].sentences[this.id]}`
     pageTwoView.setAttribute('class', 'page-view')
     pageTwoView.setAttribute('id', 'page-two')
     let button = document.createElement('button')
@@ -94,20 +94,3 @@ function loadNews(event) {
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// </br>

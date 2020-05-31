@@ -6,11 +6,15 @@ describe('News App', () => {
 
   describe('NewsData Model', () => {
     it('should be able to have news array empty at start', () => {
-      expect(data.newsArray.length).toEqual(0)
+      expect(data._storedNewsData.length).toEqual(0)
     })
 
     it('should be able to retrieved data from API', () => {
-      expect(data.getData()).notToEqual(undefined)
+      expect(data.getDataFromAPI()).notToEqual(undefined)
+    })
+
+    it('should be able to return array of data', () => {
+      expect(data.viewAllNews()).notToEqual(undefined)
     })
 
   })
