@@ -12,16 +12,23 @@
 ![domain model diagram](images/model.png)
 
 * Set up folder structure
-* Add article model & tests
-* Add article list model & tests
-* Add article list view & tests
-* Add article controller & tests
+* Added article model & tests
+* Added article list model & tests
+* Added article list view & tests
+* Added article controller & tests
+* Set up an API call when main headlines page loads
 * Add single article view & tests
+* Set up an API call when user clicks on headline links
+
+# Left to be done:
+
+* Summary of a news article
+* Picture on headlines page
+* Responsiveness
 
 ## Challenge
 
 As usual please start by forking this repo.
-
 You'll create an app that summarises the news.
 
 ### Guidance

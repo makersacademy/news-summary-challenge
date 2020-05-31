@@ -19,8 +19,8 @@
         let results = data.response.results;
         results.forEach((item, i) => {
           self.add(item.webTitle)
+          self.list[i].url = item.apiUrl
         });
-        console.log(self.list)
         articleController.insertHTML()
       })
   }

@@ -18,8 +18,6 @@
   function testDisplaysSingleArticle() {
     articleController.showSingleArticle();
     document.getElementById('0').click();
-    console.log(mainURL);
-    console.log(window.location.href)
     assert.isTrue(mainURL !== window.location.href)
   }
 
