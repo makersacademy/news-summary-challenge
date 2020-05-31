@@ -1,6 +1,7 @@
 (function(){
 
   let articleController = new ArticleController()
+  let mainURL = window.location.href
   articleController.articleList.add('This is a headline');
 
   function testArticleControllerCanBeInstantiated() {
@@ -9,9 +10,20 @@
 
   function testHTMLChanges() {
     articleController.insertHTML();
-    assert.isTrue(articleController.articleListView.returnHTMLstring() === '<ul><li><div>This is a headline</div></li></ul>')
+    let app = document.getElementById('app')
+    assert.isTrue(app.innerHTML === '<ul><li><a id="0" href="#articles/0"><div>This is a headline</div></a></li></ul>')
+    // assert.isTrue(articleController.articleListView.returnHTMLstring() === '<ul><li><div>This is a headline</div></li></ul>')
+  }
+
+  function testDisplaysSingleArticle() {
+    articleController.showSingleArticle();
+    document.getElementById('0').click();
+    console.log(mainURL);
+    console.log(window.location.href)
+    assert.isTrue(mainURL !== window.location.href)
   }
 
   testArticleControllerCanBeInstantiated();
   testHTMLChanges();
+  testDisplaysSingleArticle()
 })()

@@ -5,7 +5,7 @@
   articleList.add('This is a headline')
 
   function testArticleListViewReturnsHTMLstring(){
-    assert.isTrue(articleListView.returnHTMLstring() === '<ul><li><div>This is a headline</div></li></ul>')
+    assert.isTrue(articleListView.returnHTMLstring() === '<ul><li><a id="0" href="#articles/0"><div>This is a headline</div></a></li></ul>')
   }
 
   testArticleListViewReturnsHTMLstring();

@@ -6,7 +6,7 @@
   ArticleListView.prototype.returnHTMLstring = function() {
     let string = '<ul>'
     this.articleList.list.forEach((item, i) => {
-      string += '<li><div>' + item.show() + '</div></li>'
+      string += '<li><a id="' + item.id + '" href="#articles/' + item.id + '"><div>' + item.show() + '</div></a></li>'
     });
     return string + '</ul>'
   }

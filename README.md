@@ -9,14 +9,14 @@
 ## My approach
 
 * Created a domain model diagram
-![domain model diagram](images/models.png)
+![domain model diagram](images/model.png)
 
 * Set up folder structure
 * Add article model & tests
 * Add article list model & tests
 * Add article list view & tests
 * Add article controller & tests
-* Add article view & tests
+* Add single article view & tests
 
 ## Challenge
 

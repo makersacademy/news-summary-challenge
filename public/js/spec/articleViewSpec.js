@@ -3,7 +3,7 @@
   let articleView = new ArticleView(article)
 
   function testSingleArticleView() {
-    assert.isTrue(articleView.returnHTMLstring() === '<ul><li><div>' + article.heading + '</div></li></ul>')
+    assert.isTrue(articleView.returnHTMLstring() === '<ul><li><div>' + article.headline + '</div></li></ul>')
   }
 
   testSingleArticleView()
