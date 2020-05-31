@@ -1,7 +1,6 @@
 function makeHeadlineDiv(response, index){
 
 	let url = removeS(response[index].apiUrl);
-    getImage(url, 'image' + index);
 	let div = document.createElement('div');
     div.setAttribute("class", "summary");
     div.setAttribute("class", "mainHeadline");
@@ -16,6 +15,7 @@ function makeHeadlineDiv(response, index){
     div.append(topic);
     div.append(image);
     div.append(headline);
+    getImage(url, 'image' + index);
     return div;
 }
 
