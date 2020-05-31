@@ -22,8 +22,8 @@
 
 # Left to be done:
 
-* Summary of a news article
-* Picture on headlines page
+* Summary on the single article pages
+* Images on headlines page
 * Responsiveness
 
 ## Challenge
