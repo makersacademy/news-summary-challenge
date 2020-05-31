@@ -4,7 +4,7 @@ function interface() {
 
 function listArticles() {
   document.getElementById("header").innerText = "- THIS JUST IN -"
-  document.getElementById("backForm").style.visibility = "hidden";
+  document.getElementById("tom").src = ""
 
   for (article of Articles.all) {
     let p =  document.createElement("p")
@@ -38,7 +38,6 @@ function listArticles() {
 function showArticle(id) {
   document.getElementById("header").innerText = ""
   document.getElementById("container").innerHTML = "";
-  document.getElementById("backForm").style.visibility = "visible";
 
   let selectedArticle = document.getElementById("selectedArticle")
   article = Articles.all[id - 1]
@@ -53,6 +52,8 @@ function showArticle(id) {
 
   let bodyText = document.createTextNode(`${article.bodyText}`)
 
+  addBackButton()
+
   selectedArticle.appendChild(thumbnail)
   addLinesTo(selectedArticle)
 
@@ -64,6 +65,19 @@ function showArticle(id) {
   selectedArticle.appendChild(p)
 
   window.scrollTo(0, 0);
+}
+
+function addBackButton() {
+  let backForm = document.createElement("form")
+  backForm.setAttribute('onclick', `${backHome()}`)
+
+  let backButton = document.createElement("input")
+  backButton.setAttribute("id", "button")
+  backButton.setAttribute("type", "image")
+  backButton.setAttribute("src", "public/back_arrow.png")
+
+  backForm.appendChild(backButton)
+  document.getElementById("selectedArticle").appendChild(backForm)
 }
 
 function addLinesTo(element, times = 1) {
