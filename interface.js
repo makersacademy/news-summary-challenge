@@ -2,9 +2,6 @@ const ul = document.getElementById('articles');
 const fullArticle = document.getElementById('full-article');
 const guardianURL = 'https://content.guardianapis.com/search?api-key=19158819-ba32-4e1f-a54c-d75a65fad4ab&show-fields=starRating,headline,thumbnail,short-url'
 
-// http://content.guardianapis.com/search?api-key=19158819-ba32-4e1f-a54c-d75a65fad4ab&q=12%20years%20a%20slave&format=json&tag=film/film,tone/reviews&from-date=2010-01-01&show-tags=contributor
-// &show-fields=starRating,headline,thumbnail,short-url&show-refinements=all&order-by=relevance
-
 function createNode(element) {
   return document.createElement(element);
 }

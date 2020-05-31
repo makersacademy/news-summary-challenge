@@ -1,16 +1,11 @@
 
 
-Domain Modelling: 
-
 Model: 
-- headline done
-- link done
-- summary tomorrow
-- picture
-- mobile responsiveness
-
-methods: 
-shorten title
+- headline (done)
+- link (done)
+- summary (done)
+- picture (done)
+- mobile responsiveness (done)
 
 Controller:
 Array of articles: iterate over each in controller
@@ -36,9 +31,6 @@ So that I have something nice to look at
 As a busy politician
 I can read the site comfortably on my phone
 Just in case my laptop breaks
-
-
-
 
 
 # News Summary challenge
