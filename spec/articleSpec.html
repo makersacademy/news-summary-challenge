@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Article Spec</title>
+  </head>
+  <body>
+
+    <script type="text/javascript" src="../lib/specFramework.js"></script>
+    <script type="text/javascript" src="../src/articles.js"></script>
+
+    <script>
+      h1 = document.createElement(`p${1}`);
+
+      h1.textContent = it("2 + 2 = 4", function() {
+                          return expect(2+2).toEqual(4)
+                        })
+
+
+      document.body.appendChild(h1);
+    </script>
+  </body>
+</html>
