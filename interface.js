@@ -36,7 +36,7 @@ fetch(guardianURL)
       let image = createNode('img')
       image.setAttribute("class", "img-fluid");
       image.src = `${article.fields.thumbnail}`;
-git 
+
       const fetchPromise = 
       fetch (articleApiUrl)
       fetchPromise.then(response => {
