@@ -10,7 +10,12 @@
 
 * Created a domain model diagram
 ![domain model diagram](images/models.png)
+
 * Set up folder structure
+* Add article model & tests
+* Add article list model & tests
+* Add article list view & tests
+* Add article controller & tests
 
 
 ## Challenge

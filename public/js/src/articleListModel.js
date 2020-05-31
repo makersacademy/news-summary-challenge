@@ -11,5 +11,19 @@
     article.id = this.list.indexOf(article)
   }
 
+  ArticleList.prototype.getData = function() {
+    let self = this
+    fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/travel')
+      .then(response => response.json())
+      .then(data => {
+        let results = data.response.results;
+        results.forEach((item, i) => {
+          self.add(item.webTitle)
+        });
+        console.log(self.list)
+        articleController.insertHTML()
+      })
+  }
+
   exports.ArticleList = ArticleList
 })(this)

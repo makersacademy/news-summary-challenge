@@ -11,7 +11,3 @@
 
   exports.ArticleController = ArticleController
 })(this)
-
-let articleController = new ArticleController()
-articleController.articleList.add('This is a headline')
-articleController.insertHTML()
