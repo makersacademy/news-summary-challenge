@@ -7,17 +7,13 @@
   <body>
 
     <script type="text/javascript" src="../lib/specFramework.js"></script>
-    <script type="text/javascript" src="../src/articles.js"></script>
+    <script type="text/javascript" src="../src/article.js"></script>
 
     <script>
-      h1 = document.createElement(`p${1}`);
-
-      h1.textContent = it("2 + 2 = 4", function() {
-                          return expect(2+2).toEqual(4)
-                        })
-
-
-      document.body.appendChild(h1);
+      it("Gets an instance of an article", function() {
+        article = new Article("body")
+        return expect(article.constructor.name).toEqual("Article")
+      })
     </script>
   </body>
 </html>
