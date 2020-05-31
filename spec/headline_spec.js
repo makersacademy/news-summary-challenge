@@ -15,7 +15,7 @@
     let webUrl = guardian.onload().response.results[1].webUrl;
     let newHeadline = new Headline(webTitle, webUrl);
 
-    assert.isTrue(newHeadline.id === 2);
+    assert.isTrue(newHeadline.id === 1);
   }
 
   function testGetterTitle() {

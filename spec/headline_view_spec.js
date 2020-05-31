@@ -11,7 +11,6 @@
 
   function testAddHTMLTags() {
     let html = '<div><h1>' + headline.title + `</h1><p>Follow this <a href="${headline.url}">link</a></p></div>`;
-    console.log(html);
 
     assert.isTrue(headlineView.addHTMLTags() === html);
   }
