@@ -19,6 +19,14 @@
     assert.isTrue(element.innerHTML === headlinesListView.addHTMLTags());
   }
 
+  function testChangeToHeadlinePage() {
+    let url = window.location.href;
+    document.getElementById('5').click();
+
+    assert.isTrue(window.location.href !== url);
+  }
+
   testInstantiatesWithAHeadlinesListView();
   testInsertView();
+  testChangeToHeadlinePage();
 })();

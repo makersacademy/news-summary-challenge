@@ -10,4 +10,5 @@ guardian.onload().response.results.forEach((item) => {
     headlines.addHeadline(headline);
   });
 
+controller.changeToHeadlinePage();
 controller.insertView();
