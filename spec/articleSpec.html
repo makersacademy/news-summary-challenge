@@ -24,11 +24,15 @@
       });
 
       it("Gets title of an article", function() {
-        return expect(article.title).toEqual(title)
+        return expect(article.webTitle).toEqual(title)
       });
 
       it("Gets thumbnail of an article", function() {
         return expect(article.thumbnail).toEqual(image)
+      });
+
+      it("Gets the body text of an article", function() {
+        return expect(article.bodyText).toEqual(text)
       });
 
     </script>
