@@ -3,11 +3,13 @@ function interface() {
 }
 
 function listArticles() {
-  document.getElementById("header").innerText = "List of Articles"
+  document.getElementById("header").innerText = "- THIS JUST IN -"
   document.getElementById("backForm").style.visibility = "hidden";
 
   for (article of Articles.all) {
+    let p =  document.createElement("p")
     let webTitle = document.createTextNode(`${article.webTitle}`)
+    p.appendChild(webTitle)
     //let webTitleLink = document.createElement("A")
     //webTitleLink.setAttribute("onclick", showArticle(`${article.id}`))
     //webTitleLink.appendChild(webTitle)
@@ -26,7 +28,7 @@ function listArticles() {
     div.appendChild(x)
     addLinesTo(div)
 
-    div.appendChild(webTitle)
+    div.appendChild(p)
 
     container.appendChild(div)
     addLinesTo(container, 3)
@@ -34,7 +36,7 @@ function listArticles() {
 }
 
 function showArticle(id) {
-  document.getElementById("header").innerText = "Current Article"
+  document.getElementById("header").innerText = ""
   document.getElementById("container").innerHTML = "";
   document.getElementById("backForm").style.visibility = "visible";
 
@@ -42,6 +44,7 @@ function showArticle(id) {
   article = Articles.all[id - 1]
 
   let thumbnail = document.createElement("img")
+  thumbnail.style.width = '800px'
   thumbnail.src = article.thumbnail
 
   let webTitle = document.createElement("h2")
@@ -56,7 +59,9 @@ function showArticle(id) {
   selectedArticle.appendChild(webTitle)
   addLinesTo(selectedArticle)
 
-  selectedArticle.appendChild(bodyText)
+  let p =  document.createElement("p")
+  p.appendChild(bodyText)
+  selectedArticle.appendChild(p)
 
   window.scrollTo(0, 0);
 }
