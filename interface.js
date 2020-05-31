@@ -1,6 +1,9 @@
 const ul = document.getElementById('articles');
 const fullArticle = document.getElementById('full-article');
-const guardianURL = 'https://content.guardianapis.com/search?api-key=19158819-ba32-4e1f-a54c-d75a65fad4ab'
+const guardianURL = 'https://content.guardianapis.com/search?api-key=19158819-ba32-4e1f-a54c-d75a65fad4ab&show-fields=starRating,headline,thumbnail,short-url'
+
+// http://content.guardianapis.com/search?api-key=19158819-ba32-4e1f-a54c-d75a65fad4ab&q=12%20years%20a%20slave&format=json&tag=film/film,tone/reviews&from-date=2010-01-01&show-tags=contributor
+// &show-fields=starRating,headline,thumbnail,short-url&show-refinements=all&order-by=relevance
 
 function createNode(element) {
   return document.createElement(element);
@@ -30,6 +33,10 @@ fetch(guardianURL)
       let summary = createNode('p');
       var articleApiUrl = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + `${article.webUrl}`
 
+      let image = createNode('img')
+      image.setAttribute("class", "img-fluid");
+      image.src = `${article.fields.thumbnail}`;
+git 
       const fetchPromise = 
       fetch (articleApiUrl)
       fetchPromise.then(response => {
@@ -39,11 +46,13 @@ fetch(guardianURL)
        this.fullText = data.text
         const sentence = data.sentences
         summary.innerHTML = sentence;
+        summary.setAttribute("class", "text-justify");
         // console.log(data.sentences)
       })
 
       
       append(li,headline);
+      append(li,image);
       append(li,summary);
       append(li,link);
       append(ul, li);
