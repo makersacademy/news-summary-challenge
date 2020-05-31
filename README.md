@@ -1,3 +1,9 @@
+## To do
+
+* Headline summary is not working
+* Add pictures to each headline
+* CSS
+
 # News Summary challenge
 
 * Challenge time: rest of the day and weekend, until Monday 9am.
