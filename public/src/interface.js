@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   data.getDataFromAPI()
   // Headder elements
   let header = document.createElement('header')
+  header.setAttribute('class', 'navbar navbar-dark bg-primary')
   document.body.appendChild(header)
   let headerMainText = document.createElement('h1')
   headerMainText.innerHTML = "THE GUARDIAN NEWS SUMMARY"
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   imageElement.setAttribute('id', 'animation-div')
   let button = document.createElement('button')
   button.setAttribute('id', 'get-data')
-  button.setAttribute('class', 'center')
+  button.setAttribute('class', 'btn btn-primary btn-lg btn-block my-5')
   button.innerHTML = 'Get Todays News'
   divElement.appendChild(imageElement)
   divElement.appendChild(button)
@@ -40,7 +41,7 @@ function loadNews(event) {
   document.querySelector('#get-data').style.display = 'none'
   // Add pageOneView to main div
   let container = document.querySelector('#container')
-  pageOneView.setAttribute('class', 'page-view')
+  pageOneView.setAttribute('class', 'card text-center m-3 p-3')
   pageOneView.setAttribute('id', 'page-one')
   container.appendChild(pageOneView)
   let headlines = data.viewAllNews()[0].sentences
@@ -71,10 +72,10 @@ function loadNews(event) {
     fullHeadlineView.setAttribute('class', 'center')
     fullHeadlineView.setAttribute('class', 'full-header')
     fullHeadlineView.innerHTML = `${data.viewAllNews()[0].sentences[this.id]}`
-    pageTwoView.setAttribute('class', 'page-view')
+    pageTwoView.setAttribute('class', 'card text-center m-3 p-3')
     pageTwoView.setAttribute('id', 'page-two')
     let button = document.createElement('button')
-    button.setAttribute('class', 'center')
+    button.setAttribute('class', 'btn btn-warning btn-lg')
     button.innerHTML = 'Back To View Todays Headlines'
     button.addEventListener('click', takeToPageOne)
     container.appendChild(pageTwoView)

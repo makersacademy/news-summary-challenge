@@ -1,37 +1,28 @@
 header {
-  background: #333;
   color: #fff;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 4px #000 solid;
-  margin-bottom: 10px;
+  margin: 10px;
 }
 #container {
   width: 90%;
-  height: 90vh;
+  /* height: 90vh; */
   margin: auto;
   padding: 10px;
   background: #f1f1f1;
   color: #fff;
 }
-.page-view {
-  width: 90%;
-  padding: 10px;
-  margin: 20px auto;
-  background: green;
+a, p {
+  font-size: 1.5em;
+  color: #000;
 }
-.center {
+header h1 {
   text-align: center;
   margin: auto;
-  display: block;
 }
 .image {
   width: 90%;
-  height: 4vh;
+  height: 8vh;
   margin: auto;
   padding: 10px;
-  background: #f1f1f1;
-  color: #fff;
   background-image: url('../../images/theGuardian.png');
   background-size: auto 100%;
 }

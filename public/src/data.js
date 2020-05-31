@@ -5,7 +5,7 @@ class NewsData {
   constructor() {
     this._storedNewsData = []
   }
-
+  // Custom API 
   // getDataFromAPI() {
   //   // const apiKey = 'f463419c4e4c4ebd96549c95688e979b'
   //   // const url = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey='
@@ -22,6 +22,7 @@ class NewsData {
   }
 
   // Makers API
+
   getDataFromAPI() {
     // Getting data from API
     const url = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html'
