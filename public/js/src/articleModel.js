@@ -1,10 +1,11 @@
 (function(exports) {
-  function ArticleModel(headline) {
-    this.headline = headline
+  function Article(headline) {
+    this.headline = headline;
+    this.id
   }
-  ArticleModel.prototype.show = function() {
+  Article.prototype.show = function() {
     return this.headline;
   }
 
-  exports.ArticleModel = ArticleModel
+  exports.Article = Article
 })(this)
