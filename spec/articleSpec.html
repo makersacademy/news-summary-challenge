@@ -17,6 +17,7 @@
 
       let jsonStub = { webTitle: title, fields: { thumbnail: image, bodyText: text } };
 
+      Articles.create()
       article = new Article(jsonStub);
 
       it("Gets an instance of an article", function() {
@@ -33,6 +34,12 @@
 
       it("Gets the body text of an article", function() {
         return expect(article.bodyText).toEqual(text)
+      });
+
+      it("Returns number of articles - 3", function() {
+        new Article(jsonStub);
+        new Article(jsonStub);
+        return expect(Articles.all.length).toEqual(3)
       });
 
     </script>

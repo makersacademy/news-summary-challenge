@@ -1,6 +1,7 @@
 class Article {
   constructor(object) {
     this.object = object;
+    Articles.add(this)
   }
 
   get webTitle() {
@@ -14,5 +15,14 @@ class Article {
   get bodyText() {
     return this.object.fields.bodyText
   }
+}
 
+class Articles {
+  static create() {
+    this.all = []
+  }
+
+  static add(article) {
+    this.all.push(article)
+  }
 }
