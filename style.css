@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+   padding: 20px;
+
+}
+
+  h4{
+  padding: 25px;
+  font-family: "Lucida Console", Courier, monospace;
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+ height: auto;
+  padding: 25px;
+}
+
+p {
+  padding: 25px;
+  text-align: justify;
+}
