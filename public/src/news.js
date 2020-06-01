@@ -24,7 +24,6 @@ fetch('https://content.guardianapis.com/search?show-blocks=all&api-key=3d1bd118-
       //console.log(news)
     //  pic=news.blocks.main.elements[0].assets[0]
     //  console.log(pic)
-     window.webUrl=news.webUrl
      var li = document.createElement('li')
      var a = document.createElement('a')
      a.setAttribute('href', onclick=retrieve)
@@ -40,13 +39,12 @@ fetch('https://content.guardianapis.com/search?show-blocks=all&api-key=3d1bd118-
      container.appendChild(card)
      card.appendChild(h3)
      card.append(li)
-     
-     
+     window.webUrl=news.webUrl
   })  
 })
 .catch(err => {
    const errorMessage = document.createElement('marquee')
-   errorMessage.textContent = `Gah, it's not working!`
+   errorMessage.textContent = `it's not working!`
    app.appendChild(errorMessage)
 })
 
@@ -54,13 +52,13 @@ function retrieve(e){
   e.preventDefault()
 
   var settings = {
-    "url": `https://api.meaningcloud.com/summarization-1.0?key=c855ca1f61d1002436b3f724a17c3a72&url=${window.webUrl}&sentences=1`,
+    "url": `https://api.meaningcloud.com/summarization-1.0?key=c855ca1f61d1002436b3f724a17c3a72&url=${window.webUrl}&sentences=5`,
     "method": "POST",
     "timeout": 0,
   };
 
   $.ajax(settings).done(function (response) {
-    console.log(response.summary);
+    alert(response.summary);
   });
 }
 
