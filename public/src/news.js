@@ -8,7 +8,6 @@ const container = document.createElement('div')
 container.setAttribute('class', 'container')
 
 
-
 app.appendChild(logo)
 app.appendChild(container)
 
@@ -21,20 +20,15 @@ fetch('https://content.guardianapis.com/search?show-blocks=all&api-key=3d1bd118-
 })
 .then(data => {
     data.response.results.forEach(news => {
-      //console.log(news)
-    //  pic=news.blocks.main.elements[0].assets[0]
-    //  console.log(pic)
      var li = document.createElement('li')
      var a = document.createElement('a')
      a.setAttribute('href', onclick=retrieve)
      a.setAttribute('target', '_blank')
      a.text = "see article"
-     //console.log(a)
      const card = document.createElement('div')
      card.setAttribute('class', 'card')
      const h3 = document.createElement('h3')
      h3.textContent = news.webTitle
-     //console.log(button)
      li.appendChild(a)
      container.appendChild(card)
      card.appendChild(h3)
@@ -52,7 +46,7 @@ function retrieve(e){
   e.preventDefault()
 
   var settings = {
-    "url": `https://api.meaningcloud.com/summarization-1.0?key=c855ca1f61d1002436b3f724a17c3a72&url=${window.webUrl}&sentences=5`,
+    "url": `https://api.meaningcloud.com/summarization-1.0?key=c855ca1f61d1002436b3f724a17c3a72&url=${window.webUrl}&sentences=2`,
     "method": "POST",
     "timeout": 0,
   };
