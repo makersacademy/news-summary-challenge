@@ -1,9 +1,10 @@
 # News Summary challenge
 
+# ![screenshot](media/image1.png)
+
 ## Project overview
 
-Browser based newsreader app that grabs the main stories for the UK from the Guardian newspaper API and displays them on a page.  
-The user is also able to search for stories on their chosen subject.
+Browser based newsreader app that grabs the main stories for the UK from the Guardian newspaper API and displays them on a page. Once loaded, the user is also able to search for stories on their chosen subject.
 
 ### Technologies
 
