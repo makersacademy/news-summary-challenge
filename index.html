@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Daily Guardian</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="src/news.js"></script>
+  </head>
+  <body>
+    <div class="heading">
+      <h1>Daily Guardian</h1>
+      <h3>Too busy to browse the news? No problem! Scroll down for the top 10 articles of the day.</h3>
+    </div>
+    <div class="content">
+      </br>
+      </br>
+      <div id="news"></div>
+    </div>
+
+    <script type="text/javascript">
+      let news = new News();
+      let date = new Date().toJSON().slice(0,10);
+      apiRequestUrl = 'http://content.guardianapis.com/search?from-date=' + date + '&show-fields=thumbnail&api-key=test'
+      news.retrieveData(apiRequestUrl);
+      news.retrieveSummaryData();
+    </script>
+  </body>
+</html>
