@@ -1,0 +1,48 @@
+header {
+  color: #fff;
+  margin: 10px;
+}
+#container {
+  width: 90%;
+  /* height: 90vh; */
+  margin: auto;
+  padding: 10px;
+  background: #f1f1f1;
+  color: #fff;
+}
+a, p {
+  font-size: 1.5em;
+  color: #000;
+}
+header h1 {
+  text-align: center;
+  margin: auto;
+}
+.image {
+  width: 90%;
+  height: 8vh;
+  margin: auto;
+  padding: 10px;
+  background-image: url('../../images/theGuardian.png');
+  background-size: auto 100%;
+}
+#animation-div {
+  width: 90%;
+  height: 20vh;
+  margin: auto;
+  background-image: url('../../images/lama.gif');
+  background-size: auto 100%;
+}
+
+@media all and (max-width: 620px) {
+  /* For mobile phones: */
+  header {
+    background: #888;
+  }
+  .image {
+    display: none;
+  }
+  #animation-div {
+    display: none;
+  }
+}
