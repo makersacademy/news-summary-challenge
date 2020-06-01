@@ -40,13 +40,14 @@ I can read the site comfortably on my phone
 Just in case my laptop breaks
 ```
 
+-----------------------------------------------------------------------------
+To Do:
+
 ```
 As a busy politician
 I can click a link to see the original news article
 So that I can get an in depth understanding of a very important story
 ```
------------------------------------------------------------------------------
-To Do:
 
 ```
 As a busy politician
@@ -65,13 +66,12 @@ To make my news reading more fun
 
 ### API authentication
 
-The github version of this app is set up to use the Guardian newspapaer api's 'test' api-key.  In order to use this app fully you should sign up for your own api-key using the link below and update   var apiKey ="test" in  /config.js to use "your-api-key".
+The github version of this app is set up to use the Guardian newspaper api 'test' api-key.  In order to use this app fully you should sign up for your own api-key using the link below and update  var apiKey ="test" in  /config.js with "your-api-key".
 
 https://open-platform.theguardian.com/access/
 
-> Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
 
-### API request rate limits and stubbing
+### API request rate limits
 
 The Guardian newspaper developer API is rate-limited.
 
@@ -84,7 +84,7 @@ The Guardian newspaper developer API is rate-limited.
 
 ### API Overview
 
-The app sends an `apiRequestUrl` query parameter to the Guardian newspaper API and itterates over the JSON response to access the webTitle, thumbnail and bodyText for each story.
+The app sends an `apiRequestUrl` query parameter to the Guardian newspaper API and iterates over the JSON response to access the webTitle, thumbnail and bodyText for each story.
 
 ### Guardian API example
 

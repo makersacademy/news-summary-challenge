@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar navbar-dark bg-dark  ">
+  <nav class="navbar fixed-top navbar-dark bg-dark  ">
       <a class="navbar-brand">📰 newsScript</a>
       <form id="newsForm" onsubmit="return newsSearch()" class="form-inline">
         <input class="form-control mr-sm-2" id="search" type="search" placeholder="search the guardian.." aria-label="Search" >
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
   </nav>
+  <div class="spacer-60" id="spacer"></div>
 
   <div id = "news">
 
