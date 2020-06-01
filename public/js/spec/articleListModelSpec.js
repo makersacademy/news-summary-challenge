@@ -1,15 +1,5 @@
 (function() {
 
-  class ArticleListDouble {
-    constructor(string){
-      this.list = []
-    }
-
-    listAll(){
-      return this.list
-    }
-  }
-
   let articleList = new ArticleList();
   let headline = 'This is a headline'
 

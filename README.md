@@ -9,16 +9,15 @@
 ## My approach
 
 * Created a domain model diagram
-![domain model diagram](images/model.png)
-
 * Set up folder structure
 * Added article model & tests
 * Added article list model & tests
 * Added article list view & tests
 * Added article controller & tests
 * Set up an API call when main headlines page loads
-* Add single article view & tests
+* Added single article view & tests
 * Set up an API call when user clicks on headline links
+![domain model diagram](images/model.png) 
 
 # Left to be done:
 
