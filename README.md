@@ -1,6 +1,6 @@
 # News Summary challenge
 
-# ![screenshot](media/image1.png)
+# ![screenshot](media/image1.PNG)
 
 ## Project overview
 
