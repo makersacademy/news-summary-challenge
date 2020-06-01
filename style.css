@@ -1,10 +1,10 @@
 body {
   text-align: center;
    padding: 20px;
-
 }
 
   h4{
+  margin-top: 5%;
   padding: 25px;
   font-family: "Lucida Console", Courier, monospace;
   text-decoration: underline;
@@ -17,6 +17,13 @@ img {
 }
 
 p {
-  padding: 25px;
+  padding: 10px;
   text-align: justify;
+}
+
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
