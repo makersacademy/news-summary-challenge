@@ -16,12 +16,20 @@ fetch('https://content.guardianapis.com/search?show-blocks=all&api-key=3d1bd118-
 
 .then(response => {
   return response.json()
-  
-})
-.then(data => {
+}).then(data => {
+  console.log(data)
     data.response.results.forEach(news => {
-     var li = document.createElement('li')
-     var a = document.createElement('a')
+      createCard(news);
+  })  
+}).catch(err => {
+   const errorMessage = document.createElement('marquee')
+   errorMessage.textContent = `it's not working!`
+   app.appendChild(errorMessage)
+})
+
+function createCard(news)
+{
+  var a = document.createElement('a')
      a.setAttribute('href', onclick=retrieve)
      a.setAttribute('target', '_blank')
      a.text = "see article"
@@ -29,18 +37,11 @@ fetch('https://content.guardianapis.com/search?show-blocks=all&api-key=3d1bd118-
      card.setAttribute('class', 'card')
      const h3 = document.createElement('h3')
      h3.textContent = news.webTitle
-     li.appendChild(a)
      container.appendChild(card)
      card.appendChild(h3)
-     card.append(li)
+     card.append(a)
      window.webUrl=news.webUrl
-  })  
-})
-.catch(err => {
-   const errorMessage = document.createElement('marquee')
-   errorMessage.textContent = `it's not working!`
-   app.appendChild(errorMessage)
-})
+}
 
 function retrieve(e){
   e.preventDefault()
