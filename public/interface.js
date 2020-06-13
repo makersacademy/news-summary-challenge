@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(api_url).then( function(response) {
           return response.json()
         }).then(data=> {
-          papers = new newsReel(data.response.results);
+          console.log(data.response.results);
+          papers = new newsReel(newsItem,data.response.results);
           papers.articleParser();
           for (let index = 0; index < papers.newsPieces.length; index++) {
             const article = papers.newsPieces[index],
@@ -24,3 +25,4 @@ document.addEventListener('DOMContentLoaded', function() {
           return data.results;
         })
 })
+
