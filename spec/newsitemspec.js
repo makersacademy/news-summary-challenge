@@ -32,10 +32,4 @@ describe("newsItem", () => {
     const headline = testItem.getHeadlineHTML();
     expect(headline.className).toEqual("headline");
   });
-  it("can extract the body of the article from an api response element", () => {
-    const input = apiResult.response.results[0].fields;
-    const testItem = new newsItem(input, 0);
-    const headline = testItem.getb;
-    expect(headline.textContent).toEqual(input.headline)
-  });
 })
