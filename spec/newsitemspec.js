@@ -58,4 +58,30 @@ describe("newsItem", () => {
     const articleBody = testItem.getbodyTextHTML();
     expect(articleBody.className).toEqual("body");
   });
+  it("can extract an image from an api response element", () => {
+    const input = apiResult.response.results[0].fields;
+    const testItem = new newsItem(input, 0);
+    const articleImage = testItem.getThumbnailHTML();
+    expect(articleImage.src).toEqual(input.thumbnail);
+  });
+  it("wraps the image from the api in an img tag", () => {
+    const input = apiResult.response.results[0].fields;
+    const testItem = new newsItem(input, 0);
+    const articleImage = testItem.getThumbnailHTML();
+    expect(articleImage.tagName).toEqual("IMG");
+  });
+  it("gives the image an ID based on the article number", () => {
+    const input = apiResult.response.results[0].fields;
+    const articleNumber = 0
+    const testItem = new newsItem(input, articleNumber);
+    const articleImage = testItem.getThumbnailHTML();
+    expect(articleImage.id).toEqual(`Article #${articleNumber} image`)
+  });
+  it("makes the image an element of the thumbnail class", () => {
+    const input = apiResult.response.results[0].fields;
+    const articleNumber = 0
+    const testItem = new newsItem(input, articleNumber);
+    const articleImage = testItem.getThumbnailHTML();
+    expect(articleImage.className).toEqual("thumbnail");
+  });
 })
