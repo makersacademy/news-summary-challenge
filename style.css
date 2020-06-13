@@ -29,12 +29,15 @@ h1 {
 }
 
 .article-shell {
-  margin: 1rem;
+  margin: auto;
   background: white;
   box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
   border-radius: 12px;
   overflow: hidden;
   transition: all .2s linear;
+  width: 75%;
+  max-width: 600px;
+  padding: 0.5rem;
 }
 
 .article-shell:hover {
@@ -45,6 +48,6 @@ h1 {
 .headline {
   text-align: center;
   padding: 1.5rem 2.5rem;
-  margin: 0 0 2rem 0;
+  margin: 2rem;
   font-size: 1.5rem;
 }
