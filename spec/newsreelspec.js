@@ -1,6 +1,5 @@
 describe("newsreel", () => {
-  it("should make 10 news items from an object with 10 news articles", async () => {
-    console.log(apiResult.response.results);
+  it("should make 10 news items from an object with 10 news articles", () => {
     function mockNewsItem(apiResponse, articleNumber) {
       this.partOne = apiResponse;
       this.articleNumber = articleNumber;
