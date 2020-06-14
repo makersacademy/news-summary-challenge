@@ -2,8 +2,7 @@
   box-sizing: border-box;
 }
 #news-spot {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
 }
 #root {
   max-width: 1200px;
@@ -30,6 +29,8 @@ h1 {
 
 .article-shell {
   margin: auto;
+  margin-top:2%;
+  margin-bottom:2%;
   background: white;
   box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
   border-radius: 12px;
