@@ -39,6 +39,7 @@ h1 {
   width: 75%;
   max-width: 600px;
   padding: 0.5rem;
+  display: grid;
 }
 
 .article-shell:hover {
@@ -47,8 +48,10 @@ h1 {
 }
 
 .headline {
-  text-align: center;
+  text-align:center;
   padding: 1.5rem 2.5rem;
-  margin: 2rem;
+  margin-left: auto;
+  margin-right:auto;
   font-size: 1.5rem;
+  width: 95%;
 }
