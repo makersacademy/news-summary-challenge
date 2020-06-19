@@ -10,7 +10,7 @@ The site is available for viewing [here](http://guardian-summariser.surge.sh/).
 
 ## Screen Previews
 
-![Screen Previews](images/guardian-summariser-preview.gif)
+![Screen Previews](images/guardian-summariser-preview-2.gif)
 
 ## User Stories
 
