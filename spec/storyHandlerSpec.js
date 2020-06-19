@@ -1,5 +1,6 @@
 var test = '/testApiResponse.json'
 
+// This test relies on async, which is out of the scope of this testing framework in the time afforded.
 it('StoryHandler.create should return a story instance with an incrementing id', () => {
   // let storyHandler = new StoryHandler(test)
   // let story1 = storyHandler.create('Headline 1')
