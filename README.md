@@ -223,6 +223,19 @@ This is all CSS based subjective style improvements. There's a lot of tinkering 
 - Styled the scrollbar too.
 - Font size scales with viewport width between a min and max value.
 
+### Back to User Story 4
+
+> As a busy politician  
+> So that I have something nice to look at  
+> I can see a picture to illustrate each news article when I browse headlines
+
+It turns out there is a parameter that can ce included to provide a link to the thumbnail image of the article.
+
+Added to the test that the Headline component has an image. Red.
+
+- Added thumbnail image as a parameter to Story.
+- 
+
 ## Retrospective
 
 - I don't like not using TDD. I spiked a lot of features for the front end, setting my own expectations for the behaviour I wanted to create. After creating a couple of features in particular (the story's `summaryComponent`) I realised this could have been TDDd.
