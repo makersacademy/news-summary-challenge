@@ -91,6 +91,7 @@ button {
   font-size: 1.2em;
   cursor: pointer;
   outline: none;
+  margin-left: 0.5em;
 }
 
 button:hover,
@@ -102,6 +103,15 @@ button:focus {
   filter: saturate(2);
 }
 
+button a {
+  color: var(--off-white);
+  text-decoration: none;
+}
+button a:hover {
+  color: #000000;
+}
+
+
 img {
   width: 100%;
   border-radius: 0.5em;
@@ -111,7 +121,7 @@ body::-webkit-scrollbar {
   width: 0.8em;
 }
 body::-webkit-scrollbar-track {
-  background-color: var(--main-1);
+background-color: var(--main-1);
 }
 body::-webkit-scrollbar-thumb {
   border-radius: 100px;
