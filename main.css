@@ -102,6 +102,11 @@ button:focus {
   filter: saturate(2);
 }
 
+img {
+  width: 100%;
+  border-radius: 0.5em;
+}
+
 body::-webkit-scrollbar {
   width: 0.8em;
 }
