@@ -234,7 +234,12 @@ It turns out there is a parameter that can ce included to provide a link to the 
 Added to the test that the Headline component has an image. Red.
 
 - Added thumbnail image as a parameter to Story.
-- 
+- Create an img element, with src of the passed thumbnail.
+- Add img into the headline component.
+
+Green.
+
+Also added some styling, and added the image to the summary component also.
 
 ## Retrospective
 
