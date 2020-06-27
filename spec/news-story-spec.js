@@ -1,25 +1,28 @@
 function newsStoryHasAnID() {
-  var newsStory = new NewsStory(1);
+  var newsStory = new NewsStory(1, 'apiResponseElement');
 
   assert.isTrue(newsStory.id === 1);
 };
 
 function returnsIdOfNewsStory() {
-  var newsStory = new NewsStory(4);
+  var newsStory = new NewsStory(4, 'apiResponseElement');
 
   assert.isTrue(newsStory.returnId() === 4);
 }
 
 function newsStoryHasAHeadline() {
-  var newsStory = new NewsStory(1, "Boris does it again");
+  var testElement = testApiResult.response.results[1];
+  var newsStory = new NewsStory(1, testElement);
 
-  assert.isTrue(newsStory.headline === "Boris does it again");
+  assert.isTrue(newsStory.headline === "Hottest frontroom seats. The best theatre and dance to watch online");
 };
 
 function newsStoryReturnsHeadlineAsHTML() {
-  var newsStory = new NewsStory(1, "Boris does it again");
+  var testElement = testApiResult.response.results[1];
+  var newsStory = new NewsStory(1, testElement);
+  var testHeadline = "Hottest frontroom seats. The best theatre and dance to watch online"
 
-  assert.isTrue(newsStory.returnHeadlineHtml() === '<li id="1" class="headline"><h2>Boris does it again</h2></li>'
+  assert.isTrue(newsStory.returnHeadlineHtml() === `<li id="1" class="headline"><h2>${testHeadline}</h2></li>`
   );
 };
 

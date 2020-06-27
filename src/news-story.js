@@ -1,8 +1,8 @@
 (function (exports) {
 
-  function NewsStory(id, headline) {
-    this.id = id;
-    this.headline = headline;
+  function NewsStory(newsArticleId, apiResponseElement) {
+    this.id = newsArticleId;
+    this.headline = apiResponseElement.webTitle;
   }
 
   NewsStory.prototype.returnHeadlineHtml = function () {
