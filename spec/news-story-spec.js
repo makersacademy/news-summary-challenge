@@ -12,23 +12,23 @@ function returnsIdOfNewsStory() {
 }
 
 function newsStoryHasAHeadline() {
-  var testElement = testApiResult.response.results[1];
+  var testElement = testApiResult.response.results[1].fields;
   var newsStory = new NewsStory(1, testElement);
 
-  assert.isTrue(newsStory.headline === "Hottest frontroom seats. The best theatre and dance to watch online");
+  assert.isTrue(newsStory.headline === "Test headline1");
 }
 
 function newsStoryHasBodyOfText() {
-  var testElement = testApiResult.response.results[0];
+  var testElement = testApiResult.response.results[0].fields;
   var newsStory = new NewsStory(1, testElement);
 
-  assert.isTrue(newsStory.bodyText === "Test bodyText 1");
+  assert.isTrue(newsStory.bodyText === "Test bodyText0");
 }
 
 function newsStoryReturnsHeadlineAsHTML() {
-  var testElement = testApiResult.response.results[1];
+  var testElement = testApiResult.response.results[1].fields;
   var newsStory = new NewsStory(1, testElement);
-  var testHeadline = "Hottest frontroom seats. The best theatre and dance to watch online"
+  var testHeadline = "Test headline1"
 
   assert.isTrue(newsStory.returnHeadlineHtml() === `<li id="1" class="headline"><h2>${testHeadline}</h2></li>`
   );
