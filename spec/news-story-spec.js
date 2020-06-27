@@ -16,7 +16,14 @@ function newsStoryHasAHeadline() {
   var newsStory = new NewsStory(1, testElement);
 
   assert.isTrue(newsStory.headline === "Hottest frontroom seats. The best theatre and dance to watch online");
-};
+}
+
+function newsStoryHasBodyOfText() {
+  var testElement = testApiResult.response.results[0];
+  var newsStory = new NewsStory(1, testElement);
+
+  assert.isTrue(newsStory.bodyText === "Test bodyText 1");
+}
 
 function newsStoryReturnsHeadlineAsHTML() {
   var testElement = testApiResult.response.results[1];
@@ -30,4 +37,5 @@ function newsStoryReturnsHeadlineAsHTML() {
 newsStoryHasAnID();
 returnsIdOfNewsStory();
 newsStoryHasAHeadline();
+newsStoryHasBodyOfText();
 newsStoryReturnsHeadlineAsHTML();

@@ -2,7 +2,8 @@
 
   function NewsStory(newsArticleId, apiResponseElement) {
     this.id = newsArticleId;
-    this.headline = apiResponseElement.webTitle;
+    this.headline = apiResponseElement.headline;
+    this.bodyText = apiResponseElement.bodyText;
   }
 
   NewsStory.prototype.returnHeadlineHtml = function () {
