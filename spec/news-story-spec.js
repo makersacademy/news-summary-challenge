@@ -5,9 +5,10 @@ function newsStoryHasAnID() {
 };
 
 function returnsIdOfNewsStory() {
-  var newsStory = new NewsStory(4, 'apiResponseElement');
+  var testElementId = testApiResult.response.results[1].id
+  var newsStory = new NewsStory(testElementId, 'apiResponseElement');
 
-  assert.isTrue(newsStory.returnId() === 4);
+  assert.isTrue(newsStory.returnId() === testElementId);
 }
 
 function newsStoryHasAHeadline() {
