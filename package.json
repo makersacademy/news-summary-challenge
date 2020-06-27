@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Sumner1185/news-summary-challenge#readme",
   "devDependencies": {
     "jasmine-node": "^3.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
   }
 }
