@@ -12,5 +12,14 @@ function addsNumberOfNewsItemToList() {
   assert.isTrue(newsReel._list.length === 2);
 };
 
+function numberOfRequiredElementsStopsAt10() {
+  let articles = testApiResult.response.results;
+  var newsReel = new NewsReel(articles)
+  newsReel.addNews(articles)
+
+  assert.isTrue(newsReel._list.length === 10);
+};
+
 instantiatesWithEmptyNewsReel();
 addsNumberOfNewsItemToList();
+numberOfRequiredElementsStopsAt10();

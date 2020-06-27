@@ -1,2 +1,2 @@
-const testResult = testApiResult.response.results.slice(0, 2);
+const testResult = testApiResult.response.results;
 console.log(testResult);
