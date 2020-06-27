@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #000;
+  color: #fff;
+  font-weight: 900;
+}
+
+li {
+  margin-left: 4ch;
+  list-style: none;
+}
+
+
+.pass {
+  color: #00b600;
+}
+
+.fail {
+  color: #cf0000;
+}
+
+.alert {
+  color: #ffff00;
+}

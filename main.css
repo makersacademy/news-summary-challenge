@@ -1,0 +1,129 @@
+:root {
+  --main-1: #475f94;
+  --main-2: #fddc5c;
+  --main-3: #fa4224;
+
+  --off-white: #f0f0f0;
+
+  overflow-y: scroll;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  src: url(/fonts/Merriweather-Regular.ttf);
+  font-family: "Merriweather";
+}
+
+body {
+  color: var(--main-color);
+  background-color: var(--off-white);
+  font-family: Merriweather;
+  font-size: clamp(.8em, .9vw ,1em);
+  line-height: 1.6;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  color: var(--off-white);
+  background-color: var(--main-1);
+}
+
+#article-list {
+  display: grid;
+  grid-template-columns: repeat(1fr 1fr);
+  gap: 1em;
+}
+
+.headline {
+  padding: 1em;
+  background-color: var(--main-2);
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: 100ms;
+}
+
+.headline:hover,
+.headline:focus {
+  transform: scale(1.05);
+  filter: saturate(2);
+}
+
+.container {
+  padding: 1em;
+  margin: 0 auto;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sticky {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+section {
+  margin: 83px auto 0 auto;
+  padding: 1em;
+  max-width: 600px;
+}
+
+p {
+  padding: 0.5em 0;
+}
+
+button {
+  font-family: Merriweather;
+  border-radius: 100px;
+  border: 2px var(--off-white) solid;
+  padding: 0.5em 1em;
+  color: var(--off-white);
+  background-color: var(--main-1);
+  font-size: 1.2em;
+  cursor: pointer;
+  outline: none;
+  margin-left: 0.5em;
+}
+
+button:hover,
+button:focus {
+  transition: 100ms;
+  border-color: var(--main-2);
+  color: #000000;
+  background-color: var(--main-2);
+  filter: saturate(2);
+}
+
+button a {
+  color: var(--off-white);
+  text-decoration: none;
+}
+button a:hover {
+  color: #000000;
+}
+
+
+img {
+  width: 100%;
+  border-radius: 0.5em;
+}
+
+body::-webkit-scrollbar {
+  width: 0.8em;
+}
+body::-webkit-scrollbar-track {
+background-color: var(--main-1);
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: var(--main-2);
+}

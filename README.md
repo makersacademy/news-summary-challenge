@@ -1,78 +1,48 @@
 # News Summary challenge
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+This is a project to practice Single page Web Apps, and AJAX requests, using vanilla HTML, CSS, and JS.
 
-## Challenge
+The app grabs all the headlines from the Guardian newspaper API and display them on a page. Clicking on a headline will show a summary of the article.
 
-As usual please start by forking this repo.
+## Visit the site
 
-You'll create an app that summarises the news.
+The site is available for viewing [here](http://guardian-summariser.surge.sh/).
 
-### Guidance
+## Screen Previews
 
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
-
-## Project overview
-
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
-
-### Technologies
-
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+![Screen Previews](images/guardian-summariser-preview-2.gif)
 
 ## User Stories
 
-Some of these stories will need decomposing if they seem too large.
+Must have:
 
-```
-As a busy politician
-I can see all of today's headlines in one place
-So I know what the big stories of the day are
-```
+> As a busy politician  
+> So I know what the big stories of the day are  
+> I can see all of today's headlines in one place
 
-```
-As a busy politician
-I can click a link to see the original news article
-So that I can get an in depth understanding of a very important story
-```
+> As a busy politician  
+> So I can get a few more details about an important story  
+> I can click on a headline to see a summary of a news article
 
-```
-As a busy politician
-I can see a summary of a news article
-So I can get a few more details about an important story
-```
+> As a busy politician  
+> So that I can get an in depth understanding of a very important story  
+> I can click a link to see the original news article
 
-```
-As a busy politician
-I can see a picture to illustrate each news article when I browse headlines
-So that I have something nice to look at
-```
+Should have:
 
-```
-As a busy politician
-I can read the site comfortably on my phone
-Just in case my laptop breaks
-```
+> As a busy politician  
+> So that I have something nice to look at  
+> I can see a picture to illustrate each news article when I browse headlines
 
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
-```
+> As a busy politician  
+> Just in case my laptop breaks  
+> I can read the site comfortably on my phone
+
+Could have:
+
+> As a busy politician  
+> To make my news reading more fun  
+> I can see whizzy animations in the app
 
 ## Mockups
 
@@ -84,69 +54,197 @@ To make my news reading more fun
 
 ![Article page mockup](/images/news-summary-project-article-page-mockup.png)
 
-## API
+## Development Journal
 
-### API authentication
+### Modelling
 
-So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
+Given that this is a serverless website, there isn't much to consider with a traditional MVC model.
 
-> Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
+However, I would like to use a component based organisation structure, as it seems there is a clear component: the Story.
 
-### API request rate limits and stubbing
+Here's a CRC card for the Story:
 
-The Guardian and Aylien text summarisation APIs are severely rate-limited.
+| Responsibilities                                     | Collaborators |
+| ---------------------------------------------------- | ------------- |
+| Knows headline                                       |               |
+| Knows summary                                        |               |
+| Knows image                                          |               |
+| Knows how to present itself as a headline with image |               |
+| Knows how to present itself as a summarised article  |               |
 
-**Please stub your tests so we don't exceed the daily limit.  Otherwise, all requests will be rejected and everyone's apps will stop working!**
+With this implementation it would be simple for the interface to make the AJAX request to the Guardian, then map the resulting JSON into Story instances that could then provide HTML to be displayed.
 
-### API Overview
+### User Story 1
 
-The basic idea is to send an `apiRequestUrl` query parameter to the News Summary API.  The value of this parameter is the URL of the request you *would* have made to the Guardian or Aylien API, minus any API credentials.
+> As a busy politician  
+> So I know what the big stories of the day are  
+> I can see all of today's headlines in one place
 
-### Guardian API example
+For this I expect a page to be able to show a series of headlines.
 
-**Please stub your tests to avoid exceeding the API rate limit**
+I will test driving a Story class using a test framework of my own design (as this is a no library project).
 
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.  Notice how it has a query parameter for `api-key`.
+Wrote a test for the Story class to be initialised with a headline and be able to return that headline. Red.
 
-```
-curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
-```
+- Created a class with constructor accepting a headline.
 
-To make this request via the Makers News Summary API with cURL, you could do something like this:
+Green.
 
-```
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-```
+Wrote a test that the Story.headlineComponent should return a headline component (an li with an h2 in it). Red.
 
-Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
+- Wrote headlineComponent method to create and return the relevant html with headline inserted.
 
-### Aylien text summarisation API example
+Green.
 
-**Please stub your tests to avoid exceeding the API rate limit**
+Refactored the testing framework to use a new custom matcher "returnHTML" using the outerHTML method.
 
-If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make.  Notice how it has headers to authenticate with the Aylien API.
+Next to create an html page with an interface.
 
-```
-curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
-  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
-  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
-```
+I created an `index.html`, sourcing `storyHandler.js`, `interface.js` and `story.js`
 
-To make this request via the Makers News Summary API with cURL, you could do something like this.
+`index.html` has a basic title, and a section containing an empty ul with id of articles-list.
 
-```
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
-```
+`storyHandler.js` has class StoryHandler with several methods:
 
-Note how the `apiRequestUrl` parameter is just the request you would have made to the Aylien API.  Notice how you don't have to send authentication headers.
+- Its `constructor` takes an argument of apiURL, defaulting to the guardian's ape url, so that other routes can be injected for testing purposes.  
+  It also calculates a correctly formatted date string, and sets other constants for interpolation into the query string.  
+  It assigns CONFIG with a `getJSON` call for the config.json file (containing the hidden api-key).  
+  It also assigns its stories with a call of `fetchStories`.  
+- `fetchStories` is an async function that waits for CONFIG to be fetched , then fetches from the api url plus the resulting secret api-key. It returns a map over the responses results array which contains the story data, and creating new Story instances from them.
+- `getJSON` is an async function that fetches a json from the specified path, waits for that to resolve, then parses and returns the json.
+- `renderHeadlines` is another async function, that awaits the stories to be assigned with `fetchStories`, which grabs the element with id of articles and gets its first element child (the ul), then iterates over the stories appending the story.headlineComponent.
 
-### Code
+`interface.js` simply creates a new instance of StoryHandler, then adds an event listener for the COM content loaded, then calls the storyHandler.renderHeadlines.
 
-If you're interested, you can see the code for the News Summary API in this repo: https://github.com/makersacademy/news-summary-api
+I used the [Guardian's helpful API explorer](https://open-platform.theguardian.com/explore/) to work out how I wanted to use their API. I decided on 20 articles from today, ordered newest first.
 
-## Resources
+_I would've liked to TDD the StoryHandler, but as it relies on asynchronous functions my testing framework wasn't appropriate for it, so I spiked it._
 
-* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-* [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+### User Story 2
+
+> As a busy politician  
+> So I can get a few more details about an important story  
+> I can click on a headline to see a summary of a news article
+
+For this user story, the headlines need to be able to be clicked.
+
+For this I could either add ids of the story's id to each li, and add event listeners to check do something when they have been clicked, or use an anchor linking to a hash link of the story's id, and listen for hashchange.
+
+In either case, the story needs to have its own unique id.
+
+Fortunately the JSON returned from the guardian includes a unique id for each story, so we can use that.
+
+Updated the tests for the Story to be constructed with an id alongside the headline. Red.
+
+- Added a new parameter to Story constructor for id.
+- Adjusted the other test to pass an id to its story also.
+
+Green.
+
+Also updated the StoryHandler `fetchStories` method to pass the stories it creates an id too.
+
+I decided to go down the route of ids on each li, rather than links. I updated the test for `headlineComponent` to expect that the li returned has an id with the value of the id passed to the story. Red.
+
+- Updated the `headlineComponent` method to set an id attribute on the li element before adding to DOM.
+
+Green.
+
+Now the Story needs to be able to represent itself as an article summary.
+
+- Wrote an async function `summaryComponent`, that creates a section element, appending to it h2 with the story's title, and p element for each of the story's `summarySentences`.
+
+- The `summarySentences` are generated from another async function, `summary`. This function checks if `summarySentences` is not yet defined, and if so uses the story's `ARTICLE_SUMMARISER` to `fetchById` with the story's id. This returns an array of strings which summarise the article.  
+  As the strings come through from what I assume is a machine learning algorithm they can have some issues with newlines, and unnecessary date stamps coming through. The sentences are mapped through, using regex replace to remove the newline characters and date stamps, and the resulting array assigned to the story's `summarySentences`.  
+  If `summarySentences` is already defined it simply returns that. This helps prevent unnecessary API calls.
+
+- The story's `ARTICLE_SUMMARISER` is an injected `ArticleSummariser` class. The `ArticleSummariser` has a function `fetchById` which fetches from the helpfully provided news-summary-api heroku server with an implementation of Alyien.
+
+_I did try to implement this myself, however due to Cross Origin Request Blocking by the browser, the call to the Alyien API needs to be done with a server, hence the news-summary-api heroku server._
+
+- `fetchById` interpolates the passed id onto the base url for the api, then parses the resulting JSON, unpacks the sentences and returns them as an array (which `story.summary` can use).
+
+Now the interface needs to be able to track when and which of the headlines is clicked, and the storyHandler needs to be able to get the correct story to provide its `summaryComponent` and render that to the page.
+
+- In `interface.js` after the StoryHandler has rendered the headlines, the `addClickListeners` method is called in a chained then.
+
+- `addClickListeners` gets all the elements with class name 'headline', and loops through them adding click event listeners that make a call to `storyHandler.renderSummary` passing in the event current target's id (i.e. the story id).
+
+- `storyHandler.renderSummary` is an async function that takes an argument of id, and finds the correct story using the `findById` async function. It then awaits the found story's `summaryComponent` (as this may involve an API call), and grabs the main section of the page. it then replaces the main section with the `summaryComponent`.
+
+- `findById` simply loops through the `stories` array and filters them for one that matches the id passed.
+
+It now works, but sometimes it takes a short while to fetch the summary in order to display it, but I think this a fair trade off as summaries are fetched when required to limit API calls. It would be possible to pre-load all of the story summaries, but that would result in many many more API calls, which may lead to rate limiting.
+
+To reassure the user that the story is in fact loading, I added to the `renderSummary` method to change the section's innerHTML to an h2 tag of "Loading..." before the section is replaced with the story's `summaryComponent`.
+
+### User Story 3
+
+> As a busy politician  
+> So that I can get an in depth understanding of a very important story  
+> I can click a link to see the original news article
+
+So, once the user has clicked through to the summary, there could be a link tot he full article. Fortunately this is quite simple to implement as we already have the route to the article represented as the story's id, and we know they are all going to need the Guardian's base URL.
+
+- Added a method `createLink` to Story which takes text and and url as parameters, it creates an a element, settings its href attribute with the passed url. It then creates a new text node with the text passed, and appends that to the a element, and returns it.
+
+- Added to the `summaryComponent` method a variable articleLink, which uses the `createLink` method, passing in the text 'Read original article' and `this.LINK_URL` which is assigned with the base url for the guardian and the story id concatenated together. The articleLink is appended onto the component before it is returned.
+
+### User Story 4
+
+> As a busy politician  
+> So that I have something nice to look at  
+> I can see a picture to illustrate each news article when I browse headlines
+
+This I have found a bit tricky. Viewing the Guardian's articles you can clearly see good images to grab the url of, however the Alyien Article Extraction API, which offers a way to extract an image url among other data from articles, doesn't seem to be able to decide which to return, so it returns none.
+
+I have made some attempt with other APIs, however their rate limiting is crippling. You can see a start at an image scraper in `imageScraper.js`. The idea is that it would use the api to return the HTML of the page, then use regex to match the first appropriate image from the page.
+
+Given that we aren't allowed to use server side backend JS I cannot write my own web scraper, and existing APIs are either prohibitive in their rate limiting, cost money, or require the use of an SDK, it seems this is a lost cause.
+
+### User Stories 5 & 6
+
+> As a busy politician  
+> Just in case my laptop breaks  
+> I can read the site comfortably on my phone
+
+> As a busy politician  
+> To make my news reading more fun  
+> I can see whizzy animations in the app
+
+Strictly speaking, unstyled HTML is fully responsive, but I see what this user story is driving at.
+
+This is all CSS based subjective style improvements. There's a lot of tinkering and trying different styles involved, so rather than go through everything I tried here is a summary of what I ended up with:
+
+- Added a header element, containing the h1 and the nav.
+- Nav element has a single button to restore the headlines list.
+- Arranged the header and the section using flexbox.
+- Added a color scheme and font (I swear I didn't make it look like the guardian deliberately, it was completely coincidental)
+- Gave buttons and headlines hover effects with animations for emphasis.
+- Styled the scrollbar too.
+- Font size scales with viewport width between a min and max value.
+
+### Back to User Story 4
+
+> As a busy politician  
+> So that I have something nice to look at  
+> I can see a picture to illustrate each news article when I browse headlines
+
+It turns out there is a parameter that can ce included to provide a link to the thumbnail image of the article.
+
+Added to the test that the Headline component has an image. Red.
+
+- Added thumbnail image as a parameter to Story.
+- Create an img element, with src of the passed thumbnail.
+- Add img into the headline component.
+
+Green.
+
+Also added some styling, and added the image to the summary component also.
+
+## Retrospective
+
+- I don't like not using TDD. I spiked a lot of features for the front end, setting my own expectations for the behaviour I wanted to create. After creating a couple of features in particular (the story's `summaryComponent`) I realised this could have been TDDd.
+- I could've organised the CSS a bit better, but for this small project and given the little I had to write it, it will serve.
+- I Feel I have got to grips with asynchronous functions, especially async await.
+- I'm a bit miffed that I couldn't find a solution to get the image, but never mind.
+- Why is getting a JSON into a js file so difficult??
