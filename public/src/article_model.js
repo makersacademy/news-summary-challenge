@@ -9,7 +9,7 @@
     Article.prototype.getId = function() {
         return this._id
     }
-    
+
     Article.prototype.getTitle = function() {
         return this._title
     }
@@ -19,4 +19,4 @@
     }
 
     exports.Article = Article
-})
+})(this)
