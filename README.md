@@ -1,3 +1,5 @@
+To run: node node_modules/http-server/bin/http-server
+
 # News Summary challenge
 
 * Challenge time: rest of the day and weekend, until Monday 9am.
