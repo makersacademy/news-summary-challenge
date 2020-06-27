@@ -1,27 +1,23 @@
 
 window.addEventListener(`DOMContentLoaded`, function (event) {
-    
+    let controller 
     async function articles() {
         let data = await getResponse()
-        var controller = new ArticleController(data)
+        controller = new ArticleController(data)
         controller.createArticleObjects()
         document.getElementById('app').innerHTML = controller.convertListToView()
     } 
 
     articles()
-    
 
-    // var theNews = theNewsModel.getResponse()
-    
-    // window.addEventListener("click", function() {
-    //     console.log(theNews)
-    //     var controller = new ArticleController(theNews)
-    //     controller.createArticleObjects()
-    //     document.getElementById('app').innerHTML = controller.convertListToView()
-    // })
-
-
-
-
-
+    window.addEventListener("hashchange", function(event) {
+        var id = window.location.hash.slice('#')[1]
+        if (id > 0) {
+        singleArticle = new ArticleSummaryView(controller.getArrayOfArticles()[id])
+        document.getElementById('app').innerHTML = singleArticle.singleArticleView()
+        } else {
+            controller.createArticleObjects()
+            document.getElementById('app').innerHTML = controller.convertListToView()
+        }
+    })
 })
