@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tristanlangford/news-summary-challenge#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "http-server": "^0.12.3"
   }
 }
