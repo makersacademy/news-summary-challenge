@@ -1,4 +1,4 @@
-const apiResult = {
+const testApiResult = {
   "response": {
     "status":"ok",
     "userTier":"developer",
