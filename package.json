@@ -1,0 +1,24 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "an app summarizing the news",
+  "main": "index.js",
+  "scripts": {
+    "test": "open test.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadinedelia/news-summary-challenge.git"
+  },
+  "author": "Nadine Loepfe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nadinedelia/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/nadinedelia/news-summary-challenge#readme",
+  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}
