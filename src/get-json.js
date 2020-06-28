@@ -1,7 +1,7 @@
 (function(exports) {
   function GetJSON(apiRequestUrl) {
-    this.NewsSummaryUrl = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl='
-    this.url = this.NewsSummaryUrl + apiRequestUrl
+    this.newsSummaryUrl = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl='
+    this.url = this.newsSummaryUrl + apiRequestUrl
   }
 
   GetJSON.prototype.response = async function() {
