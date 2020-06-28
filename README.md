@@ -4,18 +4,13 @@
 
 The app will grab all the headlines from the Guardian newspaper API and display them on a page. Clicking on a headline will show a summary of the article.
 
+Check out the finished project here:
+http://coronatimes.surge.sh/
+
 
 ### Technologies
 
-Creating a single page web app with the help of Vanilla JavaScript, CSS and HTML
-
-
-### Testing Framework
-
-I called mine Peter. Peter is a cute cat that looks at you in a judging way when you run your tests, no matter if they're passing or failing, therefore making you question the validity of everything you've just done. He meows in a scottish accent.
-One day Peter will actually be useful and test something. But not today. Peter is too busy hunting bugs.
-
-![](https://i.imgur.com/232KceC.jpg?1)
+Vanilla JavaScript, CSS and HTML
 
 
 ## User Stories
@@ -49,6 +44,15 @@ As a busy politician
 I can read the site comfortably on my phone
 Just in case my laptop breaks
 ```
+
+
+### Testing Framework
+
+I called mine Peter. Peter is a cute cat that looks at you in a judging way when you run your tests, no matter if they're passing or failing, therefore making you question the validity of everything you've just done. He meows in a scottish accent.
+One day Peter will actually be useful and test something. But not today. Peter is too busy hunting bugs.
+
+![](https://i.imgur.com/232KceC.jpg?1)
+
 
 
 ## Resources
