@@ -14,5 +14,17 @@
   <body>
     <div id='app'></div>
     <h1> Guardian News </h1>
+
+    <script>
+    // create a new instance of articlelist
+    let articleList = new ArticleList();
+    // create a new instance of articlelistview
+    let articleListView = new ArticleListView(articleList);
+    // create a new variable called request and assign to XMLHttpRequest
+    let request = new XMLHttpRequest();
+    // create a new instance of articlelistcontroller and pass in arguments
+    let articleListController = new ArticleListController(articleList, articleListView, apiRequest);
+    </script>
+
   </body>
 </html>
