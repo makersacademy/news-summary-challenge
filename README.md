@@ -1,5 +1,15 @@
 To run: node node_modules/http-server/bin/http-server
 
+## Approach
+
+Used Guardian API to create simple News Headlines and article summary static web app. Used Boostrap for CSS
+
+Focused on keeping code short & simple. Used testing for everything apart from features.
+
+If I had more time...
+- Show type of news
+- Add search function based on type of news
+
 # News Summary challenge
 
 * Challenge time: rest of the day and weekend, until Monday 9am.
