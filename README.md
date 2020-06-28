@@ -17,3 +17,5 @@ So that I can get an in depth understanding of a very important story
 
 - Programming Language: Javascript, HTML, CSS
 - Server: [http-server](https://www.npmjs.com/package/http-server)
+
+I fetched the data required from [The Guardians API](https://open-platform.theguardian.com/explore/).
