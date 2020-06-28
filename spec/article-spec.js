@@ -4,5 +4,4 @@ function articleTest() {
   assert.isTrue(article, 'Boris Johnson is fired');
 }
 
-
 articleTest()

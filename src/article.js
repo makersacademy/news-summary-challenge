@@ -1,15 +1,12 @@
 (function(exports) {
-  function Article(headline) {
+  var Article = function(url, headline, text, thumbnail) {
+    this.id;
+    this.url = url;
     this.headline = headline;
-  };
+    this.text = text;
+    this.thumbnail = thumbnail;
+    this.summary;
+  }
 
-  // Note.prototype.getText = function() {
-  //   return this.text;
-  // };
-  //
-  // Note.prototype.getID = function() {
-  //   return this.id;
-  // };
-
-  exports.Article = Article;
+  exports.Article = Article
 })(this);
