@@ -39,7 +39,7 @@
         for (i=0; i< 8; i++) {
             summary.push(array[i])
         }
-        return summary
+        return summary.join("")
     }
 
     exports.Article = Article
