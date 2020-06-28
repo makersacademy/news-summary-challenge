@@ -29,6 +29,12 @@
         // send the request to the server
         self._apiRequest.send();
     };
+
+      renderData() {
+        this._articleListView.updateArticleList(this._articleList);
+        // render all information fetched to articlelist element and change its content
+        document.getElementById('article-list-view').innerHTML = this._articleListView.ReturnHtml();
+      };
   };
 
 exports.ArticleListController = ArticleListController;
