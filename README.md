@@ -1,19 +1,21 @@
 # News Summary challenge
 
-The app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
+The app will grab all the headlines from the Guardian newspaper API and display them on a page. Clicking on a headline will show a summary of the article.
+
 
 ### Technologies
 
-Creating a single page web app through Vanilla JavaScript, CSS and HTML
+Creating a single page web app with the help of Vanilla JavaScript, CSS and HTML
 
 
 ### Testing Framework
 
-I called mine Peter. Peter is a cute cat that looks at you in a judging way when you run your tests - no matter if they're passing or failing - therefore making you question the validity of everything you've just done. He meows in a scottish accent.
+I called mine Peter. Peter is a cute cat that looks at you in a judging way when you run your tests, no matter if they're passing or failing, therefore making you question the validity of everything you've just done. He meows in a scottish accent.
+
+![](https://i.imgur.com/232KceC.jpg?1)
 
 
 ## User Stories
-
 
 ```
 As a busy politician
@@ -50,6 +52,7 @@ As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
 ```
+
 
 ## Mockups
 
