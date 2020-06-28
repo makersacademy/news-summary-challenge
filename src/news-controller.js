@@ -1,20 +1,21 @@
 (function(exports) {
   function NewsController() {
-    this.url = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html'
+    this.NewsSummaryApi = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl='
+    this.articleUrl = 'http://content.guardianapis.com/search?show-fields=thumbnail&q=uk'
+    this.url = this.NewsSummaryApi + this.articleUrl
+
   }
 
   NewsController.prototype.renderPage = async function() {  
     const response = await fetch(this.url)
     const responseJSON = await response.json()
-    document.getElementById('app').innerHTML = responseJSON.text
-    // fetch(this.url)
-    //   .then(response => response.json())
-    //   .then(val => {
-    //     const element = document.getElementById('app')
-    //     element.innerHTML = val.text
-    //   })
-    //   .catch(err => console.log('unable to retrieve article', err))
+    var HTMLString = responseJSON.response.results.reduce((acc, val) => {
+      console.log(val)
+      return acc += `<div><img src="${val.fields.thumbnail}"><br>${val.webTitle}</div>`;
+    },'');
     
+
+    document.getElementById('app').innerHTML = HTMLString;
   }
 
   exports.NewsController = NewsController
