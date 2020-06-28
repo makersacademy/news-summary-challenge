@@ -13,6 +13,9 @@
   }
 
   ArticleModel.prototype.thumbnail = function() {
+    if (!this.articleJSON.fields) {
+      return '../images/no_image_placeholder.jpg';
+    }
     return this.articleJSON.fields.thumbnail
   }
 

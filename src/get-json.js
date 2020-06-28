@@ -1,13 +1,12 @@
 (function(exports) {
   function GetJSON(apiRequestUrl) {
-    this.newsSummaryUrl = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl='
-    this.url = this.newsSummaryUrl + apiRequestUrl
+    this.newsSummaryApi = 'http://news-summary-api.herokuapp.com/'
+    this.url = this.newsSummaryApi + apiRequestUrl
   }
 
   GetJSON.prototype.response = async function() {
     const data = await fetch(this.url)
-    const dataJSON = await data.json()
-    return dataJSON.response
+    return data.json()
   }
 
   exports.GetJSON = GetJSON;

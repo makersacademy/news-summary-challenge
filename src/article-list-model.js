@@ -8,7 +8,7 @@
     articleListJSON.forEach(articleJSON => {
       const article = new ArticleModel(articleJSON, this.articleId);
       this.articleArray.push(article)
-      this.articleId ++;
+      this.articleId++;
     })
   }
 
