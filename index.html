@@ -1,40 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <title>Daily Corona Ticker</title>
+    <link rel="stylesheet" href="layout.css">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <title>News Summary App</title>
-
-  <link rel="stylesheet" href="style.css">
-
-  <script src="src/article.js"></script>
-  <script src="src/newsfeed.js"></script>
-  <script src="src/article-id.js"></script>
-  <script src="src/article-view.js"></script>
-
-
-</head>
-
-<body>
-
-  <div class="wrapper" align="center">
+    <script src="src/article-id.js"></script>
+    <script src="src/articleModel.js"></script>
+    <script src="src/articleListModel.js"></script>
+    <script src="src/articleListView.js"></script>
+    <script src="src/articleView.js"></script>
+    <script src="src/controller.js"></script>
+    <script src="src/interface.js"></script>
+  </head>
+  <body>
+    <div id="page">
+      <div class="wrapper" align="center">
         <h1 id="title" class="box a">
-        What's happening today with Corona?
+          What's up with Corona today?
         </h1>
-
-  <section id="articles">
-    <ul>
-
-    </ul>
-  </section>
-
-</body>
-
+        <div id="content" class="box b">
+          <button id=news>Show News</button>
+          <script> document.getElementById('news').addEventListener('click', function() { controller.printArticleList('content') })</script>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
-
-date.toISOString().slice(0,10)
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"

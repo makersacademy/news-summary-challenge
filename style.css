@@ -3,3 +3,11 @@ body {
   padding:0;
   background: #ffffff;
 }
+
+.wrapper {
+  max-width: 50%;
+}
+
+img {
+  filter: grayscale(100%);
+}
