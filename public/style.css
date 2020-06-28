@@ -1,4 +1,30 @@
+body {
+  background-color: #f1f8fc;
+}
+
 h1 {
+  text-align: left;
+  color: #052962;
+}
+
+h2 {
   text-align: center;
   color: #052962;
+}
+
+p {
+  font-size: 110%;
+  text-align: center;
+}
+
+a {
+text-decoration: none;
+}
+
+a:link {
+color: green;
+}
+
+a:hover {
+color: purple;
 }

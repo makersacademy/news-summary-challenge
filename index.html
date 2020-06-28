@@ -14,20 +14,15 @@
   <body>
     <div id='app'></div>
     <h1> Guardian News </h1>
+    <h2> Headlines </h2>
     <p id='article-list-view'></p>
 
     <script>
-    // create a new instance of articlelist
     let articleList = new ArticleList();
-    // create a new instance of articlelistview
     let articleListView = new ArticleListView(articleList);
-    // create a new variable called request and assign to XMLHttpRequest
     let apiRequest = new XMLHttpRequest();
-    // create a new instance of articlelistcontroller and pass in arguments
     let articleListController = new ArticleListController(articleList, articleListView, apiRequest);
-    // fetch the data from the API function
     articleListController.fetchData();
-    // create a setTimeout function to re-execute the request afer 2 seconds to keep content up to date
     setTimeout(function() {
       articleListController.renderData();
     }, 2000);
