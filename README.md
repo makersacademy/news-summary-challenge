@@ -1,4 +1,6 @@
-To run: node node_modules/http-server/bin/http-server
+To run: 
+- Add your Guardian API Key manually to request in /public/src/guardian_api.js OR create a file and function called ApiKey() which returns your API Key.
+- node node_modules/http-server/bin/http-server
 
 ## Approach
 
