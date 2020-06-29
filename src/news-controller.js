@@ -8,12 +8,12 @@
 
   NewsController.prototype.renderHeadlines = async function() {
     const json = await this._getData(this.guardianReq + this.guardianHeadlineUrl);
-    this.articleListJSON = json.response.results
+    this.articleListJSON = json.response.results;
     document.getElementById('app').innerHTML = this._getArticleListHTML();
-    this._listen()
+    this.__listenForArticle();
   }
 
-  NewsController.prototype._listen = function() {
+  NewsController.prototype._listenForArticle = function() {
     window.addEventListener("hashchange", async () => { 
       const articleUrl = this._formatUrl(this._returnArticleModelFromURL().apiUrl());
       this.articleJSON = await this._getData(this.aylienApi + this.guardianReq + articleUrl + this.guardianBodyQuery)
