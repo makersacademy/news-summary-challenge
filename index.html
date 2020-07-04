@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Daily Corona Ticker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <script src="src/article-id.js"></script>
+    <script src="src/articleModel.js"></script>
+    <script src="src/articleListModel.js"></script>
+    <script src="src/articleListView.js"></script>
+    <script src="src/articleView.js"></script>
+    <script src="src/controller.js"></script>
+    <script src="src/interface.js"></script>
+  </head>
+  <body>
+
+    <div class="head">
+    <div class="headerobjectswrapper">
+        <div class="weatherforcastbox"><span style="font-style: italic;">a Makers Academy Weekend Challenge</span><br><span>June 2020</span></div>
+<br>
+<br>
+        <header>The Corona Times</header>
+    </div>
+
+    <div class="subhead">Brexit, Love Island and other stories fresh from the UK</div>
+    </div>
+    <br>
+    <br>
+
+    <div id="page">
+
+<div class="head"><span class="headline hl3">Why is this so hard</span><p><span class="headline hl4">by NADINE LOEPFE</span></p></div>
+
+        <div id="content">
+          <button id=news>Show News</button>
+          <script> document.getElementById('news').addEventListener('click', function() { controller.printArticleList('content') })</script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
