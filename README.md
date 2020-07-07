@@ -1,5 +1,7 @@
 # News Summary challenge
 
+This is a weekend challenge I did during Week 7 at Makers Academy, using vanilla Javascript to write a single page app, including testing with no framework.
+
 * Challenge time: rest of the day and weekend, until Monday 9am.
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
@@ -17,7 +19,7 @@
 * Set up an API call when main headlines page loads
 * Added single article view & tests
 * Set up an API call when user clicks on headline links
-![domain model diagram](images/model.png) 
+![domain model diagram](images/model.png)
 
 # Left to be done:
 
