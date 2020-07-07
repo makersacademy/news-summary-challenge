@@ -21,11 +21,19 @@ This is a weekend challenge I did during Week 7 at Makers Academy, using vanilla
 * Set up an API call when user clicks on headline links
 ![domain model diagram](images/model.png)
 
-# Left to be done:
+## Left to be done:
 
 * Summary on the single article pages
 * Images on headlines page
 * Responsiveness
+
+## How to use
+
+* Clone the repo
+* Navigate to `/public` folder & open `index.html` in the browser.
+
+## How to run the tests
+* Navigate to `/public/js` folder & open `testRunner.html` in the browser. The tests are run automatically, and failed tests are visible in the browser console. All spec files are in the `/public/js/spec` folder.
 
 ## Challenge
 
