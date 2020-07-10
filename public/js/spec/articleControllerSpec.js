@@ -1,8 +1,9 @@
 (function(){
 
   let articleController = new ArticleController()
+  let article = new Article('This is a headline', 'myurl.com')
   let mainURL = window.location.href
-  articleController.articleList.add('This is a headline');
+  articleController.articleList.add(article);
 
   function testArticleControllerCanBeInstantiated() {
     assert.isTrue(articleController.articleList.list.length === 1)

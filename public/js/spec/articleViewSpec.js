@@ -1,5 +1,5 @@
 (function() {
-  let article = new Article('This is a headline')
+  let article = new Article('This is a headline', 'myurl.com')
   let articleView = new ArticleView(article)
 
   function testSingleArticleView() {

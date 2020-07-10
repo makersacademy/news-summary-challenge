@@ -1,5 +1,5 @@
 (function(exports) {
-  function Article(headline) {
+  function Article(headline, url) {
     this.headline = headline;
     this.id
     this.url =''
