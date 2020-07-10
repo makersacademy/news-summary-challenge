@@ -1,15 +1,43 @@
 # News Summary challenge
 
+This is a weekend challenge I did during Week 7 at Makers Academy, using vanilla Javascript to write a single page app, including testing with no framework.
+
 * Challenge time: rest of the day and weekend, until Monday 9am.
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
 * You must submit a pull request to this repo with your code by 9am Monday morning.
 
+## My approach
+
+* Created a domain model diagram
+* Set up folder structure
+* Added article model & tests
+* Added article list model & tests
+* Added article list view & tests
+* Added article controller & tests
+* Set up an API call when main headlines page loads
+* Added single article view & tests
+* Set up an API call when user clicks on headline links
+![domain model diagram](images/model.png)
+
+## Left to be done:
+
+* Summary on the single article pages
+* Images on headlines page
+* Responsiveness
+
+## How to use
+
+* Clone the repo
+* Navigate to `/public` folder & open `index.html` in the browser.
+
+## How to run the tests
+* Navigate to `/public/js` folder & open `testRunner.html` in the browser. The tests are run automatically, and failed tests are visible in the browser console. All spec files are in the `/public/js/spec` folder.
+
 ## Challenge
 
 As usual please start by forking this repo.
-
 You'll create an app that summarises the news.
 
 ### Guidance

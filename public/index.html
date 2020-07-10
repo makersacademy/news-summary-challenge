@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>News summary</title>
+  </head>
+  <body>
+    <h1>News headlines</h1>
+    <div id="app">hello</div>
+
+    <script type="text/javascript" src="js/src/articleModel.js"></script>
+    <script type="text/javascript" src="js/src/articleListModel.js"></script>
+    <script type="text/javascript" src="js/src/articleListView.js"></script>
+    <script type="text/javascript" src="js/src/articleView.js"></script>
+    <script type="text/javascript" src="js/src/articleController.js">
+    </script>
+    <script type="text/javascript">
+      let articleController = new ArticleController()
+      articleController.articleList.getData()
+      articleController.showSingleArticle()
+    </script>
+  </body>
+</html>
