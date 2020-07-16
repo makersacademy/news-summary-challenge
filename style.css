@@ -1,10 +1,9 @@
 body {
-   text-align: center;
-
-   padding: 20px;
+  text-align: center;
+  padding: 20px;
 }
 
-  h4{
+h4 {
   padding: 25px;
   font-family: "Lucida Console", Courier, monospace;
   text-decoration: underline;
@@ -21,7 +20,17 @@ p {
   text-align: justify;
 }
 
-#spacer {
-height: 60px;
+#onHover {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-s
+
+#onHover:hover {
+  white-space: normal;
+  overflow: visible;
+}
+
+#spacer {
+  height: 60px;
+}

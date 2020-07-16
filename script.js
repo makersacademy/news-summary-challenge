@@ -17,7 +17,8 @@
         storyImage.src = item.fields.thumbnail;
         document.getElementById('news').appendChild(storyImage);
         let storyBody = document.createElement('p');
-        storyBody.innerText = item.fields.bodyText
+        storyBody.id = 'onHover'
+        storyBody.innerText = item.fields.bodyText;
         document.getElementById('news').appendChild(storyBody);
       });
     });

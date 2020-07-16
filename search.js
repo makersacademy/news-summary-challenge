@@ -1,7 +1,7 @@
 function newsSearch() {
   event.preventDefault()
 
-let newSearch = document.getElementById("search").value;
+  let newSearch = document.getElementById("search").value;
   let url = 'https://content.guardianapis.com/search?q=' +
              newSearch +
             '&api-key=' + apiKey + '&show-fields=all';
@@ -20,6 +20,7 @@ let newSearch = document.getElementById("search").value;
       storyImage.src = item.fields.thumbnail;
       document.getElementById('news').appendChild(storyImage);
       let storyBody = document.createElement('p');
+      storyBody.id = 'onHover'
       storyBody.innerText = item.fields.bodyText;
       document.getElementById('news').appendChild(storyBody);
     });
