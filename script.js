@@ -17,7 +17,7 @@
         storyImage.src = item.fields.thumbnail;
         document.getElementById('news').appendChild(storyImage);
         let storyBody = document.createElement('p');
-        storyBody.innerText = item.fields.bodyText.slice(0, 500);
+        storyBody.innerText = item.fields.bodyText.slice(0, 500) + '...';
         document.getElementById('news').appendChild(storyBody);
         let button = document.createElement("button");
         button.innerHTML = 'more'
@@ -29,7 +29,8 @@
             storyBody.innerText = item.fields.bodyText;
             clicked = true;
           } else {
-            storyBody.innerText = item.fields.bodyText.slice(0,500);
+            button.innerHTML = 'more'
+            storyBody.innerText = item.fields.bodyText.slice(0,500)+ '...';
             clicked = false;
           };
         });
