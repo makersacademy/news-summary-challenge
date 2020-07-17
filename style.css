@@ -20,17 +20,6 @@ p {
   text-align: justify;
 }
 
-#onHover {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-#onHover:hover {
-  white-space: normal;
-  overflow: visible;
-}
-
 #spacer {
   height: 60px;
 }

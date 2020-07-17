@@ -13,7 +13,6 @@ JavaScript, Guardian newspaper api,  CSS and HTML.
 
 ### To Do
 
-* Display an expandable summary of each news story on the main page.
 * Enable the user to specify the story subject(s) used by the app. ie UK, Politics, Technology, Cookery.
 * Add some 'whizzy' animations to the app.
 * Setup the app to use its own httpserver.
@@ -39,21 +38,19 @@ As a busy politician
 I can read the site comfortably on my phone
 Just in case my laptop breaks
 ```
-
------------------------------------------------------------------------------
-To Do:
-
 ```
 As a busy politician
-I can click a link to see the original news article
+I can click a link [button] to see the original news article
 So that I can get an in depth understanding of a very important story
 ```
-
 ```
 As a busy politician
 I can see a summary of a news article
 So I can get a few more details about an important story
 ```
+
+-----------------------------------------------------------------------------
+To Do:
 
 ```
 As a busy politician
