@@ -22,10 +22,10 @@ createArticles = function(data, callback){
   callback(articleArray)
 }
 
-printArray = function(articles){
+printArticle = function(articles){
   articles.forEach(printHTML)
 }
 
 printHTML = function(article){
-  document.getElementById("headline").innerHTML += article.title + "<br>"
+  document.getElementById("headline").innerHTML += `<a href=http://www.theguardian.com/${article.urlID}>`+ article.title + "</a>" + "<br>"
 }
