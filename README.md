@@ -1,3 +1,17 @@
+To run: 
+- Add your Guardian API Key manually to request in /public/src/guardian_api.js OR create a file and function called ApiKey() which returns your API Key.
+- node node_modules/http-server/bin/http-server
+
+## Approach
+
+Used Guardian API to create simple News Headlines and article summary static web app. Used Boostrap for CSS
+
+Focused on keeping code short & simple. Used testing for everything apart from features.
+
+If I had more time...
+- Show type of news
+- Add search function based on type of news
+
 # News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
