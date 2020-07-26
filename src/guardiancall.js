@@ -35,27 +35,11 @@ function apiCall() {
           image.setAttribute("src", newsitem.fields.thumbnail);
           document.getElementById('div'+index).appendChild(image);
           // Add Date to block
-          var date = document.createElement("P");
+          var dateid = document.createElement("P");
           // date.innerHTML = newsitem.webPublicationDate;
-          // dateinput(newsitem.webPublicationDate)
-          var year = newsitem.webPublicationDate.split("-")[0]
-          console.log("year"+year)
-          var month = newsitem.webPublicationDate.split("-")[1]-1
-          console.log("month"+month)
-          var day = newsitem.webPublicationDate.split("-")[2].split("T")[0]
-          console.log("day"+day)
-          var hour = newsitem.webPublicationDate.split("-")[2].split("T")[1].split(':')[0]
-          console.log("hour"+hour)
-          var minute = newsitem.webPublicationDate.split("-")[2].split("T")[1].split(':')[1]
-          console.log("minute"+minute)
-          var second = newsitem.webPublicationDate.split("-")[2].split("T")[1].split(':')[2].slice(0, -1)
-          console.log("second"+second)
-          dateinput = new Date(year,month,day,hour,minute,second)
-          console.log(dateinput)
-          console.log("Wed Mar 25 2015 00:00:00 GMT+0000 (Greenwich Mean Time)")
-          console.log("date" + americanpie(dateinput))
-          date.innerHTML = americanpie(dateinput)
-          document.getElementById('div'+index).appendChild(date);
+          dateinput = date(newsitem.webPublicationDate)
+          dateid.innerHTML = americanpie(dateinput)
+          document.getElementById('div'+index).appendChild(dateid);
           // Add Paragraph to block
           var para = document.createElement("P");
           para.innerHTML = newsitem.webTitle;
@@ -70,7 +54,17 @@ function apiCall() {
   // 
 }
 
-function date() {}
+function date(inputdate) {
+
+  var year = inputdate.split("-")[0]
+  var month = inputdate.split("-")[1]-1
+  var day = inputdate.split("-")[2].split("T")[0]
+  var hour = inputdate.split("-")[2].split("T")[1].split(':')[0]
+  var minute = inputdate.split("-")[2].split("T")[1].split(':')[1]
+  var second = inputdate.split("-")[2].split("T")[1].split(':')[2].slice(0, -1)
+  var date = new Date(year,month,day,hour,minute,second)
+  return date
+}
 
 
 // Map results with:
