@@ -4,7 +4,7 @@ function speedread(text) {
   var words = document.getElementById(text).innerHTML.split(/\s/);
 
   for (let i = 0; i <= words.length; i++) {
-    setTimeout(function() { showWord(words,i) }, i*150);
+    setTimeout(function() { showWord(words,i) }, i*300);
   };
 
   function showWord(words,position) {
