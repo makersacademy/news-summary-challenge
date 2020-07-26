@@ -1,9 +1,9 @@
-function speedread() {
-
-  var words = document.getElementById('text').value.split(/\s/);
+function speedread(text) {
+  console.log("Start SpeedRead")
+  var words = document.getElementById(text).value.split(/\s/);
 
   for (let i = 0; i <= words.length; i++) {
-    setTimeout(function() { showWord(words,i) }, i*300);
+    setTimeout(function() { showWord(words,i) }, i*150);
   };
 
   function showWord(words,position) {

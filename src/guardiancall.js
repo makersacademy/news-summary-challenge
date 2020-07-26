@@ -1,7 +1,4 @@
-var url = 'http://content.guardianapis.com/world?format=json&api-key='+key
-
-console.log(url);
-apiCall();
+var url = 'http://content.guardianapis.com/world?format=json&api-key='+key+'&show-fields=thumbnail'
 
 // Call API
 function apiCall() {
@@ -25,10 +22,21 @@ function apiCall() {
 //  title
 //  date
 //  image
-        data.response.results.map((newsitem) => {
+        data.response.results.map((newsitem, index) => {
+          console.log(index)
+          block_to_insert = document.createElement( 'div');
+          block_to_insert.id = 'div'+index
+          block_to_insert.classList.add('newsitem')
+          document.getElementById('newsItemGuardian').appendChild(block_to_insert);
+          var date = document.createElement("P");
+          date.innerHTML = newsitem.webPublicationDate
+          document.getElementById('div'+index).appendChild(date);
+          var para = document.createElement("P");
+          para.innerHTML = newsitem.webTitle
+          document.getElementById('div'+index).appendChild(para);
           console.log(newsitem.id)
-          console.log(newsitem.webTitle)
-          console.log(newsitem.webPublicationDate)
+          // console.log(newsitem.webTitle)
+          // console.log(newsitem.webPublicationDate)
         })
       })
   })
