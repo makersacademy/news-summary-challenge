@@ -1,6 +1,7 @@
 function speedread(text) {
   console.log("Start SpeedRead")
-  var words = document.getElementById(text).value.split(/\s/);
+  console.log(text)
+  var words = document.getElementById(text).innerHTML.split(/\s/);
 
   for (let i = 0; i <= words.length; i++) {
     setTimeout(function() { showWord(words,i) }, i*150);
@@ -8,9 +9,10 @@ function speedread(text) {
 
   function showWord(words,position) {
     if (words[position]===undefined) {
-      document.getElementById('displayWord').innerHTML = "";
+      document.getElementById('speedread'+text).innerHTML = "";
     } else {
-    document.getElementById('displayWord').innerHTML = words[position];
+      console.log('speedread'+text)
+    document.getElementById('speedread'+text).innerHTML = words[position];
     }
   };
 

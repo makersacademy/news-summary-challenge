@@ -36,18 +36,29 @@ function apiCall() {
           document.getElementById('div'+index).appendChild(image);
           // Add Date to block
           var dateid = document.createElement("P");
-          // date.innerHTML = newsitem.webPublicationDate;
           dateinput = date(newsitem.webPublicationDate)
+          dateid.id = 'newsitemdate'
           dateid.innerHTML = americanpie(dateinput)
           document.getElementById('div'+index).appendChild(dateid);
           // Add Paragraph to block
           var para = document.createElement("P");
+          para.id = "paragraph"+index
           para.innerHTML = newsitem.webTitle;
           document.getElementById('div'+index).appendChild(para);
+          // Add speedread block to item
+          var para = document.createElement("P");
+          para.id = "speedreadparagraph"+index
+          block_to_insert.classList.add('speedreader');
+          document.getElementById('div'+index).appendChild(para);
+          // Add button to block for speedread
+          var button = document.createElement("button");
+          button.innerHTML = "Speed Read Me";
+          button.classList.add('newsitembutton');
+          document.getElementById('div'+index).appendChild(button);
+          button.addEventListener ("click", function() {
+            speedread('paragraph'+index)
+          });
           
-          // console.log(newsitem.id);
-          // console.log(newsitem.webTitle)
-          // console.log(newsitem.webPublicationDate)
         })
       })
   })
