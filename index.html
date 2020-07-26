@@ -4,17 +4,29 @@
   <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-  <div class="wrapper">
-    <div class="typing-demo">
-      Speed Reader.
-    </div>
-  </div>
   <div class = 'text_area'>
   <input type='textarea' id = 'text' name='text' class='text_area'></textarea>
   <br>
   <button id='submitButton'>submit</button>
   </div>
-  <h1 id='displayWord'> </h1>
+  <div class='newsitem'>
+    <img id='newsitemimage'src='https://www.awakenthegreatnesswithin.com/wp-content/uploads/2018/08/Laughter-Quotes-1.jpg'></img>
+    <h5 id='newsitemdate'> 25th July 2020</h5>
+    <p id='newsitemtextsummary'> This is a summary article. Click for more to read.</p>
+    <button>Click me</button>
+  </div>
+  <div class='newsitem'>
+    <img id='newsitemimage'src='https://www.awakenthegreatnesswithin.com/wp-content/uploads/2018/08/Laughter-Quotes-1.jpg'></img>
+    <h5 id='newsitemdate'> 25th July 2020</h5>
+    <br>
+    <p id='newsitemtextsummary'> This is a summary article. Click for more to read.</p>
+    <br>
+    <button>Click me</button>
+  </div>
+  <div class='wrapper'>
+    <h1 id='displayWord'> </h1>
+  </div>
 </body>
+<script src = './src/api.js'> </script>
 <script src='./src/interface.js'></script>
 </html>
