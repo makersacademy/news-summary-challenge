@@ -25,7 +25,7 @@ function apiCall() {
 //  title
 //  date
 //  image
-        data.map((newsitem) => {
+        data.response.results.map((newsitem) => {
           console.log(newsitem.id)
           console.log(newsitem.webTitle)
           console.log(newsitem.webPublicationDate)
