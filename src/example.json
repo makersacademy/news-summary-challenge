@@ -1,0 +1,55 @@
+{"response":{
+    "status":"ok",
+    "userTier":"developer",
+    "total":197568,
+    "startIndex":1,
+    "pageSize":10,
+    "currentPage":1,
+    "pages":19757,
+    "edition": {
+        "id":"world",
+        "webTitle":"World news",
+        "webUrl":"https://www.theguardian.com/world",
+        "apiUrl":"https://content.guardianapis.com/world",
+        "code":"default"
+      },
+        
+    "section":{
+      "id":"world",
+      "webTitle":"World news",
+      "webUrl":"https://www.theguardian.com/world",
+      "apiUrl":"https://content.guardianapis.com/world",
+      "editions":[{
+        "id":"world",
+        "webTitle":"World news",
+        "webUrl":"https://www.theguardian.com/world",
+        "apiUrl":"https://content.guardianapis.com/world",
+        "code":"default"}]
+      },
+        
+    "results":[
+      {
+      "id":"world/live/2020/jul/26/coronavirus-live-news-global-cases-near-16m-covid-19-ad-blitz-in-victoria-australia",
+      "type":"liveblog",
+      "sectionId":"world",
+      "sectionName":"World news",
+      "webPublicationDate":"2020-07-26T08:13:01Z",
+      "webTitle":"Coronavirus live news: global cases pass 16m as Australia sees record new deaths","webUrl":"https://www.theguardian.com/world/live/2020/jul/26/coronavirus-live-news-global-cases-near-16m-covid-19-ad-blitz-in-victoria-australia",
+      "apiUrl":"https://content.guardianapis.com/world/live/2020/jul/26/coronavirus-live-news-global-cases-near-16m-covid-19-ad-blitz-in-victoria-australia",
+      "isHosted":false,
+      "pillarId":"pillar/news",
+      "pillarName":"News"},
+      
+      {"id":"world/2020/jul/26/coronavirus-near-me-are-uk-covid-19-cases-rising-in-your-area",
+        "type":"article",
+        "sectionId":"world",
+        "sectionName":"World news",
+        "webPublicationDate":"2020-07-26T07:31:07Z",
+        "webTitle":"Coronavirus near me: are UK Covid-19 cases rising in your area?",
+        "webUrl":"https://www.theguardian.com/world/2020/jul/26/coronavirus-near-me-are-uk-covid-19-cases-rising-in-your-area",
+        "apiUrl":"https://content.guardianapis.com/world/2020/jul/26/coronavirus-near-me-are-uk-covid-19-cases-rising-in-your-area",
+        "isHosted":false,"pillarId":"pillar/news","pillarName":"News"}
+    
+    ]
+  }
+}
