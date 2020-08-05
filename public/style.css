@@ -28,6 +28,14 @@
     transform: scale(1.1);
     z-index: 100;
 }
+#go-back-button {
+    margin: auto;
+}
+#go-back-div{
+    width: 100%;
+    text-align: center;
+    padding-top: 2px;
+}
 .container {
     margin-top: 60px;
 }
