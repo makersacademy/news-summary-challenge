@@ -11,6 +11,5 @@ function returnToListView() {
 async function articles() {
     let data = await getResponse()
     controller = new ArticleController(data)
-    controller.createArticleObjects()
-    document.getElementById('app').innerHTML = controller.convertListToView()
+    returnToListView()
 } 
