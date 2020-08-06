@@ -62,8 +62,15 @@ a:active {
     margin: 10px 10px 10px 10px;
 }
 .article-body {
-    margin: 10px 10px 10px 10px;  
+    column-count: 3;
+    margin: 10px 20px 10px 20px;  
     color: white; 
+}
+.article-body img{
+    width: 100%;
+}
+.article-body a{
+    color: white;
 }
 .go-to-article-site {
     width: 100%;

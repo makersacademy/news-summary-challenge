@@ -15,11 +15,15 @@ window.addEventListener(`DOMContentLoaded`, function (event) {
         if (id > 0) {
             var singleArticle = new ArticleSummaryView(controller.getArrayOfArticles()[(parseInt(id) - 1)])
             document.getElementById('app').innerHTML = singleArticle.singleArticleView()
-            window.scroll(0, 0)
         } else {
             controller.createArticleObjects()
             document.getElementById('app').innerHTML = controller.convertListToView()
-            window.scroll(0, 0)
         }
+        window.scroll(0, 0)
+    })
+
+    document.getElementById("refresh").addEventListener("click", function(event) {
+        event.preventDefault();
+        articles()
     })
 })
