@@ -68,9 +68,13 @@ a:active {
 }
 .article-body img{
     width: 100%;
+    height: auto;
 }
 .article-body a{
     color: white;
+    width: 100%;
+}
+.article-body iframe{
     width: 100%;
 }
 .go-to-article-site {
