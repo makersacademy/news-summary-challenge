@@ -71,6 +71,7 @@ a:active {
 }
 .article-body a{
     color: white;
+    width: 100%;
 }
 .go-to-article-site {
     width: 100%;
