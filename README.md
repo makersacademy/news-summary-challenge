@@ -1,52 +1,18 @@
-To run: 
-- Add your Guardian API Key manually to request in /public/src/guardian_api.js OR create a file and function called ApiKey() which returns your API Key.
-- node node_modules/http-server/bin/http-server
-
-## Approach
-
-Used Guardian API to create simple News Headlines and article summary static web app. Used Boostrap for CSS
-
-Focused on keeping code short & simple. Used testing for everything apart from features.
-
-If I had more time...
-- Show type of news
-- Add search function based on type of news
-
 # News Summary challenge
 
-* Challenge time: rest of the day and weekend, until Monday 9am.
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+This is a project to practice Single page Web Apps, AJAX requests, using vanilla HTML, CSS, and JS, and creating a testing framework.
 
-## Challenge
+The app used the Guardian newspaper API to get headline information which is then rendered to screen in a list view. Clicking on a headline will then show the beginning on the full article.
 
-As usual please start by forking this repo.
+## Visit the site
 
-You'll create an app that summarises the news.
+The app is deployed [here](https://news-article-summary.herokuapp.com/).
 
-### Guidance
+## Screen Previews
 
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+![List-View-Preview](images/news-app-list-view.png)
 
-## Project overview
-
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
-
-### Technologies
-
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+![Summary-View-Preview](images/news-app-summary-view.png)
 
 ## User Stories
 
@@ -98,69 +64,46 @@ To make my news reading more fun
 
 ![Article page mockup](/images/news-summary-project-article-page-mockup.png)
 
-## API
+## Approach
 
-### API authentication
+My main aims for this app were:
 
-So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
+1. Understand APIs & how to use them
 
-> Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
+2. Understand asynchronous functions in JavaScript
 
-### API request rate limits and stubbing
+3. Improve my css skills & utilise Bootstrap
 
-The Guardian and Aylien text summarisation APIs are severely rate-limited.
+4. Create and use my own testing framework
 
-**Please stub your tests so we don't exceed the daily limit.  Otherwise, all requests will be rejected and everyone's apps will stop working!**
+### Planning
 
-### API Overview
+I began by exploring the Guardian API. After getting my API key set up I made a simple function that would call the API and console.log the response.
 
-The basic idea is to send an `apiRequestUrl` query parameter to the News Summary API.  The value of this parameter is the URL of the request you *would* have made to the Guardian or Aylien API, minus any API credentials.
+I then explored the API docs and used parameters to change the information I received and finally decided on a design that would be Headline & image of each article for the list-view page, and then the summary-view would have the headline, and the body of the article, up to a certain length.
 
-### Guardian API example
+I explored Bootstrap examples and settled on a grid view for the list-view, and a standard layout for the summary-view, but with a jumbotron style for the headline.
 
-**Please stub your tests to avoid exceeding the API rate limit**
+For the code, I knew I would want to take the guardian API response and put the articles into their own class so I could easily get to the relevant information, an API request function that would be asynchronous, 2 classes that would convert the article models into html strings for both syle of pages, and finally an interface which would just be event listeners that would call the functions to render tha pages.
 
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.  Notice how it has a query parameter for `api-key`.
+For testing, I created a very basic testing framework that would console.log the results to a test.html, and had only one assert that would test that the outcome matched an expected outcome.
 
-```
-curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
-```
+### Guardian API
 
-To make this request via the Makers News Summary API with cURL, you could do something like this:
+It took a while to understand how best to use asynchronous functions, as I started using 'await', however found using 'fetch' far more straightforward.
 
-```
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-```
+### Article Model
 
-Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
+The article model was straightforward as it was just holding static information. The trickey element was cutting the article body, ensuring it was cut at an appropriate place. For this, I explored how the body was sent via the API and saw that it was conveniently broken into paragraphs so simply decided to limit the body to the first 8 paragraphs.
 
-### Aylien text summarisation API example
+### Article List-View and Summary-View
 
-**Please stub your tests to avoid exceeding the API rate limit**
+These were easy to create, but had to be changed an excessive amount of times when working on CSS and using divs. They are refactored now, , however it was a nightmare to play with and have tested at the same time.
 
-If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make.  Notice how it has headers to authenticate with the Aylien API.
+### Interface
 
-```
-curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
-  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
-  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
-```
+I used this to render the pages and add the hashchange event listener that would be used to change the single page view. I originally triggered the hash change through a form, however that was putting the hash change as a parameter, therefore I reverted to using links which worked much better.
 
-To make this request via the Makers News Summary API with cURL, you could do something like this.
+I then introduced a back button that would take the user from the summary-view to the list-view and decided to use a hashchange for this and introduce an if statement in the hash change event listener to facilitate this.
 
-```
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
-```
-
-Note how the `apiRequestUrl` parameter is just the request you would have made to the Aylien API.  Notice how you don't have to send authentication headers.
-
-### Code
-
-If you're interested, you can see the code for the News Summary API in this repo: https://github.com/makersacademy/news-summary-api
-
-## Resources
-
-* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-* [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+I finally introduced a refresh article button with an event listener that would trigger a new API request. At this stage Interface had become cluttered with a mix of functions and event listeners, so I decided to move the functions into a new file called Page Controller.
