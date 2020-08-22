@@ -51,3 +51,19 @@ As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
 ```
+
+## Getting Started
+These instructions will allow you to run the current project on your local machine for development and testing purposes.
+```
+git clone git@github.com:rjkviegas/news-summary-challenge.git
+cd news_summary-challenge
+```
+Check node and npm are installed
+```
+node -v
+npm -v
+```
+Install http-server
+```npm install http-server --save```
+Run http-server to view index.html page
+```node node_modules/http-server/bin/http-server```
