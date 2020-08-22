@@ -5,12 +5,12 @@
   Article.prototype = (function() {
 
     function showHeadline() {
-      return this.headline;
-    };
+      return (this.headline);
+    }
 
     return {
       showHeadline
-    };
+    }
   })();
 
   exports.Article = Article;
