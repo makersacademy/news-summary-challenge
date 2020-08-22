@@ -1,5 +1,5 @@
 (function(exports) {
-  var Article = function(headline) {
+  const Article = function(headline) {
     this.headline = headline;
   }
   Article.prototype = (function() {

@@ -14,7 +14,8 @@ Uses the static web server [http-server](https://www.npmjs.com/package/http-serv
 
 ## User Stories
 
-Some of these stories will need decomposing if they seem too large.
+### Complete
+### Incomplete
 
 ```
 As a busy politician
