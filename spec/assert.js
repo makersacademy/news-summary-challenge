@@ -1,6 +1,6 @@
+import { global_id} from "../public/javascript/news-model.js";
+
 let i = 0
-let $noteCount = 0
-// Before/After each test defaults to true. Toggle to turn off. Contents of these objects will be evaluated if true.
 let isAfterEachOn = true;
 let isBeforeEachOn = true;
 
@@ -22,14 +22,14 @@ const assert = {
     //run what you want to happen before each test here!!
     beforeEach: function() {
         if (isBeforeEachOn) {
-         $noteCount = 0;
+
         }
     },
 
     // run what you want to happen after each test here!!
     afterEach: function() {
         if (isAfterEachOn) {
-            $noteCount = 0;
+
         }
         updateTests();
     },
@@ -40,7 +40,7 @@ const assert = {
         if (!assertionToCheck) {
             //if (this.isTrue.arguments)  { console.log((this.isTrue.arguments)); }
             //if (this.isTrue.caller)  { console.log((this.isTrue.caller)); }
-            test += ") Assertion failed: (" + title + '): ' + assertionToCheck + " is not truthy";
+            test += ") <b>Assertion failed:</b>  (" + title + '): ' + assertionToCheck + " is not truthy";
             this.tests.push(test);
             //  UPDATES OCCUR MID-TEST BECAUSE OF ERROR THROWS. WITHOUT MID-TEST UPDATE THE ARRAY CONTAINING TESTS WILL NOT BE UPDATED.
             updateTests();
@@ -59,7 +59,7 @@ const assert = {
         if (assertionToCheck) {
             //if (this.isFalse.arguments) { console.log(this.isFalse.arguments); }
             //if (this.isFalse.caller)  { console.log((this.isFalse.caller)); }
-            test += ") Assertion failed: (" + title + '): ' + assertionToCheck + " is not falsy";
+            test += ") <b>Assertion failed:</b>  (" + title + '): ' + assertionToCheck + " is not falsy";
             this.tests.push(test);
             updateTests();
             //throw new Error(test);
@@ -78,7 +78,7 @@ const assert = {
         if (assertionOne !== assertionTwo) {
             //if (this.isEqTo.arguments) console.log(this.isEqTo.arguments)
             //if (this.isEqTo.caller)  { console.log((this.isEqTo.caller)); }
-            test += ") Assertion failed: (" + title + '): ' + assertionOne + " <b> is not equal to </b> " + assertionTwo;
+            test += ") <b>Assertion failed:</b> (" + title + '): ' + assertionOne + " <b> is not equal to </b> " + assertionTwo;
             this.tests.push(test);
             updateTests();
             //throw new Error(test);
