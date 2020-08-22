@@ -10,7 +10,8 @@
     assert.isTrue(Array.isArray(newspaper.viewArticles()));
   };
   function testArticlesCanBeAddedToNewspaper() {
-    let articleDouble = {}, newspaper = new Newspaper();
+    let articleDouble = {};
+    let newspaper = new Newspaper();
     newspaper.add(articleDouble);
 
     assert.isTrue(newspaper.viewArticles().includes(articleDouble)); 
