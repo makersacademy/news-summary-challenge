@@ -4,12 +4,12 @@
 
     assert.isTrue(article instanceof Article);
   };
-  function testInstancesOfArticleHaveAHeadline() {
+  function testArticleShowHeadlineReturnsArticleHeadline() {
     var article = new Article("A Headline");
 
     assert.isTrue(article.showHeadline() === "A Headline");
   };
 
   testArticleIsAConstructor();
-  testInstancesOfArticleHaveAHeadline();
+  testArticleShowHeadlineReturnsArticleHeadline();
 })(this);
