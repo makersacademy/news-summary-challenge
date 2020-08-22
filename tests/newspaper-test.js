@@ -1,23 +1,13 @@
-(function() {
-  function testNewspaperIsAConstructor() {
-    let newspaper = new Newspaper();
-
-    assert.isTrue(newspaper instanceof Newspaper);
-  };
-  function testInstanceOfNewspaperHasArray() {
-    let newspaper = new Newspaper();
-
-    assert.isTrue(Array.isArray(newspaper.viewArticles()));
-  };
-  function testArticlesCanBeAddedToNewspaper() {
+(function(exports) {
+  function testNewspaperAdd() {
     let articleDouble = {};
     let newspaper = new Newspaper();
     newspaper.add(articleDouble);
 
-    assert.isTrue(newspaper.viewArticles().includes(articleDouble)); 
+    assert.isTrue(
+      newspaper.viewArticles().includes(articleDouble),
+      "Articles can be added to Newspaper"); 
   }
 
-  testNewspaperIsAConstructor();
-  testInstanceOfNewspaperHasArray();
-  testArticlesCanBeAddedToNewspaper();
-})();
+  testNewspaperAdd();
+})(this);
