@@ -1,5 +1,7 @@
 (function(exports) {
+
   function testNewspaperAdd() {
+    
     let articleDouble = {};
     let newspaper = new Newspaper();
     newspaper.add(articleDouble);

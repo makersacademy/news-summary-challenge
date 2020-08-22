@@ -1,20 +1,35 @@
 (function(exports) {
+
+  let articleDouble = {};
+  let newspaperDouble = {};
+  let newspaperView = new NewspaperView(newspaperDouble);
+  
+  articleDouble.showHeadline = function() {
+    return "A Headline";
+  }
+
   function testNewspaperViewHeadLineHtml() {
-    let articleDouble = {};
-    articleDouble.showHeadline = function() {
-      return "A Headline";
-    }
-    let newspaperDouble = {};
     newspaperDouble.viewArticles = function() {
       return [articleDouble];
     }
-    let newspaperView = new NewspaperView(newspaperDouble);
-
     assert.isTrue(
       newspaperView.headlineHtml() === "<ul><li><div>A Headline</div></li></ul>",
-      "NewspaperView.headLineHtml returns headline HTML"
+      "NewspaperView.headLineHtml returns headline HTML for 1 article"
+    );
+  }
+
+  function testNewspaperViewHeadLineHtmlSeveralArticles() {
+    newspaperDouble.viewArticles = function() {
+      return [articleDouble, articleDouble];
+    }
+
+    assert.isTrue(
+      newspaperView.headlineHtml() === ("<ul><li><div>A Headline</div></li>" +
+      "<li><div>A Headline</div></li></ul>"),
+      "NewspaperView.headLineHtml returns headline HTML for several articles"
     );
   }
 
   testNewspaperViewHeadLineHtml();
+  testNewspaperViewHeadLineHtmlSeveralArticles();
 })(this);

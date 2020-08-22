@@ -1,4 +1,5 @@
 (function(exports) {
+
   const assert = {
     isTrue: function(assertionToCheck, testName) {
       if (!assertionToCheck) {
@@ -7,5 +8,6 @@
       console.log(testName + ": Passed");
     }
   };
+  
   exports.assert = assert;
 })(this);

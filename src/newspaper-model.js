@@ -1,4 +1,5 @@
 (function(exports) {
+  
   const Newspaper = function() {
     this.articles = [];
   };
