@@ -1,4 +1,4 @@
-(function(exports) {
+(function() {
   function testNewspaperIsAConstructor() {
     let newspaper = new Newspaper();
 
@@ -19,4 +19,4 @@
   testNewspaperIsAConstructor();
   testInstanceOfNewspaperHasArray();
   testArticlesCanBeAddedToNewspaper();
-})(this);
+})();

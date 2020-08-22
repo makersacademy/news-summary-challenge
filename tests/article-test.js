@@ -1,4 +1,4 @@
-(function(exports) {
+(function() {
   function testArticleIsAConstructor() {
     var article = new Article();
 
@@ -12,4 +12,4 @@
 
   testArticleIsAConstructor();
   testArticleShowHeadlineReturnsArticleHeadline();
-})(this);
+})();
