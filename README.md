@@ -43,8 +43,22 @@ To make my news reading more fun
 ```
 
 ## Plan
+Overall implementation goals:
+- [] On page display all news articles from the day, using the Guardian API
+- [] Each article will link to the 'full story'
+- [] On the main page, the news articles are shortened (to get a snippet on the detail), usin gthe Aylein text summarisation API
+- [] A picture is displayed with each article
+- [] It works on phone
+- [] Animations
 
-
+Steps:
+- [x] Set up folders and test suite, set up http-server.
+- [] Setup some basic html, css template to allow for easy integration once I have stories to list.
+- [] Look into how the API works, build the controller that deals with requests and queries the the API. (apiRequestUrl)
+    Examples of requests:
+    * ```curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"```
+    * ```curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"```
+- [] 
 
 
 
