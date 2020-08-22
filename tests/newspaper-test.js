@@ -1,16 +1,22 @@
 (function(exports) {
   function testNewspaperIsAConstructor() {
-    var newspaper = new Newspaper();
+    let newspaper = new Newspaper();
 
     assert.isTrue(newspaper instanceof Newspaper);
   };
   function testInstanceOfNewspaperHasArray() {
-    var article = new Article();
-    var newspaper = new Newspaper();
+    let newspaper = new Newspaper();
 
     assert.isTrue(Array.isArray(newspaper.viewArticles()));
   };
+  function testArticlesCanBeAddedToNewspaper() {
+    let articleDouble = {}, newspaper = new Newspaper();
+    newspaper.add(articleDouble);
+
+    assert.isTrue(newspaper.viewArticles().includes(articleDouble)); 
+  }
 
   testNewspaperIsAConstructor();
   testInstanceOfNewspaperHasArray();
+  testArticlesCanBeAddedToNewspaper();
 })(this);

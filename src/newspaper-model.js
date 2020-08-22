@@ -6,11 +6,14 @@
   Newspaper.prototype = (function() {
 
     function viewArticles() {
-      return this.articles;
+      return (this.articles);
+    }
+    function add(article) {
+      (this.articles).push(article);
     }
 
     return {
-      viewArticles
+      viewArticles, add
     }
   })();
 
