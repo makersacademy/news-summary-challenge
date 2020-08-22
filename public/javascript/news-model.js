@@ -1,10 +1,10 @@
 let global_id = 0;
 
 // Creates News (Articles)
-function News(headline, article_url, image_url, summary) {
+function News(webTitle, webURL, image_url, summary) {
     this.id = global_id
-    this.headline = headline
-    this.article_url = article_url
+    this.webTitle = webTitle
+    this.webURL = webURL
     this.image_url = image_url
     this.summary = summary
     global_id ++;
@@ -13,8 +13,8 @@ function News(headline, article_url, image_url, summary) {
 News.prototype.content = function() {
     return {
         id: this.id,
-        headline: this.headline,
-        article_url: this.article_url,
+        webTitle: this.webTitle,
+        webURL: this.webURL,
         image_url: this.image_url,
         summary: this.summary
     }

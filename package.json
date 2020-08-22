@@ -2,9 +2,7 @@
   "name": "news-summary-challenge",
   "version": "1.0.0",
   "dependencies": {
-
+    "xmlhttprequest": "^1.8.0"
   },
   "type": "module"
 }
-
-
