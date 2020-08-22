@@ -5,15 +5,15 @@
   };
   NewspaperView.prototype = (function() {
 
-    function headlineHtml() {
+    function html() {
       let headlines = this.newspaper.viewArticles().map(function(article) {
-        return article.showHeadline()
+        return `<a href="${article.showUrl()}">${article.showHeadline()}</a>`
       });
       return "<ul><li><div>" + headlines.join("</div></li><li><div>") + "</div></li></ul>";
     }
 
     return {
-      headlineHtml
+      html
     }
   })();
 
