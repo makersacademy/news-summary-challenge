@@ -12,3 +12,13 @@
 })();
 
 
+(function(exports){
+  function requestArticleTest(){
+    var article = new NewsListModel()
+
+    if(article.list.length = 0){
+      throw new Error('There is an article')
+    };
+  };
+
+})();
