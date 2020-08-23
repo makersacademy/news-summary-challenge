@@ -1,6 +1,8 @@
 (function(exports) {
   const NewsController = function(newspaper, newspaperViewClass) {
-    this.newspaperView = new newspaperViewClass(newspaper);
+    this.newspaper = newspaper || new Newspaper();
+    this.newspaperViewClass = newspaperViewClass || NewspaperView;
+    this.newspaperView = new this.newspaperViewClass(this.newspaper);
   };
 
   NewsController.prototype = (function() {
@@ -9,9 +11,12 @@
       let html = (this.newspaperView.html());
       document.getElementById("articles").innerHTML = html;
     }
+    function loadLatestNews() {
+      this.newspaper.fetchArticles();
+    }
 
     return {
-      displayHtml
+      displayHtml, loadLatestNews
     }
   })();
 
