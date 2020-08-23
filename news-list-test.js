@@ -22,3 +22,17 @@
   };
 
 })();
+
+(function(exports){
+  function viewNewsTest(){
+    var article = new NewsListModel();
+    article.addArticle('Breaking News')
+    var views = NewsListView(article);
+    expectedHTML = '<h1>Breaking News</h1>'
+
+    if(views.viewNewsHtml() == expectedHTML){
+      throw new Error('There is an article')
+    };
+  };
+  viewNewsTest();
+})();
