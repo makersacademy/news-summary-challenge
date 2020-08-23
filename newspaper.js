@@ -15,7 +15,7 @@
       this.articles().push(article);
     }
 
-    async function getHeadlines() {
+    function getHeadlines() {
       request = new XMLHttpRequest();
       request.timeout = 3000;
       request.onreadystatechange = function(e) {

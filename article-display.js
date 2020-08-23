@@ -7,10 +7,10 @@
 
   ArticleDisplay.prototype = (function(){
 
-    function showArticle(newspaper, id) {
+    async function showArticle(newspaper, id) {
       let article = newspaper.articles()[id];
       let singlearticleview = new SingleArticleView(article);
-      document.getElementById("app").innerHTML = singlearticleview.returnHTML();
+      singlearticleview.requestSummary();
     };
 
     return {
