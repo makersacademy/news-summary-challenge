@@ -18,7 +18,6 @@ NewsViewInstantiation()
 function NewsViewWrapHTML() {
     let data = headlinesView.wrapHTMLAround()
     assert.isEqTo(data.length, 1, 'Adding an article to the headline view');
-    console.log(data[0])
     assert.isTrue(data[0] === "<div><ul><li><div class='article_image'><img src='https://placekitten.com/200/300'/></div><div class='article_webTitle'>undefined</div></li></ul></div>", 'HTML Wrapping around Headline view');
 }
 

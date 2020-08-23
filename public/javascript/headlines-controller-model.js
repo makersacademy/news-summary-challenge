@@ -5,7 +5,8 @@ window.onload = function () {
 
     let temp_response = []
     let xml_http = new XMLHttpRequest();
-    let url = 'http://content.guardianapis.com/world?api-key=702205e6-655b-4d06-93ef-bbcdd8d2fef0'
+    let guardian_url = 'http://content.guardianapis.com/world?api-key=702205e6-655b-4d06-93ef-bbcdd8d2fef0'
+    let app = document.getElementById("News_App");
 
     function HeadLineController(headLineControllerList = new HeadLinesList(temp_response)) {
         this.headLineControllerView =  new HeadLinesView(headLineControllerList);
@@ -25,11 +26,16 @@ window.onload = function () {
             )
             window.headLineController = new HeadLineController();
             window.temp_response = temp_response
+            displayHeadLines(app)
             return temp_response
         }
     };
 
-    xml_http.open("GET", url, true);
+    xml_http.open("GET", guardian_url, true);
     xml_http.send();
 
+}
+
+function displayHeadLines(app) {
+    app.innerHTML = window.headLineController.headLineControllerView.wrapHTMLAround()
 }
