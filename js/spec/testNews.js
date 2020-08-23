@@ -21,5 +21,22 @@
             assert.isTrue(newspaper.getList()[0] === article)
         })
     })
+    dillscribe('Newspaper View Model', function() {
+        it('The newspaper view adds the html code to the articles (for a list)', function() {
+            addSomeArticles();
+            newspaperView = new NewspaperView(newspaper);
+            console.log(newspaperView.wrapInHTML());
+            assert.isTrue(newspaperView.wrapInHTML() === "<ul><li><div><a href='#articles/0'>1</a></div></li>" + 
+            "<li><div><a href='#articles/0'>2</a></div></li></ul>")
+        })
+    })
+
+    function addSomeArticles() {
+        article1 = new Article("1");
+        article2 = new Article("2");
+        newspaper = new Newspaper();
+        newspaper.addArticle(article1);
+        newspaper.addArticle(article2);
+    }
     
 })(this);
