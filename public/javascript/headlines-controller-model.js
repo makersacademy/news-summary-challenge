@@ -1,12 +1,17 @@
 import HeadLinesView from "./headlines-view-model.js";
 import HeadLinesList from "./headlines-list-model.js";
 
+let app = document.getElementById("News_App");
+
 window.onload = function () {
 
     let temp_response = []
     let xml_http = new XMLHttpRequest();
     let guardian_url = 'http://content.guardianapis.com/world?api-key=702205e6-655b-4d06-93ef-bbcdd8d2fef0'
-    let app = document.getElementById("News_App");
+
+
+    // Listeners
+    window.addEventListener("hashchange", redirectToArticle)
 
     function HeadLineController(headLineControllerList = new HeadLinesList(temp_response)) {
         this.headLineControllerView =  new HeadLinesView(headLineControllerList);
@@ -38,4 +43,14 @@ window.onload = function () {
 
 function displayHeadLines(app) {
     app.innerHTML = window.headLineController.headLineControllerView.wrapHTMLAround()
+}
+
+function redirectToArticle(event) {
+    event.preventDefault();
+    if ((window.location.hash).match('#home')) {
+        return displayHeadLines(app)
+    } else {
+        let articleID = window.location.hash.split('/')[1]
+        app.innerHTML = window.headLineController.headLineControllerView.getArticle(articleID)
+    }
 }
