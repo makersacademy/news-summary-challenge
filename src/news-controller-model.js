@@ -12,7 +12,10 @@
       document.getElementById("articles").innerHTML = html;
     }
     function loadLatestNews() {
-      this.newspaper.fetchArticles();
+      let that = this;
+      this.newspaper.fetchArticles(function() {
+        that.displayHtml();
+      });
     }
 
     return {
