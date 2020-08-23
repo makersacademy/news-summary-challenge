@@ -5,13 +5,13 @@
 
   NewsController.prototype = (function() {
 
-    function displayHeadlines() {
-      let html = (this.newspaperView.viewHeadlines());
-      document.getElementById("headlines").innerHTML = html;
+    function displayHtml() {
+      let html = (this.newspaperView.html());
+      document.getElementById("articles").innerHTML = html;
     }
 
     return {
-      displayHeadlines
+      displayHtml
     }
   })();
 

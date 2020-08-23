@@ -68,3 +68,8 @@ Install http-server
 ```npm install http-server --save```
 Run http-server to view index.html page
 ```node node_modules/http-server/bin/http-server```
+
+Section of Guardian 
+- world
+- uk-news
+- politics
