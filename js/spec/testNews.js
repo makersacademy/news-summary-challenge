@@ -30,6 +30,14 @@
             "<li><div><a href='#articles/0'>2</a></div></li></ul>")
         })
     })
+    dillscribe('Newspaper Controller Model', function() {
+        it('The newspaper controller can modify the html code on the webpage', function() {
+
+        })
+        it('Can upload a list of elements onto the webpage', function() {
+            
+        })
+    })
 
     function addSomeArticles() {
         article1 = new Article("1");
