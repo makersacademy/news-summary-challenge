@@ -17,10 +17,23 @@
       document.getElementById('app').innerHTML = this.view().returnHTML();
     };
 
+    function listenForHashChange() {
+      let newspaper = this.newspaper();
+      window.addEventListener('hashchange', function() {
+        id = parseInt(getIDFromUrl(), 10);
+        new ArticleDisplay(newspaper, id);
+      });
+    };
+
+    function getIDFromUrl() {
+      return window.location.hash.split("#articles/")[1];
+    };
+
     return {
       newspaper,
       view,
-      renderHTML
+      renderHTML,
+      listenForHashChange
     }
   })()
   exports.NewspaperController = NewspaperController;
