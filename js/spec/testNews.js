@@ -25,17 +25,24 @@
         it('The newspaper view adds the html code to the articles (for a list)', function() {
             addSomeArticles();
             newspaperView = new NewspaperView(newspaper);
-            console.log(newspaperView.wrapInHTML());
             assert.isTrue(newspaperView.wrapInHTML() === "<ul><li><div><a href='#articles/0'>1</a></div></li>" + 
             "<li><div><a href='#articles/0'>2</a></div></li></ul>")
         })
     })
     dillscribe('Newspaper Controller Model', function() {
-        it('The newspaper controller can modify the html code on the webpage', function() {
-
-        })
         it('Can upload a list of elements onto the webpage', function() {
-            
+            addSomeArticles();
+            newspaperController = new NewspaperController(newspaper);
+            newspaperController.displayNewspaper();
+            assert.isTrue(document.getElementById("app").innerHTML === '<ul><li><div><a href="#articles/0">1</a></div></li>' + 
+            '<li><div><a href="#articles/0">2</a></div></li></ul>')
+        })
+    })
+    dillscribe('Single Article View Model', function() {
+        it('Can return a single article wrapped in div tags', function() {
+            article = new Article("Test single article");
+            singleArticleView = new SingleArticleView(article)
+            assert.isTrue(singleArticleView.returnSingleArticle() === "<div>Test single article</div>")
         })
     })
 

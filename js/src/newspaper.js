@@ -2,6 +2,7 @@
 
     function Newspaper() {
         this.list = []
+        this.accumulator = 0
     }
 
     Newspaper.prototype = (function() {
@@ -11,7 +12,9 @@
         }
         
         function addArticle(article) {
+            article.id = this.accumulator
             this.list.push(article)
+            ++this.accumulator
         }
 
     return {
