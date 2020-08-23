@@ -10,9 +10,7 @@ HeadLinesList.prototype.generateList = function() {
     if (this.original_objects.length > 0) {
         this.original_objects.forEach( article =>
             {
-                console.log(article.webTitle);
                 const new_article = new News(article.webTitle, article.webUrl, article.image_url, article.summary);
-                console.log(new_article);
                 this.list.push(new_article);
             }
         );//new News(article.webTitle, article.webURL, article.image_url, article.summary));
