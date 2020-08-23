@@ -10,7 +10,7 @@
     };
 
     function returnHTML(){
-      return "<div>" + this.articleToView().content() + "</div>"
+      return "<div>" + this.articleToView().articleTitle() + "</div>"
     };
 
     return {

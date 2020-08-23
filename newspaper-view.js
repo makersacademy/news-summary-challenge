@@ -8,7 +8,7 @@
       return this.paper;
     };
     function returnHTML() {
-      array = this.newspaper().articles().map(article => "<a href='#articles/" + article.articleID() + "'>" + article.content() + "</a>");
+      array = this.newspaper().articles().map(article => "<a href='#articles/" + article.articleID() + "'>" + article.articleTitle() + "</a>");
       return "<ul><li><div>" + array.join("</div></li><li><div>") + "</div></li></ul>";
     };
 

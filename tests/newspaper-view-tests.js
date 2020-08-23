@@ -5,7 +5,7 @@
     this.articleID = function() {
       return this.id
     };
-    this.content = function() {
+    this.articleTitle = function() {
       return this.text
     };
   } 
@@ -37,7 +37,7 @@
   function newspaperViewTestMultipleItems() {
     newspaper.content = [article1, article2];
     let newspaperView = new NewspaperView(newspaper);
-    
+
     assert.isTrue(newspaperView.returnHTML() === "<ul><li><div><a href='#articles/0'>First Article</a></div></li><li><div><a href='#articles/1'>Second Article</a></div></li></ul>");
   };
   newspaperViewTestMultipleItems();

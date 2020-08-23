@@ -1,19 +1,24 @@
 (function(exports){
-  function Article(text) {
-    this.text = text;
+  function Article(title, url) {
+    this.title = title;
+    this.url = url
   };
 
   Article.prototype = (function() {
 
-    function content() {
-      return this.text;
+    function articleTitle() {
+      return this.title;
+    };
+    function articleURL() {
+      return this.url;
     };
     function articleID() {
       return this.id;
     }
 
     return {
-      content,
+      articleTitle,
+      articleURL,
       articleID
     };
   })();

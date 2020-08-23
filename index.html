@@ -3,6 +3,7 @@
   <head>
     <link rel="shortcut icon" href="#">
   </head>
+  <h1> Haz's Budget News App</h1>
   <div id="app">
     hello
   </div>
@@ -13,4 +14,8 @@
   <script src=newspaper-controller.js></script>
   <script src=single-article-view.js></script>
   <script src=article-display.js></script>
+  <script>
+    newspaper = new Newspaper();
+    newspaper.getHeadlines();
+  </script>
 </html>

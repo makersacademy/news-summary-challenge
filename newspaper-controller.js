@@ -2,6 +2,7 @@
   function NewspaperController(paper){
     this.paper = paper;
     this.newspaperview = new NewspaperView(paper)
+    this.listenForHashChange();
   }
 
   NewspaperController.prototype = (function(){
