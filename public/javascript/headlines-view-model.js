@@ -4,14 +4,13 @@ import HeadLinesList from "./headlines-list-model.js";
 // Prepares the display for the news articles in a list
 
 function HeadLinesView(headLineList){
-    this.headLineList = headLineList
-    this.list = headLineList.list
+    this.headLineList = headLineList;
 }
 
 HeadLinesView.prototype.wrapHTMLAround = function() {
     let temp_list = [];
-    this.list.forEach( article => temp_list.push("<div>" + "<ul><li>" + "<div class='article_image'>" + "<img src=" + article.image_url + "/></img>" + "</div>" + "<div class='article_webTitle'>" + article.webTitle + "</div>" + "</li></ul>"+ "</div>"));
-    return temp_list
+    this.headLineList.list.forEach( article => temp_list.push("<div>" + "<ul><li>" + "<div class='article_image'>" + "<img src='" + article.image_url + "'/>" + "</div>" + "<div class='article_webTitle'>" + article.webTitle + "</div>" + "</li></ul>"+ "</div>"));
+    return temp_list;
 }
 
 export default HeadLinesView;

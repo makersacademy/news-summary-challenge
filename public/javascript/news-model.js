@@ -1,7 +1,7 @@
 let global_id = 0;
 
 // Creates News (Articles)
-function News(webTitle, webURL, image_url, summary) {
+function News(webTitle, webURL, image_url = 'https://placekitten.com/200/300', summary = 'lorem ipsum decorum') {
     this.id = global_id
     this.webTitle = webTitle
     this.webURL = webURL

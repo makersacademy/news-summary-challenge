@@ -4,7 +4,7 @@ import assert from './assert.js'
 
 
 const boysArticle = new News("BIG BOYS COMING TO TOWN", 'BIG BOYS ARTICLE', 'BIG BOYS IMAGE', 'BIG BOYS SUMMARY');
-const headlinesList = new HeadLinesList();
+const headlinesList = new HeadLinesList({ webTitle: 'BIG BOYS COMING TO TOWN', webUrl: 'bigboys.com', webPublicationDate: '23/08/2020'});
 const new_article = headlinesList.addArticle(boysArticle)
 
 function headlinesListArticleCreation() {
