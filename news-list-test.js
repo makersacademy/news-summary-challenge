@@ -1,21 +1,14 @@
-(function(exports){
-  function newsArticle(){
-    var article = new Article('On Todays Headline');
 
-    if(article.news !== 'On Todays Headlines'){
+(function(exports){
+  function newsListTest(){
+    
+    var article = new Article('House prices have dropped significantly');
+
+    if(article.newsArticle !== 'House prices have dropped significantly'){
       throw new Error ('No article available')
     }
   };
-  newsArticle();
+  newsListTest();
 })();
 
-// (function(exports){
-//   function notes(){
-//     var words = new Notes('My favourite language is JavaScript');
 
-//     if(words.text !== 'My favourite language is JavaScript' ){
-//       throw new Error('You do not like JS')
-//     }
-//   };
-//   notes();
-// })();

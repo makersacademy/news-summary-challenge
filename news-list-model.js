@@ -1,9 +1,22 @@
-(function(exports) {
+(function(exports){
+  function NewsListModel() {
+    this.list = [];
+  };
 
-  function Article(){
-    this.newArticle = []
-  }
+    NewsListModel.prototype = (function(){
+      function addArticle(newsArticle) {
+        this.list.push(newsArticle)
+      }
 
-  
-  exports.Article = Article
+    return {
+      addArticle
+    };
+    })();
+    
+    exports.NewsListModel = NewsListModel;
 })(this);
+
+
+
+
+
