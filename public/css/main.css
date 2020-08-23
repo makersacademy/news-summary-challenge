@@ -1,0 +1,76 @@
+* {
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-1: #475f94;
+    --main-2: #fddc5c;
+    --main-3: #fa4224;
+
+    --off-white: #f0f0f0;
+
+    overflow-y: scroll;
+}
+
+
+body {
+    font-family: Merriweather, serif;
+    background: white;
+}
+
+.top-nav {
+    font-size: 30px;
+    height: 100px;
+    width: border-box;
+    background: #052962;
+    text-align: center;
+    padding-top: 1em;
+    color: white;
+}
+
+.headlines {
+    height: 25%;
+    width: 50%;
+    padding-top: 10px;
+    margin: 0 auto 20px;
+    background: yellow;
+    text-align: center;
+    text-wrap: avoid;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.article_webTitle {
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    font-size: 30px;
+    background: grey;
+    border-radius: 0.5em;
+    width: border-box;
+}
+
+
+
+.headline:hover,
+.headline:focus {
+    transform: scale(1.15);
+    filter: saturate(2);
+}
+
+
+.article_image {
+
+}
+
+img {
+    border-radius: 0.5em;
+    object-fit: cover;
+}
+
+
+
+
+

@@ -15,15 +15,10 @@ var api = new AylienNewsApi.DefaultApi();
 console.log(api)
 
 var opts = {
-    title: "trump",
-    sortBy: "social_shares_count.facebook",
     Language: ["en"],
+    sourceDomain: ["www.theguardian.com/world"],
     publishedAtStart: "NOW-7DAYS",
     publishedAtEnd: "NOW",
-    entitiesBodyLinksDbpedia: [
-        "http://dbpedia.org/resource/Donald_Trump",
-        "http://dbpedia.org/resource/Hillary_Rodham_Clinton"
-    ]
 };
 
 var callback = function(error, data, response) {
@@ -40,5 +35,3 @@ var callback = function(error, data, response) {
 };
 
 api.listStories(opts, callback);
-
-window.api = api;
