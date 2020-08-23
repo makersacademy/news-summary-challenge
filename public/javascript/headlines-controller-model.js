@@ -8,6 +8,7 @@ window.onload = function () {
     let temp_response = []
     let xml_http = new XMLHttpRequest();
     let guardian_url = 'http://content.guardianapis.com/world?api-key=702205e6-655b-4d06-93ef-bbcdd8d2fef0'
+    let guardian_url_2 = 'https://content.guardianapis.com/search?page=1&order-by=newest&q=world&api-key=702205e6-655b-4d06-93ef-bbcdd8d2fef0'
 
 
     // Listeners
@@ -36,7 +37,7 @@ window.onload = function () {
         }
     };
 
-    xml_http.open("GET", guardian_url, true);
+    xml_http.open("GET", guardian_url_2, true);
     xml_http.send();
 
 }
