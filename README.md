@@ -53,14 +53,13 @@ Overall implementation goals:
 
 Steps:
 - [x] Set up folders and test suite, set up http-server.
-- [] Setup some basic html, css template to allow for easy integration once I have stories to list.
+- [x] Setup some basic html, css template to allow for easy integration once I have stories to list.
+- [x] Build business logic of the app.
 - [] Look into how the API works, build the controller that deals with requests and queries the the API. (apiRequestUrl)
     Examples of requests:
     * ```curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"```
     * ```curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"```
-- [] 
-
-
+- [] Work on integrating the API into controller, so I can make a request for news articles and display them on the main page as headlines.
 
 
 ## Mockups

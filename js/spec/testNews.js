@@ -25,8 +25,7 @@
         it('The newspaper view adds the html code to the articles (for a list)', function() {
             addSomeArticles();
             newspaperView = new NewspaperView(newspaper);
-            assert.isTrue(newspaperView.wrapInHTML() === "<ul><li><div><a href='#articles/0'>1</a></div></li>" + 
-            "<li><div><a href='#articles/0'>2</a></div></li></ul>")
+            assert.isTrue(newspaperView.wrapInHTML() === "<ul><li><div><a href='#articles/0'>1</a></div></li><li><div><a href='#articles/1'>2</a></div></li></ul>")
         })
     })
     dillscribe('Newspaper Controller Model', function() {
@@ -34,8 +33,7 @@
             addSomeArticles();
             newspaperController = new NewspaperController(newspaper);
             newspaperController.displayNewspaper();
-            assert.isTrue(document.getElementById("app").innerHTML === '<ul><li><div><a href="#articles/0">1</a></div></li>' + 
-            '<li><div><a href="#articles/0">2</a></div></li></ul>')
+            assert.isTrue(document.getElementById("app").innerHTML === '<ul><li><div><a href="#articles/0">1</a></div></li><li><div><a href="#articles/1">2</a></div></li></ul>')
         })
     })
     dillscribe('Single Article View Model', function() {
@@ -44,6 +42,20 @@
             singleArticleView = new SingleArticleView(article)
             assert.isTrue(singleArticleView.returnSingleArticle() === "<div>Test single article</div>")
         })
+    })
+    dillscribe('XMLHttpRequest', function() {
+        const xhr = new XMLHttpRequest(),
+            method = "GET",
+            url = "https://cors-anywhere.herokuapp.com/https://developer.mozilla.org/en-US";
+        xhr.open(method, url, true);
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState === XMLHttpRequest.DONE) {
+                var status = xhr.status;
+                assert.isTrue(status === 0 || (status >= 200 && status < 400))
+                //console.log(xhr.responseText);
+            } 
+        }
+        xhr.send();
     })
 
     function addSomeArticles() {
