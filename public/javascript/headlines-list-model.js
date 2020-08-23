@@ -18,7 +18,7 @@ HeadLinesList.prototype.generateList = function() {
 }
 
 HeadLinesList.prototype.addArticle = function (article) {
-    const newNewsObject = new News(article.webTitle, article.webURL, article.image_url, article.summary);
+    const newNewsObject = new News(article.webTitle, article.webUrl, article.image_url, article.summary);
     this.list.push(newNewsObject);
     return newNewsObject;
 }

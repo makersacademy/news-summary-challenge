@@ -15,7 +15,7 @@ HeadLinesView.prototype.wrapHTMLAround = function() {
 
 HeadLinesView.prototype.getArticle = function(id) {
     let article = this.headLineList.list[id]
-    return "<div style='margin: 20px;'>" + "<img src='" + article.image_url + "'/> <br/>" + article.summary + "<br/> <a href='#home' style='margin-top: 20px;'>Back to main menu </a></div>";
+    return "<div style='margin: 20px;'>" + "<img src='" + article.image_url + "'/> <br/>" + article.summary + "<br/><a href=" + article.webUrl +  ">Full link to article</a>" + "</div>";
 }
 
 export default HeadLinesView;

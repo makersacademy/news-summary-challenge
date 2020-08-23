@@ -2,6 +2,7 @@
   "name": "news-summary-challenge",
   "version": "1.0.0",
   "dependencies": {
+    "aylien-news-api": "^4.1.1",
     "xmlhttprequest": "^1.8.0"
   },
   "type": "module"
