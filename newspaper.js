@@ -11,6 +11,7 @@
     
     function addArticle(articleText) {
       let article = new Article(articleText);
+      article.id = this.articles().length;
       this.articles().push(article);
     }
 

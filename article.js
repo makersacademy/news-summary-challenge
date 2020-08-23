@@ -8,9 +8,13 @@
     function content() {
       return this.text;
     };
+    function articleID() {
+      return this.id;
+    }
 
     return {
-      content
+      content,
+      articleID
     };
   })();
 
