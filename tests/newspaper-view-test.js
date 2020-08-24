@@ -39,3 +39,4 @@
   testNewspaperViewHtmlOneArticle();
   testNewspaperViewHtmlSeveralArticles();
 })(this);
+

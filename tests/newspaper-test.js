@@ -11,14 +11,5 @@
       "Articles can be added to Newspaper"); 
   }
 
-  // function testNewspaperFetchArticles() {
-  //   let newspaper = new Newspaper();
-  //   newspaper.fetchArticles();
-  //   console.log(newspaper.viewArticles());
-  //   let newsController = new NewsController(newspaper, NewspaperView);
-  //   newsController.displayHtml();
-  // }
-
   testNewspaperAdd();
-  // testNewspaperFetchArticles();
 })(this);
