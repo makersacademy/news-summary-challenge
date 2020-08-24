@@ -19,7 +19,8 @@
     }
 
     return {
-      displayHtml, loadLatestNews
+      displayHtml, 
+      loadLatestNews
     }
   })();
 

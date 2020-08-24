@@ -13,8 +13,14 @@
       return (this.url);
     }
 
+    function showSummary() {
+      return (this.summary);
+    }
+
     return {
-      showHeadline, showUrl
+      showHeadline, 
+      showUrl,
+      showSummary
     }
   })();
 
