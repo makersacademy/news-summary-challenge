@@ -30,7 +30,24 @@ body {
     color: white;
 }
 
+.container {
+    grid-template-columns: 40px 50px auto 50px 40px;
+    grid-template-rows: 25% 100px auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1px 1px;
+    grid-template-areas: ". headlines headlines ." ". headlines headlines ." ". article_webTitle article_webTitle .";
+}
+
+
 .headlines {
+    align-self: stretch;
+    grid-area: headlines;
+    /*
     height: 25%;
     width: 50%;
     padding-top: 10px;
@@ -41,15 +58,17 @@ body {
     border-radius: 0.5em;
     cursor: pointer;
     transition: 100ms;
+     */
+
 }
 
 .article_webTitle {
+    grid-area: article_webTitle;
     font-family: 'Lora', serif;
     font-weight: bold;
     font-size: 30px;
     background: grey;
     border-radius: 0.5em;
-    width: border-box;
 }
 
 

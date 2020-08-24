@@ -44,7 +44,14 @@ window.onload = function () {
     }
 
     async function addSummary(appendURL) {
-        let response = await fetch(summary_BASEURL + appendURL).then(response => response.json())
+        let response;
+
+        try {
+            response = await fetch(summary_BASEURL + appendURL).then(response => response.json());
+        } catch(error) {
+            console.log(error)
+            response = { sentences: ["lorem ipsum decorum"] };
+        }
         return response.sentences
     }
 
