@@ -14,7 +14,7 @@ Uses the static web server [http-server](https://www.npmjs.com/package/http-serv
 
 ### APIs
 
-[Guardian newspaper API](https://open-platform.theguardian.com/documentation/) and [Aylien text summary API](https://docs.aylien.com/textapi/endpoints/#summarization) via the [MakersAcademy News Summary AOI](https://github.com/makersacademy/news-summary-api). 
+[Guardian newspaper API](https://open-platform.theguardian.com/documentation/) and [Aylien text summary API](https://docs.aylien.com/textapi/endpoints/#summarization) via the [MakersAcademy News Summary API](https://github.com/makersacademy/news-summary-api). 
 
 ## User Stories
 
@@ -69,8 +69,12 @@ node -v
 npm -v
 ```
 Install http-server
-```npm install http-server --save```
+```
+npm install http-server --save
+```
 Run http-server to view index.html page (Google Chrome recommended browser)
-```node node_modules/http-server/bin/http-server```
+```
+node node_modules/http-server/bin/http-server
+```
 
 Open Developer Tools to view test results in console.
