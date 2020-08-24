@@ -1,5 +1,7 @@
 # News Summary Challenge
 
+![siteGif](siteGif.gif)
+
 ## Challenge overview
 
 The single-page pure Javascript application grabs all the headlines from the Guardian newspaper API and display them on a page.  
@@ -30,7 +32,7 @@ Clicking on a headline will show a summary of the article.
 ### Run the app
 
 - Execute command `npm install` via command-line.
-- Execute command `http-server` from project root.
+- Execute command `http-server` from project root and navigate to 
 
 ## User Stories
 
