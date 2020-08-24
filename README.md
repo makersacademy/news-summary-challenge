@@ -12,10 +12,13 @@ Written in frontend JavaScript, CSS and HTML.
 
 Uses the static web server [http-server](https://www.npmjs.com/package/http-server) to serve the HTML, CSS and JavaScript files. 
 
+### APIs
+
+[Guardian newspaper API](https://open-platform.theguardian.com/documentation/) and [Aylien text summary API](https://docs.aylien.com/textapi/endpoints/#summarization) via the [MakersAcademy News Summary AOI](https://github.com/makersacademy/news-summary-api). 
+
 ## User Stories
 
 ### Complete
-### Incomplete
 
 ```
 As a busy politician
@@ -23,6 +26,7 @@ I can see all of today's headlines in one place
 So I know what the big stories of the day are
 ```
 
+### Incomplete
 ```
 As a busy politician
 I can click a link to see the original news article
@@ -57,7 +61,7 @@ To make my news reading more fun
 These instructions will allow you to run the current project on your local machine for development and testing purposes.
 ```
 git clone git@github.com:rjkviegas/news-summary-challenge.git
-cd news_summary-challenge
+cd news-summary-challenge
 ```
 Check node and npm are installed
 ```
@@ -66,10 +70,7 @@ npm -v
 ```
 Install http-server
 ```npm install http-server --save```
-Run http-server to view index.html page
+Run http-server to view index.html page (Google Chrome recommended browser)
 ```node node_modules/http-server/bin/http-server```
 
-Section of Guardian 
-- world
-- uk-news
-- politics
+Open Developer Tools to view test results in console.
