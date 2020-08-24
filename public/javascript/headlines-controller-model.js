@@ -11,7 +11,8 @@ window.onload = function () {
     let article_BASEURL = 'https://content.guardianapis.com/search?page=1&order-by=newest&q=world&api-key=702205e6-655b-4d06-93ef-bbcdd8d2fef0'
 
 
-    // Window objects
+    // Window objects/listeners
+
     window.addEventListener("hashchange", redirectToArticle)
     window.HeadLineController = HeadLineController;
 
@@ -50,9 +51,9 @@ window.onload = function () {
             response = await fetch(summary_BASEURL + appendURL).then(response => response.json());
         } catch(error) {
             console.log(error)
-            response = { sentences: ["lorem ipsum decorum"] };
+            response = { sentences: "lorem ipsum decorum", text: "lorem ipsum decorum" };
         }
-        return response.sentences
+        return [response.text]
     }
 
     loadPage();
@@ -71,6 +72,7 @@ window.onload = function () {
             app.innerHTML = window.headLineController.headLineControllerView.getArticle(articleID) + "<a href='#home' style='margin-top: 20px;'>Back to main menu </a>"
         }
     }
+
 
 }
 

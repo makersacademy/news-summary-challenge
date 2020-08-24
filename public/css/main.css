@@ -23,30 +23,34 @@ body {
 .top-nav {
     font-size: 30px;
     height: 100px;
-    width: border-box;
+    width: 100%;
     background: #052962;
     text-align: center;
     padding-top: 1em;
     color: white;
+    z-index: 100;
+    position: fixed;
+    margin-bottom: 30px;
 }
 
-.container {
-    grid-template-columns: 40px 50px auto 50px 40px;
-    grid-template-rows: 25% 100px auto;
+.articlePage {
+    max-width: 50%;
+    margin: 0 auto;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1px 1px;
-    grid-template-areas: ". headlines headlines ." ". headlines headlines ." ". article_webTitle article_webTitle .";
-}
 
+#article_title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
 
 .headlines {
-    align-self: stretch;
-    grid-area: headlines;
+    display: block;
+    margin: 0px auto 0 auto;
+    padding: 1em;
+    max-width: 600px;
+    background: #e7e769;
+    cursor: pointer;
     /*
     height: 25%;
     width: 50%;
@@ -56,26 +60,26 @@ body {
     text-align: center;
     text-wrap: avoid;
     border-radius: 0.5em;
-    cursor: pointer;
+
     transition: 100ms;
      */
 
 }
 
 .article_webTitle {
-    grid-area: article_webTitle;
+    display: block;
     font-family: 'Lora', serif;
     font-weight: bold;
-    font-size: 30px;
-    background: grey;
+    font-size: 26px;
     border-radius: 0.5em;
+    padding: 15px;
 }
 
 
 
-.headline:hover,
-.headline:focus {
-    transform: scale(1.15);
+.headlines:hover,
+.headlines:focus {
+    transform: scale(1.05);
     filter: saturate(2);
 }
 
@@ -87,8 +91,48 @@ body {
 img {
     border-radius: 0.5em;
     object-fit: cover;
+    width: 70%;
+    max-height: 50%;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.section {
+    padding-top:150px;
+}
+
+button {
+    border-radius: 100px;
+    border: 2px var(--off-white) solid;
+    padding: 0.5em 1em;
+    color: var(--off-white);
+    background-color: var(--main-1);
+    font-size: 1.2em;
+    cursor: pointer;
+    outline: none;
+    margin-left: 0.5em;
+}
+
+button:hover,
+button:focus {
+    transition: 100ms;
+    border-color: var(--main-2);
+    color: #000000;
+    background-color: var(--main-2);
+    filter: saturate(2);
+}
+
+button a {
+    color: var(--off-white);
+    text-decoration: none;
+}
+button a:hover {
+    color: #000000;
+}
 
 
 
