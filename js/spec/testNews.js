@@ -28,14 +28,6 @@
             assert.isTrue(newspaperView.wrapInHTML() === "<ul><li><div><a href='#articles/0'>1</a></div></li><li><div><a href='#articles/1'>2</a></div></li></ul>")
         })
     })
-    dillscribe('Newspaper Controller Model', function() {
-        it('Can upload a list of elements onto the webpage', function() {
-            addSomeArticles();
-            newspaperController = new NewspaperController(newspaper);
-            newspaperController.displayNewspaper();
-            assert.isTrue(document.getElementById("app").innerHTML === '<ul><li><div><a href="#articles/0">1</a></div></li><li><div><a href="#articles/1">2</a></div></li></ul>')
-        })
-    })
     dillscribe('Single Article View Model', function() {
         it('Can return a single article wrapped in div tags', function() {
             article = new Article("Test single article");
@@ -44,18 +36,19 @@
         })
     })
     dillscribe('XMLHttpRequest', function() {
-        const xhr = new XMLHttpRequest(),
-            method = "GET",
-            url = "https://cors-anywhere.herokuapp.com/https://developer.mozilla.org/en-US";
-        xhr.open(method, url, true);
-        xhr.onreadystatechange = function () {
-            if(xhr.readyState === XMLHttpRequest.DONE) {
-                var status = xhr.status;
+        it('can send a request and get a responce', function() {
+            const xhr = new XMLHttpRequest(),
+                method = "GET",
+                url = "https://cors-anywhere.herokuapp.com/https://developer.mozilla.org/en-US";
+            xhr.open(method, url, true);
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState === XMLHttpRequest.DONE) {
+                    var status = xhr.status;
                 assert.isTrue(status === 0 || (status >= 200 && status < 400))
-                //console.log(xhr.responseText);
-            } 
-        }
+                 } 
+            }
         xhr.send();
+        })  
     })
 
     function addSomeArticles() {

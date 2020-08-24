@@ -1,8 +1,6 @@
 (function(exports) {
 
-    function NewspaperController(newspaper) {
-        this.newspaper = newspaper
-        this.newspaperView = new NewspaperView(newspaper);
+    function NewspaperController() {
     }
 
     NewspaperController.prototype = (function() {
@@ -16,7 +14,6 @@
                 if(xhr.readyState === XMLHttpRequest.DONE) {
                     var status = xhr.status;
                     if(status === 0 || (status >= 200 && status < 400)){
-                        console.log(xhr.responseText)
                         createArticles(xhr.responseText)
                     }
                 };
@@ -26,17 +23,15 @@
 
         function createArticles(jsonData) {
             var array = JSON.parse(jsonData).response.results
-           
-            var newspaperArray = []
-           
+            this.newspaper = new Newspaper(); 
             array.forEach(function(item) {
-               newspaperArray.push(new Article(item.webTitle))
+               this.newspaper.list.push(new Article(item.webTitle))
             })
-            console.log(newspaperArray)
-            // displayNewspaper(newspaperArray)
+            displayNewspaper(this.newspaper)
         }
         
         function displayNewspaper() {
+            this.newspaperView = new NewspaperView(this.newspaper)
             var html = this.newspaperView.wrapInHTML(); 
             document.getElementById("app").innerHTML = html
         };
