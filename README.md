@@ -7,7 +7,7 @@
 The single-page pure Javascript application grabs all the headlines from the Guardian newspaper API and display them on a page.  
 Clicking on a headline will show a summary of the article.
 
-##Design
+## Design
 
 ![Sequence diagram](diagram.svg)
 
