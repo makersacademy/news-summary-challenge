@@ -3,9 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="src/testFetch.js"></script>
     <title>App</title>
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      let apiData;
+      // fetch(
+      //   'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body'
+      // )
+      //   .then(function (response) {
+      //     if (response.status !== 200) {
+      //       console.log(
+      //         'Looks like there was a problem. Status Code: ' + response.status
+      //       );
+      //       return;
+      //     }
+
+      //     // Examine the text in the response
+      //     response.json().then(function (data) {
+      //       console.log(data);
+      //       apiData = data;
+      //     });
+      //   })
+      //   .catch(function (err) {
+      //     console.log('Fetch Error :-S', err);
+      //   });
+      console.log(article);
+
+      let text = article.response.content.fields.body;
+      let app = document.getElementById('app');
+      let createArray = text.split('</div>');
+      let pureNews = createArray.filter((e) => {
+        return e != '   ';
+      });
+      //console.log(pureNews.slice(0, 3));
+      app.innerHTML = pureNews.join(' ');
+    </script>
   </body>
 </html>
