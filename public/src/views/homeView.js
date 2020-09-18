@@ -1,4 +1,4 @@
-class CreateHome {
+class HomeView {
   constructor() {
     this.counter = 0;
   }

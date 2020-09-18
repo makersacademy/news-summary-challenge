@@ -1,6 +1,6 @@
 (function (exports) {
   function putEachArticleInSeparateDiv() {
-    let home = new CreateHome();
+    let home = new HomeView();
     let fakeArticleList = ['Article 1', 'Article 2'];
 
     let expected = home.displayArticles(fakeArticleList);
