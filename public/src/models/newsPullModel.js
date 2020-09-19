@@ -13,9 +13,8 @@ class NewsPull {
         each.webUrl
       );
     });
-    // await fetch(
-    //   'https://content.guardianapis.com/search?api-key=curl' + myApiKey
-    // )
+    // let fetchData;
+    // await fetch('https://content.guardianapis.com/search?api-key=' + myApiKey)
     //   .then(async (response) => {
     //     if (response.status !== 200) {
     //       console.log(
@@ -26,19 +25,26 @@ class NewsPull {
 
     //     // Examine the text in the response
     //     await response.json().then(function (data) {
-    //       this.articles = data.response.results.map((each) => {
-    //         return new ArticleModel(
-    //           each.id,
-    //           each.webPublicationDate,
-    //           each.sectionName,
-    //           each.webTitle,
-    //           each.webUrl
-    //         );
-    //       });
+    //       fetchData = data;
     //     });
     //   })
     //   .catch(function (err) {
     //     console.log('Fetch Error: ', err);
     //   });
+    // this.updateArticles(fetchData);
+  }
+
+  updateArticles(fetchData) {
+    fetchData.response.results.map((each) => {
+      this.articles.push(
+        new ArticleModel(
+          each.id,
+          each.webPublicationDate,
+          each.sectionName,
+          each.webTitle,
+          each.webUrl
+        )
+      );
+    });
   }
 }
