@@ -3,9 +3,9 @@ class HomeView {
     this.counter = 0;
   }
 
-  displayArticles(articleArray) {
-    let generateDiv = articleArray.map((article) => {
-      let articleDiv = `<div class=newsDiv id=#a${this.counter}>${article}</div>`;
+  displayTitles(titles) {
+    let generateDiv = titles.map((title) => {
+      let articleDiv = `<div class=newsDiv id=#a${this.counter}><h3>${title}</h3></div>`;
       this.counter++;
       return articleDiv;
     });

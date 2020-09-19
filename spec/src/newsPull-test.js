@@ -1,9 +1,17 @@
 (function (exports) {
-  function getAllNews() {
+  function returnAllNewsAsHtml() {
     let newsPull = new NewsPull();
-    newsPull.getNews();
-
-    confirm.isTrue(newsPull.news.length > 0 === true);
+    let expected = newsPull.getHtmlNews();
+    confirm.isTrue(expected.length > 0 === true);
   }
-  getAllNews();
+
+  function returnTheNewsTitlesOnly() {
+    let newsPull = new NewsPull();
+    newsPull.getTitles();
+    confirm.isTrue(Array.isArray(newsPull.titles) === true);
+    confirm.isTrue(newsPull.titles.length > 0 === true);
+  }
+
+  returnAllNewsAsHtml();
+  returnTheNewsTitlesOnly();
 })(this);

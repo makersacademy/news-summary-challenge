@@ -1,15 +1,29 @@
 class NewsPull {
   constructor() {
-    this.news = [];
+    this.news;
+    this.titles = [];
   }
 
-  getNews() {
-    let pullBody = article.response.content.fields.body;
+  getHtmlNews() {
+    //fetch first
+    return article.response.content.fields.body;
+  }
 
-    let createArray = pullBody.split('</div>');
-    let removeEmpty = createArray.filter((e) => {
-      return e != '   ';
+  getTitles() {
+    let htmlNews = this.getHtmlNews();
+
+    //creating div to get the titles
+    let hiddenDiv = document.createElement('div');
+    hiddenDiv.innerHTML = htmlNews;
+
+    //get the titles only
+    let blockDiv = hiddenDiv.getElementsByClassName('block-elements');
+    let headers = [...blockDiv].map((each) => {
+      let pTags = each.getElementsByTagName('p');
+      return pTags[0].innerHTML;
     });
-    this.news = removeEmpty;
+    hiddenDiv.innerHTML = '';
+
+    this.titles = headers;
   }
 }

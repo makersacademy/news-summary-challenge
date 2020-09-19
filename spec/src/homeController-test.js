@@ -14,6 +14,15 @@
     confirm.isTrue(homeController.newsPull === fakeArticleList);
   }
 
+  // function homeControllerHasTwoProperties() {
+  //   let home = new HomeView();
+  //   let fakeArticleList = ['Article 1', 'Article 2'];
+  //   let homeController = new HomeController(home, fakeArticleList);
+
+  //   confirm.isTrue(homeController.homeView === home);
+
+  // }
+
   doublePage();
   homeControllerHasTwoProperties();
 })(this);
