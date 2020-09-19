@@ -19,9 +19,10 @@
   function renderTheHomePage() {
     let home = new HomeView();
     let newsPull = new NewsPull();
+    newsPull.fetchNews();
     let homeController = new HomeController(home, newsPull);
     let result = homeController.renderHome();
-    confirm.isTrue(result.slice(0, 30) === '<div class=newsDiv id=#a0><h3>');
+    confirm.isTrue(result.slice(0, 30) === '<div class=newsDiv id=#a0><div');
   }
 
   doublePage();
