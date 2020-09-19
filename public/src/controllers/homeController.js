@@ -16,7 +16,9 @@ class HomeController {
     let allDiv = app.getElementsByTagName('div');
     [...allDiv].map((div) => {
       div.addEventListener('click', () => {
-        console.log(div.id);
+        let idNumber = parseInt(div.id.slice(-1), 10);
+        article = new ArticleView(newsPull.articles, idNumber);
+        app.innerHTML = article.displayArticle();
       });
     });
   }
