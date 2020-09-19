@@ -5,10 +5,10 @@ class HomeController {
     this.app = document.getElementById('app');
   }
 
-  async renderHome() {
+  renderHome() {
     let [homeView, newsPull, app] = [this.homeView, this.newsPull, this.app];
-    await newsPull.getTitles();
-    return (app.innerHTML = homeView.displayTitles(newsPull.titles));
+
+    return (app.innerHTML = homeView.displayTitles(newsPull.articles));
   }
 
   listenForClick() {
