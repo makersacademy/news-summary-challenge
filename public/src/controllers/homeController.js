@@ -16,9 +16,10 @@ class HomeController {
     let allDiv = app.getElementsByTagName('div');
     [...allDiv].map((div) => {
       div.addEventListener('click', () => {
-        let idNumber = parseInt(div.id.slice(-1), 10);
-        let singleArticle = new ArticleView(newsPull.articles, idNumber);
-        app.innerHTML = singleArticle.displayArticle();
+        div.style.background = '#e6fff5';
+        setTimeout(() => {
+          div.style.background = 'white';
+        }, 1400);
       });
     });
   }

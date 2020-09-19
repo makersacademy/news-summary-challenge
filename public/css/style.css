@@ -4,9 +4,26 @@
 .newsDiv {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.432);
 }
 
-.newsDiv h2 {
-  margin: 0.2em;
+.pTag {
+  padding: 0.3em;
+  background: rgba(126, 226, 216, 0.185);
+  font-size: large;
+  border-radius: 3px;
+  text-align: center;
+}
+.btn-1 {
+  background: rgb(252, 159, 143);
+  text-decoration: none;
+  color: black;
+  border: 1.4px solid grey;
+  border-radius: 6px;
+  padding: 0.4em;
+  margin-left: 0.2em;
+}
+.btn-1:hover {
+  background: lightgreen;
 }
