@@ -1,6 +1,7 @@
 class NewsPull {
   constructor() {
     this.titles = [];
+    this.articles = [];
   }
 
   getHtmlNews() {
@@ -9,6 +10,16 @@ class NewsPull {
   }
 
   getTitles() {
+    this.getArticles();
+    let headers = this.articles.map((each) => {
+      let pTags = each.getElementsByTagName('p');
+      return pTags[0].innerHTML;
+    });
+
+    this.titles = headers;
+  }
+
+  getArticles() {
     let htmlNews = this.getHtmlNews();
 
     //creating div to get the titles
@@ -17,12 +28,6 @@ class NewsPull {
 
     //get the titles only
     let blockDiv = hiddenDiv.getElementsByClassName('block-elements');
-    let headers = [...blockDiv].map((each) => {
-      let pTags = each.getElementsByTagName('p');
-      return pTags[0].innerHTML;
-    });
-    hiddenDiv.innerHTML = '';
-
-    this.titles = headers;
+    this.articles = [...blockDiv];
   }
 }
