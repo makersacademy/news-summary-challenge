@@ -1,7 +1,7 @@
-window.addEventListener('load', (event) => {
+window.addEventListener('load', async () => {
   let homeView = new HomeView();
   let newsPull = new NewsPull();
   let homeController = new HomeController(homeView, newsPull);
-  homeController.renderHome();
+  await homeController.renderHome();
   homeController.listenForClick();
 });

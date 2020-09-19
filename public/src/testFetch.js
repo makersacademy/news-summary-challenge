@@ -1,4 +1,4 @@
-let article = {
+const article = {
   response: {
     status: 'ok',
     userTier: 'developer',

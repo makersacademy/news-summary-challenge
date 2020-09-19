@@ -5,9 +5,9 @@ class HomeController {
     this.app = document.getElementById('app');
   }
 
-  renderHome() {
+  async renderHome() {
     let [homeView, newsPull, app] = [this.homeView, this.newsPull, this.app];
-    newsPull.getTitles();
+    await newsPull.getTitles();
     return (app.innerHTML = homeView.displayTitles(newsPull.titles));
   }
 
@@ -17,8 +17,8 @@ class HomeController {
     [...allDiv].map((div) => {
       div.addEventListener('click', () => {
         let idNumber = parseInt(div.id.slice(-1), 10);
-        article = new ArticleView(newsPull.articles, idNumber);
-        app.innerHTML = article.displayArticle();
+        let singleArticle = new ArticleView(newsPull.articles, idNumber);
+        app.innerHTML = singleArticle.displayArticle();
       });
     });
   }
