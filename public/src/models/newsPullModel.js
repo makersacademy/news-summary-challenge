@@ -1,6 +1,5 @@
 class NewsPull {
   constructor() {
-    this.news;
     this.titles = [];
   }
 

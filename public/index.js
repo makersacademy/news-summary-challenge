@@ -3,4 +3,5 @@ window.addEventListener('load', (event) => {
   let newsPull = new NewsPull();
   let homeController = new HomeController(homeView, newsPull);
   homeController.renderHome();
+  homeController.listenForClick();
 });
