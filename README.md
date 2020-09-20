@@ -1,10 +1,10 @@
 # The app
 
-Display the top 10 headlines of the latest news from around the world. User can click on the article to read the summary or click on the original lick to read the full story.
+Display the top 10 headlines of the latest news from around the world. User can click on the article to read the summary or click on the original link to read the full story.
 
 # The set up
 
-- register for the guardian api [HERE](https://bonobo.capi.gutools.co.uk/register/developer)
+- register for the Guardian newspaper api [HERE](https://bonobo.capi.gutools.co.uk/register/developer)
 - clone the app
 - in the root folder of the app run in the terminal
   - echo "const myApiKey = REPLACE WITH YOUR API KEY HERE" >> key.js
