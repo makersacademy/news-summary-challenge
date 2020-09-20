@@ -7,12 +7,7 @@ class summaryView {
   displaySummary() {
     let summary = document.createElement('div');
     summary.setAttribute('class', 'summaryDiv');
-
-    this.sentences.map((each) => {
-      let sentence = document.createElement('p');
-      sentence.innerHTML = each;
-      summary.appendChild(sentence);
-    });
+    summary.innerHTML = this.text;
     return summary;
   }
 }
