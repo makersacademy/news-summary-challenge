@@ -43,24 +43,6 @@ class Headlines {
         articleRequest.send();
     }
 
-    summaryRequest(article) {
-        let summaryRequest = new XMLHttpRequest();
-        summaryRequest.open( 'GET', 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=' + article.articleUrl() )
-
-        summaryRequest.onload = function() {
-            if(summaryRequest.readyState === XMLHttpRequest.DONE) {
-                if(summaryRequest.status === 200) {
-                    var data = JSON.parse(summaryRequest.responseText);
-                    console.log('checking data for summary')
-                    console.log(data)
-                    console.log(article.summary = data.sentences.join(''))
-                } else {
-                    console.log("Summary request issue")
-                }
-                }
-            }
-            summaryRequest.send();
-        }
     }
 
     

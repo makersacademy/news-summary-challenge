@@ -13,12 +13,4 @@ class Article {
         return this.headline
     }
 
-    arcticleSummary() {
-        return this.summary
-    }
-
-    articleId() {
-        return this.id
-    }
-
 }

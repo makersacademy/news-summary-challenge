@@ -4,8 +4,6 @@ A single page web app written in Javascript, HTML & CSS that displays the news u
 
 ## User Stories
 
-Some of these stories will need decomposing if they seem too large.
-
 ```
 As a busy politician
 I can see all of today's headlines in one place
