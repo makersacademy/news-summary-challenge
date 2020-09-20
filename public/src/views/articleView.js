@@ -1,9 +1,9 @@
 class ArticleView {
-  constructor(articleList, idNumber) {
-    this.article = articleList[idNumber];
+  constructor(text) {
+    this.text = text;
   }
 
   displayArticle() {
-    return `<div class=articleDiv>${this.article.innerHTML}</div>`;
+    return `<div class=articleDiv>${this.text}</div>`;
   }
 }
