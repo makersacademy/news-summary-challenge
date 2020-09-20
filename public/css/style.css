@@ -1,0 +1,46 @@
+body {
+  background: rgb(185, 185, 185);
+}
+
+.newsDiv:hover {
+  cursor: pointer;
+}
+.newsDiv {
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.432);
+  flex-wrap: wrap;
+  padding: 1em;
+}
+.newsDiv h3 {
+  padding: 0.1em;
+  margin: 0.2em;
+}
+
+.pTag {
+  padding: 0.3em;
+  background: rgba(126, 226, 216, 0.185);
+  font-size: large;
+  border-radius: 3px;
+  text-align: center;
+}
+.btn-1 {
+  background: rgb(252, 159, 143);
+  text-decoration: none;
+  color: black;
+  border: 1.4px solid grey;
+  border-radius: 6px;
+  padding: 0.4em;
+  margin-left: 0.2em;
+}
+.btn-1:hover {
+  background: lightgreen;
+}
+.summaryDiv {
+  padding: 0.3em;
+  border-left: 1.8px solid black;
+  margin-left: 0.2em;
+}
