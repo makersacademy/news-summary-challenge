@@ -1,4 +1,3 @@
-
 class HeadlinesController {
     constructor(ViewClass, headlinesView) {
         this.headlines = new Headlines();
