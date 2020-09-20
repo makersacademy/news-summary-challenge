@@ -10,6 +10,13 @@ Display the top 10 headlines of the latest news from around the world. User can 
   - echo "const myApiKey = REPLACE WITH YOUR API KEY HERE" >> key.js
   - open public/index.html
 
+# The preview
+
+![Home View](https://github.com/Iliyan-Y/news-summary-challenge/blob/master/images/homeView.png?raw=true)
+![Home View Expanded](https://github.com/Iliyan-Y/news-summary-challenge/blob/master/images/HomeViewExpanded.png?raw=true)
+![Mobile View](https://github.com/Iliyan-Y/news-summary-challenge/blob/master/images/mobileVIew_1.png?raw=true)
+![Mobile View Expanded](https://github.com/Iliyan-Y/news-summary-challenge/blob/master/images/mobileView_2.png?raw=true)
+
 ## Challenge
 
 - App that summarises the news.
