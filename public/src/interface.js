@@ -1,5 +1,4 @@
 window.addEventListener(`DOMContentLoaded`, function (event) {
-    let controller 
 
     articles()
 
