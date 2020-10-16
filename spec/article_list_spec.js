@@ -16,7 +16,8 @@ class ArticleListSpec {
     var list = new ArticleList
     list.createArticle("The cats", "www.cats.com", "Pets")
 
-    Test.assert(list.articles[0].title == "The cats", "Article list can create a new article object") 
+    Test.assert(list.articles[0].title == "The cats", "Article list can create a new article object (test title)")
+    Test.assert(list.articles[0].url == "www.cats.com", "Article list can create a new article object (test url)") 
   }
 }
 

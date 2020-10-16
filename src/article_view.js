@@ -1,13 +1,19 @@
-ArticleView {
+class ArticleView {
 
-  // output() {
-  //   var readyList = "<ul>"
-  //   var allNotes = this.list.articles
+  constructor(articleList) {
+    this.articleList = articleList.articles
+  }
+  
 
-  //   for (var index = 0; index <= allNotes.length-1; index++) {
-  //   readyList += "<li>" + allNotes[index].text + "</li>";
-  //   }
-  //   return readyList + "</ul>";
-  // }
+  output(){
+    var htmlString = "<div><img src='PLACEHOLDER' class='image'><h1>"
+    var allArticles = this.articleList
+
+    for (var index = 0; index <= allArticles.length-1; index++) {
+      htmlString += allArticles[index].title + "</h1><h3>" + allArticles[index].section + "</h3><a href='" + allArticles[index].url + "' >Click here to read the full article</a><br><hr><br></div>"
+    }
+    return htmlString
+
+  }
 
 }
