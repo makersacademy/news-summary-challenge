@@ -4,15 +4,15 @@ const describe = (description, fn) => {
 }
 
 const it = (message, fn) => {
-  describe(' ' + message, fn)
+  describe('Test: ' + message, fn)
 }
 
 const expect = (expectation) => ({
   toEq: (assertion) => {
     if (expectation === assertion) {
-      console.log('Pass')
+      console.log('%c Pass', 'background-color: #e0f7be; color: green; ')
     } else {
-      console.log('Fail')
+      console.log(`%c Fail: Expected '${assertion}' but got '${expectation}'`, 'background-color: #ffe2e0; color: red;')
     }
   }
 })
