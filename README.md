@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 News Summary APP
 ================
 
@@ -30,5 +29,3 @@ When site is loaded a call is made to the guardian api
 the response to this is formatted and the top ten headlines are displayed on the page   
 
 when the user clicks on the headline a call is made to the summary api to summarise the article; this is displayed on the page without a refresh  
-
->>>>>>> news-summary-challenge/master
