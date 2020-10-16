@@ -21,7 +21,7 @@ const expect = (expectation) => ({
     if (Array.isArray(expectation)) {
      console.log('%c Pass', 'background-color: #e0f7be; color: green; ') 
     } else {
-     console.log(`%c Fail: Expected '${assertion}' but got '${expectation}'`, 'background-color: #ffe2e0; color: red;') 
+     console.log(`%c Fail: Expected Array but got '${expectation}'`, 'background-color: #ffe2e0; color: red;') 
     }
   }
 
