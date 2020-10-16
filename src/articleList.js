@@ -7,5 +7,8 @@ class ArticleList {
   addArticle(article) {
     this.articles.push(article);
   }
-
+  
+  getArticles() {
+    return this.articles;
+  }
 }

@@ -7,7 +7,7 @@ describe('ArticleList', () => {
     })
   })
 
-  describe('.getArticle', () => {
+  describe('.addArticle', () => {
     it('adds an article to the array of articles', () => {
       articleList = new ArticleList();
       articleList.addArticle('Article');
@@ -15,4 +15,9 @@ describe('ArticleList', () => {
     })
   })
 
+  describe('.getArticle', () => {
+    articleList = new ArticleList();
+    articleList.addArticle('This is an article')
+    expect(articleList.getArticles()).toBeTypeOfArray();
+  })
 })
