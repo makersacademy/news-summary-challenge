@@ -5,6 +5,12 @@
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
 * You must submit a pull request to this repo with your code by 9am Monday morning.
 
+## SC notes
+### Running
+```
+In the root of the project, run: npm install http-server --save
+
+
 ## Challenge
 
 As usual please start by forking this repo.
