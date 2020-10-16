@@ -1,0 +1,5 @@
+class ArticleControllerTest {
+  static 
+}
+
+// ArticleControllerTest

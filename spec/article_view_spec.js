@@ -28,7 +28,6 @@ class ArticleViewSpec {
     // console.log(bView.output())
 
     Test.assert(bView.output() == "<div><div><img src='PLACEHOLDER' class='image'><h1>The cats</h1><h3>Pets</h3><a href='www.cats.com' >Click here to read the full article</a><br><hr><br></div><div><img src='PLACEHOLDER' class='image'><h1>The dogs</h1><h3>World News</h3><a href='www.dogs.com' >Click here to read the full article</a><br><hr><br></div></div>", "Outputs a longer string of HTML")
-
   }
 }
 
