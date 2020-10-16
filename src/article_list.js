@@ -1,9 +1,16 @@
 class ArticleList {
+  
+  constructor() {
+    this.articles = []
+  }
 
-  output(jsonOutput) {
-    var output = JSON.parse(jsonOutput)
+  addArticle(article){
+    this.articles.push(article)
+  }
 
-    // loop 
+  createArticle(webTitle, webUrl, sectionId) {
+    var article = new Article(webTitle, webUrl, sectionId)
+    this.addArticle(article)
   }
 
 }

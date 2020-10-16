@@ -2,8 +2,8 @@ class ArticleSpec {
   
   static articleTitle() { 
     var object = JSON.parse('{"webTitle":"The cats", "webUrl":"www.cats.com", "sectionId":"Pets"}')
-    
     var article = new Article(object.webTitle, object.webUrl, object.sectionId)
+    
     Test.assert(article.title == "The cats", "The article has the correct title.")
   }
 
@@ -19,7 +19,13 @@ class ArticleSpec {
     var article = new Article(object.webTitle, object.webUrl, object.sectionId)
 
     Test.assert(article.section == "Pets", "The article has the correct section.")
+  }
 
+  static articleOutput() {
+    var object = JSON.parse('{"webTitle":"The cats", "webUrl":"www.cats.com", "sectionId":"Pets"}')
+    var article = new Article(object.webTitle, object.webUrl, object.sectionId)
+
+    Test.assert()
   }
 
 }
