@@ -6,20 +6,14 @@
 * You must submit a pull request to this repo with your code by 9am Monday morning.
 
 ## SC notes
-### Running
+### Start-up
 ```
-In the root of the project, run: npm install http-server --save
+In the root of the project, run: npm install http-server --save.
+Run http-server.
+```
 
+### Summary
 
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that summarises the news.
-
-### Guidance
-
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
 
 ## Project overview
 
