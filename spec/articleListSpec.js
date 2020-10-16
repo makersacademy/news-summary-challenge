@@ -16,7 +16,9 @@ describe('ArticleList', () => {
   })
 
   describe('.getArticle', () => {
-    articleList.addArticle('This is an article')
-    expect(articleList.getArticles()).toBeTypeOfArray();
+    it('returns all the articles', () => {
+      articleList.addArticle('This is an article')
+      expect(articleList.getArticles()).toBeTypeOfArray();
+    })
   })
 })
