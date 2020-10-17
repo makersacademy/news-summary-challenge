@@ -28,8 +28,10 @@ window.onload = (function () {
   })(document.getElementById("logger"));
   
   // Testing
-  console.log(ArticleListSpec.addArticleTest());
-  console.log(ArticleListSpec.createArticleTest());
+  SpecHandler.tests()
+
+  // CSS for colours
+  SpecHandler.css()
 
   
 });

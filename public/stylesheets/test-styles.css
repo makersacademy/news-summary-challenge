@@ -1,0 +1,20 @@
+body {
+  background-color: floralwhite;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.log-undefined { 
+  color: palevioletred;
+}
+
+.test-passed {
+  color: green;
+}
+
+.test-passing {
+  color: green;
+}
+
+.test-failed {
+  color: red;
+}

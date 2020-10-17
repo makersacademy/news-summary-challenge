@@ -29,7 +29,3 @@ class ArticleSpec {
   }
 
 }
-
-ArticleSpec.articleTitle()
-ArticleSpec.articleUrl()
-ArticleSpec.articleSectionId()

@@ -20,6 +20,3 @@ class ArticleListSpec {
     Test.assert(list.articles[0].url == "www.cats.com", "Article list can create a new article object (test url)") 
   }
 }
-
-ArticleListSpec.addArticleTest()
-ArticleListSpec.createArticleTest()
