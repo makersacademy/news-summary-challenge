@@ -1,5 +1,0 @@
-class ArticleControllerTest {
-  static 
-}
-
-// ArticleControllerTest

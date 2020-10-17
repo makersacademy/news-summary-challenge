@@ -7,9 +7,9 @@ class ArticleController {
 
   outputHtml() {
     var articleHtml = document.getElementById('mews_feed');
-    articleHtml.innerHTML = this.articleView.
+    // articleHtml.innerHTML = this.articleView.
     
-    noteHtml.innerHTML = this.articleView.output();
+    articleHtml.innerHTML = this.articleView.output();
   }
 
   dateTime() {
