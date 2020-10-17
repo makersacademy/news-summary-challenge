@@ -23,6 +23,13 @@ const expect = (expectation) => ({
     } else {
      console.log(`%c Fail: Expected Array but got '${expectation}'`, 'background-color: #ffe2e0; color: red;') 
     }
-  }
+  },
 
+   toHaveContent: (assertion) => {
+     if (expectation.includes(assertion)) {
+       console.log('%c Pass', 'background-color: #e0f7be; color: green; ')
+     } else {
+       console.log(`%c Fail: Expected Array but got '${expectation}'`, 'background-color: #ffe2e0; color: red;') 
+    }
+  }
 })

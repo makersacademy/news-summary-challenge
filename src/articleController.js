@@ -9,7 +9,11 @@ class ArticleController{
   }
 
   insertHtml() {
-    return this.getHtml();
+    let articles = document.getElementById('articles');
+    // let pageContent = this.getHtml();
+    articles.innerHTML = this.getHtml(); 
   }
 
 }
+
+
