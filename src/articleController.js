@@ -8,4 +8,8 @@ class ArticleController{
     return this.listView.outputHTML();
   }
 
+  insertHtml() {
+    return this.getHtml();
+  }
+
 }

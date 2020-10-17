@@ -24,6 +24,17 @@ describe('ArticleController', () => {
       articleController = new ArticleController(articlelistview);
       articleController.getHtml();
       expect(articlelistview.outputCount).toEq(1);
+      articlelistview.outputCount = 0;
+    })
+  })
+
+  describe('.insertHTML', () => {
+    it('calls the getHTML method to insert content into page', () => {
+      articlelistview = new ArticleListViewDouble();
+      articleController = new ArticleController(articlelistview);
+      articleController.insertHtml();
+      expect(articlelistview.outputCount).toEq(1);
+      articlelistview.outputCount = 0; 
     })
   })
 })
