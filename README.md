@@ -5,33 +5,26 @@
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
 * You must submit a pull request to this repo with your code by 9am Monday morning.
 
-## SC notes
+## Notes
 ### Start-up
 ```
 In the root of the project, run: npm install http-server --save.
 Run http-server.
 ```
 
+### Testing
+``` 
+Navigate to the local 'specRunner.html' file in your browser.
+```
+All tests will show on the main page, without going into the console
+
+
 ### Summary
+Weekend challenge, implemented with a focus on developing my core skills in:
+1. Developing my own testing system, including making a UI for it.
+2. Using javascript to deploy a static web page with no libraries.
+3. Using an API.
 
-
-## Project overview
-
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
-
-### Technologies
-
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
 
 ## User Stories
 
