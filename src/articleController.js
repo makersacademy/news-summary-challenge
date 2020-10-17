@@ -14,6 +14,16 @@ class ArticleController{
     articles.innerHTML = this.getHtml(); 
   }
 
+  getArticles() {
+    const url =
+    fetch(url)
+    .then(function(response) {
+      return response.json();
+    }).then(function(response) {
+      console.log(response.response.results[0].webTitle)
+    })
+  }
+
 }
 
 
