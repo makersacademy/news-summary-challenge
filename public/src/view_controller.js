@@ -6,10 +6,11 @@ class ArticleController {
   }
 
   outputHtml() {
-    var articleHtml = document.getElementById('mews_feed');
+    // var articleHtml = document.getElementById('mews_feed');
+    var articleHtml = document.getElementsByClassName('mews_feed')
     // articleHtml.innerHTML = this.articleView.
     
-    articleHtml.innerHTML = this.articleView.output();
+    articleHtml[0].innerHTML = this.articleView.output();
   }
 
   dateTime() {
@@ -19,7 +20,7 @@ class ArticleController {
     var timeOutput = time;
     var dateOuput = date;
     
-    console.log(timeOutput)
+    // console.log(timeOutput)
 
     var timeHtml = document.getElementById('time');
     timeHtml.innerHTML = timeOutput
