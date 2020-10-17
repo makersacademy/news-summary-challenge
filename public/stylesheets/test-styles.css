@@ -1,6 +1,7 @@
 body {
   background-color: floralwhite;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 0.5em 2em 2em 4em;
 }
 
 .log-undefined { 
@@ -9,12 +10,10 @@ body {
 
 .test-passed {
   color: green;
-}
-
-.test-passing {
-  color: green;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 .test-failed {
   color: red;
+  font-family: 'Share Tech Mono', monospace;
 }
