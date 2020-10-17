@@ -1,0 +1,36 @@
+<style>
+  .silver-background {
+    background-color: silver;
+    border-width: 5px;
+    border-style: solid;
+    position: fixed;
+   # top: 40%;
+    left: 10%;
+    margin-top: 100px;
+    margin-left 100px;
+  }
+</style>
+<html>
+  <body>
+    <patch style="color:red;"><h1> pUT a sWANKY tITLE hERE</h1></patch>
+    <div id="placeholder"> </div>
+    <script src="src/apiKeys.js"></script>
+    <script src="src/newsController.js"></script>
+    <script src="src/newsItem.js"></script>
+    <script>
+      controller = new newsController
+      var y;
+      fetch('https://content.guardianapis.com/search?q=politics&show-fields=all&api-key=' + getKeys())
+        .then(response => response.json())
+        .then(data => y = (data))
+    </script>
+        <script>
+            
+            var x;
+            fetch('https://content.guardianapis.com/business/2014/feb/18/uk-inflation-falls-below-bank-england-target')
+              .then(response => response.json())
+              .then(data => x = (data))
+          </script>
+  </body> 
+</html>
+
