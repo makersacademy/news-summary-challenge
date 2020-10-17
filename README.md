@@ -1,3 +1,12 @@
+You will need to create an api key at https://bonobo.capi.gutools.co.uk/register
+
+
+
+
+
+
+
+
 # News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
