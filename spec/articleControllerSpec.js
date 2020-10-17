@@ -10,18 +10,17 @@ describe('ArticleController', () => {
     }
   }
 
+  const articlelistview = new ArticleListViewDouble();
+  const articleController = new ArticleController(articlelistview);
+
   describe('this.articlelistview', () => {
     it('instantiates with an ArticleListView', () => {
-      articlelistview = new ArticleListViewDouble();
-      articleController = new ArticleController(articlelistview);
       expect(articleController.listView instanceof ArticleListViewDouble).toEq(true)
     })
   })
 
   describe('.getHTML', () => {
     it('returns list of html elements', () => {
-      articlelistview = new ArticleListViewDouble();
-      articleController = new ArticleController(articlelistview);
       articleController.getHtml();
       expect(articlelistview.outputCount).toEq(1);
       articlelistview.outputCount = 0;
@@ -30,8 +29,6 @@ describe('ArticleController', () => {
 
   describe('.insertHTML', () => {
     it('calls the getHTML method to insert content into page', () => {
-      articlelistview = new ArticleListViewDouble();
-      articleController = new ArticleController(articlelistview);
       articleController.insertHtml();
       expect(articlelistview.outputCount).toEq(1);
       articlelistview.outputCount = 0; 
