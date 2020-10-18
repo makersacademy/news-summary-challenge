@@ -26,3 +26,9 @@ var list = new ArticleList
 var gApi = new GuardianApi(list)
 
 gApi.comboFunc()
+
+console.log(list.articles)
+
+array = [1,2,3]
+
+console.log(array)
