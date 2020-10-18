@@ -5,6 +5,13 @@ body {
   text-align: center;
 }
 
+h1 {
+  font-size: 400%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-shadow: 2px 2px#888888;
+  margin-bottom: 0px
+}
+
 img {
   width: 50%
 }
