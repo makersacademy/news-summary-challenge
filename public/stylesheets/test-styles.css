@@ -1,0 +1,19 @@
+body {
+  background-color: floralwhite;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 0em 1em 1em 1em;
+}
+
+.log-undefined { 
+  color: palevioletred;
+}
+
+.test-passed {
+  color: green;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.test-failed {
+  color: red;
+  font-family: 'Share Tech Mono', monospace;
+}
