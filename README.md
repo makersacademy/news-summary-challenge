@@ -2,9 +2,8 @@
 
 Week 7 - weekend challenge building a front end web app using only Javascript, HTML and CSS.  
 The app fetches the latest news stories from the Guardian API and returns the latest ten headlines.  
-Click on a headline to visit the full story on the Guardian website, or view a summary in a popup.
-
-![homepage](./public/homepage.png)
+Click on a headline to visit the full story on the Guardian website, or click the image for a popup summary.
+![summary](./public/summary.png)
 
 ## User Stories Implemented
 
@@ -35,7 +34,12 @@ As a busy politician
 I can read the site comfortably on my phone
 Just in case my laptop breaks
 ```
-![summary](./public/summary.png)
+![homepage](./public/homepage.png)
+```
+As a busy politician
+I can see a picture to illustrate each news article when I browse headlines
+So that I have something nice to look at
+```
 
 ## SetUp
 
@@ -59,18 +63,3 @@ Visit [http://127.0.0.1:8080/](http://127.0.0.1:8080/) in your browser.
 * HTML & CSS
 * [http-server](https://www.npmjs.com/package/http-server)
 * [Makers News Summary API](https://github.com/makersacademy/news-summary-api)
-
-
-## User Stories Not Implemented
-
-```
-As a busy politician
-I can see a picture to illustrate each news article when I browse headlines
-So that I have something nice to look at
-```
-
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
-```

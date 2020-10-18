@@ -1,6 +1,6 @@
 
-fetch('https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01&api-key=test')
-// fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=debates')
+fetch('https://content.guardianapis.com/search?q=debate&tag=politics/politics&show-fields=thumbnail&api-key=test')
+// fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=debates&show-fields=thumbnail')
   .then(response => {
       const contentType = response.headers.get('content-type');
       if (!contentType || !contentType.includes('application/json')) {
@@ -16,13 +16,14 @@ fetch('https://content.guardianapis.com/search?q=debate&tag=politics/politics&fr
       let headline = newsArray[i].webTitle
       let linkId = `summary-link${i+1}`;
       linkArray.push(linkId);
+      let thumbnail = newsArray[i].fields.thumbnail
       let webUrl = newsArray[i].webUrl
       formattedLink = `
       <section id='news-story'>
-        <a id='news-story${i+1}' href='${webUrl}'>${headline}</a>
-        <div>
-          <a id=${linkId} href=''>Click for a summary</a>
+        <div class='news-story'>
+          <img src=${thumbnail} id=${linkId} href=''>
         </div>
+        <a id='news-story${i+1}' href='${webUrl}'>${headline}</a>
       </section><br>`;
       newsContainer.innerHTML += formattedLink;
     }

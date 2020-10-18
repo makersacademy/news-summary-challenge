@@ -12,9 +12,32 @@ h1 {
   margin-bottom: 0px
 }
 
-img {
-  width: 50%
+#news-story {
+  padding: 20px;
+  width: 50%;
+  position: relative;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 50px;
+  bottom: 50px;
+  font-size: 200%
 }
+
+img {
+  width: 50%;
+  text-align: left;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  position: relative;
+  transition: all 1s;
+}
+
+img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+
+}
+
 a:link {
   text-decoration: none;
   color: black;
@@ -45,20 +68,6 @@ a:active {
   z-index: 2;
   cursor: pointer;
   backdrop-filter: blur(3px);
-}
-
-#news-story {
-  padding: 20px;
-  width: 60%;
-  box-shadow: 0 8px 6px -6px #888888;
-  border: solid;
-  border-width: thin;
-  position: relative;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 50px;
-  bottom: 50px;
 }
 
 #story-summary {
