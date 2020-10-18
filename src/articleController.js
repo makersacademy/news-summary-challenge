@@ -46,8 +46,11 @@ class ArticleController{
   }
 
   formatData(array) {
-    for (let i = 0; i < array.length; i ++) {
+    console.log(array)
+    //if story does not have a thumbnail sites crashes
+    for (let i = 0; i < 5; i ++) {
       this.listView.articleList.addArticle(array[i].webTitle, array[i].webUrl, array[i].fields.thumbnail)
+      console.log(array[i].fields)
     }
   }
 
