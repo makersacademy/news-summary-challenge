@@ -24,22 +24,26 @@ function xmlHttpHelper(xmlhttp, url) {
 }
 
 function saveJSONResponseAsList(jsonResponse) {
+  console.log("json response" + jsonResponse)
   var array = jsonResponse.response.results;
   requestArticlesForEachURL(array);
 }
 
 function requestArticlesForEachURL(articleURLArray) {
   return articleURLArray.forEach(function (result) {
-    var url =
-      result.apiUrl.slice(0, 4) + result.apiUrl.slice(5) + "?show-fields=all";
-    getData(url, saveJSONResponseAsArticle);
+    var url = 
+    result.apiUrl.slice(0, 4) + result.apiUrl.slice(5) + "?show-fields=all";
+    //console.log("result is: " + result.apiUrl + "?show-fields=all")
+    //console.log("result: " + result.apiUrl)
+
+   getData(url, saveJSONResponseAsArticle);
   });
 }
 
 function saveJSONResponseAsArticle(jsonResponse) {
   var content = jsonResponse.response.content.fields;
   console.log("content is " + content.headline);
-  console.log("controller is " + controller);
+  console.log("json is " + jsonResponse);
   controller.addArticle(
     content.headline,
     content.body,
