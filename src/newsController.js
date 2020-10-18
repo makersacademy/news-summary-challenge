@@ -17,8 +17,12 @@ class newsController {
     for(var i = 0; i <= articles.length -1; i++) {
        myString += articles[i].formatTitleHTML() 
     }
+    if(!myString) {
+      myString += "No results found :( "
+    }
     myDiv.innerHTML = myString
-    document.body.appendChild(myDiv)
+    y = document.getElementById("placeholder")
+    y.appendChild(myDiv)
   }
 
   getSummary = (id) => {
@@ -28,7 +32,9 @@ class newsController {
   removePreviousSummary = (id) => {
     if(id){
     var oldSummaryDiv = document.getElementById(id)
-    oldSummaryDiv.innerHTML = ''}
+    oldSummaryDiv.innerHTML = ''
+   
+  }
   }
 
   addSummaryHTML = (id) => {

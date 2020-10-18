@@ -1,22 +1,51 @@
+<style>
+  #element {
+    transition : 180ms transform ease-out;
+    transform  : translateY(-100%);         
+}
+  #element.displayed {
+      transform  : translateY(0);
+      transition : 150 transform ease-in;
+  }
 
+</style>
 <html>
+  <head>
+      <patch style="color:red;"><h1> pUT a sWANKY tITLE hERE</h1></patch>
+      <textarea name="search" size="30px" form="text" placeholder="Search a topic?"></textarea>
+      <form action="/search" id="text" method ="post">
+        <input type="submit" >
+      </form>
+  </head>
   <body>
-    <patch style="color:red;"><h1> pUT a sWANKY tITLE hERE</h1></patch>
-    <div id="placeholder"> </div>
+<div id="placeholder" style="width:100%;flex-wrap:wrap;flex-direction:row;display:inline-flex;border:1px solid black;"> </div>
     <script src="src/apiKeys.js"></script>
     <script src="src/newsController.js"></script>
     <script src="src/newsItem.js"></script>
     <script>
       controller = new newsController
       var y;
-      fetch('https://content.guardianapis.com/search?q=politics&show-fields=all&api-key=' + getKeys())
+      fetch('https://content.guardianapis.com/search?&show-fields=all&api-key=' + getKeys())
         .then(response => response.json())
-        .then(data => controller.sortAndDisplay(data))
-        // //.then(controller.sortsNews(y))
-        // .then(controller.updatesTitlesHTML() )
- 
+        .then(data => controller.sortAndDisplay(data)) 
+    </script>
+    <script>
+      window.addEventListener("submit", function(event) {
+        event.preventDefault()    
+        var searchTerm =  event.path[0][0].attributes[1].ownerElement.value
+        saveHead()
+        controller.articles = []
+        fetch('https://content.guardianapis.com/search?q=' + searchTerm + '&show-fields=all&api-key=' + getKeys())
+                .then(response => response.json())
+                .then(data => controller.sortAndDisplay(data))
+})
     </script>
 
+    <script>
+    saveHead = () => {
+      document.body.innerHTML =   '<head><patch style="color:red;"><h1> pUT a sWANKY tITLE hERE</h1></patch><textarea name="search" size="30px" form="text" placeholder="Search a topic?"></textarea><form action="/search" id="text" method ="post"><input type="submit" ></form></head>'
+    }
+    </script>
   </body> 
 </html>
 
