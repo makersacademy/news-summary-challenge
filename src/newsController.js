@@ -1,6 +1,7 @@
 class newsController {
   constructor() {
     this.articles = []
+    this.lastHash;
   }
 
   sortsNews = (news)  => {
@@ -18,9 +19,29 @@ class newsController {
     }
     myDiv.innerHTML = myString
     document.body.appendChild(myDiv)
-
-
   }
+
+  getSummary = (id) => {
+    return this.articles.filter(function(article){return article.id == id})[0].getSummaryText()
+  }
+
+  removePreviousSummary = (id) => {
+    if(id){
+    var oldSummaryDiv = document.getElementById(id)
+    oldSummaryDiv.innerHTML = ''}
+  }
+
+  addSummaryHTML = (id) => {
+    var summaryDiv = document.getElementById(id)
+    summaryDiv.innerHTML = this.getSummary(id)
+  }
+
+  hashChanged() {
+    this.removePreviousSummary(this.lastHash)
+    this.lastHash = window.location.hash.split('#/')[1]
+    this.addSummaryHTML(this.lastHash)
+  }
+
 //guardian doesn't seem to accept being iframed leaving this out
   createIframe = (articleLink) => {
     var ifrm = document.createElement("iframe")
@@ -32,3 +53,4 @@ class newsController {
 
 }
 
+window.addEventListener("hashchange", function() {controller.hashChanged()})

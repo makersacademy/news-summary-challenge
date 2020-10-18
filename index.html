@@ -1,15 +1,4 @@
-<style>
-  .silver-background {
-    background-color: silver;
-    border-width: 5px;
-    border-style: solid;
-    position: fixed;
-   # top: 40%;
-    left: 10%;
-    margin-top: 100px;
-    margin-left 100px;
-  }
-</style>
+
 <html>
   <body>
     <patch style="color:red;"><h1> pUT a sWANKY tITLE hERE</h1></patch>
@@ -25,7 +14,7 @@
         .then(data => y = (data))
     </script>
         <script>
-            
+            controller.sortsNews(y)
             var x;
             fetch('https://content.guardianapis.com/business/2014/feb/18/uk-inflation-falls-below-bank-england-target')
               .then(response => response.json())
