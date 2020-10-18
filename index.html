@@ -11,15 +11,12 @@
       var y;
       fetch('https://content.guardianapis.com/search?q=politics&show-fields=all&api-key=' + getKeys())
         .then(response => response.json())
-        .then(data => y = (data))
+        .then(data => controller.sortAndDisplay(data))
+        // //.then(controller.sortsNews(y))
+        // .then(controller.updatesTitlesHTML() )
+ 
     </script>
-        <script>
-            controller.sortsNews(y)
-            var x;
-            fetch('https://content.guardianapis.com/business/2014/feb/18/uk-inflation-falls-below-bank-england-target')
-              .then(response => response.json())
-              .then(data => x = (data))
-          </script>
+
   </body> 
 </html>
 

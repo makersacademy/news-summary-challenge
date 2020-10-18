@@ -51,6 +51,11 @@ class newsController {
     ifrm.setAttribute("src", articleLink)
   }
 
+  sortAndDisplay = (data) => {
+    this.sortsNews(data)
+    this.updatesTitlesHTML(this.articles)
+  }
+
 }
 
 window.addEventListener("hashchange", function() {controller.hashChanged()})
