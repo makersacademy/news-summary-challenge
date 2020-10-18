@@ -1,28 +1,32 @@
 newsService = new ArticleController()
-let html = ""
 
 loadArticles()
 
 function loadArticles() {
   newsService.getTodaysArticles(function (articles) {
-    let articlesDiv = document.getElementById("articles");
-    articles.forEach(function (article) {
-      articlesDiv.innerHTML += formatArticleHTML(article);
-    });
+    _formatArticleHTML(articles)
   });
 }
 
-function formatArticleHTML(article) {
-  return `<div class="container">
-            <div class="row" style="padding: 10px">
-              <div class="col">
-                <div class="card" id="${article.id}">
-                <img class="card-img-top" src="${article.thumbnail}" alt="Article img">
-                  <div class="card-body">
-                  <h4 class="card-text" id="article-headline" style="padding: 10px;">${article.headline}</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>`
+function _formatArticleHTML(articles) {
+  let articleHTML = "";
+  articles.forEach(function (article) {
+    articleHTML += `<div class="grid_item">
+                      <div class="card" id="${article.id}">
+                        <img class="card_img" src="${article.thumbnail}" alt="Article img">
+                          <div class="card_content">
+                            <h2 class="card_header" id="article-headline">${article.headline}</h2>
+                            <button class="card_btn">Read article<span>&rarr;</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>`;
+  })
+  _displayArticles(articleHTML)
+}
+
+function _displayArticles(articleHTML) {
+  let articleHeading = "<h1 class='grid_item'>Today's Guardian Articles</h1>"
+  let articlesDiv = document.getElementById("articles");
+  articlesDiv.innerHTML = articleHeading + articleHTML;
 }
