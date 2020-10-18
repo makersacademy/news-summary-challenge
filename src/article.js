@@ -1,7 +1,8 @@
 class Article {
 
-  constructor(article) {
-    this.headline = article
+  constructor(headline, url) {
+    this.headline = headline
+    this.url = url
   }
 
   // getHeadline() {

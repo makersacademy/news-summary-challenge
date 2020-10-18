@@ -33,7 +33,7 @@ class ArticleController{
       return response.json();
     }).then(function (response) {
       for (let i = 0; i < 10; i ++) {
-      data.push(response.response.results[i].webTitle)
+      data.push(response.response.results[i])
       }
     })
     this.formatData(data);
@@ -47,7 +47,7 @@ class ArticleController{
 
   formatData(array) {
     for (let i = 0; i < array.length; i ++) {
-      this.listView.articleList.addArticle(array[i])
+      this.listView.articleList.addArticle(array[i].webTitle, array[i].webUrl)
     }
   }
 
