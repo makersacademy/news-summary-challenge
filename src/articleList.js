@@ -4,8 +4,8 @@ class ArticleList {
     this.articles = []
   }
 
-  addArticle(headline, url) {
-    this.articles.push(new Article(headline, url));
+  addArticle(headline, url, thumbnail) {
+    this.articles.push(new Article(headline, url, thumbnail));
   }
   
   getArticles() {

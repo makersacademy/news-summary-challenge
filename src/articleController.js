@@ -47,7 +47,7 @@ class ArticleController{
 
   formatData(array) {
     for (let i = 0; i < array.length; i ++) {
-      this.listView.articleList.addArticle(array[i].webTitle, array[i].webUrl)
+      this.listView.articleList.addArticle(array[i].webTitle, array[i].webUrl, array[i].fields.thumbnail)
     }
   }
 
