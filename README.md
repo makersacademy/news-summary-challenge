@@ -1,6 +1,7 @@
 ## To run tests:
 
 open `specRunner.html` in browser
+open console in browser
 
 ## To run News app
 
