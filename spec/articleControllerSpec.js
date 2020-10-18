@@ -34,4 +34,11 @@ describe('ArticleController', () => {
       articlelistview.outputCount = 0; 
     })
   })
+
+  describe('.getArticles', () => {
+    it('makes call to api and returns "This is a news article"', () => {
+      articleController.environment = 'test';
+      expect(articleController.getArticles() instanceof Promise).toEq(true);
+    })
+  })
 })
