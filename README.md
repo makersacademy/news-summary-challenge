@@ -1,5 +1,10 @@
 You will need to create an api key at https://bonobo.capi.gutools.co.uk/register
 
+then create a file: src/apiKeys.js
+
+in that file create the below function with your apikey
+getKeys = () => {return [API_KEY_GOES_HERE]}
+
 
 
 
