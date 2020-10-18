@@ -9,8 +9,4 @@ window.onload = (function () {
 
   controller.dateTime()
 
-  
 });
-
-
-// window.onload = (function() { myfuncname() });

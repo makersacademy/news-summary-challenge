@@ -6,10 +6,7 @@ class ArticleController {
   }
 
   outputHtml() {
-    // var articleHtml = document.getElementById('mews_feed');
     var articleHtml = document.getElementsByClassName('mews_feed')
-    // articleHtml.innerHTML = this.articleView.
-    
     articleHtml[0].innerHTML = this.articleView.output();
   }
 
@@ -20,14 +17,11 @@ class ArticleController {
     var timeOutput = time;
     var dateOuput = date;
     
-    // console.log(timeOutput)
-
     var timeHtml = document.getElementById('time');
     timeHtml.innerHTML = timeOutput
 
     var dateHtml = document.getElementById('date');
     dateHtml.innerHTML = dateOuput
   }
-
 
 }
