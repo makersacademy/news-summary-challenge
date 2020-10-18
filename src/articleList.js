@@ -5,7 +5,7 @@ class ArticleList {
   }
 
   addArticle(article) {
-    this.articles.push(article);
+    this.articles.push(new Article(article));
   }
   
   getArticles() {

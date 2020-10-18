@@ -1,15 +1,14 @@
 class Article {
 
-  constructor(headline, body) {
-    this.headline = headline
-    this.body = body
+  constructor(article) {
+    this.headline = article
   }
 
-  getHeadline() {
-    return this.headline;
-  }
+  // getHeadline() {
+  //   return this.headline;
+  // }
 
-  getBody() {
-    return this.body;
-  }
+  // getBody() {
+  //   return this.body;
+  // }
 }
