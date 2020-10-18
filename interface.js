@@ -11,8 +11,10 @@ fetch('https://content.guardianapis.com/search?q=debate&tag=politics/politics&fr
   let newsContainer = document.getElementById('news-summary');
   let newsArray = data.response.results
   for(let i = 0; i < 10; i++) {
-    let newsStory = `<div>${newsArray[i].webTitle}</div>`
-    newsContainer.innerHTML += newsStory
+    let headline = newsArray[i].webTitle
+    let webLink = newsArray[i].webUrl
+    formattedLink = `<p><a id='news-story' href='${webLink}'>${headline}</a></p>`
+    newsContainer.innerHTML += formattedLink
   }
 })
 .catch(error => console.error(error));
