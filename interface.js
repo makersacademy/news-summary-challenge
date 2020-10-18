@@ -1,5 +1,6 @@
 
 fetch('https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01&api-key=test')
+// fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=debates')
   .then(response => {
       const contentType = response.headers.get('content-type');
       if (!contentType || !contentType.includes('application/json')) {
