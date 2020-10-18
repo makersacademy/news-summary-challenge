@@ -48,10 +48,9 @@ div {
 
 .grid {
     display: grid;
-    width: 50%;
+    width: 114rem;
     grid-gap: 6rem;
-    /*grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));*/
-    /*grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));*/
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     align-items: start;
 }
 
@@ -79,15 +78,9 @@ div {
 }
 
 .card_img {
-    font-size: 62.5%;
     font-family: "Inter", sans-serif;
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
     display: block;
     width: 100%;
-    /*height: 18rem;*/
     object-fit: cover;
 }
 
