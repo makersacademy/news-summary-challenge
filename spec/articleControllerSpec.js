@@ -15,25 +15,27 @@ describe('ArticleController', () => {
 
   describe('this.articlelistview', () => {
     it('instantiates with an ArticleListView', () => {
-      expect(articleController.listView instanceof ArticleListViewDouble).toEq(true)
+      expect(articleController.listView instanceof ArticleListView).toEq(true)
     })
   })
 
-  describe('.getHTML', () => {
-    it('returns list of html elements', () => {
-      articleController.getHtml();
-      expect(articlelistview.outputCount).toEq(1);
-      articlelistview.outputCount = 0;
-    })
-  })
+  // no longer needed? 
 
-  describe('.insertHTML', () => {
-    it('calls the getHTML method to insert content into page', () => {
-      articleController.insertHtml();
-      expect(articlelistview.outputCount).toEq(1);
-      articlelistview.outputCount = 0; 
-    })
-  })
+  // describe('.getHTML', () => {
+  //   it('returns list of html elements', () => {
+  //     articleController.getHtml();
+  //     expect(articlelistview.outputCount).toEq(1);
+  //     articlelistview.outputCount = 0;
+  //   })
+  // })
+
+  // describe('.insertHTML', () => {
+  //   it('calls the getHTML method to insert content into page', () => {
+  //     articleController.insertHtml();
+  //     expect(articlelistview.outputCount).toEq(1);
+  //     articlelistview.outputCount = 0; 
+  //   })
+  // })
 
   // describe('.getArticles', () => {
   //   it('makes call to api and returns "This is a news article"', () => {
@@ -42,5 +44,4 @@ describe('ArticleController', () => {
   //   })
   // })
 
-  console.log(articleController.getArticles())
 })
