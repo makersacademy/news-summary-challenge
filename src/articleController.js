@@ -18,7 +18,7 @@ class ArticleController{
   getURL() {
      let url;
      if (this.environment === 'test') {
-     url = 'http://localhost:9292';
+     url = '../testRespone.json';
     } else {
       url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail";
     }
