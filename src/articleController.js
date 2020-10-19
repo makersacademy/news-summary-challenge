@@ -44,7 +44,7 @@ class ArticleController{
 
   formatData(array) {
     //if story does not have a thumbnail sites crashes
-    for (let i = 0; i < 5; i ++) {
+    for (let i = 0; i < 10; i ++) {
       this.listView.articleList.addArticle(array[i].webTitle, array[i].webUrl, array[i].fields.thumbnail)
     }
   }

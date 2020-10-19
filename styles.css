@@ -3,9 +3,21 @@ body {
   font-size: 10px;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 80%;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
 #articles {
-  display: flex;
-  padding-top: 10%;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  align-items: center;
+  padding-top: 3%;
 }
 
 .story-container {
@@ -19,6 +31,7 @@ img {
   width: 250;
   height: 200px;
   border-radius: 30px;
+  padding: 10px;
 }
 
 a {
