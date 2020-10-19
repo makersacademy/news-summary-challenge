@@ -6,11 +6,13 @@ class Article {
     this.thumbnail = thumbnail 
   }
 
-  // getHeadline() {
-  //   return this.headline;
-  // }
+  getHeadline() {
+    return this.headline;
+  }
 
-  // getBody() {
-  //   return this.body;
-  // }
+  // for when the site deals with the content of articles 
+
+  getUrl() {
+    return this.url;
+  }
 }

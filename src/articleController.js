@@ -41,9 +41,6 @@ class ArticleController{
     this.insertHtml();
   }
 
-  sortData() {
-
-  }
 
   formatData(array) {
     console.log(array)
@@ -53,6 +50,9 @@ class ArticleController{
       console.log(array[i].fields)
     }
   }
+
+  //testing different ways to make api call
+
 
   // getData(data) {
   //   console.log(data)

@@ -1,6 +1,6 @@
 describe('Article', () => {
 
-  const article = new Article('Breaking news', 'This is a massive news story')
+  const article = new Article('Breaking news', 'www.guardian.com', 'thumbnail here')
   
   describe('.getHeadline', () => {
     it('returns the headline of the article' , () => {
@@ -8,9 +8,9 @@ describe('Article', () => {
     })
   })
 
-  describe('.getBody', () => {
-    it('returns the body of the article', () => {
-      expect(article.getBody()).toEq('This is a massive news story')
+  describe('.getUrl', () => {
+    it('returns the url of the article', () => {
+      expect(article.getUrl()).toEq('www.guardian.com')
     })
   })
 
