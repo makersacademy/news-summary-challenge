@@ -20,7 +20,7 @@ class ArticleController{
      if (this.environment === 'test') {
      url = 'http://localhost:9292';
     } else {
-      url = productionURL;
+      url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail";
     }
     return url;
   }
