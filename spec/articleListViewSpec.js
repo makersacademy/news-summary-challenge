@@ -35,7 +35,7 @@ describe('ArticleListView', () => {
 
   describe('.outputHTML', () => {
     it('returns string of html', () => {
-      expect(articleListView.outputHTML()).toEq('<div><h1>article1</h1><p>this is an article</p></div>') 
+      expect(articleListView.outputHTML()).toEq('<div class=\'story-container\'><a href=\'undefined\' target=\'_blank\'><img src=\'undefined\'><h1>article1</h1></a></div>') 
     })
   })
 })
