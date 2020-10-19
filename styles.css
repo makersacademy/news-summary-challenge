@@ -1,0 +1,40 @@
+body {
+  font-family: Noto Sans JP;
+  font-size: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 80%;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+#articles {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  align-items: center;
+  padding-top: 3%;
+}
+
+.story-container {
+  margin: 10px;
+  border: grey solid;
+  border-radius: 30px;
+  text-align: center;
+}
+
+img {
+  width: 250;
+  height: 200px;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
