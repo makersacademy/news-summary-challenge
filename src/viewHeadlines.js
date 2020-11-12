@@ -2,11 +2,13 @@
   let headlinesDiv = document.getElementById('headlines')
 
   function viewHeadlines(headlines) {
-    headlinesDiv.innerHTML = '<ul>'
+    let htmlList = '<ul>'
     headlines.forEach(headline => {
-      headlinesDiv.innerHTML += `<ul>${headline}</ul>`
+      htmlList += `<li>${headline}</li>`
     })
-    headlinesDiv.innerHTML += '</ul>'
+    htmlList += '</ul>'
+
+    headlinesDiv.innerHTML = htmlList
   }
 
   exports.viewHeadlines = viewHeadlines
