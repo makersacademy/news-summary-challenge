@@ -1,4 +1,4 @@
-# News Summary challenge
+# News Summary Challenge
 
 A news summary application made for the week 7 end of unit challenge at Makers.
 
@@ -17,7 +17,7 @@ Prerequisites:
 - http-server
 
 ```
-$ git clone 
+$ git clone https://github.com/dan-holmes/news-summary-challenge.git
 $ npm install
 ```
 
