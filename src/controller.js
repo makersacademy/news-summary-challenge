@@ -17,13 +17,14 @@ window.addEventListener('hashchange', function (event) {
 }, false)
 
 function getStories() {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function (resolve) {
     let url = `${urlBase}/search?from-date=${date}`
     httpGet(url, function (response) {
       let stories = JSON.parse(response).response.results
       stories = stories.map(story => { return new Story(story.webTitle, story.id) })
       viewHeadlines(stories)
       storyList = stories
+      resolve()
     })
   })
 }
