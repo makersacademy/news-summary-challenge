@@ -1,0 +1,42 @@
+body {
+  background-color: #A6CCFF;
+}
+
+
+.headline, .headline-selected {
+  font-size: large;
+  padding: 1%;
+  margin: 1%;
+  border: 1px solid #B597E8;
+  border-radius: 4px;
+  color: black;
+  text-decoration: none;
+}
+
+.headline {
+  background-color: #BAB2FF;
+}
+
+.headline-selected {
+  background-color: #B597E8;
+}
+
+#headlines {
+  width: 48%;
+  float: left;
+}
+
+#summary {
+  width: 48%;
+  background-color:  #97A4E8;
+  float: right;
+  padding: 1%;
+  border-radius: 4px;
+  margin-top: 0.5%;
+  border: 1px solid #B597E8;
+}
+
+img {
+  max-width: 80%;
+  height: auto;
+}

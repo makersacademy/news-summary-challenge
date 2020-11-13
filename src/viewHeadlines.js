@@ -3,12 +3,19 @@
   let guardianBaseUrl = 'https://www.theguardian.com'
 
   function viewHeadlines(stories) {
-    let htmlList = '<ul>'
+    htmlList = ''
     stories.forEach(story => {
-      htmlList += `<li><a href="#article=${story.getLink()}">${story.getHeadline()}</a></li>`
+      htmlList += `<a href="#story=${story.getId()}"><div class='${cssClass(story)}' >${story.getHeadline()}</div></a>`
     })
-    htmlList += '</ul>'
     headlinesDiv.innerHTML = htmlList
+  }
+
+  function cssClass(story) {
+    if (story.isSelected()) {
+      return 'headline-selected'
+    } else {
+      return 'headline'
+    }
   }
 
   exports.viewHeadlines = viewHeadlines

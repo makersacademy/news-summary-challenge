@@ -4,6 +4,7 @@ class Story {
     this.headline = headline
     this.link = link
     this.id = storyCount
+    this.selected = false
     storyCount++
   }
 
@@ -17,5 +18,17 @@ class Story {
 
   getId() {
     return this.id
+  }
+
+  isSelected() {
+    return this.selected
+  }
+
+  select() {
+    this.selected = true
+  }
+
+  deselect() {
+    this.selected = false
   }
 }
