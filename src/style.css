@@ -21,19 +21,29 @@ body {
   background-color: #B597E8;
 }
 
-#headlines {
-  width: 48%;
+#leftPane {
+  width: 50%;
   float: left;
 }
 
-#summary {
-  width: 48%;
-  background-color:  #97A4E8;
+#headlines {
+  width: 98%;
+}
+
+#rightPane {
+  width: 50%;
   float: right;
+  position: relative;
+}
+
+#summary {
+  width: 98%;
+  background-color:  #97A4E8;
   padding: 1%;
   border-radius: 4px;
   margin-top: 0.5%;
   border: 1px solid #B597E8;
+  position: absolute;
 }
 
 img {

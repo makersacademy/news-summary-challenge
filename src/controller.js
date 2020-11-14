@@ -35,6 +35,7 @@ function getSummary(id) {
   httpGet(url, function (response) {
     let summary = JSON.parse(response).response.content.fields.body
     viewSummary(summary)
+    animate('summary')
   })
 }
 
