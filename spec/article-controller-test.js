@@ -13,18 +13,15 @@ let headlineMocks = [headlineMock1.title(), headlineMock2.title()]
 let headlineListMock = {
   returnHeadlines: function () {
     return headlineMocks
-  }
+  },
+  addArticle: function (){}
 }
-
-// let articleHeadlineListView = new ArticleHeadlineListView(myHeadlineList)
 
 let articleHeadlineListViewMock = {
   returnHTML: function(){
     return "<ul><li><div>Corona scare 1</div></li><li><div>Corona scare 2</div></li></ul>"
   }
 }
-
-// controller should initialize with a new article list which gets passed to the view
 
 let articleController = new ArticleController(headlineListMock) 
 

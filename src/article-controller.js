@@ -5,8 +5,8 @@ class ArticleController {
     this.listView = new ArticleHeadlineListView(this.articles)
   }
 
-  renderHeadlines(){
-    document.getElementById("app").innerHTML = this.listView.returnHTML()
+  renderHeadlines(listView = this.listView){
+    document.getElementById("app").innerHTML = listView.returnHTML()
   }
 }
 
