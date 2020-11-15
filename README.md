@@ -1,6 +1,11 @@
 # News Summary App
 This is a single web page application listing today's news headlines from the Guardian API. The headlines are links which,when clicked, reveal the body of that news article.
 
+**Future Improvements:**
+- Refactoring methods 
+- Improve file sorting into different directories
+- Tests
+
 ### Technologies
 - This application uses frontend javascript, CSS and HTML
 - The guardian API is used for news information

@@ -1,7 +1,7 @@
 class ArticleController {
-  constructor(newsAPI = "http://content.guardianapis.com"){
+  constructor(newsAPI = "http://content.guardianapis.com", articleList = new ArticleList){
     this.newsAPI = newsAPI
-    this.articleList = new ArticleList
+    this.articleList = articleList
   }
 
   fetchCurrentArticles(){
@@ -44,7 +44,7 @@ class ArticleController {
     xhttp.send()
   }
 
-  // _retrieveArticleInfo(responseText){
+  // _retrieveArticleHeadlines(responseText){
   //   // normall no stringify, normally .fields.headline
   //   // let articles = JSON.stringify(responseText)
   //   let allArticles = JSON.parse(responseText).response.results
