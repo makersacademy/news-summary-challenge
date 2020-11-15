@@ -1,7 +1,7 @@
 class ArticleHeadlineListView{
   constructor(articleList = new ArticleList){
     this.headlines = articleList.returnHeadlines()
-    // assuming argument passed is an instance of ArticleList
+    // assuming argument passed is an object which responds to .returnHeadlines()
   }
 
   returnHTML(){

@@ -9,7 +9,6 @@
       return 'Corona scare 2';
     }
   }
-
   let headlines = [headline1.title(), headline2.title()]
 
   let myHeadlineList = {
