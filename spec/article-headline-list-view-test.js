@@ -1,4 +1,4 @@
-let articleHeadlineListView = new ArticleHeadlineListView(headlineListMock)
+let articleHeadlineListView = new ArticleHeadlineListView(articleListMock)
 
 it('can be instantiated', function(){
   expect(articleHeadlineListView).toBeAnInstanceOf(ArticleHeadlineListView)

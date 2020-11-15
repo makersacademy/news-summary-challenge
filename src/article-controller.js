@@ -4,7 +4,7 @@ class ArticleController {
     this.articleList = articleList
   }
 
-  fetchCurrentArticles(){
+  renderCurrentArticles(){
     // use makers API key thing - not meant to hardcode key
     let url = this.newsAPI + `/search?from-date=${this._currentDate()}&show-elements-image&show-fields=headline&api-key=test`
 
@@ -60,11 +60,11 @@ class ArticleController {
 }
 
 let newsController = new ArticleController
-newsController.fetchCurrentArticles()
+newsController.renderCurrentArticles()
 
 window.addEventListener('hashchange', function(event){
   if (event.newURL.slice(-1) == '/') {
-    newsController.fetchCurrentArticles()
+    newsController.renderCurrentArticles()
   } else {
     let id = event.newURL.slice(-1)
     newsController.renderSummary(id)

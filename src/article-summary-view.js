@@ -1,9 +1,9 @@
 class ArticleSummaryView {
-  constructor(article = new Article){
-    this.article = article
+  constructor(articleBody){
+    this.articleBody = articleBody
   }  
 
   returnHTML(){
-    return `<div id="summary">${this.article}</div>`
+    return `<div id="summary">${this.articleBody}</div>`
   }
 }

@@ -1,7 +1,7 @@
 class Article {
-  constructor(title, summary, id){
+  constructor(title, urlId, id){
     this.title = title
-    this.summary = summary
+    this.urlId = urlId
     this.id = id
   }
 
@@ -9,7 +9,7 @@ class Article {
     return this.title
   }
 
-  returnSummary(){
-    return this.summary
+  returnUrlId(){
+    return this.urlId
   }
 }
