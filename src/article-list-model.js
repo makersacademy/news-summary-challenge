@@ -16,7 +16,8 @@ class ArticleList {
   }
 
   addArticle(title, summary){
-    let article = new Article(title, summary)
+    let id = this.returnArticles().length
+    let article = new Article(title, summary, id)
     this.articles.push(article)
   }
 }

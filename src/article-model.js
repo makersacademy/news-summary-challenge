@@ -1,7 +1,8 @@
 class Article {
-  constructor(title, summary){
+  constructor(title, summary, id){
     this.title = title
     this.summary = summary
+    this.id = id
   }
 
   returnTitle(){
