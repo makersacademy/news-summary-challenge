@@ -20,6 +20,7 @@ let articleMock2 = {
     return 'corona2.img'
   }
 }
+let articleListMockArray = [articleMock1, articleMock2]
 let headlineMocks = [articleMock1.returnTitle(), articleMock2.returnTitle()]
 
 let articleListMock = {
@@ -38,7 +39,7 @@ let articleSummaryViewMock = {
 
 let articleHeadlineListViewMock = {
   returnHTML: function(){
-    return `<ul style="list-style-type:none"><li><div id="headline"><a href='#articles/0'>Corona scare 1</a></div></li><li><div id="headline"><a href='#articles/1'>Corona scare 2</a></div></li></ul>`
+    return `<ul style="list-style-type:none"><li><div class="newsheadlineclass"><img class="image" src="corona1.img" alt="The News Today"><h2 id="headline" href='#articles/0'>Corona scare 1</h2></div></li></ul>`
   }
 }
 
