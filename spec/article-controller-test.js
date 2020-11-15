@@ -42,6 +42,7 @@ let articleController = new ArticleController("mockAPI")
 //   }
 // }
 
+
 it('can be instantiated', function(){
   expect(articleController).toBeAnInstanceOf(ArticleController)
 })
