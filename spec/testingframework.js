@@ -7,8 +7,8 @@ function it(label, callback) {
 
 function expect(actual){
   return {
-    toEqual: function(expectedValue){
-      if(actual === expectedValue){
+    toEqual: function(expected){
+      if(actual === expected){
         console.log("Pass")
       }else {
         console.log("Fail")
@@ -16,6 +16,13 @@ function expect(actual){
     },
     toBeAnArray: function(){
       if(Array.isArray(actual)){
+        console.log("Pass")
+      }else {
+        console.log("Fail")
+      }
+    },
+    toBeAnInstanceOf: function(expected){
+      if(actual instanceof expected) {
         console.log("Pass")
       }else {
         console.log("Fail")
