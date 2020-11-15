@@ -5,13 +5,10 @@ class ArticleHeadlineListView{
   }
 
   returnHTML(){
-    let htmlHeadlineArray = []
-    // this.headlines.forEach(headline => {
-    //   htmlHeadlineArray.push(`<li><a href='notes#${i}>${headline}</a></li>`);
-    // })
+    let htmlHeadlineArray = ""
     for (let i = 0; i < this.headlines.length; i++) {
-      htmlHeadlineArray.push(`<li><a href='#articles/${i}'>${this.headlines[i]}</a></li>`)
+      htmlHeadlineArray += `<li><a href='#articles/${i}'>${this.headlines[i]}</a></li>`
     }
-    return `<ul>${htmlHeadlineArray.join("")}</ul>`
+    return `<ul>${htmlHeadlineArray}</ul>`
   }
 }

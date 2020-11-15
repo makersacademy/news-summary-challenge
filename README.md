@@ -1,8 +1,8 @@
 # News Summary App
-This application lists the headlines of the news taken from the Guardian API. The headlines are links, when clicked, reveal the summary of that news article.
+This is a single web page application lists the headlines of the news taken from the Guardian API. The headlines are links, when clicked, reveal the summary of that news article.
 
 ### Technologies
-- This application uses vanilla javascript
+- This application uses frontend javascript, CSS and HTML
 - The guardian API is used for news information
 - An http-server is installed with npm
 - Created own testing framework which can be run by inputting this to your terminal:
