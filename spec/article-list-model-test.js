@@ -27,3 +27,9 @@ it('adds an Article model to the articles array', function(){
   articleList.addArticle('Corona Vaccine Created', 'Scientists have created an 80% effective vaccine')
   expect(articleList.returnArticles()[0].returnTitle()).toEqual('Corona Vaccine Created')
 })
+
+it('fetches a specific article by id number', function(){
+  // may need article mocking
+  articleList.addArticle('Corona Vaccine Created', 'Scientists have created an 80% effective vaccine')
+  expect(articleList.getArticle(0)).toBeAnInstanceOf(Article)
+})

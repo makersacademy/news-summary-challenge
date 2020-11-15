@@ -20,4 +20,8 @@ class ArticleList {
     let article = new Article(title, summary, id)
     this.articles.push(article)
   }
+
+  getArticle(id){
+    return this.articles[id]
+  }
 }
