@@ -7,3 +7,7 @@ it('can be instantiated', function(){
 it('instantiates with empty headline array', function(){
   expect(articleHeadlineList.headlines).toBeAnArray()
 })
+
+it('returns the headlines', function(){
+  expect(articleHeadlineList.returnHeadlines()).toBeAnArray()
+})
