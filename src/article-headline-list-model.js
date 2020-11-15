@@ -8,7 +8,7 @@ class ArticleHeadlineList {
   }
 
   addHeadline(title){
-    let articleHeadline = new ArticleHeadline(title)
-    this.headlines.push(articleHeadline)
+    let article = new Article(title)
+    this.headlines.push(article)
   }
 }

@@ -1,4 +1,4 @@
-class ArticleHeadline {
+class Article {
   constructor(title){
     this.title = title
   }
