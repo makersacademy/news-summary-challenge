@@ -5,6 +5,7 @@ Run these commands in your root folder:
 ```
 $ cd root/of/your-project/
 $ npm install http-server --save
+```
 
 # News Summary challenge
 
