@@ -1,14 +1,20 @@
 let headlineMock1 = {
-  title: function () {
+  returnTitle: function () {
     return 'Corona scare 1';
+  },
+  returnSummary: function(){
+    return 'Corona 1 summary'
   }
 }
 let headlineMock2 = {
-  title: function () {
+  returnTitle: function () {
     return 'Corona scare 2';
+  },
+  returnSummary: function(){
+    return 'Corona 2 summary'
   }
 }
-let headlineMocks = [headlineMock1.title(), headlineMock2.title()]
+let headlineMocks = [headlineMock1.returnTitle(), headlineMock2.returnTitle()]
 
 let headlineListMock = {
   returnHeadlines: function () {
@@ -20,12 +26,12 @@ let headlineListMock = {
 
 let mockArticleSummaryView = {
   returnHTML: function(){
-    return "<div>summary of corona scare 1</div>"
+    return `<div id="summary">summary of corona scare 1</div>`
   }
 }
 
 let articleHeadlineListViewMock = {
   returnHTML: function(){
-    return "<ul><li><div>Corona scare 1</div></li><li><div>Corona scare 2</div></li></ul>"
+    return `<ul style="list-style-type:none"><li><div id="headline"><a href='#articles/0'>Corona scare 1</a></div></li><li><div id="headline"><a href='#articles/1'>Corona scare 2</a></div></li></ul>`
   }
 }

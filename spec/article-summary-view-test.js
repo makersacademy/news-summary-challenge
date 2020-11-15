@@ -5,12 +5,12 @@ let newsArticle = {
   }
 }
 
-let articleSummaryView = new ArticleSummaryView(newsArticle)
+let articleSummaryView = new ArticleSummaryView(headlineMock1.returnSummary())
 
 it('can be instantiated', function(){
   expect(articleSummaryView).toBeAnInstanceOf(ArticleSummaryView)
 })
 
 it('returns single article summary text in html string', function(){
-  expect(articleSummaryView.returnHTML()).toEqual("<div>Scientists reveal that the vaccine is only 80% effective</div>")
+  expect(articleSummaryView.returnHTML()).toEqual(`<div id="summary">Corona 1 summary</div>`)
 })

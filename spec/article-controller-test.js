@@ -50,7 +50,7 @@ it('can be instantiated', function(){
 it('changes inner HTML of app div to headline list', function(){
   // only failing as inner html has " " surrounding href
   console.log(document.getElementById("app").innerHTML)
-  expect(document.getElementById("app").innerHTML).toEqual("<ul><li><a href='#articles/0'>The Masters 2020: Dustin Johnson leads final round at Augusta – live!</a></li><li><a href='#articles/1'>Coronavirus live news: German minister predicts five more months of 'severe restrictions'; Greece shuts primary schools</a></li></ul>")
+  expect(document.getElementById("app").innerHTML).toEqual(`<ul><li><div id="headline"><a href="#articles/0">The Masters 2020: Dustin Johnson leads final round at Augusta – live!</a></div></li><li><div id="headline"><a href='#articles/1'>Coronavirus live news: German minister predicts five more months of 'severe restrictions'; Greece shuts primary schools</a></div></li></ul>`)
 })
 
 it('displays webURL when you click on link', function(){
