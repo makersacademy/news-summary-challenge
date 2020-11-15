@@ -6,12 +6,12 @@ class ArticleController {
 
   renderCurrentArticles(){
     // use makers API key thing - not meant to hardcode key
-    let url = this.newsAPI + `/search?from-date=${this._currentDate()}&show-elements-image&show-fields=headline&api-key=test`
+    let url = this.newsAPI + `/search?from-date=${this._currentDate()}&show-fields=headline%2Cthumbnail&api-key=test`
 
     this.httpGetAsync(url, function(response){
       let allArticles = JSON.parse(response).response.results
       allArticles.forEach(article => {
-        this.articleList.addArticle(article.fields.headline, article.id)
+        this.articleList.addArticle(article.fields.headline, article.id, article.fields.thumbnail)
       })
       let articleHeadlineListView = new ArticleHeadlineListView(this.articleList)
       document.getElementById("app").innerHTML = articleHeadlineListView.returnHTML()

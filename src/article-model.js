@@ -1,8 +1,9 @@
 class Article {
-  constructor(title, urlId, id){
+  constructor(title, urlId, thumbnail, id){
     this.title = title
     this.urlId = urlId
     this.id = id
+    this.thumbnail = thumbnail
   }
 
   returnTitle(){
@@ -11,5 +12,9 @@ class Article {
 
   returnUrlId(){
     return this.urlId
+  }
+
+  returnThumbnail(){
+    return this.thumbnail
   }
 }
