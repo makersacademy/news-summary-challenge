@@ -12,3 +12,4 @@ class ArticleController {
 
 let newsController = new ArticleController
 newsController.renderHeadlines()
+

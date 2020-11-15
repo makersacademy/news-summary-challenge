@@ -1,3 +1,4 @@
+// need to extract mocking to another file
 let headlineMock1 = {
   title: function () {
     return 'Corona scare 1';

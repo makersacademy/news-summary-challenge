@@ -24,6 +24,5 @@ it('can be instantiated', function(){
 })
 
 it('returns html string of ArticleList model array', function(){
-  console.log(articleHeadlineListView.returnHTML())
-  expect(articleHeadlineListView.returnHTML()).toEqual("<ul><li><div>Corona scare 1</div></li><li><div>Corona scare 2</div></li></ul>")
+  expect(articleHeadlineListView.returnHTML()).toEqual("<ul><li><a href='#articles/0'>Corona scare 1</a></li><li><a href='#articles/1'>Corona scare 2</a></li></ul>")
 })
