@@ -9,6 +9,10 @@ class ArticleController {
   renderHeadlines(listView = this.listView){
     document.getElementById("app").innerHTML = listView.returnHTML()
   }
+
+  renderSummary(id){
+    
+  }
 }
 
 let newsController = new ArticleController
