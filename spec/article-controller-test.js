@@ -23,7 +23,3 @@ it('can be instantiated', function(){
 //   expect(articleController.fetchCurrentArticles())
 // })
 
-it("returns current date", function(){
-  console.log(articleController.currentDate())
-  expect(articleController.currentDate()).toEqual("2020-11-15")
-})
