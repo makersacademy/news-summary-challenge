@@ -1,12 +1,13 @@
 class ArticleController {
   constructor(newsAPI = "http://content.guardianapis.com", articleList = new ArticleList){
     this.newsAPI = newsAPI
+    // "http://content.guardianapis.com"
     this.articleList = articleList
   }
 
   renderCurrentArticles(){
     // use makers API key thing - not meant to hardcode key
-    let url = this.newsAPI + `/search?from-date=${this._currentDate()}&show-fields=headline%2Cthumbnail&api-key=test`
+    let url = `${this.newsAPI}/search?from-date=${this._currentDate()}&show-fields=headline%2Cthumbnail&api-key=78fb758b-9cd0-48e8-96c1-fe29eb42c6d0`
 
     this.httpGetAsync(url, function(response){
       let allArticles = JSON.parse(response).response.results
@@ -16,14 +17,11 @@ class ArticleController {
       let articleHeadlineListView = new ArticleHeadlineListView(this.articleList)
       document.getElementById("app").innerHTML = articleHeadlineListView.returnHTML()
     }.bind(this))
-    // let articleHeadlineListView = new ArticleHeadlineListView(this._retrieveArticleInfo(this.mockXMLResponse))
-    // this._changeInnerHTML(articleHeadlineListView.returnHTML())
   }
 
   renderSummary(id){
     // use url to put through aylien summarisation
     let fetchedArticle = this.articleList.getArticle(id)
-    // use makers API key thing - not meant to hardcode key
     let qString = `/${fetchedArticle.returnUrlId()}?show-fields=body&api-key=test`
     let url = this.newsAPI + qString
     this.httpGetAsync(url, function(response){
