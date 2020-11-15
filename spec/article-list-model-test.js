@@ -9,16 +9,20 @@ it('can be instantiated', function(){
   expect(articleList).toBeAnInstanceOf(ArticleList)
 })
 
-it('instantiates with empty headline array', function(){
-  expect(articleList.headlines).toBeAnArray()
+it('instantiates with empty article array', function(){
+  expect(articleList.articles).toBeAnArray()
 })
 
-it('returns the headlines', function(){
-  expect(articleList.returnHeadlines()).toBeAnArray()
+it('returns all articles', function(){
+  expect(articleList.returnArticles()).toBeAnArray()
 })
 
-it('adds an ArticleHeadline model to the headlines array', function(){
+// it('returns the headlines', function(){
+//   expect(articleList.returnHeadlines()).toBeAnArray()
+// })
+
+it('adds an Article model to the articles array', function(){
   // creates new instance of article headline class in the function - how to mock?
-  articleList.addHeadline('Corona Vaccine Created')
-  expect(articleList.returnHeadlines()[0].returnTitle()).toEqual('Corona Vaccine Created')
+  articleList.addArticle('Corona Vaccine Created', 'Scientists have created an 80% effective vaccine')
+  expect(articleList.returnArticles()[0].returnTitle()).toEqual('Corona Vaccine Created')
 })

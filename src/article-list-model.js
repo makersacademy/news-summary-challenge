@@ -1,14 +1,18 @@
 class ArticleList {
   constructor() {
-    this.headlines = []
+    this.articles = []
   }
 
-  returnHeadlines(){
-    return this.headlines
+  returnArticles(){
+    return this.articles
   }
 
-  addHeadline(title, summary){
+  // returnHeadlines(){
+  //   return this.articles
+  // }
+
+  addArticle(title, summary){
     let article = new Article(title, summary)
-    this.headlines.push(article.returnTitle())
+    this.articles.push(article)
   }
 }
