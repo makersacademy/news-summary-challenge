@@ -24,7 +24,7 @@ class ArticleController {
     let articleList = new ArticleList
     let allArticles = JSON.parse(responseText).response.results
     allArticles.forEach(article => {
-      articleList.addArticle(article.fields.headline, 'Summarised News')
+      articleList.addArticle(article.fields.headline, article.webURL)
     })
     return articleList
   }
