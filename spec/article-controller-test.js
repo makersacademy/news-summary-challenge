@@ -15,7 +15,14 @@ let headlineListMock = {
   returnHeadlines: function () {
     return headlineMocks
   },
-  addArticle: function (){}
+  addArticle: function (){},
+  getArticle: function(){}
+}
+
+let mockArticleSummaryView = {
+  returnHTML: function(){
+    return "<div>summary of corona scare 1</div>"
+  }
 }
 
 let articleHeadlineListViewMock = {
@@ -36,7 +43,10 @@ it('changes inner HTML of app div to headline list', function(){
 })
 
 it('reveals summary when link of related header is clicked', function(){
+  // need to make articleSummaryView receive .returnHTML and output "<div>summary of corona scare 1</div>"
+  
   articleController.renderHeadlines(articleHeadlineListViewMock)
   articleController.renderSummary(0)
+  console.log(document.getElementById("app"))
   expect(document.getElementById("app")).toEqual("<div>summary of corona scare 1</div>")
 })
