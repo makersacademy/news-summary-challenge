@@ -7,8 +7,8 @@ class ArticleHeadlineListView{
   returnHTML(){
     let htmlHeadlineArray = ""
     for (let i = 0; i < this.headlines.length; i++) {
-      htmlHeadlineArray += `<li><a href='#articles/${i}'>${this.headlines[i]}</a></li>`
+      htmlHeadlineArray += `<li><div id="headline"><a href='#articles/${i}'>${this.headlines[i]}</a></div></li>`
     }
-    return `<ul>${htmlHeadlineArray}</ul>`
+    return `<ul style="list-style-type:none">${htmlHeadlineArray}</ul>`
   }
 }

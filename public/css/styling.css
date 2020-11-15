@@ -1,0 +1,15 @@
+h1 {
+  display: block;
+  text-align: center;
+  font-size: 26pt;
+}
+
+#headline {
+  display: block;
+  text-align: center;
+  font-family: Verdana, Arial;
+  font-size: 20pt;
+  border: black;
+}
+
+

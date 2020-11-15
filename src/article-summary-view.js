@@ -4,6 +4,6 @@ class ArticleSummaryView {
   }  
 
   returnHTML(){
-    return `<div>${this.article}</div>`
+    return `<div id="summary">${this.article}</div>`
   }
 }
