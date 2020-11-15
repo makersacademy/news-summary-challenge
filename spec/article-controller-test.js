@@ -1,4 +1,3 @@
-// need to extract mocking to another file
 let articleController = new ArticleController("mockAPI")
 // let mockXMLResponse = {
 //   "response": {
@@ -47,10 +46,18 @@ it('can be instantiated', function(){
   expect(articleController).toBeAnInstanceOf(ArticleController)
 })
 
-// it('changes inner HTML of app div to headline list', function(){
-//   articleController.renderHeadlines(articleHeadlineListViewMock)
-//   expect(document.getElementById("app").innerHTML).toEqual("<ul><li><div>Corona scare 1</div></li><li><div>Corona scare 2</div></li></ul>")
-// })
+it('changes inner HTML of app div to headline list', function(){
+  // only failing as inner html has " " surrounding href
+  console.log(document.getElementById("app").innerHTML)
+  expect(document.getElementById("app").innerHTML).toEqual("<ul><li><a href='#articles/0'>The Masters 2020: Dustin Johnson leads final round at Augusta – live!</a></li><li><a href='#articles/1'>Coronavirus live news: German minister predicts five more months of 'severe restrictions'; Greece shuts primary schools</a></li></ul>")
+})
+
+it('displays webURL when you click on link', function(){
+  articleController.fetchCurrentArticles()
+  articleController.renderSummary(0)
+  console.log(document.getElementById("app").innerHTML)
+  expect(document.getElementById("app").innerHTML).toEqual("<div>https://www.theguardian.com/sport/live/2020/nov/15/the-masters-2020-dustin-johnson-leads-final-round-at-augusta-live</div>")
+})
 
 // it('reveals summary when link of related header is clicked', function(){
 //   // passing as a feature test
@@ -64,9 +71,3 @@ it('can be instantiated', function(){
 // it("retrieves today's articles", function(){
 //   expect(articleController.fetchCurrentArticles())
 // })
-
-it("retrieves today's headlines and displayes on homepage", function(){
-  console.log(document.getElementById("app"))
-  expect(document.getElementById("app").innerHTML).toEqual()
-})
-

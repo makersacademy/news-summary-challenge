@@ -1,6 +1,7 @@
 class ArticleController {
   constructor(newsAPI = "http://content.guardianapis.com"){
     this.newsAPI = newsAPI
+    this.articleList = new ArticleList
     // 78fb758b-9cd0-48e8-96c1-fe29eb42c6d0
     this.mockXMLResponse = {
       "response": {
@@ -64,30 +65,26 @@ class ArticleController {
     this._changeInnerHTML(articleHeadlineListView.returnHTML())
   }
 
+  renderSummary(id){
+    let fetchedArticle = this.articleList.getArticle(id)
+    console.log(fetchedArticle)
+    let articleSummaryView = new ArticleSummaryView(fetchedArticle)
+    document.getElementById("app").innerHTML = articleSummaryView.returnHTML()
+  }
+
   _retrieveArticleInfo(responseText){
-    let articleList = new ArticleList
+  // normall no stringify, normally .fields.headline
     let articles = JSON.stringify(responseText)
     let allArticles = JSON.parse(articles).response.results
-    console.log(allArticles)
     allArticles.forEach(article => {
-      articleList.addArticle(article.headline, article.webURL)
+      this.articleList.addArticle(article.headline, article.webUrl)
     })
-    return articleList
+    return this.articleList
   }
 
   _changeInnerHTML(newHTML){
     document.getElementById("app").innerHTML = newHTML
   }
-
-  // renderHeadlines(listView = this.listView){
-  //   document.getElementById("app").innerHTML = listView.returnHTML()
-  // }
-
-  // renderSummary(id){
-  //   let fetchedArticle = this.articles.getArticle(id)
-  //   let articleSummaryView = new ArticleSummaryView(fetchedArticle)
-  //   document.getElementById("app").innerHTML = articleSummaryView.returnHTML()
-  // }
 
   _currentDate(){
     return (new Date().toJSON().slice(0,10))
