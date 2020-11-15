@@ -13,13 +13,14 @@ it('instantiates with empty article array', function(){
   expect(articleList.articles).toBeAnArray()
 })
 
-it('returns all articles', function(){
+it('returns all articles array', function(){
   expect(articleList.returnArticles()).toBeAnArray()
 })
 
-// it('returns the headlines', function(){
-//   expect(articleList.returnHeadlines()).toBeAnArray()
-// })
+it('returns the headlines', function(){
+  articleList.addArticle('Corona Vaccine Created', 'Scientists have created an 80% effective vaccine')
+  expect(articleList.returnHeadlines()[0]).toEqual('Corona Vaccine Created')
+})
 
 it('adds an Article model to the articles array', function(){
   // creates new instance of article headline class in the function - how to mock?
