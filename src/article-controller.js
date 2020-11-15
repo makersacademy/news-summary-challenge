@@ -1,9 +1,14 @@
 class ArticleController {
-  constructor(articleHeadlineListView = new ArticleHeadlineListView){
-    this.headlines = articleHeadlineListView
+  constructor(articleList = new ArticleList){
+    this.articles = articleList
+    this.articles.addArticle('Test Header', 'Test Summary')
+    this.listView = new ArticleHeadlineListView(this.articles)
   }
 
   renderHeadlines(){
-    document.getElementById("app").innerHTML = this.headlines.returnHTML()
+    document.getElementById("app").innerHTML = this.listView.returnHTML()
   }
 }
+
+let newsController = new ArticleController
+newsController.renderHeadlines()
