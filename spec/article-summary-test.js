@@ -1,5 +1,5 @@
-let articlSummary = new ArticleSummary
+let articleSummary = new ArticleSummary
 
 it('can be instantiated', function(){
-  expect(articleSummary).toBeAnInstanceOf(new ArticleSummary)
+  expect(articleSummary).toBeAnInstanceOf(ArticleSummary)
 })
