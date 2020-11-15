@@ -24,7 +24,7 @@ class ArticleController {
     // use url to put through aylien summarisation
     let fetchedArticle = this.articleList.getArticle(id)
     // use makers API key thing - not meant to hardcode key
-    let qString = `/${fetchedArticle.returnSummary()}?show-fields=body&api-key=test`
+    let qString = `/${fetchedArticle.returnUrlId()}?show-fields=body&api-key=test`
     let url = this.newsAPI + qString
     this.httpGetAsync(url, function(response){
       let summaryInfo = JSON.parse(response).response.content.fields.body

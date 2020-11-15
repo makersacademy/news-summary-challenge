@@ -1,7 +1,6 @@
 class ArticleHeadlineListView{
   constructor(articleList = new ArticleList){
     this.articleList = articleList.articles
-    // assuming argument passed is an object which responds to .returnHeadlines()
   }
 
   returnHTML(){
@@ -12,3 +11,4 @@ class ArticleHeadlineListView{
     return `<ul style="list-style-type:none">${htmlHeadlineArray}</ul>`
   }
 }
+

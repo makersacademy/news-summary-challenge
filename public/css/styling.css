@@ -6,10 +6,20 @@ h1 {
 
 #headline {
   display: block;
-  text-align: center;
+  float: right;
   font-family: Verdana, Arial;
   font-size: 20pt;
   border: black;
+  vertical-align: middle;
+  padding-top: 125px;
+}
+
+.image {
+  margin: 6px;
+}
+
+.newsheadlineclass {
+  display: flex;
 }
 
 
