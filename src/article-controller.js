@@ -1,27 +1,36 @@
 class ArticleController {
   constructor(newsAPI = "http://content.guardianapis.com"){
     this.newsAPI = newsAPI
+    // 78fb758b-9cd0-48e8-96c1-fe29eb42c6d0
   }
 
   fetchCurrentArticles(){
     let xhttp = new XMLHttpRequest();
     let search = "/search"
-    let qString = `?from-date=${this._currentDate()}&show-elements-image&show-fields=headline&api-key=78fb758b-9cd0-48e8-96c1-fe29eb42c6d0`
+    // use makers API key thing - not meant to hardcode key
+    let qString = `?from-date=${this._currentDate()}&show-elements-image&show-fields=headline&api-key=test`
     let url = this.newsAPI + search + qString
     xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        let articleList = new ArticleList
-        let json = JSON.parse(this.responseText);
-        let allArticles = json.response.results
-        allArticles.forEach(article => {
-          articleList.addArticle(article.fields.headline, 'Summarised News')
-        })
-        let articleHeadlineListView = new ArticleHeadlineListView(articleList)
-        document.getElementById("app").innerHTML = articleHeadlineListView.returnHTML();
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        let articleHeadlineListView = new ArticleHeadlineListView(this._retrieveArticleInfo(xhttp.responseText))
+        this._changeInnerHTML(articleHeadlineListView.returnHTML())
       }
-    };
+    }.bind(this)
     xhttp.open("GET", url, true);
-    xhttp.send();
+    xhttp.send()
+  }
+
+  _retrieveArticleInfo(responseText){
+    let articleList = new ArticleList
+    let allArticles = JSON.parse(responseText).response.results
+    allArticles.forEach(article => {
+      articleList.addArticle(article.fields.headline, 'Summarised News')
+    })
+    return articleList
+  }
+
+  _changeInnerHTML(newHTML){
+    document.getElementById("app").innerHTML = newHTML
   }
 
   // renderHeadlines(listView = this.listView){
@@ -51,4 +60,4 @@ newsController.fetchCurrentArticles()
 //     let id = event.newURL.slice(-1)
 //     newsController.renderSummary(id)
 //   }
-// })
+// }) 
