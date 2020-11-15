@@ -1,3 +1,4 @@
+// mocking Article model
 let newsArticle = {
   returnSummary: function(){
     return "Scientists reveal that the vaccine is only 80% effective"

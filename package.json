@@ -1,0 +1,22 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "This application lists the headlines of the news taken from the Guardian API. The headlines are links, when clicked, reveal the summary of that news article.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arabellaknowles/news-summary-challenge.git"
+  },
+  "author": "Arabella Knowles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arabellaknowles/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/arabellaknowles/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
