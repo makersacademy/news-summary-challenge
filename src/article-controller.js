@@ -19,7 +19,7 @@ class ArticleController {
   }
 
   renderSummary(id){
-    let url = `${this.newsAPI}/${this._retreiveArticle(id).returnUrlId()}?show-fields=body&api-key=test`
+    let url = `${this.newsAPI}/${this._retreiveArticle(id).returnUrlId()}?show-fields=body&api-key=78fb758b-9cd0-48e8-96c1-fe29eb42c6d0`
     this._httpGetAsync(url, function(response){
       let summaryInfo = JSON.parse(response).response.content.fields.body
       let articleSummaryView = new ArticleSummaryView(summaryInfo)
