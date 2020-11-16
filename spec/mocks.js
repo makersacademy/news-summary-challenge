@@ -24,6 +24,9 @@ let articleListMockArray = [articleMock1, articleMock2]
 let headlineMocks = [articleMock1.returnTitle(), articleMock2.returnTitle()]
 
 let articleListMock = {
+  returnArticles: function(){
+    return articleListMockArray
+  },
   returnHeadlines: function () {
     return headlineMocks
   },

@@ -1,6 +1,6 @@
 class ArticleHeadlineListView{
   constructor(articleList = new ArticleList){
-    this.articleList = articleList.articles
+    this.articleList = articleList.returnArticles()
   }
 
   returnHTML(){
