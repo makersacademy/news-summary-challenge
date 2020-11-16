@@ -6,7 +6,6 @@ class ArticleController {
 
   fetchCurrentArticles(){
     let url = `${this.newsAPI}/search?from-date=${this._currentDate()}&show-fields=headline%2Cthumbnail&api-key=78fb758b-9cd0-48e8-96c1-fe29eb42c6d0`
-    // let url = `${this.newsAPI}/search?from-date=${this._currentDate()}&show-fields=headline%2Cthumbnail&api-key=test`
     this._clearArticleArray()
 
     this._httpGetAsync(url, function(response){
