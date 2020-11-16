@@ -20,7 +20,7 @@ a {
 }
 .main-content {
   display: grid;
-  grid-template-rows: 15% 5% auto 5% ;
+  grid-template-rows: 7% 5% auto 5% ;
   justify-items: center;
   align-items: center;
 
@@ -32,6 +32,9 @@ header {
   grid-row: 1 / 2;
 }
 
+.heading {
+  width: 98%;
+}
 
 .news-headlines {
   grid-row: 3 / 4;
@@ -45,7 +48,10 @@ header {
   margin: 1%;
   background-color: rgba(255, 255, 255, 0.5);
   color: black;
-  
+}
+
+.article img {
+  width: 50%;
 }
 
 footer {
