@@ -6,19 +6,52 @@
 
 body {
   background-image: url(makersNews.jpeg);
-  background-size: cover;
-  background-position: top center;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
   /* temp font colour  */
   color: white;
-  
+  min-height: 100vh;
 }
 
+a { 
+  color: white;
+}
 .main-content {
-  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 15% 5% auto 5% ;
+  justify-items: center;
+  align-items: center;
+
 }
 
 header {
    /* temp font colour  */
   color: aqua;
+  grid-row: 1 / 2;
+}
+
+
+.news-headlines {
+  grid-row: 3 / 4;
+}
+
+.article,
+.heading {
+  padding: 10px;
+  text-align: center;
+  border: 3px solid white;
+  margin: 1%;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  
+}
+
+footer {
+  grid-row: 4 / 5;
+  border: 3px solid white;
+  width: 100%; 
+  text-align: center;
 }
 
