@@ -8,13 +8,13 @@
       }
       return response.json();
     })
-    .then((data) => {
+    .then((data) => {``
       console.log(data);
       const articles = data.response.results
         .map((article) => {
           return `
          <div class="article">
-          <p><img src="${article.thumbnail}" alt=${article.webTitle}" /></p>
+          <p><img src="${article.fields.thumbnail}" alt=${article.webTitle}" /></p>
           <h3>Headline: ${article.webTitle}</h3>
           <p><a href=${article.webUrl} target="${article.webUrl}">Click for full Story:</a></p>
          </div>
