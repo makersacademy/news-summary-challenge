@@ -22,7 +22,8 @@ function getStories() {
     httpGet(url, function (response) {
       let stories = JSON.parse(response).response.results
       stories = stories.map(story => { return new Story(story.webTitle, story.id) })
-      viewHeadlines(stories)
+      const htmlList = formattedHeadlines(stories)
+      document.getElementById('headlines').innerHTML = htmlList
       storyList = stories
       resolve()
     })
@@ -34,7 +35,7 @@ function getSummary(id) {
   let url = `${summaryUrlBase}/${story.getLink()}?show-fields=body`
   httpGet(url, function (response) {
     let summary = JSON.parse(response).response.content.fields.body
-    viewSummary(summary)
+    document.getElementById('summary').innerHTML = summary
     animate('summary')
   })
 }
@@ -44,7 +45,7 @@ function selectStory(id, prevId) {
   if (prevId >= '0' && prevId <= '9') {
     storyList[prevId].deselect()
   }
-  viewHeadlines(storyList)
+  document.getElementById('headlines').innerHTML = formattedHeadlines(storyList)
   getSummary(id)
 }
 

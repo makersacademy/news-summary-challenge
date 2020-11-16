@@ -1,13 +1,11 @@
 (function (exports) {
-  let headlinesDiv = document.getElementById('headlines')
-  let guardianBaseUrl = 'https://www.theguardian.com'
 
-  function viewHeadlines(stories) {
-    htmlList = ''
+  function formattedHeadlines(stories) {
+    let htmlList = ''
     stories.forEach(story => {
       htmlList += `<a href="#story=${story.getId()}"><div class='${cssClass(story)}' >${story.getHeadline()}</div></a>`
     })
-    headlinesDiv.innerHTML = htmlList
+    return htmlList
   }
 
   function cssClass(story) {
@@ -18,5 +16,5 @@
     }
   }
 
-  exports.viewHeadlines = viewHeadlines
+  exports.formattedHeadlines = formattedHeadlines
 })(this)
