@@ -1,3 +1,12 @@
+# static web server
+## Setting up a node server
+
+Run these commands in your root folder:
+```
+$ cd root/of/your-project/
+$ npm install http-server --save
+```
+
 # News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.

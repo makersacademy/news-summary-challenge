@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(makersNews.jpeg);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  /* temp font colour  */
+  color: white;
+  min-height: 100vh;
+}
+
+a { 
+  color: white;
+}
+.main-content {
+  display: grid;
+  grid-template-rows: 7% 5% auto 5% ;
+  justify-items: center;
+  align-items: center;
+
+}
+
+header {
+   /* temp font colour  */
+  color: aqua;
+  grid-row: 1 / 2;
+}
+
+.heading {
+  width: 98%;
+}
+
+.news-headlines {
+  grid-row: 3 / 4;
+}
+
+.article,
+.heading {
+  padding: 10px;
+  text-align: center;
+  border: 3px solid white;
+  margin: 1%;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+}
+
+.article img {
+  width: 50%;
+}
+
+footer {
+  grid-row: 4 / 5;
+  border: 3px solid white;
+  width: 100%; 
+  text-align: center;
+}
+
