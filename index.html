@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="images/news-summary-project-article-page-mockup.png">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <h1> Haz's Budget News App</h1>
+  <div id="app" class="check-list">
+    Loading...
+  </div>
+  <script src=assert.js></script>
+  <script src=article.js></script>
+  <script src=newspaper.js></script>
+  <script src=newspaper-view.js></script>
+  <script src=newspaper-controller.js></script>
+  <script src=single-article-view.js></script>
+  <script src=article-display.js></script>
+  <script>
+    newspaper = new Newspaper();
+    newspaper.getHeadlines();
+  </script>
+</html>
