@@ -1,0 +1,139 @@
+* {
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-1: #475f94;
+    --main-2: #fddc5c;
+    --main-3: #fa4224;
+
+    --off-white: #f0f0f0;
+
+    overflow-y: scroll;
+}
+
+
+body {
+    font-family: Merriweather, serif;
+    background: white;
+}
+
+.top-nav {
+    font-size: 30px;
+    height: 100px;
+    width: 100%;
+    background: #052962;
+    text-align: center;
+    padding-top: 1em;
+    color: white;
+    z-index: 100;
+    position: fixed;
+    margin-bottom: 30px;
+}
+
+.articlePage {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+
+#article_title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.headlines {
+    display: block;
+    margin: 0px auto 0 auto;
+    padding: 1em;
+    max-width: 600px;
+    background: #e7e769;
+    cursor: pointer;
+    /*
+    height: 25%;
+    width: 50%;
+    padding-top: 10px;
+    margin: 0 auto 20px;
+    background: yellow;
+    text-align: center;
+    text-wrap: avoid;
+    border-radius: 0.5em;
+
+    transition: 100ms;
+     */
+
+}
+
+.article_webTitle {
+    display: block;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    font-size: 26px;
+    border-radius: 0.5em;
+    padding: 15px;
+}
+
+
+
+.headlines:hover,
+.headlines:focus {
+    transform: scale(1.05);
+    filter: saturate(2);
+}
+
+
+.article_image {
+
+}
+
+img {
+    border-radius: 0.5em;
+    object-fit: cover;
+    width: 70%;
+    max-height: 50%;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.section {
+    padding-top:150px;
+}
+
+button {
+    border-radius: 100px;
+    border: 2px var(--off-white) solid;
+    padding: 0.5em 1em;
+    color: var(--off-white);
+    background-color: var(--main-1);
+    font-size: 1.2em;
+    cursor: pointer;
+    outline: none;
+    margin-left: 0.5em;
+}
+
+button:hover,
+button:focus {
+    transition: 100ms;
+    border-color: var(--main-2);
+    color: #000000;
+    background-color: var(--main-2);
+    filter: saturate(2);
+}
+
+button a {
+    color: var(--off-white);
+    text-decoration: none;
+}
+button a:hover {
+    color: #000000;
+}
+
+
+
+
