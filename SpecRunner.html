@@ -1,0 +1,60 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+<!-- <div id="placeholder"></div> -->
+<script src="spec/spec-helper.js"></script>
+<!-- src files -->
+<script src="src/note-model.js"></script>
+<script src="src/note-list-model.js"></script>
+<script src="src/note-list-view.js"></script>
+<script src="src/note-controller.js"></script>
+<script src="src/singleNoteView.js"></script> 
+
+<!-- spec files -->
+<script src="spec/note-modelSpec.js"></script>  
+<script src="spec/note-list-model-spec.js"></script>
+<script src="spec/note-list-view-spec.js"></script>
+<script src="spec/note-controller-spec.js"></script>
+<script src="spec/singleNoteViewSpec.js"></script>
+<script src="spec/specController.js"></script>
+</body>
+
+<!-- <html>
+  <head>
+
+  </head>
+    <body>
+      <script src="spec/spec-helper.js"></script>
+
+      <script src="src/note-model.js"></script>
+      <script src="src/note-list-model.js"></script>
+      <script src="src/note-list-view.js"></script>
+
+      <script src="spec/note-modelSpec.js"></script>  
+      <script src="spec/note-list-model-spec.js"></script>
+      <script src="spec/note-list-view-spec.js"></script>
+      <script type="text/javascript">
+      function addElement(text) {
+        const newDiv = document.createElement("div")
+        const newContent = document.createTextNode(text)
+        newDiv.appendChild(newContent)
+        const currentDiv = document.getElementById("div1")
+        document.body.insertBefore(newDiv, currentDiv)
+      }
+      var Spec = noteModelSpec.specRunner()
+      function getStatements(newSpec){
+      for(var i = 0; i <= newSpec.length-1; i++){
+        console.log(newSpec[i])
+        addElement(newSpec[i])
+      }
+    }
+      getStatements(Spec)
+    
+      </script>
+      <div id="div1"></div>
+
+    </body>
+</html> -->
