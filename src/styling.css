@@ -1,0 +1,24 @@
+h1 {
+  display: block;
+  text-align: center;
+  font-size: 26pt;
+}
+
+#headline {
+  display: block;
+  float: right;
+  font-family: Verdana, Arial;
+  font-size: 20pt;
+  border: black;
+  padding-top: 120px;
+}
+
+.image {
+  margin: 6px;
+}
+
+.newsheadlineclass {
+  display: flex;
+}
+
+
