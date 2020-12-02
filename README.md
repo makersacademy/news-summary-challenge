@@ -8,6 +8,7 @@ This is a one page JS web app which uses dynamic HTTP requests.
 
 No frameworks were used to make this app, except for http-server. All the files in /lib/ were created for the challenge.
 
+![News Summary Screenshot](blob:https://imgur.com/18d9b519-ec75-40bb-8e05-7f3ee2d67107)
 
 ## To install and run
 
