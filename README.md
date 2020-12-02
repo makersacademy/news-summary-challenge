@@ -16,9 +16,10 @@ Prerequisites:
 - npm
 - http-server
 
-```
-$ git clone https://github.com/dan-holmes/news-summary-challenge.git
-$ npm install
+```shell
+git clone https://github.com/dan-holmes/news-summary-challenge.git
+npm install
+npm start
 ```
 
 Then navigate to localhost:8080/index.html in your browser.
