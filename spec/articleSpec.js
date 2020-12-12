@@ -3,7 +3,7 @@ console.log("--------------------")
 
 let myArticle = new Article("myHeadline", "myThumbnailLink", "myUrlID", "mySerialID");
 
-it("Is an instance of the article class", function() {
+it("Is an instance of the Article class", function() {
   expect(true).toEqual(myArticle instanceof Article);
 });
 
