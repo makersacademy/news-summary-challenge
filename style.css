@@ -26,6 +26,8 @@ img {
 .article {
     background-color: #F4A261;
     border-radius: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
 }
 
 .date {
