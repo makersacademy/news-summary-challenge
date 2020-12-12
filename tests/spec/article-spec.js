@@ -16,4 +16,18 @@ describe("Article", () => {
     );
     isEqual(sampleArticle.time, "2020-12-12T06:02:24Z");
   });
+
+  it("returns appropriate HTML", () => {
+      let expectedHTML = `<div class="article">`;
+      expectedHTML += `<h1 class="title">${sampleArticle.title}</h1>`
+      let date = new Date(Date.parse(sampleArticle.date))
+      expectedHTML += `<h2 class="date">${date.toLocaleDateString()}</h2>`
+      expectedHTML += `<a href="${sampleArticle.link}">Full article</a>`
+      expectedHTML += `</div>`
+
+      isEqual(
+          sampleArticle.getHTML(),
+          expectedHTML
+      )
+  })
 });
