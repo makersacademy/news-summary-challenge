@@ -9,7 +9,7 @@ class Article {
   getHTML() {
     let html = `<div class="article">`;
     html += `<h1 class="title">${this.title}</h1>`;
-    let date = new Date(Date.parse(this.date));
+    let date = new Date(Date.parse(this.time));
     html += `<h2 class="date">${date.toLocaleDateString()}</h2>`;
     html += `<img src="${this.thumbnail}" class="thumbnail">`
     html += `<a href="${this.link}">Full article</a>`;
