@@ -19,7 +19,20 @@ a:hover {
     color: #2A9D8F;
 }
 
+img {
+    max-width:100%;
+}
+
 .article {
     background-color: #F4A261;
     border-radius: 30px;
+}
+
+.date {
+    font-weight: 400;
+}
+
+#header {
+    font-size: 40px;
+    font-weight: 700;
 }
