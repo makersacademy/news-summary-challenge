@@ -1,0 +1,27 @@
+body {
+  background-color: aquamarine;
+  display: flex;
+  align-items: left;
+}
+
+#headlines {
+  width: 30%;
+}
+
+#article {
+  width: 30%;
+}
+
+.list-img {
+  padding: 20px;
+  height: 100px;
+}
+
+img {
+  height: 100%;
+}
+
+.list-text {
+  width: 50%;
+  padding: 20px;
+}
