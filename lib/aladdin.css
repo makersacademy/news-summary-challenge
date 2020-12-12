@@ -1,0 +1,37 @@
+
+.header img.logotext {
+  padding-left: 25px;
+  float: left;
+  width: 250px;
+  height: 68px;
+  top: 18px;
+  left: 10px;
+}
+
+.header img.logoimage {
+  position: relative;
+  background: #555;
+  width: 132px;
+  height: 78px;
+  background-color: #fff;
+  padding: 4px;
+}
+
+.teststyle {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+hr {
+  padding-left: 20px;
+  padding-right: 20px;
+  height:1px;
+  background-color: black;
+}
+
+body {
+  font-family: 'lucida handwriting', cursive;
+}
+
+
+
