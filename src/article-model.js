@@ -8,11 +8,11 @@ class Article {
 
   getHTML() {
     let html = `<div class="article">`;
-    html += `<h1 class="title">${this.title}</h1>`;
+    html += `<h2 class="title">${this.title}</h2>`;
     let date = new Date(Date.parse(this.time));
-    html += `<h2 class="date">${date.toLocaleDateString()}</h2>`;
+    html += `<h3 class="date">${date.toLocaleDateString()}</h3>`;
     html += `<img src="${this.thumbnail}" class="thumbnail">`
-    html += `<a href="${this.link}">Full article</a>`;
+    html += `<div class="article-link"><a href="${this.link}">Full article</a></div>`;
     html += `</div>`;
 
     return html;

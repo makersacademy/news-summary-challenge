@@ -1,0 +1,12 @@
+body {
+    background-color: aqua;
+    text-align: center;
+}
+
+#app {
+    margin: auto;
+}
+
+.article {
+    background-color: greenyellow;
+}

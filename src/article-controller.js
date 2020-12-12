@@ -9,7 +9,6 @@ class ArticleController {
 
     renderPage(data) {
         for (let article of data) {
-            console.log(article)
             let newArticle = new Article(
                 article.fields.headline,
                 article.webUrl,
