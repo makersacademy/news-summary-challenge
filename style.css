@@ -1,12 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap');
+
 body {
-    background-color: aqua;
+    background-color: #E76F51;
     text-align: center;
+    font-family: 'News Cycle', sans-serif;
 }
 
 #app {
+    width: 75%;
     margin: auto;
 }
 
+a {
+    color: #264653;
+}
+
+a:hover {
+    color: #2A9D8F;
+}
+
 .article {
-    background-color: greenyellow;
+    background-color: #F4A261;
+    border-radius: 30px;
 }
