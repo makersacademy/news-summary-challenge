@@ -1,6 +1,7 @@
 'use strict';
 
 const newsApiUrl = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail&q=britney'
+const britneyApiUrl = 'https://content.guardianapis.com/search?show-fields=thumbnail&q=britney%20spears&api-key=b6babb48-d9a6-4462-ac8f-19f3fc18b93e'
 const summaryApiUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url='
 const webElement = document.getElementById("web")
 
@@ -10,44 +11,38 @@ let articles;
 let cleansedArticles;
 let singleArticle;
 
-function getNews() {
-  fetch(newsApiUrl)
-  .then((resp) => resp.json())
-  .then(function(data) {
-    articles = data.response.results;
-    cleansedArticles = articles.map((article) => {
-      return {webPublicationDate: article.webPublicationDate, webTitle: article.webTitle, webUrl: article.webUrl, thumnail: article.fields.thumbnail}
-    });
-  })
-  .catch(function(error) {
-    console.log(error);
-  })
-}
 
-function getSummary(url, img, title) {
-  fetch(summaryApiUrl + url)
-  .then((resp) => resp.json())
-  .then(function(data) {
-    singleArticle = data.text;
-  })
-  .catch(function(error) {
-    console.log(error);
-  })
-  setTimeout(function(){
-    webElement.innerHTML = `${title}<br>`;
-    webElement.innerHTML += `<a href="${url}"> Click here for the full article </a>`
-    webElement.innerHTML += img;
-    webElement.innerHTML += singleArticle;
-    }, 2000); 
+async function getsNews() {
+  const response = await fetch(britneyApiUrl).catch(() => {
+    console.log('Error in fetching api data');
+  });
+  if (response) {
+    const data = await response.json();
+    cleanseJson(data.response.results);
   };
+};
 
 
+function cleanseJson(articles){
+  cleansedArticles = articles.map((article) => {
+    return {webPublicationDate: article.webPublicationDate, webTitle: article.webTitle, formattedWebTitle: article.webTitle, webUrl: article.webUrl, thumbnail: article.fields.thumbnail}
+  });
+  createClass(cleansedArticles);
+};
+
+  async function getsSummary(url, img, title) {
+    let summaryResponse = await fetch(summaryApiUrl + url)
+    let summaryData = await summaryResponse.json();
+    let singleArticle = summaryData.text;
+    webElement.innerHTML = `<div class ="singlecard"><a href="${url}" target="_blank"><h1>${title}</h1></a><br>${img}<br><br>${singleArticle}</div>`;
+    window.scrollTo(0,0);
+  }
+
+ 
 
 function insertHTML(articleClass) {
   articleClass.articles.forEach((element) => {
-    webElement.innerHTML += element.thumnail;
-    webElement.innerHTML += element.webTitle;
-    webElement.innerHTML += element.webPublicationDate;
+    webElement.innerHTML += `<div class="card">${element.thumbnail}${element.formattedWebTitle}${element.webPublicationDate}</div>`;
   })
 }
 
@@ -66,20 +61,18 @@ function getArticleIndexFromUrl(location) {
 
 function viewSummary(index) {
   let url = articleClass.articles[index].webUrl;
-  let img = articleClass.articles[index].thumnail;
+  let img = articleClass.articles[index].thumbnail;
   let title = articleClass.articles[index].webTitle;
-  getSummary(url, img, title);
+  getsSummary(url, img, title);
 };
 
-getNews();
-setTimeout(function(){
+function createClass(cleansedArticles) {
   articleClass = new ArticleClass(cleansedArticles);
   articleClass.formatWithHtml();
   insertHTML(articleClass);
-}, 1000);
-
-setTimeout(function(){
   hashChangeListener();
-}, 2000);
+}
+
+// getsNews()
 
 
