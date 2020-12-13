@@ -26,7 +26,7 @@
       },
 
       toBeAnArray: function() {
-        if (!(a.notes instanceof Array)) {
+        if (!(a instanceof Array)) {
           throw `EXPECTED ${a} TO BE AN ARRAY`;
         }
       },
