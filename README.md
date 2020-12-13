@@ -34,4 +34,4 @@ I can see a relevant picture to illustrate each news article when I browse headl
 So that I have something nice to look at
 ```
 
-![API Results](%3Cimg%20width=%22746%22%20alt=%22api%22%20src=%22https://user-images.githubusercontent.com/71432715/102014507-3a500c00-3d4e-11eb-9224-e694197e1d04.png%22%3E)
+![API Results](api.png)
