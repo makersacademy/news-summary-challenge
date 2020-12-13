@@ -1,0 +1,22 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "This is a single page web app that will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savannaelbey/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/savannaelbey/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/savannaelbey/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
