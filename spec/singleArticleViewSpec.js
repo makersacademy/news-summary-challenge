@@ -1,7 +1,7 @@
 console.log("Single article view tests")
 console.log("--------------------")
 
-fakeArticle = {
+let fakeArticle = {
   getThumbnail: function() {
     return "link_to_image";
   },
@@ -12,7 +12,7 @@ fakeArticle = {
 
 let fakeArticleBody = "Some arbitrarily long piece of text, but much much shorter than a real article will ever be";
 
-mySingleArticleView = new SingleArticleView(fakeArticle, fakeArticleBody);
+let mySingleArticleView = new SingleArticleView(fakeArticle, fakeArticleBody);
 
 it("Is an instance of the SingleArticleView class", function() {
   expect(true).toEqual(mySingleArticleView instanceof SingleArticleView);
