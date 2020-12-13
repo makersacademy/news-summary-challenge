@@ -19,10 +19,13 @@ class ArticleController {
   }
 
   createArticleView(id) {
-    let url = `http://content.guardianapis.com/${this.#getArticleByID(id).getUrlId()}?show-fields=body&api-key=${this.API_KEY}`;
+    let article = this.#getArticleByID(id);
+    let url = `http://content.guardianapis.com/${article.getUrlID()}?show-fields=body&api-key=${this.API_KEY}`;
     this.#getAsyncXmlHTTP(url, function(response){
       let articleBody = JSON.parse(response).response.content.fields.body;
-      let singleArticleView = new SingleArticleView(this.#getArticleByID(id), articleBody);
+      console.log("Article body received is: ");
+      console.log(articleBody);
+      let singleArticleView = new SingleArticleView(article, articleBody);
       document.getElementById("app").innerHTML = singleArticleView.getHTML();
     })
   }
@@ -31,7 +34,7 @@ class ArticleController {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (xhttp.readyState == 4 && xhttp.status == 200) {
-        callback(xhttp.responseText)
+        callback(xhttp.responseText);
       }
     }.bind(this);
     xhttp.open("GET", url, true);
