@@ -1,0 +1,19 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "Application pulls todays top ten articles from the guardian to create a single page web app for viewing them",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamusBG/news-summary-challenge.git"
+  },
+  "author": "Adam Grieve",
+  "license": "ISC",
+  "homepage": "https://github.com/AdamusBG/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
