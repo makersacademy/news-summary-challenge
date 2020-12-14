@@ -13,7 +13,7 @@ But, feel free to use the test framework you wrote during the week!
 
 ## My Process
 
-I wanted to understand APIs and how to use the JavaScript Fetch API to get data. The first time I used an API was with the Thermostat challenge the previous week and we had been provided with a walkthrough to guide us. This time, I relied on a [tutorial](https://www.taniarascia.com/how-to-use-the-javascript-fetch-api-to-get-json-data/) I found online. Whilst it used XMLHttpRequest I was able to adapt it with the help of other [articles](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data), and Alice's workshop.
+I wanted to understand APIs and how to use the JavaScript Fetch API to get data. The first time I used an API was with the Thermostat challenge the previous week and we had been provided with a walkthrough to guide us. This time, I relied on this fantastic [tutorial](https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/) I found online. Whilst it used XMLHttpRequest I was able to adapt it with the help of other [articles](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data), and Alice's workshop.
 
 Thanks to the support of my cohort the big tip was to add `&show-fields=all` at the end of the [API](https://open-platform.theguardian.com/access/) to get the thumbnail and headline. See picture below. 
 
