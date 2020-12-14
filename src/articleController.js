@@ -23,8 +23,6 @@ class ArticleController {
     let url = `http://content.guardianapis.com/${article.getUrlID()}?show-fields=body&api-key=${this.API_KEY}`;
     this.#getAsyncXmlHTTP(url, function(response){
       let articleBody = JSON.parse(response).response.content.fields.body;
-      console.log("Article body received is: ");
-      console.log(articleBody);
       let singleArticleView = new SingleArticleView(article, articleBody);
       document.getElementById("app").innerHTML = singleArticleView.getHTML();
     })
