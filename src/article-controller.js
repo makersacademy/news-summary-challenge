@@ -28,7 +28,7 @@ class ArticleController {
         );
         this.articleList.addArticle(newArticle);
       }
-      insertArtListHTML()
+      this.insertArtListHTML()
     }
 
 }
