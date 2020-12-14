@@ -52,3 +52,5 @@ To make my news reading more fun
 
 
 ### Class diagram
+
+<img width="853" alt="Screenshot 2020-12-14 at 10 12 45" src="https://user-images.githubusercontent.com/71889577/102068876-ec421380-3df4-11eb-843c-3fca7d2e1912.png">
