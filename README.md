@@ -9,6 +9,8 @@ The index page is set up with an event listener that listens for hash changes th
 
 I used some basic CSS to style the pages, ensuring that this was responsive for mobile usage.
 
+The app is deployed [here](https://amazing-ritchie-b4b23c.netlify.app/) if you'd like to see it in action.
+
 ## Usage
 Firstly ensure you have some form of HTTP server, for example [http-server](https://www.npmjs.com/package/http-server).
 
