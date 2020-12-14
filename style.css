@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+body {
+    background-color: #E76F51;
+    text-align: center;
+    font-family: 'News Cycle', sans-serif;
+}
+
+#header {
+    font-family: 'Dancing Script', cursive;
+}
+
+#app {
+    width: 75%;
+    margin: auto;
+}
+
+a {
+    color: #264653;
+}
+
+a:hover {
+    color: #2A9D8F;
+}
+
+img {
+    max-width:100%;
+}
+
+.article {
+    background-color: #F4A261;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.date {
+    font-weight: 400;
+}
+
+#header {
+    font-size: 40px;
+    font-weight: 700;
+}
