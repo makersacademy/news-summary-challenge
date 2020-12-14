@@ -1,0 +1,89 @@
+body {
+  font-family: Arial;
+  background: #fcd5ce;
+  text-align: center;
+  padding-top: 100px;
+}
+
+img {
+  border: 3px solid white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-top: 35px;
+}
+
+header {
+  color: white;
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  top: 0px;
+  left: 0px;
+  background: #f8edeb;
+  border-bottom: 3px solid white;
+}
+
+a.logotitle {
+  padding-right: 200px;
+  font-family: 'La Belle Aurore', cursive;
+  text-decoration:none;
+}
+
+a.logotitle span.logo {
+  position: relative;
+  color: black;
+  font-size: 40px;
+  top: 10px;
+  right: 20px;
+}
+
+a.logotitle span.text {
+  position: absolute;
+  color: #ff006e;
+  font-size: 25px;
+  bottom: -48px;
+}
+
+a.logotitle:hover span.text {
+  color: white;
+  font-size: 25px;
+  transition: 0.5s;
+}
+
+a.logotitle:hover span.logo {
+  color: #ff006e;
+  font-size: 40px;
+  transition: 0.5s;
+}
+
+.card {
+  margin: auto;
+  width: 50%;
+  border: 3px solid white;
+  padding: 10px;
+  background: #f8edeb;
+  margin-bottom: 30px;
+}
+
+.singlecard {
+  text-align: justify;
+  margin: auto;
+  width: 50%;
+  border: 3px solid white;
+  padding: 10px;
+  background: #f8edeb;
+}
+
+.singlecard h1 {
+  text-align: center;
+}
+
+.date {
+  font-family: 'La Belle Aurore', cursive;
+  color: #ff006e;
+}
+
+
+

@@ -1,9 +1,8 @@
 # News Summary challenge
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+Single page news app created to display all of the latest articles on Britney Spears using the Guardian news API. Going forward with the project, I would further improve optimisation for reading the pages on smaller devices. Additionally, I would like to extract the functions in the news.js file into their own class, as well as improve the page's CSS.
+
+![](images/news%20screenshot.png)
 
 ## Challenge
 
