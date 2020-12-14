@@ -22,7 +22,6 @@ class ArticleController {
       ArticleController.articles.push(newArticle);
       ArticleController.app.innerHTML += newArticle.getListHTML();
     }
-    console.log(ArticleController.articles);
   }
 
   renderArticlePage(articleNumber) {

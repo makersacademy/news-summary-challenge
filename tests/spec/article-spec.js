@@ -16,7 +16,7 @@ describe("Article", () => {
       expectedHTML += `</div>`
 
       isEqual(
-          sampleArticle.getHTML(),
+          sampleArticle.getListHTML(),
           expectedHTML
       )
   })
