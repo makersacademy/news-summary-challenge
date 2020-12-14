@@ -2,7 +2,7 @@
 
 Single page news app created to display all of the latest articles on Britney Spears using the Guardian news API. Going forward with the project, I would further improve optimisation for reading the pages on smaller devices. Additionally, I would like to extract the functions in the news.js file into their own class, as well as improve the page's CSS.
 
-[](https://github.com/sedwards93/news-summary-challenge/blob/main/images/news%20screenshot.png)
+![](images/news%20screenshot.png)
 
 ## Challenge
 
