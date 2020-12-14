@@ -40,10 +40,4 @@ describe('Article Class', () => {
   });
 
 
-// formatWithHtml() {
-//     this.formatDate();
-//     this.articles.forEach((element) => {
-//       element.webPublicationDate = `<p>${element.webPublicationDate}</p>`;
-//       element.webTitle = `<h1>${element.webTitle}</h1>`;
-//       element.thumbnail = `<img src="${element.thumbnail}">`;
-//     });
+

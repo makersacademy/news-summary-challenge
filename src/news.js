@@ -1,6 +1,7 @@
 'use strict';
 
-const britneyApiUrl = 'https://content.guardianapis.com/search?show-fields=thumbnail&q=britney%20spears&api-key=b6babb48-d9a6-4462-ac8f-19f3fc18b93e'
+
+const britneyApiUrl = `https://content.guardianapis.com/search?show-fields=thumbnail&q=britney%20spears&api-key=${API_KEY}`
 const summaryApiUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url='
 const webElement = document.getElementById("web")
 
@@ -34,10 +35,10 @@ function cleanseJson(articles){
       console.log('Error in fetching api data');
     });
     if (summaryResponse) {
+      window.scrollTo(0,0);
       let summaryData = await summaryResponse.json();
       let singleArticle = summaryData.text;
       webElement.innerHTML = `<div class ="singlecard"><a href="${url}" target="_blank"><h1>${title}</h1></a><br>${img}<br><br>${singleArticle}</div>`;
-      window.scrollTo(0,0);
     };
   };
 
@@ -73,7 +74,7 @@ function createClass(cleansedArticles) {
   articleClass.formatWithHtml();
   insertHTML(articleClass);
   hashChangeListener();
-}
+};
 
 getsNews()
 
