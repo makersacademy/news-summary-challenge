@@ -21,9 +21,9 @@ class ArticleClass {
       element.thumbnail = `<img src="${element.thumbnail}" loading="lazy">`;
       element.webPublicationDate = `<p class="date">${element.webPublicationDate}</p>`;
       element.formattedWebTitle = `<h1><a href="#article/${index}">${element.webTitle}</a></h1>`;
-    })
-  }
+    });
+  };
 
-}
+};
 
 

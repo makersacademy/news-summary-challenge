@@ -13,4 +13,4 @@
 //       expect(articleClass.viewArticles()).toEqual(fakeArticleData)
 //     });
 
-//   });
+  });
