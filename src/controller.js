@@ -23,5 +23,5 @@ function getStory(index) {
   let singleStoryIndex = controller.showStory()[index]
   document
     .getElementById("app")
-    .innerHTML = singleStoryIndex.fields.body;
+    .innerHTML = `<h2>${singleStoryIndex.webTitle}</h2>` + `${singleStoryIndex.fields.body}`;
 };
