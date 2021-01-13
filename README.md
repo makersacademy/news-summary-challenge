@@ -14,7 +14,7 @@ This app grabs headlines relating to Dominic Cummings, prime minister Boris John
 
 This is a single page web app. I wrote the code in frontend JavaScript, CSS and HTML. As per the [challenge instructions](https://github.com/makersacademy/news-summary-challenge), I did not use any libraries or frameworks. Instead I used a test framework that I wrote earlier in the week for [this notes app](https://github.com/kabligh/notes-app).
 
-I used [http-server](https://www.npmjs.com/package/http-server)) to serve the HTML, CSS and JavaScript files.
+I used [http-server](https://www.npmjs.com/package/http-server) to serve the HTML, CSS and JavaScript files.
 
 ## To run the app
 
