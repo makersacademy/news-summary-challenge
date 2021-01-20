@@ -1,0 +1,27 @@
+h1 {
+    background-color:#052962;
+    color: white;
+    text-align: right;
+    padding-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+}
+
+div {
+    margin-top: 40;
+    text-align: left;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    padding-top: 40px;
+    padding-left: 20px;
+    color: black;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+  }
+
+
