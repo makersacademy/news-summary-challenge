@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  margin-top: 150px;
+}
+
+.header {
+  background-color: #0d134a;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  font-size: x-large;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

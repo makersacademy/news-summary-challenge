@@ -1,5 +1,35 @@
 # News Summary challenge
 
+## My Planning
+
+I have no idea where to start :joy:
+
+```
+As a busy politician
+I can see all of today's headlines in one place
+So I know what the big stories of the day are
+```
+
+So I think my index is going to be a title "News Summary" followed by a place for all of the
+news stories to be placed. - Done.
+
+I need to know what comes out of the guardian api request. I used the guardian api explore thing
+to identify the url I needed to type. Currently using apikey='test' as shown on the explore website.
+
+I am able to get the headlines, display them, the urls and the apiurls (just in case I need them).
+Have stuck the header in place and presented the headlines below.
+
+TODO: Get fetch to run through News Summary API to get correct key. Think carefully about how to "stub" this - currently I haven't a clue.
+
+
+```
+As a busy politician
+I can see a relevant picture to illustrate each news article when I browse headlines
+So that I have something nice to look at
+```
+
+
+
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
