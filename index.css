@@ -1,15 +1,108 @@
 body {
   margin: 0;
-  margin-top: 150px;
 }
 
 .header {
   background-color: #0d134a;
   color: white;
   padding: 5px;
-  text-align: center;
-  font-size: x-large;
+  font-size: large;
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+.header h1 {
+  float: left;
+  margin-block: 0;
+  padding: 2%;
+}
+
+h3 {
+  float: right;
+  margin-inline-end: 3%;
+}
+
+.articles {
+  padding: 5%;
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.article {
+  width: 45%;
+}
+
+img {
+  width: 100%
+}
+
+h1.headline {
+  font-size: x-large;
+}
+
+img::before {
+  display: block;
+  content: " ";
+  margin-top: -90px;
+  height: 90px;
+  visibility: hidden;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 110px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #c6e1fc;
+  margin: auto;
+  padding: 10px;
+  border: 2px solid #0d134a;
+  text-align: left;
+  width: 70%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 15%;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-headline {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+#modal-image {
+  padding: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #0d134a;
 }

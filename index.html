@@ -7,10 +7,29 @@
     <script src="interface.js"></script>
   </head>
   <body>
+    <!-- Fixed header for title & date -->
     <div class="header">
-        <h1>News Summary</h1>
+        <h1 id="header-title"></h1>
+        <h3 id="date"></h3>
     </div>
+    <div class="headerMargin"></div>
+
+    <!-- Pop up window -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-image">
+
+        </div>
+        <h2 id="modal-headline"></h2>
+        <p id="modal-summary"></p>
+
+      </div>
+    </div>
+
+    <!-- Articles -->
     <div class="articles" id="headlines">
+
     </div>
   </body>
 </html>

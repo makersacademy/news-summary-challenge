@@ -27,8 +27,37 @@ As a busy politician
 I can see a relevant picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
 ```
+Retrieved image from the guardian api using show-fields=thumbnail
 
+```
+As a busy politician
+I can click a news headline to see a summary and a photo of the news article
+So that I can get an in depth understanding of a very important story
+```
+Headlines are hash links which display a modal.
+The modal includes the headline, thumbnail photo and summary from the Aylien API.
 
+```
+As a busy politician
+I can see click a news article summary title which links to the original article
+So I can get a few more details about an important story
+```
+The headline in the modal is a link to the original story on the website. I added target=_blank so that it opens in another tab.
+
+```
+As a busy politician
+I can read the site comfortably on my phone
+Just in case my laptop breaks
+```
+Perhaps something to do with flex boxes?? Need to figure out how to check on my phone. Also how to get the body to appear below the header is REALLY annoying?!?!
+
+```
+As a busy politician
+I can see whizzy animations in the app
+To make my news reading more fun
+```
+Still TODO. Funny gifs of news readers??
+Breaking news gif??
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
