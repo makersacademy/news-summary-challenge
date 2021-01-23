@@ -2,9 +2,26 @@
 
 ## To Run
 To run via HttpServer:
-* Navigate to ./views
-* Run `npx http-server`
+* Navigate to root/views
+* Run the command `npx http-server`
 * Navigate to one of the indicated URLs from your browser
+
+## Completed
+* User story 1
+* User story 2
+* Created a very basic article preview area for user story 3
+
+## Still to do (next steps)
+* Refactor existing JS before continuing
+* Refactor CSS - create classes in separate css file
+* Change article preview to a more convenient pop-up window that can be closed
+* Connect to second API to create article summary. Insert into preview area
+* Remaining user stories
+
+## What I learned
+* Learned and used some basic CSS and HTML for the first time
+* Read the documentation for an external API and used to pull out the data I needed
+* Hosted the app on a local server (and now know how to get around caching issues preventing refresh for HTTP-Server)
 
 ## Steps for each User Story
 ### 1
@@ -17,21 +34,21 @@ I can see all of today's headlines in one place
 * Add index.js logic to:
   * Connect to Guardian API and return all JSON data (on document ready)
   * Convert JSON data, extract article titles, display on separate lines as links
-<br>
-### 2
+
+### 2  
 ```
 As a busy politician
 So that I have something nice to look at
 I can see a relevant picture to illustrate each news article when I browse headlines
 ```
 * Extended API request to include thumbnail, then insert this as an HTML image tag below the headline anchor tag
-<br>
 
 ```
 As a busy politician
 So that I can get an in depth understanding of a very important story
 I can click a news headline to see a summary and a photo of the news article
 ```
+* Create a basic article preview area at the top, showing image and title
 
 ```
 As a busy politician
