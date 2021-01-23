@@ -13,4 +13,14 @@ describe("Note Class", () => {
       checkIf(news.headline()).isEqual('4');
     })
   })
+  describe("identicals()", () => {
+    it("has a function", () => {
+      var news = new News();
+      checkIf(news).has('identicals').function();
+    })
+    it("are identicals", () => {
+      var news = new News();
+      checkIf(news.identicals()).isIdenticalTo("4");
+    })
+  })
 });

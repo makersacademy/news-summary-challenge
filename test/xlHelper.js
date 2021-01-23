@@ -36,6 +36,12 @@ function checkIf(that) {
       else
         return console.log(`» ${that} is NOT equal to ${exp}`)
     },
-
+    isIdenticalTo: (exp) => {
+      if (that === exp)
+        return console.log(`»» It is identical: ${that} === ${exp}`)
+      else
+        return console.log(`» ${that} is NOT identical to ${exp}`)
+    }
   }
+  ß
 }
