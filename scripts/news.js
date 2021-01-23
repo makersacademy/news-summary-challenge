@@ -1,3 +1,8 @@
-it("should be working", () => {
-  expect('test').toEqual('test')
-})
+class News {
+  constructor() {
+    this.title;
+    this.url;
+    this.thumbnail;
+    this.text;
+  }
+}
