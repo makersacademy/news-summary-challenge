@@ -75,13 +75,12 @@ To make my news reading more fun
 
 ## Mockups
 
-### Headlines page
+### Mockup Idea 1
 
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
+![Mockup One](/images/mockup1.jpeg)
 
-### Article summary page
 
-![Article page mockup](/images/news-summary-project-article-page-mockup.png)
+![Mockup Two](/images/mockup2.jpeg)
 
 ## API
 
