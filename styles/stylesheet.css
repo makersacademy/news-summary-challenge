@@ -10,12 +10,6 @@ h1 {
   text-align: center;
 }
 
-.news-container{
-  margin: 5%;
-  background-color: white;
-  border: white 1px solid;
-}
-
 #today-date {
   color: white;
   font-size: 1.5vw;
@@ -23,3 +17,28 @@ h1 {
 }
 
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.news-container{
+  margin: 5%;
+  background-color: white;
+}
+
+#news-feed {
+  margin: 5%;
+  margin-top: 10%;
+}
+
+
+.news-item {
+  text-align: center;
+  padding: 5% 0;
+}
+
+.news-item:hover {
+  background-color: #f6f6f6;
+  cursor: hand;
+}
