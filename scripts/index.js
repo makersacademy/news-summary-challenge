@@ -4,16 +4,43 @@ guardian = "http://content.guardianapis.com/search?show-fields=all"
 
 let guardianNews = newsApi + guardian;
 
+class News {
+  constructor() {
+    this.title;
+    this.url;
+    this.thumbnail;
+    this.summary;
+  }
+}
+
+class Headlines {
+  constructor() {
+    this.collection = [];
+  }
+
+  add(news) {
+    this.collection.push(news)
+  }
+}
+
 fetch(guardianNews)
 .then((res) => res.json())
 .then((data) => {
   let content = data.response.results
   let output = ''
+  let headline = new Headlines();
   content.forEach(function(news) {
+    let item = new News();
+    item.title = news.webTitle;
+    item.url = news.webUrl;
+    item.thumbnail = news.fields.thumbnail;
+    item.summary = news.fields.bodyText
+    headline.add(item)
+    console.log(headline.collection);
     output += `
     <div class="news-item" id="${news.webUrl}"> 
       <h2>${news.webTitle}</h2>
-      <img src="${news.fields.thumbnail}" class="thumbnail">
+      <img src="${item.thumbnail}" class="thumbnail">
 
       <button id="myBtn">Open Modal</button>
 
@@ -22,9 +49,9 @@ fetch(guardianNews)
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <h2><a href="${news.webUrl}">${news.webTitle}</a></h2>
-          <img src="${news.fields.thumbnail}" class="thumbnail">
-          <p>${news.fields.bodyText}</p>
+          <h2><a href="${item.url}">${item.title}</a></h2>
+          <img src="${item.thumbnail}" class="thumbnail">
+          <p>${item.summary}</p>
         </div>
 
       </div>
@@ -33,6 +60,7 @@ fetch(guardianNews)
    
   })
   document.getElementById("news-feed").innerHTML = output;
+  console.log(headline);
   document.getElementById("news-feed").addEventListener("click", function() {
     modal.style.display = "block";
   })
@@ -40,7 +68,7 @@ fetch(guardianNews)
   var modal = document.getElementById("myModal");
 
   // Get the button that opens the modal
-  var btn = document.getElementById("myBtn");
+  // var btn = document.getElementById("myBtn");
 
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
