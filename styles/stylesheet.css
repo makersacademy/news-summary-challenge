@@ -1,12 +1,12 @@
 body {
   background-color: #DFBEC7;
   font-family: 'Source Serif Pro', serif;
+
 }
 
 h1 {
   color: white;
   font-size: 4vw;
-  margin-top: 5%;
   text-align: center;
 }
 
@@ -22,23 +22,10 @@ a {
   color: black;
 }
 
-.news-container{
-  margin: 5%;
-  background-color: white;
-}
-
-#news-feed {
-  margin: 5%;
-  margin-top: 10%;
-}
-
-
 .news-item {
   text-align: center;
-  padding: 5% 0;
 }
 
 .news-item:hover {
-  background-color: #f6f6f6;
   cursor: hand;
 }
