@@ -1,10 +1,13 @@
 # Will's Readme - News Summary challenge
 
+## To Run
 To run via HttpServer:
 * Navigate to ./views
 * Run `npx http-server`
 * Navigate to one of the indicated URLs from your browser
 
+## Steps for each User Story
+### 1
 ```
 As a busy politician
 So I know what the big stories of the day are
@@ -15,7 +18,7 @@ I can see all of today's headlines in one place
   * Connect to Guardian API and return all JSON data (on document ready)
   * Convert JSON data, extract article titles, display on separate lines as links
 <br>
-
+### 2
 ```
 As a busy politician
 So that I have something nice to look at
@@ -23,6 +26,7 @@ I can see a relevant picture to illustrate each news article when I browse headl
 ```
 * Extended API request to include thumbnail, then insert this as an HTML image tag below the headline anchor tag
 <br>
+
 ```
 As a busy politician
 So that I can get an in depth understanding of a very important story
