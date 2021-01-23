@@ -3,7 +3,6 @@ guardian = "http://content.guardianapis.com/search?show-fields=all"
 summaryApi = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url="
 
 let guardianNews = newsApi + guardian;
-let summaryUrl;
 
 fetch(guardianNews)
 .then((res) => res.json())
@@ -12,19 +11,26 @@ fetch(guardianNews)
   let output = ''
   content.forEach(function(news) {
     output += `
-    <div class="news-item"> 
+    <div class="news-item" id="${news.webUrl}"> 
       <h2>${news.webTitle}</h2>
       <img src="${news.fields.thumbnail}" class="thumbnail">
     </div>
     `;
-    summaryUrl = summaryApi + news.webUrl;
+
+    let summaryUrl = summaryApi + news.webUrl;
     fetch(summaryUrl)
     .then((res) => res.json())
     .then((data) => {
       let result = data.sentences;
-      let sum = ''
+      let summary = ''
       result.forEach(function(sentence) {
-        sum += sentence
+        summary += `
+        <div id="summary-${news.webUrl}">
+          <h1 a href="${news.webUrl}">${news.webTitle}</h1>
+          <img src="${news.fields.thumbnail}" class="thumbnail">
+          <p>${sentence}</p>
+        </div>
+        `
       })
     })
   })
