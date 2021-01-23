@@ -36,15 +36,12 @@ fetch(guardianNews)
     item.thumbnail = news.fields.thumbnail;
     item.summary = news.fields.bodyText
     headline.add(item)
-    console.log(headline.collection);
     output += `
-    <div class="news-item" id="${news.webUrl}"> 
+    <div class="news-item" id="${headline.collection.length-1}"> 
       <h2>${news.webTitle}</h2>
       <img src="${item.thumbnail}" class="thumbnail">
 
-      <button id="myBtn">Open Modal</button>
-
-      <div id="myModal" class="modal">
+      <div id="myModal${headline.collection.length-1}" class="modal">
       
         <!-- Modal content -->
         <div class="modal-content">
@@ -58,12 +55,17 @@ fetch(guardianNews)
     </div>
     `;
    
-  })
   document.getElementById("news-feed").innerHTML = output;
-  console.log(headline);
-  document.getElementById("news-feed").addEventListener("click", function() {
-    modal.style.display = "block";
-  })
+
+  for (var i = 0; i < headline.collection.length; i++) {
+      var news = document.getElementById(`${i}`);
+      news.addEventListener("click", function() {
+        var modal = document.getElementById(`myModal${i}`);
+        modal.setAttribute("class", "modal-visible");
+      })
+      
+  }
+ 
     // Get the modal
   var modal = document.getElementById("myModal");
 
@@ -78,10 +80,10 @@ fetch(guardianNews)
   //   modal.style.display = "block";
   // }
 
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
+  // // When the user clicks on <span> (x), close the modal
+  // span.onclick = function() {
+  //   modal.style.display = "none";
+  // }
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
@@ -89,6 +91,4 @@ fetch(guardianNews)
       modal.style.display = "none";
     }
   }
-})
-.catch((err) => console.log(err))
-
+  })})
