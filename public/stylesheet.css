@@ -1,0 +1,17 @@
+#news {
+    float: left;
+    width: 50%;
+    text-align: center;
+    background-color: rgb(158, 88, 88);
+}
+
+#summary {
+    float: right;
+    width: 50%;
+    text-align: center;
+    background-color: rgb(51, 189, 53);
+}
+
+#title {
+    cursor: pointer;
+}
