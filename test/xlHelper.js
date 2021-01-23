@@ -29,6 +29,13 @@ function checkIf(that) {
       } else {
         return console.log(`»» ${f} is not a function`)
       }
-    }
+    },
+    isEqual: (exp) => {
+      if (that == exp)
+        return console.log(`»» It is equal: ${that} == ${exp}`)
+      else
+        return console.log(`» ${that} is NOT equal to ${exp}`)
+    },
+
   }
 }

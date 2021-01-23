@@ -8,5 +8,9 @@ describe("Note Class", () => {
       var news = new News();
       checkIf(news).has('headline').function();
     })
+    it("is equal", () => {
+      var news = new News();
+      checkIf(news.headline()).isEqual('4');
+    })
   })
 });

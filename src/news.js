@@ -1,5 +1,6 @@
 class News {
   headline() {
-    return '4'
+    return 4
   }
+
 }
