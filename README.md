@@ -1,14 +1,19 @@
 # Will's Readme - News Summary challenge
 
+To run via HttpServer:
+* Navigate to ./views
+* Run `npx http-server`
+* Navigate to one of the indicated URLs from your browser
+
 ```
 As a busy politician
 So I know what the big stories of the day are
 I can see all of today's headlines in one place
 ```
 * Create static index.html
-* Connect to Guardian API and return all JSON data (on document ready)
-* Add index.js logic to display dynamically:
-  *
+* Add index.js logic to:
+  * Connect to Guardian API and return all JSON data (on document ready)
+  * Convert JSON data, extract article titles, display on separate lines as links
 
 ```
 As a busy politician
