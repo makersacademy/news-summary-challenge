@@ -14,13 +14,15 @@ I can see all of today's headlines in one place
 * Add index.js logic to:
   * Connect to Guardian API and return all JSON data (on document ready)
   * Convert JSON data, extract article titles, display on separate lines as links
+<br>
 
 ```
 As a busy politician
 So that I have something nice to look at
 I can see a relevant picture to illustrate each news article when I browse headlines
 ```
-
+* Extended API request to include thumbnail, then insert this as an HTML image tag below the headline anchor tag
+<br>
 ```
 As a busy politician
 So that I can get an in depth understanding of a very important story
