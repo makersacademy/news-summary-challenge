@@ -1,12 +1,19 @@
 body {
   background-color: #DFBEC7;
+  font-family: 'Source Serif Pro', serif;
 }
 
 h1 {
-  text-align: center;
   color: white;
-  margin-top: 5%;
-  font-family: 'Trocchi', serif;
   font-size: 4vw;
+  margin-top: 5%;
+  text-align: center;
 }
+
+#today-date {
+  color: white;
+  font-size: 1.5vw;
+  text-align: center;
+}
+
 
