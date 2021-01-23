@@ -8,15 +8,27 @@ function it(exp, callback) {
     console.log(`» Check if it ${exp}?`)
     callback()
   } catch (e) {
-    console.log(`=> Failed, ${e.message}`)
+    console.log(`»»» ${e}`)
   }
 }
 
 function checkIf(that) {
   return {
-    isDefined: () => {
+    isClass: () => {
       if (typeof (that) === "object")
-        return console.log("»» It is")
+        return console.log(`»» It is`)
+    },
+    has: (f) => {
+      let proto = that.constructor.prototype
+      if (`${f}` in proto) {
+        return {
+          function: () => {
+            return console.log(`»» It has`)
+          }
+        }
+      } else {
+        return console.log(`»» ${f} is not a function`)
+      }
     }
   }
 }

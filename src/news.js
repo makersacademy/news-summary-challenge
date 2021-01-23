@@ -1,1 +1,5 @@
-class News {}
+class News {
+  headline() {
+    return '4'
+  }
+}
