@@ -2,13 +2,13 @@ let news = new News();
 const altImage = "/Users/kikidawson/Desktop/Projects/week-7/news-summary-challenge/images/blank.png"
 
 function getNewsData() {
-  return fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail").then(response => {
+  return fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=all").then(response => {
     return response.json();
   })
 }
 
 getNewsData().then(news => {
-  newsData = news.response.results
+  let newsData = news.response.results
   saveAll(newsData)
 });
 
@@ -16,9 +16,10 @@ function saveAll(articles) {
   articles.forEach(article => {
     let headline = article.webTitle
     let image = altImage
+    let story = "No story available"
     if (article.fields)
       image = article.fields.thumbnail
-    let story = "body"
+      story = article.fields.body
     let newsArticle = new Article(headline, image, story)
     news.add(newsArticle)
   })
@@ -27,26 +28,32 @@ function saveAll(articles) {
 
 function displayAll() {
   let articles = news.getArticles()
-  articles.forEach(article => {
-    document.getElementById("headlines").insertAdjacentHTML('beforeend', `<br>`);
-    document.getElementById("headlines").insertAdjacentHTML('beforeend', `<img src=${article.getImageURL()}>`);
-    document.getElementById("headlines").insertAdjacentHTML('beforeend', `<h3>${article.getHeadline()}</h3>`);
+  articles.forEach((article, index) => {
+    let headlinesDiv = document.getElementById("headlines")
+    let headlineDiv = document.createElement('div')
+    headlineDiv.insertAdjacentHTML('beforeend', `<img src=${article.getImageURL()}>`)
+    headlineDiv.insertAdjacentHTML('beforeend', `<h3><a href=#${index}>${article.getHeadline()}</a></h3>`)
+    headlinesDiv.appendChild(headlineDiv)
   })
 }
 
 var modal = document.getElementById("articleModal");
-var btn = document.getElementById("selectArticle");
 var span = document.getElementById("close");
 
-btn.addEventListener('click', openModal, false)
 span.addEventListener('click', closeModal, false)
+window.addEventListener('hashchange', openModal, false)
 
 function openModal() {
   modal.style.display = "block";
-  document.getElementById("articleHeadline").innerHTML = newsData[0].webTitle
-  document.getElementById("articleSummary").innerHTML = "summary"
+  let articles = news.getArticles()
+  let index = location.href.split('#')[1]
+  let selectedArticle = articles[index]
+  let selectedArticleDiv = document.getElementById("selectedArticle")
+  selectedArticleDiv.insertAdjacentHTML('beforeend', `<h1>${selectedArticle.getHeadline()}</h1>`)
+  selectedArticleDiv.insertAdjacentHTML('beforeend', `${selectedArticle.getStory()}`)
 }
 
 function closeModal() {
   modal.style.display = "none";
+  // reset to no hash?
 }

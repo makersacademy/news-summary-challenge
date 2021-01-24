@@ -140,8 +140,7 @@ If you're interested, you can see the code for the News Summary API in this repo
 
 ### Todo
 
-- see summary of article (impliment aylien api)
-- see image from article
+- impliment aylien api
 
 ### Done
 
@@ -149,3 +148,6 @@ If you're interested, you can see the code for the News Summary API in this repo
 - removed API key by using Makers News Summary API
 - user story 2 - show image
 - make headline clickable (hash change)
+- see body of article
+- see image from article
+- modal
