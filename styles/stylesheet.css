@@ -1,12 +1,12 @@
 body {
   background-color: #DFBEC7;
   font-family: 'Source Serif Pro', serif;
-
+  min-width: fit-content;
+  margin: 5% 10%;
 }
 
 h1 {
   color: white;
-  font-size: 4vw;
   text-align: center;
 }
 
@@ -21,7 +21,8 @@ a {
   color: black;
 }
 
-a:hover {
+
+h2:hover, a:hover {
   cursor: grab;
   text-decoration: underline;
 }
@@ -40,52 +41,59 @@ img {
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.modal-visible {
-  display: block; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-
-/* Modal Content/Box */
-.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 80%;
+  max-height: 60%;
+  overflow-y: scroll;
 }
 
-/* The Close Button */
-.close {
-  color: #aaa;
+.modal-content {
+  margin: 10%;
+}
+
+.modal-content p {
+  text-align: left;
+}
+
+
+.btn-close {
   float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
   cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+  
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+}
+  
+@media only screen and (max-device-width: 600px) {
+  html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    max-width: 550px;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+
+  .modal {
+    width: 500px;
+  }
 }
