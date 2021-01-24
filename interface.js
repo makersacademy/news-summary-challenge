@@ -35,6 +35,7 @@ window.addEventListener("hashchange", function() {
   })
   let articlesDiv = document.getElementById("article-summary")
   articlesDiv.insertAdjacentHTML('beforeend', `<img src="${article[0].thumbnail}"><br>`)
+  articlesDiv.insertAdjacentHTML('beforeend', `<a target="_blank" rel="noopener noreferrer" href="${article[0].url}">${article[0].headline}</a><br>`)
   articlesDiv.insertAdjacentHTML('beforeend', `<p>${article[0].textBody}</p><br>`)
 })
 
