@@ -2,7 +2,7 @@
 
 Check out [here](http://makers-news-today.surge.sh)
 
-I have built a single-page web app that summarises the news using the Guardian API and Aylien APIs, using Javascript, HTML and CSS. 
+A single-page web app that summarises the news using the Guardian API and Aylien APIs, using Javascript, HTML and CSS. 
 
 ## Key Features
 * Show 10 latest headlines from Guardian 
