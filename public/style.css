@@ -42,5 +42,6 @@ body h3 {
 }
 
 body h3:hover {
+  transition: 2s;
   font-size: 1.4em;
 }
