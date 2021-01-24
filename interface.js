@@ -13,18 +13,13 @@ function getArticles() {
             let newArticle = new Article(title, text, thumbnail, url);
             newsFeed.addNewArticle(newArticle);
             let articlesDiv = document.getElementById("article-list")
-            articlesDiv.insertAdjacentHTML('beforeend', `<img class="${result.webUrl}"src="${result.fields.thumbnail}"><br>`)
-            articlesDiv.insertAdjacentHTML('beforeend', `<a class="headline" id="${result.webUrl}" href="#${result.webUrl}">${result.webTitle}</a><br><br><br>`)
+            articlesDiv.insertAdjacentHTML('beforeend', `<img class="${newArticle.getUrl()}"src="${newArticle.getThumbnail()}"><br>`)
+            articlesDiv.insertAdjacentHTML('beforeend', `<a class="headline" id="${newArticle.getUrl()}" href="#${newArticle.getUrl()}">${newArticle.getHeadline()}</a><br><br><br>`)
           })
         });
       })
 }
 getArticles()
-
-function addArticleToNewsFeed(article) {
-  let newArticle = new Article(`"${article.webTitle}", "${article.bodyText}", "${article.id}", "${article.webUrl}"`);
-  newsFeed.addNewArticle(newArticle);
-}
 
 window.addEventListener("hashchange", function() {
   hideMainFeed();
@@ -34,8 +29,8 @@ window.addEventListener("hashchange", function() {
     return article.url === currentHash;
   })
   let articlesDiv = document.getElementById("article-summary")
-  articlesDiv.insertAdjacentHTML('beforeend', `<img src="${article[0].thumbnail}"><br>`)
-  articlesDiv.insertAdjacentHTML('beforeend', `<a target="_blank" rel="noopener noreferrer" href="${article[0].url}">${article[0].headline}</a><br>`)
+  articlesDiv.insertAdjacentHTML('beforeend', `<img src="${article[0].getThumbnail()}"><br>`)
+  articlesDiv.insertAdjacentHTML('beforeend', `<a target="_blank" rel="noopener noreferrer" href="${article[0].getUrl()}">${article[0].getHeadline()}</a><br>`)
   articlesDiv.insertAdjacentHTML('beforeend', `<p>${article[0].textBody}</p><br>`)
 })
 

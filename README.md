@@ -44,6 +44,13 @@ So I can get a few more details about an important story
 
 There is a custom testing framework for this project. In order to run tests, you will need to pull the [testing framework repo](https://github.com/calavell/news_summary_testing_framework/blob/main/README.md) to your local machine. There are instructions on the repo for how to download it and integrate it with this project.
 
-##Reflections
+##Summary of work completed
 - I have completed the first 4 user Stories
 - It seems the API for summarising texts has a very low limit. I managed to call from it and get summaries based on urls but by the time I got around to trying to implement it, the limit had been maxed so I decided to skip instead display the full text when you click an article.
+- I had some issues with permissions on my mac which I couldn't figure out and as such I was unable to download surge. I wanted to do this so I could access it on my phone to see if I had indeed implemented the 5th user story correctly.
+
+##Reflections
+- I only did unit tests, mainly because I wasn't sure how to go about feature testing the application. I brainstormed for a bit to see how I could create functions like click, or visit, but didn't get very far.
+- My methods are far too long. I really struggled with decoupling the fetch request from the code that would then manipulate the response. Whenever I tried, the response would go out of scope. I feel if I implemented callbacks properly I could have gotten around this but my brain was a bit fried.
+- I would like to maybe do a tutorial on CSS at this point. I struggle to do anything other than a very basic page with colour and aligned text.
+- I was happy that I was able to get responses from the APIs fairly easily but integrating the response in a way that sticks to the single responsibility principal is definitely something I need to improve upon.
