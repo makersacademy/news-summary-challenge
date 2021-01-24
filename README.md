@@ -1,22 +1,5 @@
 # News Summary challenge
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
-
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that summarises the news.
-
-### Guidance
-
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
-
-## Project overview
-
 Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
 
 ### Technologies
@@ -57,7 +40,7 @@ So that I can get an in depth understanding of a very important story
 
 ```
 As a busy politician
-I can see click a news article summary title which links to the original article
+I can click a news article summary title which links to the original article
 So I can get a few more details about an important story
 ```
 
@@ -149,3 +132,8 @@ If you're interested, you can see the code for the News Summary API in this repo
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+
+## Planning
+
+- index.HTML
+- interface.js
