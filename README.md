@@ -1,5 +1,13 @@
 # News Summary challenge
 
+## Surge Link
+
+If you want to see the results please click on the link: [Today News](http://makers-today-news.surge.sh/)
+
+## Screenshots
+<img src="/images/news-responsive.png" width="25%"> <img src="/images/news.png" width="70%">
+
+## Instructions
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
