@@ -8,7 +8,9 @@ To test learning of single page web applications, in vanilla JavaScript (no libr
 Working.
 
 ## Screenshots
-Include logo/demo screenshot etc.
+![Home Page](https://github.com/chriswhitehouse/news-summary-challenge/blob/master/screenshots/Screenshot%202021-01-24%20at%2021.58.19.png)
+
+![Summary Page](https://github.com/chriswhitehouse/news-summary-challenge/blob/master/screenshots/Screenshot%202021-01-24%20at%2021.58.41.png)
 
 ## Tech/framework used
 JavaScript, HTML, and CSS.
