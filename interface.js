@@ -17,10 +17,11 @@ function saveAll(articles) {
     let headline = article.webTitle
     let image = altImage
     let story = "No story available"
+    let url = article.webUrl
     if (article.fields)
       image = article.fields.thumbnail
       story = article.fields.body
-    let newsArticle = new Article(headline, image, story)
+    let newsArticle = new Article(headline, image, story, url)
     news.add(newsArticle)
   })
   displayAll()
@@ -49,7 +50,8 @@ function openModal() {
   let index = location.href.split('#')[1]
   let selectedArticle = articles[index]
   let selectedArticleDiv = document.getElementById("selectedArticle")
-  selectedArticleDiv.insertAdjacentHTML('beforeend', `<h1>${selectedArticle.getHeadline()}</h1>`)
+  console.log(selectedArticle)
+  selectedArticleDiv.insertAdjacentHTML('beforeend', `<h1><a href='${selectedArticle.getArticleURL()}'>${selectedArticle.getHeadline()}</a></h1>`)
   selectedArticleDiv.insertAdjacentHTML('beforeend', `${selectedArticle.getStory()}`)
 }
 

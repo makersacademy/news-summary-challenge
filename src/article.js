@@ -1,8 +1,9 @@
 class Article {
-  constructor(headline, imageURL, story) {
+  constructor(headline, imageURL, story, articleURL) {
     this.headline = headline
     this.imageURL = imageURL
     this.story = story
+    this.articleURL = articleURL
   }
 
   getHeadline() {
@@ -15,5 +16,9 @@ class Article {
 
   getStory() {
     return this.story
+  }
+
+  getArticleURL() {
+    return this.articleURL
   }
 };

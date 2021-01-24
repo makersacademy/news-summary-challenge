@@ -151,3 +151,4 @@ If you're interested, you can see the code for the News Summary API in this repo
 - see body of article
 - see image from article
 - modal
+- clickable link to Guardian
