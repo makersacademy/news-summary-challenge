@@ -144,6 +144,7 @@ If you're interested, you can see the code for the News Summary API in this repo
 - see image from article
 
 ### Done
+
 - first user story (headlines from Guardian API)
 - removed API key by using Makers News Summary API
 - user story 2 - show image
