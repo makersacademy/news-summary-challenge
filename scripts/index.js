@@ -11,18 +11,13 @@ fetch(guardianNews)
   let output = ''
   let headline = new Headlines();
   content.forEach(function(news) {
-    console.log(news);
     let item = new News();
     item.title = news.webTitle;
     item.url = news.webUrl;
     item.thumbnail = news.fields.thumbnail;
+    item.summary = news.fields.bodyText;
     headline.add(item)
-    let summaryNews = summaryApi + item.url;
-    fetch(summaryNews)
-    .then((res) => res.json())
-    .then((data) => {
-      item.summary = data["text"];
-      output += `
+    output += `
       <div class="news-item" id="${headline.collection.length-1}"> 
         <img src="${item.thumbnail}" class="thumbnail">
         <h2 class="trigger"><span class="section">${news.sectionName}</span> ${news.webTitle}</h2>
@@ -32,7 +27,7 @@ fetch(guardianNews)
             <div class="modal-content">
               <h2><a href="${item.url}">${item.title}</a></h2>
               <img src="${item.thumbnail}" class="modal-thumbnail">
-              <p>${item.summary}</p>
+              <p id="summary-${headline.collection.length-1}">${item.summary}</p>
             </div>
         </div>
       </div>
@@ -53,6 +48,13 @@ fetch(guardianNews)
         trigger.addEventListener("click", toggleModal);
         closeButtons[index].addEventListener("click", toggleModal);
     }
+    let newsUrl = headline.collection[headline.collection.length - 1].url
+    let summaryNews = summaryApi + newsUrl;
+    fetch(summaryNews)
+    .then((res) => res.json())
+    .then((data) => {
+      let summaryText = document.getElementById(`summary-${headline.collection.length-1}`)
+      summaryText.innerHTML = data["text"];
     })
-    
-  })});
+    }
+  )});

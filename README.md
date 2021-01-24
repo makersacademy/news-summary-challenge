@@ -2,6 +2,8 @@
 
 I have built a single-page web app that summarises the news using the Guardian API and Aylien APIs, using Javascript, HTML and CSS. 
 
+Since the Aylien API has a low API request limit (as it is directed via Makers API), in case of API fetch failure, I have replaced the summary text with the full article body. 
+
 
 ## Completed User Stories
 
