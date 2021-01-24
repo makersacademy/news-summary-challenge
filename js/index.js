@@ -31,12 +31,14 @@ function displayHeadlines(articles) {
   console.log(articles.getArray().length)
   var gridContainer = document.getElementsByClassName('grid-container')
 
-  articles.getArray().forEach(function (article) {
+  articles.getArray().forEach(function (article, index) {
+    let anchor = document.createElement('a')
+    anchor.setAttribute('href', `#${index}` )
+    gridContainer[0].appendChild(anchor)
     let headline = createHeadline(article)
     let image = createImage(article)
     let card = createCard(image, headline)
-
-    gridContainer[0].appendChild(card)
+    anchor.appendChild(card)
   });
 }
 
@@ -44,13 +46,27 @@ function createModals(articles) {
   console.log(articles.getArray().length)
   var gridContainer = document.getElementsByClassName('grid-container')
 
-  articles.getArray().forEach(function (article) {
+  articles.getArray().forEach(function (article, index) {
+    let div = document.createElement('div')
+    div.setAttribute('class', 'modal')
+    div.setAttribute('id', index)
+    gridContainer[0].appendChild(div)
+
+    let anchor = document.createElement('a')
+    anchor.setAttribute('class', 'close')
+    anchor.setAttribute('href', '#close')
+    anchor.setAttribute("title", "Close");
+    anchor.innerText = 'X'
+
     let headline = createHeadline(article)
     let image = createImage(article)
     let body = createBody(article)
     let card = createCard(image, headline, body)
-    card.setAttribute('class', 'modal')
-    gridContainer[0].appendChild(card)
+
+    card.setAttribute('class', 'modal-content')
+    card.appendChild(anchor)
+
+    div.appendChild(card)
   });
 }
 
