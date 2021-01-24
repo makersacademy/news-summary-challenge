@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>News-Summary</title>
+    <script src="index.js" defer></script>
+  </head>
+
+  <body><center>
+      <h1 style="font-family: luminari; font-size: 75px;">The Daily Fail</h1>
+      <div id="previewArea" style="background-color: darkcyan;">
+        <h2 id="previewAreaTitle">Article Preview:</h2>
+      <div id='main-body'>
+        <div id="previewAreaText"></div>
+        <div id="previewImage"></div>
+      </div>
+    </div>
+    <div id="articleListArea" style="background-color: azure;">
+    <h2 id="subHeading" style="font-family: luminari;">What's going on in the world:</h2>
+    </div>
+  </center></body>
+
+  <script>
+  document.getElementById('subHeading').onclick = function changeContent() {
+
+    document.getElementById('subHeading').textContent = "Help me";
+    document.getElementById('subHeading').style = "Color: red";
+  }
+
+  </script>
+
+  </script>
+
+  var hidden = document.getElementById("main-body")
+    hidden.style.display = "none";
+  };
+  </script>
+
+
+</html>
