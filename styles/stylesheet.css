@@ -61,8 +61,12 @@ h2:hover, a:hover {
 
 .modal-content {
   margin: 10%;
+  
 }
 
+.modal-content h2 {
+  text-align: center;
+}
 .modal-content p {
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
