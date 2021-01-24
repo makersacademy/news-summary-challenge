@@ -11,17 +11,14 @@ describe("Note Class", () => {
       checkIf(news.date).isEqual("2021-01-24");
     })
   })
-  describe("getNews()", () => {
-    it("is defined", () => {
-      checkIf(news).has("getNews").function();
-    })
-    it("gets the news of the day", () => {
-      checkIf(news.getNews()).isEqual("UK vaccine adviser says delay...");
-    })
-  })
   describe("connectAPI()", () => {
     it("is defined", () => {
       checkIf(news).has("connectAPI").function();
+    })
+  })
+  describe("renderNews()", () => {
+    it("is defined", () => {
+      checkIf(news).has("renderNews").function();
     })
   })
 });
