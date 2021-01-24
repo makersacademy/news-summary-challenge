@@ -1,0 +1,38 @@
+body {
+  background-color: #e6f9ff;
+  font-family: arial;
+}
+
+h1 {
+  text-align: center;
+}
+
+#article-list {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  align-items: center;
+  overflow-wrap: break-word;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.headline {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  overflow-wrap: break-word;
+}
+
+#back-button {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  align-items: center;
+}

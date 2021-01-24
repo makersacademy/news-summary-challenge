@@ -1,0 +1,40 @@
+var data = {"response":{"status":"ok","userTier":"developer","total":165798,"startIndex":1,"pageSize":10,"currentPage":1,"pages":16580,"orderBy":"newest","results":[{"id":"football/live/2021/jan/23/fa-cup-fourth-round-football-league-and-more-clockwatch","type":"liveblog","sectionId":"football","sectionName":"Football","webPublicationDate":"2021-01-23T17:17:50Z","webTitle":"FA Cup fourth round, Football League and more – clockwatch!","webUrl":"https://www.theguardian.com/football/live/2021/jan/23/fa-cup-fourth-round-football-league-and-more-clockwatch","apiUrl":"https://content.guardianapis.com/football/live/2021/jan/23/fa-cup-fourth-round-football-league-and-more-clockwatch","isHosted":false,"pillarId":"pillar/sport","pillarName":"Sport"},{"id":"football/live/2021/jan/23/cheltenham-v-manchester-city-fa-cup-fourth-round-live","type":"liveblog","sectionId":"football","sectionName":"Football","webPublicationDate":"2021-01-23T17:13:26Z","webTitle":"Cheltenham v Manchester City: FA Cup fourth round – live!","webUrl":"https://www.theguardian.com/football/live/2021/jan/23/cheltenham-v-manchester-city-fa-cup-fourth-round-live","apiUrl":"https://content.guardianapis.com/football/live/2021/jan/23/cheltenham-v-manchester-city-fa-cup-fourth-round-live","isHosted":false,"pillarId":"pillar/sport","pillarName":"Sport"},{"id":"football/2021/jan/23/brighton-blackpool-fa-cup-match-report","type":"article","sectionId":"football","sectionName":"Football","webPublicationDate":"2021-01-23T17:10:10Z","webTitle":"Brighton ride their luck as Steven Alzate deflection knocks out Blackpool","webUrl":"https://www.theguardian.com/football/2021/jan/23/brighton-blackpool-fa-cup-match-report","apiUrl":"https://content.guardianapis.com/football/2021/jan/23/brighton-blackpool-fa-cup-match-report","isHosted":false,"pillarId":"pillar/sport","pillarName":"Sport"},{"id":"football/2021/jan/23/sheffield-united-plymouth-fa-cup-match-report","type":"article","sectionId":"football","sectionName":"Football","webPublicationDate":"2021-01-23T17:04:56Z","webTitle":"Basham and Sharp on target as Sheffield United squeeze past Plymouth","webUrl":"https://www.theguardian.com/football/2021/jan/23/sheffield-united-plymouth-fa-cup-match-report","apiUrl":"https://content.guardianapis.com/football/2021/jan/23/sheffield-united-plymouth-fa-cup-match-report","isHosted":false,"pillarId":"pillar/sport","pillarName":"Sport"},{"id":"football/live/2021/jan/23/southampton-v-arsenal-fa-cup-fourth-round-live","type":"liveblog","sectionId":"football","sectionName":"Football","webPublicationDate":"2021-01-23T14:41:08Z","webTitle":"Southampton 1-0 Arsenal: FA Cup fourth round – as it happened","webUrl":"https://www.theguardian.com/football/live/2021/jan/23/southampton-v-arsenal-fa-cup-fourth-round-live","apiUrl":"https://content.guardianapis.com/football/live/2021/jan/23/southampton-v-arsenal-fa-cup-fourth-round-live","isHosted":false,"pillarId":"pillar/sport","pillarName":"Sport"},{"id":"football/2021/jan/23/southampton-arsenal-fa-cup-match-report","type":"article","sectionId":"football","sectionName":"Football","webPublicationDate":"2021-01-23T14:18:07Z","webTitle":"Gabriel deflection helps Southampton dump Arsenal out of FA Cup","webUrl":"https://www.theguardian.com/football/2021/jan/23/southampton-arsenal-fa-cup-match-report","apiUrl":"https://content.guardianapis.com/football/2021/jan/23/southampton-arsenal-fa-cup-match-report","isHosted":false,"pillarId":"pillar/sport","pillarName":"Sport"},{"id":"football/2021/jan/23/crisis-club-sheffield-wednesday-chomping-at-the-bit-for-everton-test","type":"article","sectionId":"football","sectionName":"Football","webPublicationDate":"2021-01-23T13:00:17Z","webTitle":"Crisis club Sheffield Wednesday 'chomping at the bit' for Everton test","webUrl":"https://www.theguardian.com/football/2021/jan/23/crisis-club-sheffield-wednesday-chomping-at-the-bit-for-everton-test","apiUrl":"https://content.guardianapis.com/football/2021/jan/23/crisis-club-sheffield-wednesday-chomping-at-the-bit-for-everton-test","isHosted":false,"pillarId":"pillar/sport","pillarName":"Sport"},{"id":"football/2021/jan/23/from-the-doc-to-kuyt-six-manchester-united-v-liverpool-fa-cup-clashes","type":"article","sectionId":"football","sectionName":"Football","webPublicationDate":"2021-01-23T12:00:15Z","webTitle":"From the Doc to Kuyt, six Manchester United v Liverpool FA Cup clashes","webUrl":"https://www.theguardian.com/football/2021/jan/23/from-the-doc-to-kuyt-six-manchester-united-v-liverpool-fa-cup-clashes","apiUrl":"https://content.guardianapis.com/football/2021/jan/23/from-the-doc-to-kuyt-six-manchester-united-v-liverpool-fa-cup-clashes","isHosted":false,"pillarId":"pillar/sport","pillarName":"Sport"},{"id":"football/2021/jan/23/he-shoots-he-scores-or-does-he-how-var-changed-football-for-ever","type":"article","sectionId":"football","sectionName":"Football","webPublicationDate":"2021-01-23T08:00:12Z","webTitle":"He shoots, he scores – or does he? How VAR changed football for ever","webUrl":"https://www.theguardian.com/football/2021/jan/23/he-shoots-he-scores-or-does-he-how-var-changed-football-for-ever","apiUrl":"https://content.guardianapis.com/football/2021/jan/23/he-shoots-he-scores-or-does-he-how-var-changed-football-for-ever","isHosted":false,"pillarId":"pillar/sport","pillarName":"Sport"},{"id":"football/2021/jan/22/kevin-de-bruyne-out-for-up-to-six-weeks-in-blow-to-manchester-city","type":"article","sectionId":"football","sectionName":"Football","webPublicationDate":"2021-01-22T22:31:43Z","webTitle":"'Irreplaceable' Kevin De Bruyne out for up to six weeks for Manchester City","webUrl":"https://www.theguardian.com/football/2021/jan/22/kevin-de-bruyne-out-for-up-to-six-weeks-in-blow-to-manchester-city","apiUrl":"https://content.guardianapis.com/football/2021/jan/22/kevin-de-bruyne-out-for-up-to-six-weeks-in-blow-to-manchester-city","isHosted":false,"pillarId":"pillar/sport","pillarName":"Sport"}]}}
+
+console.log(data.response.results[0].webTitle)
+
+data.response.results.forEach(function(result) {console.log(result.webTitle)})
+
+body: "<div id="block-600c714d8f08b96585551213" class="bl"
+bodyText: "64 min: City look visibly shocked at what Cheltenh"
+byline: "Scott Murray"
+bylineHtml: "<a href="profile/scottmurray">Scott Murray</a>"
+charCount: "13722"
+firstPublicationDate: "2021-01-23T16:30:21Z"
+headline: "Cheltenham v Manchester City: FA Cup fourth round – live!"
+isInappropriateForSponsorship: "false"
+isLive: "true"
+isPremoderated: "false"
+lang: "en"
+lastModified: "2021-01-23T18:58:10Z"
+legallySensitive: "false"
+liveBloggingNow: "true"
+main: "<figure class="element element-image" data-media-id="e1e698485c1b1c39e4779ec9ffc978780de2af0f"> <img src="https://media.guim.co.uk/e1e698485c1b1c39e4779ec9ffc978780de2af0f/0_107_2833_1700/1000.jpg" alt=" Alfie May puts the Robins ahead. " width="1000" height="600" class="gu-image" /> <figcaption> <span class="element-image__caption"> Alfie May puts the Robins ahead. </span> <span class="element-image__credit">Photograph: Toby Melville/Reuters</span> </figcaption> </figure>"
+productionOffice: "UK"
+publication: "theguardian.com"
+shortUrl: "https://gu.com/p/g7bpk"
+shouldHideAdverts: "false"
+shouldHideReaderRevenue: "false"
+showAffiliateLinks: "false"
+showInRelatedContent: "true"
+standfirst: "<ul><li>Live FA Cup updates from the 5.30pm GMT kick-off</li><li><a href="https://www.theguardian.com/football/2021/jan/22/kevin-de-bruyne-out-for-up-to-six-weeks-in-blow-to-manchester-city">‘Irreplaceable’ De Bruyne out for up to six weeks</a></li><li>And you can email Scott <a href="mailto:scott.murray.casual@theguardian.com">here</a> with your thoughts</li></ul>"
+thumbnail: "https://media.guim.co.uk/e1e698485c1b1c39e4779ec9ffc978780de2af0f/0_107_2833_1700/500.jpg"
+trailText: "<strong>Minute-by-minute report: </strong>Will the League Two side pull off a seismic shock against City? Join Scott Murray to find out"
+wordcount: "2445"
+
+
+
+
+// console.log(data)
+// console.log(data.response)
+// console.log(data.response.results)
+// console.log(data.response.results[0])
