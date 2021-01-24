@@ -5,7 +5,7 @@ function getNewsData() {
 }
 
 function renderArticle(articleData, index) {
-  let articleHeadlineHTML = `<h3>${articleData.webTitle}</h3>`;
+  let articleHeadlineHTML = `<h3><a href=#${index}>${articleData.webTitle}</a></h3>`;
   let articleThumbnail = `<img src='${articleData.fields.thumbnail}'>`
   return {
     "headline": `${articleHeadlineHTML}`,

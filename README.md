@@ -139,7 +139,7 @@ If you're interested, you can see the code for the News Summary API in this repo
 - interface.js
 
 ### Todo
-- make headline clickable
+
 - see summary of article (impliment aylien api)
 - see image from article
 
@@ -147,3 +147,4 @@ If you're interested, you can see the code for the News Summary API in this repo
 - first user story (headlines from Guardian API)
 - removed API key by using Makers News Summary API
 - user story 2 - show image
+- make headline clickable (hash change)
