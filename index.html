@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>News Summary App</title>
 <link rel="stylesheet" href="styles.css">
+<script src='src/news.js'></script>
+<script src='src/article.js'></script>
 <script defer src="interface.js"></script>
 </head>
 <body>
@@ -13,8 +15,9 @@
   <button id="selectArticle">Open first article</button>
   <div id='articleModal' class='article-modal'>
     <div class="article-summary">
-      <span class="close">&times;</span>
-      <p>Summary of Article</p>
+      <span id="close">&times;</span>
+      <h3 id='articleHeadline'></h3>
+      <p id='articleSummary'></p>
     </div>
   </div>
   <h2>Headlines</h2>
