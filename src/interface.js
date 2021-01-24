@@ -1,6 +1,10 @@
 const guardianUrl = 'https://content.guardianapis.com/search?show-fields=all&api-key=361663f7-439e-4700-8e57-0d147b9c2471';
 const aylienurl = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url="
 var newsCollection = new NewsCollection();
+const date = new Date();
+var d = new Intl.DateTimeFormat('en-US').format(date)
+document.getElementById("demo").innerHTML = d;
+
 
 window.onload = getNews();
 window.onhashchange = function() {
