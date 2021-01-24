@@ -5,4 +5,7 @@ class News {
   identicals() {
     return "4"
   }
+  real() {
+    return true
+  }
 }

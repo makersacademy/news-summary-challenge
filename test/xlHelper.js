@@ -16,32 +16,36 @@ function checkIf(that) {
   return {
     isClass: () => {
       if (typeof (that) === "object")
-        return console.log(`»» It is`)
+        return console.log(`»» It is.`)
     },
     has: (f) => {
       let proto = that.constructor.prototype
       if (`${f}` in proto) {
         return {
           function: () => {
-            return console.log(`»» It has`)
+            return console.log(`»» It is.`)
           }
         }
       } else {
-        return console.log(`»» ${f} is not a function`)
+        return console.log(`»» ${f} is not a function.`)
       }
     },
     isEqual: (exp) => {
       if (that == exp)
-        return console.log(`»» It is equal: ${that} == ${exp}`)
+        return console.log(`»» It is equal: ${that} == ${exp}.`)
       else
-        return console.log(`» ${that} is NOT equal to ${exp}`)
+        return console.log(`» ${that} is NOT equal to ${exp}.`)
     },
     isIdenticalTo: (exp) => {
       if (that === exp)
-        return console.log(`»» It is identical: ${that} === ${exp}`)
+        return console.log(`»» It is identical: ${that} === ${exp}.`)
       else
-        return console.log(`» ${that} is NOT identical to ${exp}`)
+        return console.log(`» ${that} is NOT identical to ${exp}.`)
+    },
+    isTrue: () => {
+      if (that)
+        return console.log(`»» It is.`)
+      return console.log(`»» It is NOT.`)
     }
   }
-  ß
 }

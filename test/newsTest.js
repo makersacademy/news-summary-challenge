@@ -4,7 +4,7 @@ describe("Note Class", () => {
     checkIf(news).isClass();
   })
   describe("headline()", () => {
-    it("has a function", () => {
+    it("is a function", () => {
       var news = new News();
       checkIf(news).has('headline').function();
     })
@@ -14,13 +14,23 @@ describe("Note Class", () => {
     })
   })
   describe("identicals()", () => {
-    it("has a function", () => {
+    it("is a function", () => {
       var news = new News();
       checkIf(news).has('identicals').function();
     })
     it("are identicals", () => {
       var news = new News();
       checkIf(news.identicals()).isIdenticalTo("4");
+    })
+  })
+  describe("real()", () => {
+    it("is a function", () => {
+      var news = new News();
+      checkIf(news).has('real').function();
+    })
+    it("is true", () => {
+      var news = new News();
+      checkIf(news.real()).isTrue();
     })
   })
 });
