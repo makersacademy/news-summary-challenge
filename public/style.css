@@ -9,7 +9,7 @@
 
 body h1 {
   background-color: #f9dcc4;
-  font-size: 8rem;
+  font-size: 10vw;
   text-align: center;
   height:30vh;
   line-height: 30vh;
@@ -32,9 +32,15 @@ body h1 {
   border-right: 2px solid #006d77;
 }
 
+@media ( max-width: 26.25em ) {
+  h1 {
+      font-size: 1.875em;
+    }
+   }
+
 body h2 {
   color: #006d77;
-  font-size: 2em;
+  font-size: 2.2em;
 }
 
 body h3 {
