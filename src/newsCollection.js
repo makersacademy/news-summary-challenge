@@ -7,16 +7,15 @@ class NewsCollection {
     if (news != null) {
       this.collection[news.articleUrl] = news;
     } else {
-      console.log("The provided news object is undefined")
+      console.log('The provided news object is undefined');
     }
   }
 
   getNewsByUrl(newsUrl) {
     if (newsUrl) {
-      return this.collection[newsUrl]
+      return this.collection[newsUrl];
     } else {
-      console.log("The provided newsUrl is empty")
+      console.log('The provided newsUrl is empty');
     }
   }
-
 }
