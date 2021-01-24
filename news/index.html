@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <meta charset="UTF-8">
+  <h1>News Summary</h1>
+  <link rel="stylesheet" href="public/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="overlay">
+    <div id="fullArticle">Overlay Text</div>
+    <button type='button' id='close'>Close</button>
+    </div>
+  </div>
+
+  <section class="article-creation">
+    <div class="form">
+      <form id="new-article">
+        <textarea id="articletext" type="text" columns="20"
+          placeholder="News news news"></textarea>
+
+        <div><input type="submit" id="submit-button" value="Add Article"></input>
+          
+        
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <section class="news-display">
+
+    <span id="news-list"></span>
+  </section>
+
+  <br><br><br><br><br>
+
+  
+  <script src="src/Article.js"></script>
+  <script src="src/NewsSummary.js"></script>
+  <script src="src/NewsSummaryInterface.js"></script>
+
+
+
+</body>
+
+
+
+</html>
