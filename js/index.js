@@ -5,17 +5,22 @@ const articles = {
   article3: {img: "https://via.placeholder.com/100x50.png?text=Image+3", headline: "Headline 3"}
 };
 
+function getGuardianData() {
+  getData().then(guardian => {
+    let results = guardian.response.results;
+    displayHeadlines(results);
+  })
+}
 
-function displayHeadlines() {
+function displayHeadlines(results) {
   var gridContainer = document.getElementsByClassName('grid-container')
 
-  for (const [key, value] of Object.entries(articles)) {
-    let image = createImage(value.img)
-    let headline = createHeadline(value.headline)
-    let article = createArticle(image, headline)
+  results.forEach(function (value) {
+    let headline = createHeadline(value.webTitle)
+    let article = createArticle(headline)
 
     gridContainer[0].appendChild(article)
-  };
+  });
 }
 
 function createImage(img) {
@@ -31,12 +36,25 @@ function createHeadline(headline_text) {
   return headline
 }
 
-function createArticle(image, headline) {
+function createArticle(headline) {
   let article = document.createElement('div')
   article.setAttribute("class", "card")
-  article.appendChild(image)
   article.appendChild(headline)
   return article
 }
 
-displayHeadlines();
+function getData(text) {
+
+  return fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=uk-news&from-date=2021-01-24&to-date=2021-01-24", {
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(response => {
+      return response.json()
+    });
+}
+
+
+getGuardianData();
