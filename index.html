@@ -5,6 +5,7 @@
     <title>News Summary</title>
     <link rel="stylesheet" href="index.css">
     <script src="interface.js"></script>
+    <script defer src="modalEffect.js"></script>
   </head>
   <body>
     <!-- Fixed header for title & date -->
@@ -16,6 +17,9 @@
 
     <!-- Pop up window -->
     <div class="modal" id="modal">
+      <div class="anchorman-gif">
+        <div class="anchorman-gif"><iframe src="https://giphy.com/embed/BOMBumnGk0l7W" frameBorder="0" class="giphy-embed"></iframe></div><p style="margin: 0; text-align: center; font-size: xx-small;"><a href="https://giphy.com/gifs/day-friend-mom-BOMBumnGk0l7W">via GIPHY</a></p>
+      </div>
       <div class="modal-content">
         <span class="close">&times;</span>
         <div id="modal-image">
@@ -31,5 +35,8 @@
     <div class="articles" id="headlines">
 
     </div>
+
+    <!-- the overlay element -->
+    <div class="md-overlay"></div>
   </body>
 </html>

@@ -10,17 +10,9 @@ I can see all of today's headlines in one place
 So I know what the big stories of the day are
 ```
 
-So I think my index is going to be a title "News Summary" followed by a place for all of the
-news stories to be placed. - Done.
+Initially set up index.html as title "News Summary" followed by a place for all of the news stories to appear.
 
-I need to know what comes out of the guardian api request. I used the guardian api explore thing
-to identify the url I needed to type. Currently using apikey='test' as shown on the explore website.
-
-I am able to get the headlines, display them, the urls and the apiurls (just in case I need them).
-Have stuck the header in place and presented the headlines below.
-
-TODO: Get fetch to run through News Summary API to get correct key. Think carefully about how to "stub" this - currently I haven't a clue.
-
+I used the guardian api 'explore' to identify the url I needed to type. For the duration of my development I used a temporary function to retrieve headlines using the 'test' apikey as shown in the explore section.
 
 ```
 As a busy politician
@@ -49,15 +41,14 @@ As a busy politician
 I can read the site comfortably on my phone
 Just in case my laptop breaks
 ```
-Perhaps something to do with flex boxes?? Need to figure out how to check on my phone. Also how to get the body to appear below the header is REALLY annoying?!?!
+Worked out how to get text and size to change with respect to window width - use vw in sizing. Eg 10vw means 10% of window width. Works for height too :)
 
 ```
 As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
 ```
-Still TODO. Funny gifs of news readers??
-Breaking news gif??
+Aminations too complicated for the amount of time I have. Used a gif of Anchorman instead.
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.

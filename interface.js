@@ -3,12 +3,16 @@ var articles = []
 var today = getTodaysDate();
 
 window.onload = function() {
-  console.log(`loaded`)
   getCurrentTime();
   setTodaysDate();
-  // API WORKING! USE getTempHeadlines in console for now.
-  // getHeadlines();
+  getHeadlines();
 }
+
+window.addEventListener("hashchange", function(e) {
+  let id = window.location.hash.split("#")[1];
+  setModalHTML(id);
+  displayModal();
+})
 
 function getTodaysDate() {
   let todaysDate = new Date().toISOString();
@@ -17,9 +21,19 @@ function getTodaysDate() {
 
 function getCurrentTime() {
   let d = new Date();
-  let currentTime = `${d.getHours()}:${d.getMinutes()}`
+  let h = doubleDigits(d.getHours());
+  let m = doubleDigits(d.getMinutes());
+  let currentTime = `${h}:${m}`
   console.log(`getting time, current time is ${currentTime}`)
   document.getElementById('header-title').textContent = `Your News Summary at ${currentTime}`
+}
+
+// Make the hours / minutes two digits
+function doubleDigits(n) {
+  if (n < 10) {
+    n = "0" + n;
+  }
+  return n;
 }
 
 function setTodaysDate() {
@@ -27,20 +41,22 @@ function setTodaysDate() {
   document.getElementById('date').innerHTML = `${todaysDate}`;
 }
 
+// This is the function I used to avoid using (and therefore maxing out) the offical API key.
 function getTempHeadlines() {
   const HEADLINE_REQUEST = `https://content.guardianapis.com/search?from-date=${today}&to-date=${today}&show-fields=thumbnail&api-key=test`;
   fetch(HEADLINE_REQUEST).then(function(response) {
     response.json().then(function(json) {
       let headlineArray = json.response.results
-      console.log(headlineArray); // returned as an array of hashes. Need to retrieve .webTitle
       storeArticles(headlineArray);
       renderHeadlines(headlineArray);
     });
   });
 }
 
+// In final testing this didn't bring pictures through and now doesn't work at all. Perhaps something to do with the number of requests maxed out? The request URL matches exactly the one
+// above, minus the API key as instructed in the news-summary-api instructions.
 function getHeadlines() {
-  const HEADLINE_REQUEST = `http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?from-date=${today}&to-date=${today}`;
+  const HEADLINE_REQUEST = `http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=https://content.guardianapis.com/search?from-date=${today}&to-date=${today}&show-fields=thumbnail`;
   fetch(HEADLINE_REQUEST).then(function(response) {
     response.json().then(function(json) {
       let headlineArray = json.response.results
@@ -58,15 +74,36 @@ function storeArticles(data) {
 
 function renderHeadlines(data) {
   data.forEach(function(article, index) {
-    let articleDiv = document.createElement('div');
-    let id = `${index}`;
-    articleDiv.id = id;
-    articleDiv.className = "article";
-    let headlineHTML = `<h1 class="headline"><a href="#${id}">${article.webTitle}</a></h1>`;
-    let headlineImageHTML = `<img src="${article.fields.thumbnail}" alt="Article Thumbnail">`
-    document.getElementById('headlines').appendChild(articleDiv);
-    document.getElementById(id).innerHTML = `${headlineImageHTML}${headlineHTML}`;
+    createArticleDiv(index);
+    setArticleHTML(article, index);
   });
+}
+
+function createArticleDiv(index) {
+  let articleDiv = document.createElement('div');
+  articleDiv.id = index;
+  articleDiv.className = "article";
+  document.getElementById('headlines').appendChild(articleDiv);
+}
+
+function setArticleHTML(article, index) {
+  let image = getImage(article);
+  let headlineHTML =
+    `<h1 class="headline">
+      <a href="#${index}">
+      <img src="${image}" alt="Image Unavailable" style="font-size: small">
+      ${article.webTitle}
+      </a>
+    </h1>`;
+  document.getElementById(index).innerHTML = `${headlineHTML}`;
+}
+
+function getImage(article) {
+  if (!article.fields) {
+    return "Image Unavailable";
+  } else {
+    return article.fields.thumbnail;
+  };
 }
 
 function getSummarization(articleUrl) {
@@ -76,51 +113,32 @@ function getSummarization(articleUrl) {
       document.getElementById('modal-summary').innerHTML = data.sentences;
     });
   });
-  // API WORKING - here is temp solution.
-  // document.getElementById('modal-summary').innerHTML = "API working. Here are some temporary sentences!";
 }
 
 function setModalHTML(id) {
-  console.log(`setting the ModalHTML...`)
   let article = articles[id];
-  console.log(`article is ${article}`)
   let headlineLinkHTML = `<a href="${article.webUrl}" target="_blank">${article.webTitle}</a>`;
-  console.log(`headlinelinkhtml is ${headlineLinkHTML}`);
   document.getElementById('modal-headline').innerHTML = headlineLinkHTML;
   getSummarization(article.webUrl);
-  document.getElementById('modal-image').innerHTML = `<img src="${article.fields.thumbnail}" alt="Article Thumbnail">`
+  document.getElementById('modal-image').innerHTML = `<img src="${article.fields.thumbnail}" alt="Image Unavailable">`
 }
 
-window.addEventListener("hashchange", function(e) {
-  let id = window.location.hash.split("#")[1];
-  setModalHTML(id);
-  displayModal();
-})
-
 function displayModal() {
-  console.log(`displaying the modal...`)
   let modal = document.getElementById("modal");
-  console.log(`modal is ${modal}`)
   modal.style.display = "block";
   exitModal();
 }
 
 function exitModal() {
-  console.log(`in the exit Modal method...`)
   document.getElementsByClassName("close")[0].onclick = function() {
     modal.style.display = "none";
     history.replaceState(null, null, ' '); // this removes the hash from the url
   }
   window.onclick = function(event) {
-    if (event.target == modal) {
+    let gifDiv = document.getElementsByClassName("anchorman-gif")[0];
+    if (event.target == modal || event.target == gifDiv) {
       modal.style.display = "none";
       history.replaceState(null, null, ' ');
     }
   }
 }
-
-
-// function createHeadlineLink(article, id) {
-//   let headlineHash = document.createElement('a');
-//   headlineHash.href = `#${id}`;
-// }

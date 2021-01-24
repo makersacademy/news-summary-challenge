@@ -1,12 +1,12 @@
 body {
   margin: 0;
+  background-image: linear-gradient(to bottom right, #edead2, #a9bae0);
+  height: 110vh
 }
 
 .header {
   background-color: #0d134a;
   color: white;
-  padding: 5px;
-  font-size: large;
   position: fixed;
   top: 0;
   width: 100%;
@@ -16,23 +16,27 @@ body {
   float: left;
   margin-block: 0;
   padding: 2%;
+  font-size: 4vw;
 }
 
-h3 {
+.header h3 {
   float: right;
   margin-inline-end: 3%;
+  font-size: 2.5vw;
 }
 
 .articles {
-  padding: 5%;
-  margin-top: 100px;
+  padding: 2vw;
+  margin-top: 9vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .article {
-  width: 45%;
+  max-width: 230px;
+  min-width: 210px;
+  padding: 1vw;
 }
 
 img {
@@ -40,7 +44,9 @@ img {
 }
 
 h1.headline {
-  font-size: x-large;
+  font-size: 25px;
+  margin-block-start: 0;
+  margin-block-end: 1cm;
 }
 
 img::before {
@@ -55,13 +61,12 @@ img::before {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 110px; /* Location of the box */
+  padding-top: 1vw; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
@@ -69,9 +74,11 @@ img::before {
   background-color: #c6e1fc;
   margin: auto;
   padding: 10px;
-  border: 2px solid #0d134a;
+  border: 4px solid #0d134a;
   text-align: left;
   width: 70%;
+  overflow-y: auto;
+  max-height: 500px;
 }
 
 .close {
@@ -93,16 +100,20 @@ img::before {
 #modal-headline {
   margin-block-start: 0;
   margin-block-end: 0;
+  margin-inline-end: 2vw;
 }
 
 #modal-image {
   padding: 20px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 20%;
+  float: left;
 }
 
 a {
   text-decoration: none;
   color: #0d134a;
+}
+
+.anchorman-gif {
+  text-align: center;
 }
