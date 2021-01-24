@@ -1,17 +1,17 @@
 body {
-  background-color: #DFBEC7;
+  background-color: #d8cabb;
   font-family: 'Source Serif Pro', serif;
   min-width: fit-content;
   margin: 5% 10%;
 }
 
 h1 {
-  color: white;
+  color: #56403a;
   text-align: center;
+  font-size: 60px;
 }
 
 #today-date {
-  color: white;
   font-size: 1.5vw;
   text-align: center;
 }
@@ -21,6 +21,11 @@ a {
   color: black;
 }
 
+h2 {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+}
 
 h2:hover, a:hover {
   cursor: grab;
@@ -36,7 +41,7 @@ h2:hover, a:hover {
   cursor: hand;
 }
 
-img {
+.modal img {
   margin: 20px;
 }
 
@@ -48,11 +53,11 @@ img {
   justify-content: center;
   align-items: center;
   visibility: hidden;
-  background-color: #fefefe;
-  border: 1px solid #888;
+  background-color: #F3ECE7;
   max-width: 80%;
   max-height: 60%;
   overflow-y: scroll;
+  border: #56403a 1px solid;
 }
 
 .modal-content {
@@ -61,6 +66,9 @@ img {
 
 .modal-content p {
   text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 150%;
+  font-size: 1.3vw;
 }
 
 
@@ -77,6 +85,10 @@ img {
 .show-modal {
   opacity: 1;
   visibility: visible;
+}
+
+.section {
+  color: #A62700;
 }
   
 @media only screen and (max-device-width: 600px) {
