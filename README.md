@@ -1,3 +1,5 @@
+* Aylien was erroring due to exceeding rate limit all day - got as far as I could with coding roughly how using it for extracting images and summaries might look. Was difficult to go any further as couldn't see exactly what I'd be getting back from the API requests. Have commented out the code that uses Aylien.
+
 
 ## User Stories
 

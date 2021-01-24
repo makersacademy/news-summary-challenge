@@ -13,7 +13,7 @@ function displayArticle(article) {
   var modal = document.getElementById("myModal");
   modal.style.display = "block";
   // getSummary(article, "modal-text")
-  var body = article.webTitle
+  var body = `${article.webTitle} (click for more)`
   document.getElementById("modal-text").innerHTML = body.link(article.webUrl)
   document.getElementsByClassName("close")[0].onclick = function() {
     modal.style.display = "none";
@@ -42,32 +42,32 @@ function getHeadlines() {
   })
 }
 
-function getSummary(article, element) {
-  fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${article.webUrl}language=english`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }).then(function(response) {
-    response.json().then(function(data) {
-      document.getElementById(element).innerHTML = data.sentences
-    });
-  })
-}
+// function getSummary(article, element) {
+//   fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${article.webUrl}language=english`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   }).then(function(response) {
+//     response.json().then(function(data) {
+//       document.getElementById(element).innerHTML = data.sentences
+//     });
+//   })
+// }
 
-function getImages(article) {
-  fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/extract?url=${article.webUrl}&best_image=true&language=english`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }).then(function(response) {
-    response.json().then(function(data) {
-      console.log(data)
-      console.log(data.image)
-    });
-  })
-}
+// function getImages(article) {
+//   fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/extract?url=${article.webUrl}&best_image=true&language=english`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   }).then(function(response) {
+//     response.json().then(function(data) {
+//       console.log(data)
+//       console.log(data.image)
+//     });
+//   })
+// }
 
 function displayHeadlines(data) {
     data.forEach(function(article, index) {
