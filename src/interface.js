@@ -1,5 +1,4 @@
-// const guardianAPIKey = "INSERT_YOUR_API_KEY_HERE";
-const guardianAPIKey = '361663f7-439e-4700-8e57-0d147b9c2471'
+const guardianAPIKey = "INSERT_YOUR_API_KEY_HERE";
 const guardianUrl = 'https://content.guardianapis.com/search?show-fields=all&api-key='+ guardianAPIKey;
 const aylienurl = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url="
 var newsCollection = new NewsCollection();
