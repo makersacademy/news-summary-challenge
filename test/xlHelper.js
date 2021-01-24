@@ -46,6 +46,11 @@ function checkIf(that) {
       if (that)
         return console.log(`»» It is.`)
       return console.log(`»» It is NOT.`)
+    },
+    isFalse: () => {
+      if (!that)
+        return console.log(`»» It is.`)
+      return console.log(`»» It is NOT.`)
     }
   }
 }

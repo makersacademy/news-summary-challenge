@@ -33,4 +33,14 @@ describe("Note Class", () => {
       checkIf(news.real()).isTrue();
     })
   })
+  describe("fiction()", () => {
+    it("is a function", () => {
+      var news = new News();
+      checkIf(news).has('fiction').function();
+    })
+    it("is false", () => {
+      var news = new News();
+      checkIf(news.fiction()).isFalse();
+    })
+  })
 });

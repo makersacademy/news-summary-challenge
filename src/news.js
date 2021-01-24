@@ -8,4 +8,7 @@ class News {
   real() {
     return true
   }
+  fiction() {
+    return false
+  }
 }
