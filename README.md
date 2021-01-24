@@ -1,9 +1,13 @@
 # News Summary challenge
 
+Hosted on Surge: makers-news-today.surge.sh
+
 I have built a single-page web app that summarises the news using the Guardian API and Aylien APIs, using Javascript, HTML and CSS. 
 
 Since the Aylien API has a low API request limit (as it is directed via Makers API), in case of API fetch failure, I have replaced the summary text with the full article body. 
 
+![main](https://github.com/Aracho1/news-summary-challenge/blob/master/images/main.png)
+![modal](https://github.com/Aracho1/news-summary-challenge/blob/master/images/modal.png)
 
 ## Completed User Stories
 
