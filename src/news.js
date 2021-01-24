@@ -5,4 +5,7 @@ class News {
   getDate() {
     return "20/Dec/2021"
   }
+  getNews() {
+    return "UK vaccine adviser says delay..."
+  }
 }
