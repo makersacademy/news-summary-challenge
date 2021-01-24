@@ -2,9 +2,10 @@
 
 ## Surge Link
 
-If you want to see the results please click on the link: [Today News](makers-today-news.surge.sh)
+If you want to see the results please click on the link: [Today News](http://makers-today-news.surge.sh/)
 
 ## Screenshots
+<img src="/images/news-responsive.png" width="25%"> <img src="/images/news.png" width="70%">
 
 ## Instructions
 * Feel free to use Google, your notes, books, etc. but work on your own.
