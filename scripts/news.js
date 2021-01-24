@@ -13,4 +13,23 @@ class News {
   createThumbnail() {
     return `<img src="${this.thumbnail}" class="thumbnail"></img>`
   }
+
+  createModalTitle() {
+    return `<h2><a href="${this.url}">${this.title}</a></h2>`
+  }
+
+  createSummary() {
+    return `<p>${this.summary}</p>`
+  }
+
+  createModal() {
+    return `<div class="modal">
+              <span class="btn-close">&times;</span>
+                <div class="modal-content">
+                  ${this.createModalTitle()}
+                  ${this.createThumbnail()} 
+                  ${this.createSummary()}
+                </div>
+            </div>`
+  }
 }

@@ -17,21 +17,12 @@ fetch(guardianNews)
       <div class="news-item" id="${headline.collection.length-1}"> 
         ${article.createThumbnail()} 
         ${article.createTitle()} 
-  
-        <div class="modal">
-          <span class="btn-close">&times;</span>
-            <div class="modal-content">
-              <h2><a href="${article.url}">${article.title}</a></h2>
-              ${article.createThumbnail()} 
-              <p>${article.summary}</p>
-            </div>
-        </div>
-      </div>
-      `;
+        ${article.createModal()}
+      </div>`;
      
     document.getElementById("news-feed").innerHTML = output;
   
-    createModals();
+    triggerModals();
     
     let newsUrl = headline.collection[headline.collection.length - 1].url
     let summaryNews = summaryApi + newsUrl;
@@ -44,7 +35,7 @@ fetch(guardianNews)
     }
   )});
 
-const createModals = () => {
+const triggerModals = () => {
   const triggers = document.getElementsByClassName("trigger");
   const triggerArray = Array.from(triggers).entries();
   const modals = document.getElementsByClassName("modal");
