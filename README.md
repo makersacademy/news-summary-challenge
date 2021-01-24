@@ -82,3 +82,9 @@ Give proper credits. This could be a link to any repo which inspired you to buil
 A short snippet describing the license (MIT, Apache etc)
 
 MIT © [Yourname]()
+
+curl https://api.aylien.com/api/v1/summarize \
+   -H "X-AYLIEN-TextAPI-Application-Key: 867e8f14d147b9602b29c913e9e0c7c0" \
+   -H "X-AYLIEN-TextAPI-Application-ID: 0b36f7c7" \
+   -d sentences_number=3 \
+   -d url="http://techcrunch.com/2015/04/06/john-oliver-just-changed-the-surveillance-reform-debate"

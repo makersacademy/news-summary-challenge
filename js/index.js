@@ -90,9 +90,12 @@ function createImage(article) {
 }
 
 function createHeadline(article) {
+  let link = document.createElement('a')
+  link.setAttribute('href', article.response.content.webUrl )
   let headline = document.createElement('h4')
   headline.innerText = article.response.content.webTitle
-  return headline
+  link.appendChild(headline)
+  return link
 }
 
 function createBody(article) {
