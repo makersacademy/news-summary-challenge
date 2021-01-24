@@ -20,26 +20,14 @@ So that I have something nice to look at
 
 ```
 As a busy politician
-I can click a news headline to see a summary and a photo of the news article
+I can click a news headline to see the full text and a photo of the news article
 So that I can get an in depth understanding of a very important story
 ```
 
 ```
 As a busy politician
-I can see click a news article summary title which links to the original article
+I can click on the title in view article view and it will take me to the original url
 So I can get a few more details about an important story
-```
-
-```
-As a busy politician
-I can read the site comfortably on my phone
-Just in case my laptop breaks
-```
-
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
 ```
 
 ## Mockups
@@ -55,3 +43,7 @@ To make my news reading more fun
 ### Testing Framework
 
 There is a custom testing framework for this project. In order to run tests, you will need to pull the [testing framework repo](https://github.com/calavell/news_summary_testing_framework/blob/main/README.md) to your local machine. There are instructions on the repo for how to download it and integrate it with this project.
+
+##Reflections
+- I have completed the first 4 user Stories
+- It seems the API for summarising texts has a very low limit. I managed to call from it and get summaries based on urls but by the time I got around to trying to implement it, the limit had been maxed so I decided to skip instead display the full text when you click an article.
