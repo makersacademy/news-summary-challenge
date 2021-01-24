@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>news</title>
+    <script src="../src/news.js"></script>
+    <link rel="stylesheet"
+     type="text/css"
+     href="./style.css">
+  </head>
+
+  <body>
+
+    <script>
+
+      document.addEventListener("DOMContentLoaded", function() {
+
+        //let headline = document.getElementById("headline")
+
+        let news = new News();
+        let newsPromise = news.fetch();
+        newsPromise.then(stuff => { news.renderNews() });
+
+
+//we make a request when we click on the title, Clicking on a headline will show a summary of the article
+        //headline.addEventListener("onclick", function() {
+          //let newsContent = document.getElementById("onclick").value;
+          //news.addNews(newsContent);
+          //document.getElementById("onclick").value = "";
+        //});
+        //when you insert the DOM elemets you add event handlers
+      });
+
+    </script>
+
+    <div>
+    <h1>The Guardian</h1>
+    </div>
+
+    <div id="newsList"></div>
+
+  </body>
+</html>
