@@ -1,51 +1,83 @@
 
-const articles = {
-  article1: {img: "https://via.placeholder.com/100x50.png?text=Image+1", headline: "Headline 1"},
-  article2: {img: "https://via.placeholder.com/100x50.png?text=Image+2", headline: "Headline 3"},
-  article3: {img: "https://via.placeholder.com/100x50.png?text=Image+3", headline: "Headline 3"}
-};
+var headlinesURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=uk-news&from-date=2021-01-24&to-date=2021-01-24"
 
-function getGuardianData() {
-  getData().then(guardian => {
-    let results = guardian.response.results;
-    displayHeadlines(results);
+var articleURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/"
+
+function getHeadlinesData() {
+  getData(headlinesURL).then(guardian => {
+    let headlines = new Headlines(guardian.response.results);
+
+    getArticlesData(headlines)
   })
 }
 
-function displayHeadlines(results) {
-  var gridContainer = document.getElementsByClassName('grid-container')
+function getArticlesData(headlines) {
+  var articles = new Articles()
 
-  results.forEach(function (value) {
-    let headline = createHeadline(value.webTitle)
-    let article = createArticle(headline)
+  headlines.getArray().forEach(function (value, index, array) {
+    let fullArticleURL = `${articleURL}${value.id}?show-fields=body`
 
-    gridContainer[0].appendChild(article)
+    getData(fullArticleURL).then(guardian => {
+      articles.add(guardian)
+      if (articles.getArray().length === array.length) {
+        displayHeadlines(articles);
+      }
+    })
   });
 }
 
-function createImage(img) {
+function displayHeadlines(articles) {
+  console.log(articles.getArray().length)
+  var gridContainer = document.getElementsByClassName('grid-container')
+
+  articles.getArray().forEach(function (article) {
+    let headline = createHeadline(article)
+    let image = createImage(article)
+    let card = createCard(headline, image)
+
+    gridContainer[0].appendChild(card)
+  });
+}
+
+function createImage(article) {
   let image = document.createElement('img')
+
+  let body = article.response.content.fields.body;
+  var el = document.createElement('body');
+  el.innerHTML = body
+
+  images = el.getElementsByTagName('img')
+  if (images.length === 0) {
+    img = ""
+  }
+  else {
+    img = images[0].getAttribute('src')
+  };
   image.setAttribute("src", img)
   image.setAttribute("style", "width:100%")
   return image
 }
 
-function createHeadline(headline_text) {
+function createHeadline(article) {
   let headline = document.createElement('h4')
-  headline.innerText = headline_text
+  headline.innerText = article.response.content.webTitle
   return headline
 }
 
-function createArticle(headline) {
+function createCard(headline, image) {
   let article = document.createElement('div')
   article.setAttribute("class", "card")
+  article.appendChild(image)
   article.appendChild(headline)
   return article
 }
+// "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=uk-news&from-date=2021-01-24&to-date=2021-01-24"
 
-function getData(text) {
+// "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
 
-  return fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=uk-news&from-date=2021-01-24&to-date=2021-01-24", {
+function getData(url) {
+
+  return fetch(url, {
       method: "GET",
       headers: {
         'Content-Type': 'application/json',
@@ -57,4 +89,6 @@ function getData(text) {
 }
 
 
-getGuardianData();
+
+
+getHeadlinesData();
