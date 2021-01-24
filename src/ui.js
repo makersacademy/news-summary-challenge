@@ -6,12 +6,15 @@ class UI {
   }
 
   paint(results) {
-    //console.log(results[0].webTitle)
+    let articlesDiv = ''
       results.forEach(element => {
         let articleShortDiv = document.createElement('div')
         this.title.textContent = element.webTitle;
         this.cata.textContent = element.sectionName;
+        articleShortDiv.textContent = `${this.cata}: ${this.title}`
+        articlesDiv += articleShortDiv
       });
+      console.log(articlesDiv)
   }
 
 
