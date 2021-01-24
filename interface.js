@@ -1,5 +1,5 @@
 function getNewsData() {
-  return fetch("https://content.guardianapis.com/search?api-key=0c0a4894-5a0d-4538-b222-c1b5e62e629b").then(response => {
+  return fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?").then(response => {
     return response.json();
   })
 }
@@ -17,6 +17,7 @@ function display(articles) {
 }
 
 getNewsData().then(news => {
+  console.log(news)
   let newsData = news.response.results
   display(newsData)
 });
