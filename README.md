@@ -1,5 +1,8 @@
 # News Summary challenge
 
+Please run http-server and visit localhost:8080 to see the site.
+If news stories don't immediately load, it may be because the API requests are maxed out. In this case, please open the javascript console and type getTempHeadlines().
+
 ## My Planning
 
 I have no idea where to start :joy:
