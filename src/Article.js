@@ -1,25 +1,26 @@
 class Article {
 
-  constructor(headline, textBody, id, url) {
+  constructor(headline, textBody, thumbnail, url) {
     this.headline = headline
     this.textBody = textBody
-    this.id = id
+    this.thumbnail = thumbnail
     this.url = url
+    this.summary = 0
   }
 
-  getHeadline() {
-    return this.headline;
-  }
-
-  getTextBody() {
-    return this.textBody;
-  }
-
-  getId() {
-    return this.id;
-  }
-
-  getUrl() {
-    return this.url;
-  }
+  // getHeadline() {
+  //   return this.headline;
+  // }
+  //
+  // getTextBody() {
+  //   return this.textBody;
+  // }
+  //
+  // getThumbnail() {
+  //   return this.thumbnail;
+  // }
+  //
+  // getUrl() {
+  //   return this.url;
+  // }
 }

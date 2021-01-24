@@ -12,4 +12,9 @@ class NewsFeed {
     this.articles.push(article);
   }
 
+  getArticleFromUrl(url) {
+    this.articles.filter(function(article) {
+      return article.url === url;
+    })
+  }
 }
