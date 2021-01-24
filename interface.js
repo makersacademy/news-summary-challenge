@@ -14,7 +14,7 @@ function getArticles() {
             newsFeed.addNewArticle(newArticle);
             let articlesDiv = document.getElementById("article-list")
             articlesDiv.insertAdjacentHTML('beforeend', `<img class="${result.webUrl}"src="${result.fields.thumbnail}"><br>`)
-            articlesDiv.insertAdjacentHTML('beforeend', `<a id="${result.webUrl}" href="#${result.webUrl}">${result.webTitle}</a><br>`)
+            articlesDiv.insertAdjacentHTML('beforeend', `<a class="headline" id="${result.webUrl}" href="#${result.webUrl}">${result.webTitle}</a><br><br><br>`)
           })
         });
       })
