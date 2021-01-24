@@ -1,16 +1,5 @@
 # News Summary challenge
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
-
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that summarises the news.
-
 ### Guidance
 
 Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
@@ -77,10 +66,10 @@ To make my news reading more fun
 
 ### Mockup Idea 1
 
-![Mockup One](/images/mockup1.jpeg)
+![Mockup One](public/images/mockup1.jpeg)
 
 
-![Mockup Two](/images/mockup2.jpeg)
+![Mockup Two](public/images/mockup2.jpeg)
 
 ## API
 
@@ -89,7 +78,7 @@ To make my news reading more fun
 So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
 
 > Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
-
+I would create a file called config.js (which I have mocked in this repo) and set a variable in there to equal the API key (API_KEY = the API key), link that with the index page then refer to that variable in the places the API key is required. I would set up a .gitignore file and refer to config.js in there so that it will remain hidden.
 ### API request rate limits and stubbing
 
 The Guardian and Aylien text summarisation APIs are severely rate-limited.
