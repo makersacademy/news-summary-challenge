@@ -21,6 +21,7 @@ function getArticlesData(headlines) {
       articles.add(guardian)
       if (articles.getArray().length === array.length) {
         displayHeadlines(articles);
+        createModals(articles)
       }
     })
   });
@@ -33,8 +34,22 @@ function displayHeadlines(articles) {
   articles.getArray().forEach(function (article) {
     let headline = createHeadline(article)
     let image = createImage(article)
-    let card = createCard(headline, image)
+    let card = createCard(image, headline)
 
+    gridContainer[0].appendChild(card)
+  });
+}
+
+function createModals(articles) {
+  console.log(articles.getArray().length)
+  var gridContainer = document.getElementsByClassName('grid-container')
+
+  articles.getArray().forEach(function (article) {
+    let headline = createHeadline(article)
+    let image = createImage(article)
+    let body = createBody(article)
+    let card = createCard(image, headline, body)
+    card.setAttribute('class', 'modal')
     gridContainer[0].appendChild(card)
   });
 }
@@ -64,11 +79,25 @@ function createHeadline(article) {
   return headline
 }
 
-function createCard(headline, image) {
+function createBody(article) {
+  let body = article.response.content.fields.body;
+  var el = document.createElement('body');
+  el.innerHTML = body
+
+  copy = el.querySelectorAll('p')
+  return copy
+}
+
+function createCard(image, headline, body = [document.createElement('div')]) {
   let article = document.createElement('div')
   article.setAttribute("class", "card")
   article.appendChild(image)
   article.appendChild(headline)
+
+  body.forEach(function(para) {
+    article.appendChild(para)
+  })
+
   return article
 }
 // "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=uk-news&from-date=2021-01-24&to-date=2021-01-24"
