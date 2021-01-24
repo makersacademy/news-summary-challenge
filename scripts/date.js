@@ -6,4 +6,4 @@ const year = today.getFullYear();
 
 const displayDate = `${day} ${month} ${date}, ${year}`;
 
-document.getElementById("today-date").innerHTML = displayDate
+document.getElementById("today-date").innerHTML = <h3>displayDate</h3>

@@ -3,6 +3,6 @@ class News {
     this.title;
     this.url;
     this.thumbnail;
-    this.text;
+    this.summary;
   }
 }

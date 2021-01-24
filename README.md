@@ -1,9 +1,9 @@
 # News Summary challenge
 
-I have built a single-page web app that summarises the news using the Guardian API, using Javascript, HTML and CSS. 
+I have built a single-page web app that summarises the news using the Guardian API and Aylien APIs, using Javascript, HTML and CSS. 
 
 
-## User Stories
+## Completed User Stories
 
 
 ```
