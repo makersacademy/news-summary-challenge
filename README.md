@@ -1,6 +1,6 @@
 # News Summary challenge
 
-Hosted on Surge: makers-news-today.surge.sh
+Check out (here)[makers-news-today.surge.sh]
 
 I have built a single-page web app that summarises the news using the Guardian API and Aylien APIs, using Javascript, HTML and CSS. 
 
