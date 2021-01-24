@@ -1,14 +1,8 @@
 class News {
-  headline() {
-    return 4
+  constructor() {
+    this.date = this.getDate()
   }
-  identicals() {
-    return "4"
-  }
-  real() {
-    return true
-  }
-  fiction() {
-    return false
+  getDate() {
+    return "20/Dec/2021"
   }
 }

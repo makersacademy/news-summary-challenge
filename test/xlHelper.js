@@ -26,21 +26,18 @@ function checkIf(that) {
             return console.log(`»» It is.`)
           }
         }
-      } else {
-        return console.log(`»» ${f} is not a function.`)
       }
+      return console.log(`»» ${f} is not a function.`)
     },
     isEqual: (exp) => {
       if (that == exp)
         return console.log(`»» It is equal: ${that} == ${exp}.`)
-      else
-        return console.log(`» ${that} is NOT equal to ${exp}.`)
+      return console.log(`» ${that} is NOT equal to ${exp}.`)
     },
     isIdenticalTo: (exp) => {
       if (that === exp)
         return console.log(`»» It is identical: ${that} === ${exp}.`)
-      else
-        return console.log(`» ${that} is NOT identical to ${exp}.`)
+      return console.log(`» ${that} is NOT identical to ${exp}.`)
     },
     isTrue: () => {
       if (that)

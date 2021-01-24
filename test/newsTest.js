@@ -1,46 +1,14 @@
 describe("Note Class", () => {
+  var news = new News();
   it("is defined", () => {
-    var news = new News();
     checkIf(news).isClass();
   })
-  describe("headline()", () => {
-    it("is a function", () => {
-      var news = new News();
-      checkIf(news).has('headline').function();
+  describe("getDate()", () => {
+    it("is defined", () => {
+      checkIf(news).has("getDate").function();
     })
-    it("is equal", () => {
-      var news = new News();
-      checkIf(news.headline()).isEqual('4');
-    })
-  })
-  describe("identicals()", () => {
-    it("is a function", () => {
-      var news = new News();
-      checkIf(news).has('identicals').function();
-    })
-    it("are identicals", () => {
-      var news = new News();
-      checkIf(news.identicals()).isIdenticalTo("4");
-    })
-  })
-  describe("real()", () => {
-    it("is a function", () => {
-      var news = new News();
-      checkIf(news).has('real').function();
-    })
-    it("is true", () => {
-      var news = new News();
-      checkIf(news.real()).isTrue();
-    })
-  })
-  describe("fiction()", () => {
-    it("is a function", () => {
-      var news = new News();
-      checkIf(news).has('fiction').function();
-    })
-    it("is false", () => {
-      var news = new News();
-      checkIf(news.fiction()).isFalse();
+    it("gets a date", () => {
+      checkIf(news.date).isEqual("20/Dec/2021");
     })
   })
 });
