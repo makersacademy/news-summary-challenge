@@ -1,23 +1,28 @@
 function getNewsData() {
-  return fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?").then(response => {
+  return fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail").then(response => {
     return response.json();
   })
 }
 
-function renderArticle(articleData) {
-    let articleHeadlineHTML = `<h1>${articleData.webTitle}</h1>`;
-    return `${articleHeadlineHTML}`;
+function renderArticle(articleData, index) {
+  let articleHeadlineHTML = `<h3>${articleData.webTitle}</h3>`;
+  let articleThumbnail = `<img src='${articleData.fields.thumbnail}'>`
+  return {
+    "headline": `${articleHeadlineHTML}`,
+    "thumbnail": `${articleThumbnail}`
+  };
 }
 
 function display(articles) {
-  articles.forEach(article => {
-    let rendered = renderArticle(article);
-    document.getElementById("headlines").insertAdjacentHTML('beforeend', rendered);
+  articles.forEach((article, index) => {
+    let rendered = renderArticle(article, index);
+    document.getElementById("headlines").insertAdjacentHTML('beforeend', `<br>`);
+    document.getElementById("headlines").insertAdjacentHTML('beforeend', rendered.thumbnail);
+    document.getElementById("headlines").insertAdjacentHTML('beforeend', rendered.headline);
   })
 }
 
 getNewsData().then(news => {
-  console.log(news)
   let newsData = news.response.results
   display(newsData)
 });
