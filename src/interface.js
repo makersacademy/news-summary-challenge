@@ -8,7 +8,12 @@ var d = new Intl.DateTimeFormat('en-US').format(date)
 document.getElementById("date").innerHTML = d;
 
 
-window.onload = getNews();
+window.onload = function() {
+  hideContent('full_news')
+  getNews();
+}
+
+
 window.onhashchange = function() {
   const newsUrl = getUrl()
   if (newsUrl == null || !newsUrl) {
@@ -71,6 +76,8 @@ function getNews() {
   });
 }
 
+
+
 function summarizeText(newsUrl) {
   var article = newsCollection.getNewsByUrl(newsUrl)
   fetch( aylienurl + newsUrl)
@@ -87,8 +94,10 @@ function summarizeText(newsUrl) {
     var news_summary = document.createTextNode(article.summary);
     news_summary_p.appendChild(news_summary)
     news_div.appendChild(news_summary_p);
+    hideContent('full_news')
   })
   .catch(function() {
+    displayContent('full_news')
     const news_div = document.getElementById('full_news');
     const news_summary_p = document.createElement('p');
     var news_summary = document.createTextNode(article.body);
@@ -101,6 +110,11 @@ function summarizeText(newsUrl) {
 function hideContent(elementToHide) {
   var hidden = document.getElementById(elementToHide)
   hidden.style.display = "none";
+};
+
+function displayContent(elementToDisplay) {
+  var hidden = document.getElementById(elementToDisplay);
+  hidden.style.display = (status !== 'open') ? 'block' : 'none';
 };
 
 function createImageElement(thumbnailUrl) {
