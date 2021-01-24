@@ -1,5 +1,58 @@
 # News Summary challenge
 
+Please run http-server and visit localhost:8080 to see the site.
+If news stories don't immediately load, it may be because the API requests are maxed out. In this case, please open the javascript console and type getTempHeadlines().
+
+## My Planning
+
+I have no idea where to start :joy:
+
+```
+As a busy politician
+I can see all of today's headlines in one place
+So I know what the big stories of the day are
+```
+
+Initially set up index.html as title "News Summary" followed by a place for all of the news stories to appear.
+
+I used the guardian api 'explore' to identify the url I needed to type. For the duration of my development I used a temporary function to retrieve headlines using the 'test' apikey as shown in the explore section.
+
+```
+As a busy politician
+I can see a relevant picture to illustrate each news article when I browse headlines
+So that I have something nice to look at
+```
+Retrieved image from the guardian api using show-fields=thumbnail
+
+```
+As a busy politician
+I can click a news headline to see a summary and a photo of the news article
+So that I can get an in depth understanding of a very important story
+```
+Headlines are hash links which display a modal.
+The modal includes the headline, thumbnail photo and summary from the Aylien API.
+
+```
+As a busy politician
+I can see click a news article summary title which links to the original article
+So I can get a few more details about an important story
+```
+The headline in the modal is a link to the original story on the website. I added target=_blank so that it opens in another tab.
+
+```
+As a busy politician
+I can read the site comfortably on my phone
+Just in case my laptop breaks
+```
+Worked out how to get text and size to change with respect to window width - use vw in sizing. Eg 10vw means 10% of window width. Works for height too :)
+
+```
+As a busy politician
+I can see whizzy animations in the app
+To make my news reading more fun
+```
+Aminations too complicated for the amount of time I have. Used a gif of Anchorman instead.
+
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.

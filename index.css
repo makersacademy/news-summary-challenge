@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  background-image: linear-gradient(to bottom right, #edead2, #a9bae0);
+  height: 110vh
+}
+
+.header {
+  background-color: #0d134a;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header h1 {
+  float: left;
+  margin-block: 0;
+  padding: 2%;
+  font-size: 4vw;
+}
+
+.header h3 {
+  float: right;
+  margin-inline-end: 3%;
+  font-size: 2.5vw;
+}
+
+.articles {
+  padding: 2vw;
+  margin-top: 9vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.article {
+  max-width: 230px;
+  min-width: 210px;
+  padding: 1vw;
+}
+
+img {
+  width: 100%
+}
+
+h1.headline {
+  font-size: 25px;
+  margin-block-start: 0;
+  margin-block-end: 1cm;
+}
+
+img::before {
+  display: block;
+  content: " ";
+  margin-top: -90px;
+  height: 90px;
+  visibility: hidden;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 1vw; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #c6e1fc;
+  margin: auto;
+  padding: 10px;
+  border: 4px solid #0d134a;
+  text-align: left;
+  width: 70%;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 15%;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-headline {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-end: 2vw;
+}
+
+#modal-image {
+  padding: 20px;
+  width: 20%;
+  float: left;
+}
+
+a {
+  text-decoration: none;
+  color: #0d134a;
+}
+
+.anchorman-gif {
+  text-align: center;
+}

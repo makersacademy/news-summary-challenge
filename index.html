@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>News Summary</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="interface.js"></script>
+    <script defer src="modalEffect.js"></script>
+  </head>
+  <body>
+    <!-- Fixed header for title & date -->
+    <div class="header">
+        <h1 id="header-title"></h1>
+        <h3 id="date"></h3>
+    </div>
+    <div class="headerMargin"></div>
+
+    <!-- Pop up window -->
+    <div class="modal" id="modal">
+      <div class="anchorman-gif">
+        <div class="anchorman-gif"><iframe src="https://giphy.com/embed/BOMBumnGk0l7W" frameBorder="0" class="giphy-embed"></iframe></div><p style="margin: 0; text-align: center; font-size: xx-small;"><a href="https://giphy.com/gifs/day-friend-mom-BOMBumnGk0l7W">via GIPHY</a></p>
+      </div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-image">
+
+        </div>
+        <h2 id="modal-headline"></h2>
+        <p id="modal-summary"></p>
+
+      </div>
+    </div>
+
+    <!-- Articles -->
+    <div class="articles" id="headlines">
+
+    </div>
+
+    <!-- the overlay element -->
+    <div class="md-overlay"></div>
+  </body>
+</html>
