@@ -71,9 +71,13 @@ Home made test framework: ZenSpec.
 * `$ open SpecRunner.html`
 
 ## How to use?
-Ensure you have http-server installed: https://www.npmjs.com/package/http-server
+* Either remotely, navigate to: http://news_summary.surge.sh/
 
-From project root directory:
+* Or to run from your local computer:
 
-* `$ http-server`
-* then navigate to 'localhost:8080' in your favourite browser.
+    - Ensure you have http-server installed: https://www.npmjs.com/package/http-server
+
+    - From project root directory:
+
+    - `$ http-server`
+    - then navigate to 'localhost:8080' in your favourite browser.
