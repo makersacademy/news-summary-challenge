@@ -1,0 +1,10 @@
+body {
+  background-color: lightblue;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: orange;
+  padding: 30px 30px 65px 50px;
+}
