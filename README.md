@@ -1,10 +1,23 @@
 # Will's Readme - News Summary challenge
 
+## Context
+
+A challenge to create a small single-page web-app that retrieves data from an external API. For me this was a first time for a number of things:
+* connecting to an API myself
+* doing so using vanilla JS
+* using any form of CSS to give even basic consideration to the presentation
+
+### API details
+* Requests sent to the Guardian API (via a heroku-hosted app, which assigned an API key)
+
 ## To Run
+
+The one dependancy is HttpServer (for installation instructions, go to: https://www.npmjs.com/package/http-server).
+
 To run via HttpServer:
 * Navigate to root/views
 * Run the command `npx http-server`
-* Navigate to one of the indicated URLs from your browser
+* Navigate to one of the URLs indicated in the terminal using your browser
 
 ## Completed
 * User story 1
@@ -14,9 +27,12 @@ To run via HttpServer:
 ## Still to do (next steps)
 * Refactor existing JS before continuing
 * Refactor CSS - create classes in separate css file
-* Change article preview to a more convenient pop-up window that can be closed
+* Change article preview to a more convenient pop-up window that can be closed (perhaps bootstrap modal?)
 * Connect to second API to create article summary. Insert into preview area
-* Remaining user stories
+* Extract backend logic into separate classes and files. Unit test these with homemade test framework 'Bob'
+* Implement feature testing
+* Complete remaining user stories
+* Create my own account fior the Guardian API and learn how to implement extra security steps
 
 ## What I learned
 * Learned and used some basic CSS and HTML for the first time
