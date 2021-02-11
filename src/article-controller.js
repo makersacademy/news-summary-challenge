@@ -7,7 +7,7 @@ class ArticleController {
     }
 
     insertArtListHTML() {
-      document.getElementById('articles').innerHTML = this.articleListView.renderArtListHtml();
+      document.getElementById('app').innerHTML = this.articleListView.renderArtListHtml();
     }
 
 
@@ -37,7 +37,7 @@ class ArticleController {
       for (let article of this.articleList.getArticles()) {
         if (article.id === id) {
           let singleArticleView = new SingleArticleView (article)
-          document.getElementById('articles').innerHTML = singleArticleView.generateArtHTML();
+          document.getElementById('app').innerHTML = singleArticleView.generateArtHTML();
         }
       }
     }

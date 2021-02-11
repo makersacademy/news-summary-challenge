@@ -7,8 +7,8 @@ class SingleArticleView {
 
   generateArtHTML() {
     return
-    `<div id="container">
-      <h2>${this.article.getHeadline()}</h2>
+    `<div class="article">
+      <h2 class="title">${this.article.getHeadline()}</h2>
       <br>
       <img src="${this.article.getThumbnail()}" alt="${this.article.getHeadline().slice(0, 15)}">
       <br>
