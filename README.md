@@ -51,6 +51,26 @@ To make my news reading more fun
 ![Article page mockup](/images/news-summary-project-article-page-mockup.png)
 
 
-### Class diagram
+## Class diagram
 
 <img width="853" alt="Screenshot 2020-12-14 at 10 12 45" src="https://user-images.githubusercontent.com/71889577/102068876-ec421380-3df4-11eb-843c-3fca7d2e1912.png">
+
+## Installation instructions
+
+Clone this repository:
+```
+$ git clone https://github.com/savannaelbey/news-summary-challenge.git
+```
+Navigate to the directory:
+```
+$ cd news-summary-challenge
+```
+Install http-server to run locally:
+```
+$ npm install http-server --save
+```
+Start the server:
+```
+$ node node_modules/http-server/bin/http-server
+```
+Visit ```http://localhost:8080/``` in your browser
