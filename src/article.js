@@ -1,11 +1,15 @@
 'use strict';
 
 class Article {
+    static id = 1
     constructor(headline, thumbnail, summary, url) {
         this.headline = headline;
         this.thumbnail = thumbnail;
-        this.url = url;
         this.summary = summary;
+        this.url = url;
+        this.id = Article.id;
+        Article.id++;
+
     }
 
     getHeadline() {
@@ -23,4 +27,9 @@ class Article {
     getSummary() {
       return this.summary;
     }
+
+    getId() {
+      return this.id;
+    }
+    
 }

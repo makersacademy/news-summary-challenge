@@ -12,4 +12,8 @@ class ArticleList {
     addArticle(article) {
         this.articles.push(article);
     }
+
+    // getArticleByID(id) {
+    // return this.articles[id];
+    // }
 }
