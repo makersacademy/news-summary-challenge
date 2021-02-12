@@ -13,9 +13,8 @@ class ArticleListView {
         console.log(this.articleList.getArticles())
         return this.articleList.getArticles().map(article => {
           return `
-          <p>${article.getHeadline()}</p>
           <img src=${article.getThumbnail()}>
-          
+          <p>${article.getHeadline()}</p>
           <br></br>
           `;
         }).join('');
