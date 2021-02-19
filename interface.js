@@ -36,12 +36,13 @@ function interface() {
       let heading = document.getElementById('heading-' + linkID);
       let homepage = container.innerHTML;
       getSummary(model.data[linkID].webUrl).then((summary) => {
+        console.log(summary)
         let text = ""
         for(let i=0; i< summary.sentences.length; i++ ) {
           text += '<p>' + summary.sentences[i]; '</p>'
         }
         let linkToArticle = model.data[linkID].webUrl;
-        container.innerHTML = `<div id='full-page'><h1 id='full-page-heading'>${heading.textContent}</h1>${text}<br /><a href=${linkToArticle}>Original</a><br /><button id='back'>Back</button></div>`;
+        container.innerHTML = `<div id='full-page'><h1 id='full-page-heading'>${heading.textContent}</h1>${text}</p><a class='button' href=${linkToArticle}>Original Article</a><button id='back' class='button'>Back</button></div>`;
         document.getElementById('back').addEventListener('click', (e) => {
           container.innerHTML = homepage;
         })
@@ -61,8 +62,18 @@ function createDivForEachArticle() {
 
 function printTitles(model) {
   for(let i =0; i < 10; i++) {
+    addImage(model, i);
     addHTMLtextElement('h1', `heading-${i}`,`${i}`, model.data[i].webTitle)
   }
+}
+
+function addImage(model, i) {
+  let parent = document.getElementById(i);
+  let location = `images/${model.data[i].pillarName}.png`;
+  let image = new Image();
+  image.src = location;
+  image.className = 'image';
+  parent.appendChild(image);
 }
 
 function addHTMLtextElement(HTMLtype, HTMLid, HTMLparent, text) {
