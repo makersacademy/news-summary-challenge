@@ -21,12 +21,35 @@ function interface() {
     printTitles(model);
     console.log(model.data[0].webUrl)
 
-    getSummary(model.data[0].webUrl).then((summary) => {
-      console.log(summary)
-      addHTMLtextElement('p','id','article-0',summary.text)
-    })
-
   });
+
+  let container = document.getElementById('container');
+
+  container.addEventListener('click', (e) => {
+    const singleLink = e.path.find((item) => {
+    if (item.classList) {
+        return item.classList.contains('single-link');
+    } else {
+        return false;
+    }
+    });
+    if (singleLink) {
+        const linkID = singleLink.getAttribute('id');
+        let homepage = container.innerHTML;
+        getSummary(model.data[linkID].webUrl).then((summary) => {
+          console.log(summary.text)
+          // addHTMLtextElement('p',`paragraph ${linkID}`,`${linkID}`,summary.text)
+          container.innerHTML = `<p>${summary.text}</p><button id='back'>Back</button>`;
+
+          document.getElementById('back').addEventListener('click', (e) => {
+            container.innerHTML = homepage;
+            // root.classList.remove('collapse')
+          })
+        })
+        // root.classList.add('collapse')
+        
+    }
+    })
   
 }
 
@@ -35,13 +58,13 @@ interface()
 function createDivForEachArticle() {
   for(let i =0; i < 10; i++) {
     // addHTMLtextElement('div', `article-${i}`,'container', 'null')
-    addHTMLdiv(`article-${i}`,'container')
+    addHTMLdiv(`${i}`,'container')
   }
 }
 
 function printTitles(model) {
   for(let i =0; i < 10; i++) {
-    addHTMLtextElement('h1', `heading-${i}`,`article-${i}`, model.data[i].webTitle)
+    addHTMLtextElement('h1', `heading-${i}`,`${i}`, model.data[i].webTitle)
   }
 }
 
@@ -57,6 +80,7 @@ function addHTMLtextElement(HTMLtype, HTMLid, HTMLparent, text) {
 function addHTMLdiv(HTMLid, HTMLparent) {
   let HTMLObject = document.createElement('div');
   HTMLObject.id = HTMLid;
+  HTMLObject.classList.add("single-link");
   let parent = document.getElementById(HTMLparent);
   parent.appendChild(HTMLObject);
 }  
