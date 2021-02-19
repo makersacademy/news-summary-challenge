@@ -1,5 +1,6 @@
 * {
   margin:0;
+  color:rgb(36, 36, 0);
 }
 
 body {
@@ -15,7 +16,7 @@ body {
 
 .single-link {
   position: relative;
-  margin: 3%;
+  margin: 1%;
   padding: 10px;
   border: 1px black solid;
   border-radius: 5px;
