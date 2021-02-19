@@ -1,0 +1,82 @@
+body {
+  background: linear-gradient(-10deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 25s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#main {
+  border: #0000008a 2px solid;
+  background-color:#0582ca6e;
+  font-family: 'Courier New', Courier, monospace;
+  color: #051923;
+  margin: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 5px #0129416e;
+}
+
+h1 {
+  margin-left: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color:#c2fff5;
+}
+
+h3 {
+  padding-left: 25px;
+  padding-top: 8px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color:#e7fffb;
+  border-top:dotted #051923 1px;
+}
+
+[id^=listA] {
+  font-size:14px;
+  background-color:#cdeeff;
+  border: #006494 1px solid;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 18px;
+  margin-right: 18px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 1px #0129416e;
+}
+
+[id^=listB] {
+  font-size: 13px;
+  padding-top: 2px;
+}
+
+li {
+  margin-left: 5%;
+  list-style-type:none;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  font-size: 12px;
+}
+
+
+#pass-test-message {
+  color: green;
+}
+
+#fail-test-message {
+  color: red;
+}
