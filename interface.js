@@ -17,39 +17,37 @@ function interface() {
 
   getData().then((post) => { 
     model.data = post.response.results;
-    console.log(model.data[0]);
+    console.log(post);
     printTitles(model);
-    console.log(model.data[0].webUrl)
-
   });
 
   let container = document.getElementById('container');
 
   container.addEventListener('click', (e) => {
     const singleLink = e.path.find((item) => {
-    if (item.classList) {
-        return item.classList.contains('single-link');
-    } else {
-        return false;
-    }
+      if (item.classList) {
+          return item.classList.contains('single-link');
+      } else {
+          return false;
+      }
     });
     if (singleLink) {
-        const linkID = singleLink.getAttribute('id');
-        let homepage = container.innerHTML;
-        getSummary(model.data[linkID].webUrl).then((summary) => {
-          console.log(summary.text)
-          // addHTMLtextElement('p',`paragraph ${linkID}`,`${linkID}`,summary.text)
-          container.innerHTML = `<p>${summary.text}</p><button id='back'>Back</button>`;
-
-          document.getElementById('back').addEventListener('click', (e) => {
-            container.innerHTML = homepage;
-            // root.classList.remove('collapse')
-          })
+      const linkID = singleLink.getAttribute('id');
+      let heading = document.getElementById('heading-' + linkID);
+      let homepage = container.innerHTML;
+      getSummary(model.data[linkID].webUrl).then((summary) => {
+        let text = ""
+        for(let i=0; i< summary.sentences.length; i++ ) {
+          text += '<p>' + summary.sentences[i]; '</p>'
+        }
+        let linkToArticle = model.data[linkID].webUrl;
+        container.innerHTML = `<div id='full-page'><h1 id='full-page-heading'>${heading.textContent}</h1>${text}<br /><a href=${linkToArticle}>Original</a><br /><button id='back'>Back</button></div>`;
+        document.getElementById('back').addEventListener('click', (e) => {
+          container.innerHTML = homepage;
         })
-        // root.classList.add('collapse')
-        
+      }) 
     }
-    })
+  })
   
 }
 
@@ -57,7 +55,6 @@ interface()
 
 function createDivForEachArticle() {
   for(let i =0; i < 10; i++) {
-    // addHTMLtextElement('div', `article-${i}`,'container', 'null')
     addHTMLdiv(`${i}`,'container')
   }
 }
