@@ -1,4 +1,4 @@
-![Bowling](https://github.com/Mornevanzyl/bowling-challenge/blob/master/images/bowling_score.png?raw=true)
+![Project Banner](https://github.com/Mornevanzyl/news-summary-challenge/blob/master/images/GitHub_Project_Banner.jpg?raw=true)
 
 # News Summary - JS
 
