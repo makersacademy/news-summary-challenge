@@ -11,4 +11,12 @@ describe('newsStory', function() {
     story.addContent('Testing headline', imageTag);
     expectEqualMatcher(story.showImage(), imageTag);
   })
+
+  it('can take a short summary of the article', function() {
+    let story = new newsStory();
+    let imageTag = 'image_url';
+    let summaryContent = 'this is a news article about nothing';
+    story.addContent('Testing headline', imageTag, summaryContent);
+    expectEqualMatcher(story.showSummary(), summaryContent);
+  })
 })
