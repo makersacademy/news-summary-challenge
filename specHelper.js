@@ -48,7 +48,6 @@ function fillInContentById(id, content) {
 }
 
 function clear() {
-  noteList = [];
-  fillInContentById("addNoteField", "");
-  notePList.innerText = "";
+  newsBank = [];
+  newswrapper.innerHTML = "";
 }
