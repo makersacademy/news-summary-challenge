@@ -5,7 +5,7 @@
 --silver-pink: #c9ada7ff;
 --isabelline: #f2e9e4ff; */
 
-* {
+body {
   background-color: #22223bff;
   color: #f2e9e4ff;
 }
@@ -22,4 +22,10 @@
   max-width: 800px;
   min-height: 150px;
   border-radius: 15px;
+}
+
+#news-feed-heading {
+  background-color: inherit;
+  border-radius: inherit;
+  padding: 0.5em;
 }
