@@ -49,5 +49,5 @@ function fillInContentById(id, content) {
 
 function clear() {
   newsBank = [];
-  newswrapper.innerHTML = "";
+  newsWrapper.innerHTML = "";
 }
