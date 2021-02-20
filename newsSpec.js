@@ -14,7 +14,7 @@ it("should add a news headline to a para tag and display on the page", function 
 
 it("should be able to identify a note and its href", function () {
   addNews("This is a story to with a unique link and id", "This text won't display");
-  newsItem = document.getElementById("story0")
+  newsItem = document.getElementById("0");
   expect(newsItem.href).toNotEqual(null);
   clear();
 });
@@ -22,5 +22,26 @@ it("should be able to identify a note and its href", function () {
 it("can open a modal", function () {
   openModal();
   expect(document.getElementById("modalWrapper").style.display).toEqual("block");
+  clear();
+})
+
+it("can open a modal and display the summary of the story", function() {
+  openModal("This text should display on the screen")
+  pageHasContent("This text should display on the screen");
+  clear();
+})
+
+it("can close a modal", function() {
+  openModal();
+  closeModal();
+  expect(document.getElementById("modalWrapper").style.display).toEqual("none");
+  clear();
+})
+
+it("opens the right note when the headline is clicked", function () {
+  addNews("Headline for click test", "Body for click test");
+  openStory(0);
+  pageHasContent("Body for click test");
+  closeModal(0);
   clear();
 })

@@ -1,14 +1,20 @@
 // Varialbles
-newsList = document.getElementById("newsWrapper");
-newsBank = []
+let newsBank = []
+let newsList = document.getElementById("newsWrapper");
+let modal = document.getElementById("modalWrapper");
+
+
+//event listeners
+newsList.addEventListener("click", (e) => {
+  e.preventDefault();
+  openStory(e.target.id);
+});
 
 // Model functions
 function addNews(headline, body) {
   story = [headline, body]
   newsBank.push(story);
   index = newsBank.indexOf(story);
-  console.log("index")
-  console.log(index)
   createNewsItem(headline, index);
 }
 
@@ -24,14 +30,21 @@ function createNewsItem(headline, index) {
 
 function addAttributes(aNode, index) {
   aNode.href = `${index}`;
-  aNode.id = `story${index}`;
+  aNode.id = `${index}`;
 }
 
-function openModal(note = "") {
-  let modal = document.getElementById("modalWrapper");
+function openStory(id) {
+  text = newsBank[id][1];
+  openModal(text);
+};
+
+function openModal(text = "") {
   let para = document.getElementById("newsText");
   modal.style.display = "block";
-  para.innerHTML = note;
+  para.innerHTML = text;
 }
 
+function closeModal() {
+  modal.style.display = "none";
+}
 // API
