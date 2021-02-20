@@ -6,7 +6,8 @@
 --isabelline: #f2e9e4ff; */
 
 body {
-  background-color: #22223bff;
+  background-image: linear-gradient(to bottom right, #22223bff, #4a4e69ff);
+  background-attachment: fixed;
   color: #f2e9e4ff;
 }
 

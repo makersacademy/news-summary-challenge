@@ -30,10 +30,12 @@ I can see all of today's headlines in one place
   * each article div has a headline
 
 ##### JS
-* getLatestArticles() brings back all articles for day
+* callAPI(url, options {})
+* getLatestArticles(apiHandler = callAPI) brings back all articles for day
+  * pass in API handler to allow for stubbing of testing
   * called on going to home page, _or hash changing with different page number_
   * hits guardian API via `http://news-summary-api.herokuapp.com/guardian`
-  * uses fetch
+  * uses fetch via callAPI()
   <!-- * pass `show-fields=thumbnail` to the API request to get link to the pictures -->
   <!-- * _potentially could use page number from hash of URL_ -->
   * iterate through results set using `.then()`
