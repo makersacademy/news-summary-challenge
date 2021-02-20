@@ -1,5 +1,13 @@
 # News Summary challenge
 
+## Set up
+* Clone this repo locally
+* Use a browser to open index.html
+
+## Approach
+
+
+
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
