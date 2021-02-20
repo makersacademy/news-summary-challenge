@@ -23,6 +23,7 @@ body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   min-height: 20vh;
+  min-width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
