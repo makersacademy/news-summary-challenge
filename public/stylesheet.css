@@ -1,0 +1,25 @@
+/* CSS HEX */
+/* --space-cadet: #22223bff;
+--independence: #4a4e69ff;
+--heliotrope-gray: #9a8c98ff;
+--silver-pink: #c9ada7ff;
+--isabelline: #f2e9e4ff; */
+
+* {
+  background-color: #22223bff;
+  color: #f2e9e4ff;
+}
+
+#heading {
+  margin: 2%;
+}
+
+#news-feed {
+  background-color: #9a8c98ff;
+  margin: auto;
+  margin-bottom: 100px;
+  text-align: center;
+  max-width: 800px;
+  min-height: 150px;
+  border-radius: 15px;
+}

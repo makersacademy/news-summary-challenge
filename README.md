@@ -7,6 +7,13 @@
 ## Approach
 
 
+## Credit
+* Favicon generated from https://favicon.io
+* Colour scheme from https://coolors.co
+
+
+Challenge Presented
+------
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
