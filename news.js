@@ -5,10 +5,14 @@ let modal = document.getElementById("modalWrapper");
 
 
 //event listeners
-newsList.addEventListener("click", (e) => {
+newsList.addEventListener("click", function (e){
   e.preventDefault();
   openStory(e.target.id);
 });
+
+modal.addEventListener("click", function (e){
+  closeModal();
+})
 
 // Model functions
 function addNews(headline, body) {

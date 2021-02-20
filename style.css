@@ -4,5 +4,11 @@
   display: none;
   border: 1px solid black;
   z-index: 1;
+  width: 300px;
+  height: auto;
   position: relative;
+}
+
+.modal_para {
+  margin: 5px;
 }
