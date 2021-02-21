@@ -1,9 +1,9 @@
-expectEqualMatch = function(a, b) {
-  if (a === b) {
+expectEqualMatch = function(expected, actual) {
+  if (expected === actual) {
     console.log("Pass")
   } else {
     console.warn("Fail")
-    console.warn(`Expected ${b} but got ${a}`)
+    console.warn(`Expected ${expected} but got ${actual}`)
   }
 }
 

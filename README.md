@@ -1,5 +1,12 @@
 # News Summary challenge
 
+# Current issues
+The aylien API is out of service so I signed up for the guardian API and am using that for thumbnails and photos
+
+- 'placeholder' text in place of summary text
+- Link on 'placeholder' does not direct to guardian url
+
+
 ## Project overview
 
 This is a single-page JavaScript, CSS and HTML web app.
