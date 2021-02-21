@@ -2,9 +2,6 @@
 
 var articles = []
 
-var varArr = [1, 2]
-let letArr = [1,2]
-const constArr = [1, 2]
 
 function callAPI(url, fetchFunction = fetch, options = {}) {
   return fetchFunction(url + queryString(options))
@@ -15,15 +12,14 @@ function getLatestArticles(fetchFunction = fetch) {
 
   let fromDate = todayString()
   let targetURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search"
-  callAPI(targetURL, fetchFunction, {"from-date": fromDate})
+  return callAPI(targetURL, fetchFunction, {"from-date": fromDate})
     .then(response => response.json())
     .then(data => {
       data.response.results.forEach(article => {
-        // console.log("Title", article.webTitle)
         articles.push({headline: article.webTitle})
-        // console.log(articles)
+      })
+      updateHeadlines()
     })
-  })
 }
 
 function queryString(options) {
