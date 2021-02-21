@@ -1,4 +1,94 @@
-# News Summary challenge
+# Will's Readme - News Summary challenge
+
+| Input | Output |
+|------|------|
+| 12 | 6 |
+| 28 | 14 |
+
+## Context
+
+A challenge to create a small single-page web-app that retrieves data from an external API. For me this was a first time for a number of things:
+* connecting to an API myself
+* doing so using vanilla JS
+* using any form of CSS to give even basic consideration to the presentation
+
+### API details
+* Requests sent to the Guardian API (via a heroku-hosted app, which assigned an API key)
+
+## To Run
+
+The one dependancy is HttpServer (for installation instructions, go to: https://www.npmjs.com/package/http-server).
+
+To run via HttpServer:
+* Navigate to root/views
+* Run the command `npx http-server`
+* Navigate to one of the URLs indicated in the terminal using your browser
+
+## Completed
+* User story 1
+* User story 2
+* Created a very basic article preview area for user story 3
+
+## Still to do (next steps)
+* Refactor existing JS before continuing
+* Refactor CSS - create classes in separate css file
+* Change article preview to a more convenient pop-up window that can be closed (perhaps bootstrap modal?)
+* Connect to second API to create article summary. Insert into preview area
+* Extract backend logic into separate classes and files. Unit test these with homemade test framework 'Bob'
+* Implement feature testing
+* Complete remaining user stories
+* Create my own account fior the Guardian API and learn how to implement extra security steps
+
+## What I learned
+* Learned and used some basic CSS and HTML for the first time
+* Read the documentation for an external API and used to pull out the data I needed
+* Hosted the app on a local server (and now know how to get around caching issues preventing refresh for HTTP-Server)
+
+## Steps for each User Story
+### 1
+```
+As a busy politician
+So I know what the big stories of the day are
+I can see all of today's headlines in one place
+```
+* Create static index.html
+* Add index.js logic to:
+  * Connect to Guardian API and return all JSON data (on document ready)
+  * Convert JSON data, extract article titles, display on separate lines as links
+
+### 2  
+```
+As a busy politician
+So that I have something nice to look at
+I can see a relevant picture to illustrate each news article when I browse headlines
+```
+* Extended API request to include thumbnail, then insert this as an HTML image tag below the headline anchor tag
+
+```
+As a busy politician
+So that I can get an in depth understanding of a very important story
+I can click a news headline to see a summary and a photo of the news article
+```
+* Create a basic article preview area at the top, showing image and title
+
+```
+As a busy politician
+So I can get a few more details about an important story
+I can see click a news article summary title which links to the original article
+```
+
+```
+As a busy politician
+Just in case my laptop breaks
+I can read the site comfortably on my phone
+```
+
+```
+As a busy politician
+To make my news reading more fun
+I can see whizzy animations in the app
+```
+# Makers Readme - News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
