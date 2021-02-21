@@ -1,8 +1,13 @@
 // Initialise page
 
 if (test === false) {
-  getNews();
+  // getNews();
+  console.log("Using test news bank")
+  while (testIndex < testBank.length) {
+  addNews(testBank[testIndex][0], testBank[testIndex][1], testBank[testIndex][2])
+    testIndex ++
   }
+}
 
 //event listeners
 newsList.addEventListener("click", function (e){
@@ -24,12 +29,32 @@ function addNews(headline, body, url) {
 
 function createNewsItem(headline, index) {
   let liNode = document.createElement("li");
+  let pNode = document.createElement("p");
   let aNode = document.createElement("a");
   let textNode = document.createTextNode(headline);
-  aNode.appendChild(textNode);
+  pNode.appendChild(textNode);
+  aNode.appendChild(pNode);
   liNode.appendChild(aNode);
   newsList.appendChild(liNode);
   addAttributes(aNode, index);
+  addImage(aNode);
+}
+
+function addImage(aNode) {
+  let i = 0
+  for(i; i < 5; i++) {
+    let imageNode = document.createElement("img")
+    imageNode.style.width="9%"
+    imageNode.style.height="auto"
+    imageNode.style.align="center"
+    imageNode.style.margin="30px"
+    imageNode.src=`images/${randomImage()}.png`;
+    aNode.appendChild(imageNode);
+  }
+}
+
+function randomImage() {
+  return Math.floor(Math.random() * 11)
 }
 
 function addAttributes(aNode, index) {
@@ -57,7 +82,7 @@ function closeModal() {
 // API - untested
 
 function getNews() {
-  data = fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=occult&api-key=test")
+  data = fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=occult")
     .then((response) => response.json())
     .then((data) => {
     news.push(data)

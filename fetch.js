@@ -32,13 +32,14 @@ function getText() {
     .then((data) => {
     console.log(data, "Success")
     textSummary.push(data)
+    return textSummary[0].sentences[0]
+
   })
     .catch((error) => {
     console.error("Error:", error);
   });
 }
 
-"http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize??url=https://www.theguardian.com/film/2021/feb/09/sex-magic-occult-art-and-acid-the-story-of-the-infamous-witch-of-kings-cross"
 
 // function extractNews() {
 //   let storyCount = news.length;
