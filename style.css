@@ -1,6 +1,44 @@
+body,
+html {
+  height: 100%;
+}
+
 body {
-  background-color: #ebebeb;
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin: 1rem;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(19rem, 1fr)) [auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-gap: 1rem;
+  cursor: pointer;
+}
+
+main .headline-wrapper {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+main .headline-wrapper:hover {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+main .headline-wrapper img {
+  width: 100%;
+}
+
+main .headline-wrapper info {
+  padding: 1rem;
 }
 
 /* The Modal (background) */

@@ -1,9 +1,10 @@
 const makersNewsSummaryApi = "http://news-summary-api.herokuapp.com/";
 const guardianApiRequestUrl = "guardian?apiRequestUrl=";
 const guardianPolitics = "http://content.guardianapis.com/politics";
-
+const guardian = "http://content.guardianapis.com/";
 const aylienApiRequestUrl =
   "aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=";
+const queryImageThumbnail = "?show-fields=thumbnail";
 
 async function fetchNewsArticle(id) {
   try {
@@ -23,6 +24,7 @@ for (let articleId = 0; articleId < 10; articleId++) {
       (document.getElementsByClassName("headline-title")[articleId].innerText =
         data.webTitle)
   );
+  fetchArticleImage(articleId);
 }
 
 async function fetchArticleWebUrl(id) {
@@ -43,7 +45,8 @@ function fetchNewsSummary(id) {
     .then((response) => response.json())
     .then(
       (data) =>
-        (document.getElementsByClassName("modal-body")[0].innerText = data.text)
+        (document.getElementsByClassName("modal-body")[0].innerText =
+          data.sentences[0])
     );
 }
 
@@ -60,4 +63,31 @@ function headlineIntoModalHeader(id) {
   } catch (error) {
     console.error(error);
   }
+}
+
+async function fetchArticleHandle(id) {
+  try {
+    const response = await fetch(
+      `${makersNewsSummaryApi}${guardianApiRequestUrl}${guardianPolitics}`
+    );
+    const webUrl = await response.json();
+    return webUrl.response.results[id].id;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function fetchArticleImage(id) {
+  fetchArticleHandle(id)
+    .then((handle) =>
+      fetch(
+        `${makersNewsSummaryApi}${guardianApiRequestUrl}${guardian}${handle}${queryImageThumbnail}`
+      )
+    )
+    .then((response) => response.json())
+    .then(
+      (data) =>
+        (document.getElementsByClassName("headline-thumbnail")[id].src =
+          data.response.content.fields.thumbnail)
+    );
 }
