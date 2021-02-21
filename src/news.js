@@ -11,4 +11,20 @@ class News {
     return headline;
   }
 
+  createImage() {
+    let articleImage = document.createElement('img');
+    let articleContent = document.createElement('p');
+    articleContent.innerHTML = this.newsData.fields.body;
+    let articleImages = articleContent.getElementsByTagName('img');
+    let img;
+    if (articleImages.length !== 0) {
+      img = articleImages[0].getAttribute('src');
+    } else {
+      img = '';
+    };
+
+    articleImage.setAttribute('src', img);
+    articleImage.setAttribute('style', 'width:20%');
+    return articleImage;
+  }
 }
