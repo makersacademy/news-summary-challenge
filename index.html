@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <h2>NEWS TODAY!!</h2>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <title>News</title>
+  </head>
   <body>
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="./src/styles.css" />
+    <button class="show-modal">Show news article one</button>
+    <button class="show-modal">Show news article two</button>
+    <button class="show-modal">Show news article three</button>
 
-      <title>News today</title>
-      <h1>TODAY'S HEADLINE NEWS</h1>
-      <div class="news-holder">
-        <div id="news-feed"></div>
-      </div>
-      <script src="./src/news.js"></script>
-      <script src="./lib/testing_framework.js"></script>
-      <script src="./spec/newsSpec.js"></script>
-    </head>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>Headline</h1>
+      <p>News paper blurb here</p>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script src="lib/testing_framework.js"></script>
+    <script src="src/app.js"></script>
+    <script src="src/news.js"></script>
   </body>
 </html>
