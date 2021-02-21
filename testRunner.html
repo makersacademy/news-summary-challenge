@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tester</title>
+    <script src='testers/descriptions.js'></script>
+    <script src='testers/expectations.js'></script>
+    <script src='testers/helpers.js'></script>
+    <script src='testers/its.js'></script>
+  </head>
+  <body>
+    <h1 id='header' style="display:none;">HEADER!!</h1>
+
+    <h2 id='formResults'></h2>
+    <form "main_form" onsubmit="showFormResult(); return false;">
+      <input type="text" id="text_box">
+      <button id="submitButton">Submit</button>
+    </form>
+
+    <p id='paragraph'>I am some a paragraph in HTML</p>
+
+    <button id="show_header" onClick="showHeader()">Show me the header!</button>
+
+  </body>
+
+  <script>
+    function showHeader() {
+      document.getElementById('header').style.display = "block";
+    };
+
+    function showFormResult(){
+      var results = document.getElementById('text_box').value;
+      document.getElementById('formResults').innerHTML = results;
+    }
+
+  </script>
+
+  <script src='tests/testers-tests.js'></script>
+
+</html>

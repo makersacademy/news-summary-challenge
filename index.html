@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <script src='testers/descriptions.js'></script>
+    <script src='testers/expectations.js'></script>
+    <script src='testers/helpers.js'></script>
+    <script src='testers/its.js'></script>
+
+    <script src='src/news.js'></script>
+    <script src='src/news-list.js'></script>
+    <script src='src/news-list-view.js'></script>
+  </head>
+
+  <body onload="drawList(); return false;">
+    <h1 id="header">Guardian News</h1>
+
+    <div id="form_div">
+      <form id="news_form">
+        <textarea id="news_input" rows="20" cols="80"></textarea>
+        <br/>
+        <button id="create_news" style="display: block;" onclick="addNews(); return false;">Add a header</button>
+      </form>
+    </div>
+
+    <div id="list_div">
+      <table id="news_table">
+        <tr id="news_list">
+        </tr>
+      </table>
+    </div>
+
+    <div id="big_news" style="display: none;">
+      <p id="news_body_text"></p>
+      <button id="back_button" onclick="showFormDiv()">Back</button>
+    </div>
+
+  </body>
+
+  <script src='tests/news-list-view-tests.js'></script>
+
+</html>
