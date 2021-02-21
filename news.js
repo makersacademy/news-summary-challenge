@@ -73,9 +73,22 @@ function extractNews(news) {
   let storyCount = news[0].response.results.length;
   let newsItem = 0;
   while (newsItem < storyCount) {
-    title = news[0].response.results[newsItem].webTitle
-    url = news[0].response.results[newsItem].webUrl
-    addNews(title, "This is a test", url)
+    let title = news[0].response.results[newsItem].webTitle
+    let url = news[0].response.results[newsItem].webUrl
+    getText(title, url)
     newsItem += 1;
   }
+}
+
+function getText(title, url) {
+  let textSummary = []
+  text = fetch("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + url)
+    .then((response) => response.json())
+    .then((data) => {
+    console.log(data, "Success")
+    textSummary.push(data)
+    text = textSummary[0].sentences[0]
+    addNews(title, text, url)
+  })
+
 }
