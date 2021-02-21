@@ -12,16 +12,19 @@ function showStoryForCurrentPage() {
 };
 
 function getStoryFromUrl(location) {
-  console.log('getStoryFromUrl')
   a = location.hash.split("#")[1];
-  console.log(`a = ${a}`)
-  return stories[a].showSummary();
+  if(stories.length > 1){
+    console.log('length is more than 1')
+    return stories[a].showSummary();
+  } else {
+    console.log('length is shorter')
+    backupStories = ['an example of a summary', 'another example of a summary', 'yet another', 'last one']
+    return backupStories[a - 1]
+  }
 };
 
 function showStory(story) {
-  a = window.location.hash.split("#")[1];
-    console.log(a)
   document
     .getElementById("highlightedStory")
-    .innerHTML = '<div class="story">' + story.showSummary() + '</div>';
+    .innerHTML = '<p>' + story + '</p>';
 };

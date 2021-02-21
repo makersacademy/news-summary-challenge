@@ -3,9 +3,25 @@
 	src: url('AnchoGX.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: Crack Grotesk;
+  src: url('CrackGroteskTrials-Regular.ttf') format('truetype');
+}
+
 body {
-  font-family: 'Crack Grotesk Bold';
-  height: 100000px;
+  font-family: 'Crack Grotesk';
+  height: 100%;
+}
+
+.hero {
+  margin-top: 10px;
+  width: 100%;
+  height: 460px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image:
+    url('https://3.bp.blogspot.com/-CW1T-Em0Eas/W_KmjvJCynI/AAAAAAADXKA/YFdDKlPlUtIeeQaKKbwSUbaglYrIZJd1ACLcBGAs/s640/people-reading-newspapers-7.jpg');
 }
 
 header {
@@ -30,7 +46,6 @@ header h1{
 .content {
   max-width: 80%;
   margin: auto;
-  margin-top: 16px;
 
   display: flex;
   flex-wrap: wrap;
@@ -42,12 +57,12 @@ header h1{
 
 .content h2 {
   font-size: 40px;
-  font-family: 'DM Serif Display', serif;
+  font-family: Ancho;
 }
 
 .content h2:hover{
   color: navy;
-  text-decoration: underline;
+  border-bottom: navy 4px solid;
 }
 
 a {
@@ -60,14 +75,6 @@ img {
   max-height: 300px;
 }
 
-
-.container:after {
-  display: block;
-  content: " placeholder ";
-  margin: 10px;
-  flex: 999 999 auto;
-}
-.item {
-  flex: 0 0 auto;
-  margin: 10px;
+#highlightedStory p{
+  justify-content: left;
 }

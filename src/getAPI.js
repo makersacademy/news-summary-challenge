@@ -10,10 +10,18 @@ getNewsData = () => {
         let story = new newsStory();
         story.addHeadline(newsStories[i].webTitle)
         story.addUrl(newsStories[i].webUrl)
-        story.addImage(`https://picsum.photos/${getRandom()}/300sto`)
+        story.addImage(`https://picsum.photos/${getRandom()}/300`)
+
         stories.push(story)
       };
       getNewsSummary()
+      showArticles()
+    }).catch( error => {
+      console.log('hello')
+      let story = new newsStory();
+      story.addHeadline('test headline')
+      story.addUrl('www.bbc.co.uk/sport')
+      story.addImage(`https://picsum.photos/${getRandom()}/300`)
       showArticles()
     })
   })
