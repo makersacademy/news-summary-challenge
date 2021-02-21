@@ -3,6 +3,7 @@
 const newsFeed = document.getElementById("news-feed")
 
 function updateHeadlines() {
+  clearNewsFeed()
   articles.forEach((article, index) => {
     let articleDiv = newArticleDiv(index)
     let headlineDiv = newHeadlineDiv(index)
@@ -11,6 +12,12 @@ function updateHeadlines() {
     articleDiv.appendChild(headlineDiv)
     newsFeed.appendChild(articleDiv)
   })
+}
+
+function clearNewsFeed() {
+  while(newsFeed.lastChild.id !== "news-feed-heading") {
+    newsFeed.removeChild(newsFeed.lastChild)
+  }
 }
 
 function newArticleDiv(index) {
