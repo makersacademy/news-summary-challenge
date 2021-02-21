@@ -8,14 +8,14 @@ fetch(url)
   let newsContainer = document.getElementById('news-title');
   let newsArray = data.response.results
   for(let i = 0; i < newsArray.length; i++) {
-    let newsStory = `<a class='title' href data-linkID="${i}">${newsArray[i].webTitle}</a></br>`
+    let newsStory = `<a class='title' data-newsID="${i}" href="${newsArray[i].webUrl}">${newsArray[i].webTitle}</a></br>`
     newsContainer.innerHTML += newsStory
   }
 })
 .catch(error => console.error(error));
 
-// let newsTitles = document.getElementById('title');
-// console.log(newsTitles);
-// newsTitles.addEventListener('click', (e) => {
-//   const singleNews = e.path.find(item)
-// });
+let newsTitles = document.getElementById('title');
+console.log(newsTitles);
+newsTitles.addEventListener('click', (e) => {
+  const singleNews = e.path.find(item)
+});
