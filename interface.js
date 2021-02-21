@@ -20,7 +20,7 @@ function allArticles() {
   headlinesDiv.innerText = '' // clear area
   articles.forEach(function(article, index) { // each instance of note in notes array
     let headlineItem = document.createElement('li');
-    let headline = article.getArticleHeadline(index);
+    let headline = article.getArticleHeadlineLink(index);
     headlineItem.appendChild(headline);
     headlinesDiv.appendChild(headlineItem) // appendChild - add to end of note div
 
@@ -34,11 +34,13 @@ function allArticles() {
 function loadContent() {
   let articleChoice = location.hash
   let indexAC = articleChoice.substr(1)
-  console.log(indexAC)
   let headlinesDiv = document.getElementById('headlines-list') // set area on html page
   headlinesDiv.innerHTML = ''
   let article = articles[indexAC]
-  article.getArticleText()
+  let headline = article.getArticleHeadline()
+  headlinesDiv.appendChild(headline)
+  let content = article.getArticleText()
+  headlinesDiv.appendChild(content)
 }
 location.hash = null
 currentArticles()
