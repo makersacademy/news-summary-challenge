@@ -1,0 +1,25 @@
+header {
+  font-size: 56px;
+  font-family: 'DM Serif Display', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80%;
+  margin: auto;
+}
+
+
+.content h1 {
+  font-size: 40px;
+  font-family: 'DM Serif Display', serif;
+}
+
+a {
+  text-decoration: none;
+}
