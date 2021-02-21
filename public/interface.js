@@ -20,9 +20,28 @@ showImage = () => {
   }
 }
 
+showFullNews = () => {
+  document.getElementById
+}
+
+
 showHeadlines()
 showImage()
 
+
+// i think i'm going to need to put the two methods above into another function that is then called
+// something like
+// runNewsSummary = () => {
+//   showHeadlines()
+//   addBlurb()
+//   showImage(image will be passed here but may need to update showHeadlines too)
+// }
+
+
+
+//
+// below is a button to get the picture. 
+//
 // showHeadlines = () => {
 //   headlines.forEach(headline =>
 //     document.getElementById("headlines").innerHTML += `<a href=#${headlines.indexOf(headline)}>` + headline + `</a><div id=photo${headlines.indexOf(headline)}></div>` + `<button onclick=showImage(imageURL,${headlines.indexOf(headline)})>Add smiley</button>` + "<br>");
