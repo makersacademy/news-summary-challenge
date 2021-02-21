@@ -1,7 +1,11 @@
 
-let articles = [];
+const articles = [];
+
+window.addEventListener('hashchange', displayNewsArticle);
+document.addEventListener('DOMContentLoaded', fetchNews);
 
 function fetchNews() {
+  location.hash = 'WELCOME WELCOME PLEASE COME IN';
   fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=body')
     .then(response => response.json())
     .then(data => {
@@ -22,18 +26,20 @@ function allNews() {
   articles.forEach(function (article, index) {
     let newsItem = document.createElement('li');
     let headline = article.eachNewsHeadline(index);
-    let headlineImage = article.createImage();
     newsItem.appendChild(headline);
-    newsItem.appendChild(headlineImage);
     listDiv.appendChild(newsItem);
+
+    let image = document.createElement('li');
+    let headlineImage = article.createImage();
+    image.appendChild(headlineImage);
+    listDiv.appendChild(image);
   });
 }
 
-fetchNews();
-window.addEventListener('hashchange', displayNewsArticle);
-
 function displayNewsArticle() {
+  document.getElementById('list').innerText = '';
   index = location.hash.substr(1);
   let news = (articles[index]);
   news.articleLink();
+  news.headline();
 }

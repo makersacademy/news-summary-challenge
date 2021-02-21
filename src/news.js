@@ -24,13 +24,19 @@ class News {
     };
 
     articleImage.setAttribute('src', img);
-    articleImage.setAttribute('style', 'width:50%');
+    articleImage.setAttribute('style', 'width:40%');
     return articleImage;
   }
 
   articleLink() {
-    let articleContent = document.getElementById('body');
+    let articleContent = document.getElementById('list');
     articleContent.innerHTML = this.newsData.fields.body;
     return articleContent;
+  }
+
+  headline() {
+    let headline = document.getElementById('headline');
+    headline.innerHTML = this.newsData.webTitle;
+    return headline;
   }
 }
