@@ -6,6 +6,15 @@ const aylienApiRequestUrl =
   "aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=";
 const queryImageThumbnail = "?show-fields=thumbnail";
 
+for (let articleId = 0; articleId < 10; articleId++) {
+  fetchNewsArticle(articleId).then(
+    (data) =>
+      (document.getElementsByClassName("headline-title")[articleId].innerText =
+        data.webTitle)
+  );
+  fetchArticleImage(articleId);
+}
+
 async function fetchNewsArticle(id) {
   try {
     const response = await fetch(
@@ -16,15 +25,6 @@ async function fetchNewsArticle(id) {
   } catch (error) {
     console.error(error);
   }
-}
-
-for (let articleId = 0; articleId < 10; articleId++) {
-  fetchNewsArticle(articleId).then(
-    (data) =>
-      (document.getElementsByClassName("headline-title")[articleId].innerText =
-        data.webTitle)
-  );
-  fetchArticleImage(articleId);
 }
 
 async function fetchArticleWebUrl(id) {
@@ -39,8 +39,8 @@ async function fetchArticleWebUrl(id) {
   }
 }
 
-function fetchNewsSummary(id) {
-  fetchArticleWebUrl(id)
+async function fetchNewsSummary(id) {
+  await fetchArticleWebUrl(id)
     .then((url) => fetch(`${makersNewsSummaryApi}${aylienApiRequestUrl}${url}`))
     .then((response) => response.json())
     .then(
@@ -50,9 +50,11 @@ function fetchNewsSummary(id) {
     );
 }
 
-function headlineIntoModalHeader(id) {
+async function headlineIntoModalHeader(id) {
   try {
-    fetch(`${makersNewsSummaryApi}${guardianApiRequestUrl}${guardianPolitics}`)
+    await fetch(
+      `${makersNewsSummaryApi}${guardianApiRequestUrl}${guardianPolitics}`
+    )
       .then((response) => response.json())
       .then(
         (data) =>
@@ -77,8 +79,8 @@ async function fetchArticleHandle(id) {
   }
 }
 
-function fetchArticleImage(id) {
-  fetchArticleHandle(id)
+async function fetchArticleImage(id) {
+  await fetchArticleHandle(id)
     .then((handle) =>
       fetch(
         `${makersNewsSummaryApi}${guardianApiRequestUrl}${guardian}${handle}${queryImageThumbnail}`

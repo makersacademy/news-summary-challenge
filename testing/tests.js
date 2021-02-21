@@ -1,4 +1,4 @@
-it("Page has title", () => {
+it("page has title", () => {
   expect(document.getElementsByTagName("h1")[0].innerText).toEqual(
     "Headlines page"
   );
