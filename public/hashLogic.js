@@ -16,5 +16,5 @@ function getNewsFromUrl(location) {
 function showNews() {
   document
     .getElementById(`news-blurb${index}`)
-    .innerHTML = '<div class="summary">' + headlines[index][1] + '</div>';
+    .innerHTML = '<div class="summary">' + headlines[index][1] + '</div>'
 };

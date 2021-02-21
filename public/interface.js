@@ -1,13 +1,15 @@
 // When I start on the api i will just add each relevant piece of data (title, summary, imageUrl etc to headlines array below)
 
-let headlines = [["BREAKING NEWS 1", "NEWS SUMMARY 1", "http://public.media.smithsonianmag.com/legacy_blog/smiley-face-1.jpg"], ["BREAKING NEWS 2", "NEWS SUMMARY 2", "https://ih1.redbubble.net/image.499518885.1931/flat,750x1000,075,f.u1.jpg"], ["BREAKING NEWS 3", "NEWS SUMMARY 3", "https://images.emojiterra.com/google/android-11/512px/1f634.png"]]
+let headlines = [["BREAKING NEWS 1", "NEWS SUMMARY 1", "http://public.media.smithsonianmag.com/legacy_blog/smiley-face-1.jpg", "https://www.theguardian.com/uk"], ["BREAKING NEWS 2", "NEWS SUMMARY 2", "https://ih1.redbubble.net/image.499518885.1931/flat,750x1000,075,f.u1.jpg", "https://www.theguardian.com/uk"], ["BREAKING NEWS 3", "NEWS SUMMARY 3", "https://images.emojiterra.com/google/android-11/512px/1f634.png", "https://www.theguardian.com/uk"]]
 
 showHeadlines = () => {
   headlines.forEach(headline =>
     document
-    .getElementById("headlines").innerHTML += `<a href=#${headlines.indexOf(headline)}>` 
-    + headline[0] + `</a><div id=photo${headlines.indexOf(headline)}></div>` 
-    + `<a><div id=news-blurb${headlines.indexOf(headline)}></div></a>` 
+    .getElementById("headlines").innerHTML += `<a href=#${headlines.indexOf(headline)}>` + headline[0] + `</a>`
+    + `<div id=photo${headlines.indexOf(headline)}></div>` 
+    + `<div id=news-blurb${headlines.indexOf(headline)}></div>` 
+    + `<div id=news-url${headlines.indexOf(headline)}></div>`
+    + `<a href=${headline[3]}><button>Visit full article</button></a>`
     + "<br>");
 }
 
@@ -23,12 +25,6 @@ addImage = (src, i) => {
   img.height = 75;
   document.getElementById(`photo${i}`).appendChild(img);
 } 
-
-function showNews() {
-  document
-    .getElementById(`news-blurb${index}`)
-    .innerHTML = '<div class="summary">' + headlines[index][1] + '</div>';
-};
 
 showHeadlines()
 makeImage()
@@ -50,22 +46,3 @@ makeImage()
 
 // let test = getTitle()
 // console.log(test)
-
-// --- ideas/thoughts below 
-
-// i think i'm going to need to put the two methods above into another function that is then called
-// something like
-// runNewsSummary = () => {
-//   showHeadlines()
-//   addBlurb()
-//   showImage(image will be passed here but may need to update showHeadlines too)
-// }
-
-
-//
-// below is a button to get the picture. 
-//
-// showHeadlines = () => {
-//   headlines.forEach(headline =>
-//     document.getElementById("headlines").innerHTML += `<a href=#${headlines.indexOf(headline)}>` + headline + `</a><div id=photo${headlines.indexOf(headline)}></div>` + `<button onclick=showImage(imageURL,${headlines.indexOf(headline)})>Add smiley</button>` + "<br>");
-// }
