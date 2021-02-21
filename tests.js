@@ -1,5 +1,7 @@
 it("shows message that something", () => {
-  expect(document.getElementById("hello").innerText).toEqual("Testing message");
+  expect(document.getElementsByClassName("headline-title").innerText).toEqual(
+    "Testing message"
+  );
 });
 
 // After tests have run log to console tests have been complete
