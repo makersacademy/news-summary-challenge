@@ -1,7 +1,7 @@
 "use strict";
 
-const returnSame = function(a) { return a}
+const returnURL = url => ({url: url})
 
-const testCallAPI = function() {
-  callAPI(returnSame)
-}
+it("callAPI returns the result of the fetchFunction at the correct URL", () => {
+  expect(callAPI("https://example-url.com", returnURL).url).toEqual("https://example-url.com")
+})

@@ -30,7 +30,7 @@ I can see all of today's headlines in one place
   * each article div has a headline
 
 ##### JS
-* `callAPI(url, options {}, fetchMethod = fetch)`
+* `callAPI(url, fetchFunc = fetch, options {})`
   * Calls `fetch()` to the url given, and with options converted into a query string `?option1=val1&option2=val2...`
   * returns a promise object
   * pass in fetch method to allow stubbing of the API
