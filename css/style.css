@@ -9,7 +9,8 @@ body {
 }
 
 h1 {
-  margin: 1rem;
+  margin: 2rem;
+  text-align: center;
 }
 
 main {
@@ -21,16 +22,8 @@ main {
   cursor: pointer;
 }
 
-main .headline-wrapper {
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
-}
-
-main .headline-wrapper:hover {
-  -webkit-transform: translateY(-10px);
-  transform: translateY(-10px);
+.headline-wrapper {
+  margin: 2rem 1rem;
 }
 
 main .headline-wrapper img {
@@ -39,6 +32,12 @@ main .headline-wrapper img {
 
 main .headline-wrapper info {
   padding: 1rem;
+}
+
+.headline-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
 }
 
 /* The Modal (background) */

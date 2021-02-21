@@ -4,7 +4,10 @@ page = document.documentElement;
 
 // It block
 function it(label, callback) {
-  console.log(label);
+  console.log(
+    `%cTesting if ${label}...`,
+    "font-weight: 300; background-color: #6cd80261; padding: 0 0.5rem;"
+  );
   callback();
 }
 

@@ -1,6 +1,6 @@
-it("shows message that something", () => {
-  expect(document.getElementsByClassName("headline-title").innerText).toEqual(
-    "Testing message"
+it("Page has title", () => {
+  expect(document.getElementsByTagName("h1")[0].innerText).toEqual(
+    "Headlines page"
   );
 });
 
