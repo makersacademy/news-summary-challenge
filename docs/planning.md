@@ -30,12 +30,14 @@ I can see all of today's headlines in one place
   * each article div has a headline
 
 ##### JS
-* callAPI(url, options {})
-* getLatestArticles(apiHandler = callAPI) brings back all articles for day
+* `callAPI(url, options {})`
+  * Calls `fetch()` to the url given, and with options converted into a query string `?option1=val1&option2=val2...`
+  * returns a promise object
+* `getLatestArticles(apiHandler = callAPI)` brings back all articles for day
   * pass in API handler to allow for stubbing of testing
   * called on going to home page, _or hash changing with different page number_
   * hits guardian API via `http://news-summary-api.herokuapp.com/guardian`
-  * uses fetch via callAPI()
+  * uses `fetch()` via `callAPI()`
   <!-- * pass `show-fields=thumbnail` to the API request to get link to the pictures -->
   <!-- * _potentially could use page number from hash of URL_ -->
   * iterate through results set using `.then()`
@@ -44,3 +46,9 @@ I can see all of today's headlines in one place
 * displayResults()
   * iterate through `articles` array
   * create new div with id dependent on index in `articles` array
+
+#### Testing
+* Use Pedigree (from group challenge)
+* Added `Dup` class which can create doubles
+* To test `getLatestArticles()`, stub the behaviour of the API using one of these `Dup` objects, which returns `Promise` object with data inside it in same format as Guardian API
+* To test `callAPI()` could potentially override the functionality of `fetch()`
