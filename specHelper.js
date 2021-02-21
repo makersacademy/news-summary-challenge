@@ -2,6 +2,9 @@
 let page;
 page = document.documentElement;
 
+let test = true
+
+
 // Functions
 function it(label, callback) {
   console.log(label);

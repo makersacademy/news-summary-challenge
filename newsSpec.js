@@ -1,4 +1,7 @@
 
+console.log("Testing")
+console.log(test)
+
 it("should add a story to the newsBank", function () {
   addNews("This is the headline", "This the story to store in the bank");
   expect(newsBank[0][0]).toEqual("This is the headline")
@@ -45,3 +48,7 @@ it("opens the right note when the headline is clicked", function () {
   closeModal(0);
   clear();
 })
+
+test = false
+console.log("Tests complete")
+console.log(test)
