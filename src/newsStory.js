@@ -31,4 +31,5 @@ class newsStory {
   showHeadline = () => this._headline;
   showImage = () => this._imageUrl;
   showSummary = () => this._summary;
+  showUrl = () => this._url
 }

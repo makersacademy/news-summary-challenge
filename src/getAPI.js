@@ -1,4 +1,6 @@
 let stories = []
+const herokuAylien = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url='
+
 
 getNewsData = () => {
   // fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body").then(response => [
@@ -9,37 +11,26 @@ getNewsData = () => {
         let story = new newsStory();
         story.addHeadline(newsStories[i].webTitle)
         story.addUrl(newsStories[i].webUrl)
+        story.addImage(`https://picsum.photos/${getRandom()}/300`)
         stories.push(story)
-
       };
+      getNewsSummary()
       showArticles()
-      // storyData = newsStory.response.content
-      // console.log(storyData)
-      //
-      // newsStoryUrl = storyData.webUrl
-      // story.addHeadline(storyData.webTitle);
-      // story.addUrl(storyData.webUrl);
-      // console.log(story)
-      // headlinesSection = document.querySelector('.stories')
-      // headlinesSection.innerHTML += `<div><h1>
-      //   <a href='${storyData.webUrl}'>${storyData.webTitle} </a>
-      //   <button id=${i} value=${storyData.webUrl}>Read More</button>
-      // </h1></div>`
-      // individualWebUrl = document.getElementById(`${i}`)
     })
   })
 }
 
 
 
-getNewsSummary = (heroku, bodyUrl) =>{
-  fetch(heroku + bodyUrl).then(response => {
-    response.json().then(summary => {
-      newsSummary = summary.sentences.join(' ')
-      story.addSummary(newsSummary)
-
-      // headlinesSection = document.querySelector('.stories')
-      // headlinesSection.innerHTML += newsSummary
+getNewsSummary = () =>{
+  for (let n = 0; n < stories.length; n++){
+    fetch(herokuAylien + stories[n].showUrl()).then(response => {
+      response.json().then(summary => {
+        stories[n].addSummary(summary.sentences.join(','))
+      })
     })
-  })
+  }
 }
+
+
+getRandom = () => Math.floor((Math.random() * (10 - 3) + 3) * 100);

@@ -1,3 +1,7 @@
+body {
+  background-color: #999;
+}
+
 header {
   font-size: 56px;
   font-family: 'DM Serif Display', serif;
@@ -12,6 +16,7 @@ header {
   justify-content: center;
   max-width: 80%;
   margin: auto;
+  background-color: #111;
 }
 
 
@@ -21,5 +26,11 @@ header {
 }
 
 a {
+  color: #000;
   text-decoration: none;
+}
+
+img {
+  width: 500px;
+  height: 300px;
 }
