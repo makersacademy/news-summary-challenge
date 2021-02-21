@@ -2,7 +2,7 @@ let headlines = []
 
 
 document.addEventListener("DOMContentLoaded", () => {
-// getNewsData()
+getNewsData()
 
   showArticles = () => {
     for (let i = 0; i < stories.length; i++) {
