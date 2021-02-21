@@ -1,20 +1,5 @@
 ("use strict");
 
-function getEmojis(body, id) {
-  fetch("https://makers-emojify.herokuapp.com/", {
-    method: "POST",
-    body: JSON.stringify({ text: body }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then(function (response) {
-    response.json().then(function (data) {
-      console.log(data);
-      document.getElementById(id).innerHTML = data.emojified_text;
-    });
-  });
-}
-
 //modal info opening and closing modals
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
