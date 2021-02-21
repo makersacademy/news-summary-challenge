@@ -5,11 +5,10 @@ let headlines = [["BREAKING NEWS 1", "NEWS SUMMARY 1", "http://public.media.smit
 showHeadlines = () => {
   headlines.forEach(headline =>
     document
-    .getElementById("headlines").innerHTML += `<a href=#${headlines.indexOf(headline)}>` + headline[0] + `</a>`
+    .getElementById("headlines").innerHTML += `<div id="headline"><a href=#${headlines.indexOf(headline)}>` + headline[0] + `</a>`
     + `<div id=photo${headlines.indexOf(headline)}></div>` 
     + `<div id=news-blurb${headlines.indexOf(headline)}></div>` 
-    + `<div id=news-url${headlines.indexOf(headline)}></div>`
-    + `<a href=${headline[3]}><button>Visit full article</button></a>`
+    + `<a href=${headline[3]}><button>Visit full article</button></a></div>`
     + "<br>");
 }
 
