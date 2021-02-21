@@ -1,0 +1,25 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "Makers Academy News Summary Weekend Challenge Week 7",
+  "main": "index.js",
+  "scripts": {
+    "test": "open Client/spec/spec-runner.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stellenberger/news-summary-challenge.git"
+  },
+  "author": "Stephan Ellenberger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stellenberger/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/stellenberger/news-summary-challenge#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "http-server": "^0.12.1"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
