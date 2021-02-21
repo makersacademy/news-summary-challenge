@@ -1,28 +1,53 @@
+@font-face {
+  font-family: Ancho;
+	src: url('AnchoGX.ttf') format('truetype');
+}
+
 body {
-  background-color: #999;
+  font-family: 'Crack Grotesk Bold';
+  height: 100000px;
 }
 
 header {
-  font-size: 56px;
-  font-family: 'DM Serif Display', serif;
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+  background-color: navy;
+
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+header h1{
+  color: #fff;
+  font-size: 56px;
+  font-family: 'Ancho';
+  margin: 16px 0 16px 0;
 }
 
 .content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   max-width: 80%;
   margin: auto;
-  background-color: #111;
+  margin-top: 16px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: start
 }
 
 
-.content h1 {
+.content h2 {
   font-size: 40px;
   font-family: 'DM Serif Display', serif;
+}
+
+.content h2:hover{
+  color: navy;
+  text-decoration: underline;
 }
 
 a {
@@ -31,6 +56,18 @@ a {
 }
 
 img {
-  width: 500px;
-  height: 300px;
+  max-width: 30%;
+  max-height: 300px;
+}
+
+
+.container:after {
+  display: block;
+  content: " placeholder ";
+  margin: 10px;
+  flex: 999 999 auto;
+}
+.item {
+  flex: 0 0 auto;
+  margin: 10px;
 }

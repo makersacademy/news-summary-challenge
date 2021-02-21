@@ -8,14 +8,32 @@ let headlines = []
 
 
 document.addEventListener("DOMContentLoaded", () => {
-getNewsData()
+// getNewsData()
 
   showArticles = () => {
     for (let i = 0; i < stories.length; i++) {
-      headlines = headlines +  `<div class='story'><img src=${stories[i].showImage()}><a href=${stories[i].showUrl()}><h2> ${stories[i].showHeadline()} </h2></a></div>`
+      headlines = headlines +  `<div class='story'>
+      <a href=#${i}>
+        <img src=${stories[i].showImage()}>
+      </a>
+      <a href=${stories[i].showUrl()}>
+        <h2> ${stories[i].showHeadline()} </h2>
+      </a>
+      </div>`
     }
-
     document.querySelector('.stories').innerHTML = headlines
   }
+
+
+  const h1 = document.querySelector('h1')
+  window.addEventListener('scroll', function() {
+  	const pixels = window.pageYOffset
+    console.log(pixels)
+  	const fontWeight = pixels * 0.5 + 100
+    const fontWidth = pixels * 0.5 + 100
+
+    h1.style.fontVariationSettings = `"wght" ${fontWeight}`
+    console.log(h1.style.fontVariationSettings)
+  })
 
 })
