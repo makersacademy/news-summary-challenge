@@ -1,5 +1,5 @@
 
-const articles = [];
+let articles = [];
 
 function fetchNews() {
   fetch('http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=body')
@@ -13,8 +13,6 @@ function fetchNews() {
         articles.push(news);
         allNews();
       }
-
-      console.log(articles);
     });
 }
 
@@ -36,5 +34,6 @@ window.addEventListener('hashchange', displayNewsArticle);
 
 function displayNewsArticle() {
   index = location.hash.substr(1);
-  document.getElementById('body').innerHTML = 'HI here is the article you want';
+  let news = (articles[index]);
+  news.articleLink();
 }
