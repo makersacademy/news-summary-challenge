@@ -39,14 +39,14 @@ Some of these stories will need decomposing if they seem too large.
 
 ```
 As a busy politician
-I can see all of today's headlines in one place
 So I know what the big stories of the day are
+I want to see all of today's headlines in one place
 ```
 
 ```
 As a busy politician
-I can see a relevant picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
+I can see a relevant picture to illustrate each news article when I browse headlines
 ```
 
 ```

@@ -1,9 +1,11 @@
-let headlines = ["BREAKING NEWS 1", "BREAKING NEWS 2", "BREAKING NEWS 3"]
+// When I start on the api i will just add each relevant piece of data (title, summary, url etc to headlines array below)
+
+let headlines = [["BREAKING NEWS 1", "NEWS SUMMARY 1"], ["BREAKING NEWS 2", "NEWS SUMMARY 2"], ["BREAKING NEWS 3", "NEWS SUMMARY 3"]]
 let imageURL = "http://public.media.smithsonianmag.com/legacy_blog/smiley-face-1.jpg";
 
 showHeadlines = () => {
   headlines.forEach(headline =>
-    document.getElementById("headlines").innerHTML += `<a href=#${headlines.indexOf(headline)}>` + headline + `</a><div id=photo${headlines.indexOf(headline)}></div>` + "<br>");
+    document.getElementById("headlines").innerHTML += `<a href=#${headlines.indexOf(headline)}>` + headline[0] + `</a><div id=photo${headlines.indexOf(headline)}></div>` + `<a><div id=news-blurb${headlines.indexOf(headline)}></div></a>` + "<br>");
 }
 
 addImage = (src, i) => {
