@@ -1,19 +1,19 @@
 "use strict";
 
-let articles = []
+var articles = []
+
+var varArr = [1, 2]
+let letArr = [1,2]
+const constArr = [1, 2]
 
 function callAPI(url, fetchFunction = fetch, options = {}) {
   return fetchFunction(url + queryString(options))
 }
 
 function getLatestArticles(fetchFunction = fetch) {
-  let today = new Date
-  let yyyy = today.getFullYear()
-  let mm = today.getMonth() + 1
-  if(mm < 10) { mm = "0" + mm}
-  let dd = today.getDate()
-  if(dd < 10) { dd = "0" + dd}
-  let fromDate = [yyyy, mm, dd].join('-')
+  articles = []
+
+  let fromDate = todayString()
   let targetURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search"
   callAPI(targetURL, fetchFunction, {"from-date": fromDate})
     .then(response => response.json())
@@ -33,4 +33,14 @@ function queryString(options) {
     keyValuePairs.push(`${key}=${options[key]}`)
   })
   return '?' + keyValuePairs.join('&')
+}
+
+function todayString() {
+  let today = new Date
+  let yyyy = today.getFullYear()
+  let mm = today.getMonth() + 1
+  if(mm < 10) { mm = "0" + mm}
+  let dd = today.getDate()
+  if(dd < 10) { dd = "0" + dd}
+  return [yyyy, mm, dd].join('-');
 }
