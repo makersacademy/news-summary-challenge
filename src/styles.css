@@ -104,3 +104,11 @@ p {
 #today-date {
   text-align: center;
 }
+
+#articles {
+  padding-right: 7cm;
+  padding-top: 5cm;
+  color: rgb(8, 23, 92);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+}
