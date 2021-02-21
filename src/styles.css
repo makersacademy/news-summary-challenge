@@ -100,3 +100,7 @@ p {
   backdrop-filter: blur(3px);
   z-index: 5;
 }
+
+#today-date {
+  text-align: center;
+}

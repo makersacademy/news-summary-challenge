@@ -126,7 +126,7 @@ Note how the `apiRequestUrl` parameter value is just the request you would have 
 If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make. Notice how it has headers to authenticate with the Aylien API.
 
 ```
-curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
+curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingT heUnthinkable/note.html" \
   -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
   -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
 ```
