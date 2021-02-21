@@ -11,4 +11,22 @@ it("callAPI appends options to the URL in a query string", function() {
   expect(callAPI("https://example-url.com", returnURL, options).url).toEqual("https://example-url.com?option1=one&option2=two")
 })
 
-it("")
+
+let responseJSON = JSON.stringify({response: {currentPage: 1, orderBy: "Newest",
+                  results: [{webTitle: "Amazing headline 1!"}, {webTitle: "Amazing headline 2!"}]}})
+
+let response = new Response(responseJSON)
+
+let returnArticlesPromise = new Promise((resolve, reject) => {
+  setTimeout( function() {
+    resolve(response)
+  }, 250)
+
+})
+
+it("getLatestArticles adds the articles returned from the API to an array as objects with headlines", () => {
+  getLatestArticles(returnArticlesPromise)
+  expect(articles.length).toEqual(2)
+  expect(articles[0].headline).toEqual("Amazing headline 1!")
+  expect(articles[1].headline).toEqual("Amazing headline 2!")
+})

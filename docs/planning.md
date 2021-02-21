@@ -44,7 +44,7 @@ I can see all of today's headlines in one place
   * iterate through results set using `.then()`
     * add results to `articles` array
 
-* displayResults()
+* `displayResults()`
   * iterate through `articles` array
   * create new div with id dependent on index in `articles` array
 
