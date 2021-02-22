@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <h2>Today's news</h2>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <title>News</title>
+  </head>
+  <body>
+    <button class="show-modal">Show news article one</button>
+    <button class="show-modal">Show news article two</button>
+    <button class="show-modal">Show news article three</button>
+    <div id="articles">Article written here</div> 
+
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>Headline</h1>
+      <p>News paper blurb here</p>
+    </div>
+    <div class="overlay hidden"></div>
+    <div id="today-date"></div>
+
+ 
+  </div>
+
+    <script src="lib/testing_framework.js"></script>
+    <script src="src/app.js"></script>
+    <script src="src/headlines.js"></script>
+    <script src="src/article.js"></script>
+
+  </body>
+</html>
+
+<!-- <div class="news-container">
+  <div id="news-feed"></div>
+    <!-- news-item -->
+  <!-- <div id="news-summary"></div> -->
