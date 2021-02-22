@@ -8,7 +8,7 @@ if (test === false) {
     testIndex ++
   }
 } else {
-  getNews();
+  // getNews();
 }
 
 //event listeners
