@@ -1,0 +1,47 @@
+/* CSS HEX */
+/* --space-cadet: #22223bff;
+--independence: #4a4e69ff;
+--heliotrope-gray: #9a8c98ff;
+--silver-pink: #c9ada7ff;
+--isabelline: #f2e9e4ff; */
+
+body {
+  background-image: linear-gradient(to bottom right, #22223bff, #4a4e69ff);
+  background-attachment: fixed;
+  color: #f2e9e4ff;
+}
+
+#heading {
+  margin: 2%;
+}
+
+#news-feed {
+  background-color: #9a8c98ff;
+  margin: auto;
+  margin-bottom: 100px;
+  padding-bottom: 2em;
+  text-align: center;
+  max-width: 800px;
+  min-height: 150px;
+  border-radius: 15px;
+}
+
+.article {
+  background-color: #c9ada7ff;
+  padding: 0.5em;
+  padding-bottom: 2em;
+  border-radius: 10px;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 2em;
+}
+
+.article img {
+  width: 90%;
+}
+
+#news-feed-heading {
+  background-color: inherit;
+  border-radius: inherit;
+  padding: 0.5em;
+}
