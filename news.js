@@ -12,9 +12,8 @@ if (test === false) {
 }
 
 //event listeners
-newsList.addEventListener("click", function (e){
+recipeWrapper.addEventListener("click", function (e){
   e.preventDefault();
-  console.log(`${e.target.id}`)
   openStory(e.target.id);
 });
 
@@ -24,10 +23,9 @@ modalClose.addEventListener("click", function (e){
 
 setInterval(function(){
   let id1 = Math.floor(Math.random() * imageID)
-  let id2 = Math.floor(Math.random() * 4)
-  image = document.getElementById(`cone_${id1}_${id2}`)
-  console.log(`cone_${id1}_${id2}`)
-  image.src=`images/${randomImage()}.png` }, 50);
+  image = document.getElementById(`${id1}`);
+  console.log(`cone${id1}`);
+  image.src=`images/${randomImage()}.png` }, 100);
 
 
 // Model functions
@@ -35,60 +33,52 @@ function addNews(headline, body, url) {
   story = [headline, body, url]
   newsBank.push(story);
   index = newsBank.indexOf(story);
-  createNewsItem(headline, index);
+  createNewsItem(index);
 }
 
-function createNewsItem(headline, index) {
-  let liNode = document.createElement("li");
-  let pNode = document.createElement("p");
+function createNewsItem(index) {
+  let tableCell = document.createElement("div");
+  tableCell.class="grid-item"
   let aNode = document.createElement("a");
-  let textNode = document.createTextNode(headline);
-  pNode.id = `${index}`
-  pNode.appendChild(textNode);
-  aNode.appendChild(pNode);
-  liNode.appendChild(aNode);
-  newsList.appendChild(liNode);
+  addImage(aNode, index);
+  tableCell.appendChild(aNode);
+  recipeWrapper.appendChild(tableCell);
   addAttributes(aNode, index);
-  addImage(aNode);
 }
 
-function addImage(aNode) {
-  let i = 0
-  for(i; i < 5; i++) {
-    let imageNode = document.createElement("img")
-    imageNode.style.width="9%"
-    imageNode.style.height="auto"
-    imageNode.style.align="center"
-    imageNode.style.margin="30px"
-    imageNode.id=`cone_${imageID}_${i}`
-    imageNode.src=`images/${randomImage()}.png`;
-    aNode.appendChild(imageNode);
-  }
+function addImage(aNode, index) {
+  let imageNode = document.createElement("img")
+  imageNode.style.width="30%"
+  imageNode.style.height="auto"
+  imageNode.style.align="center"
+  imageNode.style.margin="5px"
+  imageNode.id=`${index}`
+  imageNode.src=`images/${randomImage()}.png`;
+  aNode.appendChild(imageNode);
   imageID++
 }
 
 function randomImage() {
-  img = Math.floor(Math.random() * 10)
-  console.log(img)
-  return img
+  console.log("randomiser")
+  return Math.floor(Math.random() * 10)
 }
 
 function addAttributes(aNode, index) {
   aNode.href = `${index}`;
-  aNode.id = `${index}`;
+  aNode.id = `cone${index}`;
 }
 
 function openStory(id) {
-  console.log(id)
+  let header = newsBank[id][0];
   let text = newsBank[id][1];
   let url = newsBank[id][2];
-  openModal(text, url);
+  openModal(header, text, url);
 };
 
-function openModal(text = "", url) {
-  let para = document.getElementById("newsText");
+function openModal(header, text = "", url) {
   modal.style.display = "block";
   storylink.href = url;
+  head.innerHTML = header;
   para.innerHTML = text;
 }
 
