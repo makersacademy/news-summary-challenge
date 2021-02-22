@@ -3,6 +3,7 @@ const articles = [];
 
 window.addEventListener('hashchange', displayNewsArticle);
 document.addEventListener('DOMContentLoaded', fetchNews);
+// fetchNews();
 
 function fetchNews() {
   location.hash = 'WELCOME WELCOME PLEASE COME IN';
@@ -40,6 +41,7 @@ function displayNewsArticle() {
   document.getElementById('list').innerText = '';
   index = location.hash.substr(1);
   let news = (articles[index]);
-  news.articleLink();
+  news.articleSummary();
   news.headline();
+  news.headlineLink();
 }

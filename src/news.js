@@ -28,15 +28,27 @@ class News {
     return articleImage;
   }
 
-  articleLink() {
+  articleSummary() {
     let articleContent = document.getElementById('list');
-    articleContent.innerHTML = this.newsData.fields.body;
+    articleContent.innerHTML = this.newsData.fields.body.substring(0, 2000);
     return articleContent;
   }
 
   headline() {
     let headline = document.getElementById('headline');
+    console.log(headline);
     headline.innerHTML = this.newsData.webTitle;
     return headline;
   }
+
+  headlineLink() {
+    let headlineLink = document.getElementById('headline-link');
+    headlineLink.href = this.newsData.webUrl;
+    console.log(headlineLink.href);
+    headlineLink.innerHTML = headlineLink.href;
+    return headlineLink;
+  }
+
+  // headline.innerHTML = `<h1 id=headline > <a id='headline-link' href='#'> </a>${this.newsData.webTitle}</h1>`;
+
 }
