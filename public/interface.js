@@ -1,11 +1,11 @@
-// When I start on the api i will just add each relevant piece of data (title, summary, imageUrl etc to headlines array below)
+// Once i get the api's working i will pass the same dataa (title, summary, imageUrl etc) to through instead of the headlines array.
 
 let headlines = [["BREAKING NEWS 1", "NEWS SUMMARY 1", "http://public.media.smithsonianmag.com/legacy_blog/smiley-face-1.jpg", "https://www.theguardian.com/uk"], ["BREAKING NEWS 2", "NEWS SUMMARY 2", "https://ih1.redbubble.net/image.499518885.1931/flat,750x1000,075,f.u1.jpg", "https://www.theguardian.com/uk"], ["BREAKING NEWS 3", "NEWS SUMMARY 3", "https://images.emojiterra.com/google/android-11/512px/1f634.png", "https://www.theguardian.com/uk"]]
 
 showHeadlines = () => {
   headlines.forEach(headline =>
     document
-    .getElementById("headlines").innerHTML += `<div id="headline"><a href=#${headlines.indexOf(headline)}>` + headline[0] + `</a>`
+    .getElementById("headlines").innerHTML += `<div id=headline${headlines.indexOf(headline)}><a href=#${headlines.indexOf(headline)}>` + headline[0] + `</a>`
     + `<div id=photo${headlines.indexOf(headline)}></div>` 
     + `<div id=news-blurb${headlines.indexOf(headline)}></div>` 
     + `<a href=${headline[3]}><button>Visit full article</button></a></div>`
@@ -30,18 +30,35 @@ makeImage()
 
 // --- API LOGIC 
 
-// function getPostData() {
+// function getNewsData() {
 //   return fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body").then(response => {
 //     return response.json();
 //   })
 // }
 
+// function renderNews(newsData) {
+//   let newsTitleHTML = `<div id=headline></div>`
+// }
+
+
 // function getTitle() {
 //   getPostData().then(post => {
 //     console.log(post)
-//     return post.response.content.webTitle
+//     console.log(post.response.content.webTitle)
+//     return post
 //   });
 // }
 
-// let test = getTitle()
-// console.log(test)
+// function getSummaryData() {
+//   return fetch("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=https://www.theguardian.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live").then(response => {
+//     return response.json();
+//   })
+// }
+
+// function getSummary() {
+//   getNewsData().then(news => {
+//     console.log(news)
+//   });
+// }
+
+// getSummary()
