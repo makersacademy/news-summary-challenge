@@ -76,25 +76,6 @@ function openStory(id) {
   openModal(text, url);
 };
 
-function addImage(aNode) {
-  let i = 0
-  imageID++
-  for(i; i < 5; i++) {
-    let imageNode = document.createElement("img")
-    imageNode.style.width="9%"
-    imageNode.style.height="auto"
-    imageNode.style.align="center"
-    imageNode.style.margin="30px"
-    imageNode.id=`cone_${imageID}_${i}`
-    randomImage(imageNode)
-    aNode.appendChild(imageNode);
-  }
-}
-
-function randomImage(image) {
-  image.src=`images/${Math.floor(Math.random() * 11)}.png`;
-}
-
 function openModal(text = "", url) {
   let para = document.getElementById("newsText");
   modal.style.display = "block";
