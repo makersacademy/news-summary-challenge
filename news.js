@@ -3,12 +3,12 @@
 if (test === false) {
   // getNews();
   console.log("Using test news bank")
-  // while (testIndex < testBank.length) {
-  // addNews(testBank[testIndex][0], testBank[testIndex][1], testBank[testIndex][2])
+  while (testIndex < testBank.length) {
+   addNews(testBank[testIndex][0], testBank[testIndex][1], testBank[testIndex][2])
     testIndex ++
   }
-   else {
-  getNews();
+} else {
+  // getNews();
 }
 
 //event listeners
