@@ -1,0 +1,22 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "A repository for the Makers Weekend 7 Challenge \"News Summary\".",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshSinyor/news-summary-challenge.git"
+  },
+  "author": "Joshua Sinyor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshSinyor/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/JoshSinyor/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
