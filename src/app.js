@@ -1,5 +1,5 @@
 ("use strict");
-class HeadlinesView {
+class displayHeadlines {
   constructor(headlines) {
     this.headlines = headlines;
   }
@@ -21,12 +21,12 @@ class HeadlinesView {
 class HeadlinesController {
   constructor() {
     this.headlines = new Headlines();
-    this.ViewClass = HeadlinesView;
-    this.headlinesView = new this.ViewClass(this.headlines);
+    this.ViewClass = displayHeadlines;
+    this.displayHeadlines = new this.ViewClass(this.headlines);
   }
 
   showHtml() {
-    let html = this.headlinesView.returnHtmlView();
+    let html = this.displayHeadlines.returnHtmlView();
     document.getElementById("articles").innerHTML = html;
   }
   updateNews() {
