@@ -1,15 +1,22 @@
 # News Summary challenge
 
+## Intro
+This is an unfinished project, attempting to pull back the latest news from the Guardian and display it on a web page. I have only finished the first couple of user stories, as I came a cropper at a couple of points. I intend to fix it, as I think it could be quite a good piece of work eventually.
+
 ## Set up
 * Clone this repo locally
 * Use a browser to open index.html
 
 ## Approach
-
+* Using [Pedigree](https://github.com/HolsDuckett/TripleH-Pedigree) (testing framework we built for our Notes App challenge)
+* Testing is not as rigorous as I would have liked
+* I did manage to stub the testing of the API calls
+* However testing for bringing back the articles was unsuccessful, as it is erroneously passing, I think due to using expects inside a promise
 
 ## Credit
 * Favicon generated from https://favicon.io
 * Colour scheme from https://coolors.co
+* Uses Guardian API https://open-platform.theguardian.com/
 
 
 Challenge Presented
