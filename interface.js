@@ -2,14 +2,11 @@ const url = 'https://content.guardianapis.com/search?q=debate&tag=politics/polit
 
 fetch(url)
 .then(response => {
-  console.log(response);
     return response.json();
 })
 .then(data => {
-  console.log(data);
   let newsContainer = document.getElementById('news-title');
   let newsArray = data.response.results
-  console.log(newsArray);
   for(let i = 0; i < newsArray.length; i++) {
     let newsStory = `<a class='title' data-newsID="${i}" href="${newsArray[i].webUrl}">${newsArray[i].webTitle}</a></br>`
     newsContainer.innerHTML += newsStory
