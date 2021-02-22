@@ -12,11 +12,12 @@ function getLatestArticles(fetchFunction = fetch) {
 
   let fromDate = todayString()
   let targetURL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search"
-  return callAPI(targetURL, fetchFunction, {"from-date": fromDate})
+  return callAPI(targetURL, fetchFunction, {"show-fields": "thumbnail", "from-date": fromDate})
     .then(response => response.json())
     .then(data => {
+      console.log(data)
       data.response.results.forEach(article => {
-        articles.push({headline: article.webTitle})
+        articles.push({headline: article.webTitle, thumbnail: article.fields.thumbnail})
       })
       updateHeadlines()
     })

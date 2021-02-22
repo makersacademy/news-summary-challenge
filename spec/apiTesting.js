@@ -13,7 +13,7 @@ it("callAPI appends options to the URL in a query string", function() {
 
 
 let responseJSON = JSON.stringify({response: {currentPage: 1, orderBy: "Newest",
-                  results: [{webTitle: "Amazing headline 1!"}, {webTitle: "Amazing headline 2!"}]}})
+                  results: [{webTitle: "Amazing headline 1!", fields: {thumbnail: "picURL1"}}, {webTitle: "Amazing headline 2!", fields: {thumbnail: "picURL2"}}]}})
 
 let response = new Response(responseJSON)
 
@@ -31,9 +31,16 @@ const returnArticlesPromise = () => articlesPromise
  in the console subsequently, articles.length was coming back as 2, and articles was as expected.
  I suspect it's something to do with the order of operation, but I don't know why */
 
-// it("getLatestArticles adds the articles returned from the API to an array as objects with headlines", () => {
-//   getLatestArticles(returnArticlesPromise)
-//   expect(articles.length).toEqual(2)
-//   expect(articles[0].headline).toEqual("Amazing headline 1!")
-//   expect(articles[1].headline).toEqual("Amazing headline 2!")
-// })
+ /* Update - these are now passing when I put them inside a then, since the getLatestArticles returns a
+ promise, but actually they're passing erroneously, and aren't actually being run. I'm not sure if that's
+ because of the way this test is set up, or Pedigree itself */
+
+it("getLatestArticles adds the articles returned from the API to an array as objects with headlines and pictures", () => {
+  getLatestArticles(returnArticlesPromise).then(() => {
+  expect(articles.length).toEqual(2)
+  expect(articles[0].headline).toEqual("Amazing headline 1!")
+  expect(articles[1].headline).toEqual("Amazing headline 2!")
+  expect(articles[0].thumbnail).toEqual("picURL1")
+  expect(articles[1].thumbnail).toEqual("picURL2")
+  })
+})

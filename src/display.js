@@ -3,15 +3,19 @@
 const newsFeed = document.getElementById("news-feed")
 
 function updateHeadlines() {
-  clearNewsFeed()
-  articles.forEach((article, index) => {
-    let articleDiv = newArticleDiv(index)
-    let headlineDiv = newHeadlineDiv(index)
-    let headlineText = newHeadlineText(article.headline)
-    headlineDiv.appendChild(headlineText)
-    articleDiv.appendChild(headlineDiv)
-    newsFeed.appendChild(articleDiv)
-  })
+  if(newsFeed) {
+    clearNewsFeed()
+    articles.forEach((article, index) => {
+      let articleDiv = newArticleDiv(index)
+      let headlineDiv = newHeadlineDiv(index)
+      let headlineText = newHeadlineText(article.headline)
+      let thumbnailImg = newThumbnail(article.thumbnail)
+      headlineDiv.appendChild(headlineText)
+      articleDiv.appendChild(headlineDiv)
+      articleDiv.appendChild(thumbnailImg)
+      newsFeed.appendChild(articleDiv)
+    })
+  }
 }
 
 function clearNewsFeed() {
@@ -40,4 +44,10 @@ function newHeadlineText(headline) {
   return headlineText
 }
 
-getLatestArticles()
+function newThumbnail(thumbnailAddress) {
+  let thumbnailImg = document.createElement('img')
+  thumbnailImg.src = thumbnailAddress
+  return thumbnailImg
+}
+
+if(newsFeed) { getLatestArticles() }
