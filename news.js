@@ -49,13 +49,15 @@ function createNewsItem(headline, index) {
 
 function addImage(aNode) {
   let i = 0
+  imageID++
   for(i; i < 5; i++) {
     let imageNode = document.createElement("img")
     imageNode.style.width="9%"
     imageNode.style.height="auto"
     imageNode.style.align="center"
     imageNode.style.margin="30px"
-    imageNode.src=`images/${randomImage()}.png`;
+    imageNode.id=`cone_${imageID}_${i}`
+    imageNode.src="randomImage(imageNode)"
     aNode.appendChild(imageNode);
   }
 }

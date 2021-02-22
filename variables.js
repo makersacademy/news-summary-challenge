@@ -3,8 +3,9 @@ let news = []
 let newsList = document.getElementById("newsWrapper");
 let modal = document.getElementById("modalWrapper");
 let storylink = document.getElementById("storylink")
-let testIndex = 0
+let testIndex = 0;
 let modalClose = document.getElementsByClassName("close")[0];
+let imageID = 0;
 let testBank = [
   ["Sex magic, occult art and acid: the story of the infamous witch of Kings Cross", "Norton eked out a modest living selling her art, and putting spells and hexes on people.", "https://www.theguardian.com/film/2021/feb/09/sex-m…id-the-story-of-the-infamous-witch-of-kings-cross"],
   ["Who was this witch's occult rival? The great British art quiz", "This quiz is brought to you in collaboration with …art from over 3,000 venues and by 45,000 artists.", "https://www.theguardian.com/artanddesign/2020/jul/10/great-british-art-quiz-royal-cornwall-museum"],
