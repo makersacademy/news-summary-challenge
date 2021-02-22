@@ -57,7 +57,7 @@ function addImage(aNode) {
     imageNode.style.align="center"
     imageNode.style.margin="30px"
     imageNode.id=`cone_${imageID}_${i}`
-    imageNode.src="randomImage(imageNode)"
+    imageNode.src=`images/${randomImage()}.png`;
     aNode.appendChild(imageNode);
   }
 }
