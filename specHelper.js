@@ -52,5 +52,5 @@ function fillInContentById(id, content) {
 
 function clear() {
   newsBank = [];
-  newsWrapper.innerHTML = "";
+  recipeWrapper.innerHTML = "";
 }
