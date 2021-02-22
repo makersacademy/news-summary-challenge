@@ -1,0 +1,16 @@
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+ul {
+  list-style-type: none;
+ }
+
+ .margin-vertical {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+a {
+  color: dimgray;
+} 
