@@ -48,7 +48,7 @@ function createNewsItem(index) {
 
 function addImage(aNode, index) {
   let imageNode = document.createElement("img")
-  imageNode.style.width="30%"
+  imageNode.style.width="40%"
   imageNode.style.height="auto"
   imageNode.style.align="center"
   imageNode.style.margin="5px"
