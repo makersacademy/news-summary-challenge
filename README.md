@@ -124,3 +124,4 @@ If you're interested, you can see the code for the News Summary API in this repo
 
 - The summaries show but they are at the top of the page which is good for the first story but not any others
 - currently the images are taken from lorem picsum so are randomly generated - I couldn't find online how to get the thumbnail images from the guardian API
+- not yet responsive to work on mobiles
