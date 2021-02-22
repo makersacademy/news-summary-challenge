@@ -83,16 +83,16 @@ a:visited {
 .center {
 	position: relative;
 	text-align: center;
-	margin-top: 0.5cm;
-  margin-bottom: 0.5cm;
+	margin-top: 0cm;
+  margin-bottom: 0cm;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   padding: 5px;
 }
 .grid-item {
-  padding: 5px;
+  padding: 10px;
   text-align: center;
 }
