@@ -1,4 +1,4 @@
-class ArticleSummaryView {
+class ArticleSummary {
   constructor(articleBody){
     this.articleBody = articleBody
   }  

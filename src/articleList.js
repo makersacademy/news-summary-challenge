@@ -1,4 +1,4 @@
-class ArticleHeadlineListView{
+class ArticleHeadline{
   constructor(articleList = new ArticleList){
     this.articleList = articleList.returnArticles()
   }

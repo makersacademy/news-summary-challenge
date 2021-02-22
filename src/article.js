@@ -1,4 +1,4 @@
-class ArticleController {
+class Article {
   constructor(newsAPI = "http://content.guardianapis.com", articleList = new ArticleList){
     this.newsAPI = newsAPI
     this.articleList = articleList
@@ -13,7 +13,7 @@ class ArticleController {
       allArticles.forEach(article => {
         this.articleList.addArticle(article.fields.headline, article.id, article.fields.thumbnail)
       })
-      let articleHeadlineListView = new ArticleHeadlineListView(this.articleList)
+      let articleHeadlineListView = new ArticleHeadline(this.articleList)
       document.getElementById("app").innerHTML = articleHeadlineListView.returnHTML()
     }.bind(this))
   }
@@ -22,13 +22,9 @@ class ArticleController {
     let url = `${this.newsAPI}/${this._retreiveArticle(id).returnUrlId()}?show-fields=body&api-key=78fb758b-9cd0-48e8-96c1-fe29eb42c6d0`
     this._httpGetAsync(url, function(response){
       let summaryInfo = JSON.parse(response).response.content.fields.body
-      let articleSummaryView = new ArticleSummaryView(summaryInfo)
+      let articleSummaryView = new ArticleSummary(summaryInfo)
       document.getElementById("app").innerHTML = articleSummaryView.returnHTML()
     })
-  }
-
-  _retreiveArticle(id){
-    return this.articleList.getArticle(id)
   }
 
   _httpGetAsync(url, callback){
@@ -42,17 +38,18 @@ class ArticleController {
     xhttp.send()
   }
 
-  _currentDate(){
-    return (new Date().toJSON().slice(0,10))
+  _retreiveArticle(id){
+    return this.articleList.getArticle(id)
   }
 
   _clearArticleArray(){
     this.articleList.articles = []
   }
-}
 
-let newsController = new ArticleController
-newsController.fetchCurrentArticles()
+  _currentDate(){
+    return (new Date().toJSON().slice(0,10))
+  }
+}
 
 window.addEventListener('hashchange', function(event){
   if (event.newURL.slice(-1) == '/') {
@@ -62,3 +59,6 @@ window.addEventListener('hashchange', function(event){
     newsController.renderSummary(id)
   }
 })  
+
+let newsController = new Article
+newsController.fetchCurrentArticles()
