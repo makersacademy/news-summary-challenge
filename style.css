@@ -50,8 +50,8 @@ a:visited {
   left: 0;
   top: 0;=
   overflow: auto; /* Enable scroll if needed */
-  background-color: #2b2525; /* Fallback color */
-  background-color: rgba(0,0,0,0.100); /* Black w/ opacity */
+  /* background-color: #2b2525; /* Fallback color */
+  /* background-color: #f752e0; /* Pink w/ opacity */
   width: 300px;
   height: 300px;
   position: fixed;
@@ -68,7 +68,7 @@ a:visited {
   color: #fefefe;
   margin: auto;
   padding: 20px;
-  border: 1px solid #fAf6E3;
+  border: 1px solid #f752e0;
   width: 80%;
   font-family: 'Open Sans', sans-serif;
 }
