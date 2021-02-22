@@ -40,25 +40,34 @@ a:visited {
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
 }
-
 .modal {
-  display: none;
-  border: 2px solid #fAf6E3;
-  z-index: 1;
+  color: #fAf6E3;
+  display: none; /* Hidden by default */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;=
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #2b2525; /* Fallback color */
+  background-color: rgba(0,0,0,0.100); /* Black w/ opacity */
   width: 300px;
-  height: auto;
-  position: relative;
-  bottom: 250;
-  right: 0;
-  color: #2b2525
-  background-color: #fAf6E3;
-  font-family: 'Open Sans', sans-serif;
-
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
 }
 
 
 .modal_para {
-  margin: 5px;
+  background-color: #2b2525;
+  position: center;
+  color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #fAf6E3;
+  width: 80%;
   font-family: 'Open Sans', sans-serif;
 }
 

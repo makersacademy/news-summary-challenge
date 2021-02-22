@@ -3,18 +3,24 @@
 if (test === false) {
   // getNews();
   console.log("Using test news bank")
-  while (testIndex < testBank.length) {
-  addNews(testBank[testIndex][0], testBank[testIndex][1], testBank[testIndex][2])
+  // while (testIndex < testBank.length) {
+  // addNews(testBank[testIndex][0], testBank[testIndex][1], testBank[testIndex][2])
     testIndex ++
   }
+   else {
+  getNews();
 }
 
 //event listeners
 newsList.addEventListener("click", function (e){
   e.preventDefault();
+  console.log(`${e.target.id}`)
   openStory(e.target.id);
 });
 
+modalClose.addEventListener("click", function (e){
+  closeModal();
+});
 // modal.addEventListener("click", function (e){
 //   gotoStory();
 // })
@@ -32,6 +38,7 @@ function createNewsItem(headline, index) {
   let pNode = document.createElement("p");
   let aNode = document.createElement("a");
   let textNode = document.createTextNode(headline);
+  pNode.id = `${index}`
   pNode.appendChild(textNode);
   aNode.appendChild(pNode);
   liNode.appendChild(aNode);
@@ -63,6 +70,7 @@ function addAttributes(aNode, index) {
 }
 
 function openStory(id) {
+  console.log(id)
   let text = newsBank[id][1];
   let url = newsBank[id][2];
   openModal(text, url);
@@ -82,7 +90,7 @@ function closeModal() {
 // API - untested
 
 function getNews() {
-  data = fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=occult")
+  data = fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=ice%20cream%2C%20vanilla")
     .then((response) => response.json())
     .then((data) => {
     news.push(data)
