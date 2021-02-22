@@ -7,13 +7,13 @@ html {
 body {
   background-color: #252525;
   width: 800%;
-	max-width: 650px;
+	max-width: 700px;
   margin: auto;
 }
 
 head {
   width: 800%;
-  max-width: 650px;
+  max-width: 700px;
   margin: auto;
   background-color: #252525;
 }
@@ -29,6 +29,7 @@ ul {
 }
 
 a:link {
+  text-align: center;
   color: #fAf6E3;
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
@@ -36,6 +37,7 @@ a:link {
 
 /* visited link */
 a:visited {
+  text-align: center;
   color: #fAf6E3;
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
@@ -52,7 +54,7 @@ a:visited {
   background-color: rgba(0,0,0,0.100); /* Black w/ opacity */
   width: 300px;
   height: 300px;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   margin-left: -150px;
