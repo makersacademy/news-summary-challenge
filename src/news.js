@@ -36,7 +36,6 @@ class News {
 
   headline() {
     let headline = document.getElementById('headline');
-    console.log(headline);
     headline.innerHTML = this.newsData.webTitle;
     return headline;
   }
@@ -44,11 +43,9 @@ class News {
   headlineLink() {
     let headlineLink = document.getElementById('headline-link');
     headlineLink.href = this.newsData.webUrl;
-    console.log(headlineLink.href);
     headlineLink.innerHTML = headlineLink.href;
     return headlineLink;
   }
 
   // headline.innerHTML = `<h1 id=headline > <a id='headline-link' href='#'> </a>${this.newsData.webTitle}</h1>`;
-
 }
