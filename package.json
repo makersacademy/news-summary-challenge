@@ -1,0 +1,26 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "![Project Banner](https://github.com/Mornevanzyl/news-summary-challenge/blob/master/images/GitHub_Project_Banner.jpg?raw=true)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mornevanzyl/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mornevanzyl/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/Mornevanzyl/news-summary-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
