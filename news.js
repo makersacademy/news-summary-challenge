@@ -21,9 +21,14 @@ newsList.addEventListener("click", function (e){
 modalClose.addEventListener("click", function (e){
   closeModal();
 });
-// modal.addEventListener("click", function (e){
-//   gotoStory();
-// })
+
+setInterval(function(){
+  let id1 = Math.floor(Math.random() * imageID)
+  let id2 = Math.floor(Math.random() * 4)
+  image = document.getElementById(`cone_${id1}_${id2}`)
+  console.log(`cone_${id1}_${id2}`)
+  image.src=`images/${randomImage()}.png` }, 50);
+
 
 // Model functions
 function addNews(headline, body, url) {
@@ -49,7 +54,6 @@ function createNewsItem(headline, index) {
 
 function addImage(aNode) {
   let i = 0
-  imageID++
   for(i; i < 5; i++) {
     let imageNode = document.createElement("img")
     imageNode.style.width="9%"
@@ -60,10 +64,13 @@ function addImage(aNode) {
     imageNode.src=`images/${randomImage()}.png`;
     aNode.appendChild(imageNode);
   }
+  imageID++
 }
 
 function randomImage() {
-  return Math.floor(Math.random() * 11)
+  img = Math.floor(Math.random() * 10)
+  console.log(img)
+  return img
 }
 
 function addAttributes(aNode, index) {
