@@ -34,6 +34,10 @@ img {
   border: 5px solid #555;
 }
 
+ul {
+  padding-top: 1rem;
+}
+
 li {
   list-style-type: none;
   align-items: center;
