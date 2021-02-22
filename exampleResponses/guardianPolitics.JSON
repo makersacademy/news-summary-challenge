@@ -1,0 +1,165 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 108318,
+    "startIndex": 1,
+    "pageSize": 10,
+    "currentPage": 1,
+    "pages": 10832,
+    "edition": {
+      "id": "politics",
+      "webTitle": "Politics",
+      "webUrl": "https://www.theguardian.com/politics",
+      "apiUrl": "https://content.guardianapis.com/politics",
+      "code": "default"
+    },
+    "section": {
+      "id": "politics",
+      "webTitle": "Politics",
+      "webUrl": "https://www.theguardian.com/politics",
+      "apiUrl": "https://content.guardianapis.com/politics",
+      "editions": [
+        {
+          "id": "politics",
+          "webTitle": "Politics",
+          "webUrl": "https://www.theguardian.com/politics",
+          "apiUrl": "https://content.guardianapis.com/politics",
+          "code": "default"
+        }
+      ]
+    },
+    "results": [
+      {
+        "id": "politics/2021/feb/21/sussex-medicines-firm-takes-production-line-abroad-white-van-beat-brexit-ban",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2021-02-21T09:37:35Z",
+        "webTitle": "Sussex medicines firm takes production line abroad in white van to beat Brexit ban",
+        "webUrl": "https://www.theguardian.com/politics/2021/feb/21/sussex-medicines-firm-takes-production-line-abroad-white-van-beat-brexit-ban",
+        "apiUrl": "https://content.guardianapis.com/politics/2021/feb/21/sussex-medicines-firm-takes-production-line-abroad-white-van-beat-brexit-ban",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2021/feb/20/labour-mps-dismayed-at-orders-to-maintain-radio-silence-on-brexit",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2021-02-20T21:00:42Z",
+        "webTitle": "Labour MPs dismayed at orders to maintain ‘radio silence’ on Brexit",
+        "webUrl": "https://www.theguardian.com/politics/2021/feb/20/labour-mps-dismayed-at-orders-to-maintain-radio-silence-on-brexit",
+        "apiUrl": "https://content.guardianapis.com/politics/2021/feb/20/labour-mps-dismayed-at-orders-to-maintain-radio-silence-on-brexit",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2021/feb/20/uk-government-under-growing-pressure-over-covid-procurement",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2021-02-20T16:43:24Z",
+        "webTitle": "UK government under growing pressure over Covid procurement",
+        "webUrl": "https://www.theguardian.com/politics/2021/feb/20/uk-government-under-growing-pressure-over-covid-procurement",
+        "apiUrl": "https://content.guardianapis.com/politics/2021/feb/20/uk-government-under-growing-pressure-over-covid-procurement",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2021/feb/20/fears-english-local-elections-chaos-lack-staff-venues",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2021-02-20T06:00:24Z",
+        "webTitle": "Fears of English local elections chaos due to lack of staff and venues",
+        "webUrl": "https://www.theguardian.com/politics/2021/feb/20/fears-english-local-elections-chaos-lack-staff-venues",
+        "apiUrl": "https://content.guardianapis.com/politics/2021/feb/20/fears-english-local-elections-chaos-lack-staff-venues",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2021/feb/19/oliver-lewis-quits-head-no-10-union-unit-two-weeks-vote-leave",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2021-02-19T19:12:54Z",
+        "webTitle": "Oliver Lewis quits as head of No 10's union unit after two weeks",
+        "webUrl": "https://www.theguardian.com/politics/2021/feb/19/oliver-lewis-quits-head-no-10-union-unit-two-weeks-vote-leave",
+        "apiUrl": "https://content.guardianapis.com/politics/2021/feb/19/oliver-lewis-quits-head-no-10-union-unit-two-weeks-vote-leave",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/live/2021/feb/19/uk-covid-live-boris-johnson-vaccine-g7-meeting-coronavirus-latest-updates",
+        "type": "liveblog",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2021-02-19T17:00:37Z",
+        "webTitle": "UK coronavirus: unions call for phased school return; 1 in 115 people in England had Covid last week - as it happened",
+        "webUrl": "https://www.theguardian.com/politics/live/2021/feb/19/uk-covid-live-boris-johnson-vaccine-g7-meeting-coronavirus-latest-updates",
+        "apiUrl": "https://content.guardianapis.com/politics/live/2021/feb/19/uk-covid-live-boris-johnson-vaccine-g7-meeting-coronavirus-latest-updates",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2021/feb/19/the-risks-and-rewards-of-keir-starmers-long-game",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2021-02-19T16:49:24Z",
+        "webTitle": "The risks and rewards of Keir Starmer's long game | Letters",
+        "webUrl": "https://www.theguardian.com/politics/2021/feb/19/the-risks-and-rewards-of-keir-starmers-long-game",
+        "apiUrl": "https://content.guardianapis.com/politics/2021/feb/19/the-risks-and-rewards-of-keir-starmers-long-game",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "society/2021/feb/19/matt-hancock-acted-unlawfully-failing-publish-covid-contracts-high-court",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2021-02-19T15:01:14Z",
+        "webTitle": "Matt Hancock acted unlawfully by failing to publish Covid contracts",
+        "webUrl": "https://www.theguardian.com/society/2021/feb/19/matt-hancock-acted-unlawfully-failing-publish-covid-contracts-high-court",
+        "apiUrl": "https://content.guardianapis.com/society/2021/feb/19/matt-hancock-acted-unlawfully-failing-publish-covid-contracts-high-court",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2021/feb/19/data-not-dates-expert-views-on-how-to-lift-englands-covid-lockdown",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2021-02-19T13:28:29Z",
+        "webTitle": "'Data not dates': expert views on how to lift England's Covid lockdown",
+        "webUrl": "https://www.theguardian.com/politics/2021/feb/19/data-not-dates-expert-views-on-how-to-lift-englands-covid-lockdown",
+        "apiUrl": "https://content.guardianapis.com/politics/2021/feb/19/data-not-dates-expert-views-on-how-to-lift-englands-covid-lockdown",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "politics/2021/feb/18/holyrood-agrees-to-publish-evidence-from-alex-salmond",
+        "type": "article",
+        "sectionId": "politics",
+        "sectionName": "Politics",
+        "webPublicationDate": "2021-02-18T22:54:32Z",
+        "webTitle": "Holyrood agrees to publish evidence from Alex Salmond",
+        "webUrl": "https://www.theguardian.com/politics/2021/feb/18/holyrood-agrees-to-publish-evidence-from-alex-salmond",
+        "apiUrl": "https://content.guardianapis.com/politics/2021/feb/18/holyrood-agrees-to-publish-evidence-from-alex-salmond",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+    ]
+  }
+}
