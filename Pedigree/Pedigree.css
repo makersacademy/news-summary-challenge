@@ -1,0 +1,60 @@
+body {
+  background-color: #808080;
+  font-family: "Georgia";
+}
+
+img {
+  background-color: inherit;
+}
+
+#Pedigree {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+p {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+#description {
+  background-color:#FFFFFF;
+  height: 50px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+#count1 {
+  font-size:24px;
+  background-color:#D3D3D3;
+  color:#DC143C;"
+  border: 2px solid red;
+  border-radius: 5px;
+  padding-left: 2rem;
+}
+
+#count2 {
+  font-size:24px;
+  color:#66CD00;
+  background-color:#D3D3D3;
+  border: 2px solid red;
+  border-radius: 5px;
+  padding-left: 2rem;
+}
+
+#fail {
+  font-size:20px;
+  font-weight:bold;
+  background-color:#D3D3D3;
+  color:#DC143C;
+  border-radius: 5px 5px 0px 0px;
+  height: 30px;
+}
+
+#pass {
+  font-size:20px;
+  font-weight:bold;
+  background-color:#696969;
+  color:#66CD00;
+  border-radius: 5px;
+  height: 30px;
+}
