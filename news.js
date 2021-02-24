@@ -25,7 +25,7 @@ setInterval(function(){
   let id1 = Math.floor(Math.random() * imageID)
   image = document.getElementById(`${id1}`);
   console.log(`cone${id1}`);
-  image.src=`images/${randomImage()}.png` }, 100);
+  image.src=`images/${randomImage()}.png` }, 300);
 
 
 // Model functions
