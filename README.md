@@ -67,5 +67,5 @@ To make my news reading more fun
 
 ## **Main Page**
 ![Main Page](main_page.png)
-## **Full aritcle**
-![Full aritcle](full_article.png)
+## **Full Article**
+![Full Article](full_article.png)
