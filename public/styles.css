@@ -46,3 +46,13 @@ a {
     font-family: 'Source Sans Pro', sans-serif;
 
 }
+
+.element {
+
+padding: 20px;
+}
+
+.title-art {
+text-align: "center";
+margin: 0 auto;
+}

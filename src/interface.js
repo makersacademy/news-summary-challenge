@@ -1,4 +1,4 @@
-const guardianAPIKey = 'INSERT_YOUR_API_KEY_HERE';
+const guardianAPIKey = "INSERT_YOUR_KEY_HERE";
 const guardianUrl = 'https://content.guardianapis.com/search?show-fields=all&api-key='+ guardianAPIKey;
 const aylienurl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=';
 const newsCollection = new NewsCollection();
@@ -57,7 +57,9 @@ function getNews() {
 
           const news_collection_div = document.getElementById('news_collection');
           const news_div = document.createElement('div');
+          news_div.className = "element";
           const a_web_title = document.createElement('a');
+          a_web_title.className = "title-art";
           a_web_title.text = news.headline;
           a_web_title.href = '#' + news.articleUrl;
 
