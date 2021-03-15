@@ -17,7 +17,8 @@ function showAllArticles(){
         console.log(oneNews.response.content.webTitle)
 
         var newsContainer = document.createElement("article")
-        newsContainer.classList.add("newsContainer")
+        newsContainer.setAttribute("id", `${oneNews.response.content.webTitle}`)
+        newsContainer.classList.add('newsContainer')
 
         var newsTitle = document.createElement("h1")
         newsTitle.innerHTML = oneNews.response.content.webTitle
@@ -26,8 +27,8 @@ function showAllArticles(){
         newsContent.innerHTML = oneNews.response.content.fields.body
 
         document.querySelector(".newsWrap").appendChild(newsContainer);
-        document.querySelector(".newsContainer").appendChild(newsTitle);
-        document.querySelector(".newsContainer").appendChild(newsContent);
+        document.getElementById(`${oneNews.response.content.webTitle}`).appendChild(newsTitle);
+        document.getElementById(`${oneNews.response.content.webTitle}`).appendChild(newsContent);
 
         console.log(oneNews.response.content.fields.body)
       })
