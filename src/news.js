@@ -44,7 +44,15 @@ function showAllArticles(){
       };
 
       function showArticleForCurrentPage() {
-        showArticle(getArticleFromUrl(window.location));
+        let article = getArticleFromUrl(window.location)
+
+        if (article) {
+        showArticle(article);
+        }
+        else {
+            document.getElementById('newsWrap').innerHTML = ""
+          showAllArticles();
+        }
       };
 
       function getArticleFromUrl(location) {
