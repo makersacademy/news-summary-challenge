@@ -6,11 +6,12 @@ showAllArticles();
 function showAllArticles(){
 
 
-  fetch("https://content.guardianapis.com/search?page=2&q=debate&api-key=test")
+  fetch("https://content.guardianapis.com/search?page=2&api-key=test")
   .then(res => res.json())
   .then(news => {
     for( let i = 0; i < news.response.results.length ; i++) {
       console.log(news.response.results[i].id)
+
       fetch("http://content.guardianapis.com/" + `${news.response.results[i].id}` + "?show-fields=body&api-key=test")
       .then(res => res.json())
       .then(oneNews => {
@@ -66,6 +67,14 @@ function showAllArticles(){
           .then(res => res.json())
           .then(summary => {
             console.log(summary)
-            document.getElementById('newsWrap').innerHTML = summary.sentences
+            fetch("http://content.guardianapis.com/" + article + "?show-fields=body&api-key=test")
+            .then(response => response.json())
+            .then(response => {
+                document.getElementById('newsWrap').innerHTML =`<a href="${response.response.content.webUrl}"> ${response.response.content.webTitle} </a>`
+                document.getElementById('newsWrap').innerHTML +=`<p> ${summary.sentences} </p>`
+
+
+            })
+
           });
       };
