@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> news summary</title>
+        <script src='assert.js'></script>
+        <script src= 'news.js'></script>
+        <script src= 'news-views.js'></script>
+        <script src= 'news-views-tests.js'></script>
+
+        <script src= 'news-tests.js'></script>
+    </head>
+    <body> 
+        <a href="#news-summary">The Guardian</a>
+        <a href="#politics">Politics</a> |
+        <a href="#international">International</a> |
+        <a href="#environment">Environment</a> |
+
+        <div id="headlines"></div>
+    <script>
+        makeUrlTheGuardianLinkClickSummaryNews();
+  
+        function makeUrlTheGuardianLinkClickSummaryNews() {
+            window.addEventListener("hashchange", showTheGuardianHeadlines);
+        };
+        function showTheGuardianHeadlines() {
+            showHeadlines(getHeadlinesFromUrl(window.location));
+        };
+
+        function getHeadlinesFromUrl(location) {
+            return loction.hash.split("#")[1];
+        };
+
+        function showHeadlines(headlines) {
+            document
+            .getElementById("headlines")
+            .innerHTML = "headlines";
+        };
+      </script>
+    </body>
+</html>
