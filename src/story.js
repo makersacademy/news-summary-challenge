@@ -11,6 +11,7 @@ class Story {
     this.headline = storyObj.webTitle
     this.text = storyObj.fields.body
     this.thumbnail = storyObj.fields.thumbnail
+    this.summary = ''
   }
 
 }
