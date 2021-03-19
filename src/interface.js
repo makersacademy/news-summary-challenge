@@ -42,19 +42,20 @@ function populateItems() {
 
 function createItem(item) {
   return `<a href="#${item.id}"><div class="item">
+  <p class="info">${item.section}</p>
   <img src="${item.thumbnail}">
   <br>
   <h3>${item.headline}</h3>
-  <p class"info">${item.section} > ${item.date} > ${item.time}</p>
+  <p class="info">${item.date[2]}/${item.date[1]}/${item.date[0]}  ${item.time}</p>
   </div></a>`
 };
 
-changeTheURL();
-
-function changeTheURL() {
-  //Event listener for url change
-  window.addEventListener("hashchange", displayItem);
-}
+window.addEventListener("hashchange", displayItem);
+document.getElementById("home").addEventListener("click", function() {
+  populateItems();
+  document.getElementById("content").style.display = 'grid'
+  window.location.hash = ''
+});
 
 //Gets the id from the url hash
 function displayItem() {
@@ -63,8 +64,8 @@ function displayItem() {
 
 function showItem(id) {
   if (Number.isInteger) {
-    console.log(id)
     document.getElementById("content").innerHTML = formatItem(id);
+    document.getElementById("content").style.display = 'block'
   }
 };
 
