@@ -10,7 +10,8 @@ const dataset = [
     id: 1,
     heading: "2nd dummy heading",
     img: "images/dummy.jpeg",
-}]
+}
+]
 
 var ready = (callback) => {
   if (document.readyState != "loading") callback();
@@ -19,11 +20,40 @@ var ready = (callback) => {
 
 ready(() => {  
   dummyDataLoad()
+  getHeadlines()
 //create a div
 //add a pic
 //add the headline below
 
 });
+
+const articles = []
+
+function getHeadlines() {
+  let headlines = [];
+  //get date i.e.new Date() and convert
+  fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=article&query-fields=type&from-date=2021-03-19&use-date=newspaper-edition&q=news")
+  .then(response => response.json())
+  .then( body => {
+    for(let i = 0; i < body.response.results.length; i++){
+      if(body.response.results[i].type === "article") {
+        let apiUrl = body.response.results[i].apiUrl
+        let id = body.response.results[i].id
+        let webTitle = body.response.results[i].webTitle
+        let webUrl = body.response.results[i].webUrl
+        let entry = { apiUrl: apiUrl, id: id, webTitle: webTitle, webUrl: webUrl }
+        articles.push(entry)
+        // console.log(body.response.results[i])
+      }
+
+    }
+    
+    console.log(articles) 
+    // console.log(body.response.results) 
+  })
+}
+
+
 
 function dummyDataLoad() {
   let parentdiv = document.createElement('div')
