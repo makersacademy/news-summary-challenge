@@ -2,12 +2,21 @@
 
 function expect(actual) {
   return {
+
     toEqual: function(expected) {
       if(actual === expected)
         console.log('Pass')
       else
         console.log(`Fail - Expected ${actual} to equal ${expected}`)
-    }
+    },
+
+    toContain: function(expected) {
+      if(actual === expected)
+        console.log('Pass')
+      else
+        console.log(`Fail - Expected ${actual} to contain ${expected}`)
+    },
+    
   }
 }
 

@@ -41,12 +41,15 @@ body {
 
 .items {
   background: white;
-  width: 100%;
+  width: 90%;
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 20px;
   grid-template-columns: auto auto auto;
   text-align: center;
-  margin: 70px 10px 10px 10px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
 }
 
 .item {
@@ -55,4 +58,18 @@ body {
   border-width: 1px;
   border-radius: 4%;
   height: 300px;
+}
+
+@media only screen and (max-width: 800px) {
+  /* For mobile phones: */
+  [class="items"] {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  /* For mobile phones: */
+  [class="items"] {
+    grid-template-columns: auto;
+  }
 }
