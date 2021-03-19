@@ -15,27 +15,40 @@ ready(() => {
   getInitialStories();
 });
 
-function clearLocalStorage() {
-
-};
-
 //Adds first page to the stories object
 function getInitialStories() {
   apiGetPage(1);
 };
 
-//Requests page of stories (10 items) from the guardian api returning the results in an array
+//Requests page of stories (10 items) from the guardian api and store them in stories object
 function apiGetPage(pageID) {
- let results = ''
  let req = `https://content.guardianapis.com/search?page=${pageID}&type=article&show-fields=body,thumbnail&api-key=test`
- fetch(req).then(response => response.json())
-  .then(json => {
+
+ fetch(req)
+ .then(response => response.json())
+    .then(json => {
       let results = json.response.results
       stories.addPage(results)
-  });
+      populateHTML();
+    });
+
 };
 
+function populateHTML() {
+  let content = ''
+  stories.currentList.forEach(story => content += createItem(story))
+  document.getElementById("content").innerHTML = content
+}
+
+function createItem(item) {
+  return `<div class="item"><img src="${item.thumbnail}" width=400px><br>${item.headline}</div>`
+}
+
 function saveStories() {
+
+};
+
+function clearLocalStorage() {
 
 };
 

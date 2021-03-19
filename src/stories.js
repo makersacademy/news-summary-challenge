@@ -1,3 +1,5 @@
+'use strict'
+
 class Stories {
 
   //Sets inital hash

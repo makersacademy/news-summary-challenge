@@ -1,3 +1,5 @@
+'use strict'
+
 class Story {
 
   constructor(id, storyObj) {
