@@ -43,8 +43,7 @@ body {
   background: white;
   width: 90%;
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 33% 33% 33%;
   text-align: center;
   margin-top: 80px;
   margin-left: auto;
@@ -57,28 +56,40 @@ body {
   border-color: lightgrey;
   border-width: 1px;
   border-radius: 4%;
-  height: 300px;
+  height: 350px;
+  margin: 5%;
   padding: 5%;
 }
 
 @media only screen and (max-width: 800px) {
-  /* For mobile phones: */
+  /* For tablets: */
   [class="items"] {
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
   }
 }
 
 @media only screen and (max-width: 400px) {
   /* For mobile phones: */
   [class="items"] {
-    grid-template-columns: auto;
+    grid-template-columns: 100%;
   }
 }
 
 .item img {
   border-radius: 5%;
+  width: 90%;
 }
 
 .item h3 {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color:black;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
 }

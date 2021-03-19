@@ -29,20 +29,54 @@ function apiGetPage(pageID) {
     .then(json => {
       let results = json.response.results
       stories.addPage(results)
-      populateHTML();
+      populateItems();
     });
 
 };
 
-function populateHTML() {
+function populateItems() {
   let content = ''
   stories.currentList.forEach(story => content += createItem(story))
   document.getElementById("content").innerHTML = content
 }
 
 function createItem(item) {
-  return `<div class="item"><img src="${item.thumbnail}" height=75% width=90%><br><h3>${item.headline}<h3></div>`
+  return `<a href="#${item.id}"><div class="item">
+  <img src="${item.thumbnail}">
+  <br>
+  <h3>${item.headline}</h3>
+  <p class"info">${item.section} > ${item.date} > ${item.time}</p>
+  </div></a>`
+};
+
+changeTheURL();
+
+function changeTheURL() {
+  //Event listener for url change
+  window.addEventListener("hashchange", displayItem);
 }
+
+//Gets the id from the url hash
+function displayItem() {
+  showItem(parseInt(window.location.hash.split("#")[1]));
+};
+
+function showItem(id) {
+  if (Number.isInteger) {
+    console.log(id)
+    document.getElementById("content").innerHTML = formatItem(id);
+  }
+};
+
+function formatItem(id) {
+  let story = stories.currentList[id]
+  return `<div class="item-large">
+  <img src="${story.thumbnail}">
+  <br>
+  <h3>${story.headline}</h3>
+  <br>
+  <p>${story.text}</p>`
+};
 
 function saveStories() {
 
