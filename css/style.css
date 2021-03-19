@@ -58,6 +58,7 @@ body {
   border-width: 1px;
   border-radius: 4%;
   height: 300px;
+  padding: 5%;
 }
 
 @media only screen and (max-width: 800px) {
@@ -72,4 +73,12 @@ body {
   [class="items"] {
     grid-template-columns: auto;
   }
+}
+
+.item img {
+  border-radius: 5%;
+}
+
+.item h3 {
+  font-family: Arial, Helvetica, sans-serif;
 }
