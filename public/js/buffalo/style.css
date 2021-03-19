@@ -22,3 +22,16 @@ footer {
 main {
   color: black;
 }
+
+.group {
+  font-size: 20px;
+  color: black;
+}
+
+.pass {
+  background-color: chartreuse;
+}
+
+.fail {
+  background-color: red;
+}
