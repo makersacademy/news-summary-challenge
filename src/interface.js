@@ -41,7 +41,7 @@ function populateHTML() {
 }
 
 function createItem(item) {
-  return `<div class="item"><img src="${item.thumbnail}" width=400px><br>${item.headline}</div>`
+  return `<div class="item"><img src="${item.thumbnail}" height=75% width=90%><br>${item.headline}</div>`
 }
 
 function saveStories() {
