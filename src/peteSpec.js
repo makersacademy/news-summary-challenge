@@ -11,7 +11,7 @@ function expect(actual) {
     },
 
     toContain: function(expected) {
-      if(actual === expected)
+      if(actual.search(expected) !== -1)
         console.log('Pass')
       else
         console.log(`Fail - Expected ${actual} to contain ${expected}`)
