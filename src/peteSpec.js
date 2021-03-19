@@ -36,3 +36,9 @@ describe("This is a describe block", function() {
     expect(1+2).toEqual(3)
   })
 })
+
+describe("This is a describe block", function() {
+  it("This is an it block", function() {
+    expect("abcdefg").toContain("x")
+  })
+})
