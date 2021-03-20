@@ -20,7 +20,7 @@ Then go ahead and run the server.
 node node_modules/http-server/bin/http-server
 ```
 
-Visit [localhost:3000](localhost:3000) to access the page in your browser, enjoy!
+Visit [localhost:8080](localhost:8080) to access the page in your browser, enjoy!
 
 ## User Stories
 
