@@ -8,6 +8,11 @@ To create a front end only news app that utilises The Guardians API, with no fra
 
 ## How to Use
 
+Firstly, fork and clone this repo.
+```
+git clone https://github.com/charlierdm/news-summary-challenge.git
+```
+
 This project utilises nodes 'http-server'. Firstly, make sure you have [homebrew](https://brew.sh/) installed.
 
 Enter the following into your command line:
@@ -20,7 +25,7 @@ Then go ahead and run the server.
 node node_modules/http-server/bin/http-server
 ```
 
-Visit [localhost:8080](localhost:8080) to access the page in your browser, enjoy!
+Visit ```localhost:8080``` to access the page in your browser, enjoy!
 
 ## User Stories
 
