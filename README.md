@@ -6,6 +6,22 @@
 
 To create a front end only news app that utilises The Guardians API, with no frameworks. Vanilla JavaScript, CSS and HTML only!
 
+## How to Use
+
+This project utilises nodes 'http-server'. Firstly, make sure you have (homebrew)[https://brew.sh/] installed.
+
+Enter the following into your command line:
+
+```
+brew install node
+```
+Then go ahead and run the server.
+```
+node node_modules/http-server/bin/http-server
+```
+
+Visit (localhost:3000)[localhost:3000] to access the page in your browser, enjoy!
+
 ## User Stories
 
 Some of these stories will need decomposing if they seem too large.
