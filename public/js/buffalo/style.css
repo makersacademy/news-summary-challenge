@@ -1,22 +1,29 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
+  background-color: #fff7e6;
 }
 
-header {
-  background-color: brown;
+header, h1, .tagline {
+  background-color: #664400;
   color: white;
+  width: 100%
+}
+
+h3 {
+  font-size: 25px;
 }
 
 footer {
   width: 100%;
-  background-color: brown;
+  background-color: #664400;
   color: white;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  height: 2rem;
 }
 
 main {
@@ -24,14 +31,52 @@ main {
 }
 
 .group {
-  font-size: 20px;
+  font-size: 17px;
+  line-height: 10px;
   color: black;
+  margin-left: 1em;
 }
 
 .pass {
-  background-color: chartreuse;
+  font-weight: 900;
+  color: #008543;
 }
 
 .fail {
-  background-color: red;
+  font-weight: 900;
+  color: brown;
+}
+
+.test {
+  margin-left: 2em;
+}
+
+.test, .fail, .pass, .fail-info {
+  display: inline;
+  font-size: 15px;
+}
+
+.page-container {
+  position: relative;
+  min-height: 96vh;
+}
+
+.content-wrap {
+  padding-bottom: 3rem;
+}
+
+.footer-text {
+  line-height: 0px;
+}
+
+.red {
+  color: white;
+  background-color: brown;
+  padding: 5px;
+}
+
+.green {
+  color: white;
+  background-color: #008543;
+  padding: 5px;
 }

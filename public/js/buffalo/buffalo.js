@@ -2,6 +2,8 @@ let passCount = 0
 let failCount = 0
 const main = document.getElementById('specs')
 
+updateResultCount();
+
 function describe(testGroup, it) {
   addGroupToHtml(testGroup);
   return it();
@@ -69,3 +71,5 @@ function expect(actual) {
     }
   };
 }
+
+updateResultCount();
