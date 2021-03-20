@@ -11,11 +11,12 @@ const headlineArray = []
 
 const dataToArray = (data) => { return headlineArray.push(data.response.results) }
 
-const apiToHtmlList = (array) => { array.forEach((headline, index) => {
-  let headlineNews = headline[index].fields.headline
-  let url = headline[index].webUrl
-  let thumbnail = headline[index].fields.thumbnail
-  document.getElementById('view-headlines').innerHTML += `<li><h3>${headlineNews}</h3><br><a href=${url}>full article</a></li><br><br><img src="${thumbnail}"><br><br>  `
+const apiToHtmlList = (array) => { array[0].forEach((headline) => {
+  let headlineNews = headline.fields.headline
+  let url = headline.webUrl
+  let thumbnail = headline.fields.thumbnail
+  let bodyShort = headline.fields.trailText
+  document.getElementById('view-headlines').innerHTML += `<li><h3>${headlineNews}</h3><br>${bodyShort}<a href=${url}><br>full article</a></li><br><br><img src="${thumbnail}"><br><br>  `
   })
 };
 
