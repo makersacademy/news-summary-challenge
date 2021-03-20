@@ -10,6 +10,10 @@ header, h1, .tagline {
   width: 100%
 }
 
+h1, .tagline {
+  margin-left: ;
+}
+
 h3 {
   font-size: 25px;
 }
@@ -32,7 +36,7 @@ main {
 
 .group {
   font-size: 17px;
-  line-height: 10px;
+  line-height: 2px;
   color: black;
   margin-left: 1em;
 }
@@ -70,13 +74,43 @@ main {
 }
 
 .red {
-  color: white;
   background-color: brown;
-  padding: 5px;
 }
 
 .green {
-  color: white;
   background-color: #008543;
+}
+
+.noSpecs {
+  background-color: rgb(164, 164, 164);
+}
+
+.noSpecs, .red, .green {
   padding: 5px;
+  color: white;
+}
+
+.logo {
+  display: inline;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 15px;
+  margin-right: 20px;
+  text-align: right;
+}
+
+.red-dot {
+  color: brown;
+}
+
+.green-dot {
+  color: #008543;
+}
+
+.dots {
+  margin-left: 15px;
+  margin-top: -5px;
+  margin-bottom: 25px;
 }

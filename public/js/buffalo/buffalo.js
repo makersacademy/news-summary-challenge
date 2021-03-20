@@ -1,15 +1,14 @@
-let passCount = 0
-let failCount = 0
-const main = document.getElementById('specs')
-
-updateResultCount();
+let testCount = 0
 
 function describe(testGroup, it) {
   addGroupToHtml(testGroup);
   return it();
 }
 
+updateResultCount();
+
 function it(test, expectation) {
+  testCount++
   addTestToHtml(test);
   expectation();
 }
@@ -71,5 +70,3 @@ function expect(actual) {
     }
   };
 }
-
-updateResultCount();
