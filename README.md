@@ -8,7 +8,7 @@ To create a front end only news app that utilises The Guardians API, with no fra
 
 ## How to Use
 
-This project utilises nodes 'http-server'. Firstly, make sure you have (homebrew)[https://brew.sh/] installed.
+This project utilises nodes 'http-server'. Firstly, make sure you have [homebrew](https://brew.sh/) installed.
 
 Enter the following into your command line:
 
@@ -20,7 +20,7 @@ Then go ahead and run the server.
 node node_modules/http-server/bin/http-server
 ```
 
-Visit (localhost:3000)[localhost:3000] to access the page in your browser, enjoy!
+Visit [localhost:3000](localhost:3000) to access the page in your browser, enjoy!
 
 ## User Stories
 
