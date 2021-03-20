@@ -1,13 +1,19 @@
 body {
+  text-align: center;
   background-color: rgb(215, 230, 243);
+  min-width: fit-content;
 }
 
 h1 {
   font-size: 60px;
 }
 
+h2 {
+  font-size: 35px;
+}
+
 #view-headlines {
   font-size: 20px;
-  text-align: center;
   list-style-type: none;
+  padding-right: 30px;
 }
