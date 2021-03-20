@@ -9,10 +9,9 @@ const getGuardianData = () => { return fetch(guardian) };
 
 const apiToHtmlList = (data) => { data.response.results.forEach((headline, index) => {
   let headlineNews = headline.fields.headline
-  let shortUrl = headline.fields.shortUrl
   let url = headline.webUrl
   let thumbnail = headline.fields.thumbnail
-  document.getElementById('view-headlines').innerHTML += `<li><h3>${headlineNews}</h3><br><a href=${url}>${shortUrl}</a></li><br><br><img src="${thumbnail}"><br><br>  `
+  document.getElementById('view-headlines').innerHTML += `<li><h3>${headlineNews}</h3><br><a href=${url}>full article</a></li><br><br><img src="${thumbnail}"><br><br>  `
   })
 };
 
