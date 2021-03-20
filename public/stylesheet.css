@@ -1,4 +1,4 @@
-body {
+* {
   text-align: center;
   background-color: rgb(215, 230, 243);
   min-width: fit-content;
@@ -10,6 +10,12 @@ h1 {
 
 h2 {
   font-size: 35px;
+  padding-bottom: 15px;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: bold;
 }
 
 #view-headlines {
