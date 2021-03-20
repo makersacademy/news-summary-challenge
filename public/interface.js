@@ -1,13 +1,15 @@
 'use strict';
 
-const newsApi = "http://content.guardianapis.com/search?page=2&q=debate&api-key=test"
-const summaryApi = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl="
-const guardian = summaryApi + newsApi
+const newsApi = "http://content.guardianapis.com/search?page=2&q=debate&api-key=test";
+const summaryApi = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=";
+const guardian = summaryApi + newsApi;
 
-var guardianData = null
+const getGuardianData = () => { return fetch(guardian) };
 
-function getGuardianData() {
-  return fetch(guardian)
+const apiToHtmlList = (data) => { data.response.results.forEach((headline) => {
+  let headlineNews = headline.webTitle
+  document.getElementById('view-headlines').innerHTML += `<li>${headlineNews}</li><br>`
+  })
 };
 
 const ready = (callback) => {
@@ -16,12 +18,17 @@ const ready = (callback) => {
 };
 
 ready(() => { 
-  console.log(guardian)
+  console.log(guardian);
   getGuardianData().then(response => { response.json().then(data => {
-      guardianData = data
-    })
+  const guardianData = data 
+  apiToHtmlList(guardianData)
   })
-
+  
+  })
 });
+
+
+
+
 
 

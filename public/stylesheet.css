@@ -5,3 +5,9 @@ body {
 h1 {
   font-size: 60px;
 }
+
+#view-headlines {
+  font-size: 20px;
+  text-align: center;
+  list-style-type: none;
+}
