@@ -1,6 +1,6 @@
 # News Summary challenge
 
-<img width="1142" alt="Screenshot 2021-03-20 at 18 30 49" src="https://user-images.githubusercontent.com/75075773/111881864-77114c00-89aa-11eb-8426-5eba172d26f0.png">
+<img width="1142" alt="Screenshot of the news summary app" src="https://user-images.githubusercontent.com/75075773/111881864-77114c00-89aa-11eb-8426-5eba172d26f0.png">
 
 ## Task
 
@@ -26,6 +26,9 @@ node node_modules/http-server/bin/http-server
 ```
 
 Visit ```localhost:8080``` to access the page in your browser, enjoy!
+
+<img width="885" alt="Mobile Display of the website" src="https://user-images.githubusercontent.com/75075773/111883811-7a5e0500-89b5-11eb-8396-6267df0fe590.png">
+
 
 ## User Stories
 
