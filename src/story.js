@@ -5,7 +5,8 @@ class Story {
   constructor(id, storyObj) {
     this.id = id
     this.section = `${storyObj.pillarName} > ${storyObj.sectionName}`
-    this.date = storyObj.webPublicationDate.slice(0,-1).split("T")[0].split('-')
+    let dateSplit = storyObj.webPublicationDate.slice(0,-1).split("T")[0].split('-')
+    this.date = `${dateSplit[2]}/${dateSplit[1]}/${dateSplit[0]}`
     this.time = storyObj.webPublicationDate.slice(0,-1).split("T")[1].slice(0,-3)
     this.url = storyObj.webUrl
     this.headline = storyObj.webTitle
@@ -15,4 +16,3 @@ class Story {
   }
 
 }
-

@@ -16,6 +16,13 @@ function expect(actual) {
       else
         console.log(`Fail - Expected ${actual} to contain ${expected}`)
     },
+
+    toBeA: function(expected) {
+      if(actual.constructor.name === expected.name)
+        console.log('Pass')
+      else
+        console.log(`Fail - Expected ${actual.constructor.name} to be a ${expected.name}`)
+    }
     
   }
 }
@@ -29,16 +36,3 @@ function describe(label, callback ) {
   console.log(`${label}`)
   callback()
 }
-
-// Test Block
-describe("This is a describe block", function() {
-  it("This is an it block", function() {
-    expect(1+2).toEqual(3)
-  })
-})
-
-describe("This is a describe block", function() {
-  it("This is an it block", function() {
-    expect("abcdefg").toContain("x")
-  })
-})
