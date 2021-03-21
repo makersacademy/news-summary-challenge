@@ -1,5 +1,6 @@
 const testUrl = "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=test"
 
+
 fetchArticles(testUrl);
 
 function fetchArticles(url) {
@@ -13,7 +14,6 @@ function fetchArticles(url) {
     headers: {
       'Content-Type': 'application/json'
     }
-  })
-    .then(response => response.json())
+  }).then(response => response.json())
     .then(data => console.log(data));
 }

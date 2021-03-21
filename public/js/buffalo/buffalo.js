@@ -51,15 +51,6 @@ function expect(actual) {
       }
     },
 
-    toBeEmpty: () => {
-      if (actual.length === 0) {
-        addPassToHtml();
-      } else {
-        addFailToHtml();
-        addFailInfoToHtml(actual, 'to be empty', null);
-      }
-    },
-
     toInclude: (expected) => {
       if (actual.includes(expected)) {
         addPassToHtml();
