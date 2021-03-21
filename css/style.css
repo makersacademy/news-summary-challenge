@@ -93,6 +93,14 @@ a {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.item-large {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.item-large p {
+  text-align: justify;
+}
+
 .home-button {
   color: white;
   font-family: monospace;

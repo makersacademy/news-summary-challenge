@@ -1,4 +1,5 @@
 'use strict';
+let TEST = true;
 
 function expect(actual) {
   return {

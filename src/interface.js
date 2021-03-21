@@ -34,34 +34,21 @@ function apiGetPage(pageID) {
 
 };
 
-function apiSummarise(id, url) {
+async function apiSummarise(url) {
+  // let url = stories.currentList[id].url
   let req = `http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${url}`
-  var summary = ''
-
-  fetch(req, {
-    method: 'GET',
+  
+  let response = await fetch(req, { 
+    method: 'GET', 
     headers: { 'Content-Type': 'application/json' }
-    }).then(response => response.json())
-      .then(json => {
-        addSummary(id, json.sentences.join(" "))
-      });
-
-  return summary;
+  })
+  let json = await response.json()
+  return await json.sentences.join(" ")
 };
 
 function addSummary(id, summary) {
   stories.currentList[id].summary = summary;
 };
-
-function getEmojiData(data) {
-  return fetch('https://makers-emojify.herokuapp.com/', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({text: data })
-  })
-}
 
 function populateItems() {
   let content = ''
@@ -105,7 +92,7 @@ function formatItem(id) {
   <br>
   <h3>${story.headline}</h3>
   <br>
-  <p>${story.text}</p>`
+  <p>${story.summary}</p>`
 };
 
 function saveStories() {

@@ -12,7 +12,15 @@ class Story {
     this.headline = storyObj.webTitle
     this.text = storyObj.fields.body
     this.thumbnail = storyObj.fields.thumbnail
-    this.summary = ''
+    if (typeof TEST === 'undefined') {
+      this.getSummary()
+    } else {
+      this.summary = this.text.match('<p>(.*?)</p>')[1]
+    }
+  }
+
+  async getSummary() {
+    this.summary = await apiSummarise(this.url)
   }
 
 }
