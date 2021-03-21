@@ -11,8 +11,7 @@ printArticles = function(articles){
     for(article of articles){
         let imgURL = article.fields.thumbnail
         let headlineText = article.webTitle
-        let id = article.id
-        let summary = "lorem ipsum"
+        let id = article.webUrl
         let link = document.createElement("a")
         link.setAttribute("href", "#")
         let articleSection = document.createElement("div")
@@ -28,7 +27,7 @@ printArticles = function(articles){
         
         link.addEventListener("click", function(event){
             event.preventDefault();
-            showArticle(imgURL, headlineText, summary);
+            showArticle(imgURL, headlineText, id);
         })
     }
 }
@@ -39,14 +38,21 @@ const getArticles = () => {
     });
   };
 
-showArticle = function(imgURL, headline, summary){
+showArticle = function(imgURL, headline, id){
     articleImage = document.getElementById("article-pic");
     articleHeadline = document.getElementById("article-headline");
     articleSummary = document.getElementById("article-summary");
+    addSummary(articleSummary, id)
     articleImage.setAttribute("src", imgURL);
     articleHeadline.textContent = headline;
-    articleSummary.textContent = summary;
     toggleDisplays();
+}
+
+addSummary= function(element, id){
+    fetch("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + id)
+    .then(response => response.json())
+    .then(data => { 
+        element.textContent = data.sentences});
 }
 
 toggleDisplays = function(){
