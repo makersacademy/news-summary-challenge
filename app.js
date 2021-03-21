@@ -1,48 +1,29 @@
-class News {
-    constructor(title, apiUrl, webUrl, id) {
-      this.title = title;
-      this.apiUrl = apiUrl;
-      this.webUrl = webUrl;
-      this.id = id
-    }
-}
-
-const getHeadlines = async () => {
-    const endpoint = 'https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?order-by=newest&show-elements=image&api-key=test&show-fields=thumbnail'
-    try { const response = await fetch(endpoint, {cache: 'no-cache'}); 
-    if (response.ok) {
-      const jsonResponse = await response.json();
-      return jsonResponse.response.results
-    }
-    } catch (error) {
-      console.log(error)
+  function makeURLChangeShowNewsForCurrentPage() {
+    // listener for when a link is clicked (that has a hash)
+    window.addEventListener("hashchange", showNewsForCurrentPage);
   }
-} 
-
-const headlinesBox = document.querySelector("#headlines-container");
-
-function format(headlines) {
-     let count = 1
-     headlines.forEach(news => {
-        link = news.apiUrl.replace('https', 'http')
-        headline = new News(news.webTitle, link, news.webUrl, count)
-        const div = document.createElement("div"); 
-        div.classList.add("headline"); 
-        div.setAttribute("id", headline.id); 
-        div.innerHTML = `                                                 
-                <a href="#${headline.id}">${headline.title}</a>
-        `;
-        headlinesBox.appendChild(div);
-        count++
-     })
-}
-
-function loadHeadlines() {
-    getHeadlines()
-    .then(results => {
-      format(results);
+  
+  function showNewsForCurrentPage() {
+    // show the note on current page
+    showNews(getNewsID(location));
+  }
+  
+  function getNewsID(location) {
+    // get the id of note wanted from link clicked
+    return parseInt(location.hash.split("#")[1]);
+  }
+  
+  function showNews(newsID) {
+    news = newsCollector.filter((article) => {
+      return article.id === newsID
     })
-    .catch(err => console.log(err))
+    document.getElementById("headlines-container").style.display = "none";
+    document.getElementById(
+        "news-summary"
+      ).innerHTML = `news summary here<br>
+      <img src="${news[0].imageLink}">
+      </br>
+      ${news[0].title}
+      <input type="button" value="Back" onClick="document.location.reload(true)">
+      `;
   }
-
-  document.addEventListener("DOMContentLoaded", loadHeadlines);
