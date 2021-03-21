@@ -31,14 +31,8 @@ function yesterday() {
   return yesterday.toLocaleDateString().split('/').reverse().join('-')
 }
 
-setTimeout(() => {
-  console.log(frontPage.articles)
-  console.log(frontPage.articles[0] )
-  console.log(frontPage.articles[0].webUrl)
-}, 300)
-
 function fetchSummaries(articleUrl) {
-  const makersUrl = 'test-http://news-summary-api.herokuapp.com/aylien?apiRequestUrl='
+  const makersUrl = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl='
   const aylienUrl = 'https://api.aylien.com/api/v1/summarize?url='
   const url = makersUrl + aylienUrl + articleUrl
 
@@ -58,6 +52,6 @@ function fetchSummaries(articleUrl) {
     .then(data => frontPage.summaries.push(data));
 }
 
-setTimeout(() => {
-  fetchSummaries(frontPage.articles[0].webUrl)
-}, 400)
+// setTimeout(() => {
+//   fetchSummaries(frontPage.articles[0].webUrl)
+// }, 400)

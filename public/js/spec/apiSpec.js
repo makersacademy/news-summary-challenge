@@ -1,4 +1,4 @@
-describe('Interface', () => {
+describe('Api', () => {
   describe('fetchArticles', () => {
     it('makes fetch request to given url', () => {
       frontPage.articles = []

@@ -1,5 +1,14 @@
 * {
   box-sizing: border-box;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  font-family: 'Droid Serif', serif;
+  font-size: 14px;
+  color: #2f2f2f;
+  background-color: #f9f7f1;
 }
 
 .page-container {
@@ -15,4 +24,28 @@ footer {
   position: absolute;
   bottom: 0;
   height: 2.5rem;
+  text-align: center;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 40px;
+}
+
+img {
+  margin-top: 40px;
+  max-width: 50vw;
+  min-width: 50vw;
+}
+
+.headline {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+main, h2 {
+  max-width: 50vw;
+  min-width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
 }
