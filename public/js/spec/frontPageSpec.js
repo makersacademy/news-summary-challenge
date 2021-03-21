@@ -3,7 +3,7 @@ let frontPage;
 describe('FrontPage', () => {
   describe('articles', () => {
     it('starts empty', () => {
-      frontPage = new FrontPage;
+      frontPage = new FrontPage
       expect(frontPage.articles.length).toEqual(0)
     });
   });
