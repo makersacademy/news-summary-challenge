@@ -6,7 +6,7 @@ let failCount = 0
 let dots = ''
 
 function addGroupToHtml(testGroup) {
-  main.innerHTML += `<h4 class="group">${testGroup}</h4>`;
+  main.innerHTML += `<h4 class="group">${testGroup}:</h4>`;
 }
 
 function addTestToHtml(test) {
@@ -35,7 +35,7 @@ function addFailInfoToHtml(actual, message, expected) {
 
 function addErrorToHtml(error) {
   errorCount++
-  main.innerHTML += `<p class="error"><span class="fail">ERROR</span>: ${error}</p>`;
+  main.innerHTML += `<p class="error"><span class="fail">ERROR</span>: ${error}</p><br>`;
   dots += '<span class="red-dot">● </span>'
   updateResultCount();
   updateDots();
