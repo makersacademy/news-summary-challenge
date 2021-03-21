@@ -97,7 +97,7 @@ a {
   color: white;
   font-family: monospace;
   font-size: 20px;
-  position: absolute;
+  position: sticky;
   top: 0px;
   left: 8%;
   line-height: 60px;

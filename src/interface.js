@@ -75,7 +75,7 @@ function createItem(item) {
   <img src="${item.thumbnail}">
   <br>
   <h3>${item.headline}</h3>
-  <p class="info">${item.date[2]}/${item.date[1]}/${item.date[0]}  ${item.time}</p>
+  <p class="info">${item.date} ${item.time}</p>
   </div></a>`
 };
 
