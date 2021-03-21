@@ -10,12 +10,22 @@ header, h1, .tagline {
   width: 100%
 }
 
+h1 {
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+.tagline {
+  padding-bottom: 5px;
+}
+
 h1, .tagline {
-  margin-left: ;
+  padding-left: 5px;
+  margin-bottom: 5px;
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 footer {
@@ -39,6 +49,8 @@ main {
   line-height: 2px;
   color: black;
   margin-left: 1em;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .pass {
@@ -62,7 +74,7 @@ main {
 
 .page-container {
   position: relative;
-  min-height: 96vh;
+  min-height: 98vh;
 }
 
 .content-wrap {
@@ -96,7 +108,7 @@ main {
   position: absolute;
   right: 0;
   top: 0;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-right: 20px;
   text-align: right;
 }

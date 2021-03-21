@@ -1,0 +1,1 @@
+const ENVIRONMENT = 'test'

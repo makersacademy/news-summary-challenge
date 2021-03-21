@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+.page-container {
+  min-height: 98vh;
+  position: relative;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 2.5rem;
+}
