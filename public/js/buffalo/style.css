@@ -63,11 +63,11 @@ main {
   color: brown;
 }
 
-.test {
+.test, .group-error {
   margin-left: 2em;
 }
 
-.test, .fail, .pass, .fail-info {
+.test, .fail, .pass, .fail-info, .error {
   display: inline;
   font-size: 15px;
 }

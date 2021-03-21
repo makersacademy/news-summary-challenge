@@ -2,7 +2,11 @@ let testCount = 0
 
 function describe(testGroup, it) {
   addGroupToHtml(testGroup);
-  return it();
+  try {
+    return it();
+  } catch(err) {
+    addErrorToGroup(err.message);
+  }
 }
 
 updateResultCount();
@@ -10,7 +14,11 @@ updateResultCount();
 function it(test, expectation) {
   testCount++
   addTestToHtml(test);
-  expectation();
+  try {
+    expectation();
+  } catch(err) {
+    addErrorToHtml(err.message);
+  }
 }
 
 function expect(actual) {
