@@ -1,6 +1,5 @@
 showHeadlinesAndPictures();
 resetHashUrl();
-hideSummaryElement();
 showSummaryOnClick();
 
 function showHeadlinesAndPictures() {
@@ -33,24 +32,14 @@ function getArticleUrl() {
 }
 
 function showSummary() {
-  showSummaryElement();
   fetchSummaries(getArticleUrl())
   setTimeout(() => {
     document.getElementById('headlines')
-    .innerHTML = frontPage.summaries[frontPage.summaries.length - 1].text
-  }, 1000)
+    .innerHTML = `<article class="article">${frontPage.summaries[frontPage.summaries.length - 1].text}</article>`;
+    window.scrollTo(0, 0);
+  }, 200)
 }
 
 function resetHashUrl() {
   history.pushState(null, null, ' ')
-}
-
-function hideSummaryElement() {
-  const summary = document.getElementById('summary')
-  summary.style.display = 'none'
-}
-
-function showSummaryElement() {
-  const summary = document.getElementById('summary')
-  summary.style.display = 'block'
 }

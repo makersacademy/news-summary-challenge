@@ -31,21 +31,36 @@ footer {
   margin-top: 40px;
 }
 
-img {
-  margin-top: 40px;
-  max-width: 50vw;
-  min-width: 50vw;
-}
 
 .headline {
   font-size: 20px;
   font-weight: 900;
 }
 
-main, h2 {
-  max-width: 50vw;
-  min-width: 50vw;
-  margin-left: auto;
-  margin-right: auto;
+@media (min-width: 1000px) {
+  main, h2 {
+    max-width: 50vw;
+    min-width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  img {
+    margin-top: 40px;
+    max-width: 50vw;
+    min-width: 50vw;
+  }
+}
+
+.article {
   text-align: justify;
+}
+
+@media (max-width: 1000px) {
+  /* For mobile phones: */
+  *, main, h1, h2, img {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
