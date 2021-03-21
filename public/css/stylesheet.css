@@ -1,0 +1,58 @@
+h1 {
+  font-family: 'Fredoka One', cursive;
+  color:lightcoral;
+  text-decoration: none;
+}
+h2 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+body {
+  font-family: 'Hind Siliguri', sans-serif;  
+}
+#news-summary {
+  max-width: 100%;
+  width: 500px;
+  margin: auto;
+  text-align: justify;
+  color:darkslategray;
+}
+#headlines-container {
+  width: 500px;
+  margin: auto;
+  text-align: justify;
+}
+#heading {
+  width: 500px;
+  margin: auto;
+}
+#time {
+  width: 500px;
+  margin: auto;
+  padding-bottom: 5px; 
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    font-weight: normal;
+    color:lightcoral;
+}
+img {
+    max-width: 100%;
+    width: 500px;  
+}
+#headlines-container a:link,
+#headlines-container a:visited,
+#headlines-container a:hover,
+#headlines-container a:active {
+    text-decoration: none;
+    font-weight: normal;
+    color:rgb(27, 26, 26);
+    font-family: 'PT Serif', serif;
+    width: 500px;
+    margin: auto;
+    text-align: justify;
+}
