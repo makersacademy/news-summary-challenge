@@ -1,0 +1,11 @@
+body {
+  background-color: pink;
+}
+
+.newsWrap {
+  margin: 10vw;
+}
+
+.newsContainer {
+  margin-bottom: 100px;
+}
