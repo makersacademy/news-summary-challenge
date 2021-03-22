@@ -1,0 +1,13 @@
+{
+  "name": "news-reader",
+  "version": "1.0.0",
+  "description": "News reader",
+  "main": "app.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "author": "Anna Nawrocka", 
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
