@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Summary</title>
+    <link rel="stylesheet" href="public/css/stylesheet.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1><a href="">Morning Scoop</a></h1>
+    <div id="heading"><h2>Headlines</h2></div>
+    <div id="time">Updated at <span id="datetime"></span></div>
+    <div id="headlines-container"></div>
+    <div id="news-summary"></div>
+    <script src="app.js" defer></script>
+    <script src="src/news.js" defer></script>
+    <script src="src/headlines.js" defer></script>
+    <script src="src/summary.js" defer></script>
+    <script>
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleString();
+        </script>
+</body>
+</html>

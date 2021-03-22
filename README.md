@@ -1,5 +1,14 @@
 # News Summary challenge
 
+<img src="https://user-images.githubusercontent.com/71288920/111967605-260b7000-8af0-11eb-998c-065788aea3da.gif">
+
+## How to use
+
+* Fork and clone this repo.
+* Open index.html in your browser.
+
+===========================================
+
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
