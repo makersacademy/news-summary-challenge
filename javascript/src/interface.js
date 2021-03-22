@@ -42,9 +42,11 @@ showArticle = function(imgURL, headline, id){
     articleImage = document.getElementById("article-pic");
     articleHeadline = document.getElementById("article-headline");
     articleSummary = document.getElementById("article-summary");
+    articleLink = document.getElementById("article-link");
+    articleLink.setAttribute("href", id)
+    articleHeadline.textContent = headline;
     addSummary(articleSummary, id)
     articleImage.setAttribute("src", imgURL);
-    articleHeadline.textContent = headline;
     toggleDisplays();
 }
 
