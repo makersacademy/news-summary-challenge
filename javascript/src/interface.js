@@ -48,7 +48,7 @@ showArticle = function(imgURL, headline, id){
     toggleDisplays();
 }
 
-addSummary= function(element, id){
+addSummary = function(element, id){
     fetch("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + id)
     .then(response => response.json())
     .then(data => { 
