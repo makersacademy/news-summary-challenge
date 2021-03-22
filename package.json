@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}

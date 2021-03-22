@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../buffalo/style.css">
+    <link rel="shortcut icon" type="image/png" href="images/favicon-32x32.png">
+
+    <title>Buffalo</title>
+    <!-- framework: -->
+    <script defer src="../buffalo/specHelper.js"></script>
+    <script defer src="../buffalo/interface.js"></script>
+    <script defer src="../buffalo/buffalo.js"></script>
+
+    <!-- source scripts: -->
+    <script defer src="../src/frontPage.js"></script>
+    <script defer src="../src/api.js"></script>
+    <script defer src="../src/interface.js"></script>
+    <script defer src="../src/article.js"></script>
+
+    <!-- spec scripts: -->
+    <script defer src="../spec/frontPageSpec.js"></script>
+    <script defer src="../spec/apiSpec.js"></script>
+    <script defer src="../spec/interfaceSpec.js"></script>
+    <script defer src="../spec/articleSpec.js"></script>
+
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="content-wrap">
+        <header>
+          <h1>Buffalo</h1>
+          <p class="tagline">Behaviour Driven Development for JavaScript</p>
+          <img class="logo" src="images/favicon-32x32.png">
+        </header>
+        <section id="result-count"></section>
+        <div class="dots" id="dots"></div>
+        <main id="specs"></main>
+      </div>
+
+      <footer id="footer">
+        <p class="footer-text">Testing first, coding later</p>
+      </footer>
+    </div>
+  </body>
+</html>

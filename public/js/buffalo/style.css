@@ -1,0 +1,128 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  background-color: #fff7e6;
+}
+
+header, h1, .tagline {
+  background-color: #664400;
+  color: white;
+  width: 100%
+}
+
+h1 {
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+.tagline {
+  padding-bottom: 5px;
+}
+
+h1, .tagline {
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+footer {
+  width: 100%;
+  background-color: #664400;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: 2rem;
+}
+
+main {
+  color: black;
+}
+
+.group {
+  font-size: 17px;
+  line-height: 2px;
+  color: black;
+  margin-left: 1em;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.pass {
+  font-weight: 900;
+  color: #008543;
+}
+
+.fail {
+  font-weight: 900;
+  color: brown;
+}
+
+.test, .group-error {
+  margin-left: 2em;
+}
+
+.test, .fail, .pass, .fail-info, .error {
+  display: inline;
+  font-size: 15px;
+}
+
+.page-container {
+  position: relative;
+  min-height: 98vh;
+}
+
+.content-wrap {
+  padding-bottom: 3rem;
+}
+
+.footer-text {
+  line-height: 0px;
+}
+
+.red {
+  background-color: brown;
+}
+
+.green {
+  background-color: #008543;
+}
+
+.noSpecs {
+  background-color: rgb(164, 164, 164);
+}
+
+.noSpecs, .red, .green {
+  padding: 5px;
+  color: white;
+}
+
+.logo {
+  display: inline;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 20px;
+  margin-right: 20px;
+  text-align: right;
+}
+
+.red-dot {
+  color: brown;
+}
+
+.green-dot {
+  color: #008543;
+}
+
+.dots {
+  margin-left: 15px;
+  margin-top: -5px;
+  margin-bottom: 25px;
+}
