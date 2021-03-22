@@ -5,7 +5,7 @@ h1 {
 }
 h2 {
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 body {
   font-family: 'Hind Siliguri', sans-serif;  
@@ -23,8 +23,12 @@ body {
   text-align: justify;
 }
 #heading {
+  max-width: 100%; 
   width: 500px;
   margin: auto;
+  font-weight: bold;
+  font-size: 2em;
+  font-family: 'Fredoka One';
 }
 #time {
   width: 500px;
