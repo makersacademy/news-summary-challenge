@@ -51,7 +51,3 @@ function fetchSummaries(articleUrl) {
   }).then(response => response.json())
     .then(data => frontPage.summaries.push(data));
 }
-
-// setTimeout(() => {
-//   fetchSummaries(frontPage.articles[0].webUrl)
-// }, 400)
