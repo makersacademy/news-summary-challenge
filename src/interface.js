@@ -88,11 +88,14 @@ function showItem(id) {
 function formatItem(id) {
   let story = stories.currentList[id]
   return `<div class="item-large">
+  <p>${story.section}</p>
   <img src="${story.thumbnail}">
   <br>
   <h3>${story.headline}</h3>
   <br>
-  <p>${story.summary}</p>`
+  <p>${story.summary}</p>
+  <br>
+  <a href=${story.url}>See the full story here</a>`
 };
 
 function saveStories() {

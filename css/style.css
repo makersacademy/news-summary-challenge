@@ -51,6 +51,10 @@ body {
   margin-bottom: auto;
 }
 
+.items img {
+  width: 90%;
+}
+
 .item {
   border-style: solid;
   border-color: lightgrey;
