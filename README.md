@@ -32,9 +32,11 @@ open public/index.html
 ## Design
 
 ***On Mac***
+
 ![demo](public/images/demo.gif)
 
 ***On Mobile***
+
 ![mobile](public/images/mobile.gif)
 
 
