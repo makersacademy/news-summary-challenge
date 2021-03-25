@@ -8,6 +8,7 @@ class News {
   }
 
   addSummary(summary) {
+    concosle.log("summary", summary)
     this.summary = summary;
   }
 }
