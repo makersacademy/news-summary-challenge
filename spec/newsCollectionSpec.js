@@ -13,7 +13,16 @@ describe("NewsCollection", function() {
       expect(console.log).toHaveBeenCalled();
     });
 
-    
+    it("should return a news", function() {
+        news.headline = "Today's news";
+        news.articleUrl = "http://news.com";
+        news.thumbnailUrl = "news.jpg";
+        news.body = "Today's news";
+        news.summary = "Summary";
+        console.log(" news",  news)
+        console.log("collection.addNews(news)",collection.addNews(news))
+      expect( collection.addNews(news)).toEqual(news);
+    });
   
   });
   
