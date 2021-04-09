@@ -49,19 +49,13 @@ class ArticleDisplay {
 
 let articleDisplay = new ArticleDisplay();
 articleDisplay.getArticleList();
-console.log(articleDisplay.listOfArticles[0]);
 
 window.addEventListener("hashchange", function(event) {
-  let newIndex = event.newURL.slice(-1);
-  if (event.oldURL.slice(-1) === '/') {
-    let oldIndex = 0;
-  } else {
-    let oldIndex = event.oldURL.slice(-1);
-  }
+  let newIndex = parseInt(location.hash.replace("#",""));
+  let oldIndex = parseInt(event.oldURL.slice(-3).replace("/","").replace("#",""));
 
-  let fullArticle = articleDisplay.listOfArticles[newIndex]
-  console.log(`${newIndex}`);
-  console.log(`${oldIndex}`);
+  let fullArticle = articleDisplay.listOfArticles[newIndex-1]
+
   document.getElementById(`body-text${newIndex}`).innerHTML = fullArticle['body']
   document.getElementById(`body-text${oldIndex}`).innerHTML = ""
 });
