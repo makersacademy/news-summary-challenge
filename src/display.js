@@ -15,7 +15,6 @@ class ArticleDisplay {
     )
     .then((response) => response.json())
     .then((data) => {
-    console.log(data);
     let idCount = 1
     let articlesList = data.response.results
     let summaryText = ""
@@ -34,20 +33,19 @@ class ArticleDisplay {
         idCount)
 
         let html = `<div class="news-piece" id="${idCount}">
-        <h2 class="section">${article.section}</h2><br>
-        <h2><a href="#${article.id}">${article.headline}</a></h2><br>
-        <h4 class="trailText">${article.trailText}</h4><div id="body-text${idCount}"></div>
+        <h2 class="section">${article.section}</h2>
+        <h2><a href="#${article.id}">${article.headline}</a></h2>
+        <h4 class="trailText">${article.trailText}</h4><div id="body-sum${idCount}"></div><br>
         <img src="${article.thumbnail}"class="thumbnail"><br>
-        <a href="${article.webUrl}">${article.headline}</a><br></div>`
+        <a href="${article.webUrl}">${article.headline}</a><br><br></div>`
 
         idCount += 1
-        console.log("this is after article created");
         this.listOfArticles.push(article)
         document.getElementById("newsList").insertAdjacentHTML('afterend', html);
       });
     });
   }
-
+  
   getSummary(){
     this.listOfArticles.forEach((item) => {
 
@@ -55,24 +53,18 @@ class ArticleDisplay {
       )
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
-        item['summaryText'] = data;
+        item['summaryText'] = data.sentences;
       });
-
     });
-    console.log(this.listOfArticles);
-   
   }
 };
 
 let articleDisplay = new ArticleDisplay();
 articleDisplay.getArticleList();
-// articleDisplay.getSummary();
 
 setTimeout(sumFunc, 2000);
 function sumFunc(){
   articleDisplay.getSummary();
-  console.log(articleDisplay.getFullArticleList());
 }
 
 setTimeout(getArray, 3000);
@@ -84,8 +76,9 @@ window.addEventListener("hashchange", function(event) {
   let newIndex = parseInt(location.hash.replace("#",""));
   let oldIndex = parseInt(event.oldURL.slice(-3).replace("/","").replace("#",""));
 
-  let fullArticle = articleDisplay.listOfArticles[newIndex-1]
+  let articleSum = articleDisplay.listOfArticles[newIndex-1]['summaryText']
+  console.log(articleSum);
 
-  document.getElementById(`body-text${newIndex}`).innerHTML = fullArticle['body']
-  document.getElementById(`body-text${oldIndex}`).innerHTML = ""
+  document.getElementById(`body-sum${newIndex}`).innerHTML = articleSum.join(" ")   //replace(".", ". ")
+  document.getElementById(`body-sum${oldIndex}`).innerHTML = ""
 });
