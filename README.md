@@ -3,7 +3,7 @@
 A Single Page App that shows the most recent news articles from [The Guardian](https://www.theguardian.com/uk), with a summary for each article.
 
 ### Description
-This was the final weekend challenge for the [Makers Academy](https://makers.tech) coding bootcamp. The goal was to practise API calls, vanilla JavaScript, and Single Page Apps.
+This was the 7th weekend challenge for the [Makers Academy](https://makers.tech) coding bootcamp. The goal was to practise API calls, vanilla JavaScript, and Single Page Apps.
 
 We were given these user stories:
 ```
