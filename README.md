@@ -54,10 +54,26 @@ I can see whizzy animations in the app
 To make my news reading more fun
 ```
 
+## To-do:
+[ ] print headlines of news stories in a div
+[ ] print image of each headline to same div
+[ ] button assigned to each headline, clickable to view a summary and photo of story
+[ ] button assigned to summary which links to original article
+[ ] site is responsive for desktop and phone
+[ ] animations to make the page more engaging
+  -> [ ]animate the clicking of stories
+  -> css to news page
+
 
 ## Resources
 
+#### api:
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
+
+#### guidance:
+*
+
+
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests

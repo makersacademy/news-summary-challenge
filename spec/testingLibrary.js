@@ -5,34 +5,34 @@ class Testing {
 
   isEqual (a, b) {
       if (a === b) {
-          return "Passed";
+          return "✅ Passed";
       } else {
-          return "Failed";
+          return "❌ Failed";
       }
   };
 
   isNotEqual (a, b) {
     if (a !== b) {
-        return "Passed";
+        return "✅ Passed";
     } else {
-        return "Failed";
+        return "❌ Failed";
     }
   };
 
   arrayContains(a,b) {
     if(a.includes(b,0)){
-      return "Passed";
+      return "✅ Passed";
     }
     else {
-      return "Failed";
+      return "❌ Failed";
     }
   }
 
   isInstance (a, b) {
     if (a instanceof b) {
-        return "Passed";
+        return "✅ Passed";
     } else {
-        return "Failed";
+        return "❌ Failed";
     }
   };
 
