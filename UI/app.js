@@ -1,1 +1,1 @@
-
+require('dotenv').config()
