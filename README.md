@@ -55,14 +55,15 @@ To make my news reading more fun
 ```
 
 ## To-do:
-[ ] print headlines of news stories in a div
-[ ] print image of each headline to same div
-[ ] button assigned to each headline, clickable to view a summary and photo of story
-[ ] button assigned to summary which links to original article
+[x] print headlines of news stories in a div
+[x] print image of each headline to same div
+[ ] click event assigned to each headline, clickable to view a summary and photo of story
+[ ] click event assigned to summary which links to original article
 [ ] site is responsive for desktop and phone
 [ ] animations to make the page more engaging
-  -> [ ]animate the clicking of stories
-  -> css to news page
+  -> [ ] animate the clicking of stories
+  -> [x] css to news page
+[ ] host on a server (surge)
 
 
 ## Resources

@@ -1,0 +1,43 @@
+body {
+  background-color: black;
+  /* background-image: linear-gradient(to right, lightblue, turquoise); */
+  font-family: "Courier new";
+  color: white;
+  text-align: center;
+}
+
+header {
+  /* background-image: linear-gradient(to bottom, lightblue, white); */
+  background-color: white;
+  padding: 30px;
+  margin: -20px;
+  margin-bottom: 50px;
+  color: pink;
+}
+
+#headlines {
+  /* border: 3px solid #73AD21; */
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+}
+
+.oneHeadlineDiv {
+margin: 10px;
+width: 320px;
+border: 1px solid white;
+justify-content: center;
+}
+
+img {
+  width: 300px;
+  margin-top: 30px;
+}
+
+.headTitles {
+  background-color: white;
+  height: 70px;
+  width: 300px;
+  color: black;
+  padding-top: 20px;
+  margin-left: 10px;
+}
