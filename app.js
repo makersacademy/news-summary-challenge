@@ -19,12 +19,40 @@ function renderHeadlines() {
   document.querySelector('.articles').innerHTML=htmlstr;
 }
 
+function clickOnSummary() {
+  document.querySelector('.articles').addEventListener("click", renderSummary())
+}
+
+function renderSummary() {
+  htmlstr="";
+  headlines.map((element, index) => {
+    htmlstr += `<button class='headline-box' id='headline${index}'><img id='headline-picture' src='${element.thumbnail}'>`
+    console.log(htmlstr)
+    console.log(headlines)
+  })
+  innerhtml="";
+  summary.map((element, index) => {
+    innerhtml += `<button class='headline-box' id='headline${index}'><div id='headline-text'>${element.sentences.join(' ')}</div>`
+    console.log(innerhtml)
+    console.log(summary)
+  })
+  document.querySelector('.articles').innerHTML=htmlstr;
+  document.querySelector('.articles').innerHTML=innerhtml;
+}
+
+// above method not working. Trying to get it to iterate through the headlines and summaries arrays and print the summary and picture to the page. currently not calling the method properly
+
 function mockRetrieveHeadlines() {
     headlines.push(content)
     headlines.push(content)
     console.log(headlines[0].webTitle)
   };
 
+function mockRetrieveSummary () {
+  summary.push(summaries)
+  console.log(summary[0].sentences)
+
+}
 
 function retrieveHeadlines() {
   // url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/headlines?show-fields=body"
@@ -80,6 +108,15 @@ webPublicationDate: "2014-02-17T14:10:26Z",
 webTitle: "Alex Salmond speech – first minister hits back over Scottish independence",
 webUrl: "https://www.theguardian.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live"}
 
+let summaries = {
+  sentences: [["Alex Salmond has been speaking out after a week of attacks over whether an independent Scotland would be able to keep the pound or remain in the EU. Here are the key points from the Scottish first minister\’s speech:"],
+["Salmond said George Osborne’s arguments against Scotland keeping the pound were based on a “caricature” of macroeconomic policy. Many of the issues Osborne had raised had already been answered by the fiscal commission working group, a group of advisers analysing the issues an independent Scotland would have to deal with. London-based financial assets would always have to be backed by London even if Scotland were independent, he said. If Osborne did not allow Scotland to share the pound he"], ["would be in effect imposing a “George tax” of hundreds of millions of pounds on businesses in the remaining UK."],
+["He renewed his threat to reject Scotland’s share of the UK’s debt if Edinburgh did not receive its share of the UK’s assets, including the Bank of England ie the currency."],
+["He said he was confident the EU would find a pragmatic way to allow Scotland to become a member. To not do so would go against the grain of the union’s democratic values. The real threat to Scotland’s place in the EU came from the Tories’ plans to hold a UK-wide in/out referendum, Salmond said."],
+["He said that politically it had been a mistake for Labour and the Liberal Democrats to team up with the Conservatives to try to tell Scotland what it could and could not do. But he was sure that after a yes vote negotiations between an independent Scotland and the rest of the UK would become constructive again as economic sense and self-interest prevailed."],
+["In Osborne’s speech, the chancellor referred to an independent Scotland as a foreign country, Salmond recalled - but the rest of the UK would never be a foreign country to Scots, the first minister said."],
+["I’ll look at how the speech went down in Scotland and the rest of the UK now."]]
+}
 
 // Below is extinct code replaced by renderHeadlines
 
