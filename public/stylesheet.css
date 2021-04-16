@@ -15,6 +15,11 @@ marquee {
   text-align: center;
 }
 
+/* .articles {
+  display: flex;
+  flex-direction: column;
+} */
+
 .headline-box {
   margin: auto;
   width: 250px;

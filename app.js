@@ -9,6 +9,7 @@
 
 // let headlines = [{'webTitle': "This is the headline", 'body': "This is the body of the article"}]
 let  headlines = []
+let summary = []
 
 function renderHeadlines() {
   htmlstr="";
@@ -34,6 +35,17 @@ function retrieveHeadlines() {
     headlines.push(body)
     console.log(body)
     console.log(headlines[0].response.content.webTitle)
+  });
+};
+
+function retrieveSummary () {
+  const aylienurl = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + headlines[0].webUrl
+  getapi(aylienurl, {})
+  .then(data => {
+    body = data
+    summary.push(body)
+    console.log(body)
+    console.log(summary[0])
   });
 };
 
