@@ -1,15 +1,8 @@
 # News Summary challenge
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
-
 ## Challenge
 
-As usual please start by forking this repo.
-
-You'll create an app that summarises the news.
+To create an app that summarises the news.
 
 ### Guidance
 
@@ -18,12 +11,8 @@ Make sure to look at this [guidance](https://github.com/makersacademy/course/blo
 ## Project overview
 
 Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
-
-### Technologies
-
 You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
+you won't use any libraries or frameworks
 
 But, feel free to use the test framework you wrote during the week!
 
