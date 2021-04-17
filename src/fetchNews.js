@@ -30,19 +30,14 @@ class FetchNews {
 
   renderPostSummary(postData, storyId) {
     let results = postData.response.results;
-    console.log("---------");
-    console.log(storyId);
-    console.log(results);
-    console.log(results[storyId]);
-    console.log(results[storyId].fields.body);
 
     let abbreviatedStory = this.abbrev(results[storyId].fields.body);
-    let summaryDiv = document.createElement("div");
-    summaryDiv.idName = "showSummary";
-    summaryDiv.innerHTML += "<img src='" + results[storyId].fields.thumbnail + "'><br>" + "<p class='summaryText'>" + abbreviatedStory + "</p>";
-    let summaryDivContent = document.getElementById("showSummary");
-    summaryDivContent.appendChild(summaryDiv);
-  }
+    let summaryDivContent = document.createElement("div");
+    summaryDivContent.idName = "summaryStory";
+    summaryDivContent.innerHTML += "<img src='" + results[storyId].fields.thumbnail + "'><br>" + "<p class='summaryText'>" + abbreviatedStory + "</p>";
+    let summaryDiv = document.getElementById("showSummary");
+    summaryDiv.replaceChild(summaryDivContent, summaryDiv.childNodes[0]);
+}
 
 
   runRequestMain(){
