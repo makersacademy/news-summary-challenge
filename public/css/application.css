@@ -1,0 +1,131 @@
+/* page basic */
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #222;
+  color: rgb(207, 207, 207);
+  line-height: 30px;
+  text-align: justify;
+}
+
+body {
+  margin: 0px;
+}
+
+/* top bar navi */
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(73, 73, 73);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover:not(.active) {
+  background-color: #111;
+}
+
+.navbar .active {
+  background-color: #575757;
+}
+
+/* adjust api content */
+
+.newsFeed {
+  margin: auto;
+  width: 90%;
+}
+
+.gu-image {
+  width: auto;
+  max-height: 500px;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+}
+
+.element, .element-image, .element--thumbnail {
+  width: 90%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.figure {
+  display: flex;
+}
+
+div {
+  justify-content: center;
+}
+
+/* accordion expander */
+
+.expand {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  background-color: #333;
+  color: rgb(207, 207, 207);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.expand img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+}
+
+.active, .expand:hover {
+  background-color: #575757;
+}
+
+.content {
+  padding: 0 18px;
+  background-color: #333;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+/* link formatting */
+
+.newsFeed a:link {
+  text-decoration: none;
+  color: white;
+}
+
+.newsFeed a:visited {
+  text-decoration: none;
+  color: blanchedalmond;
+}
+
+.newsFeed a:hover {
+  text-decoration: underline;
+}
+
+.newsFeed a:active {
+  text-decoration: underline;
+}

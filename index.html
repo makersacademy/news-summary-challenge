@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
@@ -12,15 +15,22 @@
 
   <title>News feed</title>
 
-  <link rel="stylesheet" href='public/css/styles.css'>
-  <script src="src/note.js"></script>
-  <script src="src/list.js"></script>
+  <link rel="stylesheet" href='public/css/application.css'>
+  <script src="src/newsItem.js" defer></script>
+  <script src="src/newsList.js" defer></script>
   <script src="src/interface.js" defer></script>
 
 </head>
 <body>
+  <ul class='navbar'>
+    <li><a href="#home">News Feed</a></li>
+    <!-- <li><a href="#news">News</a></li> -->
+    <!-- <li><a href="#contact">Contact</a></li> -->
+    <li style="float:right"><a class="active" href="#about">About</a></li>
+  </ul>
+
   <H1>News Feed</H1><br>
-  <div id='testResults'></div>
+  <div id='newsFeed' class='newsFeed'></div>
 
 </body>
 </html>
