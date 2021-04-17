@@ -21,6 +21,10 @@ button {
   border: none;
 }
 
+a {
+  color: #32a8a6;
+}
+
 
 .none {
   /* border: 3px solid #73AD21; */

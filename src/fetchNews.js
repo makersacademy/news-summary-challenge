@@ -30,13 +30,16 @@ class FetchNews {
 
   renderPostSummary(postData, storyId) {
     let results = postData.response.results;
-
+console.log(results[storyId].webUrl);
     let abbreviatedStory = this.abbrev(results[storyId].fields.body);
+    let weblink = results[storyId].webUrl;
     let summaryDivContent = document.createElement("div");
     summaryDivContent.className = "summaryStory";
-    summaryDivContent.innerHTML += "<img src='" + results[storyId].fields.thumbnail + "'><br>" + "<p class='summaryText'>" + abbreviatedStory + "</p>";
+    summaryDivContent.innerHTML += "<img src='" + results[storyId].fields.thumbnail + "'><br>" + "<p class='summaryText'>" + abbreviatedStory + "</p>" + "<br>" + "<p>Click through to the guardian for the full story " + "<a href='" + weblink + "'>"+ weblink + "</a>" + "</p>";
     let summaryDiv = document.getElementById("showSummary");
     summaryDiv.replaceChild(summaryDivContent, summaryDiv.childNodes[0]);
+
+
 }
 
 
