@@ -19,6 +19,7 @@ html {
   font-weight: 600;
   padding-left: 10px;
   padding-right: 10px;
+  float: right;
 }
 
 .pass {
@@ -27,4 +28,9 @@ html {
 
 .fail {
   color: rgb(255, 64, 64);
+}
+
+.resultBox {
+  margin: auto;
+  width: 60%;
 }
