@@ -33,7 +33,7 @@ class FetchNews {
 
     let abbreviatedStory = this.abbrev(results[storyId].fields.body);
     let summaryDivContent = document.createElement("div");
-    summaryDivContent.idName = "summaryStory";
+    summaryDivContent.className = "summaryStory";
     summaryDivContent.innerHTML += "<img src='" + results[storyId].fields.thumbnail + "'><br>" + "<p class='summaryText'>" + abbreviatedStory + "</p>";
     let summaryDiv = document.getElementById("showSummary");
     summaryDiv.replaceChild(summaryDivContent, summaryDiv.childNodes[0]);
