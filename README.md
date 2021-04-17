@@ -1,7 +1,7 @@
 # News Summary challenge
 
-![headlines](headlines.png)
-![summary](summary.png)
+![headlines](images/headlines.png)
+![summary](images/summary.png)
 
 View working app at: http://aware-metal.surge.sh/
 
