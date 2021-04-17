@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 
-
-
 // Prints Tests
   let result = test.printTests();
 

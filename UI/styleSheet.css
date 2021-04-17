@@ -13,6 +13,8 @@ header {
   margin: -20px;
   margin-bottom: 50px;
   color: pink;
+  position: fixed;
+  width:100%;
 }
 
 button {
@@ -25,6 +27,9 @@ a {
   color: #32a8a6;
 }
 
+a:hover{
+  cursor:pointer;
+}
 
 .none {
   /* border: 3px solid #73AD21; */
@@ -37,6 +42,7 @@ a {
 
 #buttonId {
   justify-content: center !important;
+  padding-top:150px;
 }
 
 #headlines {
@@ -45,20 +51,23 @@ a {
   grid-template-columns: auto auto auto;
 }
 
+#showSummary {
+
+}
+
 .oneHeadlineDiv {
-margin: 10px;
+margin: 20px;
 width: 320px;
-border: 1px solid white;
+/* border: 1px solid white; */
 justify-content: center;
+background-color: white;
+padding: 10px;
+color:black;
 }
 
 img {
   width: 300px;
   margin-top: 30px;
-}
-
-#showSummary {
-
 }
 
 .summaryStory {

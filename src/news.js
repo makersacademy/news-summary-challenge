@@ -8,9 +8,8 @@ class News {
     return this.headlines.push(headline);
   }
 
-
-testingFunc(){
-  return "Hello";
-}
+  testingFunc(){
+    return "Hello";
+  }
 
 }
