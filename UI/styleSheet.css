@@ -14,6 +14,14 @@ header {
   margin-bottom: 50px;
   color: pink;
 }
+.none {
+  /* border: 3px solid #73AD21; */
+  display: inline-grid !important;
+  grid-template-columns: auto auto auto !important;
+}
+.headlineHide {
+  display: none !important;
+}
 
 #headlines {
   /* border: 3px solid #73AD21; */

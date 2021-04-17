@@ -66,6 +66,18 @@ To make my news reading more fun
 [ ] host on a server (surge)
 
 
+NOTES TO DO:
+- add link to main story page
+- headline title on summary page
+- animate clicks
+    - hover cursor
+- css summary page
+- notes about API key
+- css on back to headlines
+- click events on images rather than target??
+
+
+
 ## Resources
 
 #### api:

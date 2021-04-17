@@ -45,31 +45,5 @@
       <div id="showSummary">
       </div>
     </div>
-<!--
-<script>
-    function getPostData() {
-      return fetch("https://content.guardianapis.com/search?show-fields=all&api-key=2a0b05ae-00bc-4442-be8c-e2d3e6c6c644").then(response => {
-        return response.json();
-      })
-    }
-
-    function renderPost(postData) {
-      let results = postData.response.results;
-      console.log(results);
-      results.forEach(function(result){
-        console.log(result.fields.thumbnail);
-        let newDiv = document.createElement("div");
-        newDiv.className = "oneHeadlineDiv";
-        newDiv.innerHTML += "<img src='" + result.fields.thumbnail + "'><br>" + "<p class='headTitles'>" + result.webTitle + "</p>";
-        let headlineDiv = document.getElementById("headlines");
-        headlineDiv.appendChild(newDiv);
-      });
-    }
-
-    getPostData().then(post => {
-      renderPost(post);
-    });
-
-</script> -->
   </body>
 </html>

@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let newFetchNews = new FetchNews();
 
   let headlineDiv = document.getElementById("headlines");
+  let headlineDiv2 = document.getElementById("headlineHide");
   let buttonDiv1 = document.getElementById("loadNews");
   let buttonDiv2 = document.getElementById("backToNews")
   let buttonDiv = document.getElementById("testingId");
@@ -30,14 +31,15 @@ document.addEventListener("DOMContentLoaded", function() {
   headlineDiv.addEventListener('click', function(event){
        let num = event.target.id;
        newFetchNews.runRequestSummary(num);
-       document.getElementById("headlines").style.display = "none";
+       document.getElementById("headlines").className = "headlineHide"
        document.getElementById("showSummary").style.display ="block";
        document.getElementById("backToNews").style.display = "block";
           });
      });
 
   function backToHeadlines(){
-     document.getElementById("headlines").style.display = "grid";
+     // document.getElementById("headlines").style.display = "grid";
+     document.getElementById("headlines").className = "none"
      document.getElementById("showSummary").style.display = "none";
      document.getElementById("loadNews").style.display = "none";
      document.getElementById("backToNews").style.display = "none";
