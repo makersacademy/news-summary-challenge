@@ -12,11 +12,11 @@
 
 ### How to use
 -------
-URL: [link](https://shacheng.co.uk/news-summary-challenge/)
+URL: <a href="https://shacheng.co.uk/news-summary-challenge/" target="_blank">link<a>
 
 ### How to test
 -------
-URL: [link](https://shacheng.co.uk/news-summary-challenge/test.html)
+URL: <a href="https://shacheng.co.uk/news-summary-challenge/test.html" target="_blank">link<a>
 
 ### Overview
 -------
