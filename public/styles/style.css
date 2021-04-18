@@ -4,7 +4,7 @@ body {
 
 h1 {
   font-family: 'Londrina Shadow', cursive;
-  font-size: 75px;
+  font-size: 65px;
   color: #888888;
 }
 
@@ -16,7 +16,7 @@ h1 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 60%; /*80%;*/
   margin-top: 40px;
   padding: 20px 0 20px 0;
   border: 1px lightgrey;
