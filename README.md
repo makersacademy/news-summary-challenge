@@ -1,5 +1,5 @@
 # News Summary
-<img align="right" width="150" src="./docs/news-feed-mobile.png">
+<img align="right" width="150" src="./docs/news-feed-demo.gif.png">
 
 - A single page web app written in vanilla JavaScript, html and CSS. It makes use of the [Guardian open platform API](https://open-platform.theguardian.com/documentation/) to get articles and display them responsively.
 
