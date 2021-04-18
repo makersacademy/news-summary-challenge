@@ -1,15 +1,21 @@
 # News Summary challenge
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+### My Notes:
+
+- I didn't use the Makers Heroku guardian API (made my own personal account as worried about breaking everyone's app)
+- No testing
+- Functionality: get a thumbnail and headline (not lined up next to eachother clearly yet), clicking on the headline would show the contents of a summary tag on its own page but this was not populated with the summary yet from the Aylien API.
+- I was just getting to creating a class to store the data (I think I should have done this from the start) to then be able to change the aylien API endpoint
+
+- I would like to add catch(error) if the API doesn't work.
+- API key is public which is also a problem
+
+
+### Original README.md
 
 ## Challenge
 
-As usual please start by forking this repo.
-
-You'll create an app that summarises the news.
+To create an app that summarises the news.
 
 ### Guidance
 
@@ -18,12 +24,8 @@ Make sure to look at this [guidance](https://github.com/makersacademy/course/blo
 ## Project overview
 
 Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
-
-### Technologies
-
 You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
+you won't use any libraries or frameworks
 
 But, feel free to use the test framework you wrote during the week!
 
