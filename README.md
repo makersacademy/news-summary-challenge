@@ -22,7 +22,7 @@ URL: <a href="https://shacheng.co.uk/news-summary-challenge/test.html" target="_
 -------
 - Used Makers API <a href="https://github.com/makersacademy/news-summary-api" target="_blank">link</a>
 - Implemented all requirements
-- Stubbed tests
+- Stubbed tests, displays results in test.html
 - Responsive page for different sizes of screens
 
 ### Issues
