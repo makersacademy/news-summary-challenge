@@ -12,7 +12,6 @@ describe('NewsList', function () {
   it('createNewItem increases the length of the list array', function() {
     testList.createNewItem('test', 'test', 'test')
     expect(testList.list.length).toBe(2)
-    expect(testList.counter).toBe(2)
   })
 
   it('getCounter returns the counter value', function() {

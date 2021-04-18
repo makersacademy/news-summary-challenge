@@ -4,7 +4,6 @@ let apiData = []
 let apiTestData = []
 let localDataStore = window.localStorage;
 
-// testing !== true ||
 
 if (localDataStore.getItem('feedData') === null) {
   updateFeed()
