@@ -20,8 +20,9 @@ URL: <a href="https://shacheng.co.uk/news-summary-challenge/test.html" target="_
 
 ### Overview
 -------
-- Implemented all requirements.
-- Stubbed tests.
+- Used Makers API <a href="https://github.com/makersacademy/news-summary-api" target="_blank">link</a>
+- Implemented all requirements
+- Stubbed tests
 
 ### Issues
 -------
