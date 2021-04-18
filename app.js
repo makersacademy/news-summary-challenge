@@ -1,46 +1,24 @@
-// window.alert("This is app.js")
 
-// So API fetch set up and working correctly for the url entered. This gives us information which we
-// are pushing into the headlines array
-
-// for the purposes of testing we have 2 key/value pairs in the headlines array, this allows us to
-// test the renderhealines function which iterates through the headlines array and
-// prints the information to the page.
-
-// let headlines = [{'webTitle': "This is the headline", 'body': "This is the body of the article"}]
 let  headlines = []
 let summary = []
 
 function renderHeadlines() {
   htmlstr="";
   headlines.map((element, index) => {
-    htmlstr += `<button class='headline-box' id='headline${index}'><img id='headline-picture' src='${element.thumbnail}'><div id='headline-text'>${element.webTitle}</div>`
+    htmlstr += `<a class='headline-box' id='headline${index}'><img id='headline-picture' src='${element.thumbnail}'><div id='headline-text'>${element.webTitle}</div>`
   })
   document.querySelector('.articles').innerHTML=htmlstr;
-}
-
-function clickOnSummary() {
-  document.querySelector('.articles').addEventListener("click", renderSummary())
-}
-
-function renderSummary() {
-  htmlstr="";
-  headlines.map((element, index) => {
-    htmlstr += `<button class='headline-box' id='headline${index}'><img id='headline-picture' src='${element.thumbnail}'>`
-    console.log(htmlstr)
-    console.log(headlines)
+  headlines.map((article, index) => {
+  document.querySelector(`#headline${index}`).addEventListener('click', renderSummary(article))
   })
-  innerhtml="";
-  summary.map((element, index) => {
-    innerhtml += `<button class='headline-box' id='headline${index}'><div id='headline-text'>${element.sentences.join(' ')}</div>`
-    console.log(innerhtml)
-    console.log(summary)
-  })
-  document.querySelector('.articles').innerHTML=htmlstr;
-  document.querySelector('.articles').innerHTML=innerhtml;
 }
 
-// above method not working. Trying to get it to iterate through the headlines and summaries arrays and print the summary and picture to the page. currently not calling the method properly
+function renderSummary(article) {
+  return () => {
+    document.querySelector('.articles').innerHTML = `<button class='headline-box'><img id='headline-picture' src='${article.thumbnail}'><div id='headline-text'>'${summary[0].sentences}'</div></button><button class='summary'></button>`
+  }
+}
+
 
 function mockRetrieveHeadlines() {
     headlines.push(content)
@@ -55,8 +33,7 @@ function mockRetrieveSummary () {
 }
 
 function retrieveHeadlines() {
-  // url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/headlines?show-fields=body"
-  const url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=thumbnail"
+  const url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk?show-fields=thumbnail"
   getapi(url, {})
   .then(data => {
     body = data
@@ -78,7 +55,6 @@ function retrieveSummary () {
 };
 
 async function getapi(url = '', data = {}) {
-  // Default options are marked with *
   const response = await fetch(url, {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
@@ -117,27 +93,3 @@ let summaries = {
 ["In Osborne’s speech, the chancellor referred to an independent Scotland as a foreign country, Salmond recalled - but the rest of the UK would never be a foreign country to Scots, the first minister said."],
 ["I’ll look at how the speech went down in Scotland and the rest of the UK now."]]
 }
-
-// Below is extinct code replaced by renderHeadlines
-
-// function renderThumbnail() {
-//   innerHTML
-//   headlines.forEach(element => {
-//   let thumbnail = `<img src=${element.thumbnail}>`
-//   innerHTML += thumbnail
-//   })
-//   let thumbnailList = document.getElementById('headline-picture')
-//   thumbnailList.innerHTML = innerHTML;
-// }
-//
-// function renderHeadlines() {
-//   let innerHTML = "";
-//   headlines.forEach(element =>  {
-//     let header = `<h2>${element.webTitle}</h2>`
-//     let thumbnail = `<img src=${element.thumbnail}>`
-//     innerHTML += header + thumbnail
-//   });
-//   let headerList = document.getElementById('headline-text')
-//   headerList.innerHTML = innerHTML;
-//   renderThumbnail();
-// };

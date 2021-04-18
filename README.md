@@ -1,5 +1,29 @@
 # News Summary challenge
 
+## README updated
+
+### How to use
+
+* Fork this repo
+* Run Index.html
+* In console type:
+ • mockRetrieveHeadline();
+ • mockRetrieveSummary();
+ • renderHeadlines();
+* Click on picture to see summary
+
+* In order to mock the use of the API I stored the response in an array at the bottom of the app.js file
+* I then pushed these into the arrays which I would use to store the responses of the API fetch calls
+* This allowed me to decide how I wanted to manipulate the data.
+
+### Further Work
+
+* I finished User story 3 although I wasn't able to implement a way to return to the view of all the articles that I would have liked to.
+* I also realised I did not find a way to just get headlines as the API response.
+
+
+## Instructions
+
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
