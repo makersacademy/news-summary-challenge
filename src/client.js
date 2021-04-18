@@ -1,4 +1,4 @@
-const makersApi = "http://news-summary-api.herokuapp.com";
+const makersApi = "https://news-summary-api.herokuapp.com";
 const guardianRequest = "/guardian?apiRequestUrl=";
 const AylienRequest = "/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=";
 
