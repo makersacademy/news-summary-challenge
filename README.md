@@ -11,6 +11,8 @@
 
 - When clicking on an article image or title it reveals the article in full with a accordion animation.
 
+- CSS creates the title bar, the accordion function and styling of the scroll bar on at the sides. Also, the testing page and the CSS from index is automatically promulgated across the index page when it is embedded in the test page.
+
 ## On a web browser
 <img align="center" width="700" src="./docs/news-feed-large.png">
 
