@@ -2,7 +2,7 @@
 
 ### My Notes:
 
-- I didn't use the Makers Heroku guardian app (made my own personal account as worried about breaking everyone's app)
+- I didn't use the Makers Heroku guardian API (made my own personal account as worried about breaking everyone's app)
 - No testing
 - Functionality: get a thumbnail and headline (not lined up next to eachother clearly yet), clicking on the headline would show the contents of a summary tag on its own page but this was not populated with the summary yet from the Aylien API.
 - I was just getting to creating a class to store the data (I think I should have done this from the start) to then be able to change the aylien API endpoint
