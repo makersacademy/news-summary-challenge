@@ -12,11 +12,11 @@
 
 ### How to use
 -------
-URL: [link]()
+URL: [link](https://shacheng.co.uk/news-summary-challenge/)
 
 ### How to test
 -------
-URL: [link]()
+URL: [link](https://shacheng.co.uk/news-summary-challenge/test.html)
 
 ### Overview
 -------
