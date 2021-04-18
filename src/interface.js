@@ -1,33 +1,55 @@
 let list = new NewsList()
 let newsFeed = document.getElementById('newsFeed')
 let apiData = []
+let localDataStore = window.localStorage;
+let testing = true
 
-async function getData (url) {
-  fetch(url)
-  .then(function(response) {
-    if (response.status !== 200) {
-      console.log(`There was a problem. Status code: ${response.status}`)
-      return
-    }
-    response.json().then(function(data) {
-     apiData = data.response.results
-     console.log(apiData)
-    })
+if (testing !== true) {
+  updateFeed()
+} else if (localDataStore.getItem('data') !== null) {
+  getLocalData()
+  .then(function(data) {
+    console.log(data[0])
+    updateNewsList(data[0])
+    showFeed()
   })
 }
 
-async function updateFeed () {
-  await getData('https://content.guardianapis.com/search?q=politics&api-key=test&format=json&show-tags=contributor&show-fields=body,headline,thumbnail')
-  .then(updateNewsList())
-  console.log(apiData)
+function storeDataLocally(data) {
+  jsonData = JSON.stringify(data)
+  localDataStore.setItem('data', `[${jsonData}]`);
 }
 
-function updateNewsList () {
+async function getLocalData() {
+  let apiTestData = await JSON.parse(localDataStore.getItem('data'))
+  return await apiTestData
+}
+
+async function getData (url) {
+  let response = await fetch(url)
+  if (response.status !== 200) {
+    console.log(`There was a problem. Status code: ${response.status}`)
+    return
+  }
+  return await response.json()
+} 
+
+function updateFeed () {
+  getData('https://content.guardianapis.com/search?q=politics&api-key=test&format=json&show-fields=body,headline,thumbnail')
+  .then(function(data) {
+    apiData = data.response.results
+    console.log(apiData)
+    updateNewsList(apiData)
+    showFeed()
+    storeDataLocally(apiData)
+  })
+}
+
+function updateNewsList (data) {
   for (i = 0; i< 10; i++) {
-    list.createNewItem(apiData[i].fields.headline, apiData[i].fields.body, apiData[i].fields.thumbnail)
+    list.createNewItem(data[i].fields.headline, data[i].fields.body, data[i].fields.thumbnail)
   }
 }
-
 
 function showFeed () {
   list.getList().forEach(function(newsItem) {
