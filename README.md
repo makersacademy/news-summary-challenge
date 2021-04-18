@@ -7,7 +7,7 @@
 - Functionality: get a thumbnail and headline (not lined up next to eachother clearly yet), clicking on the headline would show the contents of a summary tag on its own page but this was not populated with the summary yet from the Aylien API.
 - I was just getting to creating a class to store the data (I think I should have done this from the start) to then be able to change the aylien API endpoint
 
-- There are not catch errors if the API doesn't work which I would like to add on.
+- I would like to add catch(error) if the API doesn't work.
 - API key is public which is also a problem
 
 
