@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;   /* now the space is divided horizontally eg */
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+#headlines {
+  width: 75%;
+}
+
+#images {
+  background-color: yellow;
+  width: 25%;
+}
+
+.header {
+  text-align: center;
+  color: lightskyblue;
+  padding: 20px 0;
+} 
+
+.header h1 {
+  margin: 0 0 10px 0;
+}
+
+.header h2 {
+  font-size: 15px;
+  margin: 0 0 10px 0;
+}
+
+#thumbnails img {
+  width: 250px;
+  height: 150px;
+}
+
+#headlines a {
+  margin: 20px;
+  padding: 20px 20px; 
+  border: 
+}
