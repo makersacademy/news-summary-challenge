@@ -9,6 +9,8 @@
 
 - There is a small testing library, it does equality matching only, with two methods solely to test arrays for equality dependant of contents. 
 
+- When clicking on an article image or title it reveals the article in full with a accordion animation.
+
 ## On a web browser
 <img align="center" width="700" src="./docs/news-feed-large.png">
 
