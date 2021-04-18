@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+}
+
+.test-area {
+  margin: auto;
+  width: 60%;
+  border: 1px lightgrey;
+  box-shadow: 5px 5px 5px 5px #888888;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+ul {
+  text-align: left;
+}
+
+.pass {
+  color: green;
+}
+
+.fail {
+  color: red;
+}

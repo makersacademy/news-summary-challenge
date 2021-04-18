@@ -1,19 +1,29 @@
-# News
+# News Summary
 
-News list
-https://content.guardianapis.com/search?from-date=2021-04-16&order-by=newest&api-key=fb6405d5-77ec-4ea9-825f-097464762c91
+![news](/docs/images/news-summary.png)
 
-![result](/docs/api-list.png)
+### Functions
+-------
 
+1. When open page, headlines are listed with a picture and title for each news.
+2. Can click the title and see the summary of the news.
+3. Can see a link in summary and navigate to the full article.
+4. Can click the title and hide/show summary.
 
-https://content.guardianapis.com/us-news/2021/apr/16/joe-manchin-lobbyists-senate-democrat?api-key=fb6405d5-77ec-4ea9-825f-097464762c91
+### How to use
+-------
+URL: [link]()
 
-{"response":{"status":"ok","userTier":"developer","total":1,"content":{"id":"us-news/2021/apr/16/joe-manchin-lobbyists-senate-democrat","type":"article","sectionId":"us-news","sectionName":"US news","webPublicationDate":"2021-04-16T09:00:02Z","webTitle":"Why so many lobbyists are courting Senate Democrat Joe Manchin","webUrl":"https://www.theguardian.com/us-news/2021/apr/16/joe-manchin-lobbyists-senate-democrat","apiUrl":"https://content.guardianapis.com/us-news/2021/apr/16/joe-manchin-lobbyists-senate-democrat","isHosted":false,"pillarId":"pillar/news","pillarName":"News"}}}
+### How to test
+-------
+URL: [link]()
 
+### Overview
+-------
+- Implemented all requirements.
+- Stubbed tests.
 
-1. today's headlines 
-2. picture illustrate each news headline
-3. click news headline see summary and a photo
-4. click summary links to original article
-5. read on phone
-6. animation
+### Issues
+-------
+- Can further split the App class to smaller parts.
+

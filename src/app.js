@@ -25,7 +25,7 @@ class App {
     });
   }
 
-  _getArticleImage = (articleDiv, articleUrl) => {
+  _getArticleImage = (articleDiv, articleUrl, idx) => {
     this.makeArticleRequest(articleUrl, data => {
       const doc = new DOMParser().parseFromString(data.response.content.fields.body, "text/html");
       let imgUrl;
@@ -34,7 +34,7 @@ class App {
       } catch {
         imgUrl = "./docs/images/news.png";
       }
-      this._articleImage(articleDiv, imgUrl);
+      this._articleImage(articleDiv, idx, imgUrl);
     });
   }
 
@@ -44,15 +44,16 @@ class App {
     });
   }
 
-  _articleImage(articleDiv, imgUrl) {
+  _articleImage(articleDiv, idx, imgUrl) {
     const img = document.createElement("img");
+    img.id = `image-${idx}`;
     img.src = imgUrl;
     articleDiv.prepend(img);
   }
 
   _articleHeadline (newHeadline) {
     let articleDiv = this._articleArea(newHeadline.id);
-    this._getArticleImage(articleDiv, newHeadline.apiUrl);
+    this._getArticleImage(articleDiv, newHeadline.apiUrl, newHeadline.id);
     this._articleTitle(articleDiv, newHeadline.id, newHeadline.title, newHeadline.webUrl);
   }
 
@@ -61,8 +62,35 @@ class App {
     div.className = "summary";
     div.id = `summary${idx}`;
     div.innerText = text;
-    this._appendContent(div, this._fullArticleLink(url));
+    this._appendContent(div, this._fullArticleLink(url, idx));
     this._insertAfter(caller, div);
+  }
+
+  _articleArea(id) {
+    const div = document.createElement("div");
+    div.className = "article";
+    div.id = id;
+    this._appendContent(document.body, div);
+    return div;
+  }
+
+  _articleTitle(articleDiv, idx, title, url) {
+    const div = document.createElement("div");
+    div.className = "title";
+    div.id = `title-${idx}`;
+    div.innerText = title;
+    this._appendContent(articleDiv, div);
+    div.addEventListener("click", this._toggleSummary (div, idx, url));
+  }
+
+  _fullArticleLink(url, idx) {
+    const a = document.createElement('a');
+    a.class = "article-link";
+    a.id = `article-link-${idx}`;
+    a.target="_blank";
+    a.innerText = "View full article";
+    a.href = url;
+    return a
   }
 
   _toggleSummary (caller, idx, url) {
@@ -91,32 +119,6 @@ class App {
 
   _insertAfter(firstElement, secondElement) {
     firstElement.after(secondElement);
-  }
-
-  _articleArea(id) {
-    const div = document.createElement("div")
-    div.className = "article";
-    div.id = id;
-    this._appendContent(document.body, div);
-    return div;
-  }
-
-  _articleTitle(articleDiv, idx, title, url) {
-    const div = document.createElement("div");
-    div.className = "title";
-    div.id = `title-${idx}`;
-    div.innerText = title;
-    this._appendContent(articleDiv, div);
-    div.addEventListener("click", this._toggleSummary (div, idx, url));
-  }
-
-  _fullArticleLink(url) {
-    const a = document.createElement('a');
-    a.class = "article-link";
-    a.target="_blank";
-    a.innerText = "View full article";
-    a.href = url;
-    return a
   }
 }
 
