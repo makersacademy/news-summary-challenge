@@ -1,14 +1,17 @@
 let list = new NewsList()
 let newsFeed = document.getElementById('newsFeed')
 let apiData = []
+let apiTestData = []
 let localDataStore = window.localStorage;
-let testing = true
 
-if (testing !== true) {
+// testing !== true ||
+
+if (localDataStore.getItem('feedData') === null) {
   updateFeed()
-} else if (localDataStore.getItem('data') !== null) {
+} else if (localDataStore.getItem('feedData') !== null) {
   getLocalData()
   .then(function(data) {
+    apiTestData = data[0]
     console.log(data[0])
     updateNewsList(data[0])
     showFeed()
@@ -17,12 +20,12 @@ if (testing !== true) {
 
 function storeDataLocally(data) {
   jsonData = JSON.stringify(data)
-  localDataStore.setItem('data', `[${jsonData}]`);
+  localDataStore.setItem('feedData', `[${jsonData}]`);
 }
 
 async function getLocalData() {
-  let apiTestData = await JSON.parse(localDataStore.getItem('data'))
-  return await apiTestData
+  let data = await JSON.parse(localDataStore.getItem('feedData'))
+  return await data
 }
 
 async function getData (url) {
@@ -77,5 +80,7 @@ function showFeed () {
 }
 
 function displayFeed (feedElement) {
-  newsFeed.insertAdjacentHTML('beforeend', feedElement);
+  if (newsFeed !== null) {
+    newsFeed.insertAdjacentHTML('beforeend', feedElement);
+  }
 }
