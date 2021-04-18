@@ -32,7 +32,7 @@ class App {
       try {
         imgUrl =  doc.querySelector("img").getAttribute("src");
       } catch {
-        imgUrl = "./docs/images/news.png";
+        imgUrl = "./public/images/news.png";
       }
       this._articleImage(articleDiv, idx, imgUrl);
     });
