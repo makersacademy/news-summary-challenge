@@ -1,0 +1,35 @@
+body {
+margin:0;
+padding:0;
+background-color: #005689;
+max-width: 1000px;
+margin: auto;
+font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+text-align: center;
+text-decoration: none;
+color: white;
+}
+
+h1 {
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+  color: #90dcff;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #90dcff;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+a:active {
+  text-decoration: underline;
+  color: #90dcff;
+}

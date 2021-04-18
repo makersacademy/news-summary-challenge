@@ -1,3 +1,13 @@
+# Project deployment
+
+News summary API project has been deployed at:
+
+http://far-flung-wind.surge.sh
+
+The first two user stories have been implemented and the headlines currently link
+to the main article at the Guardian.
+
+
 # News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
