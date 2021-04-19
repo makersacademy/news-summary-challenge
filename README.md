@@ -18,10 +18,6 @@ Your app will grab all the headlines from the Guardian newspaper API and display
 - Single page web app written purely with frontend JavaScript, CSS and HTML
 - Guardian and Aylien API
 
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
-
 ## TODO
 
 - Testing get request was sent successfully
