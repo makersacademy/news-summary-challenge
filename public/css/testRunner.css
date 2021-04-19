@@ -1,0 +1,80 @@
+/* general styling */
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #222;
+  color: rgb(207, 207, 207);
+  line-height: 30px;
+}
+
+.desc {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.it {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.pass, .fail {
+  font-weight: 600;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: right;
+}
+
+.pass {
+  color: #bada55;
+}
+
+.fail {
+  color: rgb(255, 64, 64);
+}
+
+.resultBox {
+  margin: auto;
+  width: 100%;
+}
+
+/* columns styling */
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.row:after {
+  box-sizing: border-box;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* indexDisplay styling */
+
+.indexDisplay {
+  overflow: auto;
+  width: auto;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #494949; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
