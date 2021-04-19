@@ -16,7 +16,9 @@ function renderHeadlines() {
 function renderSummary(article) {
   return () => {
     document.querySelector('.articles').innerHTML = `<button class='headline-box'><img id='headline-picture' src='${article.thumbnail}'><div id='headline-text'>'${summary[0].sentences}'</div></button><button class='summary'></button>`
+    document.querySelector('.summary').addEventListener('click', renderHeadlines)
   }
+
 }
 
 
