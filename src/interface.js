@@ -50,8 +50,6 @@ function getNews() {
   .catch(reason => console.log(reason.message))
 }
 
-
-
 function hashListner() {
   window.addEventListener("hashchange", getNote);
 }
@@ -70,13 +68,6 @@ function getNote() {
   }).catch(function() {
     console.log("Booo");
   });
-
-  // async function fetchAsync () {
-  //   let response = await fetch(url);
-  //   let data = await response.json();
-  //   console.log(data);
-  //   return data;
-  // }
 
   body.innerHTML = `<img src=${news.fields.thumbnail}><br>
   <h1> ${news.webTitle}</h1><br> 
