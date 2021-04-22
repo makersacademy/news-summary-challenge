@@ -58,27 +58,3 @@ class ArticleDisplay {
     });
   }
 };
-
-let articleDisplay = new ArticleDisplay();
-articleDisplay.getArticleList();
-
-setTimeout(sumFunc, 2000);
-function sumFunc(){
-  articleDisplay.getSummary();
-}
-
-setTimeout(getArray, 3000);
-function getArray(){
-  console.log(articleDisplay.getFullArticleList());
-}
-
-window.addEventListener("hashchange", function(event) {
-  let newIndex = parseInt(location.hash.replace("#",""));
-  let oldIndex = parseInt(event.oldURL.slice(-3).replace("/","").replace("#",""));
-
-  let articleSum = articleDisplay.listOfArticles[newIndex-1]['summaryText']
-  console.log(articleSum);
-
-  document.getElementById(`body-sum${newIndex}`).innerHTML = articleSum.join(" ")   //replace(".", ". ")
-  document.getElementById(`body-sum${oldIndex}`).innerHTML = ""
-});
