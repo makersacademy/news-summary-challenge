@@ -5,4 +5,28 @@ body {
 h1 {
   color: #008080;
   padding: 30px 30px 65px 50px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+img {
+  display: block;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.sum {
+  text-align: center;
+}
+
+.url {
+  text-align: center;
 }

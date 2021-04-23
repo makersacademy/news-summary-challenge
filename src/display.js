@@ -35,9 +35,9 @@ class ArticleDisplay {
         let html = `<div class="news-piece" id="${idCount}">
         <h2 class="section">${article.section}</h2>
         <h2><a href="#${article.id}">${article.headline}</a></h2>
-        <h4 class="trailText">${article.trailText}</h4><div id="body-sum${idCount}"></div><br>
+        <h4 class="trailText">${article.trailText}</h4><div class="sum" id="body-sum${idCount}"></div><br>
         <img src="${article.thumbnail}"class="thumbnail"><br>
-        <a href="${article.webUrl}">${article.headline}</a><br><br></div>`
+        <p class="url"><a href="${article.webUrl}">${article.headline}</a></p><br><br></div>`
 
         idCount += 1
         this.listOfArticles.push(article)

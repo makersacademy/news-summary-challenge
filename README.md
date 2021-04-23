@@ -1,5 +1,7 @@
 # News Digest
 
+![](images/NewsSummary-Screenshot.png)
+
 ## Brief
 
 The purpose of this project was to create a single-page web app, written purely in frontend code (without using any libraries or frameworks), which grabs and also summarises all the daily news from The Guardian newspaper API.
