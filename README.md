@@ -1,10 +1,10 @@
 # News Digest
 
-![](images/NewsSummary-Screenshot.png)
+![](images/NewsSummary-Screenshot.PNG)
 
 ## Brief
 
-The purpose of this project was to create a single-page web app, written purely in frontend code (without using any libraries or frameworks), which grabs and also summarises all the daily news from The Guardian newspaper API.
+The purpose of this project was to create a single-page web app, written purely in frontend code (without using any libraries or frameworks), which grabs and also summarises (using Aylien NLP text analysis) all the daily news from The Guardian newspaper API.
 
 ## Technologies used:
 
