@@ -38,9 +38,19 @@ I can see click a news article summary title which links to the original article
 So I can get a few more details about an important story
 ```
 
-## Starting the server
+## Getting Started
+
+The app is hosted on surge at the below address:
+
+http://parched-queen.surge.sh
+
+Alternatively, you can also clone the repository from GitHub:
+```
+$ git clone https://github.com/PiperS52/news-summary-challenge.git
+```
+Running on a local server, such as http-server:
 ```
 $ cd news-summary-challenge
-$ npm install http-server --save
-$ node node_modules/http-server/bin/http-server (or) $ npx http-server
+$ npm install --global http-server
+$ http-server ./
 ```
