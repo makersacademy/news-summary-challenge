@@ -7,6 +7,9 @@ A challenge to create a small single-page web-app that retrieves data from an ex
 * doing so using vanilla JS
 * using any form of CSS to give even basic consideration to the presentation
 
+## Screenshot of Use
+![screenshot of app in use](https://github.com/Will-Helliwell/news-summary-challenge/blob/master/images/The%20Daily%20Will%20-%20screenshot.png)
+
 ### API details
 * Requests sent to the Guardian API (via a heroku-hosted app, which assigned an API key)
 
@@ -39,7 +42,7 @@ To run via HttpServer:
 * Read the documentation for an external API and used to pull out the data I needed
 * Hosted the app on a local server (and now know how to get around caching issues preventing refresh for HTTP-Server)
 
-## Steps for each User Story
+## Steps Completed for each User Story
 ### 1
 ```
 As a busy politician
@@ -83,7 +86,10 @@ As a busy politician
 To make my news reading more fun
 I can see whizzy animations in the app
 ```
-# Makers Readme - News Summary challenge
+
+-------
+
+# Original Readme (Challenge Specification)
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
