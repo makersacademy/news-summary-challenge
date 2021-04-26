@@ -1,10 +1,5 @@
 # Will's Readme - News Summary challenge
 
-| Input | Output |
-|------|------|
-| 12 | 6 |
-| 28 | 14 |
-
 ## Context
 
 A challenge to create a small single-page web-app that retrieves data from an external API. For me this was a first time for a number of things:
