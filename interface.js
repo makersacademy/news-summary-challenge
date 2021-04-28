@@ -40,11 +40,18 @@ ready(() => {
 class Article {
   constructor(data) {
     this.title = data.webTitle
+    this.url = data.webUrl
   }
 
   toNode() {
-    let node = document.createElement('h2')
-    node.innerText = this.title
+    let node = document.createElement('div')
+    let title = document.createElement('h2')
+    title.innerText = this.title
+    let link = document.createElement('a')
+    link.innerText = 'View Article'
+    link.setAttribute('href', this.url)
+    node.appendChild(title)
+    node.appendChild(link)
     return node
   }
 }
