@@ -73,8 +73,3 @@ class Article {
  }
 
 }
-
-// https://www.theguardian.com/world/2021/mar/23/uk-braced-for-chinese-retaliation-over-uighur-abuse-sanctions
-
-// curl 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/media/2021/mar/15/daily-telegraph-plans-link-journalists-pay-article-popularity?show-fields=headline,thumbnail'
-// `http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/${}?show-fields=thumbnail`
