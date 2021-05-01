@@ -12,15 +12,15 @@
 
 ### How to use
 -------
-URL: <a href="https://shacheng.co.uk/news-summary-challenge/" target="_blank">link</a>
+URL: [link](https://shacheng.co.uk/news-summary/)
 
 ### How to test
 -------
-URL: <a href="https://shacheng.co.uk/news-summary-challenge/test.html" target="_blank">link</a>
+URL: [link](https://shacheng.co.uk/news-summary/test.html)
 
 ### Overview
 -------
-- Used Makers API <a href="https://github.com/makersacademy/news-summary-api" target="_blank">link</a>
+- Used Makers API [link](https://github.com/makersacademy/news-summary-api)
 - Implemented all requirements
 - Stubbed tests, displays results in test.html
 - Responsive page for different sizes of screens
