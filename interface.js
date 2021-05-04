@@ -52,21 +52,22 @@ class Article {
     node.appendChild(link)
     
     this.fetchSummary(function(data){
+      console.log(data.sentences)
       let summaryDiv = document.createElement('div')
       node.appendChild(summaryDiv)
       
       // add summarised text - works
       let text = document.createElement('p')
-      text.innerText = data.sentences
-      text.id = `${this.index}`
+      text.innerText = data.sentences.join(" ")
+      // text.id = `${this.index}`
       summaryDiv.appendChild(text)
       
-      //hide text - can't successfully get a value to be read
-      document.getElementById(`${this.index}`).style.display = "none"
-      // //make link for toggling text
-      let toggler = document.createElement('p')
-      toggler.innerText = 'Show article summary'
-      summaryDiv.appendChild(toggler)
+      // //hide text - can't successfully get a value to be read
+      // document.getElementById(`${this.index}`).style.display = "none"
+      // // //make link for toggling text
+      // let toggler = document.createElement('p')
+      // toggler.innerText = 'Show article summary'
+      // summaryDiv.appendChild(toggler)
       
       // //add event listener
       // toggler.addEventListener("click", function() { 
