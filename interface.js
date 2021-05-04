@@ -17,7 +17,7 @@ ready(() => {
     for(let i = 0; i < body.response.results.length; i++){
       if(body.response.results[i].type === "article") {
         // console.log(body.response.results[i].webTitle)
-        const article = new Article(body.response.results[i])
+        const article = new Article(body.response.results[i],[i])
         div.appendChild(article.toNode())
       }
     }
@@ -26,9 +26,10 @@ ready(() => {
 });
 
 class Article {
-  constructor(data) {
+  constructor(data, index) {
     this.title = data.webTitle
     this.url = data.webUrl
+    this.index = index
   }
 
   toNode() {
@@ -46,15 +47,39 @@ class Article {
     })
 
     let link = document.createElement('a')
-    link.innerText = 'View Article'
+    link.innerText = 'View original article'
     link.setAttribute('href', this.url)
     node.appendChild(link)
     
     this.fetchSummary(function(data){
+      let summaryDiv = document.createElement('div')
+      node.appendChild(summaryDiv)
+      
+      // add summarised text - works
       let text = document.createElement('p')
       text.innerText = data.sentences
-      node.appendChild(text)
+      text.id = `${this.index}`
+      summaryDiv.appendChild(text)
+      
+      //hide text - can't successfully get a value to be read
+      document.getElementById(`${this.index}`).style.display = "none"
+      // //make link for toggling text
+      let toggler = document.createElement('p')
+      toggler.innerText = 'Show article summary'
+      summaryDiv.appendChild(toggler)
+      
+      // //add event listener
+      // toggler.addEventListener("click", function() { 
+      //   if (document.querySelector(text).style.display === "none") {
+      //     document.querySelector(text).style.display = "block"
+      //     toggler.innerText = "Hide article summary"
+      //   } else {
+      //     document.querySelector("#toggle").style.display = "none"
+      //     test.innerText = "Show article summary"
+      //   }
+      // });
     })
+
     return node
   }
 
@@ -70,6 +95,26 @@ class Article {
    fetch(url)
    .then(response => { return response.json() })
    .then(callback)
+ }
+
+ toggleSummary(){
+   //hide text
+  document.querySelector(text).style.display = "none"
+  //make link for toggling text
+  let toggler = document.createElement('p')
+  toggler.innerText = 'Show article summary'
+  node.appendChild(toggler)
+  //add event listener
+  toggler.addEventListener("click", function() { 
+    if (document.querySelector(text).style.display === "none") {
+      document.querySelector(text).style.display = "block"
+      toggler.innerText = "Hide article summary"
+    } else {
+      document.querySelector("#toggle").style.display = "none"
+      test.innerText = "Show article summary"
+    }
+  });
+
  }
 
 }
