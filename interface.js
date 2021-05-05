@@ -10,14 +10,11 @@ ready(() => {
   fetch("https://content.guardianapis.com/search?from-date=2021-03-23&to-date=2021-03-24&show-fields=headline%20thumbnail&q=uk&api-key=test")
   .then(response => response.json())
   .then( body => {
-    console.log(body)
-    // get div element from page
     let div = document.getElementById('headlines')
 
     for(let i = 0; i < body.response.results.length; i++){
       if(body.response.results[i].type === "article") {
-        // console.log(body.response.results[i].webTitle)
-        const article = new Article(body.response.results[i],[i])
+        const article = new Article(body.response.results[i])
         div.appendChild(article.toNode())
       }
     }
@@ -26,10 +23,9 @@ ready(() => {
 });
 
 class Article {
-  constructor(data, index) {
+  constructor(data) {
     this.title = data.webTitle
     this.url = data.webUrl
-    this.index = index
   }
 
   toNode() {
@@ -52,33 +48,29 @@ class Article {
     node.appendChild(link)
     
     this.fetchSummary(function(data){
-      console.log(data.sentences)
       let summaryDiv = document.createElement('div')
       node.appendChild(summaryDiv)
       
-      // add summarised text - works
       let text = document.createElement('p')
       text.innerText = data.sentences.join(" ")
-      // text.id = `${this.index}`
       summaryDiv.appendChild(text)
-      
-      // //hide text - can't successfully get a value to be read
-      // document.getElementById(`${this.index}`).style.display = "none"
-      // // //make link for toggling text
-      // let toggler = document.createElement('p')
-      // toggler.innerText = 'Show article summary'
-      // summaryDiv.appendChild(toggler)
-      
-      // //add event listener
-      // toggler.addEventListener("click", function() { 
-      //   if (document.querySelector(text).style.display === "none") {
-      //     document.querySelector(text).style.display = "block"
-      //     toggler.innerText = "Hide article summary"
-      //   } else {
-      //     document.querySelector("#toggle").style.display = "none"
-      //     test.innerText = "Show article summary"
-      //   }
-      // });
+      text.style.display = "none"
+
+      const buttonToHide = document.createElement("button")
+      buttonToHide.innerText = "Show summary";
+      summaryDiv.appendChild(buttonToHide);
+
+      buttonToHide.addEventListener("click", (e) => {
+        //memoisation via arrow function
+        if(text.style.display === "block"){
+          buttonToHide.innerText = "Show summary"
+          text.style.display = "none"
+        }
+        else {
+          buttonToHide.innerText = "Hide summary"
+          text.style.display = "block"
+        }
+      })
     })
 
     return node
@@ -96,26 +88,6 @@ class Article {
    fetch(url)
    .then(response => { return response.json() })
    .then(callback)
- }
-
- toggleSummary(){
-   //hide text
-  document.querySelector(text).style.display = "none"
-  //make link for toggling text
-  let toggler = document.createElement('p')
-  toggler.innerText = 'Show article summary'
-  node.appendChild(toggler)
-  //add event listener
-  toggler.addEventListener("click", function() { 
-    if (document.querySelector(text).style.display === "none") {
-      document.querySelector(text).style.display = "block"
-      toggler.innerText = "Hide article summary"
-    } else {
-      document.querySelector("#toggle").style.display = "none"
-      test.innerText = "Show article summary"
-    }
-  });
-
  }
 
 }
