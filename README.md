@@ -15,7 +15,7 @@ Vanilla is a web app that displays recipes for ice-cream.
 
 Vanilla was initially built as part of the Makers Academy news app weekend challenge, and used APIs to source stories from The Guardian then generate summaries in Aylien.
 
-This version has been repurposed to present an ice cream recipe when an ice cream is clicked.
+This version has been repurposed to present an ice cream recipe when an ice cream is clicked. 
 
 
 ## Technologies
