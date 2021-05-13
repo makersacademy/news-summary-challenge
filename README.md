@@ -2,6 +2,9 @@
 
 Vanilla is a web app that displays recipes for ice-cream.
 
+https://user-images.githubusercontent.com/69108995/114377264-5c339100-9b7e-11eb-916d-4beac147320f.png![image](https://user-images.githubusercontent.com/69108995/118106948-157fc380-b3d6-11eb-8adf-00d3e676121c.png)
+
+
 ## How to use
 - Open index.html in your browser
 - Click on the ice creams to view a recipe.
