@@ -30,7 +30,7 @@ getArticles = (articles) => {
 
     link.addEventListener('click', function(event) {
       event.preventDefault();
-      displayArticle(articleId, thumbnail, headline)
+      getSingleArticle(articleId, thumbnail, headline)
     });
 
   };
@@ -38,3 +38,32 @@ getArticles = (articles) => {
   articles.forEach(renderArticle)
 
 };
+
+getSummary = (targetElement, articleId) => {
+  fetch("http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + articleId)
+  .then(response => response.json())
+  .then(data => {
+    targetElement.textContent = data.sentences
+    console.log(data)
+    console.log(data.sentences)
+  });
+};
+
+
+getSingleArticle = (articleId, thumbnail, headline) => {
+  articleThumbnail = document.getElementById("article-thumbnail")
+  articleHeadline = document.getElementById("article-headline")
+  articleSummary = document.getElementById("article-body")
+  articleLink = document.getElementById("article-link") 
+
+  articleLink.setAttribute("href", articleId)
+  articleHeadline.textContent = headline
+  articleThumbnail.setAttribute('src', thumbnail)
+
+  getSummary(articleSummary, articleId)
+  // toggleVisibility();
+};
+
+
+
+
