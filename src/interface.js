@@ -4,7 +4,8 @@ const guardianInfo = fetch("https://content.guardianapis.com/search?api-key=test
                         return data.response.results
                      });
 
-
+  articleIndex = document.getElementById("article-index")
+  singleArticle = document.getElementById("show-single-article")
 
 
 getArticles = (articles) => {
@@ -26,7 +27,7 @@ getArticles = (articles) => {
     link.appendChild(headlineElement)
     articleSection.appendChild(imageElement)
     articleSection.appendChild(link)
-    document.getElementById("article-index").appendChild(articleSection)
+    articleIndex.appendChild(articleSection)
 
     link.addEventListener('click', function(event) {
       event.preventDefault();
@@ -51,19 +52,41 @@ getSummary = (targetElement, articleId) => {
 
 
 getSingleArticle = (articleId, thumbnail, headline) => {
-  articleThumbnail = document.getElementById("article-thumbnail")
-  articleHeadline = document.getElementById("article-headline")
-  articleSummary = document.getElementById("article-body")
-  articleLink = document.getElementById("article-link") 
+  let articleThumbnail = document.getElementById("article-thumbnail")
+  let articleHeadline = document.getElementById("article-headline")
+  let articleSummary = document.getElementById("article-body")
+  let articleLink = document.getElementById("article-link") 
 
   articleLink.setAttribute("href", articleId)
   articleHeadline.textContent = headline
   articleThumbnail.setAttribute('src', thumbnail)
 
   getSummary(articleSummary, articleId)
-  // toggleVisibility();
+  toggleVisibility();
 };
 
 
+toggleVisibility = function(){
+  let style = getComputedStyle(singleArticle, "display")
+  if (style.display === "none") {
+      singleArticle.style.display = "block";
+      articleIndex.style.display = "none";
+  } else {
+      singleArticle.style.display = "none";
+      articleIndex.style.display = "block";
+  }
+}
 
+document.getElementById("return-to-index").addEventListener("click", function() {
+  toggleVisibility();
+});
+
+
+findArticles = () => {
+  guardianInfo.then((articles) => {
+    getArticles(articles)
+  });
+};
+
+findArticles();
 
