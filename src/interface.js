@@ -9,6 +9,7 @@ const guardianInfo = fetch("https://content.guardianapis.com/search?api-key=test
 
 
 getArticles = (articles) => {
+  toggleVisibility();
   
   renderArticle = (article) => {
     let articleId = article.webUrl
@@ -29,6 +30,8 @@ getArticles = (articles) => {
     articleSection.appendChild(link)
     articleIndex.appendChild(articleSection)
 
+    let style = getComputedStyle(singleArticle, "display")
+
     link.addEventListener('click', function(event) {
       event.preventDefault();
       getSingleArticle(articleId, thumbnail, headline)
@@ -45,8 +48,6 @@ getSummary = (targetElement, articleId) => {
   .then(response => response.json())
   .then(data => {
     targetElement.textContent = data.sentences
-    console.log(data)
-    console.log(data.sentences)
   });
 };
 
@@ -57,11 +58,13 @@ getSingleArticle = (articleId, thumbnail, headline) => {
   let articleSummary = document.getElementById("article-body")
   let articleLink = document.getElementById("article-link") 
 
+  getSummary(articleSummary, articleId)
+
   articleLink.setAttribute("href", articleId)
   articleHeadline.textContent = headline
   articleThumbnail.setAttribute('src', thumbnail)
 
-  getSummary(articleSummary, articleId)
+  let style = getComputedStyle(singleArticle, "display")
   toggleVisibility();
 };
 
