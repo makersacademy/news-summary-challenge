@@ -9,6 +9,7 @@ const guardianInfo = fetch("https://content.guardianapis.com/search?api-key=test
 
 
 getArticles = (articles) => {
+  toggleVisibility();
   
   renderArticle = (article) => {
     let articleId = article.webUrl
