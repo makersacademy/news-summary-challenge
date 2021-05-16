@@ -21,19 +21,22 @@ document.addEventListener("DOMContentLoaded", () => {
     img.setAttribute("src", `${imgSrc}`)
     document.querySelector("#headlines").append(img)
   }
-     
-  getHeadLines((results) => {
-    for(let i = 0; i < results.length; i++) {
-      // let webUrl = results[i].webUrl
-      // console.log(webUrl)
-      let id = results[i].id
-      let webTitle = results[i].webTitle
-      let imgSrc = results[i].fields.thumbnail
   
-      createImgElement(imgSrc)
-      createLiElement(id, webTitle)
-    }
-  }) 
+  const displayHeadLines = () => {
+    getHeadLines((results) => {
+      for(let i = 0; i < results.length; i++) {
+        let id = results[i].id
+        let webTitle = results[i].webTitle
+        let imgSrc = results[i].fields.thumbnail
+    
+        createImgElement(imgSrc)
+        createLiElement(id, webTitle)
+      }
+    })
+  }
+
+  displayHeadLines()
+ 
   
   window.addEventListener("hashchange", () => {
     document.querySelector("#headlines").innerHTML = ''
@@ -42,6 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
       let summary = sentences.join(" ")
       document.querySelector("#summary").innerText = summary
     })
+  })
 
+  document.querySelector("#back-to-home").addEventListener("click", () => {
+    location.href = location.href.split("#")[0]
+    document.querySelector("#summary").innerText = ''
+    displayHeadLines()
   })
 })
