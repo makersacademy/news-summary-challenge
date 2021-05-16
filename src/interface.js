@@ -9,7 +9,6 @@ const guardianInfo = fetch("https://content.guardianapis.com/search?api-key=test
 
 
 getArticles = (articles) => {
-  toggleVisibility();
   
   renderArticle = (article) => {
     let articleId = article.webUrl
@@ -29,8 +28,6 @@ getArticles = (articles) => {
     articleSection.appendChild(imageElement)
     articleSection.appendChild(link)
     articleIndex.appendChild(articleSection)
-
-    let style = getComputedStyle(singleArticle, "display")
 
     link.addEventListener('click', function(event) {
       event.preventDefault();
