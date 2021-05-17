@@ -30,12 +30,14 @@ class Article {
 
   toNode() {
     let node = document.createElement('div')
+    node.id = "articleSummary"
     let title = document.createElement('h2')
     title.innerText = this.title
     node.appendChild(title)
 
     this.fetchPictures(function(data){
       let divImg = document.createElement('div')
+      divImg.id = "imgContainer"
       let img = document.createElement('img')
       img.src = data.response.content.fields.thumbnail
       divImg.appendChild(img)
