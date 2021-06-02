@@ -1,3 +1,25 @@
+# Maker's Week 7: Weekend challenge
+This challenge was the seventh of my Maker's weekend challenge, intended to be done alone to reinforce the week's learning and concepts.
+The necessary skills covered in this challenge were:
+
+* Build a dynamic single page app using only Pure JS
+* Request and use data from an external API
+* Explain that libraries are code 
+
+Successes
+-----
+
+* Able to have asynchronous JS handle the creation and display of data from an external API
+* Able to successfully debug toggle visibility bug despite a lack of error messaging/ information from the program
+* Program is able to get and render data all without any back-end JS code
+
+
+To improve
+-----
+* Lack of time and fatigue from previous week meant styling only got as far as a making a basic flex box and a button
+* Summary finder method needs refactoring to allow summaries to be loaded with the initial request and stored, so allow more seamless single article rendering
+
+
 ### Serving your app
 
 Project is setup to use VScode's Live-Server extension to provide simple launching and automatic reloading.
@@ -27,20 +49,6 @@ As a busy politician
 So I can get a few more details about an important story
 I can see click a news article summary title which links to the original article
 ```
-
-Successes
------
-
-* Able to have asynchronous JS handle the creation and display of data from an external API
-* Able to successfully debug toggle visibility bug despite a lack of error messaging/ information from the program
-* Program is able to get and render data all without any back-end JS code
-
-------------------
-
-To improve
------
-* Lack of time and fatigue from previous week meant styling only got as far as a making a basic flex box and a button
-* Summary finder method needs refactoring to allow summaries to be loaded with the initial request and stored, so allow more seamless single article rendering
 
 
 ## Resources
