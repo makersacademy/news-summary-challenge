@@ -1,87 +1,73 @@
-# News Summary challenge
-
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
-
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that summarises the news.
-
-### Guidance
-
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
-
-## Project overview
-
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
-
-### Technologies
-
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
+# News Summary
+An app that summarises the news
 
 ## User Stories
 
-Some of these stories will need decomposing if they seem too large.
-
-```
 As a busy politician
 I can see all of today's headlines in one place
 So I know what the big stories of the day are
-```
 
-```
 As a busy politician
 I can see a relevant picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
-```
 
-```
 As a busy politician
 I can click a news headline to see a summary and a photo of the news article
 So that I can get an in depth understanding of a very important story
-```
 
-```
 As a busy politician
 I can see click a news article summary title which links to the original article
 So I can get a few more details about an important story
-```
 
-```
 As a busy politician
 I can read the site comfortably on my phone
 Just in case my laptop breaks
-```
 
-```
 As a busy politician
 I can see whizzy animations in the app
 To make my news reading more fun
-```
 
-## Mockups
+## Build Status
 
-### Headlines page
+* Created the gem file. Setup the test environment and file structure.<br>
+* 1 Test has been written to determine if sinatra works.<br>
+* The tests for signing up and signing in have been created and passed.<br>
+* The user is able to register, sign in with authentication, and sign out.<br>
+* The user is able to add a listing.<br>
+* A user is able to add set availability dates for each of their own listings.<br>
+* CSS added to all views with navbar and logo.<br>
+* All tests pass<br>
 
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
+## Code style
 
-### Article summary page
 
-![Article page mockup](/images/news-summary-project-article-page-mockup.png)
+## Installation
+
+
+## Tests
+
+
+## Technology Used / Dependencies
+
+#### Software
+
+
+#### Languages
+
+
+#### Dependencies
+
+
+## Screenshots
+
+<img src="./public/images/sign-in.png" width="48%"> 
+
+## Planning Phase
+
+
+## Credits
+
+* JP Ferreira
 
 ## API
 
