@@ -1,0 +1,55 @@
+body {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Londrina Shadow', cursive;
+  font-size: 65px;
+  color: #888888;
+}
+
+.hide {
+  display: none;
+}
+
+.article {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%; /*80%;*/
+  margin-top: 40px;
+  padding: 20px 0 20px 0;
+  border: 1px lightgrey;
+  box-shadow: 5px 5px 5px 5px #888888;
+}
+
+img {
+  width: 80%;
+}
+
+.title {
+  position: relative;
+  font-weight: bold;
+  font-size: large;
+  text-decoration: underline;
+  margin: 20px 10% 0 10%;
+}
+
+.title:hover {
+  cursor: pointer;
+}
+
+.summary {
+  width: 80%;
+  margin: 0 0 0 10%;
+  text-align: justify;
+  height:fit-content;
+  margin-top: 20px;
+}
+
+@media (max-width: 500px) {
+  h1 {
+  font-size: 50px;
+  line-height: 40px;
+  }
+}
