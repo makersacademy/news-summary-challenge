@@ -29,14 +29,6 @@ To make my news reading more fun
 
 ## Build Status
 
-* Created the gem file. Setup the test environment and file structure.<br>
-* 1 Test has been written to determine if sinatra works.<br>
-* The tests for signing up and signing in have been created and passed.<br>
-* The user is able to register, sign in with authentication, and sign out.<br>
-* The user is able to add a listing.<br>
-* A user is able to add set availability dates for each of their own listings.<br>
-* CSS added to all views with navbar and logo.<br>
-* All tests pass<br>
 
 ## Code style
 
