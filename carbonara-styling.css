@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+}
+
+.pass {
+  color: green;
+}
+
+.fail {
+  color: red;
+}
+
+h3 {
+  text-indent: 20px;
+}
+
+p {
+  text-indent: 35px;
+}
