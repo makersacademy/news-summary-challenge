@@ -1,0 +1,40 @@
+h1 {
+  color: white;
+  letter-spacing: 8px;
+  font: arial, sans-serif;
+  text-align:center;
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+body {
+  color: black;
+  background-color: DARKOLIVEGREEN;
+  padding: 20px;
+  font-size: 1.4em;
+}
+
+div {
+  border-radius: 50px;
+  background-color: DARKKHAKI;
+  padding: 50px;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: DARKOLIVEGREEN;
+}
+
+a:hover {
+  color: black;
+}
+
+a:active {
+  color: blue;
+}
