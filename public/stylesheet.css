@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+}
+
+#list {
+  list-style-type: none;
+}
+
+li {
+  margin-top: 1em;
+  font-size: 25px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+ color: hotpink;
+}

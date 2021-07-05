@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="public/stylesheet.css">
+    <!-- <script src="lib/guardian-api.js"></script> -->
+    <script src="views/headlines-view.js"></script>
+    <script src="news-controller.js"></script>
+    <!-- Test suite -->
+    <script src="lib/guardian-api-stub.js"></script>
+    <script src="spec/assert.js"></script>
+    <script src="spec/guardian-api-test.js"></script>
+    <script src="spec/headlines-view-test.js"></script>
+    <script src="spec/news-controller-test.js"></script>
+
+    <title>News Headlines</title>
+  </head>
+  <body>
+
+    <script>
+      window.onload = function() {
+        var api = new GuardianApi();
+        var newsController = new NewsController(api);
+        newsController.render();
+      };
+    </script>
+
+    <div id="main">
+      <h1>Today's Guardian Headlines</h1>
+      <div id="headlines"></div>
+    </div>
+
+  </body>
+</html>
