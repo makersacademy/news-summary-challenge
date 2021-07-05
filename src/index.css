@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  /* font-family: "Exo 2", sans-serif important!; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.h1 {
+  font-weight: 700;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
