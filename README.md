@@ -114,7 +114,7 @@ curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-spe
 To make this request via the Makers News Summary API with cURL, you could do something like this:
 
 ```
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
+curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=https://content.guardianapis.com/search"
 ```
 
 Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
