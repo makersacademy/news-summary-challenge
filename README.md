@@ -11,6 +11,18 @@ As usual please start by forking this repo.
 
 You'll create an app that summarises the news.
 
+## Domain Model
+![Domain Model](/images/NewsApp-Domain-Model.png)
+
+## Current Status
+- Done: Main page displays a list of headlines from The Guardian API (culture section)
+- Done: Each headline is a link that changes the path to its own page without refreshing.
+- ToDo: display an image with each headline.
+- ToDo: Display a summary of each new on its own page.
+- ToDo: TDD the NewsController functionality.
+- ToDo: Make some nice views.
+
+
 ### Guidance
 
 Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
