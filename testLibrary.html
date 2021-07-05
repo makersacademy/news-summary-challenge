@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Test Library</title>
+  </head>
+  <body>
+
+    <script type="text/javascript" src="lib/testLibrary.js"></script>
+    <script type="text/javascript" src="src/articles.js"></script>
+    <script type="text/javascript" src="test/articlesSpec.js"></script>
+
+    <script>
+      for (var i = 0; i < numOfTests(); i++) {
+
+        try {
+         result = `Passed - ${execute_test(i)}`
+        }
+
+        catch(err) {
+         result = err.message;
+        }
+
+        finally {
+          h1 = document.createElement(`p${i + 1}`);
+          if (result.includes("Passed")){
+            h1.style.color = "green"
+          } else {
+            h1.style.color = "red"
+          }
+          h1.textContent += `${i + 1}: ${result}`;
+        }
+        document.body.appendChild(h1);
+        document.write("<br>");
+      }
+
+    </script>
+
+  </body>
+</html>
