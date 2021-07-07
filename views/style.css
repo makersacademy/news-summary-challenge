@@ -1,0 +1,51 @@
+
+.css-selector {
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Alice', serif;
+}
+
+body {
+    color: navy;
+    text-size-adjust: 100%;
+    width: 100vw;
+}
+
+.page-header {
+    overflow: hidden;
+}
+
+#app-title {
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Alice' serif;
+    color: black;
+    border: 2px solid black;
+}
+
+#content-padding {
+    padding: 0 3%;
+    margin: 18px auto;
+}
+
+#hello-world {
+    color: black;
+    font-size: x-large;
+}
+
+#news {
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+#story {
+    margin: 5px;
+    border: 2px solid rgb(221, 9, 193);
+    color: black;
+}
+
+#story:hover {
+    background-color: rgba(136, 213, 236, 0.466);
+    cursor: pointer;
+
+}
