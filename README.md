@@ -1,3 +1,34 @@
+# Reflection
+
+Creating a single-page app without libraries or frameworks was a big challenge. 
+
+The API was difficult to get working without the help of a simple JQuery method. It forced me to look at it from a lower level which I found very beneficial, I learned about the concepts of 'promise' and asynchronization'. Through a bit of study I managed to get a fully functional single-page web app with built in API. 
+
+Looking at the code as it is now I'm confident that it's clean and readable. Though my interface.js file could do with some refactoring, which normally I would rely on JQuery for!
+
+The look and feel of the app is basic but the functionality is there, I need give myself time to look at web layout concepts & design. 
+
+
+# Models
+
+I used two models: 
+- An Article that holds the necessary attributes to be displayed on a webpage.
+- Articles to hold an array of Article objects so that it can be accessed in other files. 
+
+| Article       |
+| ------------- |
+| get WebTitle()|
+| get thumbnail()|
+| get bodyText()|
+
+| Articles      |
+| ------------- |
+| static create()|
+| static add(article)|
+
+_______________________
+
+
 # News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.

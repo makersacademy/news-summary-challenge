@@ -1,0 +1,33 @@
+#header {
+  margin: auto;
+  width: 500px;
+  padding: 10px;
+  font-family: Impact;
+  text-align: center;
+}
+
+#selectedArticle{
+  margin: auto;
+  width: 800px;
+}
+
+.article {
+  margin: auto;
+  width: 500px;
+  border-bottom: 5px solid #ec7219a1;
+  padding: 10px;
+}
+
+p, h2 {
+  font-family: verdana;
+}
+
+#backForm {
+  margin: auto;
+  width: 800px;
+  height: 50px;
+}
+
+#button {
+  height: 50px;
+}

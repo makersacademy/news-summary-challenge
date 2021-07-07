@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Article Spec</title>
+  </head>
+  <body>
+
+    <script type="text/javascript" src="../lib/specFramework.js"></script>
+    <script type="text/javascript" src="../src/article.js"></script>
+
+    <script>
+
+      let title = "2020 - The Year it all went wrong"
+      let image = "12345.jpg"
+      let text = "Put text here"
+
+      let jsonStub = { webTitle: title, fields: { thumbnail: image, bodyText: text } };
+
+      Articles.create()
+      article = new Article(jsonStub);
+
+      it("Gets an instance of an article", function() {
+        return expect(article.id).toEqual(1)
+      });
+
+      it("Gets an instance of an article", function() {
+        return expect(article.constructor.name).toEqual("Article")
+      });
+
+      it("Gets title of an article", function() {
+        return expect(article.webTitle).toEqual(title)
+      });
+
+      it("Gets thumbnail of an article", function() {
+        return expect(article.thumbnail).toEqual(image)
+      });
+
+      it("Gets the body text of an article", function() {
+        return expect(article.bodyText).toEqual(text)
+      });
+
+      it("Returns number of articles - 3", function() {
+        new Article(jsonStub);
+        new Article(jsonStub);
+        return expect(Articles.all.length).toEqual(3)
+      });
+
+    </script>
+  </body>
+</html>
