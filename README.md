@@ -1,3 +1,9 @@
+## To do
+
+* Headline summary is not working
+* Add pictures to each headline
+* CSS
+
 # News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
