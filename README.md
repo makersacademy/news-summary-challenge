@@ -1,3 +1,9 @@
+This Makers weekend challenge was to build a news viewer. I managed to display the Gaurdian's news headlines using their api.
+I didn't however manage to complete the challenge, I got quite lost with the api that summarised articles (Aylian).
+
+I intend on finishing of this project, because I found it fun to work on, and I think given some more time, I will be able
+to finish the project off.
+
 # News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
