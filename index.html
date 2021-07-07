@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Articles</title>
+  </head>
+  <body>
+    <div id="app">Main page</div>
+    <script src="src/article.js"></script>
+    <script src="src/article-list-view.js"></script>
+    <script src="src/article-list.js"></script>
+    <script src="src/article-controller.js"></script>
+    <script src="src/headlines.js"></script>
+    <script src="src/apiRequests.js"></script>
+    <script>
+      const articleList = new ArticleList()
+      const articleController = new ArticleController(articleList)
+      articleController.changeHTML();
+      articleController.urlChange();
+    </script>
+  </body>
+</html>
