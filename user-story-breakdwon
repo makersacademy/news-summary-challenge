@@ -1,0 +1,41 @@
+User stories
+
+Which is harder.. headlines or whole stories, lets start with headlines
+
+Important
+As a busy politician
+So I know what the big stories of the day are
+I can see all of today's headlines in one place
+
+  render an HTML page
+  Send API request
+  Return headlines from API
+    Find out what ID is tagging the headlines
+    alter the text to have these (using getElementByID)
+    Perhaps this should be done in a controller file
+
+As a busy politician
+So that I can get an in depth understanding of a very important story
+I can click a link to see the original news article
+
+  Borrow our event listner/handler tactic from the notes challenge
+
+I think this is the Aylean API
+As a busy politician
+So I can get a few more details about an important story
+I can see a summary of a news article
+
+  Worry about this later
+
+Not important
+As a busy politician
+So that I have something nice to look at
+I can see a picture to illustrate each news article when I browse headlines
+
+As a busy politician
+Just in case my laptop breaks
+I can read the site comfortably on my phone
+
+As a busy politician
+To make my news reading more fun
+I can see whizzy animations in the app

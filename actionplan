@@ -1,0 +1,77 @@
+Action plan:
+
+1. DONE: read https://www.npmjs.com/package/http-server
+2. DONE: serve an HTML page using http-server
+3. DONE: Check caches are off
+4. DONE: check out /images/news-summary-project-headlines-page-mockup.png, refer to it
+5. What is curl? (try * cURL [man page](https://curl.haxx.se/docs/manpage.html))
+It's a tool to transfer data to and from a server using a protocol. Not exactly sure how its used though. I can see the hammer, I can see the nail. Do I pick up the hammer or try and drink it?
+
+6. Go through the guardian API example... take notes on what you learn (*try [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
+)
+
+We can use the makers API to connect to the guardian API... this gives us full news articles.
+
+if I paste into a chrome terminal the link they gave me for the makers API, I get a response which is an object with loads of info, including the entire HTML page.
+
+How will I send this request (and get this response) from my codebase?
+
+I will need to look at the key or ID or something that relates to the value which is the contents and use that to render the page.
+Appears to look like:
+
+{"response":{"status":{"content":{"fields":{"body": all of the HTML
+
+I think I will need to do something along the lines of document.getElementByID in order to reach the body, and then further the specific part of the body I am looking for...?
+
+
+I might be an position to start thinking about a diagram.
+
+
+7. Establish what the Aylien API is for
+
+We can use the makers API to connect to the guardian API via the Aylien API... this gives us summaries of news articles.
+
+8. If relevent, go through the Aylien example
+
+9. Review, and set learning objectives
+
+Don't feel I'm quite there to set a list of objectives yet.
+
+New action plan:
+
+1. DONE:Break it down... only one API first.
+    - guardian one
+2. DONE:In order to do one. lets rewrite and re-order the user stories.
+    - only 2 user stories for MVP, start with headlines
+    - What a lovely diagram
+3. Review next steps.
+
+New action plan
+
+1. DONE:Create testing file
+2. DONE:TDD making a change to the HTML page
+   - This will involve creating a controller
+   - This may involve creating a viewer
+   - Plagurise code from notes
+3. DONE:Write a features test (get it actually working)
+4. DONE:Begin looking at integrating the API
+ - Work out how to:
+  - send a request for an object (I think thats done)
+  - return the object (this is the key)
+
+DONE! Well done goose.
+
+Next up:
+
+1. DONE: Work out how to extract elements from the object (title)
+2. DONE: Display elements
+
+nb, refer to this when stuck: https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)
+
+Next up
+
+1. Write a test to get 5 headlines up
+    - make some objects for mocking these tests
+2. Write the code
+3. Write tests for what happens if you click the link
+4. Write the code
