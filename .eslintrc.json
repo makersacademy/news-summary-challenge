@@ -1,0 +1,10 @@
+{
+    "extends": "airbnb-base",
+    "globals": {
+        "Barracuda": true,
+        "document": true
+    },
+    "rules": {
+        "func-names":"off"
+    }
+}
