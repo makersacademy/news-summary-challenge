@@ -1,0 +1,22 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "News Summary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dione-dls/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dione-dls/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/dione-dls/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
