@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>NewsReader</title>
+</head>
+<body>
+
+<div class = "container">
+    <div id = "app"></div>
+    <div id = "story"></div>
+</div>
+
+
+<script src="api-key.js"></script>
+<script src="spec/testFramework.js"></script>
+<script src="lib/story-list-model.js"></script>
+<script src="lib/story-list-view.js"></script>
+<script src="lib/single-story-view.js"></script>
+<script src="lib/story-controller.js"></script>
+<script>
+    let storylist = new StoryListModel();
+    let url = "http://content.guardianapis.com/";
+    let controller = new StoryController(url, storylist);
+    controller.loadStories();
+    controller.update();
+</script>
+</body>
+</html>
