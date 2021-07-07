@@ -1,33 +1,6 @@
-# Project Considerations/Reflection
-
-I decided I wanted to dedicate some time to producing this using both JQuery and purely front-end JS/CSS/HTML, so that I could explore the differences/limitations/advantages of both. I also thought it would be useful to spike the app using Jquery, which I'm quite confident using, and use it to inform a strict TDD process for the Front-End JS based App.
-
-I tried (and I think I succeeded) to create a very simple testing suite, which the user can build in string based assertions, so that visibility of tests passing failing was very good. The limitations of this, and something I'd consider in the future, is that the errors produced by the test suite aren't super-helpful (they're primarily pass or fail). If I had more time to dedicate to this, I'd build out different types of comparators/assertions (similar to RSpec/Capybara - to Eq, to Be, Kind_Of, etc.)
-
-I'm pleased with the end product, and feel that I've kept the development of the controller, in particular, very lean.
-
-The main setback I had is that in using the Makers Heroku App, I couldn't validate that the Front-End program actually worked, since everyone in my cohort was using it at the same time, and the request limit prevented API fetches being successful!
-
-I'm confident that it does work though, given the TDD process I followed.
-
-## Using The Test Suite
-
-* Open the Option folder you'd like to write tests in e.g. `./FrontEndJavaOption/tests/`
-* Create a file based on module, as in `example-spec.js`
-* Open SpecRunner.html in your text editor, and include your new testing file by adding `<script src='YOUR_FILENAME_HERE'></script>`
-* Write each test using the following syntax (use example-spec.js as a guide):
-
-```
-describe(function/query_as_a_string, 
-  it(assertion_as_a_string, 
-    (BOOLEAN_EVALUATION)
-  )
-)
-```
-* Run SpecRunner.html in your browser (Chrome/Firefox etc.) to see which tests passed/failed.
-
 # News Summary challenge
 
+* Challenge time: rest of the day and weekend, until Monday 9am.
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
@@ -73,20 +46,20 @@ So I know what the big stories of the day are
 
 ```
 As a busy politician
-I can see a relevant picture to illustrate each news article when I browse headlines
-So that I have something nice to look at
-```
-
-```
-As a busy politician
-I can click a news headline to see a summary and a photo of the news article
+I can click a link to see the original news article
 So that I can get an in depth understanding of a very important story
 ```
 
 ```
 As a busy politician
-I can see click a news article summary title which links to the original article
+I can see a summary of a news article
 So I can get a few more details about an important story
+```
+
+```
+As a busy politician
+I can see a picture to illustrate each news article when I browse headlines
+So that I have something nice to look at
 ```
 
 ```
