@@ -149,3 +149,22 @@ If you're interested, you can see the code for the News Summary API in this repo
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+
+--------------------------
+## Sara Rancati - 1 December 2019
+
+### Guardian API key: 
+
+In index.js, the key should be replaced with the unique API key, which can be requested from: https://open-platform.theguardian.com/documentation/
+
+### To view app: 
+
+Run in command line
+
+```npx http-server```
+
+and then visit:
+http://localhost:8080 
+
+
+

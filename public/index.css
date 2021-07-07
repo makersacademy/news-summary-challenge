@@ -1,0 +1,26 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #F2DFCE;
+    text-align: center;
+    margin: 0 auto; 
+}
+
+
+form { 
+    text-align: center;
+    margin: 0 auto; 
+    width:200px;
+    }
+
+img {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; 
+    width: 250px; 
+    }
+
+.summary {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: smaller;
+}
