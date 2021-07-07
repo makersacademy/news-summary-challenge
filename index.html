@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <script src="assert.js"></script>
+ <script src="article.js"></script>
+ <script src="test-article.js"></script>
+ <script src="article-list.js"></script>
+ <script src="test-article-list.js"></script>
+ <script src="article-view.js"></script>
+ <script src="test-article-view.js"></script>
+ <link rel="stylesheet" href="style.css">
+ </head>
+
+
+<body>
+  <h1 class="header"><center>Your News Web-App</center></h1>
+  <button style="none" class="loadup" onclick="loadUp()">LOAD NEWS</button>
+  <form action="/" method="GET">
+    <button onclick="goHome()" class="gohome">SUMMARY</button>
+  </form>
+  <div id="space>"></div>
+  <div id="summary"></div>
+</body>
+
+
+</html>
+
+<script src="controller.js"></script>
+ <script src="test-controller.js"></script>
+  <script src="single-piece-viewer.js"></script>
+ <script src="test-single-piece-viewer.js"></script>
+ <script>window.onload = function() {
+  summaryButton = document.getElementsByClassName("gohome")[0]
+  summaryButton.style.visibility = 'hidden'
+};
+</script>
