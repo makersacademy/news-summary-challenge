@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id = "app"></div>
+    <script src = './src/news-headline.js'></script>
+    <script src = './src/news-headlines-list.js'></script>
+    <script src = './src/news-headlines-list-view.js'></script>
+    <script>
+    var list = new NewsHeadlinesList(NewsHeadline, 'https://content.guardianapis.com/politics?order-by=newest&api-key=f67ebf16-cebc-42d4-bfad-a91971cd21f5');
+    console.log('1')
+    console.log('2')
+      list.fetchData()
+      .then(function(aList){
+        var listView = new NewsHeadlinesListView(aList);
+        console.log('4')
+        document.getElementById("app").innerHTML = listView.view();
+        console.log('5')
+      })
+      
+
+  
+
+
+
+    </script>
+  </body>
+</html>
