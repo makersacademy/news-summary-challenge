@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The News</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src= 'test/test_framework.js'></script>
+    <script src= 'src/controller/controller.js'></script>
+    <script src= 'test/feature_tests/hasNewArticleTest.js'></script>
+   <script src= 'src/models/article.js'></script>
+  </body>
+  </head>
+  <body onload="onLoad()">
+    <h1 id="article"> The News today:</h1>
+    <div class='articlebox'>
+      <h2> News List </h2>
+      <ul id='articlelist'></ul>
+    </div>
+    <div class='articleBody' id="articleBody" ></div>
+    <div id="div1"></div>
+    <iframe id="image" src="https://newsapi.org/v2/top-headlines?sources=the-guardian-uk&apiKey="+ API_KEY width="700" height="800"></iframe>
+    <p> <a href="https://newsapi.org">Powered by News API</a></p>
+    <iframe src="http://www.bbc.co.uk/news/blogs/trending" width="800" height="500"></iframe>
+  </body>
+</html>
