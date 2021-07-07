@@ -1,0 +1,24 @@
+#header, #footer{
+    height: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+#footer{
+    position: fixed;
+    bottom: 0px;
+}
+.wrap{
+    white-space: normal !important;
+}
+#detImg img{
+    /* width: 100%; */
+}
+
+#master {
+    background-image: url("https://wallpaperaccess.com/full/662640.jpg");
+}
+#detail {
+    background-image: url("https://logosolusa.com/wp-content/uploads/parser/Telecommunications-from-Germany-Logo-1.jpg");
+
+}

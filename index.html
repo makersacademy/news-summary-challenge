@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Views</title>
+<script src="key.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" type="text/css" href="news_views.css">
+</head>
+<body>
+
+    <!-- Front page -->
+    <div data-role="page" id="master">
+
+        <div data-role="header" id="header">News Views</div>
+        <div data-role="content"><h1>News Views</h1></div>
+        <div id="stories">
+            <ul id="storyList" data-role="listview"></ul>
+            </div>
+            <div data-role="footer" id="footer">&copy; 2020 Magnegro Television Studios</div>
+    </div>
+
+    <!-- Full story page -->
+    <div data-role="page" id="detail">
+        <div data-role="header" id="header">News Views</div> 
+        <div data-role="content">
+            <div id="detTitle"></div>
+            <div id="detInfo"></div>
+            <div id="detImg"></div>
+            <div id="detStory"></div>
+            <div id="fullStoryLink"></div>
+            <a href="#master"><button>All stories</button></a>
+        </div>
+        <div data-role="footer" id="footer">&copy; 2020 Magnegro Television Studios</div>
+        </div>
+
+        <script src="app.js"></script>
+        <script src="/assert/assert.js"></script>
+        <script src="/spec/app-tests.js"></script>
+    
+</body>
+</html>
