@@ -1,0 +1,46 @@
+`{
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 2165111,
+    "startIndex": 1,
+    "pageSize": 10,
+    "currentPage": 1,
+    "pages": 216512,
+    "orderBy": "newest",
+    "results": [
+      {
+        "id": "uk-news/2020/jan/12/harry-and-meghan-seek-global-trademark-sussex-royal-brand",
+        "type": "article",
+        "sectionId": "uk-news",
+        "sectionName": "UK news",
+        "webPublicationDate": "2020-01-12T14:59:10Z",
+        "webTitle": "Harry and Meghan seek global trademark for 'Sussex Royal' brand",
+        "webUrl": "https://www.theguardian.com/uk-news/2020/jan/12/harry-and-meghan-seek-global-trademark-sussex-royal-brand",
+        "apiUrl": "https://content.guardianapis.com/uk-news/2020/jan/12/harry-and-meghan-seek-global-trademark-sussex-royal-brand",
+        "fields": {
+          "thumbnail": "https://media.guim.co.uk/009ead9ae11d4c5d56bd8684d5559b4b51adf0da/0_319_4783_2870/500.jpg"
+        },
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "world/2020/jan/12/iran-riot-police-anti-government-backlash-ukraine",
+        "type": "article",
+        "sectionId": "world",
+        "sectionName": "World news",
+        "webPublicationDate": "2020-01-12T14:50:30Z",
+        "webTitle": "Iran deploys riot police as backlash against government grows",
+        "webUrl": "https://www.theguardian.com/world/2020/jan/12/iran-riot-police-anti-government-backlash-ukraine",
+        "apiUrl": "https://content.guardianapis.com/world/2020/jan/12/iran-riot-police-anti-government-backlash-ukraine",
+        "fields": {
+          "thumbnail": "https://media.guim.co.uk/6bbb9da43fab99a678b7686dc4db1f0165fecea3/0_84_4019_2411/500.jpg"
+        },
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+    ]
+  }
+}`

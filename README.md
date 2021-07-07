@@ -1,3 +1,5 @@
+if anyone is assessing this, give me until Tuesday and this will be fully tested with mocks etc (had a busy weekend!)
+
 # News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
