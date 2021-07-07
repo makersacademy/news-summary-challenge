@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>VooDoo</title>
+    <link rel="stylesheet" type="text/css" href="public/voodooStyle.css">
+    <!-- The testing jewels -->
+    <script src="lib/VooDoo.js"></script>
+
+    <!-- Files to be tested -->
+    <script src="src/articleID.js"></script>
+    <script src="src/articleModel.js"></script>
+    <script src="src/articleListModel.js"></script>
+    <script src="src/articleListView.js"></script>
+    <script src="src/articleView.js"></script>
+
+    <!-- Test files -->
+    <script src="spec/articleSpec.js"></script>
+    <script src="spec/articleListSpec.js"></script>
+    <script src="spec/articleIDSpec.js"></script>
+    <script src="spec/articleListViewSpec.js"></script>
+    <script src="spec/articleViewSpec.js"></script>
+
+  </head>
+  <body>
+    <h1 style="font-size:48px;color:purple;font-family:Palatino">VooDoo</h1>
+    <img src="public/VOODOO.png" class="voodoo_face">
+    <h2 style="font-size:24px;color:purple;font-family:courier">
+      <script> if ((passList.length + failList.length) > 0) {
+        document.write('TESTS RAN: ' + (passList.length + failList.length))
+        }
+      </script>
+    </h2>
+
+    <p style="font-size:18px;color:firebrick;font-family:courier">
+      <script> if (failedTests === 1) {
+        document.write(failedTests + ' FAIL')
+      } else if (failedTests !== 0){
+        document.write(failedTests + ' FAILS')
+      }
+      </script>
+    </p>
+
+    <p>
+      <script>
+        failList.forEach(function(el) {
+          document.write('<div style=font-family:courier;font-size:16px;color:' + testPrF(el.test) + '><p>' + el.test +
+          "<br><p style= 'padding-left: 4%;font-size: 13px'>" + el.trace + "</p><br>" + '</p></div>')
+        })
+      </script>
+    </p>
+
+    <p style="font-size:18px;color:forestgreen;font-family:courier">
+      <script> if (passedTests === 1) {
+        document.write(passedTests + ' PASS')
+      } else if (passedTests !== 0){
+        document.write(passedTests + ' PASSES')
+      }
+      </script>
+    </p>
+
+    <p>
+      <script>
+        passList.forEach(function(el) {
+          document.write('<div style=font-family:courier;font-size:16px;color:' + testPrF(el.test) + '><p>' + el.test + "<br>" + '</p></div>')
+        })
+      </script>
+    </p>
+
+    <div id="circle00"> </div>
+    <div id="circle01"> </div>
+    <div id="circle02"> </div>
+    <div id="circle03"> </div>
+    <div id="bgrect00"> </div>
+    <div id="bgrect01"> </div>
+    <div id="bgrect02"> </div>
+    <div id="bgrect03"> </div>
+    <div id="bgrect04"> </div>
+    <div id="bgrect05"> </div>
+  </body>
+</html>

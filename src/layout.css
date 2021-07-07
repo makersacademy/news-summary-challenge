@@ -1,0 +1,35 @@
+body {
+  margin: 2% 10%;
+  padding:0;
+  font: 100%/1.3 arial,helvetica,sans-serif;
+  background: #3C165B;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 19% 19% 19%;
+  grid-gap: 10px;
+  background-color: #3C165B;
+  color: #444;
+}
+
+.box {
+  background-color: #9ad0d6;
+  color: #444;
+  border-radius: 2vmin;
+  padding: 1.8vmin;
+  font-size: 200%;
+  outline: none;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.a {
+  grid-column: 1 / 8;
+  grid-row: 1 / 5
+}
+
+.b {
+  grid-column: 1 / 8;
+  grid-row: 5 / 60;
+}
