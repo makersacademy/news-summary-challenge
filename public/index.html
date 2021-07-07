@@ -1,0 +1,85 @@
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <h1 style="text-align: center; color: white;">This is a New App</h1>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="js/news.js"></script>
+    <h2 style="text-align: center; color: white;">Latest Political Headlines</h2>
+<div class="list-element">
+    <h2><div id="name" style="text-align: center; display: block; line-height: 30pt;"></div><ul style="list-style-type: none;"></ul></div></h2>
+</div>
+<button class="button" onclick="loadDoc()">See Headlines</button>
+
+
+    <script>
+
+    function loadDoc() {
+      removeHeadlines()
+        fetch('https://content.guardianapis.com/search?show-fields=bodyText%2Cthumbnail&show-elements=image&section=politics&api-key=3cb091b4-2661-48b5-932c-0bba1f68621e')
+         .then(function(response) {
+           return response.json();
+         })
+         .then(function(myJson) {
+           result = myJson.response.results
+           output = showObject(result)
+           printList(output)
+           showHeadlines()
+           });
+       }
+
+       function printList(output) {
+         for (let I = 0; I < output.length; I++) {
+         let resultList = "<li class='list-news' style='list-style-type: none;'>" + output[I] + "</a>" + "</li>"
+         document.getElementById("name").innerHTML += resultList
+        }
+      }
+
+       function showObject(obj) {
+      var result = [];
+      for (var p in obj) {
+        if( obj.hasOwnProperty(p) ) {
+          result.push('<div class="image"><img src="' + obj[p].fields.thumbnail + '"/></div><div class="headline"><a href="" id="' + p + '" onclick="showBody(id)">"' + obj[p].webTitle + '"</a></div><div class="summaryText"><p id="t' + p + '" style="display: none;"">"' + obj[p].fields.bodyText + '<br><br><a href="' + obj[p].webUrl + '">Link to Full Article<a/></p></div>')
+          }
+      }
+      return result;
+    }
+    function showBody(num) {
+      test = "t" + num + ""
+      event.preventDefault();
+      let x = document.getElementById(test);
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+      function showHeadlines() {
+        event.preventDefault();
+        let x = document.getElementById("name");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        function removeHeadlines(){
+          document.getElementById("name").innerHTML = "";
+        }
+
+    function changeURL() {
+     window.addEventListener('hashchange', function() {
+       console.log("the hash has changed!")
+       note = location.hash.split("#")[1]
+       console.log(note)
+        loadBody(note)
+     })
+    }
+</script>
+  </body>
+</html>
