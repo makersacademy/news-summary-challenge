@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Headlines</title>
+    <script src="./lib/api.js"></script>
+    <script src="./lib/headline-model.js"></script>
+    <script src="./lib/headline-list-model.js"></script>
+    <script src="./lib/headline-list-view.js"></script>
+    <script src="./lib/headline-controller.js"></script>
+    <script>
+      var api = new Api();
+      var list = new List();
+
+      api.get().then(function(response) {
+        response.forEach(function(article) {
+          list.add(article.headline, article.image);
+        });
+
+        var controller = new Controller(list);
+        controller.renderList();
+      });
+    </script>
+  </head>
+  <body>
+    <!-- page content -->
+    <div id="app">Loading</div>
+  </body>
+</html>
