@@ -13,14 +13,48 @@ const makeUrlChangeShowArticleForCurrentPage = () => {
 };
 
 const showArticleForCurrentPage = () => {
-  // Remove Headlines from DOM Tree
+  hideHeadlineLinks();
 
-  // showArticle(getArticle()) 
+  // showArticle(getArticle())
+  showArticle();
+
+  showBackButton();
 }
 
-const showArticle = () => {
+const showArticle = (article) => {
   let articlePosition = document.getElementsByClassName("article")[0];
+  articlePosition.innerHTML = "Here's an article";
+}
 
+const removeArticle = () => {
+  let articlePosition = document.getElementsByClassName("article")[0];
+  articlePosition.innerHTML = "";
+}
+
+const createBackButton = () => {
+  let backButtonElement = document.createElement('button');
+  let backButtonTextNode = document.createTextNode("back");
+  backButtonElement.appendChild(backButtonTextNode);
+  backButtonElement.setAttribute('id', "back-button");
+  backButtonElement.setAttribute('onclick', "event.preventDefault(); removeArticleAndShowHeadlines();");
+
+  return backButtonElement;
+}
+
+const showBackButton = () => {
+  let backButtonPosition = document.getElementsByClassName("back")[0];
+  let backButtonElement = createBackButton();
+  backButtonPosition.appendChild(backButtonElement);
+}
+
+const hideBackButton = () => {
+  document.getElementsByClassName("back")[0].innerHTML = "";
+}
+
+const removeArticleAndShowHeadlines = () => {
+  removeArticle();
+  hideBackButton();
+  showHeadlineLinks();
 }
 
 // HEADLINES //
@@ -53,4 +87,8 @@ const showHeadlineLinks = () => {
     let lineBreak = document.createElement('br');
     headlinesPosition.appendChild(lineBreak);
   }
+}
+
+const hideHeadlineLinks = () => {
+  document.getElementsByClassName("headlines")[0].innerHTML = "";
 }
