@@ -23,3 +23,27 @@ test.constructorName = "News Model";
   var news = new News();
   assert.isTrue( news.summary === "" );
 })();
+
+(function(){
+  test.description = "It should get headline";
+  var news = new News();
+  assert.isTrue( news.getHeadline() === "" );
+})();
+
+(function(){
+  test.description = "It should get sourceURL";
+  var news = new News();
+  assert.isTrue( news.getSourceURL() === "" );
+})();
+
+(function(){
+  test.description = "It should get imageURL";
+  var news = new News();
+  assert.isTrue( news.getImageURL() === "" );
+})();
+
+(function(){
+  test.description = "It should get summary";
+  var news = new News();
+  assert.isTrue( news.getSummary() === "" );
+})();
