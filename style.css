@@ -1,0 +1,98 @@
+
+html {
+  background-color: #252525;
+
+}
+
+body {
+  background-color: #252525;
+  width: 800%;
+	max-width: 700px;
+  margin: auto;
+}
+
+head {
+  width: 800%;
+  max-width: 700px;
+  margin: auto;
+  background-color: #252525;
+}
+
+h1 {
+  color: #2b2525;
+  background-color: #2b2525;
+}
+
+ul {
+  color: #2b2525;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a:link {
+  text-align: center;
+  color: #fAf6E3;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* visited link */
+a:visited {
+  text-align: center;
+  color: #fAf6E3;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+.modal {
+  color: #fAf6E3;
+  display: none; /* Hidden by default */
+  z-index: 1; /* Sit on top */
+  padding-top: 0px; /* Location of the box */
+  left: 0;
+  overflow: auto; /* Enable scroll if needed */
+  /* background-color: #2b2525; /* Fallback color */
+  background-color: #2b2525;
+  width: 300px;
+  /* height: 400px; */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+
+.modal_para {
+  background-color: #2b2525;
+  position: center;
+  color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #f752e0;
+  width: 80%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.coneImage {
+  width: 10%;
+  height: auto;
+  margin: 10px;
+}
+
+.center {
+	position: relative;
+	text-align: center;
+	margin-top: 0cm;
+  margin-bottom: 0cm;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 5px;
+}
+.grid-item {
+  padding: 10px;
+  text-align: center;
+}
