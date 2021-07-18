@@ -1,4 +1,7 @@
 'use strict';
+
+// const guardian = new Guardian();
+const guardian = new MockGuardian();
 let headlines;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -14,16 +17,19 @@ const makeUrlChangeShowArticleForCurrentPage = () => {
 
 const showArticleForCurrentPage = () => {
   hideHeadlineLinks();
-
-  // showArticle(getArticle())
-  showArticle();
+  //test url for now
+  let url = "http://content.guardianapis.com/100-teachers/2021/mar/26/sport-and-science-theyre-a-natural-match-for-this-creative-teacher";
+  showArticle(url);
 
   showBackButton();
 }
 
-const showArticle = (article) => {
-  let articlePosition = document.getElementsByClassName("article")[0];
-  articlePosition.innerHTML = "Here's an article";
+const showArticle = (url) => {
+  // need to remove https of the apiUrl and convert to http.
+  guardian.getArticleData(url).then(data => {
+    let rendered = guardian.renderArticle(data);
+    document.getElementsByClassName("article")[0].innerHTML = rendered;
+  })
 }
 
 const removeArticle = () => {
