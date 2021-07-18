@@ -1,13 +1,9 @@
-const webNews = document.querySelector('.news')
-
-const apiNews = "https://content.guardianapis.com/politics?&show-fields=thumbnail&api-key=test"
-
-// function urlApi(url) {
-// 	const sum = `http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${url}`;
-// 	return sum
-// }
-
-
+const webNews = document.querySelector('.news');
+const apiNews = "https://content.guardianapis.com/politics?&show-fields=thumbnail&api-key=test";
+const modal = document.querySelector('.modal')
+const modalBg = document.querySelector('.modal-bg');
+const fullImg = document.querySelector('.full-img');
+const sumText = document.querySelector('.sum-text')
 
 async function getNews() {
 	const response = await fetch(apiNews);
@@ -16,8 +12,10 @@ async function getNews() {
 }
 
 
+
 (async () => {
 	for(let i = 0; i < 10; i++) {
+
 
 		data = (await getNews()).response.results[i];
 
@@ -33,13 +31,7 @@ async function getNews() {
 		const url = document.createElement('a');
   	url.href = data.webUrl;
 		url.innerText = 'Original article';
-
 		webNews.appendChild(url);
-
-		// title.addEventListener('click', {
-			
-		// })
-
 
 		const newUrl = `http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${data.webUrl}`
 
@@ -49,10 +41,34 @@ async function getNews() {
 			return data;
 		}
 
+		// (async () => {
+		// 	data = await getSum();
+		// 	text = data.sentences.join();
+		// })()
+
+		// adding a modal window with summary and img
+		
+		title.addEventListener('click', function(){
+			modalBg.classList.add('bg-active');
+			fullImg.src = img.src;
+			
+			
 		(async () => {
-			data = await getSum()
-			console.log(data.sentences.join())
-		})()
+		  	data = await getSum();
+				text = data.sentences.join();
+				sumText.innerText = text;
+			})()
+		}
+	);
+
+		window.addEventListener('click', function(e){
+			if (e.target == modalBg) {
+			modalBg.classList.remove('bg-active');
+		}
+		});
+
+	
+	
 	}
 })()
 
