@@ -32,6 +32,11 @@ const showArticle = (url) => {
     let rendered = guardian.renderArticle(data);
     document.getElementsByClassName("article")[0].innerHTML = rendered;
   })
+
+  guardian.getArticleSummaryData(url).then(data => {
+    let renderedSummary = guardian.renderArticleSummary(data);
+    document.getElementsByClassName("article-body")[0].innerHTML = renderedSummary;
+  })
 }
 
 const removeArticle = () => {

@@ -2,31 +2,31 @@
 
 class Guardian {
   getArticleData = (url) => {
-    return fetch(`http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=${url}?show-fields=body`).then(response => {
+    return fetch(`http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=${url}?show-fields=body&show-fields=thumbnail`).then(response => {
       return response.json();
     })
   }
 
   renderArticle = (data) => {
     let articleHeadingHTML = `<h2 class="headline">${data.response.content.webTitle}</h2>`;
-    let articleBodyHTML = `<section><p class="article-text">${data.response.content.fields.body}</p></section>`;
+    let articleThumbnailHTML = `<div><img src="${data.response.content.fields.thumbnail}" /></div>`;
+    let articleBodyPlaceholder = `<div class='article-body'></div>`;
 
-    return `${articleHeadingHTML}${articleBodyHTML}`;
+    return `${articleHeadingHTML}${articleThumbnailHTML}${articleBodyPlaceholder}`;
   }
 
-  getArticleSummary = (webUrl) => {
+  getArticleSummaryData = (webUrl) => {
     return fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${webUrl}`).then(response => {
       return response.json();
     })
   }
 
   renderArticleSummary = (data) => {
-    let articleHeadingHTML = "No header yet"
-    let articleBodyHTML = `<section><p class="article-text">${data.sentences}</p></section>`;
+    let articleBodyHTML = `<section><p class="article-text">${data.sentences.join(" ")}</p></section>`;
 
-    return `${articleHeadingHTML}${articleBodyHTML}`;
+    return `${articleBodyHTML}`;
   }
-
+  
   getHeadlinesData = () => {
     return fetch(`http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics?show-most-viewed=true&page-size=10&show-fields=thumbnail`).then(response => {
       return response.json();
