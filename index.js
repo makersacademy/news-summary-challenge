@@ -2,23 +2,26 @@ const webNews = document.querySelector('.news')
 
 const apiNews = "https://content.guardianapis.com/politics?&show-fields=thumbnail&api-key=test"
 
-// const apiSum = `http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${}`
+// function urlApi(url) {
+// 	const sum = `http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${url}`;
+// 	return sum
+// }
+
 
 
 async function getNews() {
 	const response = await fetch(apiNews);
   const data = await response.json();
-	console.log(data)
 	return data;
 }
 
-getNews();
 
 (async () => {
 	for(let i = 0; i < 10; i++) {
 
 		data = (await getNews()).response.results[i];
 
+		thisUrl = data.webUrl;
 		const img = document.createElement('img');
 		img.src = data.fields.thumbnail;
 		webNews.appendChild(img);
@@ -33,15 +36,26 @@ getNews();
 
 		webNews.appendChild(url);
 
-		// As a busy politician
-		// I can click a news headline to see a summary and a photo of the news article
-		// So that I can get an in depth understanding of a very important story
-		
-		title.addEventListener('click', () => {
+		// title.addEventListener('click', {
+			
+		// })
 
-		})
 
+		const newUrl = `http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${data.webUrl}`
+
+		async function getSum() {
+			const response = await fetch(newUrl);
+			const data = await response.json();
+			return data;
+		}
+
+		(async () => {
+			data = await getSum()
+			console.log(data.sentences.join())
+		})()
 	}
 })()
+
+
 
 

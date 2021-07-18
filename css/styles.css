@@ -10,6 +10,9 @@ html {
 
 h1 {
   text-align: center;
+  font-size: 4rem;
+  color: rgb(34, 131, 134);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 body {
   background: beige;
