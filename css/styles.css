@@ -48,10 +48,18 @@ body {
 .modal {
   font-family: 'Montserrat', sans-serif;
   background-color: white;
-  width: 50%;
+  width: 60%;
   height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.sum-text {
+  font-size: 1.5rem;
+}
+
+.sum-title {
+  font-size: 2rem;
 }
