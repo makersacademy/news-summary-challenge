@@ -1,6 +1,6 @@
 test.constructorName = "News Model";
 
-(function(){
+(function(){ // HAVE
   test.description = "It should have headline property";
   var news = new News();
   assert.isTrue( news.headline === "" );
@@ -24,7 +24,7 @@ test.constructorName = "News Model";
   assert.isTrue( news.summary === "" );
 })();
 
-(function(){
+(function(){ // GET
   test.description = "It should get headline";
   var news = new News();
   assert.isTrue( news.getHeadline() === "" );
@@ -48,7 +48,7 @@ test.constructorName = "News Model";
   assert.isTrue( news.getSummary() === "" );
 })();
 
-(function(){
+(function(){ // SET
   test.description = "It should set summary";
   var news = new News();
   var text = "This is a summary.";

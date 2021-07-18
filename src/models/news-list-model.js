@@ -1,12 +1,16 @@
 (function(exports){
 
-  function NewsList(){
-    this.allNews = [];
+  class NewsList {
+    constructor() {
+      this.allNews = [];
+    }
+    getAllNews(news) {
+      return this.allNews;
+    }
+    addNews(news) {
+      this.allNews.push(news);
+    }
   }
-
-  NewsList.prototype.addNews = function(news){
-    this.allNews.push(news)
-  };
 
   exports.NewsList = NewsList;
 
