@@ -58,4 +58,70 @@ class MockGuardian {
     return `${articleHeadingHTML}${articleBodyHTML}`;
   }
 
+  getHeadlinesData = () => {
+    const successObject = {
+      "response":{
+        "status":"ok",
+        "userTier":"developer",
+        "total":109608,
+        "startIndex":1,
+        "pageSize":10,
+        "currentPage":1,
+        "pages":10961,
+        "results": "Not this",
+        "mostViewed":[
+          // why is the thumbnail missing in real example?...Why is the fields missing? Imagine we had it...
+          {"id":"politics/2021/jul/18/priti-patel-misled-mps-over-plans-for-protest-crackdown",
+          "type":"article",
+          "sectionId":"politics",
+          "sectionName":"Politics",
+          "webPublicationDate":"2021-07-18T05:30:21Z",
+          "webTitle":"Priti Patel ‘misled’ MPs over plans for protest crackdown",
+          "webUrl":"https://www.theguardian.com/politics/2021/jul/18/priti-patel-misled-mps-over-plans-for-protest-crackdown",
+          "apiUrl":"https://content.guardianapis.com/politics/2021/jul/18/priti-patel-misled-mps-over-plans-for-protest-crackdown",
+          "isHosted":false,
+          "pillarId":"pillar/news",
+          "pillarName":"News",
+          "fields": {"thumbnail": "https://media.guim.co.uk/c1b3265f9827aa80d734c99e73ae86870c1ee4fc/0_102_4000_2401/500.jpg"}},
+          
+          {"id":"politics/2021/jul/17/tory-jitters-mount-at-political-drift-of-boris-johnsons-government","type":"article","sectionId":"politics","sectionName":"Politics","webPublicationDate":"2021-07-17T06:00:53Z","webTitle":"Tory jitters mount at political drift of Boris Johnson’s government ","webUrl":"https://www.theguardian.com/politics/2021/jul/17/tory-jitters-mount-at-political-drift-of-boris-johnsons-government","apiUrl":"https://content.guardianapis.com/politics/2021/jul/17/tory-jitters-mount-at-political-drift-of-boris-johnsons-government","isHosted":false,"pillarId":"pillar/news","pillarName":"News", "fields": {"thumbnail": "https://media.guim.co.uk/f783b604c1773dab1f9fda8567a3d0c0dbcca28d/0_385_5121_3073/500.jpg"}},
+          
+          {"id":"politics/2021/jul/18/one-in-five-whitehall-non-executive-directors-have-links-to-political-parties","type":"article","sectionId":"politics","sectionName":"Politics","webPublicationDate":"2021-07-18T06:45:22Z","webTitle":"One in five Whitehall non-executive directors have links to political parties","webUrl":"https://www.theguardian.com/politics/2021/jul/18/one-in-five-whitehall-non-executive-directors-have-links-to-political-parties","apiUrl":"https://content.guardianapis.com/politics/2021/jul/18/one-in-five-whitehall-non-executive-directors-have-links-to-political-parties","isHosted":false,"pillarId":"pillar/news","pillarName":"News", "fields": {"thumbnail": "https://media.guim.co.uk/4e9ac9d6087c4075ebce511a94a7175d02acd694/0_80_3808_2285/500.jpg"}},
+          
+          {"id":"politics/2021/jul/17/sajid-javid-uk-health-secretary-tests-positive-for-covid","type":"article","sectionId":"politics","sectionName":"Politics","webPublicationDate":"2021-07-17T15:37:25Z","webTitle":"Sajid Javid, England’s health secretary, tests positive for Covid","webUrl":"https://www.theguardian.com/politics/2021/jul/17/sajid-javid-uk-health-secretary-tests-positive-for-covid","apiUrl":"https://content.guardianapis.com/politics/2021/jul/17/sajid-javid-uk-health-secretary-tests-positive-for-covid","isHosted":false,"pillarId":"pillar/news","pillarName":"News", "fields": {"thumbnail": "https://media.guim.co.uk/158a82f78c50bc3f684fd601d066de42d98f94c4/0_0_2601_1560/500.jpg"}},
+          
+          {"id":"politics/live/2021/jul/16/uk-covid-live-hospitalisation-numbers-chris-whitty-coronavirus-latest-updates","type":"liveblog","sectionId":"politics","sectionName":"Politics","webPublicationDate":"2021-07-16T17:41:32Z","webTitle":"UK Covid: new cases pass 50,000 for first time since mid-January with 1 in 95 in England testing positive last week – as it happened","webUrl":"https://www.theguardian.com/politics/live/2021/jul/16/uk-covid-live-hospitalisation-numbers-chris-whitty-coronavirus-latest-updates","apiUrl":"https://content.guardianapis.com/politics/live/2021/jul/16/uk-covid-live-hospitalisation-numbers-chris-whitty-coronavirus-latest-updates","isHosted":false,"pillarId":"pillar/news","pillarName":"News", "fields": {"thumbnail": "https://media.guim.co.uk/fa99de7782bea996d2bf218018ccddef883aabb4/0_335_7548_4529/500.jpg"}},
+          
+          {"id":"politics/2021/jul/16/johnson-to-press-ahead-with-lifting-covid-rules-despite-worry-over-case-numbers","type":"article","sectionId":"politics","sectionName":"Politics","webPublicationDate":"2021-07-17T10:13:29Z","webTitle":"Johnson to press ahead with lifting Covid rules despite worry over case numbers","webUrl":"https://www.theguardian.com/politics/2021/jul/16/johnson-to-press-ahead-with-lifting-covid-rules-despite-worry-over-case-numbers","apiUrl":"https://content.guardianapis.com/politics/2021/jul/16/johnson-to-press-ahead-with-lifting-covid-rules-despite-worry-over-case-numbers","isHosted":false,"pillarId":"pillar/news","pillarName":"News", "fields": {"thumbnail": "https://media.guim.co.uk/dfd86f9f984e905a9fe75eaf9a3f82a707063481/0_171_5184_3110/500.jpg"}},
+          
+          {"id":"politics/2021/jul/11/ministry-of-defence-under-fire-for-inventing-rules-wildlife-haven-middlewick-ranges","type":"article","sectionId":"politics","sectionName":"Politics","webPublicationDate":"2021-07-11T10:15:42Z","webTitle":"Ministry of Defence under fire for ‘inventing rules’ to sell wildlife haven","webUrl":"https://www.theguardian.com/politics/2021/jul/11/ministry-of-defence-under-fire-for-inventing-rules-wildlife-haven-middlewick-ranges","apiUrl":"https://content.guardianapis.com/politics/2021/jul/11/ministry-of-defence-under-fire-for-inventing-rules-wildlife-haven-middlewick-ranges","isHosted":false,"pillarId":"pillar/news","pillarName":"News", "fields": {"thumbnail": "https://media.guim.co.uk/71aa23ab7c44078aa827a67717f37f0c37c38870/0_129_3555_2133/500.jpg"}},
+          
+          {"id":"politics/2021/jul/15/nine-mps-free-euro-2020-tickets-gambling-companies","type":"article","sectionId":"politics","sectionName":"Politics","webPublicationDate":"2021-07-15T10:23:29Z","webTitle":"Nine MPs accepted free Euro 2020 tickets from gambling companies","webUrl":"https://www.theguardian.com/politics/2021/jul/15/nine-mps-free-euro-2020-tickets-gambling-companies","apiUrl":"https://content.guardianapis.com/politics/2021/jul/15/nine-mps-free-euro-2020-tickets-gambling-companies","isHosted":false,"pillarId":"pillar/news","pillarName":"News", "fields": {"thumbnail": "https://media.guim.co.uk/eec6d7d01fd3a44ba24af29ba3ea77fa0892dbba/257_501_1836_1102/500.jpg"}},
+          
+          {"id":"politics/2021/jun/26/blow-to-johnson-authority-as-health-secretary-loses-all-support","type":"article","sectionId":"politics","sectionName":"Politics","webPublicationDate":"2021-06-26T21:44:28Z","webTitle":"Blow to Johnson’s authority as his health minister loses all support","webUrl":"https://www.theguardian.com/politics/2021/jun/26/blow-to-johnson-authority-as-health-secretary-loses-all-support","apiUrl":"https://content.guardianapis.com/politics/2021/jun/26/blow-to-johnson-authority-as-health-secretary-loses-all-support","isHosted":false,"pillarId":"pillar/news","pillarName":"News", "fields": {"thumbnail": "https://media.guim.co.uk/1432dc95ac0da095a3c86aa088e32cbf30c7d509/0_140_3762_2257/500.jpg"}},
+          
+          {"id":"politics/2021/jul/15/ex-bullingdon-club-member-appointed-to-whitehalls-sleaze-watchdog","type":"article","sectionId":"politics","sectionName":"Politics","webPublicationDate":"2021-07-15T20:49:08Z","webTitle":"Ex-Bullingdon Club member appointed to Whitehall’s sleaze watchdog","webUrl":"https://www.theguardian.com/politics/2021/jul/15/ex-bullingdon-club-member-appointed-to-whitehalls-sleaze-watchdog","apiUrl":"https://content.guardianapis.com/politics/2021/jul/15/ex-bullingdon-club-member-appointed-to-whitehalls-sleaze-watchdog","isHosted":false,"pillarId":"pillar/news","pillarName":"News", "fields": {"thumbnail": "https://media.guim.co.uk/8dcb92d2a4fcc32e1f190ffe46a5368a34338e58/264_392_2180_1308/500.jpg"}},
+          
+          {"id":"politics/2021/jul/16/labour-accuses-gove-lying-extent-vetting-ppe-deals","type":"article","sectionId":"politics","sectionName":"Politics","webPublicationDate":"2021-07-16T14:09:32Z","webTitle":"Labour accuses Gove of lying about extent of vetting for PPE deals","webUrl":"https://www.theguardian.com/politics/2021/jul/16/labour-accuses-gove-lying-extent-vetting-ppe-deals","apiUrl":"https://content.guardianapis.com/politics/2021/jul/16/labour-accuses-gove-lying-extent-vetting-ppe-deals","isHosted":false,"pillarId":"pillar/news","pillarName":"News", "fields": {"thumbnail": "https://media.guim.co.uk/84ec722fd336f54296bf670c442840f4a207dcc7/50_107_1896_1137/500.jpg"}},
+          
+          {"id":"politics/2021/jul/14/sian-berry-quits-as-green-party-leader-in-dispute-over-trans-rights","type":"article","sectionId":"politics","sectionName":"Politics","webPublicationDate":"2021-07-14T15:16:45Z","webTitle":"Siân Berry quits as Green party leader in dispute over trans rights","webUrl":"https://www.theguardian.com/politics/2021/jul/14/sian-berry-quits-as-green-party-leader-in-dispute-over-trans-rights","apiUrl":"https://content.guardianapis.com/politics/2021/jul/14/sian-berry-quits-as-green-party-leader-in-dispute-over-trans-rights","isHosted":false,"pillarId":"pillar/news","pillarName":"News", "fields": {"thumbnail": "https://media.guim.co.uk/1435d079179a69f12c1dbfe5afc463f6cb159dc9/0_110_4500_2700/500.jpg"}},
+          
+        ]
+      }
+    }
+
+    const myPromise = new Promise ((resolve, reject) => {
+      resolve(successObject);
+    })
+
+    return myPromise;
+  }
+
+  renderHeadlines = (data) => {
+    let articleHeadingHTML = `<h2 class="headline">${data.response.content.webTitle}</h2>`;
+    let articleBodyHTML = `<section><p class="article-text">${data.response.content.fields.body}</p></section>`;
+
+    return `${articleHeadingHTML}${articleBodyHTML}`;
+  }
+
 }

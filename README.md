@@ -149,3 +149,13 @@ If you're interested, you can see the code for the News Summary API in this repo
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+
+# My Solution
+
+## My Approach
+* Used <a href="https://open-platform.theguardian.com/explore/">Guardian Open Platform</a> to explore the API data.
+* 
+
+## Qs
+* when using Makers News Summary API, thumbnail isn't retrieved? - I stubbed it instead.
+
