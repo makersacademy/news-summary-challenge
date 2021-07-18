@@ -14,6 +14,7 @@ const makeUrlChangeShowArticleForCurrentPage = () => {
 };
 
 const showArticleForCurrentPage = () => {
+  // function that scrolls back up to the top here. 
   hideHeadlineLinks();
   showArticle(getApiUrlFromUrl(window.location));
   showBackButton();
@@ -21,7 +22,7 @@ const showArticleForCurrentPage = () => {
 
 const getApiUrlFromUrl = (location) => {
   let apiUrl = location.hash.split("#")[1];
-  // need to remove https of the apiUrl and convert to http.
+  // remove https of the apiUrl and convert to http.
   let makersApiUrl = apiUrl.replace('https', 'http');
   return makersApiUrl;
 }
@@ -98,10 +99,12 @@ const createHeadlineElements = (webTitle, apiUrl, thumbnail) => {
 }
 
 const createHeadlineThumbnail = (thumbnail) => {
+  let divElement = document.createElement('div');
   let imageElement = document.createElement('img');
   imageElement.setAttribute('src', `${thumbnail}`);
-
-  return imageElement;
+  divElement.setAttribute('class', 'headline-thumbnails');
+  divElement.appendChild(imageElement);
+  return divElement;
 }
 
 // Shows all Headline Links on page given headlines is an array of all the headlines. 
