@@ -156,6 +156,9 @@ If you're interested, you can see the code for the News Summary API in this repo
 * Used <a href="https://open-platform.theguardian.com/explore/">Guardian Open Platform</a> to explore the API data.
 * 
 
-## Qs
-* when using Makers News Summary API, thumbnail isn't retrieved? - I stubbed it instead.
+## TODOs
+* when using Makers News Summary API, thumbnail isn't retrieved? - I stubbed it instead (imagine that I had it). Should sign up for a dev account and use a private API key.
+* functions that deal with data from Aylien API should probably be separated into its own class.
+* Improve structure of interface
+
 

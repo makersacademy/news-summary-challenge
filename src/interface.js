@@ -14,7 +14,7 @@ const makeUrlChangeShowArticleForCurrentPage = () => {
 };
 
 const showArticleForCurrentPage = () => {
-  // function that scrolls back up to the top here. 
+  window.scrollTo(0,0);
   hideHeadlineLinks();
   showArticle(getApiUrlFromUrl(window.location));
   showBackButton();
