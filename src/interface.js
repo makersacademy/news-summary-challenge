@@ -86,6 +86,7 @@ const createHeadlineElement = (headline) => {
 
 // Shows all Headline Links on page given headlines is an array of all the headlines. 
 const showHeadlineLinks = () => {
+  document.querySelector('.headlines-header').style.visibility = 'visible';
   let headlinesPosition = document.getElementsByClassName("headlines")[0];
   for (let headline of headlines) {
     let headlineElement = createHeadlineElement(headline);
@@ -96,5 +97,6 @@ const showHeadlineLinks = () => {
 }
 
 const hideHeadlineLinks = () => {
+  document.querySelector('.headlines-header').style.visibility = 'hidden';
   document.getElementsByClassName("headlines")[0].innerHTML = "";
 }
