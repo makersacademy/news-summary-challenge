@@ -8,10 +8,6 @@ This app grabs all the headlines from the Guardian newspaper API & displays them
 - CSS
 - HTML
 
-### Guidance
-
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
-
 ## User Stories
 
 ```
