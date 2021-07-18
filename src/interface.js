@@ -3,10 +3,10 @@
 // const guardian = new Guardian();
 const guardian = new MockGuardian();
 let headlines;
+const mrhead = new Headlines();
 
 document.addEventListener("DOMContentLoaded", () => {
   makeUrlChangeShowArticleForCurrentPage();
-  getHeadlines();
   showHeadlineLinks();
 })
 
@@ -67,33 +67,46 @@ const removeArticleAndShowHeadlines = () => {
 
 const getHeadlines = () => {
   // calls the function that fetches the headlines and articles
+  guardian.getHeadlinesData().then(data => setHeadlines(data.response.mostViewed));
+}
 
-  // makes a headlines array. 
-
-  // dummy headlines
-  headlines = ["apple", "banana", "carrot"];
+const setHeadlines = (mostViewedData) => {
+  for (let i = 0; i < 10; i++) {
+    let webTitle = mostViewedData[i].webTitle;
+    let webUrl = mostViewedData[i].webUrl;
+    let thumbnail = mostViewedData[i].fields.thumbnail;
+    
+    // Need to render headlines here!
+    createHeadlineElements(webTitle, webUrl, thumbnail);
+  }
 }
 
 // creates a HeadlineElement
-const createHeadlineElement = (headline) => {
+const createHeadlineElements = (webTitle, webUrl, thumbnail) => {
   let headlineElement = document.createElement('a');
-  let headlineTextNode = document.createTextNode(headline);
+  let headlineTextNode = document.createTextNode(webTitle);
   headlineElement.appendChild(headlineTextNode);
-  headlineElement.setAttribute('href', `#${headline}`);
+  headlineElement.setAttribute('href', `#${webUrl}`);
+  let imageElement = createHeadlineThumbnail(thumbnail);
 
-  return headlineElement;
+  let headlinesPosition = document.getElementsByClassName("headlines")[0];
+  headlinesPosition.appendChild(headlineElement);
+  headlinesPosition.appendChild(imageElement);
+  let lineBreak = document.createElement('br');
+  headlinesPosition.appendChild(lineBreak);
+}
+
+const createHeadlineThumbnail = (thumbnail) => {
+  let imageElement = document.createElement('img');
+  imageElement.setAttribute('src', `${thumbnail}`);
+
+  return imageElement;
 }
 
 // Shows all Headline Links on page given headlines is an array of all the headlines. 
 const showHeadlineLinks = () => {
   document.querySelector('.headlines-header').style.visibility = 'visible';
-  let headlinesPosition = document.getElementsByClassName("headlines")[0];
-  for (let headline of headlines) {
-    let headlineElement = createHeadlineElement(headline);
-    headlinesPosition.appendChild(headlineElement);
-    let lineBreak = document.createElement('br');
-    headlinesPosition.appendChild(lineBreak);
-  }
+  getHeadlines();
 }
 
 const hideHeadlineLinks = () => {
