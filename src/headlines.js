@@ -1,5 +1,6 @@
 'use strict';
 
+// NOT USED
 class Headlines {
   constructor() {
     this.topStories = []

@@ -1,5 +1,7 @@
 'use strict';
 
+// NOT USED
+
 describe("Headlines", () => {
   it("can store headlines given webTitle, webUrl, thumbnail", () => {
     let headlines = new Headlines();

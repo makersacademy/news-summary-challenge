@@ -2,8 +2,6 @@
 
 // const guardian = new Guardian();
 const guardian = new MockGuardian();
-let headlines;
-const mrhead = new Headlines();
 
 document.addEventListener("DOMContentLoaded", () => {
   makeUrlChangeShowArticleForCurrentPage();
@@ -17,15 +15,18 @@ const makeUrlChangeShowArticleForCurrentPage = () => {
 
 const showArticleForCurrentPage = () => {
   hideHeadlineLinks();
-  //test url for now
-  let url = "http://content.guardianapis.com/100-teachers/2021/mar/26/sport-and-science-theyre-a-natural-match-for-this-creative-teacher";
-  showArticle(url);
-
+  showArticle(getApiUrlFromUrl(window.location));
   showBackButton();
 }
 
-const showArticle = (url) => {
+const getApiUrlFromUrl = (location) => {
+  let apiUrl = location.hash.split("#")[1];
   // need to remove https of the apiUrl and convert to http.
+  let makersApiUrl = apiUrl.replace('https', 'http');
+  return makersApiUrl;
+}
+
+const showArticle = (url) => {
   guardian.getArticleData(url).then(data => {
     let rendered = guardian.renderArticle(data);
     document.getElementsByClassName("article")[0].innerHTML = rendered;
@@ -73,20 +74,20 @@ const getHeadlines = () => {
 const setHeadlines = (mostViewedData) => {
   for (let i = 0; i < 10; i++) {
     let webTitle = mostViewedData[i].webTitle;
-    let webUrl = mostViewedData[i].webUrl;
+    let apiUrl = mostViewedData[i].apiUrl;
     let thumbnail = mostViewedData[i].fields.thumbnail;
     
     // Need to render headlines here!
-    createHeadlineElements(webTitle, webUrl, thumbnail);
+    createHeadlineElements(webTitle, apiUrl, thumbnail);
   }
 }
 
 // creates a HeadlineElement
-const createHeadlineElements = (webTitle, webUrl, thumbnail) => {
+const createHeadlineElements = (webTitle, apiUrl, thumbnail) => {
   let headlineElement = document.createElement('a');
   let headlineTextNode = document.createTextNode(webTitle);
   headlineElement.appendChild(headlineTextNode);
-  headlineElement.setAttribute('href', `#${webUrl}`);
+  headlineElement.setAttribute('href', `#${apiUrl}`);
   let imageElement = createHeadlineThumbnail(thumbnail);
 
   let headlinesPosition = document.getElementsByClassName("headlines")[0];
