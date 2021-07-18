@@ -157,7 +157,7 @@ If you're interested, you can see the code for the News Summary API in this repo
 * `fetch` to access and manipulate API requests and responses.
 * Document Hashes - to retain single page.
 * Visualising DOM Tree Elements on paper (no diagram).
-* 
+
 
 ## TODOs
 * when using Makers News Summary API, thumbnail isn't retrieved? - I stubbed it instead (imagine that I had it). Should sign up for a dev account and use a private API key.
