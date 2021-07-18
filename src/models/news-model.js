@@ -25,6 +25,10 @@
     return this.summary
   };
 
+  News.prototype.setSummary = function(text){
+    this.summary = text
+  };
+
   exports.News = News;
 
 })(this);

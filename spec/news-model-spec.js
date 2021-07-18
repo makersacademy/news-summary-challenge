@@ -47,3 +47,11 @@ test.constructorName = "News Model";
   var news = new News();
   assert.isTrue( news.getSummary() === "" );
 })();
+
+(function(){
+  test.description = "It should set summary";
+  var news = new News();
+  var text = "This is a summary.";
+  news.setSummary(text);
+  assert.isTrue( news.summary === "This is a summary." );
+})();
