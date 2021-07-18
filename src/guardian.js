@@ -13,4 +13,18 @@ class Guardian {
 
     return `${articleHeadingHTML}${articleBodyHTML}`;
   }
+
+  getArticleSummary = (webUrl) => {
+    return fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${webUrl}`).then(response => {
+      return response.json();
+    })
+  }
+
+  renderArticleSummary = (data) => {
+    let articleHeadingHTML = "No header yet"
+    let articleBodyHTML = `<section><p class="article-text">${data.sentences}</p></section>`;
+
+    return `${articleHeadingHTML}${articleBodyHTML}`;
+  }
+
 }
