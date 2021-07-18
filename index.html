@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='public/style.css' rel='stylesheet' type='text/css'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <!-- include source files here... -->
   <!-- <script src='src/guardian.js'></script> -->
   <script src='src/mockGuardian.js'></script>
@@ -15,33 +18,36 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="title">News Summary App</h1>
-  </header>
+  <div class="content">
+    <header>
+      <h1 class="title">News Summary App</h1>
+    </header>
 
-  <main>
-    <article>
-      <div class="article">
-      <!-- Headline -->
-      <!-- <h2 class="headline"></h2> -->
-      <!-- Summary -->
-      <!-- <p class="summary"></p> -->
+        <!-- list of headlines go here -->
+    <nav class="container">
+      <div class="headlines-header"><h2>Top 10 Politics Stories Today</h2></div>
+      <div class="headlines"></div>
+    </nav>
 
-      <!-- <section> -->
-        <!-- article body -->
-        <!-- <p class="article-text"></p> -->
-      <!-- </section> -->
-      </div>
+    <main>
+      <article>
+        <div class="article">
+        <!-- Headline -->
+        <!-- <h2 class="headline"></h2> -->
+        <!-- Summary -->
+        <!-- <p class="summary"></p> -->
 
-      <div class="back"></div>
-    </article> 
-  </main>
+        <!-- <section> -->
+          <!-- article body -->
+          <!-- <p class="article-text"></p> -->
+        <!-- </section> -->
+        </div>
 
-  <!-- list of headlines go here -->
-  <nav>
-    <div class="headlines-header"><h2>Top 10 Politics Stories Today</h2></div>
-    <div class="headlines"></div>
-  </nav>
+        <div class="back"></div>
+      </article> 
+    </main>
+
+  </div>
 </body>
 
 </html>

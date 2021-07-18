@@ -28,6 +28,7 @@ const getApiUrlFromUrl = (location) => {
 }
 
 const showArticle = (url) => {
+  document.querySelector('.article').style.visibility = 'visible';
   guardian.getArticleData(url).then(data => {
     let rendered = guardian.renderArticle(data);
     document.getElementsByClassName("article")[0].innerHTML = rendered;
@@ -42,6 +43,7 @@ const showArticle = (url) => {
 const removeArticle = () => {
   let articlePosition = document.getElementsByClassName("article")[0];
   articlePosition.innerHTML = "";
+  document.querySelector('.article').style.visibility = 'hidden';
 }
 
 const createBackButton = () => {
@@ -115,10 +117,12 @@ const createHeadlineThumbnail = (thumbnail) => {
 // Shows all Headline Links on page given headlines is an array of all the headlines. 
 const showHeadlineLinks = () => {
   document.querySelector('.headlines-header').style.visibility = 'visible';
+  document.querySelector('.container').style.visibility = 'visible';
   getHeadlines();
 }
 
 const hideHeadlineLinks = () => {
   document.querySelector('.headlines-header').style.visibility = 'hidden';
+  document.querySelector('.container').style.visibility = 'hidden';
   document.getElementsByClassName("headlines")[0].innerHTML = "";
 }
