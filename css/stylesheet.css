@@ -9,17 +9,12 @@
   flex-direction: column;
   align-items: center;
   flex: 2;
-  width: 40%;
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
-  /* border-color: rgb(176, 191, 206); */
 }
 
 .news-list { 
-  width: 40%;
-  border-color: black;
-  border-width: 1px;
+  width: 60%;
+  border-color: rgb(176, 191, 206);
+  border-width: 0.5px;
   border-style: solid;
 }
 
