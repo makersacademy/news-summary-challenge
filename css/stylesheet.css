@@ -11,7 +11,15 @@
   flex: 2;
 }
 
-.news-list { 
+.news-list {
+  padding: 1rem;
+  min-height: 80vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: auto;
+  height: 400px;
   width: 60%;
   border-color: rgb(176, 191, 206);
   border-width: 0.5px;
