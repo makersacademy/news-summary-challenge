@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const headlines = await headlinesResponse; 
     for(let i = 0; i < 10; i ++) {
       const newDiv = document.createElement("div");
+      newDiv.classList.add("story");
       const imgTag = document.createElement("img")
       const imgLink = headlines[i]['fields']['thumbnail'];
       console.log(imgLink)
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   
-  // createCard(); 
+  createCard(); 
 
 
 });
