@@ -29,13 +29,23 @@
   border-style: solid;
 }
 
-.story { 
+.story {
+  font-family: 'Source Serif Pro', serif;
   background-color: #f1f8fc;
   margin-bottom: 5px;
+  display: flex;
+  box-shadow: 1px 1px rgb(197, 203, 209);
+  border-top-color:#c70000;
+  border-top-width: 0.5px;
+  border-top-style: solid;
 }
 
 .story img { 
-  height: 260px;
-  width: 330px;
+  height: 255px;
+  width: 345px;
   padding: 1rem;
+}
+
+.topic { 
+  color: #c70000;
 }
