@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "http-server": "^13.0.1"
+  }
+}
