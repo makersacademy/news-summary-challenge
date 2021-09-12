@@ -1,22 +1,25 @@
-var url = 'https://content.guardianapis.com/search?from-date=2021-09-12&to-date=2021-09-12&show-elements=image&api-key=test'
-let headlines = document.getElementById("headlines");
+// This array of arrays has titles, urls, and the snippet text from Aylien
 const masterListOfArticles = []
 
+
+// This class grabs the article titles
 class ArticleTitles {
 
-    constructor(){
-        this.listOfAllStories = []
-    }
-
+// This method calls the guardian via the test API and grabs the titles and urls
+// The test api doesn't have the body text, or image urls
+// Looks like the Maker's API has body text with urls within the body but you can't really grab that...
 getArticles() {
     let promise = fetch('https://content.guardianapis.com/search?from-date=2021-09-12&to-date=2021-09-12&show-elements=image&api-key=test')
     .then(response => response.json())
     .then(data => {
-        
-        console.log(data);
-        console.log(data.response.results.length);
-        console.log(data.response.results[0].webTitle)
-
+        // Test console logs
+        // Does it pull all the data?
+        // console.log(data);
+        // Does it return the response array? If yes, how long is it?
+        // console.log(data.response.results.length);
+        // Does the array item have a webTitle? 
+        // console.log(data.response.results[0].webTitle)
+        //
     for (let i = 0; i < data.response.results.length; i++) {
     masterListOfArticles.push([data.response.results[i].webTitle, data.response.results[i].webUrl])
     }
@@ -27,30 +30,22 @@ getArticles() {
 
 class ArticleSummaries {
 
+    // This is an array generated so that we can test what's getting generated in the _getSummaryAPIKey method
     constructor(){
         this.summaryAPIKeys = []
     }
 
-    getSummaryAPIKey() {
-        for (let i = 0; i < masterListOfArticles.length; i++)
-        {
-            //console.log(masterListOfArticles[i][1]);
-            //console.log(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${masterListOfArticles[i][1]}`);
-            this.summaryAPIKeys.push(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${masterListOfArticles[i][1]}`);
-            //return
-        }
-    }
-
+    // This grabs the API keys from Aylien and appends them to the master list
     addSummaryAPIKey() {
     for (let i = 0; i < masterListOfArticles.length; i++)
     {
-        //console.log(masterListOfArticles[i][1]);
-        //console.log(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${masterListOfArticles[i][1]}`);
         masterListOfArticles[i][2] = (`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${masterListOfArticles[i][1]}`);
-        //return
     }
     }
 
+    // This appends the lyrics to Bo Burnham's 'From God's Perspective' to each array in the master list
+    // I was playing this on the piano all weekend so it was a fit
+    // Sorry if you don't like Bo Burnham
     getDummyText(){
         this.summaryAPIKeys.forEach(article => {
             for (let i = 0; i < masterListOfArticles.length; i++){
@@ -59,7 +54,10 @@ class ArticleSummaries {
         })
     }
 
-
+    //  DO NOT RUN THIS UNTIL THE END
+    // This is the method to get the summary text from Aylien
+    // It works! Just don't touch it
+    //  DO NOT RUN THIS UNTIL THE END
     getSummaryText() {
         this.summaryAPIKeys.forEach(article => {
             let promise = fetch(article)
@@ -68,15 +66,14 @@ class ArticleSummaries {
                 for (let i = 0; i < masterListOfArticles.length; i++){
                     masterListOfArticles[i][2] = data.text
                 }
-
             })
-
+            return promise;
         }
-            
-        )
+       )
     }
 
-    getONEtext() {
+    // This method was just to check that I was fetching the data with the API properly - I am!
+    _getONEtext() {
         let promise = fetch(this.summaryAPIKeys[0])
         .then(response => response.json())
         .then(data => {
@@ -84,4 +81,11 @@ class ArticleSummaries {
         })
     }
 
+    // This method is just to check that you can get the correct API keys
+    _getSummaryAPIKey() {
+        for (let i = 0; i < masterListOfArticles.length; i++)
+        {
+        this.summaryAPIKeys.push(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${masterListOfArticles[i][1]}`);
+        }
+    }
 }
