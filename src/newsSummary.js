@@ -28,6 +28,7 @@ getArticles() {
 
 class ArticleSummaries {
     // This is an array generated so that we can test what's getting generated in the _getSummaryAPIKey method
+    // It also allows us to have an array of urls to loop through to grab summary text
     constructor(){
         this.summaryAPIKeys = []
     }
