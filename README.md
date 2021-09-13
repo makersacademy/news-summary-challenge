@@ -1,12 +1,3 @@
-//////// THE ISSUE I AM HAVING ////////////
-
-Node is running when I go to test, and all of my tests have broken. It thinks 'fetch' isn't defined because node doesn't have fetch. The console in Google won't recognise classes.
-
-I thought I'd check the Note app which know runs because...well, Ive run it. Absolutely fine. But then if you go to test in console, it doesn't recognise that any of the classes
-exist so I am FLYING BLIND here 
-
-/////////////
-
 # News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.

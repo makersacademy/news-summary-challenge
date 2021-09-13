@@ -1,5 +1,8 @@
 
 --------------
+
+THE IDEA - 
+
 ***CLASSES***
 
 Class Article
@@ -20,6 +23,15 @@ Added Function: Direct to page of origin when clicking on link contained in **su
 
 Advanced Function: Have mobile capability
 Advanced Function: Add whizzy animations (What does this mean? Who knows!)
+
+--------------
+
+WHAT DATA DO WE NEED - 
+
+* Title (from Guardian)
+* Url (from Guardian)
+* Summary text (from Aylien)
+* Image (from ??????)
 
 --------------
 

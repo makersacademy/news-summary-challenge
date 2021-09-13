@@ -1,10 +1,8 @@
 // This array of arrays has titles, urls, and the snippet text from Aylien
 const masterListOfArticles = []
 
-
 // This class grabs the article titles
 class ArticleTitles {
-
 // This method calls the guardian via the test API and grabs the titles and urls
 // The test api doesn't have the body text, or image urls
 // Looks like the Maker's API has body text with urls within the body but you can't really grab that...
@@ -29,7 +27,6 @@ getArticles() {
 } 
 
 class ArticleSummaries {
-
     // This is an array generated so that we can test what's getting generated in the _getSummaryAPIKey method
     constructor(){
         this.summaryAPIKeys = []
@@ -89,3 +86,4 @@ class ArticleSummaries {
         }
     }
 }
+
