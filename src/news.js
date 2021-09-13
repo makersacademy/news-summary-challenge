@@ -8,4 +8,5 @@ class News{
       console.log(data)
   })
 }
+
 };
