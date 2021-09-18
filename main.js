@@ -2,7 +2,7 @@
 
 //console.log("hello")
 
-const guardianApi = "https://content.guardianapis.com/search?show-fields=thumbnail&page=1&api-key=045214ab-cf22-4ee0-be1d-da3f2edcc534";
+const guardianApi = "https://content.guardianapis.com/search?show-fields=thumbnail&page=1&api-key=";
 const aylienApi = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=";
 
 async function getThumbnail() {
