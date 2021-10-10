@@ -4,7 +4,7 @@ function testArticles() {
         redirect: 'manual'
       };
       
-      fetch("https://newsapi.org/v2/top-headlines?apiKey=9fa8e7e3d3e04ef68567633a5f9e868f&country=gb&category=technology", requestOptions)
+      fetch("https://newsapi.org/v2/top-headlines?apiKey=apikey&country=gb&category=technology", requestOptions)
         .then(response => response.json())        
         .then(data => {
 
