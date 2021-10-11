@@ -1,13 +1,37 @@
 body {
-  font-family: "Roboto Mono", monospace;
-  background-color: rgb(238, 233, 210);
+  font-family: 'Trebuchet MS';
+  background-color: rgb(241, 240, 235);
   margin: auto;
+}
+
+h1 {
+  margin: auto;
+  padding: 35px;
+  text-align: center;
+  font-family: 'Luminari';
+}
+
+h4 {
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Luminari'
+}
+
+#article-title{
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+}
+
+#section-headlines {
+  text-align: center;
 }
 
 ul {
   color: rgb(207, 41, 41);
   margin: 10;
-  padding: 70px 0;
+  padding: 10px 0;
   list-style-type: none;
 }
 
@@ -19,4 +43,26 @@ li {
 
 a {
   font-family: "Roboto Mono", monospace;
+}
+
+img {
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  height: auto;
+}
+
+#full-article{
+  text-align: justify;
+  text-justify: inter-word;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 45px;
+}
+
+a {
+  color: rgb(20, 3, 3);
+  text-decoration: none;
+  text-transform: none;
+  font-family: 'Luminari'
 }
