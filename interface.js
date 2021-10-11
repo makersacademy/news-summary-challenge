@@ -29,6 +29,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
+
+  function getThumbnails () {
+
+    headlinesList = article.headlinesList;
+    headlinesList.forEach((peice) => {
+      let url = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/" + peice.id + "?show-fields=thumbnail"
+      console.log(url)
+      fetch(url).then(response => {
+        return response.json();
+      }).then(data => {
+        thumbnailPic = data.response.content.fields.thumbnail;
+        peice.thumbnail = "<img src='" + thumbnailPic + "' style='width:133px;height:80px;' border:'5'>"
+
+      })
+
+
+
+
+
+
+
+    })
+  }
+
   function showHeadlines () {
     headlinesList = article.headlinesList;
     for (let i = 0 ; i < headlinesList.length ; i++) {
@@ -56,5 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
   //getTodayHeadlines();
   //showHeadlines();
 
+
+
+
+
+
+  
 
 });
