@@ -19,7 +19,7 @@ const createCard = (article) => {
   // body
   const body_text = article.fields.body
   const extracted = extractContent(body_text);
-  const trim_text = extracted.substring(0, 300)
+  const trim_text = extracted.substring(0, 500) + "..."
   const bodysection = document.createElement("p")
   bodysection.classList.add('post-body');
   const body = document.createTextNode(trim_text);
@@ -62,7 +62,7 @@ const getData = () => {
   }
 
 const bodyHover = () => {
-  
+
 }
 
 getData();
