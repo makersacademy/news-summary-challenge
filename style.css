@@ -1,4 +1,30 @@
+@font-face {
+  font-family: 'BiotifBlack';
+  src: url('fonts/Biotif-Black.ttf');
+}
+
+@font-face {
+  font-family: 'BiotifBold';
+  src: url('fonts/Biotif-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'BiotifBook';
+  src: url('fonts/Biotif-Book.ttf');
+}
+
+body{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: rgb(224, 193, 154);
+  font-family: 'BiotifBold';
+}
+
 .container{
+  border-radius:10px;
+  border: 8px solid white;
   margin: 40px;
   height: 300px;
   width: 500px;
@@ -8,6 +34,7 @@
 
 .post {
   position: absolute;
+  border-radius:10px;
   top: 0;
   display: flex;
   flex-direction: column;
@@ -17,17 +44,21 @@
   z-index: 1;
   margin: 0;
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.479);
+  background: linear-gradient(0deg, rgba(0,0,0,0.779) 30%, rgba(0,0,0,0) 100%);
   color: white;
 }
 
 .post:hover {
-background: linear-gradient(0deg, rgba(0,0,0,0.479) 15%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(0deg, rgba(0,0,0,0.779) 30%, rgba(0,0,0,0.2) 100%);
+}
+
+.post:hover .post-body {
+  display: block;
 }
 
 .post > * {
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 .background_image {
@@ -38,4 +69,31 @@ background: linear-gradient(0deg, rgba(0,0,0,0.479) 15%, rgba(255,255,255,0) 100
   margin: 0;
   z-index: -1;
   padding: 0;
+}
+
+p {
+  
+}
+
+.post-links{
+  background-color: white;
+  height: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.section_button{
+  display: inline-block;
+  color: white;
+  background-color: rgb(219, 75, 224);
+  font-weight: bold;
+  padding: 10px 4px 10px 4px;
+  border-radius:3px;
+  line-height: 5px;
+  text-decoration: none;
+}
+
+.post-body{
+  display: none;
 }
