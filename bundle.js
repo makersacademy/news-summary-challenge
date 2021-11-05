@@ -7,7 +7,7 @@
   var require_getHeadlines = __commonJS({
     "src/getHeadlines.js"(exports, module) {
       getHeadlines = () => {
-        fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body").then((response) => response.json()).then((jsonData) => {
+        fetch("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=headlines").then((response) => response.json()).then((jsonData) => {
           console.log(jsonData);
         });
       };
