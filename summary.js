@@ -1,19 +1,29 @@
+const createCard = (article) => {
+  const newPostEl = document.createElement('div');
+  const h = document.createElement("H3")
+  const t = document.createTextNode(article.webTitle);
+  h.appendChild(t);
+  newPostEl.appendChild(h); 
+  const p = document.createElement("p")
+  const q = document.createTextNode(article.sectionId);
+  p.appendChild(q);
+  newPostEl.appendChild(p); 
+  const image = document.createElement("img")
+  image.src = article.fields.thumbnail
+  newPostEl.appendChild(image); 
+  newPostEl.className = 'post';
+  document.body.appendChild(newPostEl);
+}
+
 const getData = () => {
-  let promise = fetch("https://content.guardianapis.com/search?page-size=20&api-key=test&format=json&show-fields=body,headline,thumbnail")
+  fetch("https://content.guardianapis.com/search?page-size=20&api-key=test&format=json&show-fields=body,headline,thumbnail")
     .then(response => response.json())
     .then(data => {
-        // Test console logs
-        // Does it pull all the data?
-        // console.log(data);
-        // Does it return the response array? If yes, how long is it?
-        // console.log(data.response.results.length);
-        // Does the array item have a webTitle? 
-        // console.log(data.response.results[0].webTitle)
-        //
-      console.log(data.response.results)
-    }
-    )
-    return promise;
+      const articles = data.response.results
+      articles.forEach((article) => {
+        createCard(article)
+      });
+    })
   }
 
 getData();
