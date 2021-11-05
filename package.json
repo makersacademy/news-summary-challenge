@@ -1,0 +1,25 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "Week 7 Makers Academy Weekend Challenge",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t-kellett/news-summary-challenge.git"
+  },
+  "author": "Tom Kellett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/t-kellett/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/t-kellett/news-summary-challenge#readme",
+  "dependencies": {
+    "esbuild": "^0.13.12",
+    "http-server": "^14.0.0",
+    "jest": "^27.3.1"
+  }
+}
