@@ -11,7 +11,10 @@ class CreateCard {
   writeSrcArticle = (article, postLinks, newPostEl) => {
   const articleOG = document.createElement("a")
   articleOG.setAttribute("href", `${article.webUrl}`);
-  articleOG.innerHTML = 'original article'
+  const icon = document.createElement("i")
+  icon.className = "bi"
+  icon.classList.add("bi-newspaper")
+  articleOG.appendChild(icon)
   postLinks.appendChild(articleOG);
   newPostEl.appendChild(postLinks);
 }
