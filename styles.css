@@ -1,0 +1,31 @@
+* {
+  background-color: #e1ecee;
+  font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif; 
+  font-size: 20px;
+  color: #161E54
+}
+
+.search {
+  margin: 30px;
+  padding: 10px;
+}
+
+.input {
+  color: #161E54;
+  padding: 1%;
+  background-color:#FF9B6A;
+  border: 2px solid #161E54;
+  margin: 10px; 
+
+}
+
+.container {
+  font-family: 'courier';font-size: 15px;
+}
+.button {
+  color:#FF5151 ;
+  background-color:#161E54;
+  padding: 1%;
+  margin: 10px;
+
+}
