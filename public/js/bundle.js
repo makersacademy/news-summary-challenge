@@ -29,18 +29,23 @@
           let storyLink = document.createElement("a");
           let categoryTag = document.createElement("p");
           let categoryURL = document.createElement("a");
+          let authorName = document.createElement("p");
+          let bodyContent = document.createElement("p");
           categoryURL.href = `https://www.theguardian.com/${story["sectionId"]}`;
           storyEl.className = "storyCard";
           storyImg.classname = "storyThumb";
+          authorName.textContent = `Author: ${story["tags"][0]["webTitle"]}`;
           categoryURL.innerText = `Category: ${story["sectionName"]}`;
           storyLink.href = story["webUrl"];
           storyImg.src = story["fields"]["thumbnail"];
           let storyTitle = story["webTitle"];
           storyLink.textContent = storyTitle;
+          bodyContent.innerHTML = `${story["fields"]["body"]}`;
           categoryTag.appendChild(categoryURL);
           storyEl.appendChild(storyImg);
           storyEl.appendChild(categoryTag);
           storyEl.appendChild(storyLink);
+          storyEl.appendChild(authorName);
           feedEl.appendChild(storyEl);
         });
       };
@@ -53,5 +58,5 @@
   // index.js
   var { getFeed } = require_getFeed();
   var { displayFeed } = require_displayFeed();
-  getFeed("https://content.guardianapis.com/search?page=1&api-key=test&show-fields=body,headline,thumbnail", displayFeed);
+  getFeed("https://content.guardianapis.com/search?page=1&api-key=test&show-fields=body,headline,thumbnail&show-tags=contributor", displayFeed);
 })();
