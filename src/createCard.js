@@ -36,6 +36,11 @@ class CreateCard {
   newPostContainer.appendChild(newPostImg);
   document.body.appendChild(newPostContainer);
 }
+  extractContent = (string) => {
+  var span = document.createElement('span');
+  span.innerHTML = string;
+  return span.textContent || span.innerText;
+};
 
 writeCardModal = (article, newId) => {
   const newModalDiv = document.createElement('div');
@@ -47,15 +52,20 @@ writeCardModal = (article, newId) => {
   closeButton.id = 'close-' + newId;
   closeButton.innerHTML = '&times;';
   newModalContent.appendChild(closeButton);
+  const modalTitle = document.createElement("h1");
+  const modalTitleText = document.createTextNode(article.webTitle);
+  const textDiv = document.createElement("p");
+  const articleText = this.extractContent(article.fields.body);
+  const modalText = document.createTextNode(articleText)
+  textDiv.appendChild(modalText);
+  modalTitle.appendChild(modalTitleText);
+  newModalContent.appendChild(modalTitle);
+  newModalContent.appendChild(textDiv);
   newModalDiv.appendChild(newModalContent);
   document.body.appendChild(newModalDiv);
 }
 
-  extractContent = (string) => {
-  var span = document.createElement('span');
-  span.innerHTML = string;
-  return span.textContent || span.innerText;
-};
+
 
   createCard = (article) => {
   const newPostContainer = document.createElement('div');
