@@ -9,7 +9,7 @@ class CreateCard {
 
   writeTextPreview = (article, newPostEl) => {
   const body_text = article.fields.body
-  const extracted = extractContent(body_text);
+  const extracted = this.extractContent(body_text);
   const trim_text = extracted.substring(0, 500) + "..."
   const bodysection = document.createElement("p")
   bodysection.classList.add('post-body');
@@ -55,13 +55,13 @@ class CreateCard {
   newPostContainer.classList.add('container');
   const newPostEl = document.createElement('div');
   newPostEl.className = 'post';
-  writeArticleTitle(article, newPostEl);
-  writeTextPreview(article, newPostEl);
+  this.writeArticleTitle(article, newPostEl);
+  this.writeTextPreview(article, newPostEl);
   const postLinks = document.createElement('div');
   postLinks.classList.add('post-links')
-  writeSrcArticle(article, postLinks, newPostEl);
-  writeSectionId(article, postLinks, newPostEl);
-  writeBgImage(article, newPostEl, newPostContainer);
+  this.writeSrcArticle(article, postLinks, newPostEl);
+  this.writeSectionId(article, postLinks, newPostEl);
+  this.writeBgImage(article, newPostEl, newPostContainer);
 }
 }
 
