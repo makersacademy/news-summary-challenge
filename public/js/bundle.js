@@ -3,18 +3,20 @@
     return mod || (0, cb[Object.keys(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
 
-  // src/getData.js
-  var require_getData = __commonJS({
-    "src/getData.js"(exports, module) {
-      var getData2 = (card2) => {
-        fetch("https://content.guardianapis.com/search?page-size=10&api-key=test&format=json&show-fields=body,headline,thumbnail").then((response) => response.json()).then((data) => {
-          const articles = data.response.results;
-          articles.forEach((article) => {
-            card2.createCard(article);
+  // src/Summary.js
+  var require_Summary = __commonJS({
+    "src/Summary.js"(exports, module) {
+      var Summary2 = class {
+        getData = (card2) => {
+          fetch("https://content.guardianapis.com/search?page-size=10&api-key=test&format=json&show-fields=body,headline,thumbnail").then((response) => response.json()).then((data) => {
+            const articles = data.response.results;
+            articles.forEach((article) => {
+              card2.createCard(article);
+            });
           });
-        });
+        };
       };
-      module.exports = getData2;
+      module.exports = Summary2;
     }
   });
 
@@ -75,8 +77,8 @@
           this.writeTextPreview(article, newPostEl);
           const postLinks = document.createElement("div");
           postLinks.classList.add("post-links");
-          this.writeSrcArticle(article, postLinks, newPostEl);
           this.writeSectionId(article, postLinks, newPostEl);
+          this.writeSrcArticle(article, postLinks, newPostEl);
           this.writeBgImage(article, newPostEl, newPostContainer);
         };
       };
@@ -85,8 +87,9 @@
   });
 
   // index.js
-  var getData = require_getData();
+  var Summary = require_Summary();
   var CreateCard = require_createCard();
+  var summary = new Summary();
   var card = new CreateCard();
-  getData(card);
+  summary.getData(card);
 })();

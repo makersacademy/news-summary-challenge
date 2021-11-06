@@ -1,5 +1,6 @@
-const getData = require('./src/getData');
+const Summary = require('./src/Summary');
 const CreateCard = require('./src/createCard');
+const summary = new Summary();
 const card = new CreateCard();
 
-getData(card);
+summary.getData(card);

@@ -59,8 +59,8 @@ class CreateCard {
   this.writeTextPreview(article, newPostEl);
   const postLinks = document.createElement('div');
   postLinks.classList.add('post-links')
-  this.writeSrcArticle(article, postLinks, newPostEl);
   this.writeSectionId(article, postLinks, newPostEl);
+  this.writeSrcArticle(article, postLinks, newPostEl);
   this.writeBgImage(article, newPostEl, newPostContainer);
 }
 }

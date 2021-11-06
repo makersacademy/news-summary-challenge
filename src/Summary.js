@@ -1,4 +1,6 @@
-const getData = (card) => {
+class Summary {
+  
+  getData = (card) => {
   fetch("https://content.guardianapis.com/search?page-size=10&api-key=test&format=json&show-fields=body,headline,thumbnail")
     .then(response => response.json())
     .then(data => {
@@ -8,5 +10,5 @@ const getData = (card) => {
       });
     })
   }
-
-module.exports = getData;
+}
+module.exports = Summary;
