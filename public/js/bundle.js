@@ -7,7 +7,7 @@
   var require_Summary = __commonJS({
     "src/Summary.js"(exports, module) {
       var Summary2 = class {
-        getData = (card2) => {
+        getAllArticles = (card2) => {
           fetch("https://content.guardianapis.com/search?page-size=10&api-key=test&format=json&show-fields=body,headline,thumbnail").then((response) => response.json()).then((data) => {
             const articles = data.response.results;
             articles.forEach((article) => {
@@ -91,5 +91,5 @@
   var CreateCard = require_createCard();
   var summary = new Summary();
   var card = new CreateCard();
-  summary.getData(card);
+  summary.getAllArticles(card);
 })();

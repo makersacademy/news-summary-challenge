@@ -1,6 +1,6 @@
 class Summary {
   
-  getData = (card) => {
+  getAllArticles = (card) => {
   fetch("https://content.guardianapis.com/search?page-size=10&api-key=test&format=json&show-fields=body,headline,thumbnail")
     .then(response => response.json())
     .then(data => {

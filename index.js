@@ -3,4 +3,4 @@ const CreateCard = require('./src/createCard');
 const summary = new Summary();
 const card = new CreateCard();
 
-summary.getData(card);
+summary.getAllArticles(card);
