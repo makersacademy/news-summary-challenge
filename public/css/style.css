@@ -107,7 +107,7 @@ body{
 .section_button{
   display: inline-block;
   color: white;
-  background-color: rgb(67, 190, 67);
+  background-color: #0d7680;
   font-weight: bold;
   padding: 10px 4px 10px 4px;
   border-radius:3px;
@@ -125,12 +125,12 @@ body{
   max-width: 900px;
   margin: 0 auto;
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #fff9f5;
   padding: 20px;
   overflow-y: scroll;
   border: 1px solid #888;
