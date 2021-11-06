@@ -18,30 +18,40 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: rgb(224, 193, 154);
+  background-image: url('../resources/images/background.png');
+  background-size: 120%;
   font-family: 'BiotifBold';
 }
 
 .container{
   border-radius:10px;
-  border: 8px solid white;
   margin: 40px;
   height: 300px;
   width: 500px;
-  padding: 0;
   position: relative;
 }
 
+.container:after {
+  background: none;
+  border: 6px solid rgb(67, 190, 67);
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  border-radius: 10px;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  pointer-events: none;
+}
+
+
 @media screen and (max-width: 1100px){
   .container{
-  border-radius:10px;
-  border: 8px solid white;
-  margin: 40px;
   height: 240px;
   width: 400px;
-  padding: 0;
-  position: relative;
-}
+  }
 }
 
 .post {
@@ -56,16 +66,16 @@ body{
   z-index: 1;
   margin: 0;
   padding: 0;
-  background: linear-gradient(0deg, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.7) 100%);
-  color: white;
+  background: linear-gradient(0deg, rgba(0,0,0,0.779) 30%, rgba(0,0,0,0.4) 100%);
+  color: rgb(84, 211, 95);
+}
+
+.post:hover + .background_image{
+  filter: none;
 }
 
 .post:hover {
   background: linear-gradient(0deg, rgba(0,0,0,0.579) 30%, rgba(0,0,0,0) 100%);
-}
-
-.post:hover .post-body {
-  display: block;
 }
 
 .post > * {
@@ -79,16 +89,17 @@ body{
   height: 100%;
   width: 100%;
   margin: 0;
+  filter: saturate(0);
   z-index: -1;
   padding: 0;
 }
 
 .post-links{
-  background-color: white;
   height: 5%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .section_button{
