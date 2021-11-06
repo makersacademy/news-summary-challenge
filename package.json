@@ -1,0 +1,27 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "front-end serverless app that data scraps news from The Guardian website",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --outfile=src/bundle.js --watch",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matt-Warnock/news-summary-challenge.git"
+  },
+  "author": "Matt-Warnock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matt-Warnock/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/Matt-Warnock/news-summary-challenge#readme",
+  "devDependencies": {
+    "eslint": "^8.1.0",
+    "jest": "^27.3.1"
+  },
+  "dependencies": {
+    "http-server": "^14.0.0"
+  }
+}
