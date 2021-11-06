@@ -57,8 +57,12 @@ writeCardModal = (article, newId) => {
   const textDiv = document.createElement("p");
   const articleText = this.extractContent(article.fields.body);
   const modalText = document.createTextNode(articleText)
+  const articleImage = document.createElement("img")
+  articleImage.setAttribute("src", article.fields.thumbnail)
+  articleImage.className = 'modal-article-image';
   textDiv.appendChild(modalText);
   modalTitle.appendChild(modalTitleText);
+  newModalContent.appendChild(articleImage)
   newModalContent.appendChild(modalTitle);
   newModalContent.appendChild(textDiv);
   newModalDiv.appendChild(newModalContent);

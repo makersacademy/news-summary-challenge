@@ -151,3 +151,9 @@ body{
 .close {
   background-color: palevioletred;
 }
+
+.modal-article-image {
+  float: right;
+  height: 250px;
+  margin: 10px;
+}
