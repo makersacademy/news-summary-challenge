@@ -43,9 +43,8 @@ writeCardModal = (article, newId) => {
   newModalDiv.id = 'myModal-' + newId;
   const newModalContent = document.createElement('div');
   newModalContent.className = 'modal-content';
-  newModalContent.innerHTML = 'this is a test for my modal';
-  const closeButton = document.createElement('span');
-  closeButton.className = 'close';
+  const closeButton = document.createElement('button');
+  closeButton.id = 'close-' + newId;
   closeButton.innerHTML = '&times;';
   newModalContent.appendChild(closeButton);
   newModalDiv.appendChild(newModalContent);

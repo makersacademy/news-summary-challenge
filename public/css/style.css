@@ -146,3 +146,7 @@ body{
 .bi-newspaper:hover{
   color: white;
 }
+
+.close {
+  background-color: palevioletred;
+}

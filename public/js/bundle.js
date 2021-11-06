@@ -7,21 +7,15 @@
   var require_modalLogic = __commonJS({
     "src/modalLogic.js"(exports, module) {
       var modalLogic2 = () => {
-        for (let i = 1; i < 10; i++) {
+        for (let i = 1; i < 21; i++) {
           const modal = document.getElementById(`myModal-${i}`);
           const btn = document.getElementById(`post-${i}`);
-          const span = document.getElementsByClassName("close")[0];
+          const span = document.getElementById(`close-${i}`);
           btn.onclick = function() {
-            console.log("click");
             modal.style.display = "block";
           };
           span.onclick = function() {
             modal.style.display = "none";
-          };
-          window.onclick = function(event) {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
           };
         }
       };
@@ -37,7 +31,7 @@
         getAllArticles = (card2) => {
           fetch("https://content.guardianapis.com/search?page-size=20&api-key=test&format=json&show-fields=body,headline,thumbnail").then((response) => response.json()).then((data) => {
             const articles = data.response.results;
-            async function myFunc2() {
+            async function myFunc() {
               await new Promise((resolve) => {
                 resolve(articles.forEach((article) => {
                   card2.createCard(article);
@@ -45,7 +39,7 @@
               });
               modalLogic2();
             }
-            myFunc2();
+            myFunc();
           });
         };
       };
@@ -95,9 +89,8 @@
           newModalDiv.id = "myModal-" + newId;
           const newModalContent = document.createElement("div");
           newModalContent.className = "modal-content";
-          newModalContent.innerHTML = "this is a test for my modal";
-          const closeButton = document.createElement("span");
-          closeButton.className = "close";
+          const closeButton = document.createElement("button");
+          closeButton.id = "close-" + newId;
           closeButton.innerHTML = "&times;";
           newModalContent.appendChild(closeButton);
           newModalDiv.appendChild(newModalContent);
@@ -134,11 +127,5 @@
   var modalLogic = require_modalLogic();
   var summary = new Summary();
   var card = new CreateCard();
-  async function myFunc() {
-    await new Promise((resolve) => {
-      resolve(summary.getAllArticles(card));
-    });
-    console.log("index says its done");
-  }
-  myFunc();
+  summary.getAllArticles(card);
 })();
