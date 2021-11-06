@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'BiotifBlack';
-  src: url('fonts/Biotif-Black.ttf');
+  src: url('../resources/fonts/Biotif-Black.ttf');
 }
 
 @font-face {
   font-family: 'BiotifBold';
-  src: url('fonts/Biotif-Bold.ttf');
+  src: url('../resources/fonts/Biotif-Bold.ttf');
 }
 
 @font-face {
   font-family: 'BiotifBook';
-  src: url('fonts/Biotif-Book.ttf');
+  src: url('../resources/fonts/Biotif-Book.ttf');
 }
 
 body{
