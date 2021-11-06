@@ -1,5 +1,5 @@
 const modalLogic = () => {
-  for (let i = 0; i < 10; i++) {
+  for (let i = 1; i < 10; i++) {
     const modal = document.getElementById(`myModal-${i}`);
     const btn = document.getElementById(`post-${i}`);
     const span = document.getElementsByClassName("close")[0];

@@ -5,5 +5,3 @@ const summary = new Summary();
 const card = new CreateCard();
 
 summary.getAllArticles(card);
-
-

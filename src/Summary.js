@@ -1,3 +1,5 @@
+const modalLogic = require("./modalLogic");
+
 class Summary {
   
   getAllArticles = (card) => {
@@ -5,10 +7,16 @@ class Summary {
     .then(response => response.json())
     .then(data => {
       const articles = data.response.results
-      articles.forEach((article) => {
-        card.createCard(article)
+      async function myFunc() {
+        await new Promise((resolve) => {
+          resolve(articles.forEach((article) => {
+          card.createCard(article)
+        }));
       });
-    })
+      modalLogic();
+      }
+      myFunc();
+      })
   }
 
 }

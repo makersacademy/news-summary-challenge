@@ -3,16 +3,49 @@
     return mod || (0, cb[Object.keys(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
 
+  // src/modalLogic.js
+  var require_modalLogic = __commonJS({
+    "src/modalLogic.js"(exports, module) {
+      var modalLogic2 = () => {
+        for (let i = 1; i < 10; i++) {
+          const modal = document.getElementById(`myModal-${i}`);
+          const btn = document.getElementById(`post-${i}`);
+          const span = document.getElementsByClassName("close")[0];
+          btn.onclick = function() {
+            console.log("click");
+            modal.style.display = "block";
+          };
+          span.onclick = function() {
+            modal.style.display = "none";
+          };
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          };
+        }
+      };
+      module.exports = modalLogic2;
+    }
+  });
+
   // src/Summary.js
   var require_Summary = __commonJS({
     "src/Summary.js"(exports, module) {
+      var modalLogic2 = require_modalLogic();
       var Summary2 = class {
         getAllArticles = (card2) => {
           fetch("https://content.guardianapis.com/search?page-size=20&api-key=test&format=json&show-fields=body,headline,thumbnail").then((response) => response.json()).then((data) => {
             const articles = data.response.results;
-            articles.forEach((article) => {
-              card2.createCard(article);
-            });
+            async function myFunc2() {
+              await new Promise((resolve) => {
+                resolve(articles.forEach((article) => {
+                  card2.createCard(article);
+                }));
+              });
+              modalLogic2();
+            }
+            myFunc2();
           });
         };
       };
@@ -95,37 +128,17 @@
     }
   });
 
-  // src/modalLogic.js
-  var require_modalLogic = __commonJS({
-    "src/modalLogic.js"(exports, module) {
-      var modalLogic2 = () => {
-        for (let i = 0; i < 10; i++) {
-          const modal = document.getElementById(`myModal-${i}`);
-          const btn = document.getElementById(`post-${i}`);
-          const span = document.getElementsByClassName("close")[0];
-          btn.onclick = function() {
-            console.log("click");
-            modal.style.display = "block";
-          };
-          span.onclick = function() {
-            modal.style.display = "none";
-          };
-          window.onclick = function(event) {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
-          };
-        }
-      };
-      module.exports = modalLogic2;
-    }
-  });
-
   // index.js
   var Summary = require_Summary();
   var CreateCard = require_createCard();
   var modalLogic = require_modalLogic();
   var summary = new Summary();
   var card = new CreateCard();
-  summary.getAllArticles(card);
+  async function myFunc() {
+    await new Promise((resolve) => {
+      resolve(summary.getAllArticles(card));
+    });
+    console.log("index says its done");
+  }
+  myFunc();
 })();
