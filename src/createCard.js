@@ -7,16 +7,6 @@ class CreateCard {
   newPostEl.appendChild(h3El);
 }
 
-  writeTextPreview = (article, newPostEl) => {
-  const body_text = article.fields.body
-  const extracted = this.extractContent(body_text);
-  const trim_text = extracted.substring(0, 500) + "..."
-  const bodysection = document.createElement("p")
-  bodysection.classList.add('post-body');
-  const body = document.createTextNode(trim_text);
-  bodysection.appendChild(body);
-  newPostEl.appendChild(bodysection);
-}
 
   writeSrcArticle = (article, postLinks, newPostEl) => {
   const articleOG = document.createElement("a")
@@ -73,7 +63,6 @@ writeCardModal = (article, newId) => {
   newPostEl.className = 'post';
   newPostEl.id = 'post-' + newId;
   this.writeArticleTitle(article, newPostEl);
-  this.writeTextPreview(article, newPostEl);
   const postLinks = document.createElement('div');
   postLinks.classList.add('post-links')
   this.writeSectionId(article, postLinks, newPostEl);

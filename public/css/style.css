@@ -56,12 +56,12 @@ body{
   z-index: 1;
   margin: 0;
   padding: 0;
-  background: linear-gradient(0deg, rgba(0,0,0,0.779) 30%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(0deg, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.7) 100%);
   color: white;
 }
 
 .post:hover {
-  background: linear-gradient(0deg, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.7) 100%);
+  background: linear-gradient(0deg, rgba(0,0,0,0.579) 30%, rgba(0,0,0,0) 100%);
 }
 
 .post:hover .post-body {
@@ -100,11 +100,6 @@ body{
   border-radius:3px;
   line-height: 5px;
   text-decoration: none;
-}
-
-.post-body{
-  display: none;
-  font-family: 'BiotifBook';
 }
 
 .modal {
