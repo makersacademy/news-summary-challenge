@@ -75,6 +75,7 @@ body{
   filter: none;
 }
 
+
 .post:hover {
   background: linear-gradient(0deg, rgba(0,0,0,0.579) 30%, rgba(0,0,0,0) 100%);
 }
@@ -106,7 +107,7 @@ body{
 .section_button{
   display: inline-block;
   color: white;
-  background-color: rgb(219, 75, 224);
+  background-color: rgb(67, 190, 67);
   font-weight: bold;
   padding: 10px 4px 10px 4px;
   border-radius:3px;
@@ -134,4 +135,14 @@ body{
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.bi-newspaper{
+  font-size: 25px;
+  padding: 0;
+  color: rgb(75, 75, 75);
+}
+
+.bi-newspaper:hover{
+  color: white;
 }
