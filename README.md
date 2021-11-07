@@ -1,7 +1,7 @@
-# [News Summary Challenge](https://summary-of-news.herokuapp.com/)
 
 <div align="center">
 
+# [News Summary Challenge](https://summary-of-news.herokuapp.com/)
 
 ![](https://img.shields.io/github/last-commit/arthurfincham/news-summary-challenge)
 ![](https://img.shields.io/github/languages/count/arthurfincham/news-summary-challenge)
