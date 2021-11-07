@@ -83,11 +83,6 @@
           newPostContainer.appendChild(newPostImg);
           document.body.appendChild(newPostContainer);
         };
-        extractContent = (string) => {
-          var span = document.createElement("span");
-          span.innerHTML = string;
-          return span.textContent || span.innerText;
-        };
         createCard = (article, modal2) => {
           const newPostContainer = document.createElement("div");
           newPostContainer.classList.add("container");
@@ -126,9 +121,7 @@
         };
         writeModalBody = (article, newModalContent) => {
           const textDiv = document.createElement("p");
-          const articleText = this.extractContent(article.fields.body);
-          const modalText = document.createTextNode(articleText);
-          textDiv.appendChild(modalText);
+          textDiv.innerHTML = article.fields.body;
           newModalContent.appendChild(textDiv);
         };
         writeModalImage = (article, newModalContent) => {
@@ -136,11 +129,6 @@
           articleImage.setAttribute("src", article.fields.thumbnail);
           articleImage.className = "modal-article-image";
           newModalContent.appendChild(articleImage);
-        };
-        extractContent = (string) => {
-          var span = document.createElement("span");
-          span.innerHTML = string;
-          return span.textContent || span.innerText;
         };
         writeCardModal = (article, newId) => {
           const newModalDiv = document.createElement("div");

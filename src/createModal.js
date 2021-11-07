@@ -16,9 +16,7 @@ class CreateModal {
 
   writeModalBody = (article, newModalContent) => {
     const textDiv = document.createElement("p");
-    const articleText = this.extractContent(article.fields.body);
-    const modalText = document.createTextNode(articleText);
-    textDiv.appendChild(modalText);
+    textDiv.innerHTML = article.fields.body;
     newModalContent.appendChild(textDiv);
   }
 
@@ -28,12 +26,6 @@ class CreateModal {
     articleImage.className = 'modal-article-image';
     newModalContent.appendChild(articleImage)
   }
-
-   extractContent = (string) => {
-  var span = document.createElement('span');
-  span.innerHTML = string;
-  return span.textContent || span.innerText;
-};
 
   writeCardModal = (article, newId) => {
   const newModalDiv = document.createElement('div');
