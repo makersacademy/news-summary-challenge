@@ -2,7 +2,7 @@ let cardContainer;
 
 createNewsCard = (news) => {
   let col = document.createElement("div");
-  col.className = "col col-md-3 my-4";
+  col.className = "col-12 col-md-6 col-lg-3 my-4";
 
   let card = document.createElement("div");
   card.className = "card shadow cursor-pointer";

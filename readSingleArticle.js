@@ -13,7 +13,7 @@ readSingleArticle = (news) => {
       <div class="modal-content">
         <img src="${news.fields.thumbnail}" class=""card-img-top"/>
         <div class="modal-header">
-          <h5 class="modal-title">${news.fields.headline}</h5>
+          <h5 class="modal-title"><a href="${news.webUrl}">${news.fields.headline}</a></h5>
         </div>
         <div class="modal-body">
         <p>${modalText}</p>

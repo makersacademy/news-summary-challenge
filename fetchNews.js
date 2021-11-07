@@ -6,5 +6,3 @@ const fetchNews = (onDataFetched) => {
     .then((response) => response.json())
     .then(onDataFetched);
 };
-
-module.exports = fetchNews;

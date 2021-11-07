@@ -1,8 +1,6 @@
-const fetchNews = require("./fetchNews");
-
-fetchNews((newsData) => {
-  console.log(newsData);
-});
+// fetchNews((newsData) => {
+//   console.log(newsData);
+// });
 
 let displayNewsCards = () => {
   if (cardContainer) {
