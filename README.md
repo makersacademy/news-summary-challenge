@@ -9,7 +9,7 @@
 
 <h2>Preview</h2>
 
-<img src="public/resources/images/desktop_preview.gif" width="400px" align="left">
+<img src="public/resources/images/preview.gif" width="500px" align="left">
 
 
 <img src="public/resources/images/mob_preview.gif" width="150px" >
