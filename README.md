@@ -1,24 +1,29 @@
 <div align="center">
 
-<img src="images/logo.png" width="200px">
+## [News Summary Challenge](https://summary-of-news.herokuapp.com/)
 
-![](https://img.shields.io/github/last-commit/arthurfincham/bowling-challenge)
-![](https://img.shields.io/github/languages/count/arthurfincham/bowling-challenge)
-![](https://img.shields.io/github/languages/code-size/arthurfincham/bowling-challenge)
+![](https://img.shields.io/github/last-commit/arthurfincham/news-summary-challenge)
+![](https://img.shields.io/github/languages/count/arthurfincham/news-summary-challenge)
+![](https://img.shields.io/github/languages/code-size/arthurfincham/news-summary-challenge)
 
 
 <h2>Preview</h2>
 
-<img src="images/preview.gif" width="400px">
+<img src="public/resources/images/desktop_preview.gif" width="400px" align="left">
 
-_command line interface for the game_
+
+<img src="public/resources/images/mob_preview.gif" width="150px" >
+
 
 </div>
 
-## Install
+
+
+
+## :electric_plug: Install
 Clone the repository
 ``` bash
-% git clone https://github.com/arthurfincham/bowling-challenge
+% git clone https://github.com/arthurfincham/news-summary-challenge
 ```
 Install dependencies
 ``` bash
@@ -26,20 +31,14 @@ Install dependencies
 ```
 Run the project
 ``` bash
-% node src/interface.js
+% npm run build
 ```
-<div align="center">
-<h2>Stack</h2>
+``` bash
+% http-server
+```
 
-|                                                        | Tool                                                 | Use?                                       | Where can I see it?                                                  |
-|--------------------------------------------------------|------------------------------------------------------|--------------------------------------------|----------------------------------------------------------------------|
-| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" height="auto" width="60">       | [Javascript](https://www.javascript.com/)                         | Needs no introduction!                     | Everywhere.                              |
-| <img src="https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png" height="auto" width="60">    | [Jest](https://jestjs.io/) | JavaScript testing framework maintained by Facebook.    |  ```spec/*``` Unit testing for the project.                |
-| <img src="https://authy.com/wp-content/uploads/npm-logo.png" height="auto" width="70">       | [readlineSync](https://www.npmjs.com/package/readline-sync)                         | readlineSync tries to let your script have a conversation with the user via a console                   | ```/src/interface.js``` In the CLI for the project.                             |
-
-<h2>Test Suite</h2>
-
-<img src="images/bowling_coverage.gif" width="400px">
-
-
-</div>
+## :hammer: Useful Tools
+* [ESLint](https://eslint.org/) - Javascript linting tool with [VSCode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+* [csscomb](https://www.npmjs.com/package/csscomb) - linter for CSS, enforces rules from config file which can be easily customised [here](https://csscomb.herokuapp.com/config).
+* [http-server](https://www.npmjs.com/package/http-server) - simple, static CLI web server.
+* [patternico](https://patternico.com/) - web tool for making seamless background patterns (pre-loaded with icons).
