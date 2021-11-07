@@ -3,9 +3,44 @@
     return mod || (0, cb[Object.keys(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
 
+  // src/article.js
+  var require_article = __commonJS({
+    "src/article.js"(exports, module) {
+      var Article = class {
+        constructor(id) {
+          this.id = id;
+        }
+      };
+      module.exports = Article;
+    }
+  });
+
+  // src/newsFeed.js
+  var require_newsFeed = __commonJS({
+    "src/newsFeed.js"(exports, module) {
+      var newsFeed2 = class {
+        constructor() {
+          this.stories = [];
+        }
+        addStory(story) {
+          this.stories.push(story);
+        }
+        displayAll() {
+          return this.stories;
+        }
+        findStory(id) {
+          return this.stories[id];
+        }
+      };
+      module.exports = newsFeed2;
+    }
+  });
+
   // src/getFeed.js
   var require_getFeed = __commonJS({
     "src/getFeed.js"(exports, module) {
+      var Article = require_article();
+      var newsFeed2 = require_newsFeed();
       var getFeed2 = (feedUrl, callback) => {
         fetch(`${feedUrl}`).then((response) => response.json()).then((jsonResponse) => {
           console.log(jsonResponse);
@@ -21,6 +56,8 @@
   // src/displayFeed.js
   var require_displayFeed = __commonJS({
     "src/displayFeed.js"(exports, module) {
+      var Article = require_article();
+      var newsFeed2 = require_newsFeed();
       var displayFeed2 = (fetchedData) => {
         feedEl = document.getElementById("feedRequest");
         fetchedData.forEach((story) => {
@@ -56,5 +93,6 @@
   // index.js
   var { getFeed } = require_getFeed();
   var { displayFeed } = require_displayFeed();
+  var newsFeed = require_newsFeed();
   getFeed("https://content.guardianapis.com/search?page=1&api-key=test&show-fields=body,headline,thumbnail&show-tags=contributor", displayFeed);
 })();

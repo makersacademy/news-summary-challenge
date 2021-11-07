@@ -1,3 +1,6 @@
+const Article = require('./article');
+const newsFeed = require('./newsFeed');
+
 const displayFeed = (fetchedData) => {
   feedEl = document.getElementById('feedRequest');
   fetchedData.forEach((story) => {
