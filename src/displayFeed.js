@@ -11,6 +11,7 @@ const displayFeed = (fetchedData) => {
     let categoryTag = document.createElement('p')
     let categoryURL = document.createElement('a');
     let authorName = document.createElement('p');
+    let readStory = document.createElement('button');
     let storyTitle = story["webTitle"];
 
     // let bodyContent = document.createElement('p');
@@ -19,14 +20,19 @@ const displayFeed = (fetchedData) => {
     storyEl.className = "storyCard";
     storyImg.className = "storyThumb";
 
+    let storyCount = document.querySelectorAll(".storyCard").length;
+    storyEl.id = storyCount;
+
     // Set URLs
     categoryURL.href = `https://www.theguardian.com/${story["sectionId"]}`
     storyLink.href = story["webUrl"];
 
-    //Set Text Contnet
+    //Set Text Content
     authorName.textContent = `Author: ${story["tags"][0]["webTitle"]}`;
     categoryURL.textContent = `Category: ${story["sectionName"]}`;
     storyLink.textContent = storyTitle;
+    readStory.textContent = 'Click to read full story';
+    readStory.id = storyCount;
     
     //Set image src
     storyImg.src = story["fields"]["thumbnail"];
@@ -39,6 +45,7 @@ const displayFeed = (fetchedData) => {
     storyEl.appendChild(categoryTag);
     storyEl.appendChild(storyLink);
     storyEl.appendChild(authorName);
+    storyEl.appendChild(readStory);
     feedEl.appendChild(storyEl);
   })
 }
