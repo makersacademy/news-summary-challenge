@@ -53,6 +53,13 @@ figure {
   border: 3px solid black;
 }
 
+@media screen and (max-width: 800px){
+  .card-image{
+    margin-bottom: 1vh;
+    margin-right: 1vh;
+  }
+}
+
 
 .container {
   border-radius: 2px;

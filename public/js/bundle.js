@@ -64,9 +64,15 @@
   var require_createCard = __commonJS({
     "src/createCard.js"(exports, module) {
       var CreateCard2 = class {
+        formatTitle(article) {
+          if (article.webTitle.length > 80) {
+            return `${article.webTitle.slice(0, 80)}...`;
+          }
+          return article.webTitle;
+        }
         writeArticleTitle(article, newPostEl) {
           const h3El = document.createElement("h3");
-          const textTitle = document.createTextNode(article.webTitle);
+          const textTitle = document.createTextNode(this.formatTitle(article));
           h3El.appendChild(textTitle);
           newPostEl.appendChild(h3El);
         }
