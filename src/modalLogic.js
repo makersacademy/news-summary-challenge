@@ -4,6 +4,7 @@ const modalLogic = () => {
     const btn = document.getElementById(`post-${i}`);
     const span = document.getElementById(`close-${i}`);
 
+
     btn.onclick = function() {
       modal.style.display = "block";
     }

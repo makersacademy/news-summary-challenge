@@ -173,8 +173,14 @@ color: white;
   color: white;
 }
 
-.close {
-  background-color: palevioletred;
+[id*="close-"] {
+  color: red;
+  font-size: 20px;
+  border: none;
+  height: 30px;
+  width: 30px;
+  background-color: antiquewhite;
+  box-shadow: 3px 3px rgb(197, 197, 197);
 }
 
 .modal-article-image {
@@ -185,6 +191,7 @@ color: white;
 
 .modal > .modal-content > img, .gu-image {
   border: 6px solid red;
+  border-radius: 10px;
   position: relative;
 }
 
