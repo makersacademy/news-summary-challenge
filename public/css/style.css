@@ -138,6 +138,7 @@ color: white;
   height: 80vh; /* Full height */
   max-width: 900px;
   margin: 0 auto;
+  border-radius: 10px;
   background-color: rgb(214, 214, 214); /* Fallback color */
 
 }
@@ -145,11 +146,19 @@ color: white;
 /* Modal Content/Box */
 .modal-content {
   background-color: white;
+  border-radius: 10px;
   padding: 20px;
   overflow-y: scroll;
   width: 95%;
   height: 95%; 
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
+
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+
 
 .bi-newspaper{
   font-size: 25px;
