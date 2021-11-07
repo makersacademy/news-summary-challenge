@@ -7,7 +7,7 @@
   var require_modalLogic = __commonJS({
     "src/modalLogic.js"(exports, module) {
       var modalLogic2 = () => {
-        for (let i = 1; i < 21; i++) {
+        for (let i = 1; i < 21; i += 1) {
           const modal2 = document.getElementById(`myModal-${i}`);
           const btn = document.getElementById(`post-${i}`);
           const span = document.getElementById(`close-${i}`);
@@ -17,7 +17,7 @@
           span.onclick = function() {
             modal2.style.display = "none";
           };
-          document.addEventListener("keydown", function(event) {
+          document.addEventListener("keydown", (event) => {
             if (event.key === "Escape") {
               modal2.style.display = "none";
             }
@@ -132,9 +132,9 @@
     }
   });
 
-  // src/CreateModal.js
-  var require_CreateModal = __commonJS({
-    "src/CreateModal.js"(exports, module) {
+  // src/createModal.js
+  var require_createModal = __commonJS({
+    "src/createModal.js"(exports, module) {
       var CreateModal2 = class {
         writeCloseButton = (newId, newModalContent) => {
           const closeButton = document.createElement("button");
@@ -180,7 +180,7 @@
   // index.js
   var Summary = require_Summary();
   var CreateCard = require_createCard();
-  var CreateModal = require_CreateModal();
+  var CreateModal = require_createModal();
   var modalLogic = require_modalLogic();
   var summary = new Summary();
   var card = new CreateCard();
