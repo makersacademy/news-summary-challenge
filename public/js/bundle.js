@@ -8,14 +8,14 @@
     "src/modalLogic.js"(exports, module) {
       var modalLogic2 = () => {
         for (let i = 1; i < 21; i++) {
-          const modal = document.getElementById(`myModal-${i}`);
+          const modal2 = document.getElementById(`myModal-${i}`);
           const btn = document.getElementById(`post-${i}`);
           const span = document.getElementById(`close-${i}`);
           btn.onclick = function() {
-            modal.style.display = "block";
+            modal2.style.display = "block";
           };
           span.onclick = function() {
-            modal.style.display = "none";
+            modal2.style.display = "none";
           };
         }
       };
@@ -134,11 +134,60 @@
     }
   });
 
+  // src/CreateModal.js
+  var require_CreateModal = __commonJS({
+    "src/CreateModal.js"(exports, module) {
+      var CreateModal2 = class {
+        writeCloseButton = (newId, newModalContent) => {
+          const closeButton = document.createElement("button");
+          closeButton.id = "close-" + newId;
+          closeButton.innerHTML = "&times;";
+          newModalContent.appendChild(closeButton);
+        };
+        writeModalTitle = (article, newModalContent) => {
+          const modalTitle = document.createElement("h1");
+          const modalTitleText = document.createTextNode(article.webTitle);
+          modalTitle.appendChild(modalTitleText);
+          newModalContent.appendChild(modalTitle);
+        };
+        writeModalBody = (article, newModalContent) => {
+          const textDiv = document.createElement("p");
+          const articleText = this.extractContent(article.fields.body);
+          const modalText = document.createTextNode(articleText);
+          textDiv.appendChild(modalText);
+          newModalContent.appendChild(textDiv);
+        };
+        writeModalImage = (article, newModalContent) => {
+          const articleImage = document.createElement("img");
+          articleImage.setAttribute("src", article.fields.thumbnail);
+          articleImage.className = "modal-article-image";
+          newModalContent.appendChild(articleImage);
+        };
+        writeCardModal = (article, newId) => {
+          const newModalDiv = document.createElement("div");
+          newModalDiv.className = "modal";
+          newModalDiv.id = "myModal-" + newId;
+          const newModalContent = document.createElement("div");
+          newModalContent.className = "modal-content";
+          this.writeCloseButton(newId, newModalContent);
+          this.writeModalTitle(article, newModalContent);
+          this.writeModalBody(article, newModalContent);
+          this.writeModalImage(article, newModalContent);
+          newModalDiv.appendChild(newModalContent);
+          document.body.appendChild(newModalDiv);
+        };
+      };
+      module.exports = CreateModal2;
+    }
+  });
+
   // index.js
   var Summary = require_Summary();
   var CreateCard = require_createCard();
+  var CreateModal = require_CreateModal();
   var modalLogic = require_modalLogic();
   var summary = new Summary();
   var card = new CreateCard();
+  var modal = new CreateModal();
   summary.getAllArticles(card);
 })();
