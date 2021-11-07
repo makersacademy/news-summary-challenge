@@ -15,7 +15,8 @@ class Summary {
           }));
           callback
         });
-        modalLogic();
+        setTimeout(function(){ modalLogic(); }, 1000);
+        
       }
       myFunc();
       

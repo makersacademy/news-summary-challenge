@@ -45,7 +45,9 @@
                 }));
                 callback;
               });
-              modalLogic2();
+              setTimeout(function() {
+                modalLogic2();
+              }, 1e3);
             }
             myFunc();
             setTimeout(function() {
