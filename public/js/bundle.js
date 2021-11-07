@@ -100,8 +100,7 @@
           this.writeSrcArticle(article, postLinks, newPostEl);
           this.writeBgImage(article, newPostEl, newPostContainer);
           newPostContainer.appendChild(newPostEl);
-          const main = document.querySelector("main");
-          main.appendChild(newPostContainer);
+          document.body.appendChild(newPostContainer);
           modal2.writeCardModal(article, newId);
         };
       };

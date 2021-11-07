@@ -19,29 +19,9 @@ body{
   background-size: 120%;
   font-family: 'BiotifBold';
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-}
-
-main{
-  display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+   flex-wrap: wrap;
   justify-content: space-evenly;
-}
-
-h1{
-  margin: 0 auto;
-  width: 100%;
-  text-align: center;
-  color: black;
-  font-size: 40px;
-  padding: 5px;
-  background-color: yellow;
-  border-bottom: 6px solid black;
-  border-top: 6px solid black;
 }
 
 .container{
