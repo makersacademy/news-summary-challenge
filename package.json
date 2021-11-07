@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/arthurfincham/news-summary-challenge#readme",
   "dependencies": {
+    "csscomb": "^4.3.0",
     "esbuild": "^0.13.12",
     "http-server": "^14.0.0"
   },

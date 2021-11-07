@@ -7,7 +7,7 @@ class Summary {
     .then(card.showLoading())
     .then(response => response.json())
     .then(data => {
-      const articles = data.response.results
+            const articles = data.response.results
       async function myFunc(callback) {
         await new Promise((resolve) => {
           resolve(articles.forEach((article) => {
