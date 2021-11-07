@@ -28,8 +28,8 @@
   var require_getFeed = __commonJS({
     "src/getFeed.js"(exports, module) {
       var newsFeed2 = require_newsFeed();
-      var getFeed2 = (feedUrl, callback, feedName) => {
-        fetch(`${feedUrl}`).then((response) => response.json()).then((jsonResponse) => {
+      var getFeed2 = (feedUrl2, callback, feedName) => {
+        fetch(`${feedUrl2}`).then((response) => response.json()).then((jsonResponse) => {
           let results = jsonResponse["response"]["results"];
           callback(results);
           feedName.addToStories(results);
@@ -88,11 +88,12 @@
   var { displayFeed } = require_displayFeed();
   var newsFeed = require_newsFeed();
   var allStoriesBtn = document.getElementById("allStoriesButton");
+  var feedUrl = "https://content.guardianapis.com/search?api-key=test&show-fields=body,headline,thumbnail&show-tags=contributor";
   feed = new newsFeed();
-  getFeed("https://content.guardianapis.com/search?q=debate%20AND%20economy&api-key=test&show-fields=body,headline,thumbnail&show-tags=contributor", displayFeed, feed);
+  getFeed(feedUrl, displayFeed, feed);
   allStoriesBtn.addEventListener("click", () => {
     feedEl = document.getElementById("feedRequest");
     feedEl.innerHTML = "";
-    getFeed("https://content.guardianapis.com/search?q=debate%20AND%20economy&api-key=test&show-fields=body,headline,thumbnail&show-tags=contributor", displayFeed, feed);
+    getFeed(feedUrl, displayFeed, feed);
   });
 })();
