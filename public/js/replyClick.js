@@ -19,15 +19,12 @@ const displayFeeds = (fetchedData) => {
   let categoryTag = document.createElement("p");
   let categoryURL = document.createElement("a");
   let authorName = document.createElement("p");
-  let allStories = document.createElement("button");
   let storyTitle = document.createElement("h1");
   let bodyContent = document.createElement("p");
 
   // Set Classes
   storyEl.className = "storyCard";
   storyImg.className = "storyThumb";
-
-  allStories.id = "backToFeed";
 
   // Set URLs
   categoryURL.href = `https://www.theguardian.com/${fetchedData["sectionId"]}`;
@@ -38,11 +35,9 @@ const displayFeeds = (fetchedData) => {
   categoryURL.textContent = `Category: ${fetchedData["sectionName"]}`;
   storyLink.textContent = "Link to article on the Guardian";
   storyTitle.textContent = fetchedData["fields"]["headline"];
-  allStories.textContent = "Back to story feed";
 
   //Set image src
   storyImg.src = fetchedData["fields"]["thumbnail"];
-
   bodyContent.innerHTML = `${fetchedData["fields"]["body"]}`;
 
   //Append Child

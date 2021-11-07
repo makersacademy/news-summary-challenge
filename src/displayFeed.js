@@ -1,6 +1,3 @@
-const Article = require('./article');
-const newsFeed = require('./newsFeed');
-
 const displayFeed = (fetchedData) => {
   feedEl = document.getElementById('feedRequest');
   fetchedData.forEach((story) => {
@@ -13,8 +10,6 @@ const displayFeed = (fetchedData) => {
     let authorName = document.createElement('p');
     let readStory = document.createElement('button');
     let storyTitle = story["webTitle"];
-
-    // let bodyContent = document.createElement('p');
 
     // Set Classes
     storyEl.className = "storyCard";
@@ -38,8 +33,6 @@ const displayFeed = (fetchedData) => {
     //Set image src
     storyImg.src = story["fields"]["thumbnail"];
     
-    // bodyContent.innerHTML = `${story["fields"]["body"]}`;
-
     //Append Child
     categoryTag.appendChild(categoryURL);
     storyEl.appendChild(storyImg);

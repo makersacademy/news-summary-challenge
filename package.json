@@ -19,5 +19,8 @@
   "homepage": "https://github.com/s-palmer/news-summary-challenge#readme",
   "dependencies": {
     "http-server": "^14.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0"
   }
 }

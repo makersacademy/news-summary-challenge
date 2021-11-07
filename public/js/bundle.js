@@ -41,23 +41,9 @@
     }
   });
 
-  // src/article.js
-  var require_article = __commonJS({
-    "src/article.js"(exports, module) {
-      var Article = class {
-        constructor(id) {
-          this.id = id;
-        }
-      };
-      module.exports = Article;
-    }
-  });
-
   // src/displayFeed.js
   var require_displayFeed = __commonJS({
     "src/displayFeed.js"(exports, module) {
-      var Article = require_article();
-      var newsFeed2 = require_newsFeed();
       var displayFeed2 = (fetchedData) => {
         feedEl = document.getElementById("feedRequest");
         fetchedData.forEach((story) => {
