@@ -6,8 +6,9 @@
   // fetchNews.js
   var require_fetchNews = __commonJS({
     "fetchNews.js"(exports, module) {
+      var testAPI = "https://content.guardianapis.com/search?page=1&api-key=test&show-fields=body,headline,thumbnail";
       var fetchNews2 = (onDataFetched) => {
-        fetch(guardianAPI).then((response) => response.json()).then(onDataFetched);
+        fetch(testAPI).then((response) => response.json()).then(onDataFetched);
       };
       module.exports = fetchNews2;
     }
