@@ -50,7 +50,8 @@ class CreateCard {
   this.writeSrcArticle(article, postLinks, newPostEl);
   this.writeBgImage(article, newPostEl, newPostContainer);
   newPostContainer.appendChild(newPostEl);
-  document.body.appendChild(newPostContainer);
+  const main = document.querySelector("main")
+  main.appendChild(newPostContainer);
   modal.writeCardModal(article, newId);
 }
 }
