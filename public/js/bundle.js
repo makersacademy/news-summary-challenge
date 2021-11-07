@@ -17,6 +17,11 @@
           span.onclick = function() {
             modal2.style.display = "none";
           };
+          document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+              modal2.style.display = "none";
+            }
+          });
         }
       };
       module.exports = modalLogic2;
