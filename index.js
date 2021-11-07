@@ -1,5 +1,19 @@
 console.log("Running...")
 
+const loadContent = () => {
+  let pageId = location.hash.split("#")[1];
+  let feedUrl = 'https://content.guardianapis.com/search?page=1&api-key=test&show-fields=body,headline,thumbnail';
+  if (pageId == "home") {
+    console.log("loading #home");
+    console.log(feedUrl)
+    fetchContent(feedUrl, displayFeed);
+  } else {
+    console.log(`loading ${pageId}`);
+    console.log(feedUrl)
+    fetchContent(feedUrl, displayStory);
+  }
+}
+
 const fetchContent = (url, callback) => {
   fetch(url)
   .then(response => response.json())
@@ -13,12 +27,12 @@ const fetchContent = (url, callback) => {
 }
 
 const displayFeed = (content) => {
-  console.log("Displaying content...");
+  console.log("Displaying feed...");
   feedEL = document.getElementById("headlines");
   // clear feed
   feedEL.innerHTML = "";
   let results = content.response.results
-  results.forEach((result, index) => {
+  results.forEach((result) => {
     // story card
     let storyEl = document.createElement('article');
     storyEl.className = "storyCard";
@@ -32,7 +46,7 @@ const displayFeed = (content) => {
     storyHeadline.appendChild(storyLink);
     storyLink.textContent = result.webTitle;
     // storyLink.href = result.webUrl;
-    storyLink.href = `#${index}`;
+    storyLink.href = "#" + result.id;
     // append all elements to story
     storyEl.appendChild(storyImg);
     storyEl.appendChild(storyHeadline);
@@ -42,30 +56,50 @@ const displayFeed = (content) => {
   })
 }
 
-let feedUrl = 'https://content.guardianapis.com/search?page=1&api-key=test&show-fields=body,headline,thumbnail'
-fetchContent(feedUrl, displayFeed);
+const displayStory = (content) => {
+  let pageId = location.hash.split("#")[1];
+  console.log("Displaying story...");
+  console.log("PageId:" + pageId)
 
-const makeUrlChange = () => {
-  console.log("Changing URL...")
-  window.addEventListener("hashchange", showStoryForCurrentPage);
-}
-const showStoryForCurrentPage = () => {
-  let url = getStoryFromUrl(window.location);
-  showStory(url);
-}
-const getStoryFromUrl = (location) => {
-  return location.hash.split("#")[1];
-}
-const showStory = (story) => {
-  let feedEL = document.getElementById("headlines")
+  let result = content.response.results.find(element => element.id == pageId)
+  console.log(result);
+
+  feedEL = document.getElementById("headlines");
+  // clear feed
   feedEL.innerHTML = "";
-  let storyEl = document.createElement('p');
-  storyEl.textContent = `I am story #${story}`;
-  let home = document.createElement('a');
-  home.textContent = "Go Back";
-  home.href = "";
-  feedEl.appendChild(home);
+
+  // story card
+  let storyEl = document.createElement('article');
+  storyEl.className = "storyCard";
+  // image
+  let storyImg = document.createElement('img');
+  storyImg.className = "storyThumb";
+  storyImg.src = result.fields.thumbnail;
+  // headline and link
+  let storyHeadline = document.createElement('h2');
+  let storyLink = document.createElement('a');
+  storyHeadline.appendChild(storyLink);
+  storyLink.textContent = result.webTitle;
+  storyLink.href = result.webUrl;
+  // body text
+  let storyBody = document.createElement('div');
+  storyBody.innerHTML = result.fields.body;
+  // append all elements to story
+  storyEl.appendChild(storyImg);
+  storyEl.appendChild(storyHeadline);
+  storyEl.appendChild(storyBody);
+  // append story to feed
+  feedEl = document.getElementById("headlines");
   feedEl.appendChild(storyEl);
+
+  
 }
 
-makeUrlChange();
+// if there is no location hash make it home
+if(!location.hash) {
+  location.hash = "#home";
+}
+// call loadContent on script load
+loadContent();
+// call loadContent on hashchange
+window.addEventListener("hashchange", loadContent)

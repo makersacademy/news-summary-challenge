@@ -1,6 +1,19 @@
 (() => {
   // index.js
   console.log("Running...");
+  var loadContent = () => {
+    let pageId = location.hash.split("#")[1];
+    let feedUrl = "https://content.guardianapis.com/search?page=1&api-key=test&show-fields=body,headline,thumbnail";
+    if (pageId == "home") {
+      console.log("loading #home");
+      console.log(feedUrl);
+      fetchContent(feedUrl, displayFeed);
+    } else {
+      console.log(`loading ${pageId}`);
+      console.log(feedUrl);
+      fetchContent(feedUrl, displayStory);
+    }
+  };
   var fetchContent = (url, callback) => {
     fetch(url).then((response) => response.json()).then((data) => {
       console.log("Success:", data);
@@ -10,11 +23,11 @@
     });
   };
   var displayFeed = (content) => {
-    console.log("Displaying content...");
+    console.log("Displaying feed...");
     feedEL = document.getElementById("headlines");
     feedEL.innerHTML = "";
     let results = content.response.results;
-    results.forEach((result, index) => {
+    results.forEach((result) => {
       let storyEl = document.createElement("article");
       storyEl.className = "storyCard";
       let storyImg = document.createElement("img");
@@ -24,36 +37,42 @@
       let storyLink = document.createElement("a");
       storyHeadline.appendChild(storyLink);
       storyLink.textContent = result.webTitle;
-      storyLink.href = `#${index}`;
+      storyLink.href = "#" + result.id;
       storyEl.appendChild(storyImg);
       storyEl.appendChild(storyHeadline);
       feedEl = document.getElementById("headlines");
       feedEl.appendChild(storyEl);
     });
   };
-  var feedUrl = "https://content.guardianapis.com/search?page=1&api-key=test&show-fields=body,headline,thumbnail";
-  fetchContent(feedUrl, displayFeed);
-  var makeUrlChange = () => {
-    console.log("Changing URL...");
-    window.addEventListener("hashchange", showStoryForCurrentPage);
-  };
-  var showStoryForCurrentPage = () => {
-    let url = getStoryFromUrl(window.location);
-    showStory(url);
-  };
-  var getStoryFromUrl = (location) => {
-    return location.hash.split("#")[1];
-  };
-  var showStory = (story) => {
-    let feedEL2 = document.getElementById("headlines");
-    feedEL2.innerHTML = "";
-    let storyEl = document.createElement("p");
-    storyEl.textContent = `I am story #${story}`;
-    let home = document.createElement("a");
-    home.textContent = "Go Back";
-    home.href = "";
-    feedEl.appendChild(home);
+  var displayStory = (content) => {
+    let pageId = location.hash.split("#")[1];
+    console.log("Displaying story...");
+    console.log("PageId:" + pageId);
+    let result = content.response.results.find((element) => element.id == pageId);
+    console.log(result);
+    feedEL = document.getElementById("headlines");
+    feedEL.innerHTML = "";
+    let storyEl = document.createElement("article");
+    storyEl.className = "storyCard";
+    let storyImg = document.createElement("img");
+    storyImg.className = "storyThumb";
+    storyImg.src = result.fields.thumbnail;
+    let storyHeadline = document.createElement("h2");
+    let storyLink = document.createElement("a");
+    storyHeadline.appendChild(storyLink);
+    storyLink.textContent = result.webTitle;
+    storyLink.href = result.webUrl;
+    let storyBody = document.createElement("div");
+    storyBody.innerHTML = result.fields.body;
+    storyEl.appendChild(storyImg);
+    storyEl.appendChild(storyHeadline);
+    storyEl.appendChild(storyBody);
+    feedEl = document.getElementById("headlines");
     feedEl.appendChild(storyEl);
   };
-  makeUrlChange();
+  if (!location.hash) {
+    location.hash = "#home";
+  }
+  loadContent();
+  window.addEventListener("hashchange", loadContent);
 })();
