@@ -1,14 +1,14 @@
 class Client {
   constructor() {
     this.makersAPIURL = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=';
-    this.guardianSearchEndpoint = 'http://content.guardianapis.com/search';
+    this.guardianSearchEndpoint = 'http://content.guardianapis.com/search?show-fields=thumbnail';
   }
 
-  fetchNews(callback) {
-    fetch(this.makersAPIURL + this.guardianSearchEndpoint)
+  fetchNews() {
+    return fetch(this.makersAPIURL + this.guardianSearchEndpoint)
       .then(response => response.json()
         .then((data) => {
-          callback(data);
+          return data;
         })
       );
   }

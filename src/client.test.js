@@ -13,23 +13,23 @@ describe('Client', () => {
     it('sends a request to makersAPIURL for news', () => {
       const url = client.makersAPIURL + client.guardianSearchEndpoint;
 
-      client.fetchNews(() => {});
+      client.fetchNews();
 
       expect(fetch).toHaveBeenCalledWith(url);
     });
 
-    it('returns 10 results', () => {
-      client.fetchNews((data) => {
-        let result = data.response.results;
-        expect(result.length).toEqual(10);
-      });
+    it('returns 10 results', async () => {
+      let data = await client.fetchNews(),
+        results = data.response.results;
+
+      expect(results.length).toEqual(10);
     });
 
-    it('returns containes news title', () => {
-      client.fetchNews((data) => {
-        let headline = data.response.results[2].webTitle;
-        expect(headline).toEqual('Cop26: Conference is a ‘PR event’, says Greta Thunberg – day five live');
-      });
+    it('returns containes news title', async () => {
+      let data = await client.fetchNews(),
+        headline = data.response.results[2].webTitle;
+        
+      expect(headline).toEqual('EU could shelve Brexit trade deal if UK triggers article 16, Irish minister warns');
     });
   });
 

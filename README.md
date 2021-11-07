@@ -1,19 +1,30 @@
 # News Summary challenge
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+## Warning on use!
 
-## Challenge
+This app calls a restricted api on refresh every time. Please use with caution!
 
-As usual please start by forking this repo.
+For demo purposes only.
 
-You'll create an app that summarises the news.
 
-### Guidance
+## how I did over the weekend and my approach
 
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
+I started with making a client class calling to the api after exploring what the api returned vs what I needed.
+I spent some time learning to mocking the fetch method and effectively testing the class. I started with a manual callback approach to deal with async concerns. When it came to saving the results so I would only call the api when needed, I had to change me approach and use async await functions.
+
+Creating the headlines first was done with 10 divs already in place, I then realized I would need to completely create the html if I was going to recreate different html to display 'pages' when needed.
+
+I had to spend some time learning how best to test the dom, setting up the jest environment and what to test, I had so difficulty testing the img src.
+
+I ended up leaving the tests for the index.js as I was finding it hard to build momentum on getting user stories working.
+
+I have left a redundant event listener in the index.js as an example of the next steps approach.
+
+## what I would have done next
+
+I wanted to try using the click event to instruct the client to call the url of said index and then have that information going to a presenter method to create entire html content for the headlines div. I would have set up a separate event listener to listen for a button that would call the creatHeadlines function, (which the user would see as a "back to main page" button).
+
+I would have also written tests for the index.js
 
 ## Project overview
 
