@@ -78,8 +78,14 @@ body{
 .card-image {
   max-width: 50%;
   position: absolute;
+  padding: 5px;
   bottom: 0;
   right: 0;
+  margin-bottom: 3vh;
+  margin-right: 3vh;
+  border-radius: 5px;
+  background-color: white;
+  border: 3px solid black;
 }
 
 .post-links{
