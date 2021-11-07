@@ -4,20 +4,25 @@ class Summary {
   
   getAllArticles = (card, modal) => {
   fetch("https://content.guardianapis.com/search?page-size=20&api-key=test&format=json&show-fields=body,headline,thumbnail")
+    .then(card.showLoading())
     .then(response => response.json())
     .then(data => {
       const articles = data.response.results
-      async function myFunc() {
+      async function myFunc(callback) {
         await new Promise((resolve) => {
           resolve(articles.forEach((article) => {
-          card.createCard(article, modal)
-        }));
-      });
-      modalLogic();
+            setTimeout(function(){ card.createCard(article, modal) }, 900);
+          }));
+          callback
+        });
+        modalLogic();
       }
       myFunc();
+      
+      setTimeout(function(){ card.removeLoading() }, 800);
       })
   }
 
 }
 module.exports = Summary;
+

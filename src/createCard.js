@@ -38,7 +38,7 @@ class CreateCard {
  
   createCard = (article, modal) => {
   const newPostContainer = document.createElement('div');
-  newPostContainer.classList.add('container');
+  newPostContainer.classList = 'animate__animated animate__fadeIn container';
   const newPostEl = document.createElement('div');
   const newId = document.querySelectorAll('.post').length + 1;
   newPostEl.className = 'post';
@@ -52,6 +52,19 @@ class CreateCard {
   newPostContainer.appendChild(newPostEl);
   document.body.appendChild(newPostContainer);
   modal.writeCardModal(article, newId);
+}
+
+showLoading = () => {
+  const loading = document.createElement("h1")
+  loading.id = 'loading-div'
+  const loadingTitle = document.createTextNode("Fetching the latest news");
+  loading.appendChild(loadingTitle)
+  document.body.appendChild(loading);
+}
+
+removeLoading = () => {
+  const loading = document.getElementById('loading-div')
+  loading.style.display = "none";
 }
 }
 

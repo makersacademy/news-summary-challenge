@@ -29,7 +29,7 @@ class CreateModal {
 
   writeCardModal = (article, newId) => {
   const newModalDiv = document.createElement('div');
-  newModalDiv.className = 'modal';
+  newModalDiv.className = 'modal animate__animated animate__fadeIn';
   newModalDiv.id = 'myModal-' + newId;
   const newModalContent = document.createElement('div');
   newModalContent.className = 'modal-content';

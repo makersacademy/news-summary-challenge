@@ -34,17 +34,23 @@
       var modalLogic2 = require_modalLogic();
       var Summary2 = class {
         getAllArticles = (card2, modal2) => {
-          fetch("https://content.guardianapis.com/search?page-size=20&api-key=test&format=json&show-fields=body,headline,thumbnail").then((response) => response.json()).then((data) => {
+          fetch("https://content.guardianapis.com/search?page-size=20&api-key=test&format=json&show-fields=body,headline,thumbnail").then(card2.showLoading()).then((response) => response.json()).then((data) => {
             const articles = data.response.results;
-            async function myFunc() {
+            async function myFunc(callback) {
               await new Promise((resolve) => {
                 resolve(articles.forEach((article) => {
-                  card2.createCard(article, modal2);
+                  setTimeout(function() {
+                    card2.createCard(article, modal2);
+                  }, 900);
                 }));
+                callback;
               });
               modalLogic2();
             }
             myFunc();
+            setTimeout(function() {
+              card2.removeLoading();
+            }, 800);
           });
         };
       };
@@ -88,7 +94,7 @@
         };
         createCard = (article, modal2) => {
           const newPostContainer = document.createElement("div");
-          newPostContainer.classList.add("container");
+          newPostContainer.classList = "animate__animated animate__fadeIn container";
           const newPostEl = document.createElement("div");
           const newId = document.querySelectorAll(".post").length + 1;
           newPostEl.className = "post";
@@ -102,6 +108,17 @@
           newPostContainer.appendChild(newPostEl);
           document.body.appendChild(newPostContainer);
           modal2.writeCardModal(article, newId);
+        };
+        showLoading = () => {
+          const loading = document.createElement("h1");
+          loading.id = "loading-div";
+          const loadingTitle = document.createTextNode("Fetching the latest news");
+          loading.appendChild(loadingTitle);
+          document.body.appendChild(loading);
+        };
+        removeLoading = () => {
+          const loading = document.getElementById("loading-div");
+          loading.style.display = "none";
         };
       };
       module.exports = CreateCard2;
@@ -137,7 +154,7 @@
         };
         writeCardModal = (article, newId) => {
           const newModalDiv = document.createElement("div");
-          newModalDiv.className = "modal";
+          newModalDiv.className = "modal animate__animated animate__fadeIn";
           newModalDiv.id = "myModal-" + newId;
           const newModalContent = document.createElement("div");
           newModalContent.className = "modal-content";

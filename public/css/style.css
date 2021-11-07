@@ -198,4 +198,6 @@ figure{
   margin: 0;
 }
 
-
+.animate__animated.animate__fadeIn {
+  --animate-duration: 400ms;
+}
