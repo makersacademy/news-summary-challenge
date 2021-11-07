@@ -33,6 +33,7 @@ const displayFeed = (fetchedData) => {
     storyLink.textContent = storyTitle;
     readStory.textContent = 'Click to read full story';
     readStory.id = storyCount;
+    readStory.setAttribute('onclick', `replyClick(${storyCount})`);
     
     //Set image src
     storyImg.src = story["fields"]["thumbnail"];

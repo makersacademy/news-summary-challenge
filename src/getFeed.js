@@ -1,12 +1,12 @@
-const Article = require('./article');
 const newsFeed = require('./newsFeed');
 
-const getFeed = (feedUrl, callback) => {
+const getFeed = (feedUrl, callback, feedName) => {
   fetch(`${feedUrl}`)
   .then(response => response.json())
   .then((jsonResponse) => {
-    console.log(jsonResponse);
-    callback(jsonResponse["response"]["results"]);
+    let results = jsonResponse["response"]["results"]
+    callback(results);
+    feedName.addToStories(results);
   })
 }
 

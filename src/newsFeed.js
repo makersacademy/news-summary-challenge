@@ -3,8 +3,8 @@ class newsFeed {
     this.stories = [];
   }
 
-  addStory(story) {
-    this.stories.push(story);
+  addToStories(articles) {
+    this.stories.push(articles);
   }
   
   displayAll() {
@@ -12,7 +12,7 @@ class newsFeed {
   }
   
   findStory(id) {
-    return this.stories[id];
+    return this.stories[0][id];
   }
 }
 
