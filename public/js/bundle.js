@@ -110,10 +110,15 @@
           modal2.writeCardModal(article, newId);
         };
         showLoading = () => {
-          const loading = document.createElement("h1");
+          const loading = document.createElement("div");
           loading.id = "loading-div";
+          const loadingHolder = document.createElement("h1");
           const loadingTitle = document.createTextNode("Fetching the latest news");
-          loading.appendChild(loadingTitle);
+          loadingHolder.appendChild(loadingTitle);
+          loading.appendChild(loadingHolder);
+          const loadingCircle = document.createElement("div");
+          loadingCircle.className = "loader";
+          loading.appendChild(loadingCircle);
           document.body.appendChild(loading);
         };
         removeLoading = () => {

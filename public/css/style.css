@@ -201,3 +201,31 @@ figure{
 .animate__animated.animate__fadeIn {
   --animate-duration: 400ms;
 }
+
+#loading-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 10vh;
+}
+
+#loading-div > h1 {
+  color: black;
+  font-size: 50px;
+  text-shadow: 4px 4px yellow;
+}
+
+.loader {
+  border: 16px solid yellow; /* Light grey */
+  border-top: 16px dashed black; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
