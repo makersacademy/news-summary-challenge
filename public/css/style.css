@@ -45,6 +45,12 @@ body{
   }
 }
 
+@media screen and (max-width: 800px){
+  .container{
+    margin: 20px;
+  }
+}
+
 .post {
   position: absolute;
   border-radius:8px;
@@ -118,7 +124,6 @@ body{
   overflow-y: hidden;
   border-radius: 10px;
   background-color: rgba(32, 32, 32, 0.705); /* Fallback color */
-
 }
 
 /* Modal Content/Box */
@@ -134,6 +139,15 @@ body{
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+@media screen and (max-width: 800px){
+  .modal-content{
+    padding: 20px;
+    margin-top: 1vh;
+    height: 90vh;
+  }
+}
+
 
 .modal-content::-webkit-scrollbar {
   display: none;
