@@ -29,13 +29,12 @@ class CreateCard {
 }
 
   writeBgImage = (article, newPostEl, newPostContainer) => {
-  const newPostImg = document.createElement('div');
-  newPostImg.style.backgroundImage = `url('${article.fields.thumbnail}')`;
-  newPostImg.className = 'background_image';
-  newPostContainer.appendChild(newPostEl);
-  newPostContainer.appendChild(newPostImg);
-  document.body.appendChild(newPostContainer);
+  const newPostImg = document.createElement('img');
+  newPostImg.setAttribute("src", article.fields.thumbnail);
+  newPostImg.className = 'card-image';
+  newPostEl.appendChild(newPostImg);
 }
+
  
   createCard = (article, modal) => {
   const newPostContainer = document.createElement('div');
@@ -44,12 +43,14 @@ class CreateCard {
   const newId = document.querySelectorAll('.post').length + 1;
   newPostEl.className = 'post';
   newPostEl.id = 'post-' + newId;
-  this.writeArticleTitle(article, newPostEl);
   const postLinks = document.createElement('div');
   postLinks.classList.add('post-links')
+  this.writeArticleTitle(article, newPostEl);
   this.writeSectionId(article, postLinks, newPostEl);
   this.writeSrcArticle(article, postLinks, newPostEl);
   this.writeBgImage(article, newPostEl, newPostContainer);
+  newPostContainer.appendChild(newPostEl);
+  document.body.appendChild(newPostContainer);
   modal.writeCardModal(article, newId);
 }
 }
