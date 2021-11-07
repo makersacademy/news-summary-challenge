@@ -21,7 +21,7 @@ body{
   justify-content: space-evenly;
   /* background-image: url('../resources/images/background.png');
    */
-   background-color: white;
+   background-color: rgb(243, 239, 233);
   background-size: 120%;
   font-family: 'BiotifBold';
 }
@@ -33,21 +33,22 @@ body{
   width: 500px;
   position: relative;
   border: 10px solid yellow;
+  border-radius: 10px;
 }
 
 .container:after {
   background: none;
-  border: 3px solid black;
-  box-shadow: 8px 8px rgb(214, 214, 214);
+  border: 5px solid black;
+  box-shadow: 8px 8px rgb(197, 197, 197);
   content: "";
   display: block;
   position: absolute;
   z-index: 2;
-  border-radius: 2px;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
+border-radius: 10px;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
   pointer-events: none;
 }
 
@@ -56,6 +57,7 @@ body{
   .container{
   height: 240px;
   width: 400px;
+  border-radius: 10px;
   }
 }
 
@@ -95,6 +97,7 @@ color: white;
   top: 0;
   position: absolute;
   height: 100%;
+  border-radius: 10px;
   width: 100%;
   margin: 0;
   -webkit-filter: saturate(0);
@@ -105,19 +108,23 @@ color: white;
 
 .post-links{
   height: 5%;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
 }
 
 .section_button{
   display: inline-block;
-  color: white;
-  background-color: #0d7680;
+  color: red;
+  background-color: rgb(243, 239, 233);
+  box-shadow: 2px 2px red;
   font-weight: bold;
   padding: 10px 4px 10px 4px;
-  border-radius:3px;
+  border-radius:1px;
   line-height: 5px;
   text-decoration: none;
 }
@@ -146,8 +153,11 @@ color: white;
 
 .bi-newspaper{
   font-size: 25px;
-  padding: 0;
-  color: rgb(75, 75, 75);
+  padding: 5px 5px 0 5px;
+  margin-bottom: 10px;
+  color: red;
+  box-shadow: 2px 2px red;
+  background-color: rgb(243, 239, 233);
 }
 
 .bi-newspaper:hover{
