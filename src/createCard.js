@@ -36,42 +36,8 @@ class CreateCard {
   newPostContainer.appendChild(newPostImg);
   document.body.appendChild(newPostContainer);
 }
-  extractContent = (string) => {
-  var span = document.createElement('span');
-  span.innerHTML = string;
-  return span.textContent || span.innerText;
-};
-
-writeCardModal = (article, newId) => {
-  const newModalDiv = document.createElement('div');
-  newModalDiv.className = 'modal';
-  newModalDiv.id = 'myModal-' + newId;
-  const newModalContent = document.createElement('div');
-  newModalContent.className = 'modal-content';
-  const closeButton = document.createElement('button');
-  closeButton.id = 'close-' + newId;
-  closeButton.innerHTML = '&times;';
-  newModalContent.appendChild(closeButton);
-  const modalTitle = document.createElement("h1");
-  const modalTitleText = document.createTextNode(article.webTitle);
-  const textDiv = document.createElement("p");
-  const articleText = this.extractContent(article.fields.body);
-  const modalText = document.createTextNode(articleText)
-  const articleImage = document.createElement("img")
-  articleImage.setAttribute("src", article.fields.thumbnail)
-  articleImage.className = 'modal-article-image';
-  textDiv.appendChild(modalText);
-  modalTitle.appendChild(modalTitleText);
-  newModalContent.appendChild(articleImage)
-  newModalContent.appendChild(modalTitle);
-  newModalContent.appendChild(textDiv);
-  newModalDiv.appendChild(newModalContent);
-  document.body.appendChild(newModalDiv);
-}
-
-
-
-  createCard = (article) => {
+ 
+  createCard = (article, modal) => {
   const newPostContainer = document.createElement('div');
   newPostContainer.classList.add('container');
   const newPostEl = document.createElement('div');
@@ -84,7 +50,7 @@ writeCardModal = (article, newId) => {
   this.writeSectionId(article, postLinks, newPostEl);
   this.writeSrcArticle(article, postLinks, newPostEl);
   this.writeBgImage(article, newPostEl, newPostContainer);
-  this.writeCardModal(article, newId);
+  modal.writeCardModal(article, newId);
 }
 }
 

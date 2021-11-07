@@ -28,13 +28,13 @@
     "src/Summary.js"(exports, module) {
       var modalLogic2 = require_modalLogic();
       var Summary2 = class {
-        getAllArticles = (card2) => {
+        getAllArticles = (card2, modal2) => {
           fetch("https://content.guardianapis.com/search?page-size=20&api-key=test&format=json&show-fields=body,headline,thumbnail").then((response) => response.json()).then((data) => {
             const articles = data.response.results;
             async function myFunc() {
               await new Promise((resolve) => {
                 resolve(articles.forEach((article) => {
-                  card2.createCard(article);
+                  card2.createCard(article, modal2);
                 }));
               });
               modalLogic2();
@@ -88,33 +88,7 @@
           span.innerHTML = string;
           return span.textContent || span.innerText;
         };
-        writeCardModal = (article, newId) => {
-          const newModalDiv = document.createElement("div");
-          newModalDiv.className = "modal";
-          newModalDiv.id = "myModal-" + newId;
-          const newModalContent = document.createElement("div");
-          newModalContent.className = "modal-content";
-          const closeButton = document.createElement("button");
-          closeButton.id = "close-" + newId;
-          closeButton.innerHTML = "&times;";
-          newModalContent.appendChild(closeButton);
-          const modalTitle = document.createElement("h1");
-          const modalTitleText = document.createTextNode(article.webTitle);
-          const textDiv = document.createElement("p");
-          const articleText = this.extractContent(article.fields.body);
-          const modalText = document.createTextNode(articleText);
-          const articleImage = document.createElement("img");
-          articleImage.setAttribute("src", article.fields.thumbnail);
-          articleImage.className = "modal-article-image";
-          textDiv.appendChild(modalText);
-          modalTitle.appendChild(modalTitleText);
-          newModalContent.appendChild(articleImage);
-          newModalContent.appendChild(modalTitle);
-          newModalContent.appendChild(textDiv);
-          newModalDiv.appendChild(newModalContent);
-          document.body.appendChild(newModalDiv);
-        };
-        createCard = (article) => {
+        createCard = (article, modal2) => {
           const newPostContainer = document.createElement("div");
           newPostContainer.classList.add("container");
           const newPostEl = document.createElement("div");
@@ -127,7 +101,7 @@
           this.writeSectionId(article, postLinks, newPostEl);
           this.writeSrcArticle(article, postLinks, newPostEl);
           this.writeBgImage(article, newPostEl, newPostContainer);
-          this.writeCardModal(article, newId);
+          modal2.writeCardModal(article, newId);
         };
       };
       module.exports = CreateCard2;
@@ -163,6 +137,11 @@
           articleImage.className = "modal-article-image";
           newModalContent.appendChild(articleImage);
         };
+        extractContent = (string) => {
+          var span = document.createElement("span");
+          span.innerHTML = string;
+          return span.textContent || span.innerText;
+        };
         writeCardModal = (article, newId) => {
           const newModalDiv = document.createElement("div");
           newModalDiv.className = "modal";
@@ -170,9 +149,9 @@
           const newModalContent = document.createElement("div");
           newModalContent.className = "modal-content";
           this.writeCloseButton(newId, newModalContent);
+          this.writeModalImage(article, newModalContent);
           this.writeModalTitle(article, newModalContent);
           this.writeModalBody(article, newModalContent);
-          this.writeModalImage(article, newModalContent);
           newModalDiv.appendChild(newModalContent);
           document.body.appendChild(newModalDiv);
         };
@@ -189,5 +168,5 @@
   var summary = new Summary();
   var card = new CreateCard();
   var modal = new CreateModal();
-  summary.getAllArticles(card);
+  summary.getAllArticles(card, modal);
 })();

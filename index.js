@@ -6,4 +6,4 @@ const summary = new Summary();
 const card = new CreateCard();
 const modal = new CreateModal();
 
-summary.getAllArticles(card);
+summary.getAllArticles(card, modal);

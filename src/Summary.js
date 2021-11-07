@@ -2,7 +2,7 @@ const modalLogic = require("./modalLogic");
 
 class Summary {
   
-  getAllArticles = (card) => {
+  getAllArticles = (card, modal) => {
   fetch("https://content.guardianapis.com/search?page-size=20&api-key=test&format=json&show-fields=body,headline,thumbnail")
     .then(response => response.json())
     .then(data => {
@@ -10,7 +10,7 @@ class Summary {
       async function myFunc() {
         await new Promise((resolve) => {
           resolve(articles.forEach((article) => {
-          card.createCard(article)
+          card.createCard(article, modal)
         }));
       });
       modalLogic();

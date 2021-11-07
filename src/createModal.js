@@ -29,6 +29,12 @@ class CreateModal {
     newModalContent.appendChild(articleImage)
   }
 
+   extractContent = (string) => {
+  var span = document.createElement('span');
+  span.innerHTML = string;
+  return span.textContent || span.innerText;
+};
+
   writeCardModal = (article, newId) => {
   const newModalDiv = document.createElement('div');
   newModalDiv.className = 'modal';
@@ -36,9 +42,9 @@ class CreateModal {
   const newModalContent = document.createElement('div');
   newModalContent.className = 'modal-content';
   this.writeCloseButton(newId, newModalContent);
+  this.writeModalImage(article, newModalContent);
   this.writeModalTitle(article, newModalContent);
   this.writeModalBody(article, newModalContent);
-  this.writeModalImage(article, newModalContent);
   newModalDiv.appendChild(newModalContent);
   document.body.appendChild(newModalDiv);
 }
