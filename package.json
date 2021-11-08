@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/TTurvey/news-summary-challenge/issues"
   },
-  "homepage": "https://github.com/TTurvey/news-summary-challenge#readme"
+  "homepage": "https://github.com/TTurvey/news-summary-challenge#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-server": "^14.0.0",
+    "server": "^1.0.36"
+  }
 }
