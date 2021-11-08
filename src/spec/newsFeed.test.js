@@ -29,8 +29,10 @@ describe (newsFeed, () => {
   describe ('.findStory', () => {
     it('returns a story based on its id', () => {
       feed = new newsFeed ();
-      feed.addToStories({title: 'This is a new story'});
-      feed.addToStories({title: 'This is a second story'});
+      feed.addToStories([
+      { title: 'This is a new story' },
+      { title: 'This is a second story' }
+      ]);
       expect(feed.findStory(1)).toEqual(
         {title: 'This is a second story'}
       );
