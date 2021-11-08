@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/s-palmer/news-summary-challenge#readme",
   "dependencies": {
+    "esbuild": "^0.13.12",
     "http-server": "^14.0.0"
   },
   "devDependencies": {
