@@ -1,0 +1,26 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "* Feel free to use Google, your notes, books, etc. but work on your own. * If you refer to the solution of another coach or student, please put a link to that in your README. * If you have a partial solution, **still check in a partial solution** and send in a pull request. * You must submit a pull request to this repo with your code by 9am Monday morning.",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TTurvey/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TTurvey/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/TTurvey/news-summary-challenge#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-server": "^14.0.0",
+    "server": "^1.0.36"
+  }
+}
