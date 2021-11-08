@@ -4,7 +4,7 @@ const loadContent = () => {
   let pageId = location.hash.split("#")[1];
   let feedUrl = 'https://content.guardianapis.com/search?page=1&api-key=test&show-fields=body,headline,thumbnail';
   if (pageId == "home") {
-    console.log("loading #home");
+    console.log(`loading ${pageId}`);
     console.log(feedUrl)
     fetchContent(feedUrl, displayFeed);
   } else {
@@ -91,8 +91,7 @@ const displayStory = (content) => {
   // append story to feed
   feedEl = document.getElementById("headlines");
   feedEl.appendChild(storyEl);
-
-  
+  window.scrollTo(0, 0);
 }
 
 // if there is no location hash make it home
