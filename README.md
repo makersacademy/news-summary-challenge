@@ -1,3 +1,32 @@
+News Summary challenge
+=================
+This app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
+
+## Features
+- [x] See all of today's headlines (10) in one place
+- [x] Display a picture for each headline
+- [x] Click a headline to see a summary
+- [x] Click the summary headline to go to the original
+- [ ] Responsive design
+- [ ] Animations
+
+## Approach
+* Started by getting a fetch request to the API working
+* Then implemented listing all the headlines
+* Then worked on displaying the images and getting the links to work
+* Lastly added the single article view which took the longest to implement
+
+## Thoughts
+* This challenge was difficult. Getting the single article view to work without reloading the page took a long time to figure out
+* I spent a lot of time on trial and error which is why the code is in a single file :)
+
+## Outstanding issues
+* I think the way my fetch requests works for the article view means that there is a small chance the page won't render if the new fetch request doesn't contain the story.
+
+# Original readme
+<details>
+    <summary>Click to expand!</summary>
+
 # News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
@@ -149,3 +178,4 @@ If you're interested, you can see the code for the News Summary API in this repo
 * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+</details>
