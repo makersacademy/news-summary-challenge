@@ -88,7 +88,7 @@
   var { displayFeed } = require_displayFeed();
   var newsFeed = require_newsFeed();
   var allStoriesBtn = document.getElementById("allStoriesButton");
-  var feedUrl = "https://content.guardianapis.com/search?api-key=test&show-fields=body,headline,thumbnail&show-tags=contributor";
+  var feedUrl = "https://content.guardianapis.com/search?q=debate%20AND%20economy&api-key=test&show-fields=body,headline,thumbnail&show-tags=contributor";
   feed = new newsFeed();
   getFeed(feedUrl, displayFeed, feed);
   allStoriesBtn.addEventListener("click", () => {
