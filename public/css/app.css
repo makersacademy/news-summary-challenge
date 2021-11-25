@@ -1,0 +1,60 @@
+body {
+  background-color: #edf6f9;
+}
+
+h1 {
+  font-family: 'Roboto';
+  margin: auto;
+  margin-top: 25px;
+  width: 50%;
+  text-align: center;
+}
+
+.storyCard {
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 75%;
+  border: 1px solid black;
+  font-family: 'Lato';
+  background-color: #83c5be;
+  text-align: center;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: larger;
+}
+
+img {
+  width: 75%;
+  height: 75%;
+  border-radius: 5px;
+}
+
+.storyThumb {
+  width: 75%;
+}
+
+button {
+  text-align: center;
+  border-radius: 5px;
+  background-color: #f07167;
+  margin: auto;
+  padding: 10px;
+  color: black;
+  font-size: medium;
+}
+
+.button-container {
+  height: 50px;
+  position: relative;
+  border: 3px solid #edf6f9;
+}
+
+.button-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
