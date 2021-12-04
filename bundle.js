@@ -23,10 +23,13 @@
         feedElement = document.getElementById("feedRequest");
         fetchedData.forEach((article) => {
           let articleElement = document.createElement("p");
-          let articleTitle = article["webTitle"];
+          let articleImage = document.createElement("img");
           let articleURL = document.createElement("a");
+          let articleTitle = article["webTitle"];
           articleURL.href = article["webUrl"];
+          articleImage.src = article["fields"]["thumbnail"];
           articleURL.textContent = articleTitle;
+          articleElement.appendChild(articleImage);
           articleElement.appendChild(articleURL);
           feedElement.appendChild(articleElement);
         });
@@ -38,5 +41,5 @@
   // index.js
   var { getFeed } = require_getFeed();
   var { displayFeed } = require_displayFeed();
-  getFeed("https://content.guardianapis.com/search?q=Cricket&api-key=test", displayFeed);
+  getFeed("https://content.guardianapis.com/search?q=Cricket&api-key=test&show-fields=body,headline,thumbnail", displayFeed);
 })();

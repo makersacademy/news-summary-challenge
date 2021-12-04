@@ -1,14 +1,17 @@
 const displayFeed = (fetchedData) => {
-  feedElement = document.getElementById('feedRequest')
+  feedElement = document.getElementById('feedRequest');
   fetchedData.forEach((article) => {
     let articleElement = document.createElement('p');
-    let articleTitle = article['webTitle'];
+    let articleImage = document.createElement('img');
     let articleURL = document.createElement('a');
-    articleURL.href = article['webUrl'];
+    let articleTitle = article["webTitle"];
+    articleURL.href = article["webUrl"];
+    articleImage.src = article["fields"]["thumbnail"];
     articleURL.textContent = articleTitle;
+    articleElement.appendChild(articleImage);
     articleElement.appendChild(articleURL);
     feedElement.appendChild(articleElement);
-  });
-};
+  })
+}
 
 module.exports = { displayFeed };
