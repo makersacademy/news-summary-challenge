@@ -16,7 +16,7 @@
 - Over the course of the weekend I managed to make an application which used the Guardian newspaper API to list the news articles from the API address.
 - My next task, had I had more time this weekend, would have been to add a button that allows users of the page to view the whole article on the webpage, rather than having to click the link to the Guardian page.
 
-![](https://user-images.githubusercontent.com/75947453/144718415-2bcd871f-50f2-4c84-87b8-802ac4ce8faa.mov)
+![News App Screenshot](https://user-images.githubusercontent.com/75947453/144718608-4da5d173-d34f-4f6a-a109-70a867fe4695.gif)
 
 ## Challenge
 * Feel free to use Google, your notes, books, etc. but work on your own.
