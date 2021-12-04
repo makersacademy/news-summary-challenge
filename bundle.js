@@ -41,5 +41,5 @@
   // index.js
   var { getFeed } = require_getFeed();
   var { displayFeed } = require_displayFeed();
-  getFeed("https://content.guardianapis.com/search?q=Cricket&api-key=test&show-fields=body,headline,thumbnail", displayFeed);
+  getFeed("https://content.guardianapis.com/search?q=Gibraltar&api-key=test&show-fields=body,headline,thumbnail", displayFeed);
 })();
