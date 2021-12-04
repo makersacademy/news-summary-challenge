@@ -5,7 +5,7 @@ const displayFeed = (fetchedData) => {
     let articleImage = document.createElement('img');
     let articleURL = document.createElement('a');
     let articleTitle = article["webTitle"];
-    // articleElement.className = 'articleBlock';
+
     articleURL.href = article["webUrl"];
     articleImage.src = article["fields"]["thumbnail"];
     articleURL.textContent = articleTitle;

@@ -12,6 +12,12 @@
 
 `npm install http-server`
 
+##### End of weekend progress update
+- Over the course of the weekend I managed to make an application which used the Guardian newspaper API to list the news articles from the API address.
+- My next task, had I had more time this weekend, would have been to add a button that allows users of the page to view the whole article on the webpage, rather than having to click the link to the Guardian page.
+
+![](https://user-images.githubusercontent.com/75947453/144718415-2bcd871f-50f2-4c84-87b8-802ac4ce8faa.mov)
+
 ## Challenge
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
