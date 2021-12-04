@@ -20,6 +20,7 @@
   "homepage": "https://github.com/RPGrimes/news-summary-challenge#readme",
   "dependencies": {
     "build": "^0.1.4",
+    "http-server": "^14.0.0",
     "jest": "^27.4.3"
   }
 }

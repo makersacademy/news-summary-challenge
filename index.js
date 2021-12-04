@@ -1,5 +1,4 @@
-const item = () => {
-  return 'what';
-};
+const { getFeed } = require('./src/getFeed')
+const { displayFeed } = require('./src/displayFeed')
 
-module.exports = item;
+getFeed('https://content.guardianapis.com/search?q=Cricket&api-key=test', displayFeed);
