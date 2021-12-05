@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "http-server": "^14.0.0",
+    "jest": "^27.4.3"
+  },
+  "name": "news-summary-challenge",
+  "description": "- Ran \"brew install http-server\" - Ran \"npm install http-server --save\"",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild index.js --bundle  --outfile=bundle.js",
+    "buildw": "esbuild index.js --bundle  --outfile=bundle.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zimmja/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zimmja/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/Zimmja/news-summary-challenge#readme"
+}
