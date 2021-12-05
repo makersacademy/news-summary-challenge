@@ -5,7 +5,11 @@ const GuardianAPI = require("./.env");
 // Setting the title
 //------------------------------------------
 const pageTitle = document.querySelector("#title");
-pageTitle.innerText = "Welcome to the news!";
+const pageSubTitle = document.querySelector("#subtitle");
+
+pageTitle.innerText = "Guardian search";
+pageSubTitle.innerText =
+  "Search today's Guardian for articles related to search terms.";
 
 //------------------------------------------
 // Setting the content
@@ -13,21 +17,28 @@ pageTitle.innerText = "Welcome to the news!";
 const pageContent = document.querySelector("#content");
 const pageResponse = document.querySelector("#full_response");
 
-const setContent = (res) => {
-  pageResponse.innerText = JSON.stringify(res.response.content);
-  console.log(`webTitle: ${res.response.content.webTitle}`);
-  console.log(`body: ${res.response.content.fields.body}`);
-  pageContent.innerText = JSON.stringify(res);
+const setContent = (data) => {
+  topTenResults = data.response.results;
+  topTenResults.forEach((result) => displayElement(result));
+  // pageResponse.innerText = JSON.stringify(topTenResults);
+};
+
+const displayElement = (result) => {
+  let newDiv = document.createElement("div");
+  pageContent.appendChild(newDiv);
+
+  let newEl = document.createElement("a");
+  newEl.innerText = result.webTitle;
+  newEl.href = result.webUrl;
+  newDiv.appendChild(newEl);
 };
 
 const getContent = (callback) => {
   fetch(
-    `http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=${GuardianAPI}`
-  ).then((response) => {
-    response.json().then((res) => {
-      callback(res);
-    });
-  });
+    `https://content.guardianapis.com/search?from-date=2021-12-05&q=raab&api-key=${GuardianAPI}`
+  )
+    .then((response) => response.json())
+    .then((data) => callback(data));
 };
 
 getContent(setContent);

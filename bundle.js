@@ -15,24 +15,25 @@
   console.log("Initiated index.js");
   var GuardianAPI = require_env();
   var pageTitle = document.querySelector("#title");
-  pageTitle.innerText = "Welcome to the news!";
+  var pageSubTitle = document.querySelector("#subtitle");
+  pageTitle.innerText = "Guardian search";
+  pageSubTitle.innerText = "Search today's Guardian for articles related to search terms.";
   var pageContent = document.querySelector("#content");
   var pageResponse = document.querySelector("#full_response");
-  var setContent = (res) => {
-    pageResponse.innerText = JSON.stringify(res.response.content);
-    let subRes = JSON.stringify(res.response.content);
-    console.log(`webTitle: ${res.response.content.webTitle}`);
-    console.log(`body: ${res.response.content.fields.body}`);
-    pageContent.innerText = JSON.stringify(res);
+  var setContent = (data) => {
+    topTenResults = data.response.results;
+    topTenResults.forEach((result) => displayElement(result));
+  };
+  var displayElement = (result) => {
+    let newDiv = document.createElement("div");
+    pageContent.appendChild(newDiv);
+    let newEl = document.createElement("a");
+    newEl.innerText = result.webTitle;
+    newEl.href = result.webUrl;
+    newDiv.appendChild(newEl);
   };
   var getContent = (callback) => {
-    fetch(`http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=${GuardianAPI}`).then((response) => {
-      console.log(response);
-      response.json().then((res) => {
-        console.log(res);
-        callback(res);
-      });
-    });
+    fetch(`https://content.guardianapis.com/search?from-date=2021-12-05&q=raab&api-key=${GuardianAPI}`).then((response) => response.json()).then((data) => callback(data));
   };
   getContent(setContent);
 })();
