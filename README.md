@@ -1,7 +1,28 @@
 ## Setup
 
-- Ran "brew install http-server"
-- Ran "npm install http-server --save"
+1. Ran the following console commands:
+
+```
+npm install http-server -g
+npm install http-server --save
+npm -y init
+npm install jest
+```
+
+2. Add the following lines to the package.json file:
+
+```
+"build": "esbuild index.js --bundle  --outfile=bundle.js",
+"buildw": "esbuild index.js --bundle  --outfile=bundle.js --watch",
+```
+
+3. Added a .gitignore file and include "node_modules/" inside it
+
+4. Created index.html and index.js files. Initiated a pre-built HTML boiler plate by entering "!" and clicking the construction icon. Then added script dependencies to th HTML file:
+
+```
+<script src="bundle.js" type="text/javascript"></script>
+```
 
 # News Summary challenge
 
