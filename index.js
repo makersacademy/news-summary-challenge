@@ -1,5 +1,6 @@
 console.log("Initiated index.js");
 const GuardianAPI = require("./.env");
+const getContent = require("./lib/getContent");
 
 //------------------------------------------
 // Setting the title
@@ -15,15 +16,6 @@ pageSubTitle.innerText =
 // Setting the content
 //------------------------------------------
 const pageContent = document.querySelector("#content");
-
-const getContent = (search, callback) => {
-  if (search === "") return null;
-  fetch(
-    `https://content.guardianapis.com/search?from-date=2021-12-05&q=${search}&api-key=${GuardianAPI}`
-  )
-    .then((response) => response.json())
-    .then((data) => callback(data));
-};
 
 const setContent = (data) => {
   pageContent.innerHTML = "";
@@ -54,5 +46,5 @@ const searchInput = document.querySelector("#searchInput");
 
 searchButton.addEventListener("click", () => {
   searchValue = getSearchValue(searchInput.value);
-  getContent(searchInput.value, setContent);
+  getContent(searchInput.value, setContent, GuardianAPI);
 });
