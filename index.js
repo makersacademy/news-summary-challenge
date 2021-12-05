@@ -1,4 +1,6 @@
 const getNews = require('./getNews');
+const displayArticles = require('./displayArticles');
 
-getNews();
 
+// const headlines = document.querySelector('headlines');
+getNews(displayArticles);

@@ -1,6 +1,5 @@
-
 const getNews = (callback) => {
-  fetch('https://content.guardianapis.com/search?page=1&api-key=test&show-fields=body,headline,thumbnail')
+  fetch('https://content.guardianapis.com/search?page=1&api-key=test&show-fields=all')
   .then(response => response.json())
   .then(data =>  {
     console.log('Success:', data);
