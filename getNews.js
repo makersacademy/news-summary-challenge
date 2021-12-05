@@ -12,7 +12,7 @@ getNews = () => {
         newDiv = document.createElement("div");
         newDiv.innerHTML = `<img src="${element.fields.thumbnail}"><br>
         <h2> ${element.webTitle} </h2><br>
-        <h3>${element.fields.bodyText.substring(0,100)}...</h3>`;
+        <a href = ${element.webUrl}><h3>${element.fields.bodyText.substring(0,100)}...</h3></a>`;
         document.body.append(newDiv)
       });
     });
