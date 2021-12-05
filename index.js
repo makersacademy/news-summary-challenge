@@ -15,12 +15,20 @@ pageSubTitle.innerText =
 // Setting the content
 //------------------------------------------
 const pageContent = document.querySelector("#content");
-const pageResponse = document.querySelector("#full_response");
+
+const getContent = (search, callback) => {
+  if (search === "") return null;
+  fetch(
+    `https://content.guardianapis.com/search?from-date=2021-12-05&q=${search}&api-key=${GuardianAPI}`
+  )
+    .then((response) => response.json())
+    .then((data) => callback(data));
+};
 
 const setContent = (data) => {
+  pageContent.innerHTML = "";
   topTenResults = data.response.results;
   topTenResults.forEach((result) => displayElement(result));
-  // pageResponse.innerText = JSON.stringify(topTenResults);
 };
 
 const displayElement = (result) => {
@@ -33,12 +41,18 @@ const displayElement = (result) => {
   newDiv.appendChild(newEl);
 };
 
-const getContent = (callback) => {
-  fetch(
-    `https://content.guardianapis.com/search?from-date=2021-12-05&q=raab&api-key=${GuardianAPI}`
-  )
-    .then((response) => response.json())
-    .then((data) => callback(data));
+const getSearchValue = (rawVal) => {
+  splitVal = rawVal.split(" ");
+  return splitVal.join("%20");
 };
 
-getContent(setContent);
+//------------------------------------------
+// Event listeners
+//------------------------------------------
+const searchButton = document.querySelector("#searchButton");
+const searchInput = document.querySelector("#searchInput");
+
+searchButton.addEventListener("click", () => {
+  searchValue = getSearchValue(searchInput.value);
+  getContent(searchInput.value, setContent);
+});
