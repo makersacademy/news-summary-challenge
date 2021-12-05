@@ -1,14 +1,4 @@
-const fetchGardiansApi = () => {
-  fetch(
-    "https://content.guardianapis.com/search?page=1&api-key=test&show-fields=headlines"
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Success:", data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-};
+const fetchGardiansApi = require("./src/fetchApi");
+const displayContent = require("./src/displayContent");
 
-fetchGardiansApi();
+fetchGardiansApi(displayContent);
