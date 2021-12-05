@@ -13,7 +13,12 @@ getNews = () => {
         newDiv.innerHTML = `<img src="${element.fields.thumbnail}"><br>
         <h2> ${element.webTitle} </h2><br>
         <a href = ${element.webUrl}><h3>${element.fields.bodyText.substring(0,100)}...</h3></a>`;
+        newDiv.addEventListener("click", () => {
+            document.body.innerHTML = element.fields.body
+        })
+        
         document.body.append(newDiv)
+        
       });
     });
 };
