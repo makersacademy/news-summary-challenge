@@ -1,9 +1,8 @@
 ## Setup
 
-1. Ran the following console commands:
+1. Performed a global install of http-server ("npm install http-server -g") and then ran the following console commands in the repository:
 
 ```
-npm install http-server -g
 npm install http-server --save
 npm -y init
 npm install jest
