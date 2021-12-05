@@ -16,6 +16,7 @@ const displayArticles = (data) => {
     let link = document.createElement('a');
     let content = document.createElement('p');
     article.className = 'article';
+    
   
     // heading.innerText = result.webTitle;
     content.innerText =result.fields.bodyText;
@@ -29,7 +30,7 @@ const displayArticles = (data) => {
     article.appendChild(img);
     article.appendChild(content);
     section.appendChild(article);
-
+  
 
   });
 };
