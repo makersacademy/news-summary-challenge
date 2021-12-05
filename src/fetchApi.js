@@ -1,6 +1,6 @@
 const fetchGardiansApi = (callback) => {
   fetch(
-    "https://content.guardianapis.com/search?page=1&api-key=test&show-fields=headlines"
+    "https://content.guardianapis.com/search?page=1&api-key=test&show-fields=headline,thumbnail,body"
   )
     .then((response) => response.json())
     .then((data) => {
