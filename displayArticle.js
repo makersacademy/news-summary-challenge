@@ -1,44 +1,46 @@
 const displayArticle = (data) => {
-  // console.log(data);
-  const articleTitle1 = document.createElement("p");
-  articleTitle1.innerText = data.response.results[0].webTitle;
-  document.body.append(articleTitle1);
+  // get visibility of data response from API
+  console.log(data);
 
-  const articleTitle2 = document.createElement("p");
-  articleTitle2.innerText = data.response.results[1].webTitle;
-  document.body.append(articleTitle2);
+  // populate HTML for article 1
+  const article1Header = document.querySelector("#article1Header");
+  article1Header.innerText = data.response.results[0].webTitle;
+  const article1Link = document.querySelector("#article1Link");
+  article1Link.href = data.response.results[0].webUrl;
+  const article1Image = document.querySelector("#article1Image");
+  article1Image.src = data.response.results[0].fields.thumbnail;
 
-  const articleTitle3 = document.createElement("p");
-  articleTitle3.innerText = data.response.results[2].webTitle;
-  document.body.append(articleTitle3);
+  // populate HTML for article 2
+  const article2Header = document.querySelector("#article2Header");
+  article2Header.innerText = data.response.results[1].webTitle;
+  const article2Link = document.querySelector("#article2Link");
+  article2Link.href = data.response.results[1].webUrl;
+  const article2Image = document.querySelector("#article2Image");
+  article2Image.src = data.response.results[1].fields.thumbnail;
 
-  const articleTitle4 = document.createElement("p");
-  articleTitle4.innerText = data.response.results[3].webTitle;
-  document.body.append(articleTitle4);
+  // populate HTML for article 3
+  const article3Header = document.querySelector("#article3Header");
+  article3Header.innerText = data.response.results[2].webTitle;
+  const article3Link = document.querySelector("#article3Link");
+  article3Link.href = data.response.results[2].webUrl;
+  const article3Image = document.querySelector("#article3Image");
+  article3Image.src = data.response.results[2].fields.thumbnail;
 
-  const articleTitle5 = document.createElement("p");
-  articleTitle5.innerText = data.response.results[4].webTitle;
-  document.body.append(articleTitle5);
+  // populate HTML for article 4
+  const article4Header = document.querySelector("#article4Header");
+  article4Header.innerText = data.response.results[3].webTitle;
+  const article4Link = document.querySelector("#article4Link");
+  article4Link.href = data.response.results[3].webUrl;
+  const article4Image = document.querySelector("#article4Image");
+  article4Image.src = data.response.results[3].fields.thumbnail;
 
-  const articleTitle6 = document.createElement("p");
-  articleTitle6.innerText = data.response.results[5].webTitle;
-  document.body.append(articleTitle6);
-
-  const articleTitle7 = document.createElement("p");
-  articleTitle7.innerText = data.response.results[6].webTitle;
-  document.body.append(articleTitle7);
-
-  const articleTitle8 = document.createElement("p");
-  articleTitle8.innerText = data.response.results[7].webTitle;
-  document.body.append(articleTitle2);
-
-  const articleTitle9 = document.createElement("p");
-  articleTitle9.innerText = data.response.results[8].webTitle;
-  document.body.append(articleTitle9);
-
-  const articleTitle10 = document.createElement("p");
-  articleTitle10.innerText = data.response.results[9].webTitle;
-  document.body.append(articleTitle10);
+  // populate HTML for article 5
+  const article5Header = document.querySelector("#article5Header");
+  article5Header.innerText = data.response.results[4].webTitle;
+  const article5Link = document.querySelector("#article5Link");
+  article5Link.href = data.response.results[4].webUrl;
+  const article5Image = document.querySelector("#article5Image");
+  article5Image.src = data.response.results[4].fields.thumbnail;
 };
 
 module.exports = displayArticle;
