@@ -2,7 +2,7 @@ body {font-family: 'Newsreader', serif;}
 div {
     width: 500px;
     margin: auto;
-   
+    border-top: 3px solid black ;
   }
 
 h1 {text-align: center;}
