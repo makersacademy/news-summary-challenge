@@ -34,10 +34,9 @@
           let link = document.createElement("a");
           let content = document.createElement("p");
           article.className = "article";
-          heading.innerText = result.webTitle;
           content.innerText = result.fields.bodyText;
           link.href = result.webUrl;
-          link.innerText = heading.innerText;
+          link.innerText = result.webTitle;
           img.src = result.fields.thumbnail;
           article.appendChild(heading);
           heading.appendChild(link);

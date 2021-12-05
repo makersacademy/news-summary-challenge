@@ -10,7 +10,6 @@ const displayArticles = (data) => {
   
   results.forEach(result => {
     // grab references to all DOM elements that need manipulating
- 
     let article = document.createElement('article');
     let img = document.createElement('img');
     let heading = document.createElement('h3');
@@ -18,10 +17,10 @@ const displayArticles = (data) => {
     let content = document.createElement('p');
     article.className = 'article';
   
-    heading.innerText = result.webTitle;
+    // heading.innerText = result.webTitle;
     content.innerText =result.fields.bodyText;
     link.href = result.webUrl;
-    link.innerText = heading.innerText
+    link.innerText = result.webTitle
     img.src = result.fields.thumbnail;
 
  
@@ -30,6 +29,7 @@ const displayArticles = (data) => {
     article.appendChild(img);
     article.appendChild(content);
     section.appendChild(article);
+
 
   });
 };

@@ -10,4 +10,4 @@ const getNews = (callback) => {
   });
 }
   
-module.exports = getNews;
+module.exports = getNews;         
