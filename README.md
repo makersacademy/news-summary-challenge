@@ -1,151 +1,38 @@
-# News Summary challenge
+## Introduction
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull request.
-* You must submit a pull request to this repo with your code by 9am Monday morning.
+This repo contains the code I wrote for the News Summary Challenge, the Makers Academy Week 7 end-of-week challenge. The goal of this challenge was to create a simple single-page app (SPA) that utilised API requests.
 
-## Challenge
+## Setup
 
-As usual please start by forking this repo.
+I began with the following setup process
 
-You'll create an app that summarises the news.
-
-### Guidance
-
-Make sure to look at this [guidance](https://github.com/makersacademy/course/blob/master/further_javascript/frontend_single_page_app_guidance.md)!  It'll help you point yourself in the right direction when you're figuring out how to implement some of the trickier things.
-
-## Project overview
-
-Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
-
-### Technologies
-
-You'll write a single page web app.  You'll write your code in frontend JavaScript, CSS and HTML.  You won't use Ruby or backend JavaScript.
-
-**And, as is the theme for this week, you won't use any libraries or frameworks!**
-
-But, feel free to use the test framework you wrote during the week!
-
-### Serving your app
-
-You'll use a static web server (e.g. [http-server](https://www.npmjs.com/package/http-server)) to serve your HTML, CSS and JavaScript files.  You'll send requests to an API to get data from the Guardian and to summarise text.
-
-> The API is hosted on an external server that you don't have to worry about.  You only need a static web server.  That's why this type of architecture is called "serverless".
-
-## User Stories
-
-Some of these stories will need decomposing if they seem too large.
+1. Performed a global install of http-server ("npm install http-server -g") and then ran the following console commands in the repository:
 
 ```
-As a busy politician
-I can see all of today's headlines in one place
-So I know what the big stories of the day are
+npm install http-server --save
+npm -y init
+npm install jest
 ```
 
-```
-As a busy politician
-I can see a relevant picture to illustrate each news article when I browse headlines
-So that I have something nice to look at
-```
+2. Add the following lines to the package.json file:
 
 ```
-As a busy politician
-I can click a news headline to see a summary and a photo of the news article
-So that I can get an in depth understanding of a very important story
+"build": "esbuild index.js --bundle  --outfile=bundle.js",
+"buildw": "esbuild index.js --bundle  --outfile=bundle.js --watch",
 ```
 
-```
-As a busy politician
-I can see click a news article summary title which links to the original article
-So I can get a few more details about an important story
-```
+3. Added a .gitignore file and include "node_modules/" inside it
+
+4. Created index.html and index.js files. Initiated a pre-built HTML boiler plate by entering "!" and clicking the construction icon. Then added script dependencies to th HTML file:
 
 ```
-As a busy politician
-I can read the site comfortably on my phone
-Just in case my laptop breaks
+<script src="bundle.js" type="text/javascript"></script>
 ```
 
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
-```
+# Approach
 
-## Mockups
+This challenged involved using a Makers API to request information from the Guardian API and Aylien API. Unfortunately, I was unable to retrieve any information using the Makers API. Believing this was an error in how I had set up the project, I began a debugging process of researching the causes of the error. After several hours, I was surprised to discover the Makers API was malfunctioning due to the API request limit having been reached, presumably as a result of other users accessing the same API.
 
-### Headlines page
+Unable to proceed with the Makers API, I retrieved by own API key for the Guardian. I was unable to retrieve one for Aylien as this required creation of an account. I was therefore unable to complete this weekend's challenge.
 
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
-
-### Article summary page
-
-![Article page mockup](/images/news-summary-project-article-page-mockup.png)
-
-## API
-
-### API authentication
-
-So that this project can focus on the front-end, we've provided an API that you can use to talk to the Guardian API and the Aylien text summarisation API.  This API's only job is to take your request and add an API key.  This way, you don't have to store API keys in your front-end app.
-
-> Why is it bad to store API keys in your front-end?  If we hadn't provided this API for you to use, how would you avoid this?
-
-### API request rate limits and stubbing
-
-The Guardian and Aylien text summarisation APIs are severely rate-limited.
-
-**Please stub your tests so we don't exceed the daily limit.  Otherwise, all requests will be rejected and everyone's apps will stop working!**
-
-### API Overview
-
-The basic idea is to send an `apiRequestUrl` query parameter to the News Summary API.  The value of this parameter is the URL of the request you *would* have made to the Guardian or Aylien API, minus any API credentials.
-
-### Guardian API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.  Notice how it has a query parameter for `api-key`.
-
-```
-curl "http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=SECRET_API_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this:
-
-```
-curl "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body"
-```
-
-Note how the `apiRequestUrl` parameter value is just the request you would have made to the Guardian API, minus `api-key`.
-
-### Aylien text summarisation API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make.  Notice how it has headers to authenticate with the Aylien API.
-
-```
-curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
-  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
-  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
-```
-
-To make this request via the Makers News Summary API with cURL, you could do something like this.
-
-```
-curl "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html"
-```
-
-Note how the `apiRequestUrl` parameter is just the request you would have made to the Aylien API.  Notice how you don't have to send authentication headers.
-
-### Code
-
-If you're interested, you can see the code for the News Summary API in this repo: https://github.com/makersacademy/news-summary-api
-
-## Resources
-
-* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-* [Aylien text summary API docs](http://docs.aylien.com/docs/summarize)
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+Rather than waste the weekend, I decided to explore the Guardian API instead. I had some success estalishing an API connection and creating a search field that users could use to search for today's news articles that matched search criteria that the user could input. With more time, I would have fleshed this out to include css elements, jest tests, and exported functions.
