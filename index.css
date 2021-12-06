@@ -1,0 +1,9 @@
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background: #D4C1EC;
+  background: linear-gradient(to right, #FEF9FF, #F2DFD7, #BEAEC2);
+}
+
+h1 {
+  font-family: 'Fuzzy Bubbles';
+}

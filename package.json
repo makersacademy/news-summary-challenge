@@ -1,0 +1,25 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "Create an app that summarises the news - Makers Week 7 Weekend Challenge",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild index.js --bundle --outfile=bundle.js --watch",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatiananantes/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tatiananantes/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/tatiananantes/news-summary-challenge#readme",
+  "dependencies": {
+    "http-server": "^14.0.0",
+    "jest": "^27.4.3"
+  }
+}
