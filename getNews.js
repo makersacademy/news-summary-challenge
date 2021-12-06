@@ -14,7 +14,8 @@ getNews = () => {
         <h2> ${element.webTitle} </h2>
         <a href = ${element.webUrl}><h3>${element.fields.bodyText.substring(0,100)}...</h3></a>`;
         newDiv.addEventListener("click", () => {
-            document.body.innerHTML = element.fields.body
+            document.body.innerHTML = `<h1>${
+                element.webTitle}</h1><div>${element.fields.body}</div>`
         })
         
         document.body.append(newDiv)
