@@ -1,11 +1,28 @@
-# News Summary challenge
+# News Summary challenge :newspaper:
 
+## Project set up
+- Clone this repository
+` git clone https://github.com/RPGrimes/news-summary-challenge.git `
+- Install dependencies
+`npm init`
+
+`npm install jest`
+
+`npm install build`
+
+`npm install http-server`
+
+##### End of weekend progress update
+- Over the course of the weekend I managed to make an application which used the Guardian newspaper API to list the news articles from the API address.
+- My next task, had I had more time this weekend, would have been to add a button that allows users of the page to view the whole article on the webpage, rather than having to click the link to the Guardian page.
+
+![News App Screenshot](https://user-images.githubusercontent.com/75947453/144718608-4da5d173-d34f-4f6a-a109-70a867fe4695.gif)
+
+## Challenge
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in your README.
 * If you have a partial solution, **still check in a partial solution** and send in a pull request.
 * You must submit a pull request to this repo with your code by 9am Monday morning.
-
-## Challenge
 
 As usual please start by forking this repo.
 
