@@ -1,7 +1,7 @@
-const ArticleModel = require('../articleModel');
+const ArticlesModel = require('../articlesModel');
 
 describe('ArticleModel', () => {
-  const model = new ArticleModel();
+  const model = new ArticlesModel();
 
   it('returns an empty array', () => {
     expect(model.getArticles()).toEqual([]);
