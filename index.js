@@ -1,9 +1,12 @@
 const ArticlesModel = require('./articlesModel');
 const ArticlesView = require('./articlesView');
+const NewsApi = require('./newsApi');
 
+const api = new NewsApi();
 const model = new ArticlesModel();
-model.addArticle('test headline');
+const view = new ArticlesView(model, api);
 
-const view = new ArticlesView(model);
-
-view.displayArticles();
+api.loadArticles((articles) => {
+  model.setArticles(articles);
+  view.displayArticles();
+});

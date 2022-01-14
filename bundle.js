@@ -17,6 +17,9 @@
         addArticle(article) {
           this.articles.push(article);
         }
+        setArticles(articles) {
+          articles.response.results.forEach((article) => this.addArticle(article.webTitle));
+        }
         reset() {
           this.articles = [];
         }
@@ -29,8 +32,9 @@
   var require_articlesView = __commonJS({
     "articlesView.js"(exports, module) {
       var ArticlesView2 = class {
-        constructor(model2) {
+        constructor(model2, api2) {
           this.model = model2;
+          this.api = api2;
           this.mainContainerEl = document.querySelector("#main-container");
         }
         displayArticles() {
@@ -47,11 +51,29 @@
     }
   });
 
+  // newsApi.js
+  var require_newsApi = __commonJS({
+    "newsApi.js"(exports, module) {
+      var NewsApi2 = class {
+        loadArticles(callback) {
+          fetch("https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search").then((response) => response.json()).then((data) => callback(data)).catch((error) => {
+            console.error(error);
+          });
+        }
+      };
+      module.exports = NewsApi2;
+    }
+  });
+
   // index.js
   var ArticlesModel = require_articlesModel();
   var ArticlesView = require_articlesView();
+  var NewsApi = require_newsApi();
+  var api = new NewsApi();
   var model = new ArticlesModel();
-  model.addArticle("test headline");
-  var view = new ArticlesView(model);
-  view.displayArticles();
+  var view = new ArticlesView(model, api);
+  api.loadArticles((articles) => {
+    model.setArticles(articles);
+    view.displayArticles();
+  });
 })();

@@ -11,6 +11,10 @@ class ArticlesModel {
     this.articles.push(article);
   }
 
+  setArticles(articles) {
+    articles.response.results.forEach((article) => this.addArticle(article.webTitle));
+  }
+
   reset() {
     this.articles = [];
   }
