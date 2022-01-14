@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/chris-clement/news-summary-challenge/issues"
   },
-  "homepage": "https://github.com/chris-clement/news-summary-challenge#readme"
+  "homepage": "https://github.com/chris-clement/news-summary-challenge#readme",
+  "dependencies": {
+    "jest": "^27.4.7",
+    "jest-fetch-mock": "^3.0.3"
+  }
 }
