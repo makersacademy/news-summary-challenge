@@ -11,6 +11,13 @@ npm run build
 http-server
 ```
 
+## Todo
+
+- [x] List headlines from the Guardian
+- [x] List thumbnails with each headline
+- [ ] Add individual pages for each article with summaries
+- [ ] CSS Styling
+
 ## User Stories
 
 Some of these stories will need decomposing if they seem too large.
