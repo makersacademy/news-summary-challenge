@@ -1,7 +1,9 @@
-// console.log doesn't print anything on the page
-// it is not meant to be visible to the user, but for you
-// to help in debugging and getting visibility in your JS code.
-//
-// on Mac (using Chrome), use Option+Command+J to open the console and see this message.
+const ArticlesModel = require('./articlesModel');
+const ArticlesView = require('./articlesView');
 
-console.log('The news summary app is running!');
+const model = new ArticlesModel();
+model.addArticle('test headline');
+
+const view = new ArticlesView(model);
+
+view.displayArticles();
