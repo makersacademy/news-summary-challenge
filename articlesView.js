@@ -18,7 +18,16 @@ class ArticlesView {
     // Add div for each article
     articles.forEach((article) => {
       const div = document.createElement('div');
-      div.innerText = article;
+      const headlineDiv = document.createElement('div');
+      const imgDiv = document.createElement('div');
+      const img = document.createElement('img');
+
+      imgDiv.append(img);
+      div.append(headlineDiv);
+      div.append(imgDiv);
+
+      img.src = `${article.webUrl}#img-1`;
+      headlineDiv.innerText = article.webTitle;
       div.className = 'article';
       this.mainContainerEl.append(div);
     });

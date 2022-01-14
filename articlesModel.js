@@ -12,7 +12,7 @@ class ArticlesModel {
   }
 
   setArticles(articles) {
-    articles.response.results.forEach((article) => this.addArticle(article.webTitle));
+    articles.response.results.forEach((article) => this.addArticle(article));
   }
 
   reset() {

@@ -18,7 +18,7 @@
           this.articles.push(article);
         }
         setArticles(articles) {
-          articles.response.results.forEach((article) => this.addArticle(article.webTitle));
+          articles.response.results.forEach((article) => this.addArticle(article));
         }
         reset() {
           this.articles = [];
@@ -41,7 +41,14 @@
           const articles = this.model.getArticles();
           articles.forEach((article) => {
             const div = document.createElement("div");
-            div.innerText = article;
+            const headlineDiv = document.createElement("div");
+            const imgDiv = document.createElement("div");
+            const img = document.createElement("img");
+            imgDiv.append(img);
+            div.append(headlineDiv);
+            div.append(imgDiv);
+            img.src = `${article.webUrl}#img-1`;
+            headlineDiv.innerText = article.webTitle;
             div.className = "article";
             this.mainContainerEl.append(div);
           });
