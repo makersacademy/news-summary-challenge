@@ -55,7 +55,7 @@
             imgDiv.append(img);
             div.append(headline);
             div.append(imgDiv);
-            img.src = `${article.webUrl}#img-1`;
+            img.src = article.fields.thumbnail;
             div.className = "article";
             this.mainContainerEl.append(div);
           });
@@ -70,7 +70,7 @@
     "newsApi.js"(exports, module) {
       var NewsApi2 = class {
         loadArticles(callback) {
-          fetch("https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search").then((response) => response.json()).then((data) => callback(data)).catch((error) => {
+          fetch("https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search&show-fields=thumbnail").then((response) => response.json()).then((data) => callback(data)).catch((error) => {
             console.error(error);
           });
         }

@@ -32,7 +32,7 @@ class ArticlesView {
       div.append(headline);
       div.append(imgDiv);
 
-      img.src = `${article.webUrl}#img-1`;
+      img.src = article.fields.thumbnail;
       div.className = 'article';
       this.mainContainerEl.append(div);
     });
