@@ -41,14 +41,15 @@
           const articles = this.model.getArticles();
           articles.forEach((article) => {
             const div = document.createElement("div");
-            const headlineDiv = document.createElement("div");
+            const headline = document.createElement("a");
+            headline.text = article.webTitle;
+            headline.href = article.webUrl;
             const imgDiv = document.createElement("div");
             const img = document.createElement("img");
             imgDiv.append(img);
-            div.append(headlineDiv);
+            div.append(headline);
             div.append(imgDiv);
             img.src = `${article.webUrl}#img-1`;
-            headlineDiv.innerText = article.webTitle;
             div.className = "article";
             this.mainContainerEl.append(div);
           });
