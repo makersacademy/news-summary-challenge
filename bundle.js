@@ -38,6 +38,12 @@
           this.mainContainerEl = document.querySelector("#main-container");
         }
         displayArticles() {
+          const articleDivs = document.querySelector(".article");
+          if (articleDivs !== null) {
+            articleDivs.forEach((article) => {
+              article.remove();
+            });
+          }
           const articles = this.model.getArticles();
           articles.forEach((article) => {
             const div = document.createElement("div");

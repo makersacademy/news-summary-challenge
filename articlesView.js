@@ -7,10 +7,13 @@ class ArticlesView {
 
   displayArticles() {
     // Clear articles before getting new articles
-    // const articleDivs = document.querySelector('.article');
-    // articleDivs.forEach((article) => {
-    //   article.remove();
-    // });
+    const articleDivs = document.querySelector('.article');
+
+    if (articleDivs !== null) {
+      articleDivs.forEach((article) => {
+        article.remove();
+      });
+    }
 
     // Get new articles
     const articles = this.model.getArticles();
