@@ -1,13 +1,15 @@
 const NewsApi = require("./newsApi");
 const NewsAppModel = require("./newsAppModel");
+const NewsAppView = require("./newsAppView");
 
-api = new NewsApi();
-model = new NewsAppModel();
+let api = new NewsApi();
+let model = new NewsAppModel();
+
+let view = new NewsAppView(model, api);
 
 api.getArticles((articles) => {
-  for (const article of articles.response.results) {
+  for (const article of articles) {
     model.addArticle(article);
   }
+  view.displayArticles();
 })
-
-console.log(model.articles);
