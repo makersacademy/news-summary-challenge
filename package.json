@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -14,20 +14,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/giorgigutsaevi/news-summary-challenge/issues"
   },
   "homepage": "https://github.com/giorgigutsaevi/news-summary-challenge#readme",
   "dependencies": {
-    "esbuild": "^0.14.11",
+    "dotenv": "^12.0.3",
     "http-server": "^14.1.0"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.16.8",
-    "@babel/preset-env": "^7.16.8",
-    "@babel/runtime": "^7.16.7",
-    "babel-jest": "^27.4.6",
-    "jest": "^27.4.7"
+    "jest": "^27.4.7",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
   }
 }

@@ -1,4 +1,4 @@
-import NewsApi from "../lib/newsApi";
+const NewsApi = require("../lib/newsApi")
 
 describe("NewsApi", () => {
 	let subject;
