@@ -1,3 +1,20 @@
-.news-block{
-	border: 1px solid salmon;
+
+h1{
+	text-align: center;
+	color: #325288;
+}
+
+.card{
+	margin-left: 1em;
+	margin-top: 0.8em;
+}
+
+.card .my-btn{
+	cursor: pointer;
+	background-color: #D96098;
+	color: whitesmoke;
+}
+
+.card .my-btn:hover{
+	background-color: #24A19C;
 }

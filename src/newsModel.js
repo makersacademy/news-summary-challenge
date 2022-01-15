@@ -9,9 +9,12 @@ class NewsModel{
 		return this.newsArr
 	}
 
+	updateNews(news){
+		this.newsArr = news
+	}
+
 
 }
-
 
 
 module.exports = NewsModel;

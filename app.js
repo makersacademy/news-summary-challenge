@@ -1,8 +1,13 @@
 const NewsApi = require("./src/newsApi")
+const NewsModel = require("./src/newsModel")
+const NewsView = require("./src/newsView")
 
 let api = new NewsApi();
-api.fetchNews((data)=>{
-	console.log(data);
+let view = new NewsView();
+let model = new NewsModel();
+
+view.displayNews((data)=>{
+	model.updateNews(data)
+	console.log(model.getNews());
 })
-console.log('hello');
-console.log('this is a test to see if --watch');
+
