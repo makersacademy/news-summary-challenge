@@ -2,16 +2,8 @@ class NewsSummaryView {
   constructor (api) {
     this.api = api
     
-    this.newsContainer = document.querySelector('#news-container')
+    this.headlinesContainer = document.querySelector('#headline-container')
   }
-
-  // main container 
-  //   <section>
-   // figure
-  //       img
-      // /figure
-  //       h4
-  //   </section>
 
   displayNews(newsData) {
     console.log(newsData)
@@ -21,7 +13,9 @@ class NewsSummaryView {
       const h3El = document.createElement('h3');
       const figureEl = document.createElement('figure')
       const imgEl = document.createElement('img');
+      const aEl = document.createElement('a');
 
+      aEl.href = "#"
       sectionEl.className = 'section'
       figureEl.className = 'image is-16by9';
       imgEl.src = result.fields.thumbnail;
@@ -31,7 +25,8 @@ class NewsSummaryView {
       figureEl.appendChild(imgEl);
       sectionEl.appendChild(figureEl);
       sectionEl.appendChild(h3El);
-      this.newsContainer.append(sectionEl);
+      aEl.appendChild(sectionEl)
+      this.headlinesContainer.append(aEl);
     })
   }
 }
