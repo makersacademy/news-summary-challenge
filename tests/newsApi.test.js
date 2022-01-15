@@ -1,4 +1,4 @@
-const NewsApi = require("../lib/newsApi")
+const NewsApi = require("../src/newsApi")
 
 describe("NewsApi", () => {
 	let subject;
