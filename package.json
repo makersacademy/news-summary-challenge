@@ -18,9 +18,11 @@
     "url": "https://github.com/sabrinalord/news-summary-challenge/issues"
   },
   "dependencies": {
-    "esbuild": "^0.14.5",
+    "esbuild": "^0.14.5"
+  },
+  "homepage": "https://github.com/sabrinalord/news-summary-challenge#readme",
+  "devDependencies": {
     "jest": "^27.4.7",
     "jest-fetch-mock": "^3.0.3"
-  },
-  "homepage": "https://github.com/sabrinalord/news-summary-challenge#readme"
+  }
 }
