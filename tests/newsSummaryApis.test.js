@@ -10,7 +10,7 @@ describe('NewsSummaryApis', () => {
       ['Headline from the server'],
     ));
   
-    api.loadNews((newsData) => {
+    api.loadHeadlines((newsData) => {
       expect(newsData.length).toEqual(1);
     });
   })

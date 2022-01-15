@@ -4,6 +4,6 @@ const NewsSummaryView = require('./newsSummaryView');
 let api = new NewsSummaryApis();
 let view = new NewsSummaryView(api);
 
-api.loadNews((newsData) => {
+api.loadHeadlines((newsData) => {
   view.displayNews(newsData);
 });
