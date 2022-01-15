@@ -1,12 +1,26 @@
-// fetch('https://content.guardianapis.com/search?api-key=042cb5d2-ab93-46e7-a79b-9a785e2cc1e0')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data.response.results)
-//   })
+const {guardianApiKey} = require('./env.js')
 
-// data.response.results is an array like of objects:
-// object 0:
+class GuardianApi {
+  loadArticles(callback) {
+    fetch(`https://content.guardianapis.com/search?show-fields=headline%2Cbody&api-key=${guardianApiKey}`)
+      .then(response => response.json())
+      .then(data => {
+        callback(data.response.results)
+      })
+  }
+}
+
+module.exports = GuardianApi;
+
+// data.response.results is an array of objects:
+// first one object example:
+// 
+// 0:
 // apiUrl: "https://content.guardianapis.com/football/live/2022/jan/15/manchester-city-v-chelsea-premier-league-live"
+// fields: {
+//  body: html string
+//  headline:  string
+//}
 // id: "football/live/2022/jan/15/manchester-city-v-chelsea-premier-league-live"
 // isHosted: false
 // pillarId: "pillar/sport"
