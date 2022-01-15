@@ -10,7 +10,7 @@ view = new NewsView(model);
 
 api.loadNews((newsData) => {
   (newsData.response.results).forEach(element => {
-    model.addHeadline(element.webTitle);
+    model.addHeadline({"headline" : element.webTitle});
   });
   view.displayHeadlines();
 })

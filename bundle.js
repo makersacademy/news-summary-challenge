@@ -49,7 +49,7 @@
           const headlines = this.model.getHeadlines();
           headlines.forEach((headline) => {
             const headlineEl = document.createElement("div");
-            headlineEl.innerText = headline;
+            headlineEl.innerText = headline["headline"];
             headlineEl.className = "headline";
             this.headlinesContainerEl = document.querySelector("#headline-container");
             this.headlinesContainerEl.append(headlineEl);
@@ -58,6 +58,9 @@
             imageEl.src = "https://media.geeksforgeeks.org/wp-content/uploads/20190529122828/bs21.png";
             this.headlinesContainerEl.append(imageEl);
           });
+        }
+        setImageSrc(data) {
+          data;
         }
       };
       module.exports = NewsView2;
@@ -74,7 +77,7 @@
   view = new NewsView(model);
   api.loadNews((newsData) => {
     newsData.response.results.forEach((element) => {
-      model.addHeadline(element.webTitle);
+      model.addHeadline({ "headline": element.webTitle });
     });
     view.displayHeadlines();
   });
