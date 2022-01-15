@@ -9,7 +9,7 @@
     "newsApi.js"(exports, module) {
       var NewsApi2 = class {
         loadNews(callback) {
-          fetch("https://content.guardianapis.com/search?page=1&q=debate&api-key=98e51f22-b91b-4a89-b784-aa14c541dfed").then((responseAnswer) => responseAnswer.json()).then((data) => {
+          fetch("https://content.guardianapis.com/search?page=1&q=debate&api-key=98e51f22-b91b-4a89-b784-aa14c541dfed&show-fields=thumbnail").then((responseAnswer) => responseAnswer.json()).then((data) => {
             callback(data);
           }).catch((error) => {
             console.error("ERROR", error);
@@ -55,7 +55,7 @@
             this.headlinesContainerEl.append(headlineEl);
             const imageEl = document.createElement("img");
             imageEl.className = "headlineImage";
-            imageEl.src = "https://media.geeksforgeeks.org/wp-content/uploads/20190529122828/bs21.png";
+            imageEl.src = headline["thumbnail"];
             this.headlinesContainerEl.append(imageEl);
           });
         }
@@ -77,8 +77,9 @@
   view = new NewsView(model);
   api.loadNews((newsData) => {
     newsData.response.results.forEach((element) => {
-      model.addHeadline({ "headline": element.webTitle });
+      model.addHeadline({ "headline": element.webTitle, "thumbnail": element.fields.thumbnail });
     });
     view.displayHeadlines();
   });
+  console.log(model.getHeadlines());
 })();
