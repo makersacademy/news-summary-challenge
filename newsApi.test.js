@@ -10,6 +10,6 @@ describe('NewsApi class', () => {
     }));
     api.loadNews((newsData) => {
       expect(newsData.headline).toEqual('Boris Party');
-    })
-  })
-})
+    });
+  });
+});
