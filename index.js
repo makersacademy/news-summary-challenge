@@ -1,3 +1,13 @@
-console.log(API_KEY)
+const NewsApi = require("./newsApi");
+const NewsAppModel = require("./newsAppModel");
 
-console.log("hello")
+api = new NewsApi();
+model = new NewsAppModel();
+
+api.getArticles((articles) => {
+  for (const article of articles.response.results) {
+    model.addArticle(article);
+  }
+})
+
+console.log(model.articles);
