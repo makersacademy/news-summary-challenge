@@ -9,5 +9,4 @@ const headlines = new Headlines()
 
 headlines.getByNewest()
 .then((data) => headlines.displayNews(data))
-
-
+.then(() => headlines.displaySummary())
