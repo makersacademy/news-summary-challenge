@@ -12,6 +12,10 @@ class NewsView {
       headlineEl.className = 'headline';
       this.headlinesContainerEl = document.querySelector('#headline-container');
       this.headlinesContainerEl.append(headlineEl);
+      const imageEl = document.createElement('img')
+      imageEl.className = 'headlineImage'
+      imageEl.src = "https://media.geeksforgeeks.org/wp-content/uploads/20190529122828/bs21.png"
+      this.headlinesContainerEl.append(imageEl)
     });
     
   }
