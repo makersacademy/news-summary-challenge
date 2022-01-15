@@ -15,13 +15,15 @@ describe("NewsApi", () => {
 		expect(typeof subject.fetchNews).toBe("function")
 	})
 
-	it("calls fetch and loads the news from the API", ()=>{
+	it("calls fetch and loads the news from the API", async ()=>{
 		const api = new NewsApi();
 		fetch.mockResponseOnce(JSON.stringify(['Liverpool wins the league!']))
-		api.fetchNews((data)=>{
-			expect(data.length).toBe(1)
-		})
+		await api.fetchNews((data)=>{
+			expect(data).toBe(['Liverpool wins the league!']);
+			expect(fetch).toHaveBeenCalledTimes(1)
+		});
 
+		
 	})
 
 })

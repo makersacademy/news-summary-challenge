@@ -2,7 +2,11 @@
 class NewsModel{
 	
 	constructor(){
+		this.newsArr = [];
+	}
 
+	getNews(){
+		return this.newsArr
 	}
 
 

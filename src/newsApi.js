@@ -9,14 +9,12 @@ class NewsApi{
 		try{
 			let response = await fetch(`https://content.guardianapis.com/search?api-key=${this.apiKey}`)
 			let data = await response.json()
-			// console.log(data.response.results[0].webTitle);
-			// console.log(data.response.results);
+			console.log(data.response.results[0].webTitle);
+			console.log(data.response.results);
 			callback(data)
-		}catch(error){
-			alert(error)
-			process.exit(1)
+		}catch(e){
+			return null
 		}
-		
 	}
 }
 
