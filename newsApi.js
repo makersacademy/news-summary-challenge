@@ -1,10 +1,6 @@
-const dotenv = require('dotenv')
-dotenv.config()
-
 class NewsApi {  
   loadNews(callback) {
-    const apiKey = env.API_KEY
-    fetch(`https://content.guardianapis.com/search?page=1&q=debate&api-key=${apiKey}`)
+    fetch('http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body&api-key=98e51f22-b91b-4a89-b784-aa14c541dfed')
     .then(responseAnswer => responseAnswer.json())
     .then(data => {callback(data)})
     .catch((error) => {console.error('ERROR', error)})
