@@ -7,13 +7,20 @@ class NewsView{
   }
 
   displayNews(newsData){
+    console.log(newsData);
     const news_array = this.model.getNews(newsData)
-    console.log(news_array);
     for(const newsItem of news_array)  {
-      const div = document.createElement('div');
-      div.className = 'news-item';
-      div.innerText = newsItem.webTitle;
-      this.mainContainerEl.append(div);
+      const article_wrapper = document.createElement('div');
+      article_wrapper.innerHTML = `
+      <h2>${newsItem.webTitle}</h2>
+
+      <div class = "img_wrapper"> 
+        <img src = "${newsItem.fields.thumbnail}"/>
+      </div>
+
+      `
+      article_wrapper.className = 'article_wrapper';
+      this.mainContainerEl.append(article_wrapper);
     }
   }
 }

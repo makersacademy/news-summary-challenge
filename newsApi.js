@@ -1,4 +1,5 @@
-const url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=technology'
+const url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail,body&section=technology&q=technology';
+
 class NewsApi {
 
   retrieveNewsData(callback){

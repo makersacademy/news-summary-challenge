@@ -5,7 +5,7 @@ class NewsModel{
   getNews(newsData){
  
     const news_array = newsData.response.results;
-
+    console.log(news_array);
     return news_array;
 
   }
