@@ -52,10 +52,10 @@
             headline.href = `#${article.id}`;
             const imgDiv = document.createElement("div");
             const img = document.createElement("img");
+            img.src = article.fields.thumbnail;
             imgDiv.append(img);
             div.append(headline);
             div.append(imgDiv);
-            img.src = article.fields.thumbnail;
             div.className = "article";
             this.mainContainerEl.append(div);
           });

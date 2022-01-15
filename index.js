@@ -18,7 +18,7 @@ const getContent = (fragmentId, callback) => {
       view.displayArticles();
     });
   } else {
-    // Headline was clicked, gets one article
+    // Headline was clicked, gets one article using the guardian article id from the fragmentid
     api.loadArticles(`https://content.guardianapis.com/${fragmentId}${singleArticleUrl}`, (article) => {
       const summaryUrl = article.response.content.webUrl;
       console.log(`Fetching summary from ${summaryUrl}...`);
@@ -34,6 +34,7 @@ const getContent = (fragmentId, callback) => {
 
 const loadContent = () => {
   const contentDiv = document.getElementById('main-container');
+  // Gets the fragmentId from the url without the hash, i.e. home or an article id
   const fragmentId = location.hash.substr(1);
 
   getContent(fragmentId, (content) => {
@@ -41,10 +42,12 @@ const loadContent = () => {
   });
 };
 
+// If no hash in url, sets to home
 if (!location.hash) {
   location.hash = '#home';
 }
 
 loadContent();
 
+// Dynamically loads content on hash change
 window.addEventListener('hashchange', loadContent);
