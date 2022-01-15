@@ -8,8 +8,6 @@ let model = new NewsAppModel();
 let view = new NewsAppView(model, api);
 
 api.getArticles((articles) => {
-  for (const article of articles) {
-    model.addArticle(article);
-  }
+  model.setArticles(articles);
   view.displayArticles();
 })

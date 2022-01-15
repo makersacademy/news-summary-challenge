@@ -8,6 +8,12 @@ class newsAppModel {
     this.articles.push(article)
   }
 
+  setArticles(articleArray) {
+    for (const article of articleArray) {
+      this.articles.push(article);
+    }
+  }
+
 }
 
 module.exports = newsAppModel;

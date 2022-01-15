@@ -25,6 +25,11 @@ var require_newsAppModel = __commonJS({
       addArticle(article) {
         this.articles.push(article);
       }
+      setArticles(articleArray) {
+        for (const article of articleArray) {
+          this.articles.push(article);
+        }
+      }
     };
     module2.exports = newsAppModel;
   }
@@ -34,17 +39,14 @@ var require_newsAppModel = __commonJS({
 var require_newsAppView = __commonJS({
   "newsAppView.js"(exports, module2) {
     var NewsAppView2 = class {
-      constructor(model2, api2) {
-        this.model = model2;
+      constructor(model3, api2) {
+        this.model = model3;
         this.api = api2;
         this.mainContainerEl = document.querySelector("#main-container");
       }
       loadArticles() {
         this.api.getArticles((articles) => {
-          for (const article of articles) {
-            this.model.addArticle(article);
-          }
-          return this.model.articles;
+          model.setArticles(articles);
         });
       }
       displayArticles() {
@@ -68,11 +70,9 @@ var NewsApi = require_newsApi();
 var NewsAppModel = require_newsAppModel();
 var NewsAppView = require_newsAppView();
 var api = new NewsApi();
-var model = new NewsAppModel();
-var view = new NewsAppView(model, api);
+var model2 = new NewsAppModel();
+var view = new NewsAppView(model2, api);
 api.getArticles((articles) => {
-  for (const article of articles) {
-    model.addArticle(article);
-  }
+  model2.setArticles(articles);
   view.displayArticles();
 });

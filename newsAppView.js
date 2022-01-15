@@ -8,10 +8,7 @@ class NewsAppView {
 
   loadArticles() {
     this.api.getArticles((articles) => {
-      for (const article of articles) {
-        this.model.addArticle(article);
-      }
-      return this.model.articles;
+      model.setArticles(articles)
     })
   }
 
