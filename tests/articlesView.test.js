@@ -11,11 +11,11 @@ describe('ArticlesView', () => {
     const ModelMock = { getArticles: () => ['article1','article2']};
     const view = new ArticlesView(ModelMock);
 
-    view.displayArticles();
+    view.displayHeadlines();
 
-    expect(document.querySelectorAll('div.article').length).toEqual(2);
-    expect(document.querySelectorAll('div.article')[0].textContent).toEqual('article1');
-    expect(document.querySelectorAll('div.article')[1].textContent).toEqual('article2');
+    expect(document.querySelectorAll('h2.article-title').length).toEqual(2);
+    expect(document.querySelectorAll('h2.article-title')[0].textContent).toEqual('article1');
+    expect(document.querySelectorAll('h2.article-title')[1].textContent).toEqual('article2');
   });
 
 })

@@ -7,7 +7,10 @@ const api = new ApiClass();
 const model = new ModelClass();
 const view = new ViewClass(model);
 
-api.loadArticles(data => data.forEach( article => {
+
+api.loadHeadlines(data => data.response.results.forEach( article => {
+  console.log(article)
   model.addArticle(article.webTitle);
-  view.displayArticles();
+  view.displayHeadlines();
 }));
+

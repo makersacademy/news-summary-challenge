@@ -8,10 +8,10 @@ describe('Api', () => {
     api = new ApiClasss();
   })
 
-  test('.loadArticles ', () => {
+  test('.loadHeadines ', () => {
     fetch.mockResponseOnce(JSON.stringify({title: 'test article title'}));
 
-    api.loadArticles((data) => {
+    api.loadHeadlines((data) => {
       expect(data.title).toEqual('test article title');
     });
    })

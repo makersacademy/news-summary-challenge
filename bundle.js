@@ -13,7 +13,18 @@
           this.date = this.date.toISOString().split("T")[0];
         }
         loadArticles = (callback) => {
-          fetch(`http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?page=1&page-size=20&from-date=${this.date}`).then((response) => response.json()).then((data) => callback(data.response.results));
+          try {
+            fetch(`http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?page=1&from-date=${this.date}`).then((response) => response.json()).then((data) => callback(data));
+          } catch (err) {
+            console.log(err);
+          }
+        };
+        loadArticleThumbnail = (articleApiUrl, callback) => {
+          try {
+            fetch(`http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/${articleApiUrl}?show-fields=thumbnail`).then((response) => response.json()).then((data) => callback(data));
+          } catch (err) {
+            console.log(err);
+          }
         };
       };
       module.exports = AritclesApi;
@@ -42,14 +53,17 @@
           this.modelClass = modelClass;
           this.mainContainerEl = document.querySelector("#main-container");
         }
-        displayArticles = () => {
+        displayHeadlines = () => {
           document.querySelectorAll(".article").forEach((element) => {
             element.remove();
           });
           this.modelClass.getArticles().forEach((article) => {
             let articleEl = document.createElement("div");
-            articleEl.textContent = article;
             articleEl.className = "article";
+            let articleElPara = document.createElement("h2");
+            articleElPara.textContent = article;
+            articleElPara.className = "article-title";
+            articleEl.append(articleElPara);
             this.mainContainerEl.append(articleEl);
           });
         };
@@ -65,8 +79,9 @@
   var api = new ApiClass();
   var model = new ModelClass();
   var view = new ViewClass(model);
-  api.loadArticles((data) => data.forEach((article) => {
+  api.loadArticles((data) => data.response.results.forEach((article) => {
+    console.log(article);
     model.addArticle(article.webTitle);
-    view.displayArticles();
+    view.displayHeadlines();
   }));
 })();
