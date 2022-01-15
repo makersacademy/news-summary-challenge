@@ -49,7 +49,7 @@
             const div = document.createElement("div");
             const headline = document.createElement("a");
             headline.text = article.webTitle;
-            headline.href = article.webUrl;
+            headline.href = `#${article.id}`;
             const imgDiv = document.createElement("div");
             const img = document.createElement("img");
             imgDiv.append(img);
@@ -69,8 +69,13 @@
   var require_newsApi = __commonJS({
     "newsApi.js"(exports, module) {
       var NewsApi2 = class {
-        loadArticles(callback) {
-          fetch("https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search&show-fields=thumbnail").then((response) => response.json()).then((data) => callback(data)).catch((error) => {
+        loadArticles(url, callback) {
+          fetch(url).then((response) => response.json()).then((data) => callback(data)).catch((error) => {
+            console.error(error);
+          });
+        }
+        loadSummary(url, callback) {
+          fetch(`http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=${url}`).then((response) => response.json()).then((data) => callback(data)).catch((error) => {
             console.error(error);
           });
         }
@@ -86,8 +91,34 @@
   var api = new NewsApi();
   var model = new ArticlesModel();
   var view = new ArticlesView(model, api);
-  api.loadArticles((articles) => {
-    model.setArticles(articles);
-    view.displayArticles();
-  });
+  var allArticlesUrl = "https://content.guardianapis.com/search?YOUR-API-KEY-HERE&show-fields=thumbnail";
+  var singleArticleUrl = "?YOUR-API-KEY-HERE&show-fields=thumbnail";
+  var getContent = (fragmentId, callback) => {
+    if (fragmentId === "home") {
+      api.loadArticles(allArticlesUrl, (articles) => {
+        model.setArticles(articles);
+        view.displayArticles();
+      });
+    } else {
+      api.loadArticles(`https://content.guardianapis.com/${fragmentId}${singleArticleUrl}`, (article) => {
+        const summaryUrl = article.response.content.webUrl;
+        console.log(`Fetching summary from ${summaryUrl}...`);
+        api.loadSummary(summaryUrl, (summary) => {
+          callback(summary.text);
+        });
+      });
+    }
+  };
+  var loadContent = () => {
+    const contentDiv = document.getElementById("main-container");
+    const fragmentId = location.hash.substr(1);
+    getContent(fragmentId, (content) => {
+      contentDiv.innerHTML = content;
+    });
+  };
+  if (!location.hash) {
+    location.hash = "#home";
+  }
+  loadContent();
+  window.addEventListener("hashchange", loadContent);
 })();

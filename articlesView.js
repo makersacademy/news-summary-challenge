@@ -23,7 +23,7 @@ class ArticlesView {
       const div = document.createElement('div');
       const headline = document.createElement('a');
       headline.text = article.webTitle;
-      headline.href = article.webUrl;
+      headline.href = `#${article.id}`;
 
       const imgDiv = document.createElement('div');
       const img = document.createElement('img');
