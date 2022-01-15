@@ -5,6 +5,9 @@ class NewsModel {
   getHeadlines() {
     return this.headlines
   }
+  addHeadline(headline) {
+    this.headlines.push(headline)
+  }
 }
 
 module.exports = NewsModel;
