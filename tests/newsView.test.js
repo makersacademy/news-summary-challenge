@@ -1,0 +1,1 @@
+const NewsView = require("../src/newsView")

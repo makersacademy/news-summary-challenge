@@ -20,7 +20,8 @@
   "homepage": "https://github.com/giorgigutsaevi/news-summary-challenge#readme",
   "dependencies": {
     "dotenv": "^12.0.3",
-    "http-server": "^14.1.0"
+    "http-server": "^14.1.0",
+    "jest-fetch-mock": "^3.0.3"
   },
   "devDependencies": {
     "jest": "^27.4.7",
