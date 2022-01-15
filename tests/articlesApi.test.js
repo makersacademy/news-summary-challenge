@@ -1,4 +1,4 @@
-const ApiClasss = require('../lib/api')
+const ApiClasss = require('../lib/articlesApi')
 
 require('jest-fetch-mock').enableMocks()
 
@@ -11,7 +11,7 @@ describe('Api', () => {
   test('.loadArticles ', () => {
     fetch.mockResponseOnce(JSON.stringify({title: 'test article title'}));
 
-    api.loadArticles('test', (data) => {
+    api.loadArticles((data) => {
       expect(data.title).toEqual('test article title');
     });
    })

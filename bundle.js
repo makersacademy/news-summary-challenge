@@ -4,9 +4,9 @@
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
 
-  // lib/api.js
-  var require_api = __commonJS({
-    "lib/api.js"(exports, module) {
+  // lib/articlesApi.js
+  var require_articlesApi = __commonJS({
+    "lib/articlesApi.js"(exports, module) {
       var Api = class {
         constructor() {
           this.date = new Date();
@@ -21,7 +21,7 @@
   });
 
   // index.js
-  var ApiClass = require_api();
+  var ApiClass = require_articlesApi();
   var api = new ApiClass();
   api.loadArticles();
 })();
