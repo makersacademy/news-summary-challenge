@@ -3,7 +3,8 @@ class NewsView {
     this.model = model;
     const buttonEl = document.querySelector('#headline-container');
     buttonEl.addEventListener("click", ()=> {
-      console.log("Article clicked")
+      console.log("Clicked on event")
+      this.displayArticle();
     })
   }
 
@@ -38,6 +39,9 @@ class NewsView {
     imageEl.className = 'headlineImage'
     imageEl.src = headline["thumbnail"]
     this.headlinesContainerEl.append(imageEl)
+  }
+
+  displayArticle() {
   }
 }
 

@@ -9,7 +9,7 @@
     "newsApi.js"(exports, module) {
       var NewsApi2 = class {
         loadNews(callback) {
-          fetch("https://content.guardianapis.com/search?page=1&q=debate&api-key=98e51f22-b91b-4a89-b784-aa14c541dfed&show-fields=thumbnail").then((responseAnswer) => responseAnswer.json()).then((data) => {
+          fetch("https://content.guardianapis.com/search?page=1&q=debate&api-key=98e51f22-b91b-4a89-b784-aa14c541dfed&show-fields=thumbnail,body").then((responseAnswer) => responseAnswer.json()).then((data) => {
             callback(data);
           }).catch((error) => {
             console.error("ERROR", error);
@@ -46,7 +46,8 @@
           this.model = model2;
           const buttonEl = document.querySelector("#headline-container");
           buttonEl.addEventListener("click", () => {
-            console.log("Article clicked");
+            console.log("Clicked on event");
+            this.displayArticle();
           });
         }
         displayNewsSummary() {
@@ -78,6 +79,8 @@
           imageEl.src = headline["thumbnail"];
           this.headlinesContainerEl.append(imageEl);
         }
+        displayArticle() {
+        }
       };
       module.exports = NewsView2;
     }
@@ -93,7 +96,8 @@
   view = new NewsView(model);
   api.loadNews((newsData) => {
     newsData.response.results.forEach((element) => {
-      model.addHeadline({ "headline": element.webTitle, "thumbnail": element.fields.thumbnail });
+      console.log(element);
+      model.addHeadline({ "headline": element.webTitle, "thumbnail": element.fields.thumbnail, "body": element.fields.body });
     });
     view.displayNewsSummary();
   });
