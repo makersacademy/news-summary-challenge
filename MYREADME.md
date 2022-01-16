@@ -4,11 +4,11 @@
 
 ![Main_Site](https://i.imgur.com/kP8Z4iX.jpg)
 
-Article section at the bottom
+### Article section at the bottom
 
 ![Blank_Article](https://i.imgur.com/2pUW3wh.jpg)
 
-Article filled once button clicked
+### Article filled once button clicked
 
 ![Filled_Article](https://i.imgur.com/jWvMgpI.jpg)
 
