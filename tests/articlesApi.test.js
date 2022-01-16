@@ -1,12 +1,12 @@
-const ApiClasss = require('../lib/articlesApi')
+const ApiClasss = require('../lib/articlesApi');
 
-require('jest-fetch-mock').enableMocks()
+require('jest-fetch-mock').enableMocks();
 
 describe('Api', () => {
   let api;
   beforeEach(() => {
     api = new ApiClasss();
-  })
+  });
 
   test('.loadHeadines ', () => {
     fetch.mockResponseOnce(JSON.stringify({title: 'test article title'}));
@@ -14,13 +14,13 @@ describe('Api', () => {
     api.loadHeadlines((data) => {
       expect(data.title).toEqual('test article title');
     });
-   })
+  });
 
-   test('.loadArticle ', () => {
+  test('.loadArticle ', () => {
     fetch.mockResponseOnce(JSON.stringify({title: 'test article title'}));
 
     api.loadArticle('test Article Id', (data) => {
       expect(data.title).toEqual('test article title');
     });
-   })
+  });
 });
