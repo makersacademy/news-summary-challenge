@@ -9,4 +9,6 @@ const view = new ArticlesView(model, api)
 view.setArticles(() => {
   view.displayArticles();
 })
+
+
   

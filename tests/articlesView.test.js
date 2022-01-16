@@ -25,5 +25,6 @@
      const view = new ArticlesView(modelMock, "mockApi");
      view.displayArticles();
      expect(document.querySelectorAll('.article').length).toBe(2);
+     expect(document.querySelectorAll('.article h2')[0].innerText).toBe("Covid cases have hit plateau in parts of UK, says top medical adviser");
    })
   })
