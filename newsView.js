@@ -4,7 +4,7 @@ class NewsView {
     const buttonEl = document.querySelector('#headline-container');
     buttonEl.addEventListener("click", ()=> {
       console.log("Clicked on event")
-      this.displayArticle();
+      this.displayArticle({"body":"Test article"});
     })
   }
 
@@ -41,7 +41,12 @@ class NewsView {
     this.headlinesContainerEl.append(imageEl)
   }
 
-  displayArticle() {
+  displayArticle(headline) {
+    this.headlinesContainerEl = document.querySelector('#headline-container');
+    const articleEl = document.createElement('p')
+    articleEl.className = "article"
+    articleEl.innerText = headline["body"]
+    this.headlinesContainerEl.append(articleEl)
   }
 }
 

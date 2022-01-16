@@ -25,13 +25,13 @@
     "newsModel.js"(exports, module) {
       var NewsModel2 = class {
         constructor() {
-          this.headlines = [];
+          this.newsInfo = [];
         }
-        getHeadlines() {
-          return this.headlines;
+        getNewsInfo() {
+          return this.newsInfo;
         }
-        addHeadline(headline) {
-          this.headlines.push(headline);
+        addNewsInfo(data) {
+          this.newsInfo.push(data);
         }
       };
       module.exports = NewsModel2;
@@ -47,7 +47,7 @@
           const buttonEl = document.querySelector("#headline-container");
           buttonEl.addEventListener("click", () => {
             console.log("Clicked on event");
-            this.displayArticle();
+            this.displayArticle({ "body": "Test article" });
           });
         }
         displayNewsSummary() {
@@ -79,7 +79,12 @@
           imageEl.src = headline["thumbnail"];
           this.headlinesContainerEl.append(imageEl);
         }
-        displayArticle() {
+        displayArticle(headline) {
+          this.headlinesContainerEl = document.querySelector("#headline-container");
+          const articleEl = document.createElement("p");
+          articleEl.className = "article";
+          articleEl.innerText = headline["body"];
+          this.headlinesContainerEl.append(articleEl);
         }
       };
       module.exports = NewsView2;
@@ -96,7 +101,6 @@
   view = new NewsView(model);
   api.loadNews((newsData) => {
     newsData.response.results.forEach((element) => {
-      console.log(element);
       model.addHeadline({ "headline": element.webTitle, "thumbnail": element.fields.thumbnail, "body": element.fields.body });
     });
     view.displayNewsSummary();
