@@ -4,7 +4,7 @@ class NewsView {
     
   }
 
-  displayHeadlines() {
+  displayNewsSummary() {
     const headlines = this.model.getHeadlines();
     headlines.forEach(headline => {
       this.displayHeadline(headline)
@@ -23,12 +23,14 @@ class NewsView {
   }
 
   displayViewArticleButton() {
+    this.headlinesContainerEl = document.querySelector('#headline-container');
     const viewArticleButtonEl = document.createElement('button')
     viewArticleButtonEl.innerText = "View Article"
     this.headlinesContainerEl.append(viewArticleButtonEl)
   }
 
   displayImage(headline) {
+    this.headlinesContainerEl = document.querySelector('#headline-container');
     const imageEl = document.createElement('img')
     imageEl.className = 'headlineImage'
     imageEl.src = headline["thumbnail"]

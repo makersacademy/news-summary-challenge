@@ -7,20 +7,28 @@ const fs = require('fs')
 const NewsModel = require('./newsModel.js')
 
 describe('class NewsView', () => {
-  it('displayHeadlines shows all headlines on the main page', () => {
+  it('displayHeadline adds the headline on index.html', () => {
     model = new NewsModel();
     const view = new newsView(model);
     document.body.innerHTML = fs.readFileSync('./index.html');
     model.addHeadline({"headline": 'Boris has a party', "thumbnail" : "https://upload.wikimedia.org/wikipedia/commons/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg"})
-    view.displayHeadlines();
+    view.displayHeadline({"headline" : 'Boris has a party', "thumbnail" : "https://upload.wikimedia.org/wikipedia/commons/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg" });
     expect(document.querySelectorAll('div.headline').length).toEqual(1);
   })
-  it('displayHeadlines shows a picture for each headline on the main page', () => {
+  it('displayImage adds a picture for the headline', () => {
     model = new NewsModel();
     const view = new newsView(model);
     document.body.innerHTML = fs.readFileSync('./index.html');
     model.addHeadline({"headline" : 'Boris has a party', "thumbnail" : "https://upload.wikimedia.org/wikipedia/commons/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg" })
-    view.displayHeadlines();
+    view.displayImage({"headline" : 'Boris has a party', "thumbnail" : "https://upload.wikimedia.org/wikipedia/commons/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg" });
     expect(document.querySelectorAll('img.headlineImage').length).toEqual(1);
+  })
+  it('displayViewArticleButton adds a view article button for the headline', () => {
+    model = new NewsModel();
+    const view = new newsView(model);
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    model.addHeadline({"headline" : 'Boris has a party', "thumbnail" : "https://upload.wikimedia.org/wikipedia/commons/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg" })
+    view.displayViewArticleButton();
+    expect(document.querySelectorAll('button').length).toEqual(1);
   })
 })
