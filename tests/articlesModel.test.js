@@ -1,15 +1,9 @@
 const ArticlesModel = require('../articlesModel')
 const model = new ArticlesModel();
 const apiArticles = [
-  {
-    headline: "How the arrest of a far-right militia leader signals a new chapter in the January 6 inquiry"
-  }, 
-  {
-    headline: "Newcastle v Watford, Wolves v Southampton and more: football clockwatch live!"
-  },
-  {
-    headline: "Covid cases have hit plateau in parts of UK, says top medical adviser"
-  }
+  { headline: "How the arrest of a far-right militia leader signals a new chapter in the January 6 inquiry" }, 
+  { headline: "Newcastle v Watford, Wolves v Southampton and more: football clockwatch live!" },
+  { headline: "Covid cases have hit plateau in parts of UK, says top medical adviser" }
 ]
 
 describe('ArticlesModel', () => {
