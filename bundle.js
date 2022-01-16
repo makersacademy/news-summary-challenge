@@ -80,6 +80,7 @@
         }
         displayArticle(data) {
           this.headlinesContainerEl = document.querySelector("#article-container");
+          this.headlinesContainerEl.innerHTML = null;
           const articleEl = document.createElement("p");
           articleEl.className = "article";
           articleEl.innerHTML = data["body"];
