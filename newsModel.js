@@ -3,10 +3,10 @@ class NewsModel {
     this.newsInfo = [];
   }
   getNewsInfo() {
-    return this.newsInfo
+    return this.newsInfo;
   }
   addNewsInfo(data) {
-    this.newsInfo.push(data)
+    this.newsInfo.push(data);
   }
 }
 
