@@ -42,12 +42,13 @@ As a busy politician
 I can see all of today's headlines in one place
 So I know what the big stories of the day are
 ```
-
+:white_check_mark:
 ```
 As a busy politician
 I can see a relevant picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
 ```
+:white_check_mark:
 
 ```
 As a busy politician
