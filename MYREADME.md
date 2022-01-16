@@ -48,7 +48,7 @@ As a busy politician
 I can see click a news article summary title which links to the original article
 So I can get a few more details about an important story
 ```
-
+:white_check_mark:
 ```
 As a busy politician
 I can read the site comfortably on my phone
@@ -66,10 +66,11 @@ To make my news reading more fun
 - List headlines from the Guardian
 - List thumbnails with each headline
 - When you click View Article you get the full post at the bottom of the page
+- When you click the headline it links you to the full article on the Guardian
 
 ## What still needs to be done
 
-- Article is summarised using another api
+- Article is summarised on my page using another api
 - Article appears in line with the headline and image
 
 
