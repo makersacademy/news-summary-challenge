@@ -37,6 +37,6 @@ describe('class NewsView', () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
     model.addNewsInfo({"headline" : 'Boris has a party', "thumbnail" : "https://upload.wikimedia.org/wikipedia/commons/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg", "body" : "He went to a party during lockdown" })
     view.displayArticle({"headline" : 'Boris has a party', "thumbnail" : "https://upload.wikimedia.org/wikipedia/commons/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg", "body" : "He went to a party during lockdown" })
-    expect(document.querySelectorAll('headline.article').length).toEqual(1);
+    expect(document.querySelectorAll('p')[0].innerHTML).toEqual("He went to a party during lockdown");
   })
 })

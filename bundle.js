@@ -49,7 +49,7 @@
           const newsData = this.model.getNewsInfo();
           newsData.forEach((newsItem) => {
             this.displayHeadline(newsItem);
-            this.displayViewArticleButton();
+            this.displayViewArticleButton(newsItem);
             this.displayImage(newsItem);
           });
         }
@@ -61,11 +61,15 @@
           headlineEl.style.cssText = "font-size:25px;color:darkblue";
           this.headlinesContainerEl.append(headlineEl);
         }
-        displayViewArticleButton() {
+        displayViewArticleButton(data) {
           this.headlinesContainerEl = document.querySelector("#headline-container");
           const viewArticleButtonEl = document.createElement("button");
           viewArticleButtonEl.innerText = "View Article";
           this.headlinesContainerEl.append(viewArticleButtonEl);
+          viewArticleButtonEl.addEventListener("click", () => {
+            console.log("Clicked on event");
+            this.displayArticle({ "body": data["body"] });
+          });
         }
         displayImage(data) {
           this.headlinesContainerEl = document.querySelector("#headline-container");
@@ -74,11 +78,11 @@
           imageEl.src = data["thumbnail"];
           this.headlinesContainerEl.append(imageEl);
         }
-        displayArticle(headline) {
-          this.headlinesContainerEl = document.querySelector("#headline-container");
+        displayArticle(data) {
+          this.headlinesContainerEl = document.querySelector("#article-container");
           const articleEl = document.createElement("p");
           articleEl.className = "article";
-          articleEl.innerText = headline["body"];
+          articleEl.innerHTML = data["body"];
           this.headlinesContainerEl.append(articleEl);
         }
       };

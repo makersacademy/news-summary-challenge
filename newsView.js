@@ -12,7 +12,7 @@ class NewsView {
     const newsData = this.model.getNewsInfo();
     newsData.forEach(newsItem => {
       this.displayHeadline(newsItem)
-      this.displayViewArticleButton()
+      this.displayViewArticleButton(newsItem)
       this.displayImage(newsItem)
     });
   }
@@ -26,11 +26,16 @@ class NewsView {
     this.headlinesContainerEl.append(headlineEl);
   }
 
-  displayViewArticleButton() {
+  displayViewArticleButton(data) {
     this.headlinesContainerEl = document.querySelector('#headline-container');
     const viewArticleButtonEl = document.createElement('button')
     viewArticleButtonEl.innerText = "View Article"
     this.headlinesContainerEl.append(viewArticleButtonEl)
+    viewArticleButtonEl.addEventListener("click", ()=> {
+      console.log("Clicked on event")
+      this.displayArticle({"body": data["body"]});
+    // })
+    })
   }
 
   displayImage(data) {
@@ -42,10 +47,10 @@ class NewsView {
   }
 
   displayArticle(data) {
-    this.headlinesContainerEl = document.querySelector('#headline-container');
+    this.headlinesContainerEl = document.querySelector('#article-container');
     const articleEl = document.createElement('p')
     articleEl.className = "article"
-    articleEl.innerText = data["body"]
+    articleEl.innerHTML = data["body"]
     this.headlinesContainerEl.append(articleEl)
   }
 }
