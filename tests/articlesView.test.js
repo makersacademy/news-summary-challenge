@@ -5,7 +5,7 @@ const ArticlesView = require('../lib/articlesView')
 const fs = require('fs');
 
 describe('ArticlesView', () => {
-  test('.displayArticles gets list of articles from model', () => {
+  test('.displayHeadlines displays articles from model', () => {
     document.body.innerHTML = fs.readFileSync('./views/index.html');
 
     const ModelMock = { getArticles: () => [
@@ -26,7 +26,7 @@ describe('ArticlesView', () => {
     expect(document.querySelectorAll('.article > h2')[1].textContent).toEqual('article2');
   });
 
-  test('.displayArticles creates a div for each article with title,img,and summary button', () => {
+  test('.displayHeadlines creates a div for each article with title,img,and summary button', () => {
     document.body.innerHTML = fs.readFileSync('./views/index.html');
 
     const ModelMock = { getArticles: () => [
@@ -45,7 +45,7 @@ describe('ArticlesView', () => {
 
   });
 
-  test('.displayArticles clears previously displayed to avoid duplicating', () => {
+  test('.displayHeadlines clears previously displayed to avoid duplicating', () => {
     document.body.innerHTML = fs.readFileSync('./views/index.html');
 
     const ModelMock = { getArticles: () => [
@@ -64,6 +64,22 @@ describe('ArticlesView', () => {
     view.displayHeadlines();
 
     expect(document.querySelectorAll('.article').length).toEqual(2);
+  });
+
+  test('.displaySingleArticle displays single article', () => {
+    document.body.innerHTML = fs.readFileSync('./views/index.html');
+    const view = new ArticlesView();
+
+    const articleMock = {
+      webTitle: 'article1',
+      fields: {thumbnail: 'ex'}
+    }
+
+    view.displaySingleArticle(articleMock);
+
+    expect(document.querySelectorAll('.article').length).toEqual(1);
+    expect(document.querySelectorAll('.article > h2')[0].textContent).toEqual('article1');
+    expect(document.querySelectorAll('.article > img')[0].src).toEqual('http://localhost/ex')
   });
 
 })
