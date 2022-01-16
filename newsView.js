@@ -20,9 +20,13 @@ class NewsView {
   displayHeadline(data) {
     this.headlinesContainerEl = document.querySelector('#headline-container');
     const headlineEl = document.createElement('div');
-    headlineEl.innerText = data["headline"];
     headlineEl.className = 'headline';
-    headlineEl.style.cssText = "font-size:25px;color:darkblue"
+    headlineEl.style.cssText = "font-size:25px"
+    const linkEl = document.createElement('a')
+    linkEl.className = 'article-link'
+    linkEl.innerText = data["headline"];
+    linkEl.href = data["link"]
+    headlineEl.append(linkEl)
     this.headlinesContainerEl.append(headlineEl);
   }
 
