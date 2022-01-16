@@ -1,7 +1,7 @@
 # News Summary challenge
 
 ## How my Site looks
-[[https://i.imgur.com/kP8Z4iX.jpg]](https://imgur.com/kP8Z4iX)
+![Main_Site](https://i.imgur.com/kP8Z4iX.jpg)
 
 
 ## How to run it
