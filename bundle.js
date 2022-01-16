@@ -44,6 +44,10 @@
       var NewsView2 = class {
         constructor(model2) {
           this.model = model2;
+          const buttonEl = document.querySelector("#headline-container");
+          buttonEl.addEventListener("click", () => {
+            console.log("Article clicked");
+          });
         }
         displayNewsSummary() {
           const headlines = this.model.getHeadlines();

@@ -1,7 +1,10 @@
 class NewsView {
   constructor(model) {
     this.model = model;
-    
+    const buttonEl = document.querySelector('#headline-container');
+    buttonEl.addEventListener("click", ()=> {
+      console.log("Article clicked")
+    })
   }
 
   displayNewsSummary() {
