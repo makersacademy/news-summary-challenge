@@ -67,9 +67,9 @@ class Headlines {
         let api_tmp = null;
         let web_tmp = null;
         for (let i = 0; i < this.newsObjects.length; i++) {
-          const elements = document.getElementsByClassName("summary");
-          while (elements.length > 0) elements[0].remove();
-
+          const summaryEls = document.getElementsByClassName("summary");
+          while (summaryEls.length > 0) summaryEls[0].remove();
+         
           if ("#" + this.newsObjects[i].id == location.hash) {
             api_tmp = this.newsObjects[i].apiUrl;
             web_tmp = this.newsObjects[i].webUrl;
@@ -92,17 +92,21 @@ class Headlines {
       })
       .then((summary) => {
         let summaryEl = document.createElement("div");
-        summaryEl.append(summary + `...`);
         summaryEl.className = "summary";
 
         let readmoreEl = document.createElement("a");
         readmoreEl.href = web_tmp;
-        readmoreEl.innerText = "Click here to read more";
+        readmoreEl.innerHTML = "Click here to read more";
+        
+        summaryEl.append(summary + `...\n`)
+        summaryEl.append(document.createElement("br"))
+        summaryEl.append(readmoreEl);
+
+
 
         for (let i = 0; i < this.newsObjects.length; i++) {
           if ("#" + this.newsObjects[i].id == location.hash) {
             this.newsElements[i].append(summaryEl);
-            this.newsElements[i].append(readmoreEl);
           }
         }
       });
