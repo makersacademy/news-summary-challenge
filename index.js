@@ -9,7 +9,7 @@ const view = new ViewClass(model);
 
 
 api.loadHeadlines(data => data.response.results.forEach( article => {
-  // console.log(article)
+  console.log(article)
   model.addArticle(article);
   view.displayHeadlines();
 }));
