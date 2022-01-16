@@ -52,3 +52,12 @@ button {
   font-size: xx-large;
   font-family: Georgia;
 }
+
+@media screen and (max-width:750px) {
+  #main-container {
+    display: block;
+  }
+  .article {
+    width: 100%;
+  }
+}
