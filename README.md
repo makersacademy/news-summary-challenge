@@ -1,3 +1,11 @@
+# How to run:
+
+- You will need to create a key.js file in the scripts directory with `const API_KEY = YOURKEY`;
+- $ npm run build
+- $ http-server
+
+---
+
 # News Summary challenge
 
 - Feel free to use Google, your notes, books, etc. but work on your own.

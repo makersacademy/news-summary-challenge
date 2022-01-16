@@ -11,5 +11,4 @@ headlines
   .getByNewest()
   .then((data) => headlines.displayNews(data))
   .then(() => headlines.addSummaryLink())
-  .then(()=> headlines.showSummary())
-
+  .then(() => headlines.showSummary());
