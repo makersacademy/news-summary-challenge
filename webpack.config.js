@@ -1,19 +1,19 @@
-const webpack = require('webpack'); 
+const webpack = require("webpack");
 
-// replace accordingly './.env' with the path of your .env file 
-require('dotenv').config({ path: './.env' }); 
+// replace accordingly './.env' with the path of your .env file
+require("dotenv").config({ path: "./.env" });
 
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './index.js',
+  entry: "./index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
   plugins: [
     new webpack.DefinePlugin({
-      "process.env": JSON.stringify(process.env)
+      "process.env": JSON.stringify(process.env),
     }),
-  ]
+  ],
 };

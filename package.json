@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/tc1316/news-summary-challenge#readme",
   "dependencies": {
+    "aylien_textapi": "^0.7.0",
     "dotenv": "^11.0.0",
     "esbuild": "^0.14.11",
     "fs": "^0.0.1-security",
