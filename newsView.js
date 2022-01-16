@@ -9,18 +9,18 @@ class NewsView {
   }
 
   displayNewsSummary() {
-    const headlines = this.model.getHeadlines();
-    headlines.forEach(headline => {
-      this.displayHeadline(headline)
+    const newsData = this.model.getNewsInfo();
+    newsData.forEach(newsItem => {
+      this.displayHeadline(newsItem)
       this.displayViewArticleButton()
-      this.displayImage(headline)
+      this.displayImage(newsItem)
     });
   }
 
-  displayHeadline(headline) {
+  displayHeadline(data) {
     this.headlinesContainerEl = document.querySelector('#headline-container');
     const headlineEl = document.createElement('div');
-    headlineEl.innerText = headline["headline"];
+    headlineEl.innerText = data["headline"];
     headlineEl.className = 'headline';
     headlineEl.style.cssText = "font-size:25px;color:darkblue"
     this.headlinesContainerEl.append(headlineEl);
@@ -33,11 +33,11 @@ class NewsView {
     this.headlinesContainerEl.append(viewArticleButtonEl)
   }
 
-  displayImage(headline) {
+  displayImage(data) {
     this.headlinesContainerEl = document.querySelector('#headline-container');
     const imageEl = document.createElement('img')
     imageEl.className = 'headlineImage'
-    imageEl.src = headline["thumbnail"]
+    imageEl.src = data["thumbnail"]
     this.headlinesContainerEl.append(imageEl)
   }
 
