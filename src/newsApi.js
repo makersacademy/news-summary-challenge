@@ -11,8 +11,8 @@ class NewsApi{
 		.then(res => res.json())
 		.then(data => {
 			callback(data.response.results)
-			console.log(data.response);
-			console.log(data.response.results[0].fields.thumbnail);
+			// console.log(data.response);
+			// console.log(data.response.results[0].fields.thumbnail);
 		})
 		.catch(err => null)
 	}
