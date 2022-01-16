@@ -1,11 +1,11 @@
 class NewsView {
   constructor(model) {
     this.model = model;
-    const buttonEl = document.querySelector('#headline-container');
-    buttonEl.addEventListener("click", ()=> {
-      console.log("Clicked on event")
-      this.displayArticle({"body":"Test article"});
-    })
+    // const buttonEl = document.querySelector('#headline-container');
+    // buttonEl.addEventListener("click", ()=> {
+    //   console.log("Clicked on event")
+    //   this.displayArticle({"body":"Test article"});
+    // })
   }
 
   displayNewsSummary() {
@@ -41,11 +41,11 @@ class NewsView {
     this.headlinesContainerEl.append(imageEl)
   }
 
-  displayArticle(headline) {
+  displayArticle(data) {
     this.headlinesContainerEl = document.querySelector('#headline-container');
     const articleEl = document.createElement('p')
     articleEl.className = "article"
-    articleEl.innerText = headline["body"]
+    articleEl.innerText = data["body"]
     this.headlinesContainerEl.append(articleEl)
   }
 }
