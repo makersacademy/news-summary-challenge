@@ -45,7 +45,7 @@
         constructor(model2) {
           this.model = model2;
         }
-        displayHeadlines() {
+        displayNewsSummary() {
           const headlines = this.model.getHeadlines();
           headlines.forEach((headline) => {
             this.displayHeadline(headline);
@@ -62,11 +62,13 @@
           this.headlinesContainerEl.append(headlineEl);
         }
         displayViewArticleButton() {
+          this.headlinesContainerEl = document.querySelector("#headline-container");
           const viewArticleButtonEl = document.createElement("button");
           viewArticleButtonEl.innerText = "View Article";
           this.headlinesContainerEl.append(viewArticleButtonEl);
         }
         displayImage(headline) {
+          this.headlinesContainerEl = document.querySelector("#headline-container");
           const imageEl = document.createElement("img");
           imageEl.className = "headlineImage";
           imageEl.src = headline["thumbnail"];
@@ -89,7 +91,7 @@
     newsData.response.results.forEach((element) => {
       model.addHeadline({ "headline": element.webTitle, "thumbnail": element.fields.thumbnail });
     });
-    view.displayHeadlines();
+    view.displayNewsSummary();
   });
   console.log(model.getHeadlines());
 })();

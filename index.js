@@ -12,7 +12,7 @@ api.loadNews((newsData) => {
   (newsData.response.results).forEach(element => {
     model.addHeadline({"headline" : element.webTitle, "thumbnail" : element.fields.thumbnail});
   });
-  view.displayHeadlines();
+  view.displayNewsSummary();
 })
 
 console.log(model.getHeadlines())
