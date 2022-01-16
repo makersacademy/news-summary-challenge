@@ -43,4 +43,14 @@ describe('ArticlesView', () => {
     headline.click()
     expect(document.querySelector('.article .hidden').getAttribute('hidden')).toBeNull();
   })
+
+  it('removes all articles', () => {
+    document.body.innerHTML = fs.readFileSync('index.html');
+
+    const view = new ArticlesView(modelMock, "mockApi");
+    view.displayArticles();
+    expect(document.querySelectorAll('.article').length).toBe(2);
+    view.clearArticles();
+    expect(document.querySelectorAll('.article').length).toBe(0);
+  })
 })

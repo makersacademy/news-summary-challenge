@@ -19,8 +19,8 @@
     "guardianApi.js"(exports, module) {
       var { guardianApiKey } = require_env();
       var GuardianApi2 = class {
-        loadArticles(callback) {
-          fetch(`https://content.guardianapis.com/search?show-fields=headline%2Cthumbnail%2CtrailText&api-key=${guardianApiKey}`).then((response) => response.json()).then((data) => {
+        loadArticles(callback, query = "") {
+          fetch(`https://content.guardianapis.com/search?show-fields=headline%2Cthumbnail%2CtrailText${query}&api-key=${guardianApiKey}`).then((response) => response.json()).then((data) => {
             callback(data.response.results);
           });
         }
@@ -51,6 +51,15 @@
         constructor(model2, api2) {
           this.model = model2;
           this.api = api2;
+          const searchButton = document.querySelector("#btn");
+          searchButton.addEventListener("click", () => {
+            let searchQuery = "&q=" + document.querySelector("#search").value;
+            this.api.loadArticles((articles) => {
+              this.model.setArticles(articles);
+              this.clearArticles();
+              this.displayArticles();
+            }, searchQuery);
+          });
         }
         setArticles(callback) {
           this.api.loadArticles((articles) => {
@@ -93,6 +102,8 @@
           });
         }
         clearArticles() {
+          const main = document.querySelector("#main");
+          main.innerHTML = "";
         }
       };
       module.exports = ArticlesView2;

@@ -2,6 +2,16 @@ class ArticlesView {
   constructor(model, api) {
     this.model = model;
     this.api = api;
+
+    const searchButton = document.querySelector('#btn')
+    searchButton.addEventListener('click', () => {
+      let searchQuery = "&q=" + document.querySelector('#search').value;
+      this.api.loadArticles((articles) => {
+        this.model.setArticles(articles);
+        this.clearArticles();
+        this.displayArticles();
+      }, searchQuery)
+    })
   }
 
   setArticles(callback) {
@@ -55,7 +65,8 @@ class ArticlesView {
   }
 
   clearArticles() {
-
+    const main = document.querySelector('#main');
+    main.innerHTML = '';
   }
 }
 
