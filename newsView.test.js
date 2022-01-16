@@ -11,7 +11,7 @@ describe('class NewsView', () => {
     model = new NewsModel();
     const view = new newsView(model);
     document.body.innerHTML = fs.readFileSync('./index.html');
-    model.addHeadline('Boris has a party')
+    model.addHeadline({"headline": 'Boris has a party', "thumbnail" : "https://upload.wikimedia.org/wikipedia/commons/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg"})
     view.displayHeadlines();
     expect(document.querySelectorAll('div.headline').length).toEqual(1);
   })
@@ -19,7 +19,7 @@ describe('class NewsView', () => {
     model = new NewsModel();
     const view = new newsView(model);
     document.body.innerHTML = fs.readFileSync('./index.html');
-    model.addHeadline('Boris has a party')
+    model.addHeadline({"headline" : 'Boris has a party', "thumbnail" : "https://upload.wikimedia.org/wikipedia/commons/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg" })
     view.displayHeadlines();
     expect(document.querySelectorAll('img.headlineImage').length).toEqual(1);
   })
