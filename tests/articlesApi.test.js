@@ -15,4 +15,12 @@ describe('Api', () => {
       expect(data.title).toEqual('test article title');
     });
    })
+
+   test('.loadArticle ', () => {
+    fetch.mockResponseOnce(JSON.stringify({title: 'test article title'}));
+
+    api.loadArticle('test Article Id', (data) => {
+      expect(data.title).toEqual('test article title');
+    });
+   })
 });
