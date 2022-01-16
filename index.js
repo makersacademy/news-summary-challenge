@@ -13,7 +13,7 @@ window.addEventListener('hashchange', () => {
 
 document.getElementById('home-button').addEventListener('click', () => {
   history.replaceState(null, null, ' ');
-  loadHeadlines();
+  view.displayHeadlines();
 });
 
 const loadHeadlines = () => {
@@ -36,4 +36,5 @@ const showArticle = (articleId) => {
     view.displaySingleArticle(data.response.content);
   });
 };
+
 loadHeadlines();

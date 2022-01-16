@@ -44,5 +44,12 @@ button {
   margin-bottom: 1em;
   border-radius: 4px;
   cursor: pointer;
+  font-family: system-ui;
 }
 
+#home-button {
+  color: rgba(11, 74, 184,0.3);
+  background-color: white;
+  font-size: xx-large;
+  font-family: system-ui;
+}
