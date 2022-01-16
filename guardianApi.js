@@ -2,7 +2,7 @@ const {guardianApiKey} = require('./env.js')
 
 class GuardianApi {
   loadArticles(callback) {
-    fetch(`https://content.guardianapis.com/search?show-fields=headline%2Cbody&api-key=${guardianApiKey}`)
+    fetch(`https://content.guardianapis.com/search?show-fields=headline%2Cbody%2Cthumbnail&api-key=${guardianApiKey}`)
       .then(response => response.json())
       .then(data => {
         callback(data.response.results)
@@ -20,6 +20,7 @@ module.exports = GuardianApi;
 // fields: {
 //  body: html string
 //  headline:  string
+// thumbnail: string-url img
 //}
 // id: "football/live/2022/jan/15/manchester-city-v-chelsea-premier-league-live"
 // isHosted: false
