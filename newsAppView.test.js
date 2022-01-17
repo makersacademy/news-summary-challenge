@@ -27,6 +27,15 @@ describe("NewsAppView", () => {
     article.click();
     expect(document.querySelectorAll(".summary").length).toBe(1);
   })
+  it("should be able to clear summaries", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    let view = new NewsAppView(mockModel, mockApi);
+    view.displayArticles();
+    let article = document.querySelector(".article");
+    article.click();
+    view.clearSummaries();
+    expect(document.querySelectorAll(".summary").length).toBe(0);
+  })
 })
 
 const mockArticle =   {

@@ -27,7 +27,10 @@ var require_newsAppModel = __commonJS({
       }
       getSummary(article) {
         let body = article.fields.body.split("<p>");
-        let text = body.map((paragraph) => paragraph.slice(0, -4));
+        let text = body.map((paragraph) => {
+          let splitText = paragraph.split("</p>");
+          return splitText[0];
+        });
         return text.slice(1, 3);
       }
       setArticles(articleArray) {
@@ -69,11 +72,11 @@ var require_newsAppView = __commonJS({
         }
       }
       addSummary = (thingClicked) => {
+        this.clearSummaries();
         let id = thingClicked.target.id;
         let summary = document.createElement("div");
         summary.className = "summary";
-        let articles = this.model.articles;
-        let text = this.model.getSummary(articles[id]);
+        let text = this.model.getSummary(this.model.articles[id]);
         for (const element of text) {
           let paragraph = document.createElement("p");
           paragraph.innerHTML = element;
@@ -93,6 +96,12 @@ var require_newsAppView = __commonJS({
         image.setAttribute("src", article.fields.thumbnail);
         image.setAttribute("id", id);
         parentElement.appendChild(image);
+      }
+      clearSummaries() {
+        let summaries = document.querySelectorAll(".summary");
+        for (const summary of summaries) {
+          summary.remove();
+        }
       }
     };
     module2.exports = NewsAppView2;

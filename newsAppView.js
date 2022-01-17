@@ -28,11 +28,11 @@ class NewsAppView {
   }
 
   addSummary = (thingClicked) => {
+    this.clearSummaries();
     let id = thingClicked.target.id;
     let summary = document.createElement("div");
     summary.className = "summary";
-    let articles = this.model.articles;
-    let text = this.model.getSummary(articles[id]);
+    let text = this.model.getSummary(this.model.articles[id]);
     for (const element of text) {
       let paragraph = document.createElement("p");
       paragraph.innerHTML = element;
@@ -54,6 +54,13 @@ class NewsAppView {
     image.setAttribute("src", article.fields.thumbnail);
     image.setAttribute("id", id);
     parentElement.appendChild(image);
+  }
+
+  clearSummaries() {
+    let summaries = document.querySelectorAll(".summary");
+    for (const summary of summaries) {
+      summary.remove();
+    }
   }
 
 }

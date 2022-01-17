@@ -10,7 +10,10 @@ class newsAppModel {
 
   getSummary(article) {
     let body = article.fields.body.split("<p>");
-    let text = body.map((paragraph) => paragraph.slice(0,-4));
+    let text = body.map((paragraph) => {
+      let splitText = paragraph.split("</p>")
+      return splitText[0];
+    });
     return text.slice(1,3);
   }
 
