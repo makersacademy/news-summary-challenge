@@ -39,7 +39,6 @@ class NewsAppView {
       paragraph.innerHTML = element;
       summary.appendChild(paragraph);
     }
-    let readmore = document.createElement("a");
     this.createReadMoreLink(article, summary);
     let parentElement = document.querySelectorAll(".article")[id];
     parentElement.appendChild(summary);
