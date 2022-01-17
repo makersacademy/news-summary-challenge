@@ -80,8 +80,8 @@ To make my news reading more fun
   * Has a displayNews method that takes in the fetched newsData, and passes it into this.model.getNews() which turns it into an array of news. 
   * displayNews() iterates throuogh each item in the newsArray and creates a div element showing the title and thumbnail of the article. 
 
-  * News Model Class:
-    * Has a getNews(newsData) method that takes in the fetched newsData object and grabs only the newsData.response.results array. It returns the array, which is then used in my newsView displayNews method. 
+* News Model Class:
+  * Has a getNews(newsData) method that takes in the fetched newsData object and grabs only the newsData.response.results array. It returns the array, which is then used in my newsView displayNews method. 
 
 ### Next Steps
 
