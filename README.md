@@ -1,8 +1,9 @@
 # To run
 * `npm install`
+* Create file called key.js and declare your api key as const API_KEY
 * `http-server -c-1`
 * Load in browser
-* Create file called key.js and declare your api key as const API_KEY
+
 
 ## Screenshot
 
