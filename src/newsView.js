@@ -16,7 +16,9 @@ class NewsView{
 				window.addEventListener('hashchange', (e) => this.routechange(e))
 				btn.forEach(el =>{
 					el.addEventListener('click', ()=>{
-						this.newsSlot.style.display = 'flex'
+						// this.newsSlot.style.display = 'flex'
+						this.newsSlot.style.height = '320px'
+						this.newsSlot.style.opacity = 1
 						console.log('button clicked');
 					})
 				})
@@ -45,7 +47,9 @@ class NewsView{
 			this.btn.classList.add('pop-btn')
 			this.newsSlot.append(this.btn)
 			this.btn.addEventListener('click', ()=>{
-				this.newsSlot.style.display = 'none'
+				// this.newsSlot.style.display = 'none'
+				this.newsSlot.style.height = '320px'
+				this.newsSlot.style.opacity = 1
 			})
 		})
 
@@ -81,10 +85,7 @@ class NewsView{
 			callback()
 		})
 	}
-
-
 }
-
 
 
 module.exports = NewsView;

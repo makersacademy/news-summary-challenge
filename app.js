@@ -4,7 +4,6 @@ const NewsView = require("./src/newsView")
 
 let api = new NewsApi();
 let model = new NewsModel();
-
 let view = new NewsView()
 
 view.displayNews((data)=>{
