@@ -33,7 +33,7 @@ const getArticleFromUrl = (location) => {
 
 const showArticle = (articleId) => {
   api.loadArticle(articleId, (data) => {
-    console.log(data)
+    console.log(data);
     view.displaySingleArticle(data.response.content);
   });
 };
