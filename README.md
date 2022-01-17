@@ -49,17 +49,6 @@ I can see whizzy animations in the app
 To make my news reading more fun
 ```
 
-## Mockups
-
-### Headlines page
-
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
-
-### Article summary page
-
-![Article page mockup](/images/news-summary-project-article-page-mockup.png)
-
-
 ### MVC Diagram
 
 # ![MVC Diagram](https://github.com/sabrinalord/news-summary-challenge/blob/master/images/News_MVC_Diagram.png)
