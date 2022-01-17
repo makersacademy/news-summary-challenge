@@ -14,6 +14,10 @@ describe("NewsAppModel", () => {
     expect(model.articles.length).toBe(10)
     expect(model.articles[0]).toEqual(mockArticle);
   })
+  it("should be able to get a summary equal to the first two paragraphs of the article", () => {
+    let model = new NewsAppModel();
+    expect(model.getSummary(mockArticle)).toEqual(["<p>Fake article</p>","<p>More fake text</p>"]);
+  })
 })
 
 const mockArticle = 
@@ -30,7 +34,7 @@ const mockArticle =
       "pillarId": "pillar/sport",
       "pillarName": "Sport",
       "fields": {
-        "body": "<p>Fake article</p>",
+        "body": "<p>Fake article</p><p>More fake text</p><p>Even more fake text</p>",
         "thumbnail": "https://media.guim.co.uk/b896983b0dea0fd642b6fc945688da0cb050f4ca/0_97_828_497/500.jpg"
       }
   }
@@ -50,7 +54,7 @@ const mockArticle =
         "pillarId": "pillar/sport",
         "pillarName": "Sport",
         "fields": {
-          "body": "<p>Fake article</p>",
+          "body": "<p>Fake article</p><p>More fake text</p><p>Even more fake text</p>",
           "thumbnail": "https://media.guim.co.uk/b896983b0dea0fd642b6fc945688da0cb050f4ca/0_97_828_497/500.jpg"
         }
       },
