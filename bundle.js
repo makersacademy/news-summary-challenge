@@ -8,7 +8,7 @@ var require_newsApi = __commonJS({
   "newsApi.js"(exports, module2) {
     var NewsApi2 = class {
       getArticles(callback, apiKey = API_KEY) {
-        fetch(`https://content.guardianapis.com/search?api-key=${apiKey}`).then((response) => response.json()).then((data) => callback(data.response.results)).catch((error) => console.log(error));
+        fetch(`https://content.guardianapis.com/search?api-key=${apiKey}&type=article&show-fields=thumbnail&show-fields=all`).then((response2) => response2.json()).then((data) => callback(data.response.results)).catch((error) => console.log(error));
       }
     };
     module2.exports = NewsApi2;
@@ -57,6 +57,9 @@ var require_newsAppView = __commonJS({
           let headline = document.createElement("h2");
           headline.innerText = article.webTitle;
           newArticle.appendChild(headline);
+          let image = document.createElement("img");
+          image.setAttribute("src", article.fields.thumbnail);
+          newArticle.appendChild(image);
           this.mainContainerEl.appendChild(newArticle);
         }
       }
@@ -76,3 +79,4 @@ api.getArticles((articles) => {
   model2.setArticles(articles);
   view.displayArticles();
 });
+fetch("https://content.guardianapis.com/football/live/2022/jan/14/brighton-v-crystal-palace-premier-league-live-updates").then(console.log(response));

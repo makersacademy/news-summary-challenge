@@ -20,6 +20,9 @@ class NewsAppView {
       let headline = document.createElement("h2");
       headline.innerText = article.webTitle;
       newArticle.appendChild(headline);
+      let image = document.createElement("img");
+      image.setAttribute("src", article.fields.thumbnail);
+      newArticle.appendChild(image);
       this.mainContainerEl.appendChild(newArticle);
     }
   }

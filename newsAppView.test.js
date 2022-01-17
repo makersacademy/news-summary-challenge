@@ -5,7 +5,23 @@
 const NewsAppView = require('./newsAppView');
 const fs = require('fs');
 
-const mockArticle = {
+
+describe("NewsAppView", () => {
+  it("should be able to display articles from the model", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    let view = new NewsAppView(mockModel, mockApi);
+    view.displayArticles();
+    expect(document.querySelectorAll(".article").length).toBe(1);
+  })
+  it("should be able to show images on the page", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    let view = new NewsAppView(mockModel, mockApi);
+    view.displayArticles();
+    expect(document.querySelectorAll("img").length).toBe(1);
+  })
+})
+
+const mockArticle =   {
   "id": "football/live/2022/jan/14/brighton-v-crystal-palace-premier-league-live-updates",
   "type": "liveblog",
   "sectionId": "football",
@@ -16,7 +32,11 @@ const mockArticle = {
   "apiUrl": "https://content.guardianapis.com/football/live/2022/jan/14/brighton-v-crystal-palace-premier-league-live-updates",
   "isHosted": false,
   "pillarId": "pillar/sport",
-  "pillarName": "Sport"
+  "pillarName": "Sport",
+  "fields": {
+    "body": "<p>Fake article</p><p>More fake text</p>",
+    "thumbnail": "https://media.guim.co.uk/b896983b0dea0fd642b6fc945688da0cb050f4ca/0_97_828_497/500.jpg"
+  }
 }
 
 const mockModel = {
@@ -26,12 +46,3 @@ const mockModel = {
 const mockApi = {
 
 }
-
-describe("NewsAppView", () => {
-  it("should be able to display articles from the model", () => {
-    document.body.innerHTML = fs.readFileSync('./index.html');
-    let view = new NewsAppView(mockModel, mockApi);
-    view.displayArticles();
-    expect(document.querySelectorAll(".article").length).toBe(1);
-  })
-})
