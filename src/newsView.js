@@ -48,8 +48,8 @@ class NewsView{
 			this.newsSlot.append(this.btn)
 			this.btn.addEventListener('click', ()=>{
 				// this.newsSlot.style.display = 'none'
-				this.newsSlot.style.height = '320px'
-				this.newsSlot.style.opacity = 1
+				this.newsSlot.style.height = '0'
+				this.newsSlot.style.opacity = 0
 			})
 		})
 

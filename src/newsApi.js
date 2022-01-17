@@ -1,3 +1,4 @@
+const axios = require("axios")
 
 class NewsApi{
 	constructor(){
@@ -6,9 +7,9 @@ class NewsApi{
 
 	fetchNews(callback){
 		console.log('fetching the news...');
-		fetch(`https://content.guardianapis.com/search?page-size=12&show-fields=thumbnail&api-key=${
+		axios.get(`https://content.guardianapis.com/search?page-size=12&show-fields=thumbnail&api-key=${
 			this.apiKey}`)
-		.then(res => res.json())
+		.then(res => res.data)
 		.then(data => {
 			callback(data.response.results)
 			console.log(data.response);

@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/giorgigutsaevi/news-summary-challenge#readme",
   "dependencies": {
+    "axios": "^0.24.0",
     "dotenv": "^12.0.3",
     "http-server": "^14.1.0",
     "jest-fetch-mock": "^3.0.3",
