@@ -84,13 +84,17 @@ var require_newsAppView = __commonJS({
           summary.appendChild(paragraph);
         }
         let readmore = document.createElement("a");
-        readmore.innerText = "(Read more)";
-        readmore.setAttribute("href", article.webUrl);
-        readmore.className = "readmore";
-        summary.appendChild(readmore);
+        this.createReadMoreLink(article, summary);
         let parentElement = document.querySelectorAll(".article")[id];
         parentElement.appendChild(summary);
       };
+      createReadMoreLink(article, parentElement) {
+        let readmore = document.createElement("a");
+        readmore.innerText = "(Read more)";
+        readmore.setAttribute("href", article.webUrl);
+        readmore.className = "readmore";
+        parentElement.appendChild(readmore);
+      }
       createHeadline(article, parentElement, id) {
         let headline = document.createElement("h2");
         headline.innerText = article.webTitle;

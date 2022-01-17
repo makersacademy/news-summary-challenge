@@ -40,12 +40,17 @@ class NewsAppView {
       summary.appendChild(paragraph);
     }
     let readmore = document.createElement("a");
+    this.createReadMoreLink(article, summary);
+    let parentElement = document.querySelectorAll(".article")[id];
+    parentElement.appendChild(summary);
+  }
+
+  createReadMoreLink(article, parentElement) {
+    let readmore = document.createElement("a");
     readmore.innerText = "(Read more)";
     readmore.setAttribute("href", article.webUrl);
     readmore.className = "readmore";
-    summary.appendChild(readmore);
-    let parentElement = document.querySelectorAll(".article")[id];
-    parentElement.appendChild(summary);
+    parentElement.appendChild(readmore);
   }
 
   createHeadline(article, parentElement, id) {
