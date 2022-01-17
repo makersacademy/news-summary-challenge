@@ -21,6 +21,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "aylien_textapi": "^0.7.0",
+    "bulma": "^0.9.3",
     "esbuild": "^0.14.11",
     "http-server": "^14.1.0",
     "jest": "^27.4.7",

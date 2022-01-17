@@ -4,20 +4,27 @@ class NewsSummaryView {
     this.model = model
 
     this.headlinesContainer = document.querySelector('#headlines-container');
-    this.headlineTitle = document.querySelectorAll('.is-3');
+    this.homeBtn = document.querySelector('#home-btn');
     this.summaryContainer = document.querySelector('#summary-container');
 
-    window.addEventListener('click', (event) => {
+    this.headlinesContainer.addEventListener('click', (event) => {
       let articleId = event.target.id;
-      this.model.setArticle(articleId);
       this.api.getSummary(articleId, (data) => {
         this.displaySummary(data);
       })
       this.headlinesContainer.style.display = 'none';
     });
+
+    this.homeBtn.addEventListener('click', () => {
+      document.getElementById('summary-content').remove();
+      let storedNewsData = this.model.getArticles();
+      this.displayHeadlines(storedNewsData);
+      this.headlinesContainer.style.display = 'initial';
+    })
   }
 
   displayHeadlines(newsData) {
+    this.model.setArticles(newsData);
     let newsInfoArray = newsData.response.results;
     newsInfoArray.forEach((result) => {
       const sectionEl = document.createElement('section');
@@ -27,9 +34,12 @@ class NewsSummaryView {
       const aEl = document.createElement('a');
 
       aEl.href = '#summary-container';
+      aEl.id = 'title-link'
       sectionEl.className = 'section';
+      sectionEl.style.borderBottom = '1px solid black'
       figureEl.className = 'image is-16by9';
       imgEl.src = result.fields.thumbnail;
+      imgEl.style.borderRadius = '10px';
       h3El.innerText = result.webTitle;
       h3El.id = result.id;
       h3El.className = 'title is-3 mt-3 is-flex is-justify-content-center';
@@ -49,9 +59,10 @@ class NewsSummaryView {
     const sH3El = document.createElement('h3');
 
     sSectionEl.className = 'section';
-    sSectionEl.id = 'summary-content'
+    sSectionEl.id = 'summary-content';
     sFigureEl.className = 'image is-16by9';
     sImgEl.src = summaryData.article_image;
+    sImgEl.style.borderRadius = '10px';
     sH3El.innerText = summaryData.article_title;
     sH3El.className = 'title is-3 mt-3 is-flex is-justify-content-center';
 
