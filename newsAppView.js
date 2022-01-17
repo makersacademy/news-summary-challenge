@@ -17,14 +17,22 @@ class NewsAppView {
     for (const article of articles) {
       let newArticle = document.createElement("div");
       newArticle.className = "article";
-      let headline = document.createElement("h2");
-      headline.innerText = article.webTitle;
-      newArticle.appendChild(headline);
-      let image = document.createElement("img");
-      image.setAttribute("src", article.fields.thumbnail);
-      newArticle.appendChild(image);
+      this.createHeadline(article, newArticle);
+      this.createImage(article, newArticle);
       this.mainContainerEl.appendChild(newArticle);
     }
+  }
+
+  createHeadline(article, parentElement) {
+    let headline = document.createElement("h2");
+    headline.innerText = article.webTitle;
+    parentElement.appendChild(headline);
+  }
+
+  createImage(article, parentElement) {
+    let image = document.createElement("img");
+    image.setAttribute("src", article.fields.thumbnail);
+    parentElement.appendChild(image);
   }
 
 }
