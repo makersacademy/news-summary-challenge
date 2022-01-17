@@ -1,0 +1,41 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "* Feel free to use Google, your notes, books, etc. but work on your own. * If you refer to the solution of another coach or student, please put a link to that in your README. * If you have a partial solution, **still check in a partial solution** and send in a pull request. * You must submit a pull request to this repo with your code by 9am Monday morning.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlfonsoGhislieri/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlfonsoGhislieri/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/AlfonsoGhislieri/news-summary-challenge#readme",
+  "dependencies": {
+    "dotenv": "^12.0.3",
+    "http-server": "^14.1.0",
+    "jest": "^27.4.7",
+    "jest-fetch-mock": "^3.0.3",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0"
+  }
+}
