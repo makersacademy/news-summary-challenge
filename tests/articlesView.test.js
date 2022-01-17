@@ -78,6 +78,7 @@ describe('ArticlesView', () => {
 
     expect(document.querySelectorAll('.article').length).toEqual(1);
     expect(document.querySelectorAll('.article > h2')[0].textContent).toEqual('article1');
+    expect(document.querySelectorAll('.article > p')[0].textContent).toEqual('Summary placeholder');
     expect(document.querySelectorAll('.article > img')[0].src).toEqual('http://localhost/ex');
   });
 });
