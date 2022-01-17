@@ -36,6 +36,24 @@ describe("NewsAppView", () => {
     view.clearSummaries();
     expect(document.querySelectorAll(".summary").length).toBe(0);
   })
+  it("summaries should only open once", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    let view = new NewsAppView(mockModel, mockApi);
+    view.displayArticles();
+    let article = document.querySelector(".article");
+    article.click();
+    article.click();
+    article.click();
+    expect(document.querySelectorAll(".summary").length).toBe(1);
+  })
+  it("summaries should have a read more link", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    let view = new NewsAppView(mockModel, mockApi);
+    view.displayArticles();
+    let article = document.querySelector(".article");
+    article.click();
+    expect(document.querySelectorAll(".readmore").length).toBe(1);
+  })
 })
 
 const mockArticle =   {

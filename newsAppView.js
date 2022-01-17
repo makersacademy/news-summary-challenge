@@ -32,12 +32,18 @@ class NewsAppView {
     let id = thingClicked.target.id;
     let summary = document.createElement("div");
     summary.className = "summary";
-    let text = this.model.getSummary(this.model.articles[id]);
+    let article = this.model.articles[id];
+    let text = this.model.getSummary(article);
     for (const element of text) {
       let paragraph = document.createElement("p");
       paragraph.innerHTML = element;
       summary.appendChild(paragraph);
     }
+    let readmore = document.createElement("a");
+    readmore.innerText = "(Read more)";
+    readmore.setAttribute("href", article.webUrl);
+    readmore.className = "readmore";
+    summary.appendChild(readmore);
     let parentElement = document.querySelectorAll(".article")[id];
     parentElement.appendChild(summary);
   }
