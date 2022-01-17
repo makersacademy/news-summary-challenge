@@ -1,0 +1,27 @@
+h1,
+p,
+* {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#title {
+  font-size: 150%;
+}
+
+html {
+  background: #59c0f0;
+}
+
+.news {
+  margin: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border: 20px solid rgb(179, 97, 42);
+}
+
+.thumbnail {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
