@@ -7,6 +7,7 @@ git clone https://github.com/AlfonsoGhislieri/news-summary-challenge.git
 cd news-summary-challenge
 npm install
 create ./env file (add guardian api key inside -- > API=GUARDIANAPIKEY)
+npm run build
 ```
 
 Running website
@@ -14,6 +15,13 @@ Running website
 ```
 http-server
 http://192.168.68.112:8080/views/
+```
+
+Running tests
+---
+```
+jest
+jest --coverage // To show test coverage (100%)
 ```
 
 ![img](https://i.ibb.co/xHX1M9m/Screenshot-2022-01-17-at-09-33-21.png)
@@ -47,10 +55,3 @@ The entire logic of the singe page application is in `index.js`
 ------
 The main challenge was to try and make a website that would be able to use an API which required an API-key yet would not display it. Unfortunately, this was undertaken as a front-end project and was not achieved. In order to prevent uploading the API key for the Guardian the `./env` and `bundle.js` were gitignored, yet the API key is ultimately still visibile in the bundled code. 
 - Would need to run the a backend server and fetch the data from there in order to avoid the API key being visible. A full stack project would be necessary and was out of the scope of this project (goals being making a single page application and fetching and displaying data from an API.)
-
-
-
-
-## TODO
----
-- [] Need to add a short summary for every news article specific page
