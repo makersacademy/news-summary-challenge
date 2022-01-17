@@ -62,7 +62,7 @@ To make my news reading more fun
 
 ### MVC Diagram
 
-# ![MVC Diagram](https://github.com/sabrinalord/news-summary-challenge/blob/main/images/News_MVC_Diagram.png)
+# ![MVC Diagram](https://github.com/sabrinalord/news-summary-challenge/blob/master/images/News_MVC_Diagram.png)
 
 
 ### My Approach
