@@ -1,0 +1,27 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "* Feel free to use Google, your notes, books, etc. but work on your own. * If you refer to the solution of another coach or student, please put a link to that in your README. * If you have a partial solution, **still check in a partial solution** and send in a pull request. * You must submit a pull request to this repo with your code by 9am Monday morning.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch --platform=node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kim-morgan/news-summary-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kim-morgan/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/kim-morgan/news-summary-challenge#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "browserify": "^17.0.0",
+    "dotenv": "^11.0.0",
+    "http-server": "^14.1.0",
+    "jest-fetch-mock": "^3.0.3"
+  }
+}
