@@ -1,8 +1,10 @@
 # How to run:
 
 - You will need to create a key.js file in the scripts directory with `const API_KEY = YOURKEY`;
+- $ npm install
 - $ npm run build
 - $ http-server
+- Go to any of the IPs listed
 
 ---
 
