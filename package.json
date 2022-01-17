@@ -5,20 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/esbuild index.js --bundle --outfile=bundle.js",
-    "serve": "./node_modules/.bin/http-server -a localhost -p 8000 -c-1"
+    "serve": "./node_modules/.bin/http-server -a localhost -p 8000 -c-1",
+    "start": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Riky5/news-summary-challenge.git"
   },
-  "author": "",
+  "author": "Riky",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Riky5/news-summary-challenge/issues"
   },
   "homepage": "https://github.com/Riky5/news-summary-challenge#readme",
   "dependencies": {
+    "axios": "^0.24.0",
     "aylien_textapi": "^0.7.0",
     "esbuild": "^0.14.11",
     "http-server": "^14.1.0",

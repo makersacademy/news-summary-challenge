@@ -23,10 +23,11 @@ describe('NewsSummaryView', () => {
 
     const data =  { "response": {
           "results": [{
-            "webTitle": 'Hello World'
+            "webTitle": 'Hello World',
+            "fields": 'thumbnail'
           }]
       }}
-    view.displayNews(data);
+    view.displayHeadlines(data);
     const allHeadlines = document.querySelectorAll('.title');
     const oneHeadline = allHeadlines[allHeadlines.length - 1];
 
