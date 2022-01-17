@@ -4,6 +4,12 @@
 * Load in browser
 * Create file called key.js and declare your api key as const API_KEY
 
+## Screenshot
+
+### Main page
+
+![Headlines page mockup](/images/app-screenshot.png)
+
 ## User Stories
 
 Simple static web app that caters to the below user stories.
@@ -31,9 +37,3 @@ As a busy politician
 I can see click a news article summary title which links to the original article
 So I can get a few more details about an important story
 ```
-
-## Mockups
-
-### Headlines page
-
-![Headlines page mockup](/images/app-screenshot.png)
