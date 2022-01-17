@@ -19,6 +19,14 @@ describe("NewsAppView", () => {
     view.displayArticles();
     expect(document.querySelectorAll("img").length).toBe(1);
   })
+  it("adds a summary on click", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    let view = new NewsAppView(mockModel, mockApi);
+    view.displayArticles();
+    let article = document.querySelector(".article");
+    article.click();
+    expect(document.querySelectorAll(".summary").length).toBe(1);
+  })
 })
 
 const mockArticle =   {
@@ -40,7 +48,8 @@ const mockArticle =   {
 }
 
 const mockModel = {
-  articles: [mockArticle]
+  articles: [mockArticle],
+  getSummary: () => ["text"]
 }
 
 const mockApi = {

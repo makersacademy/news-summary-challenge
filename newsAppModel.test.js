@@ -16,7 +16,7 @@ describe("NewsAppModel", () => {
   })
   it("should be able to get a summary equal to the first two paragraphs of the article", () => {
     let model = new NewsAppModel();
-    expect(model.getSummary(mockArticle)).toEqual(["<p>Fake article</p>","<p>More fake text</p>"]);
+    expect(model.getSummary(mockArticle)).toEqual(["Fake article","More fake text"]);
   })
 })
 

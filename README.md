@@ -1,3 +1,8 @@
+# To run
+* `npm install`
+* `http-server -c-1`
+* Load in browser
+
 # News Summary challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
