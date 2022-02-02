@@ -11,22 +11,24 @@
 
 As usual please start by forking this repo.
 
-You'll create an app that shows the latest news using the Guardian API. You'll
-find instructions on how to setup and use the API down this page.
+You'll create an app that shows the latest news using the Guardian API. You'll find
+instructions on how to setup and use the API down this page.
 
 ## Project overview
 
 Your app will grab all the headlines from the Guardian newspaper API and display them on a
-page. Clicking on a headline will display the detailed article content.
+page. Clicking on a headline will link the user to the actual article page on the Guardian's website.
 
 ### Technologies
 
-You'll write a single page web app. You'll write your code in frontend JavaScript, CSS
-and HTML. You won't use Ruby or backend JavaScript.
+You'll write a single page web app. You'll write your code in frontend JavaScript, CSS and
+HTML. You won't use Ruby or backend JavaScript.
 
-You're strongly encouraged to use the same tools and libraries you've been learning this week:
+You're strongly encouraged to use the same tools and libraries you've been learning this
+week:
  * Jest to write your tests
- * The [`jest-fetch-mock`](https://www.npmjs.com/package/jest-fetch-mock) module (or similar) to mock `fetch` requests (so you don't request the API when running tests!)
+ * The [`jest-fetch-mock`](https://www.npmjs.com/package/jest-fetch-mock) module (or
+   similar) to mock `fetch` requests (so you don't request the API when running tests!)
  * A build tool such as `esbuild` to bundle files together
 
 ## User Stories
@@ -35,38 +37,53 @@ Some of these stories will need decomposing if they seem too large.
 
 ```
 As a busy politician
-I can see all of today's headlines in one place
 So I know what the big stories of the day are
+I can see all of today's headlines in one place
 ```
 
 ```
 As a busy politician
-I can see a relevant picture to illustrate each news article when I browse headlines
 So that I have something nice to look at
+I can see a relevant picture to illustrate each news article when I browse headlines
 ```
 
 ```
 As a busy politician
-I can click a news headline to see a summary and a photo of the news article
-So that I can get an in depth understanding of a very important story
-```
-
-```
-As a busy politician
-I can see click a news article summary title which links to the original article
 So I can get a few more details about an important story
+I can click a news article title which links to the original article
 ```
 
 ```
 As a busy politician
-I can read the site comfortably on my phone
+So I can search what I want to read about
+I can specify a search query on the page and get articles matching this search
+```
+
+### Stretch user stories
+
+```
+As a busy politician
+So I can quickly read through the essential of today's stories
+I can see a summarised version of of the article 
+```
+
+To get a summary of an article's content, you'll need to use the [Aylien API
+endpoint](https://docs.aylien.com/textapi/endpoints/#summarization), which means
+integrating and calling another HTTP endpoint from a different API. This mean you'll need
+to first fetch articles from the Guardian API, **then** use the Aylien API to summarise
+the content — you'll need to use Promises to call both APIs and to handle the flow of
+control.
+
+```
+As a busy politician
 Just in case my laptop breaks
+I can read the site comfortably on my phone
 ```
 
 ```
 As a busy politician
+So I make my news reading more fun
 I can see whizzy animations in the app
-To make my news reading more fun
 ```
 
 ## Mockups
@@ -83,7 +100,8 @@ To make my news reading more fun
 
 ### API authentication
 
-You'll need to [register and get an API key](https://open-platform.theguardian.com/access/) to use the Guardian API. 
+You'll need to [register and get an API
+key](https://open-platform.theguardian.com/access/) to use the Guardian API. 
 
 ### API request rate limits and stubbing
 
@@ -96,78 +114,74 @@ be rejected and everyone's apps will stop working!**
 
 **Remember to mock `fetch` in your tests to avoid exceeding the API rate limit**
 
-### Listing latest articles
-
 If you wanted to get the latest articles from the Guardian API, this is the cURL request
-you might make.  Notice how it has a query parameter for `api-key`.
+you might make. Notice how it has a query parameter for `api-key`.
 
 ```
-curl "https://content.guardianapis.com/search?q=&show-fields=thumbnail&order-by=newest&api-key=SECRET_API_KEY"
+curl "https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=test"
+```
+
+Also notice that the URL parameter `q` is empty — we can pass in a search string to filter
+the returned articles, for example to search articles containing "America" in the title:
+
+```
+curl "https://content.guardianapis.com/search?q=America&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=test"
 ```
 
 The above request will return a response similar to this one:
 ```json
 {
-    "response": {
-        "status": "ok",
-        "userTier": "developer",
-        "total": 2322916,
-        "startIndex": 1,
-        "pageSize": 10,
-        "currentPage": 1,
-        "pages": 232292,
-        "orderBy": "newest",
-        "results": [
-            {
-                "id": "world/live/2022/jan/27/ukraine-crisis-nord-stream-2-gas-pipeline-russia-live-news-updates",
-                "type": "liveblog",
-                "sectionId": "world",
-                "sectionName": "World news",
-                "webPublicationDate": "2022-01-27T13:00:28Z",
-                "webTitle": "Ukraine crisis: Russia ‘not optimistic’ but will keep talking with west – live coverage",
-                "webUrl": "https://www.theguardian.com/world/live/2022/jan/27/ukraine-crisis-nord-stream-2-gas-pipeline-russia-live-news-updates",
-                "apiUrl": "https://content.guardianapis.com/world/live/2022/jan/27/ukraine-crisis-nord-stream-2-gas-pipeline-russia-live-news-updates",
-                "fields": {
-                    "thumbnail": "https://media.guim.co.uk/cb78ab8cce355475da6c72f123f95d0d5912bd9b/0_261_6134_3681/500.jpg"
-                },
-                "isHosted": false,
-                "pillarId": "pillar/news",
-                "pillarName": "News"
+   "response":{
+      "status":"ok",
+      "userTier":"developer",
+      "total":2324223,
+      "startIndex":1,
+      "pageSize":10,
+      "currentPage":1,
+      "pages":232423,
+      "orderBy":"newest",
+      "results":[
+         {
+            "id":"sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
+            "type":"article",
+            "sectionId":"sport",
+            "sectionName":"Sport",
+            "webPublicationDate":"2022-02-02T14:42:43Z",
+            "webTitle":"At last, the inventors of modern skiing have something to cheer: Dave Ryding | Andy Bull",
+            "webUrl":"https://www.theguardian.com/sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
+            "apiUrl":"https://content.guardianapis.com/sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
+            "fields":{
+               "headline":"At last, the inventors of modern skiing have something to cheer: Dave Ryding ",
+               "byline":"Andy Bull",
+               "thumbnail":"https://media.guim.co.uk/1e2ab1ced5da6ecf8d7fcca9f87d5398c1d22336/0_119_6480_3888/500.jpg"
             },
-            {
-                "id": "stage/2022/jan/27/dr-semmelweis-review-mark-rylance-bristol-old-vic",
-                "type": "article",
-                "sectionId": "stage",
-                "sectionName": "Stage",
-                "webPublicationDate": "2022-01-27T12:59:42Z",
-                "webTitle": "Dr Semmelweis review – Mark Rylance’s riveting tale of medical hygiene pioneer",
-                "webUrl": "https://www.theguardian.com/stage/2022/jan/27/dr-semmelweis-review-mark-rylance-bristol-old-vic",
-                "apiUrl": "https://content.guardianapis.com/stage/2022/jan/27/dr-semmelweis-review-mark-rylance-bristol-old-vic",
-                "fields": {
-                    "thumbnail": "https://media.guim.co.uk/91cf03d6afc840af717fe794afc755214944a104/0_161_4928_2957/500.jpg"
-                },
-                "isHosted": false,
-                "pillarId": "pillar/arts",
-                "pillarName": "Arts"
+            "isHosted":false,
+            "pillarId":"pillar/sport",
+            "pillarName":"Sport"
+         },
+         {
+            "id":"business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
+            "type":"liveblog",
+            "sectionId":"business",
+            "sectionName":"Business",
+            "webPublicationDate":"2022-02-02T14:41:49Z",
+            "webTitle":"Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
+            "webUrl":"https://www.theguardian.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
+            "apiUrl":"https://content.guardianapis.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
+            "fields":{
+               "headline":"Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
+               "byline":"Julia Kollewe",
+               "thumbnail":"https://media.guim.co.uk/aee3b3b05ea2a37acdadc91095c163fd381eba4a/0_24_3500_2100/500.jpg"
             },
-            // ...
-        ]
-    }
+            "isHosted":false,
+            "pillarId":"pillar/news",
+            "pillarName":"News"
+         },
+         // ...
+      ]
+   }
 }
 ```
-
-### Getting one article
-
-Note that you can get the API URL for a specific article from the response of the
-precedent section (in the `apiUrl` JSON property for an item).
-
-If you wanted to get data for a specific article from the Guardian API, this is the cURL
-request you might make:
-
-```
-curl "https://content.guardianapis.com/business/live/2022/jan/27/markets-hawkish-fed-us-rate-rises-ftse-dow-retail-inflation-growth-economy-business-live?show-fields=thumbnail&api-key=SECRET_API_KEY"
-```
-
 
 ## Resources
 
