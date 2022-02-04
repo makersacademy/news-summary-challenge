@@ -187,7 +187,7 @@ The above request will return a response similar to this one:
 
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
+* [Postman](https://www.postman.com/downloads/?utm_source=postman-home), a program to send and test HTTP requests
 
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
