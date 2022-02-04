@@ -10,7 +10,7 @@ describe ("News View", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
   
     const NewsModel = { 
-      getNews: () => ['testing', 'testing2']
+      getHeadlines: () => ['testing', 'testing2']
     }
     const newsView = new NewsView(NewsModel);
   

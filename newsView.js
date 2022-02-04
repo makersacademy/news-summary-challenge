@@ -5,7 +5,7 @@ class NewsView {
   }
 
   displayNews() {
-    const headlines = this.newsModel.getNews();
+    const headlines = this.newsModel.getHeadlines();
 
     headlines.forEach(headline => {
       const headlineEl = document.createElement('div');

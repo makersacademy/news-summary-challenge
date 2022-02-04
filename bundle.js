@@ -34,7 +34,7 @@
           this.mainContainerEl = document.querySelector("#main-container");
         }
         displayNews() {
-          const headlines = this.newsModel.getNews();
+          const headlines = this.newsModel.getHeadlines();
           headlines.forEach((headline) => {
             const headlineEl = document.createElement("div");
             headlineEl.innerText = headline;
