@@ -71,7 +71,7 @@ To get a summary of an article's content, you'll need to use the [Aylien API
 endpoint](https://docs.aylien.com/textapi/endpoints/#summarization), which means
 integrating and calling another HTTP endpoint from a different API. This mean you'll need
 to first fetch articles from the Guardian API, **then** use the Aylien API to summarise
-the content — you'll need to use Promises to call both APIs and to handle the flow of
+the content — you'll need to use promises or callbacks to call both APIs and to handle the flow of
 control.
 
 ```
