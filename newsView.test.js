@@ -1,10 +1,9 @@
 /**
- * @jest-environment jsdom
- */
+* @jest-environment jsdom
+*/
 
- const fs = require('fs');
- const newsView = require('./newsView')
- const newsModel = require('./newsModel')
+const fs = require('fs');
+const NewsView = require('./newsView')
   
 describe ("News View", () => {
   it("displays headlines in the browser", () => {
@@ -13,9 +12,9 @@ describe ("News View", () => {
     const NewsModel = { 
       getNews: () => ['testing', 'testing2']
     }
-    const view = new newsView(NewsModel);
+    const newsView = new NewsView(NewsModel);
   
-    view.displayNews();
+    newsView.displayNews();
   
     expect(document.querySelectorAll('div.headline').length).toBe(2);
   });
