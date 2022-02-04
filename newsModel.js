@@ -4,10 +4,15 @@ class NewsModel{
     this.headlines = []
   }
 
-  getHeadlines() {
+  getHeadlines(){
     return this.headlines;
+  }
+
+  addHeadline(text) {
+    this.headlines.push(text)
   }
 
 }
 
 module.exports = NewsModel;
+
