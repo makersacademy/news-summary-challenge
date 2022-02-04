@@ -7,13 +7,15 @@ class NewsModel {
     return this.headlines;
   }
 
-  addHeadlines(headline) {
-    this.headlines.push(headline);
+  addHeadlines(stories) {
+    stories.forEach(story => {
+      this.headlines.push(story.webTitle);
+    });
   }
 
   reset() {
     this.headlines = []
   }
-}
+ }
 
 module.exports = NewsModel;

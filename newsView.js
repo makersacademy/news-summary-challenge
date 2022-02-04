@@ -1,6 +1,7 @@
 class NewsView {
-  constructor(newsModel) {
+  constructor(newsModel, newsApi) {
     this.newsModel = newsModel;
+    this.newsApi = newsApi;
     this.mainContainerEl = document.querySelector('#main-container');
   }
 
