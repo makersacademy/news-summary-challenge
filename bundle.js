@@ -8,6 +8,18 @@
   var require_newsModel = __commonJS({
     "newsModel.js"(exports, module) {
       var NewsModel2 = class {
+        constructor() {
+          this.headlines = [];
+        }
+        getHeadlines() {
+          return this.headlines;
+        }
+        addHeadlines(headline) {
+          this.headlines.push(headline);
+        }
+        reset() {
+          this.headlines = [];
+        }
       };
       module.exports = NewsModel2;
     }
