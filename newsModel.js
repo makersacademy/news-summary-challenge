@@ -12,6 +12,10 @@ class NewsModel{
     this.headlines.push(text)
   }
 
+  setHeadlines(headlines) {
+    this.headlines = headlines
+  }
+
 }
 
 module.exports = NewsModel;

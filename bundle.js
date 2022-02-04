@@ -8,8 +8,9 @@
   var require_newsView = __commonJS({
     "newsView.js"(exports, module) {
       var NewsView2 = class {
-        constructor(model2) {
+        constructor(model2, api2) {
           this.model = model2;
+          this.api = api2;
           this.mainContainerEl = document.querySelector("#main-container");
         }
         displayHeadlines() {
@@ -39,17 +40,38 @@
         addHeadline(text) {
           this.headlines.push(text);
         }
+        setHeadlines(headlines) {
+          this.headlines = headlines;
+        }
       };
       module.exports = NewsModel2;
+    }
+  });
+
+  // newsApi.js
+  var require_newsApi = __commonJS({
+    "newsApi.js"(exports, module) {
+      var NewsApi2 = class {
+        loadHeadlines(callback) {
+          fetch("http://localhost:3000/headlines").then((response) => response.json()).then((data) => {
+            callback(data);
+          });
+        }
+      };
+      module.exports = NewsApi2;
     }
   });
 
   // index.js
   var NewsView = require_newsView();
   var NewsModel = require_newsModel();
+  var NewsApi = require_newsApi();
+  var api = new NewsApi();
   var model = new NewsModel();
-  model.addHeadline("HEADLINE 1");
   var view = new NewsView(model);
-  view.displayHeadlines();
+  api.loadHeadlines((headlines) => {
+    model.setHeadlines(headlines);
+    view.displayHeadlines();
+  });
   console.log("News Summary App is running!");
 })();

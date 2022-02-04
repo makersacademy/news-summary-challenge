@@ -1,10 +1,14 @@
 const NewsView = require("./newsView");
 const NewsModel = require("./newsModel")
+const NewsApi = require("./newsApi")
 
+const api = new NewsApi();
 const model = new NewsModel();
-model.addHeadline("HEADLINE 1")
-
 const view = new NewsView(model);
-view.displayHeadlines();
+
+api.loadHeadlines((headlines) => {
+  model.setHeadlines(headlines);
+  view.displayHeadlines();
+})
 
 console.log('News Summary App is running!');
