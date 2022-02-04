@@ -7,6 +7,12 @@
   request.
 * You must submit a pull request to this repo with your code by 10am Monday morning.
 
+## My Approach
+
+* created a GuardianApi class to fetch content from the api, added an optional query parameter to search for any content, when the page load by default will show the headlines from the guardian news
+* created an articlesModel class to set a list of articles fetched from the api
+* created an articlesView class to manipulate the DOM: display the articles on the page, search for any articles and display the result, click on any article headline to get a brief description and a link to full article
+
 ## Challenge
 
 As usual please start by forking this repo.
