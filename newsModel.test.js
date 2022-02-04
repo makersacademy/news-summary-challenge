@@ -12,7 +12,8 @@ describe('NewsModel', () => {
   describe('add headlines', () => {
     it('adds a headline', () => {
       const news = new NewsModel;
-      news.addHeadlines('Extra, extra, read all about it!');
+      stories = [ { webTitle: 'Extra, extra, read all about it!'}]
+      news.addHeadlines(stories);
       
       expect(news.getHeadlines()).toEqual(['Extra, extra, read all about it!'])
     })
@@ -21,7 +22,8 @@ describe('NewsModel', () => {
   describe('reset', () => {
     it('resets a new', () => {
       const news = new NewsModel;
-      news.addHeadlines('Burgerking Carrotstick to star in new sprawling BBC drama!');
+      stories = [ { webTitle: 'Extra, extra, read all about it!'}]
+      news.addHeadlines(stories);
       news.reset();
       
       expect(news.getHeadlines()).toEqual([]);

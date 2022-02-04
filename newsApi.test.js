@@ -7,11 +7,11 @@ describe('news class', () => {
     const api = new NewsApi();
     
     fetch.mockResponseOnce(JSON.stringify({
-      headline: 'Something happened today, read on to find out what'
+      results: ['Something happened today, read on to find out what']
     }));
 
-    api.getNews((news) => {
-      expect(news.headline).toBe('Something happened today, read on to find out what');
+    api.getNews((data) => {
+      expect(data.results).toBe(['Something happened today, read on to find out what']);
     });
   });
 });
