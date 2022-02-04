@@ -1,0 +1,1 @@
+console.log('News Summary App is running!');
