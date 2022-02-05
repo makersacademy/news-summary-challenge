@@ -1,0 +1,59 @@
+
+body
+{
+  background-color: #004670;
+  text-align: center;
+}
+
+div.articleContainer {
+  margin: auto;
+  width: 500px;
+  height: 100%;
+}
+
+.articleContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+article {
+  flex: 1;
+  flex-basis: 40%;
+  margin: 5px;
+  padding: 0 3 0 3;
+  width: 220px;
+  height: 220px;
+  background-color: #FFFFFF33;
+  border: 1px solid black;
+  box-shadow: 2px 2px 5px 1px #00000066;
+  border-radius: 3px;
+}
+
+article:hover
+{
+  border: 1px solid black;
+  background-color: #FFFFFF44;
+}
+
+img
+{
+  max-width: 100%;
+  height: auto;
+}
+
+h3
+{
+  font-size: 80%;
+  margin-bottom: 10px;
+}
+
+h1, h3
+{
+  color: #ffe500;
+}
+
+a
+{
+  text-decoration: none;
+}
