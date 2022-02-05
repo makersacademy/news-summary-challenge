@@ -10,6 +10,10 @@ class ArticlesModel {
   getArticles() {
     return this.articles;
   }
+
+  reset() {
+    this.articles = [];
+  }
 }
 
 module.exports = ArticlesModel;
