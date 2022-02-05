@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap');
+
+body{
+		background-color: whitesmoke;
+	}
+
+h1{
+	margin-top: 2em;
+	text-align: center;
+	color: #bb1919;
+	font-weight: 600;
+	font-family: 'Nunito', sans-serif;
+}
+
+.card{
+	margin-left: 0.8em;
+	margin-top: 0.8em;
+	font-family: 'Nunito', sans-serif;
+	background-color:#333333;
+	color: whitesmoke;
+	box-shadow: 1px 1px 1px 1px #333333;
+}
+
+.card .my-btn{
+	cursor: pointer;
+	background-color: #bb1919;
+	color: whitesmoke;
+	font-family: 'Nunito', sans-serif;
+	margin-top: 0.5em;
+}
+
+.card .my-btn:hover{
+	background-color: #24A19C;
+}
+
+#news-slot{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Nunito', sans-serif;
+	transition: all 0.6s;
+}
+
+.thumb{
+	width: 400px;
+	border-radius: 0.5em;
+}
+
+.pop-btn{
+	margin-top: 0.5em;
+	font-family: 'Nunito', sans-serif;
+	color: 	whitesmoke;
+	background-color: #bb1919;
+	border-radius: 1em;
+	border: none;
+	padding: 0.2em 1em;
+}
+
+.pop-btn:hover{
+	background-color: #db0000;
+}
+
+.row{
+	margin-top: 0.5em;
+	border-top: 1px solid #564d4d;
+}

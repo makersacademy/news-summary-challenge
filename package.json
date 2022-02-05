@@ -1,0 +1,33 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "* Feel free to use Google, your notes, books, etc. but work on your own. * If you refer to the solution of another coach or student, please put a link to that in your README. * If you have a partial solution, **still check in a partial solution** and send in a pull request. * You must submit a pull request to this repo with your code by 9am Monday morning.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giorgigutsaevi/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giorgigutsaevi/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/giorgigutsaevi/news-summary-challenge#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "dotenv": "^12.0.3",
+    "http-server": "^14.1.0",
+    "jest-fetch-mock": "^3.0.3",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
