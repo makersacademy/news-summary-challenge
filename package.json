@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/BenCoyne/news-summary-challenge#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "esbuild": "^0.14.18",
     "jest": "^27.4.7",
     "jest-fetch-mock": "^3.0.3"

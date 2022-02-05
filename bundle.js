@@ -13,13 +13,19 @@
           this.api = api2;
           this.mainContainerEl = document.querySelector("#main-container");
         }
-        displayHeadlines() {
-          let headlines = this.model.getHeadlines();
-          headlines.forEach((headline) => {
+        displayHeadlines(data) {
+          data.forEach((headline) => {
             const headlineEl = document.createElement("div");
             headlineEl.className = "headline";
-            headlineEl.innerHTML = "style = color: red;";
-            headlineEl.innerText = headline.fields.headline;
+            const hrefEl = document.createElement("a");
+            hrefEl.className = "article-link";
+            hrefEl.href = headline.webUrl;
+            hrefEl.innerText = headline.webTitle;
+            const imgEl = document.createElement("img");
+            imgEl.className = "article-img";
+            imgEl.src = headline.fields.thumbnail;
+            headlineEl.append(imgEl);
+            headlineEl.append(hrefEl);
             this.mainContainerEl.append(headlineEl);
           });
         }
@@ -49,13 +55,22 @@
     }
   });
 
+  // apiKey.js
+  var require_apiKey = __commonJS({
+    "apiKey.js"(exports, module) {
+      guardianApi = "49fcc868-44be-47ad-a97f-fe49abdd7bc2";
+      module.exports = guardianApi;
+    }
+  });
+
   // newsApi.js
   var require_newsApi = __commonJS({
     "newsApi.js"(exports, module) {
+      var apiKey = require_apiKey();
       var NewsApi2 = class {
-        loadHeadlines(callback, apiKey = "49fcc868-44be-47ad-a97f-fe49abdd7bc2") {
-          fetch(`https://content.guardianapis.com/search?api-key=${apiKey}&type=article&show-fields=thumbnail&show-fields=all`).then((response) => response.json()).then((data) => {
-            console.log(data), callback(data.response.results);
+        loadHeadlines(callback, apiKey2 = guardianApi) {
+          fetch(`https://content.guardianapis.com/search?api-key=${apiKey2}&type=article&show-fields=thumbnail&show-fields=all`).then((response) => response.json()).then((data) => {
+            console.log(data.response.results), callback(data.response.results);
           }).catch((error) => console.log(error));
         }
       };
@@ -72,6 +87,7 @@
   var view = new NewsView(model);
   api.loadHeadlines((headlines) => {
     model.setHeadlines(headlines);
-    view.displayHeadlines();
+    view.displayHeadlines(headlines);
   });
+  console.log("News Summary App is running!");
 })();

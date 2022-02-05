@@ -1,13 +1,30 @@
 body {
-  background-color: rgb(247, 247, 237);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+  
+  background-color: whitesmoke(222, 214, 189);
+  font-family: "Guardian Text Egyptian Web", Georgia, serif;
 }
 
 h1 {
-  padding: 10px
+  padding: 20px;
+  background-color: rgb(187, 185, 185);
+  color: rgb(250, 247, 247);
+  border-bottom: grey;
 }
 
 div.headline {
+  border-top: 0.5px solid rgb(133, 133, 133);
+  border-radius: 5px;
+  width: 500px;
+  height: 60;
+  padding: 10px;
+  margin: 10px;
+  font-style: italic;
+  
+  background-color: rgb(237, 234, 234);
+} 
+
+
+img.headline {
   padding: 10px;
 }
+

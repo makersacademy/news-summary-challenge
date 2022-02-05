@@ -22,11 +22,13 @@ describe("displayHeadlines", () => {
 
     const model = new NewsModel();
     const view = new NewsView(model);
-    model.addHeadline("Headline1");
-    model.addHeadline("Headline2");
-
-    view.displayHeadlines();
-
+    
+    const data = [ 
+      {webTitle: "headline 1", webUrl: "example.com", fields: {thumbnail: "pic"}},
+      {webTitle: "headline 2", webUrl: "example.com", fields: {thumbnail: "pic"}}
+    ]
+    
+    view.displayHeadlines(data);
     expect(document.querySelectorAll("div.headline").length).toBe(2)
   });
 })

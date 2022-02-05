@@ -6,17 +6,32 @@ class NewsView {
     this.mainContainerEl = document.querySelector('#main-container');
   }
 
-  displayHeadlines() {
-    let headlines = this.model.getHeadlines();
+  displayHeadlines(data) {
+    // let headlines = this.model.getHeadlines();
 
-    headlines.forEach(headline => {
+    data.forEach(headline => {
+
       const headlineEl = document.createElement('div');
       headlineEl.className = 'headline';
-      headlineEl.innerText = headline.fields.headline;
+
+      const hrefEl = document.createElement('a');
+      hrefEl.className = 'article-link';
+      hrefEl.href = headline.webUrl;
+      hrefEl.innerText = headline.webTitle;
+
+      const imgEl = document.createElement('img');
+      imgEl.className = 'article-img';
+      imgEl.src = headline.fields.thumbnail;
+      
+      headlineEl.append(imgEl);
+      headlineEl.append(hrefEl);
+      
       this.mainContainerEl.append(headlineEl);
+    
     });
   
   }
 }
 
 module.exports = NewsView;
+

@@ -8,5 +8,7 @@ const view = new NewsView(model);
 
 api.loadHeadlines( (headlines) => {
   model.setHeadlines(headlines);
-  view.displayHeadlines();
+  view.displayHeadlines(headlines);
 })
+
+console.log('News Summary App is running!');
