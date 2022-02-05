@@ -1,11 +1,12 @@
 class NewsApi {
 
-  loadHeadlines(callback) {
-    fetch('http://localhost:3000/headlines')
+  loadHeadlines(callback, apiKey) {
+    fetch(`https://content.guardianapis.com/search?api-key=${apiKey}&type=article&show-fields=thumbnail&show-fields=all`)
       .then(response => response.json())
       .then(data => {
-        callback(data)
-      });
+        console.log(data),
+        callback(data.response.results)})
+      .catch((error) => console.log(error))
   }
 }
 

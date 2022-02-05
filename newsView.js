@@ -7,12 +7,12 @@ class NewsView {
   }
 
   displayHeadlines() {
-    const headlines = this.model.getHeadlines();
+    let headlines = this.model.getHeadlines();
 
     headlines.forEach(headline => {
       const headlineEl = document.createElement('div');
       headlineEl.className = 'headline';
-      headlineEl.innerText = headline;
+      headlineEl.innerText = headline.fields.headline;
       this.mainContainerEl.append(headlineEl);
     });
   

@@ -3,8 +3,9 @@ const NewsApi = require("./newsApi")
 require('jest-fetch-mock').enableMocks();
 
 describe('NewsApi class', () => {
-  it('calls fetch and loads news article details', async () => {
+  it('calls fetch and loads news article details', () => {
     const api = new NewsApi();
+    
     fetch.mockResponseOnce(JSON.stringify({
       webtitle: 'Mock Headline 1'
     }))

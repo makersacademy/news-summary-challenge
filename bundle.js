@@ -14,11 +14,12 @@
           this.mainContainerEl = document.querySelector("#main-container");
         }
         displayHeadlines() {
-          const headlines = this.model.getHeadlines();
+          let headlines = this.model.getHeadlines();
           headlines.forEach((headline) => {
             const headlineEl = document.createElement("div");
             headlineEl.className = "headline";
-            headlineEl.innerText = headline;
+            headlineEl.innerHTML = "style = color: red;";
+            headlineEl.innerText = headline.fields.headline;
             this.mainContainerEl.append(headlineEl);
           });
         }
@@ -52,10 +53,10 @@
   var require_newsApi = __commonJS({
     "newsApi.js"(exports, module) {
       var NewsApi2 = class {
-        loadHeadlines(callback) {
-          fetch("http://localhost:3000/headlines").then((response) => response.json()).then((data) => {
-            callback(data);
-          });
+        loadHeadlines(callback, apiKey = "49fcc868-44be-47ad-a97f-fe49abdd7bc2") {
+          fetch(`https://content.guardianapis.com/search?api-key=${apiKey}&type=article&show-fields=thumbnail&show-fields=all`).then((response) => response.json()).then((data) => {
+            console.log(data), callback(data.response.results);
+          }).catch((error) => console.log(error));
         }
       };
       module.exports = NewsApi2;
@@ -73,5 +74,4 @@
     model.setHeadlines(headlines);
     view.displayHeadlines();
   });
-  console.log("News Summary App is running!");
 })();
