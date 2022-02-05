@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
-
   },
   "repository": {
     "type": "git",
@@ -20,7 +19,10 @@
   },
   "homepage": "https://github.com/sumo-mailman/news-summary-challenge#readme",
   "dependencies": {
+    "aylien-news-api": "^5.1.0",
+    "dotenv": "^16.0.0",
     "esbuild": "^0.14.18",
+    "fs": "^0.0.1-security",
     "jest": "^27.5.0",
     "jest-fetch-mock": "^3.0.3"
   }
