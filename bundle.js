@@ -10,9 +10,13 @@
       var NewsModel2 = class {
         constructor() {
           this.headlines = [];
+          this.links = [];
         }
         getHeadlines() {
           return this.headlines;
+        }
+        getLinks() {
+          return this.links;
         }
         addHeadlines(stories) {
           stories.forEach((story) => {

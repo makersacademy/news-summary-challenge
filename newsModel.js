@@ -1,10 +1,15 @@
 class NewsModel {
   constructor() {
     this.headlines = [];
+    this.links = [];
   }
 
   getHeadlines() {
     return this.headlines;
+  }
+
+  getLinks() {
+    return this.links;
   }
 
   addHeadlines(stories) {
