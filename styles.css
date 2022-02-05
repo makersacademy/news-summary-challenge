@@ -1,0 +1,15 @@
+body {font-family: 'Newsreader', serif;}
+div {
+    width: 500px;
+    margin: auto;
+    border-top: 3px solid black ;
+  }
+  
+  
+img {width: 500px;
+height: auto;
+
+}
+
+h1 {text-align: center;}
+
