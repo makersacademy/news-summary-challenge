@@ -7,6 +7,5 @@ const view = new NewsView(model, api)
 
 api.loadNews((data) => {
     model.setNews(data.response.results);
-    model.getNews(data.response.results)
     view.displayNews()
 })

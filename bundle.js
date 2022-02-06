@@ -71,16 +71,18 @@
           this.removePrevNews();
           newsList = this.model.getNews();
           Array.from(newsList).forEach((news) => {
+            const div = document.createElement("div");
+            div.className = "news-item";
             const header = document.createElement("a");
-            console.log(header);
             header.innerText = news.fields.headline;
             header.href = news.webUrl;
             header.className = "headline";
             const image = document.createElement("img");
             image.src = news.fields.thumbnail;
             image.className = "image";
-            this.mainContainerEl.append(header);
-            this.mainContainerEl.append(image);
+            div.append(image);
+            div.append(header);
+            this.mainContainerEl.append(div);
           });
         }
         removePrevNews() {
@@ -107,7 +109,6 @@
   var view = new NewsView(model, api);
   api.loadNews((data) => {
     model.setNews(data.response.results);
-    model.getNews(data.response.results);
     view.displayNews();
   });
 })();
