@@ -6,7 +6,7 @@ class HeadlineView {
 
   displayStories() {
     let stories = this.model.getStories();
-    stories.forEach( story => {
+    stories.forEach((story) => {
       const div = document.createElement("div");
       div.className = 'story';
       const h2 = document.createElement("h2");

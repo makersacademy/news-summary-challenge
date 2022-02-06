@@ -17,6 +17,12 @@
         addStory(story) {
           this.stories.push(story);
         }
+        setStories(data) {
+          const results = data["response"]["results"];
+          results.forEach((story) => {
+            this.stories.push({ "headline": story["fields"]["headline"] });
+          });
+        }
       };
       module.exports = HeadlineModel2;
     }
@@ -47,11 +53,30 @@
     }
   });
 
+  // guardianApi.js
+  var require_guardianApi = __commonJS({
+    "guardianApi.js"(exports, module) {
+      var GuardianApi2 = class {
+        loadStories(callback) {
+          fetch("https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=test").then((response) => response.json()).then((data) => {
+            console.log(data);
+            callback(data);
+          });
+        }
+      };
+      module.exports = GuardianApi2;
+    }
+  });
+
   // index.js
   var HeadlineModel = require_headlineModel();
   var HeadlineView = require_headlineView();
+  var GuardianApi = require_guardianApi();
   var model = new HeadlineModel();
   var view = new HeadlineView(model);
-  model.addStory({ "headline": "Pig's seen flying over Billericay" });
-  view.displayStories();
+  var api = new GuardianApi();
+  api.loadStories((stories) => {
+    model.setStories(stories);
+    view.displayStories();
+  });
 })();

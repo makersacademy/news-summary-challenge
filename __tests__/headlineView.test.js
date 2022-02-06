@@ -4,25 +4,21 @@
 
 const fs = require('fs');
 const HeadlineView = require('../headlineView');
-const HeadlineModel = require('../headlineModel');
+class HeadlineModel {
+  getStories() {
+    return [
+      { "headline":"Frogs rain down from the skies over Scunthorpe"},
+      { "headline":"Pig's seen flying over Billericay" }
+    ]
+  }
+}
 
 describe('Page view', () => {
-  it('has one main container', () => {
-    document.body.innerHTML = fs.readFileSync('./index.html');
-
-    const view = new HeadlineView();
-
-    expect(document.querySelectorAll('#main-container').length).toBe(1);
-  });
-
   describe('#displayStroies', () => {
     it('displays stories from the model', () => {
       document.body.innerHTML = fs.readFileSync('./index.html');
       const model = new HeadlineModel();
       const view = new HeadlineView(model);
-
-      model.addStory({ "headline":"Frogs rain down from the skies over Scunthorpe"});
-      model.addStory({ "headline":"Pig's seen flying over Billericay" });
 
       view.displayStories();
 

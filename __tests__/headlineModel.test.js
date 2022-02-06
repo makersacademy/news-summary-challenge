@@ -7,12 +7,20 @@ describe('Headline Model', () => {
     expect(model.getStories()).toEqual([]);
   });
 
-  describe('#addStory', () => {
-    it('adds a story object', () => {
+  describe('#setStories', () => {
+    it('adds story objects to the array', () => {
       const model = new HeadlineModel();
-      model.addStory({ "headline":"Frogs rain down from the skies over Scunthorpe" })
+      model.setStories(
+        { "response":{ "results":[
+          { "fields":{ "headline":"Hello1"}},
+          { "fields":{ "headline":"Hello2"}},
+          { "fields":{ "headline":"Hello3"}}
+        ]}}
+      );
 
-      expect(model.getStories()[0]["headline"]).toEqual("Frogs rain down from the skies over Scunthorpe");
+      expect(model.getStories()[0]["headline"]).toEqual('Hello1')
+      expect(model.getStories()[1]['headline']).toEqual('Hello2')
+      expect(model.getStories()[2]['headline']).toEqual('Hello3')
     });
   });
 });
