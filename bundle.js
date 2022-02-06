@@ -14,13 +14,13 @@
         getStories() {
           return this.stories;
         }
-        addStory(story) {
-          this.stories.push(story);
-        }
         setStories(data) {
           const results = data["response"]["results"];
           results.forEach((story) => {
-            this.stories.push({ "headline": story["fields"]["headline"] });
+            this.stories.push({
+              "thumbnail": story["fields"]["thumbnail"],
+              "headline": story["fields"]["headline"]
+            });
           });
         }
       };
@@ -41,6 +41,10 @@
           stories.forEach((story) => {
             const div = document.createElement("div");
             div.className = "story";
+            const img = document.createElement("img");
+            img.className = "thumbnail";
+            img.src = story["thumbnail"];
+            div.append(img);
             const h2 = document.createElement("h2");
             h2.className = "headline";
             h2.innerText = story["headline"];

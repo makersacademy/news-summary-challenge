@@ -8,11 +8,11 @@ describe('GuardianApi class', () => {
       const api = new GuardianApi();
       
       fetch.mockResponseOnce(JSON.stringify({
-        headline: ['Pig\'s Fly!']
+        headline: ['Pigs Fly!']
       }));
 
       api.loadStories((data) => {
-        expect(data.headline[0]).toBe('Pig\'s Fly!');
+        expect(data.headline[0]).toBe('Pigs Fly!');
       });
     });
   });

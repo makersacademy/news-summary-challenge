@@ -12,15 +12,22 @@ describe('Headline Model', () => {
       const model = new HeadlineModel();
       model.setStories(
         { "response":{ "results":[
-          { "fields":{ "headline":"Hello1"}},
-          { "fields":{ "headline":"Hello2"}},
-          { "fields":{ "headline":"Hello3"}}
+          { "fields":{ 
+            "headline":"Pigs Fly!",
+            "thumbnail":"pigsImg"
+          }},
+          { "fields":{ 
+            "headline":"Frogs Rain!",
+            "thumbnail":"frogsImg"
+          }}
         ]}}
       );
-
-      expect(model.getStories()[0]["headline"]).toEqual('Hello1')
-      expect(model.getStories()[1]['headline']).toEqual('Hello2')
-      expect(model.getStories()[2]['headline']).toEqual('Hello3')
+      
+      expect(model.getStories().length).toEqual(2)
+      expect(model.getStories()[0]["headline"]).toEqual('Pigs Fly!')
+      expect(model.getStories()[0]["thumbnail"]).toEqual('pigsImg')
+      expect(model.getStories()[1]['headline']).toEqual('Frogs Rain!')
+      expect(model.getStories()[1]["thumbnail"]).toEqual('frogsImg')
     });
   });
 });

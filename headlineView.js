@@ -9,6 +9,10 @@ class HeadlineView {
     stories.forEach((story) => {
       const div = document.createElement("div");
       div.className = 'story';
+      const img = document.createElement("img");
+      img.className = 'thumbnail'
+      img.src = story['thumbnail'];
+      div.append(img);
       const h2 = document.createElement("h2");
       h2.className = 'headline';
       h2.innerText = story['headline'];
