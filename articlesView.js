@@ -9,14 +9,26 @@ class ArticlesView {
     const articles = this.model.getArticles();
 
     articles.forEach(article => {
-      // console.log(article.fields.headline);  // log headline for each article
+      // console.log(article.fields.headline);    // Log headline for each article
+      
+      // Create article element
       let articleEl = document.createElement('div');
       articleEl.className = 'article';
-      this.mainContainerEl.append(articleEl)
-      let articleHeadingEl = document.createElement('h3');
-      articleHeadingEl.className = 'article-heading';
-      articleHeadingEl.innerText = article.fields.headline;
-      articleEl.append(articleHeadingEl);
+      this.mainContainerEl.append(articleEl);
+
+      // Create article image
+      let articleImageEl = document.createElement('img');
+      articleImageEl.className = 'article-image';
+      // articleImageEl.src = article.thumbnail;   // Local data
+      articleImageEl.src = article.fields.thumbnail;   // API data
+      articleEl.append(articleImageEl);
+
+      // Create article headline
+      let articleHeadlineEl = document.createElement('h3');
+      articleHeadlineEl.className = 'article-headline';
+      // articleHeadlineEl.innerText = article.headline;    // Local data
+      articleHeadlineEl.innerText = article.fields.headline;   // API data
+      articleEl.append(articleHeadlineEl);
     });
   }
 }

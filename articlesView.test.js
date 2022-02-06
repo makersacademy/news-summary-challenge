@@ -15,9 +15,9 @@ beforeEach(() => {
 });
 
 const articlesData = [
-  {data: "First article"},
-  {data: "Second article"},
-  {data: "Third article"}
+  {headline: "First article", thumbnail: "image1"},
+  {headline: "Second article", thumbnail: "image 2"},
+  {headline: "Third article", thumbnail: "image 3"}
 ];
 
 describe('Articles view', () => {
@@ -27,5 +27,21 @@ describe('Articles view', () => {
     view.displayArticles();
 
     expect(document.querySelectorAll('div.article').length).toEqual(3);
+  });
+
+  it('displays articles with headlines on the page', () => {
+    model.setArticles(articlesData);
+
+    view.displayArticles();
+
+    expect(document.querySelectorAll('div.article h3.article-headline').length).toEqual(3);
+  });
+
+  it('displays an image with each article', () => {
+    model.setArticles(articlesData);
+
+    view.displayArticles();
+
+    expect(document.querySelectorAll('div.article img.article-image').length).toEqual(3);
   });
 });

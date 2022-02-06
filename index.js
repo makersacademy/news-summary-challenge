@@ -9,9 +9,9 @@ view = new ArticlesView(model);
 console.log('Hello!');
 
 // const articlesData = [
-//   {data: "First article"},
-//   {data: "Second article"},
-//   {data: "Third article"}
+//   {headline: "First article", thumbnail: "image1"},
+//   {headline: "Second article", thumbnail: "image 2"},
+//   {headline: "Third article", thumbnail: "image 3"}
 // ];
 
 // model.setArticles(articlesData);
@@ -19,7 +19,7 @@ console.log('Hello!');
 
 api.loadArticles((articles) => {
   let articlesList = articles.response.results;
-  console.log(articlesList);
+  console.log(articlesList);    // Log list of articles
   model.setArticles(articlesList);
   view.displayArticles();
 });

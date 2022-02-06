@@ -39,10 +39,14 @@
             let articleEl = document.createElement("div");
             articleEl.className = "article";
             this.mainContainerEl.append(articleEl);
-            let articleHeadingEl = document.createElement("h3");
-            articleHeadingEl.className = "article-heading";
-            articleHeadingEl.innerText = article.fields.headline;
-            articleEl.append(articleHeadingEl);
+            let articleImageEl = document.createElement("img");
+            articleImageEl.className = "article-image";
+            articleImageEl.src = article.fields.thumbnail;
+            articleEl.append(articleImageEl);
+            let articleHeadlineEl = document.createElement("h3");
+            articleHeadlineEl.className = "article-headline";
+            articleHeadlineEl.innerText = article.fields.headline;
+            articleEl.append(articleHeadlineEl);
           });
         }
       };
