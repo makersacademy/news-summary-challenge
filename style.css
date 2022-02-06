@@ -1,6 +1,5 @@
 body {
   height: 100%;
-  background: linear-gradient(90deg, #eff6f8 0%, #93b3b9 100%);
   margin: 0;
   padding: 0;
   font-family: 'Special Elite', cursive;
@@ -10,18 +9,25 @@ body {
 .header {
   padding: 20px;
   text-align: center;
-  background-color: transparent;
+  background: linear-gradient(90deg, #eff6f8 0%, #93b3b9 100%);
   color: black;
   font-size: 80px;
+  opacity: 0.9;
+}
+
+.search {
+  background: linear-gradient(90deg, #eff6f8 0%, #93b3b9 100%);
+  padding: 10px;
+  opacity: 0.9;
 }
 
 .headline {
   width: 1200px;
   margin: auto;
   padding: 10px;
-  border: 3px solid #7dabb1;
   text-align: center;
-  background-color: transparent;
+  background: linear-gradient(90deg, #eff6f8 0%, #93b3b9 100%);
+  opacity: 0.9;
 }
 
 .padding {
@@ -48,11 +54,11 @@ a:visited {
 a:hover {
   color: black;
   text-decoration: none;
-  font-size: 33px;
+  font-size: 32px;
 }
 
 a:active {
   color: black;
   text-decoration: none;
-  font-size: 33px;
+  font-size: 32px;
 }
