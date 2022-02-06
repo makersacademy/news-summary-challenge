@@ -78,23 +78,26 @@
           this.newsModel = newsModel2;
           this.mainContainerEl = document.querySelector("#main-container");
           this.buttonEl = document.querySelector("#search-button");
+          this.inputEl = document.querySelectorAll("#search-input");
           this.buttonEl.addEventListener("click", () => {
             const searchTerm = document.querySelector("#search-input").value;
             console.log(searchTerm);
             newsApi2.getNews(searchTerm, (headlines) => {
+              newsModel2.reset();
               console.log(headlines);
               newsModel2.addHeadlines(headlines);
               newsModel2.addLinks(headlines);
               newsModel2.addImages(headlines);
               this.displayNews();
             });
+            this.inputEl.value = "";
           });
         }
         displayNews() {
-          this.newsModel.reset;
           const headlines = this.newsModel.getHeadlines();
           const links = this.newsModel.getLinks();
           const images = this.newsModel.getImages();
+          const articlesArray = [];
           headlines.forEach((headline) => {
             const newsEl = document.createElement("div");
             const index = headlines.indexOf(headline);
@@ -102,7 +105,7 @@
             const linkText = document.createTextNode(headline);
             const img = document.createElement("img");
             const lineBreak = document.createElement("br");
-            const padding = document.createElement("div");
+            newsEl.className = "headline";
             a.appendChild(linkText);
             a.title = headline;
             a.href = links[index];
@@ -111,11 +114,9 @@
             newsEl.appendChild(a);
             newsEl.append(lineBreak);
             newsEl.appendChild(img);
-            newsEl.className = "headline";
-            padding.className = "padding";
-            this.mainContainerEl.append(newsEl);
-            this.mainContainerEl.append(padding);
+            articlesArray.push(newsEl);
           });
+          this.mainContainerEl.replaceChildren(...articlesArray);
         }
       };
       module.exports = NewsView2;

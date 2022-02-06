@@ -1,4 +1,4 @@
-const apiKey = require(`./apiKey`)
+const apiKey = require(`./apiKey`);
 
 class NewsApi {
   getNews(searchTerm, callback) {

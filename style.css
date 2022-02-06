@@ -23,16 +23,11 @@ body {
 
 .headline {
   width: 1200px;
-  margin: auto;
+  margin: 15px;
   padding: 10px;
   text-align: center;
   background: linear-gradient(90deg, #eff6f8 0%, #93b3b9 100%);
   opacity: 0.9;
-}
-
-.padding {
-  padding: 20px;
-  background-color: transparent;
 }
 
 .image {
