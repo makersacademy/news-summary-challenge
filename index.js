@@ -1,11 +1,8 @@
-class Index {
-  hello() {
-    console.log('Hello');
-    return 'Hello!';
-  } 
-}
+const HeadlineModel = require('./headlineModel');
+const HeadlineView = require('./headlineView');
 
-const index = new Index();
-return index.hello();
+const model = new HeadlineModel();
+const view = new HeadlineView(model);
 
-module.exports = Index;
+model.addStory({ "headline":"Pig's seen flying over Billericay" });
+view.displayStories();

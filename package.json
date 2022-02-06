@@ -3,7 +3,7 @@
     "jest": "^27.5.0"
   },
   "scripts": {
-    "jest": "jest --coverage",
+    "jest": "jest ./__tests__ --coverage",
     "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
   },
   "dependencies": {
