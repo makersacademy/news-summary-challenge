@@ -38,6 +38,7 @@ class NewsModel {
   reset() {
     this.headlines = [];
     this.links = [];
+    this.images = [];
   }
  }
 

@@ -40,6 +40,7 @@
         reset() {
           this.headlines = [];
           this.links = [];
+          this.images = [];
         }
       };
       module.exports = NewsModel2;
@@ -79,15 +80,19 @@
             const linkText = document.createTextNode(headline);
             const img = document.createElement("img");
             const lineBreak = document.createElement("br");
+            const padding = document.createElement("div");
             a.appendChild(linkText);
             a.title = headline;
             a.href = links[index];
             img.src = images[index];
-            newsEl.appendChild(img);
-            newsEl.append(lineBreak);
+            img.className = "image";
             newsEl.appendChild(a);
+            newsEl.append(lineBreak);
+            newsEl.appendChild(img);
             newsEl.className = "headline";
+            padding.className = "padding";
             this.mainContainerEl.append(newsEl);
+            this.mainContainerEl.append(padding);
           });
         }
       };

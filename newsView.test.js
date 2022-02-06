@@ -32,7 +32,6 @@ describe ("News View", () => {
     const newsView = new NewsView(newsModel);
   
     newsView.displayNews();
-    console.log(document.querySelectorAll('div.headline'))
   
     expect(document.querySelectorAll('div.headline.href').length).toBe(2);
   });
@@ -48,7 +47,6 @@ describe ("News View", () => {
     const newsView = new NewsView(newsModel);
   
     newsView.displayNews();
-    console.log(document.querySelectorAll('div.headline').text());
   
     expect(document.querySelectorAll('div.headline.img').length).toBe(2);
   });

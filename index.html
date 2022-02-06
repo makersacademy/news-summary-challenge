@@ -1,21 +1,23 @@
 <!doctype html>
 <html>
     <head>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
       <title>News Summary</title>
     </head>
     <body>
-      <h1>Headlines</h1>
+      <div class='header'>Headlines</div>
+      <div style='text-align: center'>
+        <label for="site-search">Search topics:</label>
+        <input type="search" id="site-search" name="q" aria-label="Search through site content">
+        <button>Search</button>
+      </div>
+      <div class="padding"></div>
       <div id="main-container">
 
       </div>
       <script src="bundle.js"></script>
     </body>
 </html>
-
-<!-- this is the shape we want!
-  <div>
-    <h3 id="headline"></h3>
-    <img id="image" />
-    <p id="summary"></p>
-  </div> 
--->
