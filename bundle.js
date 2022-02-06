@@ -22,17 +22,22 @@
         getImages() {
           return this.images;
         }
-        addHeadlines(stories) {
+        addInfo(stories) {
+          this.#addHeadlines(stories);
+          this.#addLinks(stories);
+          this.#addImages(stories);
+        }
+        #addHeadlines(stories) {
           stories.forEach((story) => {
             this.headlines.push(story.webTitle);
           });
         }
-        addLinks(stories) {
+        #addLinks(stories) {
           stories.forEach((story) => {
             this.links.push(story.webUrl);
           });
         }
-        addImages(stories) {
+        #addImages(stories) {
           stories.forEach((story) => {
             this.images.push(story.fields.thumbnail);
           });
@@ -85,9 +90,7 @@
             newsApi2.getNews(searchTerm, (headlines) => {
               newsModel2.reset();
               console.log(headlines);
-              newsModel2.addHeadlines(headlines);
-              newsModel2.addLinks(headlines);
-              newsModel2.addImages(headlines);
+              newsModel2.addInfo(headlines);
               this.displayNews();
             });
             this.inputEl.value = "";
@@ -133,9 +136,7 @@
   console.log("The news app is running");
   newsApi.getNews("", (headlines) => {
     console.log(headlines);
-    newsModel.addHeadlines(headlines);
-    newsModel.addLinks(headlines);
-    newsModel.addImages(headlines);
+    newsModel.addInfo(headlines);
     newsView.displayNews();
   });
 })();

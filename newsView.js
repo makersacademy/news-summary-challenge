@@ -11,9 +11,7 @@ class NewsView {
       newsApi.getNews(searchTerm, (headlines) => {
         newsModel.reset();
         console.log(headlines);
-        newsModel.addHeadlines(headlines);
-        newsModel.addLinks(headlines);
-        newsModel.addImages(headlines);
+        newsModel.addInfo(headlines);
         this.displayNews();
       });
       this.inputEl.value = '';
