@@ -15,7 +15,7 @@
     it('adds a headline to the headlines array', () => {
         const model = new NewsModel()
         model.addHeadlines('Headline1');
-        expect(model.addHeadlines()).toEqual(['Headline1'])
+        expect(model.getHeadlines()).toEqual(['Headline1'])
     
     })
 
@@ -23,15 +23,15 @@
       it('populates this.headlines array', () => {
           const model = new NewsModel()
 
-          const newsInfo = [
+          const headlines = [
               {webTitle: 'headline1'},
               {webTitle: 'headline2'},
               {webTitle: 'headline3'},
               
           ]
 
-          model.setHeadlines(newsInfo)
-          expect(model.setHeadlines()).toEqual(newsInfo)
+          model.setHeadlines(headlines)
+          expect(model.getHeadlines()).toEqual(headlines)
       })
   })
   });
