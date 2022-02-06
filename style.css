@@ -1,4 +1,6 @@
 #main-container {
+  width: 70%;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -7,6 +9,7 @@
 
 .article-container {
   flex: 0 1 calc(25% - 1em);
+  background-color: aqua;
 
 }
 

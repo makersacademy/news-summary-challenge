@@ -19,18 +19,24 @@
         }
         createArticles() {
           this.model.showArticles().forEach((article) => {
-            let articleEl = document.createElement("article");
-            articleEl.className = "article-container";
-            this.mainContainerEl.append(articleEl);
+            this.#addArticleEl();
             this.#addImage(article.fields.thumbnail);
-            this.#addTitle(article.webTitle);
+            this.#addTitle(article.webTitle, article.webUrl);
           });
         }
-        #addTitle(title) {
+        #addArticleEl() {
+          let articleEl = document.createElement("article");
+          articleEl.className = "article-container";
+          this.mainContainerEl.append(articleEl);
+        }
+        #addTitle(title, source) {
           let titleEl = document.createElement("h2");
           titleEl.innerText = title;
           titleEl.className = "article-title";
-          this.mainContainerEl.lastElementChild.append(titleEl);
+          let linkEl = document.createElement("a");
+          linkEl.href = source;
+          linkEl.append(titleEl);
+          this.mainContainerEl.lastElementChild.append(linkEl);
         }
         #addImage(imgSrc) {
           let imgEl = document.createElement("img");
@@ -61,9 +67,9 @@
     }
   });
 
-  // apikey.js
-  var require_apikey = __commonJS({
-    "apikey.js"(exports, module) {
+  // apiKey.js
+  var require_apiKey = __commonJS({
+    "apiKey.js"(exports, module) {
       var API_KEY = "502d9716-d2db-457c-8bd3-3459d64778ba";
       module.exports = API_KEY;
     }
@@ -72,7 +78,7 @@
   // newsApi.js
   var require_newsApi = __commonJS({
     "newsApi.js"(exports, module) {
-      var API_KEY = require_apikey();
+      var API_KEY = require_apiKey();
       var NewsApi2 = class {
         constructor() {
           this.url = `https://content.guardianapis.com/search?order-by=newest&show-fields=thumbnail&api-key=${API_KEY}`;

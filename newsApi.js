@@ -1,4 +1,4 @@
-const API_KEY = require('./apikey')
+const API_KEY = require('./apiKey')
 
 class NewsApi {
   constructor() {
