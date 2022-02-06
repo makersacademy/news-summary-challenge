@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/J-son1/news-summary-challenge#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "esbuild": "^0.14.18",
     "jest": "^27.5.0",
     "jest-fetch-mock": "^3.0.3"

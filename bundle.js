@@ -41,7 +41,7 @@
             this.mainContainerEl.append(articleEl);
             let articleHeadingEl = document.createElement("h3");
             articleHeadingEl.className = "article-heading";
-            articleHeadingEl.innerText = article.data;
+            articleHeadingEl.innerText = article.fields.headline;
             articleEl.append(articleHeadingEl);
           });
         }
@@ -50,17 +50,42 @@
     }
   });
 
+  // apiKey.js
+  var require_apiKey = __commonJS({
+    "apiKey.js"(exports, module) {
+      API_KEY = "7b8e5e48-5526-446b-9254-1f74fc5f0cbf";
+      module.exports = API_KEY;
+    }
+  });
+
+  // articlesApi.js
+  var require_articlesApi = __commonJS({
+    "articlesApi.js"(exports, module) {
+      var API_KEY2 = require_apiKey();
+      var ArticlesApi2 = class {
+        loadArticles(callback) {
+          fetch(`https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${API_KEY2}`).then((response) => response.json()).then((data) => {
+            callback(data);
+          });
+        }
+      };
+      module.exports = ArticlesApi2;
+    }
+  });
+
   // index.js
   var ArticlesModel = require_articlesModel();
   var ArticlesView = require_articlesView();
+  var ArticlesApi = require_articlesApi();
   model = new ArticlesModel();
+  api = new ArticlesApi();
   view = new ArticlesView(model);
   console.log("Hello!");
-  var articlesData = [
-    { data: "First article" },
-    { data: "Second article" },
-    { data: "Third article" }
-  ];
-  model.setArticles(articlesData);
-  view.displayArticles();
+  api.loadArticles((articles) => {
+    let articlesList = articles.response.results;
+    console.log(articlesList);
+    model.setArticles(articlesList);
+    view.displayArticles();
+  });
+  model.reset();
 })();
