@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "test": "jest",
+    "build": "./build.js"
+  },
+  "dependencies": {
+    "jest": "^27.5.0",
+    "jest-fetch-mock": "^3.0.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "esbuild": "^0.14.19",
+    "esbuild-envfile-plugin": "^1.0.2"
+  }
+}
