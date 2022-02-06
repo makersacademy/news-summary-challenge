@@ -24,8 +24,12 @@
             const imgEl = document.createElement("img");
             imgEl.className = "article-img";
             imgEl.src = headline.fields.thumbnail;
+            const bodyEl = document.createElement("div");
+            bodyEl.className = "article-body";
+            bodyEl.innerText = headline.fields.body.replace(/(<([^>]+)>)/ig, "").slice(0, 133) + "...";
             headlineEl.append(imgEl);
             headlineEl.append(hrefEl);
+            headlineEl.append(bodyEl);
             this.mainContainerEl.append(headlineEl);
           });
         }
