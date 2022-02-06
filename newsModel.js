@@ -2,6 +2,7 @@ class NewsModel {
   constructor() {
     this.headlines = [];
     this.links = [];
+    this.images = []
   }
 
   getHeadlines() {
@@ -12,14 +13,31 @@ class NewsModel {
     return this.links;
   }
 
+  getImages() {
+    return this.images;
+  }
+
   addHeadlines(stories) {
     stories.forEach(story => {
       this.headlines.push(story.webTitle);
     });
   }
 
+  addLinks(stories) {
+    stories.forEach(story => {
+      this.links.push(story.webUrl);
+    })
+  }
+
+  addImages(stories) {
+    stories.forEach(story => {
+      this.images.push(story.fields.thumbnail);
+    })
+  }
+
   reset() {
-    this.headlines = []
+    this.headlines = [];
+    this.links = [];
   }
  }
 

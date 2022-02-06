@@ -8,11 +8,13 @@ const NewsView = require('./newsView')
 describe ("News View", () => {
   it("displays headlines in the browser", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
-  
-    const NewsModel = { 
-      getHeadlines: () => ['testing', 'testing2']
+
+    const newsModel = { 
+      getHeadlines: () => ['testing', 'testing 2'],
+      getLinks: () => [],
+      getImages: () => []
     }
-    const newsView = new NewsView(NewsModel);
+    const newsView = new NewsView(newsModel);
   
     newsView.displayNews();
   
@@ -21,15 +23,33 @@ describe ("News View", () => {
 
   it("links to the articles", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
-  
-    const NewsModel = { 
-      getHeadlines: () => ['testing'],
-      getLinks: () => ['https://www.testing.com/']
+    
+    const newsModel = { 
+      getHeadlines: () => [1, 2],
+      getLinks: () => ['https://www.testing.com/', 'https://www.testing2.com'],
+      getImages: () => []
     };
-    const newsView = new NewsView(NewsModel);
+    const newsView = new NewsView(newsModel);
   
     newsView.displayNews();
+    console.log(document.querySelectorAll('div.headline'))
   
-    expect(document.querySelector('div.headline.href').toBe('https://www.testing.com/'));
-  })
+    expect(document.querySelectorAll('div.headline.href').length).toBe(2);
+  });
+
+  it("displays images", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    
+    const newsModel = { 
+      getHeadlines: () => [1, 2],
+      getLinks: () => [],
+      getImages: () => ['test.jpg', 'test2.jpg']
+    };
+    const newsView = new NewsView(newsModel);
+  
+    newsView.displayNews();
+    console.log(document.querySelectorAll('div.headline').text());
+  
+    expect(document.querySelectorAll('div.headline.img').length).toBe(2);
+  });
 });
