@@ -58,7 +58,7 @@ describe("#displayHeadlines", () => {
     const view = new NewsView(model);
 
     const data = [
-      {webTitle: "Breaking News! Test Headline!", webUrl: "www.news.com", fields: {thumbnail: "tet-pic.jpg"}}
+      {webTitle: "Breaking News! Test Hadline!", webUrl: "www.news.com", fields: {thumbnail: "tet-pic.jpg"}}
     ]
 
     view.displayHeadlines(data)
@@ -68,6 +68,7 @@ describe("#displayHeadlines", () => {
     expect(headline.querySelectorAll("a.article-link").length).toBe(1)
     expect(headline.querySelector("a.article-link").href).toBe("http://localhost/www.news.com")
     
+
   }) 
     
 })
