@@ -8,11 +8,10 @@ const view = new NotesView(model);
 
 api.loadArticles(articles => {
   articles.forEach(article => {
-    model.addArticle(article.webTitle);
+    model.addArticle(article);
   });
   view.displayArticles();
 });
 
-// model.addArticle("this is an example article")
 view.displayArticles();
 console.log(model.getArticles());

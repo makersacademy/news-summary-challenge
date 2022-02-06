@@ -14,7 +14,12 @@ class NewsView {
       const div = document.createElement("div");
       div.className = 'article';
       const headline = document.createElement('h2');
-      headline.textContent = article;
+      const img = document.createElement('img')
+
+      headline.textContent = article.webTitle;
+      img.src = article.fields.thumbnail;
+
+      div.appendChild(img);
       div.appendChild(headline);
       this.mainContainer.appendChild(div);
     })
