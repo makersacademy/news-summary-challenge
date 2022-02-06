@@ -13,14 +13,17 @@ class NewsView {
     articles.forEach(article => {
       const div = document.createElement("div");
       div.className = 'article';
-      const headline = document.createElement('h2');
+      const headline = document.createElement('h1');
       const img = document.createElement('img')
+      const link = document.createElement('a');
+      link.setAttribute('href', article.webUrl);
 
       headline.textContent = article.webTitle;
       img.src = article.fields.thumbnail;
 
       div.appendChild(img);
-      div.appendChild(headline);
+      link.appendChild(headline)
+      div.appendChild(link);
       this.mainContainer.appendChild(div);
     })
   }
