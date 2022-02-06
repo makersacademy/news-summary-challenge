@@ -1,14 +1,14 @@
-const dotenv = require('dotenv')
-dotenv.config()
+const API_KEY = require('./apikey')
 class NewsApi {
-  async loadNews() {
-      const apiKey = process.env.API_KEY
+  async loadNews(callback) {
     const url =
-    `https://content.guardianapis.com/search?api-key=${apiKey}`;
+    `https://content.guardianapis.com/search?page=1&q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${API_KEY}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
+      
+      // console.log(data);
+      callback(data)
 
     } catch (error) {
       console.error(error);
