@@ -50,7 +50,6 @@
         }
         displayArticles() {
           let articles = this.model.getArticles();
-          console.log(articles);
           for (let index = 0; index < articles.length; index++) {
             this.#addDiv("article", index);
             this.#displayTitle(articles[index].webTitle, index);
