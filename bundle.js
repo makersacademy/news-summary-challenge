@@ -16,6 +16,7 @@
           this.btnEl.addEventListener("click", () => {
             const userSearch = this.inputEl.value;
             console.log(userSearch);
+            this.inputEl.value = "";
             api2.searchHeadlines(userSearch, (data) => {
               this.model.setHeadlines(data);
               this.displayHeadlines(data);
@@ -23,7 +24,7 @@
           });
         }
         displayHeadlines(data) {
-          const newArticles = [];
+          const newsArticles = [];
           data.forEach((headline) => {
             const headlineEl = document.createElement("div");
             headlineEl.className = "headline";
@@ -34,15 +35,11 @@
             const imgEl = document.createElement("img");
             imgEl.className = "article-img";
             imgEl.src = headline.fields.thumbnail;
-            const bodyEl = document.createElement("div");
-            bodyEl.className = "article-body";
-            bodyEl.innerText = headline.fields.body.replace(/(<([^>]+)>)/ig, "").slice(0, 133) + "...";
             headlineEl.append(imgEl);
             headlineEl.append(hrefEl);
-            headlineEl.append(bodyEl);
-            newArticles.push(headlineEl);
+            newsArticles.push(headlineEl);
           });
-          this.mainContainerEl.replaceChildren(...newArticles);
+          this.mainContainerEl.replaceChildren(...newsArticles);
         }
       };
       module.exports = NewsView2;
