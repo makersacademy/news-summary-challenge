@@ -4,7 +4,7 @@ const NewsApi = require("./newsApi")
 
 const api = new NewsApi();
 const model = new NewsModel();
-const view = new NewsView(model);
+const view = new NewsView(model, api);
 
 api.loadHeadlines( (headlines) => {
   model.setHeadlines(headlines);

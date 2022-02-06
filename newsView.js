@@ -2,12 +2,25 @@ class NewsView {
 
   constructor(model, api) {
     this.model = model;
-    this.api = api;
     this.mainContainerEl = document.querySelector('#main-container');
+      
+    this.inputEl = document.querySelector("#inputEl");
+    this.btnEl = document.querySelector("#btnEl")
+
+    this.btnEl.addEventListener('click', () => {
+      const userSearch = this.inputEl.value;
+      console.log(userSearch)
+
+      api.searchHeadlines(userSearch, data => {
+        this.model.setHeadlines(data);
+        this.displayHeadlines(data);
+      })
+    })
   }
 
   displayHeadlines(data) {
-    // let headlines = this.model.getHeadlines();
+
+    const newArticles = []
 
     data.forEach(headline => {
 
@@ -25,16 +38,16 @@ class NewsView {
 
       const bodyEl = document.createElement('div');
       bodyEl.className = "article-body";
-      // bodyEl.innerText = headline.fields.body.replace(/(<([^>]+)>)/ig, '').slice(0, 133) + '...';
+      bodyEl.innerText = headline.fields.body.replace(/(<([^>]+)>)/ig, '').slice(0, 133) + '...';
       
       headlineEl.append(imgEl);
       headlineEl.append(hrefEl);
       headlineEl.append(bodyEl);
       
-      this.mainContainerEl.append(headlineEl);
-    
+      
+      newArticles.push(headlineEl)
     });
-  
+    this.mainContainerEl.replaceChildren(...newArticles);
   }
 }
 

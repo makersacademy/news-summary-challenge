@@ -10,10 +10,20 @@
       var NewsView2 = class {
         constructor(model2, api2) {
           this.model = model2;
-          this.api = api2;
           this.mainContainerEl = document.querySelector("#main-container");
+          this.inputEl = document.querySelector("#inputEl");
+          this.btnEl = document.querySelector("#btnEl");
+          this.btnEl.addEventListener("click", () => {
+            const userSearch = this.inputEl.value;
+            console.log(userSearch);
+            api2.searchHeadlines(userSearch, (data) => {
+              this.model.setHeadlines(data);
+              this.displayHeadlines(data);
+            });
+          });
         }
         displayHeadlines(data) {
+          const newArticles = [];
           data.forEach((headline) => {
             const headlineEl = document.createElement("div");
             headlineEl.className = "headline";
@@ -30,8 +40,9 @@
             headlineEl.append(imgEl);
             headlineEl.append(hrefEl);
             headlineEl.append(bodyEl);
-            this.mainContainerEl.append(headlineEl);
+            newArticles.push(headlineEl);
           });
+          this.mainContainerEl.replaceChildren(...newArticles);
         }
       };
       module.exports = NewsView2;
@@ -52,7 +63,7 @@
           this.headlines.push(text);
         }
         setHeadlines(headlines) {
-          this.headlines = headlines;
+          this.headlines = [...headlines];
         }
       };
       module.exports = NewsModel2;
@@ -62,7 +73,7 @@
   // apiKey.js
   var require_apiKey = __commonJS({
     "apiKey.js"(exports, module) {
-      guardianApi = "49fcc868-44be-47ad-a97f-fe49abdd7bc2";
+      var guardianApi = "49fcc868-44be-47ad-a97f-fe49abdd7bc2";
       module.exports = guardianApi;
     }
   });
@@ -72,8 +83,13 @@
     "newsApi.js"(exports, module) {
       var apiKey = require_apiKey();
       var NewsApi2 = class {
-        loadHeadlines(callback, apiKey2 = guardianApi) {
-          fetch(`https://content.guardianapis.com/search?api-key=${apiKey2}&type=article&show-fields=thumbnail&show-fields=all`).then((response) => response.json()).then((data) => {
+        loadHeadlines(callback) {
+          fetch(`https://content.guardianapis.com/search?api-key=${apiKey}&type=article&show-fields=thumbnail&show-fields=all`).then((response) => response.json()).then((data) => {
+            console.log(data.response.results), callback(data.response.results);
+          }).catch((error) => console.log(error));
+        }
+        searchHeadlines(searchTerm = "", callback) {
+          fetch(`https://content.guardianapis.com/search?q=${searchTerm}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json()).then((data) => {
             console.log(data.response.results), callback(data.response.results);
           }).catch((error) => console.log(error));
         }
@@ -88,7 +104,7 @@
   var NewsApi = require_newsApi();
   var api = new NewsApi();
   var model = new NewsModel();
-  var view = new NewsView(model);
+  var view = new NewsView(model, api);
   api.loadHeadlines((headlines) => {
     model.setHeadlines(headlines);
     view.displayHeadlines(headlines);

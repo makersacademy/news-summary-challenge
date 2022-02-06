@@ -3,7 +3,6 @@
  */
 
 const fs = require('fs');
-
 const NewsView = require('./newsView')
 const NewsModel = require('./newsModel')
 
@@ -40,14 +39,14 @@ describe("#displayHeadlines", () => {
     const view = new NewsView(model);
     
     const data = [ 
-      {webTitle: "headline 1", webUrl: "example.com", fields: {thumbnail: "tet-pic.jpg"}}
+      {webTitle: "headline 1", webUrl: "example.com", fields: {thumbnail: "test-pic.jpg"}}
     ]
 
     view.displayHeadlines(data);
 
     headline = document.querySelector("div.headline")
     expect(headline.querySelectorAll("img.article-img").length).toBe(1)
-    expect(headline.querySelector("img.article-img").src).toBe("http://localhost/tet-pic.jpg")
+    expect(headline.querySelector("img.article-img").src).toBe("http://localhost/test-pic.jpg")
   });
 
   it("displays a Headline which is a link", () => {
@@ -68,7 +67,6 @@ describe("#displayHeadlines", () => {
     expect(headline.querySelectorAll("a.article-link").length).toBe(1)
     expect(headline.querySelector("a.article-link").href).toBe("http://localhost/www.news.com")
     
-
   }) 
     
 })

@@ -13,7 +13,7 @@ class NewsModel{
   }
 
   setHeadlines(headlines) {
-    this.headlines = headlines
+    this.headlines = [...headlines]
   }
 
 }

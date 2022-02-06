@@ -1,6 +1,7 @@
 body {
-  background-color: whitesmoke(222, 214, 189);
+  /* background-color: whitesmoke(222, 214, 189); */
   font-family: "Guardian Text Egyptian Web", Georgia, serif;
+  background-image: linear-gradient(0deg, rgb(230, 230, 230), 70%, rgba(0, 0, 0, 0));
 }
 
 h1 {
@@ -26,7 +27,6 @@ div.headline {
   padding: 10px;
   margin: 10px;
   font-style: italic;
-  
   background-color: rgb(237, 234, 234);
 } 
 
@@ -46,5 +46,21 @@ img.article-img {
   border-radius: 5px;
   margin-bottom: 5px;
 
+}
+
+#inputEl {
+  margin: 10px;
+  padding: 7.5px;
+  width: 350px;
+  border: 0.5px solid rgb(133, 133, 133); 
+  border-radius: 5px;
+}
+
+#btnEl {
+  
+  padding: 7.5px;
+  width: 140px;
+  border: 0.5px solid rgb(133, 133, 133); 
+  border-radius: 5px;
 }
 
