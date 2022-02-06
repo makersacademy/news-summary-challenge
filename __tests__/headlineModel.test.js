@@ -12,11 +12,11 @@ describe('Headline Model', () => {
       const model = new HeadlineModel();
       model.setStories(
         { "response":{ "results":[
-          { "fields":{ 
+          { "webUrl":"pig", "fields":{ 
             "headline":"Pigs Fly!",
             "thumbnail":"pigsImg"
           }},
-          { "fields":{ 
+          { "webUrl":"frog", "fields":{ 
             "headline":"Frogs Rain!",
             "thumbnail":"frogsImg"
           }}
@@ -24,10 +24,14 @@ describe('Headline Model', () => {
       );
       
       expect(model.getStories().length).toEqual(2)
+      
       expect(model.getStories()[0]["headline"]).toEqual('Pigs Fly!')
       expect(model.getStories()[0]["thumbnail"]).toEqual('pigsImg')
+      expect(model.getStories()[0]["url"]).toEqual('pig')
+
       expect(model.getStories()[1]['headline']).toEqual('Frogs Rain!')
       expect(model.getStories()[1]["thumbnail"]).toEqual('frogsImg')
+      expect(model.getStories()[1]["url"]).toEqual('frog')
     });
   });
 });

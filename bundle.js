@@ -19,12 +19,31 @@
           results.forEach((story) => {
             this.stories.push({
               "thumbnail": story["fields"]["thumbnail"],
-              "headline": story["fields"]["headline"]
+              "headline": story["fields"]["headline"],
+              "url": story["webUrl"]
             });
           });
         }
       };
       module.exports = HeadlineModel2;
+    }
+  });
+
+  // guardianApi.js
+  var require_guardianApi = __commonJS({
+    "guardianApi.js"(exports, module) {
+      var GuardianApi2 = class {
+        constructor() {
+          this.toFetch = "https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=test";
+        }
+        loadStories(callback) {
+          fetch(this.toFetch).then((response) => response.json()).then((data) => {
+            console.log(data);
+            callback(data);
+          });
+        }
+      };
+      module.exports = GuardianApi2;
     }
   });
 
@@ -45,10 +64,14 @@
             img.className = "thumbnail";
             img.src = story["thumbnail"];
             div.append(img);
-            const h2 = document.createElement("h2");
-            h2.className = "headline";
-            h2.innerText = story["headline"];
-            div.append(h2);
+            div.append(document.createElement("br"));
+            const a = document.createElement("a");
+            a.className = "headline";
+            const link = document.createTextNode(story["headline"]);
+            a.append(link);
+            a.title = story["headline"];
+            a.href = story["url"];
+            div.append(a);
             this.mainContainerEl.append(div);
           });
         }
@@ -57,28 +80,13 @@
     }
   });
 
-  // guardianApi.js
-  var require_guardianApi = __commonJS({
-    "guardianApi.js"(exports, module) {
-      var GuardianApi2 = class {
-        loadStories(callback) {
-          fetch("https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=test").then((response) => response.json()).then((data) => {
-            console.log(data);
-            callback(data);
-          });
-        }
-      };
-      module.exports = GuardianApi2;
-    }
-  });
-
   // index.js
   var HeadlineModel = require_headlineModel();
-  var HeadlineView = require_headlineView();
   var GuardianApi = require_guardianApi();
+  var HeadlineView = require_headlineView();
   var model = new HeadlineModel();
-  var view = new HeadlineView(model);
   var api = new GuardianApi();
+  var view = new HeadlineView(model);
   api.loadStories((stories) => {
     model.setStories(stories);
     view.displayStories();

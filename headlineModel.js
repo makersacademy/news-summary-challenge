@@ -12,7 +12,8 @@ class HeadlineModel {
     results.forEach((story) => {
       this.stories.push({
         "thumbnail":story['fields']['thumbnail'],
-        "headline":story['fields']['headline']
+        "headline":story['fields']['headline'],
+        "url":story['webUrl']
       });
     });
   }

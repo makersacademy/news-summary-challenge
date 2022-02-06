@@ -13,10 +13,14 @@ class HeadlineView {
       img.className = 'thumbnail'
       img.src = story['thumbnail'];
       div.append(img);
-      const h2 = document.createElement("h2");
-      h2.className = 'headline';
-      h2.innerText = story['headline'];
-      div.append(h2);
+      div.append(document.createElement("br"));
+      const a = document.createElement("a");
+      a.className = 'headline';
+      const link = document.createTextNode(story['headline']);
+      a.append(link);
+      a.title = story['headline'];
+      a.href = story['url'];
+      div.append(a);
       this.mainContainerEl.append(div);
     });
   }
