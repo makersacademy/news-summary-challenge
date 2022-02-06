@@ -9,7 +9,6 @@ const newsView = new NewsView(newsModel, newsApi);
 console.log('The news app is running');
 
 newsApi.getNews('', (headlines) => {
-  console.log(headlines);
   newsModel.addInfo(headlines);
   newsView.displayNews();
 });

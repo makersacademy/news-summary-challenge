@@ -3,18 +3,17 @@ class NewsView {
     this.newsModel = newsModel;
     this.mainContainerEl = document.querySelector('#main-container');
     this.buttonEl = document.querySelector('#search-button');
-    this.inputEl = document.querySelectorAll('#search-input');
+    this.inputEl = document.querySelector('#search-input');
+    this.inputEl.value = '';
 
     this.buttonEl.addEventListener('click', () => {
       const searchTerm = document.querySelector('#search-input').value;
-      console.log(searchTerm);
+
       newsApi.getNews(searchTerm, (headlines) => {
         newsModel.reset();
-        console.log(headlines);
         newsModel.addInfo(headlines);
         this.displayNews();
       });
-      this.inputEl.value = '';
     });
   }
 

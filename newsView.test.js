@@ -3,6 +3,7 @@
 */
 
 const fs = require('fs');
+const { networkInterfaces } = require('os');
 const NewsView = require('./newsView')
   
 describe ("News View", () => {
@@ -25,7 +26,7 @@ describe ("News View", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
     
     const newsModel = { 
-      getHeadlines: () => [1, 2],
+      getHeadlines: () => [1],
       getLinks: () => ['https://www.testing.com/'],
       getImages: () => []
     };
@@ -41,7 +42,7 @@ describe ("News View", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
     
     const newsModel = { 
-      getHeadlines: () => [1, 2],
+      getHeadlines: () => [1],
       getLinks: () => [],
       getImages: () => ['test.jpg']
     };
@@ -52,4 +53,14 @@ describe ("News View", () => {
     const headline = document.querySelector('div.headline');
     expect(headline.querySelectorAll('img').length).toBe(1);
   });
+
+  it("has a search function", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const searchButton = document.querySelectorAll('#search-button');
+    const searchInput = document.querySelectorAll('#search-input');
+
+    expect(searchButton.length).toBe(1);
+    expect(searchInput.length).toBe(1);
+  })
 });

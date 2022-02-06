@@ -23,21 +23,21 @@
           return this.images;
         }
         addInfo(stories) {
-          this.addHeadlines(stories);
-          this.addLinks(stories);
-          this.addImages(stories);
+          this.#addHeadlines(stories);
+          this.#addLinks(stories);
+          this.#addImages(stories);
         }
-        addHeadlines(stories) {
+        #addHeadlines(stories) {
           stories.forEach((story) => {
             this.headlines.push(story.webTitle);
           });
         }
-        addLinks(stories) {
+        #addLinks(stories) {
           stories.forEach((story) => {
             this.links.push(story.webUrl);
           });
         }
-        addImages(stories) {
+        #addImages(stories) {
           stories.forEach((story) => {
             this.images.push(story.fields.thumbnail);
           });
@@ -83,17 +83,15 @@
           this.newsModel = newsModel2;
           this.mainContainerEl = document.querySelector("#main-container");
           this.buttonEl = document.querySelector("#search-button");
-          this.inputEl = document.querySelectorAll("#search-input");
+          this.inputEl = document.querySelector("#search-input");
+          this.inputEl.value = "";
           this.buttonEl.addEventListener("click", () => {
             const searchTerm = document.querySelector("#search-input").value;
-            console.log(searchTerm);
             newsApi2.getNews(searchTerm, (headlines) => {
               newsModel2.reset();
-              console.log(headlines);
               newsModel2.addInfo(headlines);
               this.displayNews();
             });
-            this.inputEl.value = "";
           });
         }
         displayNews() {
@@ -135,7 +133,6 @@
   var newsView = new NewsView(newsModel, newsApi);
   console.log("The news app is running");
   newsApi.getNews("", (headlines) => {
-    console.log(headlines);
     newsModel.addInfo(headlines);
     newsView.displayNews();
   });
