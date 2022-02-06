@@ -5,7 +5,7 @@ class NewsApi {
     this.api_key = api_key
   }
 
-  loadNotes(callback) {
+  loadArticles(callback) {
     fetch(url + this.api_key)
       .then(response => response.json())
       .then(data => {
