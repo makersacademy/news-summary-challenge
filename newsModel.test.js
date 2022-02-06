@@ -12,4 +12,16 @@ describe('newsModel class', () => {
       expect(model.articles).toBe(articlesArr)
     })
   })
+
+  describe('getArticles', () => {
+    it('returns all articles', () => {
+      const articles = [
+        {webTitle: 'First title', webUrl: 'url.com/1', fields: {thumbnail: 'thumbnailurl.com/1'}},
+        {webTitle: 'Second Title', webUrl: 'url.com/2', fields: {thumbnail: 'thumbnailurl.com/2'}},
+        {webTitle: 'Third Title', webUrl: 'url.com/3', fields: {thumbnail: 'thumbnailurl.com/3'}}
+      ]
+      const model = new NewsModel(articles);
+      expect(model.getArticles()).toEqual(articles)
+    })
+  })
 })
