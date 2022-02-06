@@ -13,16 +13,17 @@
           this.api = api2;
           this.mainContainerEl = document.querySelector("#main-container");
           this.api.loadArticles((data) => {
-            this.model.addTitles(data.response.results);
+            this.model.addArticles(data.response.results);
             this.createArticles();
           });
         }
         createArticles() {
-          this.model.showTitles().forEach((title) => {
-            let article = document.createElement("article");
-            article.className = "article-container";
-            this.mainContainerEl.append(article);
-            this.#addTitle(title);
+          this.model.showArticles().forEach((article) => {
+            let articleEl = document.createElement("article");
+            articleEl.className = "article-container";
+            this.mainContainerEl.append(articleEl);
+            this.#addTitle(article.webTitle);
+            this.#addImage(article.fields.thumbnail);
           });
         }
         #addTitle(title) {
@@ -30,6 +31,12 @@
           titleEl.innerText = title;
           titleEl.className = "article-title";
           this.mainContainerEl.lastElementChild.append(titleEl);
+        }
+        #addImage(imgSrc) {
+          let imgEl = document.createElement("img");
+          imgEl.src = imgSrc;
+          imgEl.className = "article-image";
+          this.mainContainerEl.lastElementChild.append(imgEl);
         }
       };
       module.exports = NewsView2;
@@ -41,15 +48,13 @@
     "newsModel.js"(exports, module) {
       var NewsModel2 = class {
         constructor() {
-          this.titles = [];
+          this.articles = [];
         }
-        addTitles(titles) {
-          titles.forEach((article) => {
-            this.titles.push(article.webTitle);
-          });
+        addArticles(articles) {
+          this.articles = articles;
         }
-        showTitles() {
-          return this.titles;
+        showArticles() {
+          return this.articles;
         }
       };
       module.exports = NewsModel2;

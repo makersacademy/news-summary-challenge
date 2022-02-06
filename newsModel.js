@@ -1,17 +1,14 @@
 class NewsModel {
   constructor() {
-    this.titles = [];
+    this.articles = [];
   }
 
-  addTitles(titles) {
-    
-    titles.forEach(article => {
-      this.titles.push(article.webTitle)
-    });
+  addArticles(articles) {
+    this.articles = articles;
   }
 
-  showTitles() {
-    return this.titles;
+  showArticles() {
+    return this.articles;
   }
 }
 

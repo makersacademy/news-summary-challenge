@@ -5,17 +5,19 @@ class NewsView {
     this.mainContainerEl = document.querySelector('#main-container');
 
     this.api.loadArticles((data) => {
-      this.model.addTitles(data.response.results);
+      this.model.addArticles(data.response.results);
       this.createArticles()
     })
 
   }
   createArticles() {
-    this.model.showTitles().forEach(title => {
-      let article = document.createElement("article");
-      article.className = "article-container";
-      this.mainContainerEl.append(article);
-      this.#addTitle(title)
+    this.model.showArticles().forEach(article => {
+      let articleEl = document.createElement("article");
+      articleEl.className = "article-container";
+      this.mainContainerEl.append(articleEl);
+      
+      this.#addTitle(article.webTitle)
+      this.#addImage(article.fields.thumbnail)
     });
 
   }
@@ -25,6 +27,14 @@ class NewsView {
     titleEl.innerText = title;
     titleEl.className = "article-title";
     this.mainContainerEl.lastElementChild.append(titleEl);
+  }
+
+  #addImage(imgSrc) {
+    let imgEl = document.createElement("img");
+    imgEl.src = imgSrc;
+    imgEl.className = "article-image";
+    this.mainContainerEl.lastElementChild.append(imgEl);
+
   }
 }
 
