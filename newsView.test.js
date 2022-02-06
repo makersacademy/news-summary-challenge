@@ -26,14 +26,15 @@ describe ("News View", () => {
     
     const newsModel = { 
       getHeadlines: () => [1, 2],
-      getLinks: () => ['https://www.testing.com/', 'https://www.testing2.com'],
+      getLinks: () => ['https://www.testing.com/'],
       getImages: () => []
     };
     const newsView = new NewsView(newsModel);
   
     newsView.displayNews();
-  
-    expect(document.querySelectorAll('div.headline.href').length).toBe(2);
+    
+    const headline = document.querySelector('div.headline');
+    expect(headline.querySelectorAll('a').length).toBe(1);
   });
 
   it("displays images", () => {
@@ -42,12 +43,13 @@ describe ("News View", () => {
     const newsModel = { 
       getHeadlines: () => [1, 2],
       getLinks: () => [],
-      getImages: () => ['test.jpg', 'test2.jpg']
+      getImages: () => ['test.jpg']
     };
     const newsView = new NewsView(newsModel);
   
     newsView.displayNews();
-  
-    expect(document.querySelectorAll('div.headline.img').length).toBe(2);
+    
+    const headline = document.querySelector('div.headline');
+    expect(headline.querySelectorAll('img').length).toBe(1);
   });
 });

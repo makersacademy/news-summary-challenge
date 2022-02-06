@@ -29,6 +29,16 @@ describe('NewsModel', () => {
     });
   });
 
+  describe('add images', () => {
+    it('adds an image', () => {
+      const news = new NewsModel;
+      stories = [ { fields: { thumbnail: 'testing.png' } }];
+      news.addImages(stories);
+      
+      expect(news.getImages()).toEqual(['testing.png']);
+    })
+  })
+
   describe('reset', () => {
     it('resets a new', () => {
       const news = new NewsModel;
