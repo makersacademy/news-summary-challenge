@@ -15,9 +15,9 @@ beforeEach(() => {
 });
 
 const articlesData = [
-  {headline: "First article", thumbnail: "image1"},
-  {headline: "Second article", thumbnail: "image 2"},
-  {headline: "Third article", thumbnail: "image 3"}
+  {headline: "First article", thumbnail: "./images/image1.jpeg"},
+  {headline: "Second article", thumbnail: "./images/image2.jpeg"},
+  {headline: "Third article", thumbnail: "./images/image3.jpeg"}
 ];
 
 describe('Articles view', () => {
@@ -34,6 +34,7 @@ describe('Articles view', () => {
 
     view.displayArticles();
 
+    expect(document.querySelector('div.article h3.article-headline').innerText).toEqual('First article');
     expect(document.querySelectorAll('div.article h3.article-headline').length).toEqual(3);
   });
 
@@ -42,6 +43,7 @@ describe('Articles view', () => {
 
     view.displayArticles();
 
+    expect(document.querySelector('div.article img.article-image').src).toEqual('http://localhost/images/image1.jpeg');
     expect(document.querySelectorAll('div.article img.article-image').length).toEqual(3);
   });
 });

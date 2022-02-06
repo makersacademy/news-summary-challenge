@@ -41,11 +41,11 @@
             this.mainContainerEl.append(articleEl);
             let articleImageEl = document.createElement("img");
             articleImageEl.className = "article-image";
-            articleImageEl.src = article.fields.thumbnail;
+            articleImageEl.src = article.thumbnail;
             articleEl.append(articleImageEl);
             let articleHeadlineEl = document.createElement("h3");
             articleHeadlineEl.className = "article-headline";
-            articleHeadlineEl.innerText = article.fields.headline;
+            articleHeadlineEl.innerText = article.headline;
             articleEl.append(articleHeadlineEl);
           });
         }
@@ -85,11 +85,12 @@
   api = new ArticlesApi();
   view = new ArticlesView(model);
   console.log("Hello!");
-  api.loadArticles((articles) => {
-    let articlesList = articles.response.results;
-    console.log(articlesList);
-    model.setArticles(articlesList);
-    view.displayArticles();
-  });
+  var articlesData = [
+    { headline: "First article", thumbnail: "./images/image1.jpeg" },
+    { headline: "Second article", thumbnail: "./images/image2.jpeg" },
+    { headline: "Third article", thumbnail: "./images/image3.jpeg" }
+  ];
+  model.setArticles(articlesData);
+  view.displayArticles();
   model.reset();
 })();

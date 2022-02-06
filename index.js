@@ -8,20 +8,22 @@ view = new ArticlesView(model);
 
 console.log('Hello!');
 
-// const articlesData = [
-//   {headline: "First article", thumbnail: "image1"},
-//   {headline: "Second article", thumbnail: "image 2"},
-//   {headline: "Third article", thumbnail: "image 3"}
-// ];
+// Local data
+const articlesData = [
+  {headline: "First article", thumbnail: "./images/image1.jpeg"},
+  {headline: "Second article", thumbnail: "./images/image2.jpeg"},
+  {headline: "Third article", thumbnail: "./images/image3.jpeg"}
+];
 
-// model.setArticles(articlesData);
-// view.displayArticles();
+model.setArticles(articlesData);
+view.displayArticles();
 
-api.loadArticles((articles) => {
-  let articlesList = articles.response.results;
-  console.log(articlesList);    // Log list of articles
-  model.setArticles(articlesList);
-  view.displayArticles();
-});
+// API
+// api.loadArticles((articles) => {
+//   let articlesList = articles.response.results;
+//   console.log(articlesList);    // Log list of articles
+//   model.setArticles(articlesList);
+//   view.displayArticles();
+// });
   
 model.reset();

@@ -19,15 +19,15 @@ class ArticlesView {
       // Create article image
       let articleImageEl = document.createElement('img');
       articleImageEl.className = 'article-image';
-      // articleImageEl.src = article.thumbnail;   // Local data
-      articleImageEl.src = article.fields.thumbnail;   // API data
+      articleImageEl.src = article.thumbnail;   // Local data
+      // articleImageEl.src = article.fields.thumbnail;   // API data
       articleEl.append(articleImageEl);
 
       // Create article headline
       let articleHeadlineEl = document.createElement('h3');
       articleHeadlineEl.className = 'article-headline';
-      // articleHeadlineEl.innerText = article.headline;    // Local data
-      articleHeadlineEl.innerText = article.fields.headline;   // API data
+      articleHeadlineEl.innerText = article.headline;    // Local data
+      // articleHeadlineEl.innerText = article.fields.headline;   // API data
       articleEl.append(articleHeadlineEl);
     });
   }
