@@ -18,24 +18,24 @@ class NewsModel {
   }
 
   addInfo(stories) {
-    this.#addHeadlines(stories);
-    this.#addLinks(stories);
-    this.#addImages(stories);
+    this.addHeadlines(stories);
+    this.addLinks(stories);
+    this.addImages(stories);
   };
 
-  #addHeadlines(stories) {
+  addHeadlines(stories) {
     stories.forEach(story => {
       this.headlines.push(story.webTitle);
     });
   }
 
-  #addLinks(stories) {
+  addLinks(stories) {
     stories.forEach(story => {
       this.links.push(story.webUrl);
     });
   }
 
-  #addImages(stories) {
+  addImages(stories) {
     stories.forEach(story => {
       this.images.push(story.fields.thumbnail);
     });

@@ -9,16 +9,6 @@ describe('NewsModel', () => {
     })
   })
 
-  describe('add headlines', () => {
-    it('adds a headline', () => {
-      const news = new NewsModel;
-      stories = [ { webTitle: 'Extra, extra, read all about it!'} ]
-      news.addHeadlines(stories);
-      
-      expect(news.getHeadlines()).toEqual(['Extra, extra, read all about it!'])
-    })
-  })
-
   describe('add links', () => {
     it('adds a link', () => {
       const news = new NewsModel;
