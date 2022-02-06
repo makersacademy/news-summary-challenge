@@ -8,7 +8,21 @@ class NewsView {
       this.model.addArticles(data.response.results);
       this.createArticles();
     });
+
+    const submitButtonEl = document.querySelector('#submit-button');
+    const searchInputEl = document.querySelector('#search-input');
+
+    submitButtonEl.addEventListener('click', () => {
+      const searchName = searchInputEl.value;
+      document.querySelectorAll(".article-container").forEach(article => article.remove());
+
+      this.api.searchArticles(searchName, (data) => {
+        this.model.addArticles(data.response.results);
+        this.createArticles();
+      });
+    });
   }
+
   createArticles() {
     this.model.showArticles().forEach((article) => {
 
@@ -28,7 +42,7 @@ class NewsView {
     let titleEl = document.createElement("h2");
     titleEl.innerText = title;
     titleEl.className = "article-title";
-    
+
     let linkEl = document.createElement("a");
     linkEl.href = source;
     linkEl.append(titleEl)

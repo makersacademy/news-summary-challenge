@@ -16,6 +16,16 @@
             this.model.addArticles(data.response.results);
             this.createArticles();
           });
+          const submitButtonEl = document.querySelector("#submit-button");
+          const searchInputEl = document.querySelector("#search-input");
+          submitButtonEl.addEventListener("click", () => {
+            const searchName = searchInputEl.value;
+            document.querySelectorAll(".article-container").forEach((article) => article.remove());
+            this.api.searchArticles(searchName, (data) => {
+              this.model.addArticles(data.response.results);
+              this.createArticles();
+            });
+          });
         }
         createArticles() {
           this.model.showArticles().forEach((article) => {
@@ -81,10 +91,18 @@
       var API_KEY = require_apiKey();
       var NewsApi2 = class {
         constructor() {
-          this.url = `https://content.guardianapis.com/search?order-by=newest&show-fields=thumbnail&api-key=${API_KEY}`;
+          this.search = "";
+          this.url = `https://content.guardianapis.com/search?order-by=newest&show-fields=thumbnail&q=${this.search}&api-key=${API_KEY}`;
         }
         loadArticles(callback) {
-          fetch(this.url).then((res) => res.json()).then((data) => callback(data));
+          fetch(this.url).then((res) => res.json()).then((data) => callback(data)).catch(function() {
+            console.log("error");
+          });
+        }
+        searchArticles(search, callback) {
+          this.url = `https://content.guardianapis.com/search?order-by=newest&show-fields=thumbnail&q=${search}&api-key=${API_KEY}`;
+          console.log(this.url);
+          this.loadArticles(callback);
         }
       };
       module.exports = NewsApi2;

@@ -61,4 +61,14 @@ describe("NewView class", () => {
       "https://google.com/"
     );
   });
+
+  // it("lets users do a search query", () => {
+  //   document.body.innerHTML = fs.readFileSync("./index.html");
+  //   const view = new NewsView(model, api);
+
+  //   view.createArticles();
+  //   expect(document.querySelector(".article-title").parentElement.href).toEqual(
+  //     "https://google.com/"
+  //   );
+  // });
 });
