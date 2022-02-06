@@ -5,13 +5,33 @@
  const fs = require('fs');
  const NewsModel = require('./newsModel');
 
-  describe('display healdines on page', () => {
-    it('lets user see headlines', () => {
 
-      document.body.innerHTML = fs.readFileSync('./index.html');
-      const model = new NewsModel();
+  describe('News Model class', () => {
+      const news = new NewsModel()
+      expect(news.getHeadlines()).toEqual([])
+  })
 
-      expect(document.getElementById('#article-title')).toBeNull();
+  describe('add headlines', () => {
+    it('adds a headline to the headlines array', () => {
+        const model = new NewsModel()
+        model.addHeadlines('Headline1');
+        expect(model.addHeadlines()).toEqual(['Headline1'])
     
     })
+
+  describe('#setHeadlines', () => {
+      it('populates this.headlines array', () => {
+          const model = new NewsModel()
+
+          const newsInfo = [
+              {webTitle: 'headline1'},
+              {webTitle: 'headline2'},
+              {webTitle: 'headline3'},
+              
+          ]
+
+          model.setHeadlines(newsInfo)
+          expect(model.setHeadlines()).toEqual(newsInfo)
+      })
+  })
   });

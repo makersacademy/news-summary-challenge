@@ -3,8 +3,9 @@ class HeadlinesView {
         this.model = model
         this.api = api
         this.mainContainerEl = document.querySelector('#main-container')
+        const key = 'search?api-key=04fa366b-cd7a-4a4f-98b4-15f1685362ce'
 
-        this.api.getNewsInfo(newsData => {
+        this.api.getNewsInfo(key, newsData => {
             console.log(newsData);
             this.displayHeadlines(newsData);
 
@@ -14,9 +15,9 @@ class HeadlinesView {
 
     displayHeadlines(data) {
 
-        const titelEl = document.querySelector('#article-title')
+        const keyEl = document.querySelector('#article-title')
 
-        titelEl.textContent = data.webTitle;
+        keyEl.textContent = data.webTitle;
 
         let div = document.querySelector('#main-container')
 

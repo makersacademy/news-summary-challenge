@@ -2,18 +2,22 @@
 class NewsModel {
     constructor() {
 
-        this.newsInfo = null
+        this.newsInfo = []
     
     }
 
-    setNewsInfo(newsInfo) {
-        this.newsInfo = newsInfo;
-    }
-
-    getNewsInfo() {
+    getHeadlines() {
         
         return this.newsInfo;
         
+    }
+
+    addHeadlines(text) {
+        this.newsInfo.push(text) 
+    }
+
+    setHeadlines(newsInfo) {
+        this.newsInfo = newsInfo
     }
 
 
