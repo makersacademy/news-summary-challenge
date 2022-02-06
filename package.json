@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/naima90/news-summary-challenge#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "http-server": "^14.1.0",
     "jest": "^27.5.0",
+    "jest-fetch-mock": "^3.0.3",
     "node": "^17.4.0"
   }
 }
