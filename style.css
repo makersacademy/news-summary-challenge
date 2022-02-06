@@ -1,17 +1,16 @@
 #main-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 300px;
-  background-color: lightpink;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
 }
 
 .article-container {
-  background-color: blue;
-  display: flex;
-  justify-content: center;
-  width: 60%;
-  margin: 0 auto;
+  flex: 0 1 calc(25% - 1em);
 
+}
+
+.article-image {
+  width: 100%;
+  height: auto;
 }

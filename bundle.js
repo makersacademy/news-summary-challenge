@@ -22,8 +22,8 @@
             let articleEl = document.createElement("article");
             articleEl.className = "article-container";
             this.mainContainerEl.append(articleEl);
-            this.#addTitle(article.webTitle);
             this.#addImage(article.fields.thumbnail);
+            this.#addTitle(article.webTitle);
           });
         }
         #addTitle(title) {

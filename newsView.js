@@ -2,24 +2,22 @@ class NewsView {
   constructor(model, api) {
     this.model = model;
     this.api = api;
-    this.mainContainerEl = document.querySelector('#main-container');
+    this.mainContainerEl = document.querySelector("#main-container");
 
     this.api.loadArticles((data) => {
       this.model.addArticles(data.response.results);
-      this.createArticles()
-    })
-
+      this.createArticles();
+    });
   }
   createArticles() {
-    this.model.showArticles().forEach(article => {
+    this.model.showArticles().forEach((article) => {
       let articleEl = document.createElement("article");
       articleEl.className = "article-container";
       this.mainContainerEl.append(articleEl);
-      
-      this.#addTitle(article.webTitle)
-      this.#addImage(article.fields.thumbnail)
-    });
 
+      this.#addImage(article.fields.thumbnail);
+      this.#addTitle(article.webTitle);
+    });
   }
 
   #addTitle(title) {
@@ -34,7 +32,6 @@ class NewsView {
     imgEl.src = imgSrc;
     imgEl.className = "article-image";
     this.mainContainerEl.lastElementChild.append(imgEl);
-
   }
 }
 
