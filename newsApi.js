@@ -1,6 +1,8 @@
+const API_KEY = require('./apikey')
+
 class NewsApi {
   constructor() {
-    this.url = `https://content.guardianapis.com/search?order-by=newest&show-fields=thumbnail&api-key=${process.env.API_KEY}`
+    this.url = `https://content.guardianapis.com/search?order-by=newest&show-fields=thumbnail&api-key=${API_KEY}`
   }
   loadArticles(callback) {
     fetch(this.url)
@@ -9,4 +11,4 @@ class NewsApi {
   }
 }
 
-module.exports = NewsApi;
+module.exports = NewsApi; 
