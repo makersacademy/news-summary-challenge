@@ -2,7 +2,7 @@ class NewsModel {
   constructor() {
     this.headlines = [];
     this.links = [];
-    this.images = []
+    this.images = [];
   }
 
   getHeadlines() {
@@ -26,13 +26,13 @@ class NewsModel {
   addLinks(stories) {
     stories.forEach(story => {
       this.links.push(story.webUrl);
-    })
+    });
   }
 
   addImages(stories) {
     stories.forEach(story => {
       this.images.push(story.fields.thumbnail);
-    })
+    });
   }
 
   reset() {

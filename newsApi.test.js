@@ -10,7 +10,7 @@ describe('news class', () => {
       response: { results: ['Something happened today, read on to find out what'] }
     }));
 
-    api.getNews((data) => {
+    api.getNews('', (data) => {
       expect(data).toEqual(['Something happened today, read on to find out what']);
     });
   });

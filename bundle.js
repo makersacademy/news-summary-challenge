@@ -47,11 +47,20 @@
     }
   });
 
+  // apiKey.js
+  var require_apiKey = __commonJS({
+    "apiKey.js"(exports, module) {
+      var apiKey = `f9aa2f1d-3dc8-4b90-9652-db8eea680ff9`;
+      module.exports = apiKey;
+    }
+  });
+
   // newsApi.js
   var require_newsApi = __commonJS({
     "newsApi.js"(exports, module) {
+      var apiKey = require_apiKey();
       var NewsApi2 = class {
-        getNews(callback, apiKey = "test", searchTerm = "") {
+        getNews(searchTerm, callback) {
           fetch(`https://content.guardianapis.com/search?q=${searchTerm}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json()).then((data) => {
             callback(data.response.results);
           });
@@ -65,11 +74,24 @@
   var require_newsView = __commonJS({
     "newsView.js"(exports, module) {
       var NewsView2 = class {
-        constructor(newsModel2) {
+        constructor(newsModel2, newsApi2) {
           this.newsModel = newsModel2;
           this.mainContainerEl = document.querySelector("#main-container");
+          this.buttonEl = document.querySelector("#search-button");
+          this.buttonEl.addEventListener("click", () => {
+            const searchTerm = document.querySelector("#search-input").value;
+            console.log(searchTerm);
+            newsApi2.getNews(searchTerm, (headlines) => {
+              console.log(headlines);
+              newsModel2.addHeadlines(headlines);
+              newsModel2.addLinks(headlines);
+              newsModel2.addImages(headlines);
+              this.displayNews();
+            });
+          });
         }
         displayNews() {
+          this.newsModel.reset;
           const headlines = this.newsModel.getHeadlines();
           const links = this.newsModel.getLinks();
           const images = this.newsModel.getImages();
@@ -106,9 +128,9 @@
   var NewsView = require_newsView();
   var newsModel = new NewsModel();
   var newsApi = new NewsApi();
-  var newsView = new NewsView(newsModel);
+  var newsView = new NewsView(newsModel, newsApi);
   console.log("The news app is running");
-  newsApi.getNews((headlines) => {
+  newsApi.getNews("", (headlines) => {
     console.log(headlines);
     newsModel.addHeadlines(headlines);
     newsModel.addLinks(headlines);

@@ -1,10 +1,24 @@
 class NewsView {
-  constructor(newsModel) {
+  constructor(newsModel, newsApi) {
     this.newsModel = newsModel;
     this.mainContainerEl = document.querySelector('#main-container');
+    this.buttonEl = document.querySelector('#search-button');
+
+    this.buttonEl.addEventListener('click', () => {
+      const searchTerm = document.querySelector('#search-input').value;
+      console.log(searchTerm);
+      newsApi.getNews(searchTerm, (headlines) => {
+        console.log(headlines);
+        newsModel.addHeadlines(headlines);
+        newsModel.addLinks(headlines);
+        newsModel.addImages(headlines);
+        this.displayNews();
+      });
+    });
   }
 
   displayNews() {
+    this.newsModel.reset;
     const headlines = this.newsModel.getHeadlines();
     const links = this.newsModel.getLinks();
     const images = this.newsModel.getImages();

@@ -37,6 +37,7 @@ body {
 
 .image {
   box-shadow: 10px 5px 5px rgb(98, 168, 180);
+  opacity: 1.0;
 }
 
 a:link {

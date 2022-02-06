@@ -4,10 +4,11 @@ const NewsView = require('./newsView');
 
 const newsModel = new NewsModel;
 const newsApi = new NewsApi;
-const newsView = new NewsView(newsModel);
+const newsView = new NewsView(newsModel, newsApi);
 
 console.log('The news app is running');
-newsApi.getNews((headlines) => {
+
+newsApi.getNews('', (headlines) => {
   console.log(headlines);
   newsModel.addHeadlines(headlines);
   newsModel.addLinks(headlines);
