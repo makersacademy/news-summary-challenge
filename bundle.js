@@ -27,6 +27,17 @@
             console.error(error);
           }
         }
+        async searchNews(str = "", callback) {
+          const url = `https://content.guardianapis.com/search?page=1&q=${str}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${API_KEY}`;
+          try {
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log(data);
+            callback(data);
+          } catch (error) {
+            console.error(error);
+          }
+        }
       };
       module.exports = NewsApi2;
     }
@@ -59,11 +70,22 @@
         constructor(model2 = new NewsModel2(), api2 = new NewsApi2()) {
           this.model = model2;
           this.api = api2;
-          document.querySelector("#load-news").addEventListener("click", (e) => {
-            e.preventDefault();
-            this.api.loadNews((callback) => {
+          this.searcInputEl = document.querySelector("#search-input");
+          document.querySelector("#load-news").addEventListener("click", () => {
+            document.querySelector(".search-input").style.visibility = "visible";
+            document.querySelector(".search-news").style.visibility = "visible";
+            this.api.loadNews((data) => {
               this.mainContainerEl = document.querySelector("#news-list");
-              this.displayNews(callback);
+              this.displayNews(data);
+            });
+          });
+          document.querySelector("#search-news").addEventListener("click", () => {
+            const searchKey = this.searcInputEl.value;
+            console.log(searchKey);
+            this.api.searchNews(searchKey, (data) => {
+              this.mainContainerEl = document.querySelector("#news-list");
+              console.log(data);
+              this.displayNews(data);
             });
           });
         }
@@ -86,13 +108,9 @@
           });
         }
         removePrevNews() {
-          const prevHeader = document.querySelectorAll(".headline");
-          const prevImage = document.querySelectorAll(".image");
-          prevHeader.forEach((h) => {
-            h.remove();
-          });
-          prevImage.forEach((i) => {
-            i.remove();
+          const prevNews = document.querySelectorAll(".news-item");
+          prevNews.forEach((news) => {
+            news.remove();
           });
         }
       };

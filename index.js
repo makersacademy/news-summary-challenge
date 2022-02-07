@@ -9,3 +9,9 @@ api.loadNews((data) => {
     model.setNews(data.response.results);
     view.displayNews()
 })
+
+
+// api.searchNews(() => {
+//     model.setNews(data.response.results);
+//     view.displayNews()
+// })
