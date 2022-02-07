@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 const NewsApi = require('./newsApi.js');
 
 require('jest-fetch-mock').enableFetchMocks();

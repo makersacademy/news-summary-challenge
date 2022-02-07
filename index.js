@@ -4,7 +4,7 @@ const NotesView = require('./newsView');
 
 const api = new NewsApi();
 const model = new NotesModel();
-const view = new NotesView(model);
+const view = new NotesView(model, api);
 
 api.loadArticles(articles => {
   articles.forEach(article => {

@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
   <title>News Summary</title>
 </head>
 <body>
-  <h1>News Summary</h1>
+  <h1 id="heading">News Summary</h1>
+  <div id="search-container">
+    <label for="search">Search for articles</label>
+      <input type="text" name="search" placeholder="search on here...">
+      <button type="button" value="submit">Search</button>
+  </div>
   <div id='main-container'></div>
 
   <script src='./bundle.js'></script>
