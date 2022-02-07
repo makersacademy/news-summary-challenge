@@ -1,7 +1,19 @@
 class HeadlineView {
-  constructor(model) {
+  constructor(model, api) {
     this.mainContainerEl = document.querySelector('#main-container');
     this.model = model;
+    this.api = api;
+
+    this.searchButtonEl = document.querySelector('#search-button');
+
+    this.searchButtonEl.addEventListener('click', () => {
+      this.viewReset();
+      const searchTerm = document.querySelector('#search-input').value;
+      this.api.loadStories((stories) => {
+        this.model.setStories(stories);
+        this.displayStories();
+      }, `&q=${searchTerm}`);
+    });
   }
 
   displayStories() {
@@ -23,6 +35,12 @@ class HeadlineView {
       div.append(a);
       this.mainContainerEl.append(div);
     });
+  }
+
+  viewReset() {
+    this.mainContainerEl.remove();
+    this.mainContainerEl = document.createElement("div");
+    document.body.append(this.mainContainerEl);
   }
 }
 

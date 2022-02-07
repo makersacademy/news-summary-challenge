@@ -8,6 +8,7 @@ class HeadlineModel {
   }
 
   setStories(data) {
+    this.stories = [];
     const results = data['response']['results'];
     results.forEach((story) => {
       this.stories.push({

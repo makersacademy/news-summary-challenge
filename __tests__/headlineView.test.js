@@ -12,6 +12,9 @@ class HeadlineModel {
     ]
   }
 }
+class Api {
+  loadStories = jest.fn();
+}
 
 describe('Page view', () => {
   describe('#displayStroies', () => {
@@ -56,5 +59,22 @@ describe('Page view', () => {
       expect(urls[0].href).toEqual("http://localhost/frog");
       expect(urls[1].href).toEqual("http://localhost/pig");
     });
+  });
+
+  it('searches on a button click', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const model = new HeadlineModel();
+    const api = new Api;
+    const view = new HeadlineView(model, api);
+    
+    const inputEl = document.querySelector('#search-input');
+    const buttonEl = document.querySelector('#search-button');
+
+    inputEl.value = 'Banana';
+    
+    buttonEl.click();
+    
+    expect(view.api.loadStories).toHaveBeenCalled();
   });
 });

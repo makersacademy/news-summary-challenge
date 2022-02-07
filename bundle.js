@@ -15,6 +15,7 @@
           return this.stories;
         }
         setStories(data) {
+          this.stories = [];
           const results = data["response"]["results"];
           results.forEach((story) => {
             this.stories.push({
@@ -36,8 +37,8 @@
         constructor() {
           this.toFetch = "https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=test";
         }
-        loadStories(callback) {
-          fetch(this.toFetch).then((response) => response.json()).then((data) => {
+        loadStories(callback, addOn = "") {
+          fetch(this.toFetch + addOn).then((response) => response.json()).then((data) => {
             console.log(data);
             callback(data);
           });
@@ -51,9 +52,19 @@
   var require_headlineView = __commonJS({
     "headlineView.js"(exports, module) {
       var HeadlineView2 = class {
-        constructor(model2) {
+        constructor(model2, api2) {
           this.mainContainerEl = document.querySelector("#main-container");
           this.model = model2;
+          this.api = api2;
+          this.searchButtonEl = document.querySelector("#search-button");
+          this.searchButtonEl.addEventListener("click", () => {
+            this.viewReset();
+            const searchTerm = document.querySelector("#search-input").value;
+            this.api.loadStories((stories) => {
+              this.model.setStories(stories);
+              this.displayStories();
+            }, `&q=${searchTerm}`);
+          });
         }
         displayStories() {
           let stories = this.model.getStories();
@@ -75,6 +86,11 @@
             this.mainContainerEl.append(div);
           });
         }
+        viewReset() {
+          this.mainContainerEl.remove();
+          this.mainContainerEl = document.createElement("div");
+          document.body.append(this.mainContainerEl);
+        }
       };
       module.exports = HeadlineView2;
     }
@@ -86,7 +102,7 @@
   var HeadlineView = require_headlineView();
   var model = new HeadlineModel();
   var api = new GuardianApi();
-  var view = new HeadlineView(model);
+  var view = new HeadlineView(model, api);
   api.loadStories((stories) => {
     model.setStories(stories);
     view.displayStories();
