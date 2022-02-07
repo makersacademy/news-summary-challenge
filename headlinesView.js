@@ -1,30 +1,59 @@
 class HeadlinesView {
     constructor(model, api) {
         this.model = model
-        this.api = api
+        
         this.mainContainerEl = document.querySelector('#main-container')
-        const key = 'search?api-key=04fa366b-cd7a-4a4f-98b4-15f1685362ce'
-
-        this.api.getNewsInfo(key, newsData => {
-            console.log(newsData);
-            this.displayHeadlines(newsData);
-
+     
+        this.inputEl = document.querySelector("#inputEl");
+        this.btnEl = document.querySelector("#btnEl")
+    
+        this.btnEl.addEventListener('click', () => {
+          const userSearch = this.inputEl.value;
+          console.log(userSearch)
+    
+          api.searchHeadlines(userSearch, data => {
+            this.model.setHeadlines(data);
+            this.displayHeadlines(data);
+          })
         })
+    
         
     }
 
     displayHeadlines(data) {
 
-        const keyEl = document.querySelector('#article-title')
+        const newArticles = []
 
-        keyEl.textContent = data.webTitle;
+     data.forEach(headline => {
 
-        let div = document.querySelector('#main-container')
+        const headlineEl = document.createElement('div');
+        headlineEl.className = 'headline';
+  
+        const hrefEl = document.createElement('a');
+        hrefEl.className = 'article-link';
+        hrefEl.href = headline.webUrl;
+        hrefEl.innerText = headline.webTitle;
+  
+        const imgEl = document.createElement('img');
+        imgEl.className = 'article-img';
+        imgEl.src = headline.fields.thumbnail;
+  
+        const bodyEl = document.createElement('div');
+        bodyEl.className = "article-body";
+        // bodyEl.innerText = headline.fields.body.replace(/(<([^>]+)>)/ig, '').slice(0, 133) + '...';
+        
+        
+        headlineEl.append(imgEl);
+        headlineEl.append(hrefEl);
+        headlineEl.append(bodyEl);
+        newArticles.push(headlineEl)
 
-        const img = document.createElement('img')
-        img.src='https://i.guim.co.uk/img/media/8845ff83be89349821a42ae6a8e07d867eed9261/318_420_3133_1880/master/3133.jpg?width=1225&quality=85&auto=format&fit=max&s=3ad39cbd2888c7c7ce5b4b407c7b3c67'
-        div.append(img)
+       
+      
+      });
+      this.mainContainerEl.replaceChildren(...newArticles);
     }
+  
     
 }
 
