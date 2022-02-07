@@ -3,3 +3,4 @@ node_modules
 .vscode
 images
 .DS_Store
+coverage
