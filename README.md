@@ -75,6 +75,10 @@ I can see whizzy animations in the app
 ## Interface screens
 
 ![Main Screen](/images/main_screen.png)
+  
+    
 ![Middle portion](/images/middle_portion.png)
+  
+    
 ![When search is used](/images/search.png)
 
