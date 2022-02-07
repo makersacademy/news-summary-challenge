@@ -54,6 +54,10 @@
           this.model = model2;
           this.api = api2;
           this.mainContainer = document.querySelector("#main-container");
+          this.searchBar = document.querySelector("#search-bar");
+          this.searchBar.addEventListener("keyup", (e) => {
+            console.log(e.target.value);
+          });
         }
         displayArticles() {
           const articles = this.model.getArticles();

@@ -5,6 +5,12 @@ class NewsView {
     this.model = model;
     this.api = api
     this.mainContainer = document.querySelector('#main-container');
+   
+    this.searchBar = document.querySelector('#search-bar');
+    this.searchBar.addEventListener('keyup', (e) => {
+      console.log(e.target.value);
+    });
+
   }
 
   displayArticles(){
