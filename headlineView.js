@@ -14,6 +14,16 @@ class HeadlineView {
         this.displayStories();
       }, `&q=${searchTerm}`);
     });
+
+    this.resetButtonEl = document.querySelector('#reset-button');
+
+    this.resetButtonEl.addEventListener('click', () => {
+      this.viewReset();
+      this.api.loadStories((stories) => {
+        this.model.setStories(stories);
+        this.displayStories();
+      });
+    });
   }
 
   displayStories() {

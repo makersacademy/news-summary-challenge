@@ -77,4 +77,18 @@ describe('Page view', () => {
     
     expect(view.api.loadStories).toHaveBeenCalled();
   });
+
+  it('resets page to latest stories on a button click', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const model = new HeadlineModel();
+    const api = new Api;
+    const view = new HeadlineView(model, api);
+    
+    const resetbuttonEl = document.querySelector('#reset-button');
+    
+    resetbuttonEl.click();
+    
+    expect(view.api.loadStories).toHaveBeenCalled();
+  });
 });
