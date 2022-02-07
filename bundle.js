@@ -56,4 +56,8 @@
   var NewsView = require_newsView();
   var model = new NewsModel();
   var view = new NewsView(model);
+  model.addHeadline("breaking news");
+  model.addHeadline("breaking news");
+  model.addHeadline("breaking news");
+  view.displayHeadlines();
 })();
