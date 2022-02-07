@@ -33,6 +33,7 @@
           console.log(this.returnData);
           this.returnData.response.results.forEach((article) => {
             const articleContainerEl = document.createElement("div");
+            articleContainerEl.setAttribute("class", "cards");
             const articleEl = document.createElement("a");
             const avatarEl = document.createElement("img");
             articleEl.setAttribute("href", article.webUrl);

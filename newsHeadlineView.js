@@ -1,3 +1,5 @@
+// const AYLIENTextAPI = require('aylien_textapi');
+
 class NewsHeadlineView {
   constructor(api) {
     this.api = api; 
@@ -32,6 +34,9 @@ class NewsHeadlineView {
       console.log(this.returnData)
       this.returnData.response.results.forEach(article => {
         const articleContainerEl = document.createElement('div')
+        articleContainerEl.setAttribute("class", "cards");
+        
+
         const articleEl = document.createElement('a');
         const avatarEl = document.createElement('img')
 
@@ -45,6 +50,13 @@ class NewsHeadlineView {
         articleEl.append(avatarEl); 
       })
     }
+
+    // displayShortNews() {
+    //   const textapi = new AYLIENTextAPI({
+    //     application_id: "9e9a311f",
+    //     application_key: "6ca28f4db6a82df7da8e1714c85d6e73"
+    //   });
+    // }
   }
 module.exports = NewsHeadlineView
 

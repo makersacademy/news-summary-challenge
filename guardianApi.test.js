@@ -30,5 +30,3 @@ describe('Guardian api', () => {
 
 // https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=471c3b91-05b6-4377-81e7-16d75aee68f7
 
-// SEARCH BAR
-// `https://content.guardianapis.com/search?q=${}&api-key=471c3b91-05b6-4377-81e7-16d75aee68f7`

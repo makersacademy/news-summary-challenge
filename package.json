@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/sumo-mailman/news-summary-challenge#readme",
   "dependencies": {
+    "aylien_textapi": "^0.7.0",
     "aylien-news-api": "^5.1.0",
     "dotenv": "^16.0.0",
     "esbuild": "^0.14.18",
@@ -26,6 +27,5 @@
     "jest": "^27.5.0",
     "jest-fetch-mock": "^3.0.3",
     "node-fetch": "^3.2.0"
-  },
-  "devDependencies": {}
+  }
 }
