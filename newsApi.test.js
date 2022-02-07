@@ -12,4 +12,16 @@ describe('NotesApi class', () => {
             expect(result).toBe('these news come from the guardian API')
         })
     })
+
+    it("uses fetch to make post request to search for news", () => {
+        const api = new NewsApi();
+    
+        fetch.mockResponseOnce(JSON.stringify({
+          response: { results: [ { webTitle : "Test headline 1" }]}
+        }));
+    
+        api.searchNews(res => {
+          expect(res.response.results[0].webTitle).toEqual("Test headline 1");
+        })
+      });
 })

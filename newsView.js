@@ -27,6 +27,7 @@ class NewsView {
         this.api.searchNews(searchKey, (data) => {
           this.mainContainerEl = document.querySelector("#news-list");
           console.log(data)
+          this.model.setNews(data.response.results)
             this.displayNews(data);
         });
         
@@ -50,7 +51,6 @@ class NewsView {
       div.append(image);
       div.append(header);
       this.mainContainerEl.append(div);
-    //   console.log(this.mainContainerEl)
     });
   }
 

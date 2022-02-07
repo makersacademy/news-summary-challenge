@@ -85,6 +85,7 @@
             this.api.searchNews(searchKey, (data) => {
               this.mainContainerEl = document.querySelector("#news-list");
               console.log(data);
+              this.model.setNews(data.response.results);
               this.displayNews(data);
             });
           });

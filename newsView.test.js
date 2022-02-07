@@ -5,6 +5,7 @@
  const fs = require('fs');
  const NewsView = require('./newsView')
  const NewsModel = require('./newsModel')
+ const NewsApi = require('./newsApi')
 
  const newsList = [
      {
@@ -33,4 +34,14 @@
             view.displayNews()
          expect(document.querySelectorAll('#news-list').length).toEqual(1)
      })
+
+     it("displays news title , url and image after click search button", () => {
+        document.body.innerHTML = fs.readFileSync("./index.html");
+         const model = new NewsModel()
+         const view = new NewsView(model)
+         const searchButtonEl = document.querySelector('#search-news')
+            searchButtonEl.click()
+            view.displayNews()
+         expect(document.querySelectorAll('#news-list').length).toEqual(1)
+      });
  })
