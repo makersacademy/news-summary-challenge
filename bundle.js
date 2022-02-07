@@ -91,6 +91,7 @@
             a.title = story["headline"];
             a.href = story["url"];
             div.append(a);
+            div.append(document.createElement("br"));
             this.mainContainerEl.append(div);
           });
         }

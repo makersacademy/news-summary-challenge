@@ -1,0 +1,46 @@
+* {
+  background-color: rebeccapurple;
+  text-align: center;
+}
+
+.story {
+  padding: 15px;
+}
+
+h1, h3, footer {
+  background-color: antiquewhite;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(64, 24, 104);
+}
+
+a {
+  color: antiquewhite;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-style: solid;
+  border-width: 5px;
+  border-color: antiquewhite;
+}
+
+button {
+  color: antiquewhite;
+  border-style: none;
+  background-color: rgb(64, 24, 104);
+  padding: 5px;
+  border-radius: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input {
+  color: antiquewhite;
+  border-style: none;
+  background-color: rgb(64, 24, 104);
+  padding: 5px;
+  border-radius: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
