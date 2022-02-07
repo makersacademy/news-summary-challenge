@@ -3,7 +3,7 @@ class NewsModel{
         this.headlines = []
     }
 
-    getHeadline() {
+    getHeadlines() {
         return this.headlines
     }
 

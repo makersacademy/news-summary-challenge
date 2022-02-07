@@ -5,7 +5,7 @@ describe ('newsModel', () => {
         //arrange
         const newsModel = new NewsModel();
         //act
-        expect(newsModel.getHeadline()).toEqual([]);
+        expect(newsModel.getHeadlines()).toEqual([]);
     })
 
     it('adds headline', () => {
@@ -13,7 +13,7 @@ describe ('newsModel', () => {
 
         newsModel.addHeadline('Manchester Utd win the premier league!!!')
 
-        expect(newsModel.getHeadline()).toEqual(['Manchester Utd win the premier league!!!']);
+        expect(newsModel.getHeadlines()).toEqual(['Manchester Utd win the premier league!!!']);
 
     })
 
@@ -25,6 +25,6 @@ describe ('newsModel', () => {
 
         newsModel.reset();
 
-        expect(newsModel.getHeadline()).toEqual([])
+        expect(newsModel.getHeadlines()).toEqual([])
     })
 })
