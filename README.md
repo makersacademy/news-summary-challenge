@@ -27,8 +27,8 @@ This is the weekend challenge from week 7 at Makers Academy. To read the challen
 
 The user stories were provided by the challenge. So far only the main ones are completed.
 
-```
 :white_check_mark:
+```
 As a busy politician
 So I know what the big stories of the day are
 I can see all of today's headlines in one place
