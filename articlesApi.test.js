@@ -17,4 +17,14 @@ describe('Articles API', () => {
       expect(response.headline).toEqual("This is a headline");
     });
   });
+
+  it('it takes a query string and returns matching items', async () => {
+    fetch.mockResponseOnce(JSON.stringify({
+      headline: "First article"
+    }));
+
+    api.loadArticles((response) => {
+      expect(response.headline).toEqual(expect.stringContaining("First"));
+    }, "First");
+  });
 });

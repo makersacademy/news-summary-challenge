@@ -4,7 +4,7 @@ const ArticlesApi = require('./articlesApi');
 
 model = new ArticlesModel();
 api = new ArticlesApi();
-view = new ArticlesView(model);
+view = new ArticlesView(model, api);
 
 console.log('Hello!');
 
@@ -25,5 +25,6 @@ api.loadArticles((articles) => {
   model.setArticles(articlesList);
   view.displayArticles();
 });
+
   
 model.reset();
