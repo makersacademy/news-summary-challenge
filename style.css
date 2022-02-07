@@ -24,6 +24,8 @@ body {
 .headline {
   width: 1200px;
   margin: 15px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px;
   text-align: center;
   background: linear-gradient(90deg, #eff6f8 0%, #93b3b9 100%);
