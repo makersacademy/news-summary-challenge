@@ -1,0 +1,48 @@
+h1 {
+  color: #70a85f;
+  font-size: 50px;
+  font-family: Helvetica Neue, Arial;
+}
+
+h2 {
+  color: #70a85f;
+  font-size: 35px;
+  font-family: Helvetica Neue, Arial;
+}
+
+h3 {
+  color: #70a85f;
+  font-size: 20px;
+  font-family: Helvetica Neue, Arial;
+}
+
+
+.cards {
+  width: 550px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left:50px;
+  padding-right:50px;
+  font-family: Arial;
+  font-size: 20;
+  color: pink;
+  background-color: white
+
+}
+
+.cards:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+button {
+  background: #9efa82;
+  border-radius: 4px;
+  padding: 10px 8px;
+  border: 1px solid #444;
+  font-size: 18px;
+  cursor: pointer;
+}
