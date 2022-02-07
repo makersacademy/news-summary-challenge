@@ -1,0 +1,26 @@
+* {
+  background-color: seashell;
+  display: flexbox;
+  font-family: Helvetica;
+}
+
+.article {
+  background-color: rgb(235, 199, 195);
+  display: block;
+  justify-content: space-around;
+  flex-direction: column;
+  border-style: dotted;
+  padding: 25px 25px 25px 25px;
+  text-align: center;
+}
+
+h1 {
+  padding: 25px 25px 25px 25px;
+  justify-content: space-around;
+}
+
+img {
+  justify-content: space-around;
+  max-width: 50%;
+  max-height: 50%;
+}
