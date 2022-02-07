@@ -9,6 +9,7 @@ class NewsView {
       this.createArticles();
     });
 
+    //************ Event Listener for Searching Articles ****************/
     const submitButtonEl = document.querySelector('#submit-button');
     const searchInputEl = document.querySelector('#search-input');
 
@@ -23,6 +24,7 @@ class NewsView {
     });
   }
 
+  //************ Article Creating ****************/
   createArticles() {
     this.model.showArticles().forEach((article) => {
 
@@ -32,6 +34,7 @@ class NewsView {
     });
   }
 
+  //****** Private functions to help creating articles *********/
   #addArticleEl() {
     let articleEl = document.createElement("article");
     articleEl.className = "article-container";
