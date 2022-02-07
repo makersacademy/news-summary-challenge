@@ -32,7 +32,6 @@
           try {
             const response = await fetch(url);
             const data = await response.json();
-            console.log(data);
             callback(data);
           } catch (error) {
             console.error(error);
