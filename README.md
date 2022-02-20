@@ -1,6 +1,8 @@
 # News Summary challenge
 A Guardian news aggregator single-page application created using the Guardian API, Node, JavaScript, Bootstrap, HTML and CSS.
 
+Requires an API key from the [Guardian](https://open-platform.theguardian.com/) in order to run, could have been improved by creating a backend server and fetching the data from it instead of directly fetching from the API.
+
 Setup 
 ---
 ```
