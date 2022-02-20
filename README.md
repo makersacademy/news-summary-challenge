@@ -1,4 +1,5 @@
 # News Summary challenge
+A Guardian news aggregator single-page application created using the Guardian API, Node, JavaScript, Bootstrap, HTML and CSS.
 
 Setup 
 ---
