@@ -6,6 +6,13 @@
 * created an articlesModel class to set a list of articles fetched from the api
 * created an articlesView class to manipulate the DOM: display the articles on the page, search for any articles and display the result, click on any article headline to get a brief description and a link to full article
 
+## How to use
+* clone this repo and run `npm install` to install dependencies
+* Sign up from Guardian to obtain an API key
+* Add your API key into GuardianApi class
+* run the application with `npx http-server`
+* visit http://localhost:8080/
+
 ## Challenge
 
 As usual please start by forking this repo.
