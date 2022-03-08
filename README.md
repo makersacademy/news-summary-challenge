@@ -1,6 +1,6 @@
 ## News Summary Challenge
 
-This is the Makers week 7 weekend challenge. The goal was to create an app that shows the latest news using the Guardian API. 
+This is the Makers week 7 weekend challenge. The goal was to create an app that shows the latest news using the Guardian API.
 Further details of the challenge can be found in the CHALLENGE.md file.
 
 ## Successes!

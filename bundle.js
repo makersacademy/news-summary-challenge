@@ -9,43 +9,23 @@
     "newsModel.js"(exports, module) {
       var NewsModel2 = class {
         constructor() {
-          this.headlines = [];
-          this.links = [];
-          this.images = [];
+          this.news = [];
         }
-        getHeadlines() {
-          return this.headlines;
+        getNews() {
+          return this.news;
         }
-        getLinks() {
-          return this.links;
-        }
-        getImages() {
-          return this.images;
-        }
-        addInfo(stories) {
-          this.#addHeadlines(stories);
-          this.#addLinks(stories);
-          this.#addImages(stories);
-        }
-        #addHeadlines(stories) {
+        addNews(stories) {
           stories.forEach((story) => {
-            this.headlines.push(story.webTitle);
-          });
-        }
-        #addLinks(stories) {
-          stories.forEach((story) => {
-            this.links.push(story.webUrl);
-          });
-        }
-        #addImages(stories) {
-          stories.forEach((story) => {
-            this.images.push(story.fields.thumbnail);
+            newsObj = {
+              headline: story.webTitle,
+              link: story.webUrl,
+              image: story.fields.thumbnail
+            };
+            this.news.push(newsObj);
           });
         }
         reset() {
-          this.headlines = [];
-          this.links = [];
-          this.images = [];
+          this.news = [];
         }
       };
       module.exports = NewsModel2;
@@ -89,28 +69,25 @@
             const searchTerm = document.querySelector("#search-input").value;
             newsApi2.getNews(searchTerm, (headlines) => {
               newsModel2.reset();
-              newsModel2.addInfo(headlines);
+              newsModel2.addNews(headlines);
               this.displayNews();
             });
           });
         }
         displayNews() {
-          const headlines = this.newsModel.getHeadlines();
-          const links = this.newsModel.getLinks();
-          const images = this.newsModel.getImages();
+          const news = this.newsModel.getNews();
           const articlesArray = [];
-          headlines.forEach((headline) => {
+          news.forEach((story) => {
             const newsEl = document.createElement("div");
-            const index = headlines.indexOf(headline);
             const a = document.createElement("a");
-            const linkText = document.createTextNode(headline);
+            const linkText = document.createTextNode(story.headline);
             const img = document.createElement("img");
             const lineBreak = document.createElement("br");
             newsEl.className = "headline";
             a.appendChild(linkText);
-            a.title = headline;
-            a.href = links[index];
-            img.src = images[index];
+            a.title = story.headline;
+            a.href = story.link;
+            img.src = story.image;
             img.className = "image";
             newsEl.appendChild(a);
             newsEl.append(lineBreak);

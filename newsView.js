@@ -11,33 +11,30 @@ class NewsView {
 
       newsApi.getNews(searchTerm, (headlines) => {
         newsModel.reset();
-        newsModel.addInfo(headlines);
+        newsModel.addNews(headlines);
         this.displayNews();
       });
     });
   }
 
   displayNews() {
-    const headlines = this.newsModel.getHeadlines();
-    const links = this.newsModel.getLinks();
-    const images = this.newsModel.getImages();
+    const news = this.newsModel.getNews();
     const articlesArray = [];
 
-    headlines.forEach(headline => {
+    news.forEach(story => {
       const newsEl = document.createElement('div');
-      const index = headlines.indexOf(headline);
       const a = document.createElement('a');
-      const linkText = document.createTextNode(headline);
+      const linkText = document.createTextNode(story.headline);
       const img = document.createElement('img');
       const lineBreak = document.createElement('br');
       
       newsEl.className = 'headline';
       
       a.appendChild(linkText);
-      a.title = headline;
-      a.href = links[index];
+      a.title = story.headline;
+      a.href = story.link;
       
-      img.src = images[index];
+      img.src = story.image;
       img.className = 'image';
       
       newsEl.appendChild(a);
