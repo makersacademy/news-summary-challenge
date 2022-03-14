@@ -2,13 +2,13 @@
 * @jest-environment jsdom
 */
 
-const fs = require('fs');
-const { networkInterfaces } = require('os');
-const NewsView = require('./newsView')
+import { readFileSync } from 'fs';
+import { networkInterfaces } from 'os';
+import NewsView from './newsView';
   
 describe ("News View", () => {
   it("displays headlines in the browser", () => {
-    document.body.innerHTML = fs.readFileSync('./index.html');
+    document.body.innerHTML = readFileSync('./index.html');
 
     const newsModel = { 
       getHeadlines: () => ['testing', 'testing 2'],
@@ -23,7 +23,7 @@ describe ("News View", () => {
   });
 
   it("links to the articles", () => {
-    document.body.innerHTML = fs.readFileSync('./index.html');
+    document.body.innerHTML = readFileSync('./index.html');
     
     const newsModel = { 
       getHeadlines: () => [1],
@@ -39,7 +39,7 @@ describe ("News View", () => {
   });
 
   it("displays images", () => {
-    document.body.innerHTML = fs.readFileSync('./index.html');
+    document.body.innerHTML = readFileSync('./index.html');
     
     const newsModel = { 
       getHeadlines: () => [1],
@@ -55,7 +55,7 @@ describe ("News View", () => {
   });
 
   it("has a search function", () => {
-    document.body.innerHTML = fs.readFileSync('./index.html');
+    document.body.innerHTML = readFileSync('./index.html');
 
     const searchButton = document.querySelectorAll('#search-button');
     const searchInput = document.querySelectorAll('#search-input');

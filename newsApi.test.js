@@ -1,4 +1,4 @@
-const NewsApi = require('./newsApi');
+import NewsApi from './newsApi';
 
 require('jest-fetch-mock').enableMocks()
 

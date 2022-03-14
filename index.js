@@ -1,6 +1,6 @@
-const NewsModel = require('./newsModel');
-const NewsApi = require('./newsApi');
-const NewsView = require('./newsView');
+import NewsModel from './newsModel';
+import NewsApi from './newsApi';
+import NewsView from './newsView';
 
 const newsModel = new NewsModel;
 const newsApi = new NewsApi;

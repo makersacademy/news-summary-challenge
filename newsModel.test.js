@@ -1,4 +1,4 @@
-const NewsModel = require('./newsModel');
+import NewsModel from './newsModel';
 
 describe('NewsModel', () => {
   describe('get headlines', () => {
