@@ -14,5 +14,8 @@
     "esbuild": "^0.14.5",
     "jest": "^27.4.7",
     "jest-fetch-mock": "^3.0.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11"
   }
 }

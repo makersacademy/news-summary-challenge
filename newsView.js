@@ -17,29 +17,35 @@ class NewsView {
     });
   }
 
+  #createNewsElement(story) {
+    const newsEl = document.createElement('div');
+    const a = document.createElement('a');
+    const linkText = document.createTextNode(story.headline);
+    const img = document.createElement('img');
+    const lineBreak = document.createElement('br');
+      
+    newsEl.className = 'headline';
+      
+    a.appendChild(linkText);
+    a.title = story.headline;
+    a.href = story.link;
+      
+    img.src = story.image;
+    img.className = 'image';
+      
+    newsEl.appendChild(a);
+    newsEl.append(lineBreak);
+    newsEl.appendChild(img);
+
+    return newsEl;
+  };
+
   displayNews() {
     const news = this.newsModel.getNews();
     const articlesArray = [];
 
     news.forEach(story => {
-      const newsEl = document.createElement('div');
-      const a = document.createElement('a');
-      const linkText = document.createTextNode(story.headline);
-      const img = document.createElement('img');
-      const lineBreak = document.createElement('br');
-      
-      newsEl.className = 'headline';
-      
-      a.appendChild(linkText);
-      a.title = story.headline;
-      a.href = story.link;
-      
-      img.src = story.image;
-      img.className = 'image';
-      
-      newsEl.appendChild(a);
-      newsEl.append(lineBreak);
-      newsEl.appendChild(img);
+      const newsEl = this.#createNewsElement(story);
 
       articlesArray.push(newsEl);
     });
@@ -47,4 +53,4 @@ class NewsView {
   };
 }
 
-export default NewsView;
+module.exports = NewsView;

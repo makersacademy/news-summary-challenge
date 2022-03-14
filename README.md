@@ -3,7 +3,7 @@
 This is the Makers week 7 weekend challenge. The goal was to create an app that shows the latest news using the Guardian API.
 Further details of the challenge can be found in the CHALLENGE.md file.
 
-## Successes!
+## Successes
 
 - It looks nice
 ![Screenshot of the app](./images/screenshot.png)
@@ -13,7 +13,7 @@ Further details of the challenge can be found in the CHALLENGE.md file.
 ![Screenshot of jest](./images/jest-coverage.png)
 - All basic user stories met 
 
-## Failures!
+## Failures
 
 - I couldn't work out how to test the search functionality
 - I didn't do any of the stretch user stories

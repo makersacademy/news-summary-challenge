@@ -9,7 +9,7 @@ class NewsModel {
 
   addNews(stories) {
     stories.forEach(story => {
-      newsObj = { 
+      let newsObj = { 
         headline: story.webTitle, 
         link: story.webUrl, 
         image: story.fields.thumbnail
@@ -23,4 +23,4 @@ class NewsModel {
   };
  };
 
-export default NewsModel;
+ module.exports = NewsModel;

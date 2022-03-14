@@ -2,19 +2,31 @@
 * @jest-environment jsdom
 */
 
-import { readFileSync } from 'fs';
-import { networkInterfaces } from 'os';
-import NewsView from './newsView';
+const fs = require('fs');
+const networkInterfaces = require('os');
+const NewsView = require(`./newsView`);
   
 describe ("News View", () => {
   it("displays headlines in the browser", () => {
-    document.body.innerHTML = readFileSync('./index.html');
+    document.body.innerHTML = fs.readFileSync('./index.html');
 
     const newsModel = { 
-      getHeadlines: () => ['testing', 'testing 2'],
-      getLinks: () => [],
-      getImages: () => []
-    }
+      getNews: [{ 
+        headline: 'test headline', 
+        link: 'test.url', 
+        image: 'test.png' 
+      }, { 
+        headline: 'test headline 2', 
+        link: 'test2.url', 
+        image: 'test2.png' 
+      }]
+    };
+
+    console.log(newsModel)
+    console.log('no brackets...')
+    console.log(newsModel.getNews)
+    console.log('brackets...')
+    console.log(newsModel.getNews())
     const newsView = new NewsView(newsModel);
   
     newsView.displayNews();
@@ -23,7 +35,7 @@ describe ("News View", () => {
   });
 
   it("links to the articles", () => {
-    document.body.innerHTML = readFileSync('./index.html');
+    document.body.innerHTML = fs.readFileSync('./index.html');
     
     const newsModel = { 
       getHeadlines: () => [1],
@@ -39,12 +51,14 @@ describe ("News View", () => {
   });
 
   it("displays images", () => {
-    document.body.innerHTML = readFileSync('./index.html');
+    document.body.innerHTML = fs.readFileSync('./index.html');
     
     const newsModel = { 
-      getHeadlines: () => [1],
-      getLinks: () => [],
-      getImages: () => ['test.jpg']
+      getNews: () => [{ 
+        headline: 'Test headline', 
+        link: 'test.url', 
+        image: 'testimg.url'
+      }],
     };
     const newsView = new NewsView(newsModel);
   
@@ -55,7 +69,7 @@ describe ("News View", () => {
   });
 
   it("has a search function", () => {
-    document.body.innerHTML = readFileSync('./index.html');
+    document.body.innerHTML = fs.readFileSync('./index.html');
 
     const searchButton = document.querySelectorAll('#search-button');
     const searchInput = document.querySelectorAll('#search-input');

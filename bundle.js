@@ -16,7 +16,7 @@
         }
         addNews(stories) {
           stories.forEach((story) => {
-            newsObj = {
+            let newsObj = {
               headline: story.webTitle,
               link: story.webUrl,
               image: story.fields.thumbnail
@@ -74,24 +74,28 @@
             });
           });
         }
+        #createNewsElement(story) {
+          const newsEl = document.createElement("div");
+          const a = document.createElement("a");
+          const linkText = document.createTextNode(story.headline);
+          const img = document.createElement("img");
+          const lineBreak = document.createElement("br");
+          newsEl.className = "headline";
+          a.appendChild(linkText);
+          a.title = story.headline;
+          a.href = story.link;
+          img.src = story.image;
+          img.className = "image";
+          newsEl.appendChild(a);
+          newsEl.append(lineBreak);
+          newsEl.appendChild(img);
+          return newsEl;
+        }
         displayNews() {
           const news = this.newsModel.getNews();
           const articlesArray = [];
           news.forEach((story) => {
-            const newsEl = document.createElement("div");
-            const a = document.createElement("a");
-            const linkText = document.createTextNode(story.headline);
-            const img = document.createElement("img");
-            const lineBreak = document.createElement("br");
-            newsEl.className = "headline";
-            a.appendChild(linkText);
-            a.title = story.headline;
-            a.href = story.link;
-            img.src = story.image;
-            img.className = "image";
-            newsEl.appendChild(a);
-            newsEl.append(lineBreak);
-            newsEl.appendChild(img);
+            const newsEl = this.#createNewsElement(story);
             articlesArray.push(newsEl);
           });
           this.mainContainerEl.replaceChildren(...articlesArray);
@@ -110,7 +114,7 @@
   var newsView = new NewsView(newsModel, newsApi);
   console.log("The news app is running");
   newsApi.getNews("", (headlines) => {
-    newsModel.addInfo(headlines);
+    newsModel.addNews(headlines);
     newsView.displayNews();
   });
 })();
