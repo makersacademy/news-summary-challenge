@@ -11,38 +11,54 @@ class NewsView {
 
       newsApi.getNews(searchTerm, (headlines) => {
         newsModel.reset();
-        newsModel.addInfo(headlines);
+        newsModel.addNews(headlines);
         this.displayNews();
       });
     });
   }
 
+  #createNewsElement(story) {
+    const newsEl = document.createElement('div');
+    const lineBreak = document.createElement('br');
+      
+    newsEl.className = 'headline';
+      
+    const img = this.#createArticleImageElement(story);
+    const a = this.#createArticleLinkElement(story);
+      
+    newsEl.appendChild(a);
+    newsEl.append(lineBreak);
+    newsEl.appendChild(img);
+
+    return newsEl;
+  };
+
+  #createArticleImageElement(story) {
+    const img = document.createElement('img');
+
+    img.src = story.image;
+    img.className = 'image';
+
+    return img;
+  }
+
+  #createArticleLinkElement(story) {
+    const a = document.createElement('a');
+    const linkText = document.createTextNode(story.headline);
+
+    a.appendChild(linkText);
+    a.title = story.headline;
+    a.href = story.link;
+
+    return a;
+  }
+
   displayNews() {
-    const headlines = this.newsModel.getHeadlines();
-    const links = this.newsModel.getLinks();
-    const images = this.newsModel.getImages();
+    const news = this.newsModel.getNews();
     const articlesArray = [];
 
-    headlines.forEach(headline => {
-      const newsEl = document.createElement('div');
-      const index = headlines.indexOf(headline);
-      const a = document.createElement('a');
-      const linkText = document.createTextNode(headline);
-      const img = document.createElement('img');
-      const lineBreak = document.createElement('br');
-      
-      newsEl.className = 'headline';
-      
-      a.appendChild(linkText);
-      a.title = headline;
-      a.href = links[index];
-      
-      img.src = images[index];
-      img.className = 'image';
-      
-      newsEl.appendChild(a);
-      newsEl.append(lineBreak);
-      newsEl.appendChild(img);
+    news.forEach(story => {
+      const newsEl = this.#createNewsElement(story);
 
       articlesArray.push(newsEl);
     });

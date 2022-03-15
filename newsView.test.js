@@ -3,18 +3,27 @@
 */
 
 const fs = require('fs');
-const { networkInterfaces } = require('os');
-const NewsView = require('./newsView')
+const networkInterfaces = require('os');
+const NewsView = require(`./newsView`);
   
 describe ("News View", () => {
   it("displays headlines in the browser", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
 
     const newsModel = { 
-      getHeadlines: () => ['testing', 'testing 2'],
-      getLinks: () => [],
-      getImages: () => []
-    }
+      getNews() {
+        return [{ 
+        headline: 'test headline', 
+        link: 'test.url', 
+        image: 'test.png' 
+        }, { 
+        headline: 'test headline 2', 
+        link: 'test2.url', 
+        image: 'test2.png' 
+        }]
+      }
+    };
+
     const newsView = new NewsView(newsModel);
   
     newsView.displayNews();
@@ -26,9 +35,17 @@ describe ("News View", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
     
     const newsModel = { 
-      getHeadlines: () => [1],
-      getLinks: () => ['https://www.testing.com/'],
-      getImages: () => []
+      getNews() {
+        return [{ 
+        headline: 'test headline', 
+        link: 'test.url', 
+        image: 'test.png' 
+        }, { 
+        headline: 'test headline 2', 
+        link: 'test2.url', 
+        image: 'test2.png' 
+        }]
+      }
     };
     const newsView = new NewsView(newsModel);
   
@@ -42,9 +59,11 @@ describe ("News View", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
     
     const newsModel = { 
-      getHeadlines: () => [1],
-      getLinks: () => [],
-      getImages: () => ['test.jpg']
+      getNews: () => [{ 
+        headline: 'Test headline', 
+        link: 'test.url', 
+        image: 'testimg.url'
+      }],
     };
     const newsView = new NewsView(newsModel);
   

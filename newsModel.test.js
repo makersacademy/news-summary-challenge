@@ -5,20 +5,21 @@ describe('NewsModel', () => {
     it('returns a new model', () => {
       const news = new NewsModel;
       
-      expect(news.getHeadlines()).toEqual([]);
+      expect(news.getNews()).toEqual([]);
     })
   })
 
   describe('add info', () => {
     it('adds everything', () => {
-      const news = new NewsModel;
-      stories = [ { webTitle: 'Extra, extra, read all about it! Test coverage exceeding 100%!!', webUrl: 'https://www.testing.com', fields: { thumbnail: 'testing.png' } }];
+      const model = new NewsModel;
+      stories = [{ webTitle: 'Extra, extra, read all about it! Test coverage exceeding 100%!!', webUrl: 'https://www.testing.com', fields: { thumbnail: 'testing.png' } }];
       
-      news.addInfo(stories);
+      model.addNews(stories);
+      news = model.getNews();
 
-      expect(news.getHeadlines()).toEqual(['Extra, extra, read all about it! Test coverage exceeding 100%!!']);
-      expect(news.getLinks()).toEqual(['https://www.testing.com']);
-      expect(news.getImages()).toEqual(['testing.png']);
+      expect(news[0].headline).toEqual('Extra, extra, read all about it! Test coverage exceeding 100%!!');
+      expect(news[0].link).toEqual('https://www.testing.com');
+      expect(news[0].image).toEqual('testing.png');
     })
   })
 
@@ -26,10 +27,10 @@ describe('NewsModel', () => {
     it('resets a new', () => {
       const news = new NewsModel;
       stories = [ { webTitle: 'Extra, extra, read all about it! Test coverage exceeding 100%!!', webUrl: 'https://www.testing.com', fields: { thumbnail: 'testing.png' } } ]
-      news.addInfo(stories);
+      news.addNews(stories);
       news.reset();
       
-      expect(news.getHeadlines()).toEqual([]);
+      expect(news.getNews()).toEqual([]);
     })
   })
 })

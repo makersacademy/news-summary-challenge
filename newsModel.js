@@ -1,51 +1,26 @@
 class NewsModel {
   constructor() {
-    this.headlines = [];
-    this.links = [];
-    this.images = [];
-  }
-
-  getHeadlines() {
-    return this.headlines;
-  }
-
-  getLinks() {
-    return this.links;
-  }
-
-  getImages() {
-    return this.images;
-  }
-
-  addInfo(stories) {
-    this.#addHeadlines(stories);
-    this.#addLinks(stories);
-    this.#addImages(stories);
+    this.news = [];
   };
 
-  #addHeadlines(stories) {
-    stories.forEach(story => {
-      this.headlines.push(story.webTitle);
-    });
-  }
+  getNews() {
+    return this.news;
+  };
 
-  #addLinks(stories) {
+  addNews(stories) {
     stories.forEach(story => {
-      this.links.push(story.webUrl);
+      let newsObj = { 
+        headline: story.webTitle, 
+        link: story.webUrl, 
+        image: story.fields.thumbnail
+      }
+      this.news.push(newsObj);
     });
-  }
-
-  #addImages(stories) {
-    stories.forEach(story => {
-      this.images.push(story.fields.thumbnail);
-    });
-  }
-
+  };
+  
   reset() {
-    this.headlines = [];
-    this.links = [];
-    this.images = [];
-  }
- }
+    this.news = [];
+  };
+ };
 
-module.exports = NewsModel;
+ module.exports = NewsModel;
