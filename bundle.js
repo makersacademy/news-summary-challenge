@@ -76,20 +76,28 @@
         }
         #createNewsElement(story) {
           const newsEl = document.createElement("div");
-          const a = document.createElement("a");
-          const linkText = document.createTextNode(story.headline);
-          const img = document.createElement("img");
           const lineBreak = document.createElement("br");
           newsEl.className = "headline";
-          a.appendChild(linkText);
-          a.title = story.headline;
-          a.href = story.link;
-          img.src = story.image;
-          img.className = "image";
+          const img = this.#createArticleImageElement(story);
+          const a = this.#createArticleLinkElement(story);
           newsEl.appendChild(a);
           newsEl.append(lineBreak);
           newsEl.appendChild(img);
           return newsEl;
+        }
+        #createArticleImageElement(story) {
+          const img = document.createElement("img");
+          img.src = story.image;
+          img.className = "image";
+          return img;
+        }
+        #createArticleLinkElement(story) {
+          const a = document.createElement("a");
+          const linkText = document.createTextNode(story.headline);
+          a.appendChild(linkText);
+          a.title = story.headline;
+          a.href = story.link;
+          return a;
         }
         displayNews() {
           const news = this.newsModel.getNews();
