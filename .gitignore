@@ -2,3 +2,4 @@
 **/node_modules
 **/coverage
 **/apiKey.js
+**/.env
