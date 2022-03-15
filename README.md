@@ -6,10 +6,10 @@ Further details of the challenge can be found in the CHALLENGE.md file.
 ## Successes
 
 - It looks nice
-![Screenshot of the app](./images/screenshot.png)
+![Screenshot of the app](./images/screenshot2.png)
 - The search function works
 ![Screenshot after a search](./images/kittens.png)
-- All tests passing with decent coverage
+- All tests passing with 100% coverage
 ![Screenshot of jest](./images/jest-coverage.png)
 - All basic user stories met 
 
