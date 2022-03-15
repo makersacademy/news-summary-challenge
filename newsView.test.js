@@ -76,10 +76,36 @@ describe ("News View", () => {
   it("has a search function", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
 
-    const searchButton = document.querySelectorAll('#search-button');
-    const searchInput = document.querySelectorAll('#search-input');
+    const newsModel = { 
+      getNews: () => [{
+      }],
 
-    expect(searchButton.length).toBe(1);
-    expect(searchInput.length).toBe(1);
+      reset: () => {
+      },
+
+      addNews: () => {
+      }
+    };
+
+    const mockedStories = [{ 
+      webTitle: 'Extra, extra, read all about it! Test coverage exceeding 100%!!',
+      webUrl: 'https://www.testing.com',
+      fields: { thumbnail: 'testing.png' } 
+    }];
+
+
+    const mockApi = {
+      getNews: (term, callback) => {
+        callback(mockedStories)
+      }
+    }
+
+    const newsView = new NewsView(newsModel, mockApi);
+
+    const searchButton = document.querySelector('#search-button');
+    const searchInput = document.querySelector('#search-input');
+
+    searchInput.value = 'cats';
+    searchButton.click();
   })
 });
