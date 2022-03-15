@@ -29,6 +29,8 @@ describe ("News View", () => {
     newsView.displayNews();
   
     expect(document.querySelectorAll('div.headline').length).toBe(2);
+    expect(document.querySelectorAll('div.headline')[0].textContent).toBe('test headline');
+    expect(document.querySelectorAll('div.headline')[1].textContent).toBe('test headline 2')
   });
 
   it("links to the articles", () => {
@@ -40,10 +42,6 @@ describe ("News View", () => {
         headline: 'test headline', 
         link: 'test.url', 
         image: 'test.png' 
-        }, { 
-        headline: 'test headline 2', 
-        link: 'test2.url', 
-        image: 'test2.png' 
         }]
       }
     };
@@ -53,6 +51,7 @@ describe ("News View", () => {
     
     const headline = document.querySelector('div.headline');
     expect(headline.querySelectorAll('a').length).toBe(1);
+    expect(headline.querySelectorAll('a')[0].href).toBe('http://localhost/test.url');
   });
 
   it("displays images", () => {
@@ -62,7 +61,7 @@ describe ("News View", () => {
       getNews: () => [{ 
         headline: 'Test headline', 
         link: 'test.url', 
-        image: 'testimg.url'
+        image: 'testing.url'
       }],
     };
     const newsView = new NewsView(newsModel);
@@ -71,6 +70,7 @@ describe ("News View", () => {
     
     const headline = document.querySelector('div.headline');
     expect(headline.querySelectorAll('img').length).toBe(1);
+    expect(headline.querySelectorAll('img')[0].src).toBe('http://localhost/testing.url');
   });
 
   it("has a search function", () => {
