@@ -11,22 +11,19 @@ describe ("News View", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
 
     const newsModel = { 
-      getNews: [{ 
+      getNews() {
+        return [{ 
         headline: 'test headline', 
         link: 'test.url', 
         image: 'test.png' 
-      }, { 
+        }, { 
         headline: 'test headline 2', 
         link: 'test2.url', 
         image: 'test2.png' 
-      }]
+        }]
+      }
     };
 
-    console.log(newsModel)
-    console.log('no brackets...')
-    console.log(newsModel.getNews)
-    console.log('brackets...')
-    console.log(newsModel.getNews())
     const newsView = new NewsView(newsModel);
   
     newsView.displayNews();
@@ -38,9 +35,17 @@ describe ("News View", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
     
     const newsModel = { 
-      getHeadlines: () => [1],
-      getLinks: () => ['https://www.testing.com/'],
-      getImages: () => []
+      getNews() {
+        return [{ 
+        headline: 'test headline', 
+        link: 'test.url', 
+        image: 'test.png' 
+        }, { 
+        headline: 'test headline 2', 
+        link: 'test2.url', 
+        image: 'test2.png' 
+        }]
+      }
     };
     const newsView = new NewsView(newsModel);
   
