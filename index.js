@@ -1,3 +1,4 @@
+const env = require('./.env');
 const NewsModel = require('./newsModel');
 const NewsApi = require('./newsApi');
 const NewsView = require('./newsView');
