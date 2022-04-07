@@ -54,17 +54,17 @@
             const articleEl = document.createElement("div");
             articleEl.className = "article";
             this.mainContainerEl.append(articleEl);
+            const articleLinkEl = document.createElement("a");
+            articleLinkEl.href = article.webUrl;
+            articleEl.append(articleLinkEl);
             const articleImageEl = document.createElement("img");
             articleImageEl.className = "article-image";
             articleImageEl.src = article.fields.thumbnail;
-            articleEl.append(articleImageEl);
+            articleLinkEl.append(articleImageEl);
             const articleHeadlineEl = document.createElement("h3");
             articleHeadlineEl.className = "article-headline";
-            articleEl.append(articleHeadlineEl);
-            const articleLinkEl = document.createElement("a");
-            articleLinkEl.href = article.webUrl;
-            articleLinkEl.innerText = article.fields.headline;
-            articleHeadlineEl.append(articleLinkEl);
+            articleHeadlineEl.innerText = article.fields.headline;
+            articleLinkEl.append(articleHeadlineEl);
           });
         }
       };
