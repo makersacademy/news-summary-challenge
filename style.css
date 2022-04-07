@@ -15,7 +15,7 @@ h1 {
 }
 
 .title-news i, .title-headlines i {
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: 'Times New Roman', Times, serif; */
   font-size: 1.2em;
 }
 
