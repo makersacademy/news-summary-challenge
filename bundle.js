@@ -86,14 +86,16 @@
       var API_KEY2 = require_apiKey();
       var ArticlesApi2 = class {
         loadArticles(callback, query) {
-          this.query = this.#queryToUrl(query);
-          fetch(`https://content.guardianapis.com/search?q=${this.query}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${API_KEY2}`).then((response) => response.json()).then((data) => {
+          this.url = this.#formatUrl(query);
+          fetch(this.url).then((response) => response.json()).then((data) => {
             callback(data);
           });
         }
-        #queryToUrl(queryStr) {
-          queryStr ? this.query = queryStr.split(" ").join(",") : this.query = "";
-          return this.query;
+        #formatUrl(query) {
+          let queryString = "";
+          query ? queryString = queryString.split(" ").join(",") : queryString;
+          const url = `https://content.guardianapis.com/search?q=${queryString}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${API_KEY2}`;
+          return url;
         }
       };
       module.exports = ArticlesApi2;

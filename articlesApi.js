@@ -5,8 +5,8 @@ const API_KEY = require('./apiKey');
 
 class ArticlesApi {
   loadArticles(callback, query) {
-    this.query = this.#queryToUrl(query);
-    fetch(`https://content.guardianapis.com/search?q=${this.query}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${API_KEY}`)
+    this.url = this.#formatUrl(query);
+    fetch(this.url)
       .then(response => response.json())
       .then((data) => {
         // console.log(data);
@@ -14,11 +14,13 @@ class ArticlesApi {
       });
   }
 
-  #queryToUrl(queryStr) {
-    // Create query string from user input otherwise set a blank query
-    queryStr ? this.query = queryStr.split(" ").join(",") : this.query = "";
+  #formatUrl(query) {
+    let queryString = "";
+    // Create query string from user input otherwise set an empty query string
+    query ? queryString = queryString.split(" ").join(",") : queryString;
+    const url = `https://content.guardianapis.com/search?q=${queryString}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${API_KEY}`
 
-    return this.query;
+    return url;
   }
 }
 
