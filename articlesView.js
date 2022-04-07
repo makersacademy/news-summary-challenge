@@ -35,24 +35,22 @@ class ArticlesView {
       articleEl.className = 'article';
       this.mainContainerEl.append(articleEl);
 
-      // Create article image
-      const articleImageEl = document.createElement('img');
-      articleImageEl.className = 'article-image';
-      // articleImageEl.src = article.thumbnail;   // Local data
-      articleImageEl.src = article.fields.thumbnail;   // API data
-      articleEl.append(articleImageEl);
-
-      // Create article headline
-      const articleHeadlineEl = document.createElement('h3');
-      articleHeadlineEl.className = 'article-headline';
-      articleEl.append(articleHeadlineEl);
-      
       // Create article headline link
       const articleLinkEl = document.createElement('a');
       articleLinkEl.href = article.webUrl;
-      // articleLinkEl.innerText = article.headline;    // Local data
-      articleLinkEl.innerText = article.fields.headline;   // API data
-      articleHeadlineEl.append(articleLinkEl);
+      articleEl.append(articleLinkEl);
+      
+      // Create article image
+      const articleImageEl = document.createElement('img');
+      articleImageEl.className = 'article-image';
+      articleImageEl.src = article.fields.thumbnail;
+      articleLinkEl.append(articleImageEl);
+      
+      // Create article headline
+      const articleHeadlineEl = document.createElement('h3');
+      articleHeadlineEl.className = 'article-headline';
+      articleHeadlineEl.innerText = article.fields.headline;
+      articleLinkEl.append(articleHeadlineEl);
     });
   }
 }
