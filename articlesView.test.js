@@ -51,21 +51,21 @@ describe('Articles view', () => {
   });
 
   it('displays articles with headlines on the page', () => {
-    expect(document.querySelector('div.article h3.article-headline a').innerText).toEqual('First article');
-    expect(document.querySelectorAll('div.article h3.article-headline a').length).toEqual(3);
+    expect(document.querySelector('div.article a h3.article-headline').innerText).toEqual('First article');
+    expect(document.querySelectorAll('div.article a h3.article-headline').length).toEqual(3);
   });
 
   it('displays an image with each article', () => {
-    expect(document.querySelector('div.article img.article-image').src).toEqual('http://localhost/images/image1.jpeg');
-    expect(document.querySelectorAll('div.article img.article-image').length).toEqual(3);
+    expect(document.querySelector('div.article a img.article-image').src).toEqual('http://localhost/images/image1.jpeg');
+    expect(document.querySelectorAll('div.article a img.article-image').length).toEqual(3);
   });
 
   it('links a headline to the original article', () => {    
-    const firstHeadlineLink = document.querySelector('div.article h3.article-headline a');
+    const firstHeadlineLink = document.querySelector('div.article a');
     // console.log(firstHeadlineLink.href);
 
     expect(firstHeadlineLink.href).toEqual('https://www.google.com/');
-    expect(document.querySelectorAll('div.article h3.article-headline a').length).toEqual(3);
+    expect(document.querySelectorAll('div.article a h3.article-headline').length).toEqual(3);
   });
 
   it('shows articles that match user input', () => {
@@ -92,6 +92,6 @@ describe('Articles view', () => {
 
     view.displayArticles();
 
-    expect(document.querySelector('div.article h3.article-headline a').innerText).toEqual(expect.stringContaining('Sport'));
+    expect(document.querySelector('div.article a h3.article-headline').innerText).toEqual(expect.stringContaining('Sport'));
   });
 });
