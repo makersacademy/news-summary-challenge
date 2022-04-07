@@ -21,6 +21,9 @@
     "esbuild": "^0.14.34",
     "jest": "^27.5.1"
   },
+  "jest": {
+    "collectCoverage": true
+  },
   "devDependencies": {
     "eslint": "^8.12.0"
   }
