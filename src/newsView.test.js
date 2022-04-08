@@ -40,4 +40,8 @@ describe('NewsView', () => {
     expect(document.querySelectorAll('.image')[1].src).toEqual('http://localhost/src2');
   });
 
+  it('has the headlines linking to the article', () => {
+    expect(document.querySelector('.headline').parentElement.href).toEqual('https://www.evertonwinchampionsleague.com/');
+  });
+
 });
