@@ -1,0 +1,21 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "using:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonnyabrams/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonnyabrams/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/jonnyabrams/news-summary-challenge#readme"
+}

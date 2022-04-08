@@ -1,3 +1,18 @@
+using:
+
+* JavaScript
+
+* HTML
+
+* Jest for testing
+
+* npm package manager
+
+* Node version manager
+
+* esbuild
+
+
 # News challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
