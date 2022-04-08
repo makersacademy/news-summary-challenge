@@ -1,3 +1,11 @@
+ENV['GUARDIAN_API_KEY']
+
+****
+
+start by test-driving model class, constructed with empty array for storing headlines
+
+****
+
 using:
 
 * JavaScript
@@ -5,6 +13,8 @@ using:
 * HTML
 
 * Jest for testing
+
+* the jest-fetch-mock module to mock fetch requests
 
 * npm package manager
 
