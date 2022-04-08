@@ -1,0 +1,22 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "open index.html",
+    "test": "jest --coverage",
+    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruiined/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruiined/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/ruiined/news-summary-challenge#readme"
+}
