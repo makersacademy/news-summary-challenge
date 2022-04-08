@@ -13,7 +13,7 @@ class NewsView {
   createHeadlines() {
     this.model.getHeadlines().forEach((headline) => {
       this._addArticleEl();
-      // this.#addImage(article.fields.thumbnail);
+      this._addImage(headline.fields.thumbnail);
       this._addHeadline(headline.webTitle, headline.webUrl);
     });
   }
@@ -34,7 +34,13 @@ class NewsView {
     urlEl.append(headlineEl);
     this.mainContainerEl.lastElementChild.append(urlEl);
   }
-
+  
+  _addImage(imgSrc) {
+    const imgEl = document.createElement('img');
+    imgEl.src = imgSrc;
+    imgEl.className = 'image';
+    this.mainContainerEl.lastElementChild.append(imgEl);
+  }
 }
 
 module.exports = NewsView;

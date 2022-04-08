@@ -4,6 +4,8 @@ ENV['GUARDIAN_API_KEY']
 
 start by test-driving model class, constructed with empty array for storing headlines
 
+test-drive view that creates article element for each headline with url and appends them to main container
+
 ****
 
 using:

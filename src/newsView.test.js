@@ -35,4 +35,9 @@ describe('NewsView', () => {
     expect(document.querySelectorAll('.headline')[0].innerText).toEqual('Everton win Champions League');
   });
 
+  it('loads an image for each article', () => {
+    expect(document.querySelectorAll('.image').length).toEqual(2);
+    expect(document.querySelectorAll('.image')[1].src).toEqual('http://localhost/src2');
+  });
+
 });
