@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/valentina-maggio/news-summary-challenge#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "esbuild": "^0.14.34",
     "jest": "^27.5.1",
     "jest-fetch-mock": "^3.0.3"
