@@ -1,4 +1,4 @@
-const GuardianApi = require('./guardianApi.js');
+const GuardianApi = require('./guardianApi');
 
 class NewsSummary {
   constructor(guardianApi) {

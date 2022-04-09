@@ -3,11 +3,12 @@
  */
 
 const fs = require('fs');
-const NewsSummary = require('./newsSummaryView.js');
+const NewsSummary = require('./newsSummaryView');
 
 beforeEach(() => {
   document.body.innerHTML = fs.readFileSync('./index.html');
-  const fakeApi = { getHeadlines: (searchField, callback) => callback([{webTitle: "Your news today"}])};
+  const fakeApi = { getHeadlines: (searchField, callback) => callback(
+    [{webTitle: "Your news today"}])};
   newsView = new NewsSummary(fakeApi);
 })
 

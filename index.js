@@ -1,4 +1,4 @@
-const NewsSummary = require('./newsSummaryView.js');
+const NewsSummary = require('./newsSummaryView');
 const GuardianApi = require('./guardianApi');
 
 console.log('The news app is running...')

@@ -1,7 +1,6 @@
-const GuardianApiKey = require('./guardianApi');
-const guardianApiKey = require('./guardianApiKey');
+const GuardianApiKey = require('./guardianApiKey');
 
-const guardianKey = new guardianApiKey;
+const guardianKey = new GuardianApiKey;
 
 class GuardianApi {
   getHeadlines(searchField = '', callback) {
