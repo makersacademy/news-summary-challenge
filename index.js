@@ -1,7 +1,7 @@
 const NewsSummary = require('./newsSummaryView.js');
+const GuardianApi = require('./guardianApi');
 
 console.log('The news app is running...')
 
-const news = new NewsSummary();
-
-news.displayNews();
+const guardianApi = new GuardianApi();
+const newsSummary = new NewsSummary(guardianApi);

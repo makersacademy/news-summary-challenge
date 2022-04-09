@@ -6,11 +6,11 @@ describe('Guardian api class', () => {
   it('calls fetch and loads the news headlines', async () => {
     const api = new GuardianApi();
     fetch.mockResponseOnce(JSON.stringify({
-      headline: 'This the first headline'
+      webTitle: 'This the first headline'
     }));
 
     api.getHeadlines('item to search', news => {
-      expect(news.headline).toBe('This the first headline');
+      expect(news.webTitle).toEqual('This the first headline');
     });
   });
 });

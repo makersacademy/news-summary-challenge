@@ -3,3 +3,4 @@ node_modules
 coverage
 bundle.js
 .env
+guardianApiKey.js

@@ -21,6 +21,7 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "esbuild": "^0.14.34",
+    "fs": "^0.0.1-security",
     "jest": "^27.5.1",
     "jest-fetch-mock": "^3.0.3"
   },

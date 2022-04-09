@@ -1,17 +1,27 @@
+const GuardianApi = require('./guardianApi.js');
+
 class NewsSummary {
-  constructor() {
+  constructor(guardianApi) {
     this.mainContainer = document.querySelector('#main-container');
+    this.guardianApi = guardianApi;
+
+    this.guardianApi.getHeadlines('News', newsData => {
+      this.newsData = newsData;
+      this.displayNews();
+    });
   }
 
   displayNews() {
-    const headlines = ['News #1', 'News #2', 'News #3'];
-    
-    headlines.forEach(news => {
+    document.querySelectorAll('.headline').forEach(el => el.remove());
+
+    this.newsData.forEach(news => {
       const newsEl = document.createElement('div');
-      newsEl.innerText = news;
+      newsEl.innerText = news.webTitle;
       newsEl.className = 'headline';
       this.mainContainer.append(newsEl);
     });
+
+    console.log(this.mainContainer);
   }
 }
 
