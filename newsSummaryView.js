@@ -24,6 +24,11 @@ class NewsSummary {
       hrefEl.href = news.webUrl;
       hrefEl.innerText = news.webTitle;
 
+      const imgEl = document.createElement('img');
+      imgEl.className = 'headline-img';
+      imgEl.src = news.fields.thumbnail;
+
+      headlineEl.append(imgEl);
       headlineEl.append(hrefEl);
 
       this.mainContainer.append(headlineEl);
