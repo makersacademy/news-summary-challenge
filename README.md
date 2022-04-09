@@ -24,6 +24,8 @@ using:
 
 * esbuild
 
+* dotenv to save the API key as an environment variable
+
 
 # News challenge
 
