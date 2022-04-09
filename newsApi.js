@@ -1,8 +1,9 @@
-const GUARDIAN_API_KEY = require('./apiKey.env');
+const guardianApiKey = require('./apiKey');
 
 class NewsApi {
   constructor() {
-    this.url = `https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${process.env.GUARDIAN_API_KEY}`;
+    const guardianApi = new guardianApiKey;
+    this.url = `https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${guardianApi.key}`;
     this.search = ''
   }
 
@@ -16,7 +17,7 @@ class NewsApi {
   }
 
   searchArticles(searchTerm, callback) {
-    this.url = `https://content.guardianapis.com/search?order-by=newest&show-fields=thumbnail&q=${searchTerm}&api-key=${process.env.GUARDIAN_API_KEY}`;
+    this.url = `https://content.guardianapis.com/search?order-by=newest&show-fields=thumbnail&q=${searchTerm}&api-key=${guardianApi.key}`;
     this.loadArticles(callback);
   }
 }
