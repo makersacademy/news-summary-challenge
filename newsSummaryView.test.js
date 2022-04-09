@@ -4,8 +4,6 @@
 
 const fs = require('fs');
 const NewsSummary = require('./newsSummaryView');
-const GuardianApi = require('./guardianApi');
-const GuardianApiKey = require('./guardianApiKey');
 
 beforeEach(() => {
   document.body.innerHTML = fs.readFileSync('./index.html');
