@@ -9,7 +9,7 @@ describe('Guardian api class', () => {
       headline: 'This the first headline'
     }));
 
-    api.getHeadlines((news) => {
+    api.getHeadlines('item to search', news => {
       expect(news.headline).toBe('This the first headline');
     });
   });
