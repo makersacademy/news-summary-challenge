@@ -15,10 +15,18 @@ class NewsSummary {
     document.querySelectorAll('.headline').forEach(el => el.remove());
 
     this.newsData.forEach(news => {
-      const newsEl = document.createElement('div');
-      newsEl.innerText = news.webTitle;
-      newsEl.className = 'headline';
-      this.mainContainer.append(newsEl);
+      const headlineEl = document.createElement('div');
+      headlineEl.className = 'headline';
+
+      const hrefEl = document.createElement('a');
+      hrefEl.className = 'headline-link';
+      hrefEl.setAttribute('target', '_blank');
+      hrefEl.href = news.webUrl;
+      hrefEl.innerText = news.webTitle;
+
+      headlineEl.append(hrefEl);
+
+      this.mainContainer.append(headlineEl);
     });
 
     console.log(this.mainContainer);

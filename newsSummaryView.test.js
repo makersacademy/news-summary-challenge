@@ -7,8 +7,11 @@ const NewsSummary = require('./newsSummaryView');
 
 beforeEach(() => {
   document.body.innerHTML = fs.readFileSync('./index.html');
+
   const fakeApi = { getHeadlines: (searchField, callback) => callback(
-    [{webTitle: "Your news today"}])};
+    [ { webTitle: 'Your news today', webUrl: 'https://examplewebsite.com' } ]
+    )};
+
   newsView = new NewsSummary(fakeApi);
 })
 
@@ -18,6 +21,13 @@ describe('News summary', () => {
     newsView.displayNews();
 
     expect(document.querySelectorAll('div.headline').length).toEqual(1);
-    expect(document.querySelectorAll('div.headline')[0].innerText).toEqual('Your news today');
+  });
+
+  it('displays the news headlines with clickable links', () => {
+
+    newsView.displayNews();
+
+    expect(document.querySelectorAll('a.headline-link').length).toEqual(1);
+    expect(document.querySelector('a.headline-link').href).toBe('https://examplewebsite.com/');
   });
 });
