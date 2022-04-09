@@ -17,6 +17,7 @@ class NewsApi {
   }
 
   searchArticles(searchTerm, callback) {
+    const guardianApi = new guardianApiKey;
     this.url = `https://content.guardianapis.com/search?order-by=newest&show-fields=thumbnail&q=${searchTerm}&api-key=${guardianApi.key}`;
     this.loadArticles(callback);
   }

@@ -8,6 +8,19 @@ class NewsView {
       this.model.addHeadlines(data.response.results);
       this.createHeadlines();
     })
+     
+    const searchInputEl = document.querySelector('#search-input');
+    const submitButtonEl = document.querySelector('#submit-button');
+
+    submitButtonEl.addEventListener('click', () => {
+      const searchValue = searchInputEl.value;
+      document.querySelectorAll('.article-container').forEach(article => article.remove());
+
+      this.api.searchArticles(searchValue, (data) => {
+        this.model.addHeadlines(data.response.results);
+        this.createHeadlines();
+      });
+    });
   }
 
   createHeadlines() {

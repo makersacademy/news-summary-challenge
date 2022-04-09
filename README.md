@@ -50,6 +50,6 @@ test-drive view that creates article element for each headline with url (can cli
 
 test-drive a NewsApi class that uses API request to fetch the latest headlines and display them on my page, as well as a search function
 
-had trouble with dotenv for using environment variable to disguise API key so.............
+had trouble with dotenv for using environment variable to disguise API key so made a separate class to store it in the constructor and added that class to .gitignore
 
 (Jonny Abrams)[https://github.com/jonnyabrams]
