@@ -15,4 +15,10 @@ describe('NewsSummaryModel', () => {
     newsModel.addNews('The latest news');
     expect(newsModel.getNews()).toEqual('The latest news');
   }); 
+
+  it('resets the list of news to empty array', () => {
+    newsModel.addNews('The latest news');
+    newsModel.reset()
+    expect(newsModel.getNews()).toEqual([]);
+  }); 
 });

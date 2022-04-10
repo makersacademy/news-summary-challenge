@@ -1,20 +1,36 @@
 const GuardianApi = require('./guardianApi');
+const NewsSummaryModel = require('./newsSummaryModel');
 
-class NewsSummary {
-  constructor(guardianApi) {
+class NewsSummaryView {
+  constructor(newsModel, guardianApi) {
     this.mainContainer = document.querySelector('#main-container');
+    this.model = newsModel;
     this.guardianApi = guardianApi;
 
-    this.guardianApi.getHeadlines('News', newsData => {
-      this.newsData = newsData;
+    this.inputSearch = document.querySelector('#search-input');
+    this.buttonEl = document.querySelector('#search-button');
+
+    this.guardianApi.getHeadlines(newsData => {
+      this.model.addNews(newsData);
       this.displayNews();
+    });
+
+    this.buttonEl.addEventListener('click', () => {
+      this.guardianApi.searchHeadlines(`${this.inputSearch.value}`, newsData => {
+        this.model.addNews(newsData);
+        this.displayNews();
+      });
     });
   }
 
   displayNews() {
     document.querySelectorAll('.headline').forEach(el => el.remove());
 
-    this.newsData.forEach(news => {
+    const news = this.model.getNews();
+
+    console.log(news)
+
+    news.forEach(news => {
       const headlineEl = document.createElement('div');
       headlineEl.className = 'headline';
 
@@ -38,4 +54,4 @@ class NewsSummary {
   }
 }
 
-module.exports = NewsSummary;
+module.exports = NewsSummaryView;

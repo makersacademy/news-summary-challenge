@@ -8,7 +8,12 @@ class NewsSummaryModel {
   }
 
   addNews(headline) {
+    this.reset();
     this.headlines = headline;
+  }
+
+  reset() {
+    this.headlines = [];
   }
 }
 
