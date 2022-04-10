@@ -13,6 +13,13 @@ body {
   overflow: scroll;
 }
 
+span {
+  color: #363434;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
 .header {
   padding: 20px;
   margin-top: 55px;
@@ -80,7 +87,7 @@ button {
 }
 
 #search-input::placeholder {
-text-align: center;
+text-align: right;
 font-size: 12pt;
 }
 
@@ -98,6 +105,7 @@ font-size: 12pt;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
 }
 
 .headline {
@@ -106,9 +114,8 @@ font-size: 12pt;
   margin: -3rem 1.5rem 0;
   padding: 1.5rem;
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 20px;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
-  transition: margin 0.2s ease-in-out;
   position: relative;
 }
 
@@ -129,11 +136,12 @@ font-size: 12pt;
   color: black;
   text-decoration: none;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 21px;
+  position: absolute;
 }
 
 .headline-link:visited {
-  color: rgb(2, 36, 56);
+  color: black;
   text-decoration: none;
   font-size: 25px;
 }

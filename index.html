@@ -11,6 +11,14 @@
   </head>
   <body>
 
+    <p><span id="datetime"></span></p>
+
+    <script>
+      const date = new Date();
+      const options = {  day: 'numeric', month: 'long', year: 'numeric' };
+      document.getElementById("datetime").innerHTML = date.toLocaleDateString('en-UK', options);
+    </script>
+
     <div class="header">
       <h1>Today's News Summary</h1>
     </div>
