@@ -46,7 +46,7 @@ I can specify a search query on the page and get articles matching this search
 
 ---------------
 
-## My Approach
+### My Approach
 
 1. I started by test-driving a model class, constructed with an empty array for storing headlines and a function for adding them to this array
 
@@ -58,7 +58,7 @@ I can specify a search query on the page and get articles matching this search
 
 ---------------
 
-## Future Improvements
+#### Future Improvements
 
 As I mentioned above, the presentation is as basic as it gets but I'd like to revisit this once I've learned more and have more time to play around with HTML and CSS. 
 
