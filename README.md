@@ -1,5 +1,5 @@
-# News challenge
-
+# News Summary Challenge
+[![Test](https://github.com/ruiined/bowling-challenge/actions/workflows/test.yml/badge.svg)](https://github.com/ruiined/news-summary-challenge/actions/workflows/testing.yml)
 
 ## User Stories
 
