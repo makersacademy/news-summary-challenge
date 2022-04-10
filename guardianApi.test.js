@@ -18,10 +18,10 @@ describe('Guardian api class', () => {
     });
   });
 
-  // it('sends a POST request to search for a specific headline', async () => {
+  it('returns the headline based on the search field input by the user', async () => {
 
-  //   api.searchHeadlines(news => {
-  //     expect(news.response.results[0].webTitle).toEqual('This the first headline');
-  //   });
-  // });
+    api.searchHeadlines('first', news => {
+      expect(news.response.results[0].webTitle).toEqual('This the first headline');
+    });
+  });
 });
