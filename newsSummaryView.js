@@ -29,21 +29,19 @@ class NewsSummaryView {
 
     const news = this.model.getNews();
 
-    console.log(news)
-
-    news.forEach(news => {
+    news.forEach(article => {
       const headlineEl = document.createElement('div');
       headlineEl.className = 'headline';
 
       const hrefEl = document.createElement('a');
       hrefEl.className = 'headline-link';
       hrefEl.setAttribute('target', '_blank');
-      hrefEl.href = news.webUrl;
-      hrefEl.innerText = news.webTitle;
+      hrefEl.href = article.webUrl;
+      hrefEl.innerText = article.webTitle;
 
       const imgEl = document.createElement('img');
       imgEl.className = 'headline-img';
-      imgEl.src = news.fields.thumbnail;
+      imgEl.src = article.fields.thumbnail;
 
       headlineEl.append(imgEl);
       headlineEl.append(hrefEl);

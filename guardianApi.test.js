@@ -1,12 +1,12 @@
 const GuardianApi = require('./guardianApi');
 
-require('jest-fetch-mock').enableMocks()
+require('jest-fetch-mock').enableMocks();
 
 beforeEach(() => {
   api = new GuardianApi();
 
   fetch.mockResponseOnce(JSON.stringify({
-    response: { results: [ { webTitle: 'This the first headline' }]}
+    response: { results: [{ webTitle: 'This the first headline' }] }
   }));
 });
 

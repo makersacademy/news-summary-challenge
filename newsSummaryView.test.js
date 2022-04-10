@@ -14,20 +14,19 @@ beforeEach(() => {
   document.body.innerHTML = fs.readFileSync('./index.html');
 
   fakeApi = { getHeadlines: (callback) => callback(
-    [ 
-      { 
-        webTitle: 'Your news today', 
-        webUrl: 'https://examplewebsite.com', 
+    [{
+        webTitle: 'Your news today',
+        webUrl: 'https://examplewebsite.com',
         fields: {
           thumbnail: 'https://image.jpg'
         } 
-      } 
-    ])
+      }]
+    )
   };
 
   newsModel = new NewsSummaryModel();
   newsView = new NewsSummaryView(newsModel, fakeApi);
-})
+});
 
 describe('News summary', () => {
   it('displays the news headlines', () => {
@@ -52,11 +51,11 @@ describe('News summary', () => {
 
   // it('returns the headline based on the user search query', () => {
   //   const fakeNews = [{
-  //     webTitle: 'Your news today', 
-  //     webUrl: 'https://examplewebsite.com', 
+  //     webTitle: 'Your news today',
+  //     webUrl: 'https://examplewebsite.com',
   //     fields: {
   //       thumbnail: 'https://image.jpg'
-  //     } 
+  //     }
   //   }];
 
   //   const fakeApi2 = { searchHeadlines: (search, callback) => {
