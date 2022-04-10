@@ -26,6 +26,8 @@ So I can search what I want to read about
 I can specify a search query on the page and get articles matching this search
 ```
 
+---------------
+
 ## Technologies Used
 
 * JavaScript
@@ -42,6 +44,8 @@ I can specify a search query on the page and get articles matching this search
 
 * esbuild
 
+---------------
+
 ## My Approach
 
 1. I started by test-driving a model class, constructed with an empty array for storing headlines and a function for adding them to this array
@@ -51,6 +55,8 @@ I can specify a search query on the page and get articles matching this search
 3. Then I test-drove a NewsApi class that uses an API request to fetch the latest headlines from The Guardian and display them on my page, with nothing fancy going on presentationally (although I'd like to come back to this once I've learned some CSS)
 
 4. To satisfy the user story about searching for articles, I included in my view class an event listener for clicking on the submit button accompanying an input field and a function in my API class that clears all articles and just loads the results of a search
+
+---------------
 
 ## Future Improvements
 
