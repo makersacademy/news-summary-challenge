@@ -56,6 +56,6 @@ I can specify a search query on the page and get articles matching this search
 
 As I mentioned above, the presentation is as basic as it gets but I'd like to revisit this once I've learned more and have more time to play around with HTML and CSS. 
 
-One thing I had trouble with was using dotenv to store environment variables so I could disguise my Guardian API key. It looked not to be possible here, so I followed my fellow cohort member (Valentina Maggio)[https://github.com/valentina-maggio]'s lead in creating a separate class with its own constructor to store the key, and adding this file to .gitignore.
+One thing I had trouble with was using dotenv to store environment variables so I could disguise my Guardian API key. It looked not to be possible here, so I followed my fellow cohort member [Valentina Maggio](https://github.com/valentina-maggio)'s lead in creating a separate class with its own constructor to store the key, and adding this file to .gitignore.
 
-(Jonny Abrams)[https://github.com/jonnyabrams]
+[Jonny Abrams](https://github.com/jonnyabrams)
