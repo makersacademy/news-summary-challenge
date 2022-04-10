@@ -5,5 +5,3 @@ const NewsApi = require('./newsApi');
 const model = new NewsModel;
 const api = new NewsApi;
 const view = new NewsView(model, api);
-
-console.log(process.env)

@@ -9,10 +9,10 @@ class NewsApi {
 
   loadArticles(callback) {
     fetch(this.url)
-    .then(res => res.json())
+    .then(result => result.json())
     .then(data => callback(data))
     .catch(function() {
-      console.log('error');
+      console.log('looks like an error there, pal');
     });
   }
 

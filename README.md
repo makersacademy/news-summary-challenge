@@ -44,12 +44,18 @@ I can specify a search query on the page and get articles matching this search
 
 ## My Approach
 
-start by test-driving model class, constructed with empty array for storing headlines
+1. I started by test-driving a model class, constructed with an empty array for storing headlines and a function for adding them to this array
 
-test-drive view that creates article element for each headline with url (can click through to original article) and appends them to main container, each with an image
+2. Next up was test-driving a view class that creates an article element for each headline along with its image and URL (satisfying the second and third user stories), and appends them to the main container of my HTML
 
-test-drive a NewsApi class that uses API request to fetch the latest headlines and display them on my page, as well as a search function
+3. Then I test-drove a NewsApi class that uses an API request to fetch the latest headlines from The Guardian and display them on my page, with nothing fancy going on presentationally (although I'd like to come back to this once I've learned some CSS)
 
-had trouble with dotenv for using environment variable to disguise API key so made a separate class to store it in the constructor and added that class to .gitignore
+4. To satisfy the user story about searching for articles, I included in my view class an event listener for clicking on the submit button accompanying an input field and a function in my API class that clears all articles and just loads the results of a search
+
+## Future Improvements
+
+As I mentioned above, the presentation is as basic as it gets but I'd like to revisit this once I've learned more and have more time to play around with HTML and CSS. 
+
+One thing I had trouble with was using dotenv to store environment variables so I could disguise my Guardian API key. It looked not to be possible here, so I followed my fellow cohort member (Valentina Maggio)[https://github.com/valentina-maggio]'s lead in creating a separate class with its own constructor to store the key, and adding this file to .gitignore.
 
 (Jonny Abrams)[https://github.com/jonnyabrams]
