@@ -1,4 +1,4 @@
-# News Summary challenge
+# News Summary Challenge
 
 This is a single web page that shows the latest news using the Guardian API. The aim of the challenge is to practice writing code in frontend JavaScript, CSS and HTML.
 
