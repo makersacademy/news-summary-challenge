@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  margin-top: 50px;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #363434;
+  overflow: scroll;
+}
+
+.header {
+  padding: 20px;
+  margin-top: 55px;
+  text-align: center;
+  background: linear-gradient(90deg, #eff6f8 0%, #6e8cab 100%);  
+  color: #363434;
+  font-size: 40px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.search {
+  height: 80px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 0.7em;
+  border-radius: 1em;
+}
+
+.search * {
+  display: inline;
+  padding: 0.2em;
+  margin: 0.1em 0.2em;
+  -moz-box-sizing: content-box; 
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+button {
+  font-size: 12pt;
+  line-height: 1;
+  background-color: transparent;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.1s;
+  outline: 0;
+}
+
+#search-button {
+  width: 5em;  height: 1em;
+  background-color: #6e8cab;
+  color: #fff;
+  border: none;
+}
+
+#search-button:hover {
+  background-color: #fff;
+  color: black;
+  border: none;
+}
+
+#search-input {
+  font-size: 1rem;
+  line-height: 1;
+  background-color: transparent;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.1s;
+  outline: 0;
+  width: 10em;  
+  height: 1em;
+}
+
+#search-input::placeholder {
+text-align: center;
+font-size: 12pt;
+}
+
+.container {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.main-container {
+  border-left: 80px;
+  border-right: 80px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.headline {
+  border-left: 30px;
+  border-right: 30px;
+  margin: -3rem 1.5rem 0;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+  transition: margin 0.2s ease-in-out;
+  position: relative;
+}
+
+.headline-img {
+  padding: 30px;
+  width: 40%;
+  height: 40%;
+  position: relative;
+  overflow: hidden;
+  object-fit: scale-down;
+}
+
+.headline-link {
+  overflow: hidden;
+  margin: 0;
+  max-height: 6.25rem;
+  position: absolute;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.headline-link:visited {
+  color: rgb(2, 36, 56);
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.headline-link:hover {
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.headline-link:active {
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+}

@@ -18,6 +18,7 @@ class NewsSummaryView {
     this.buttonEl.addEventListener('click', () => {
       this.guardianApi.searchHeadlines(`${this.inputSearch.value}`, newsData => {
         this.model.addNews(newsData);
+        this.inputSearch.value = '';
         this.displayNews();
       });
     });
