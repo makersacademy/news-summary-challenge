@@ -23,7 +23,7 @@ API_KEY=your_key_goes_here
 1. `npm test` will have both jest & coverage included
 
 ## Screenshots
-![screenshot-1](https://github.com/ruiined/news-summary-challenge/blob/main/images/news-summary-screenshot-1.png)![screenshot-2](https://github.com/ruiined/news-summary-challenge/blob/main/images/news-summary-screenshot-2.png)
+![screenshot-1](https://github.com/ruiined/news-summary-challenge/blob/main/images/news-summary-screenshot-1.png)
 
 ## User Stories
 
