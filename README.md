@@ -6,8 +6,8 @@ This challenge was to help us get familiar with fetch APIs. It proved to be quit
 
 ## How to Install
 1. Clone this repository to your machine
-2.`cd news-summary-challenge`
-3.`npm i`
+2. `cd news-summary-challenge`
+3. `npm i`
 4. Create your own `.env` file. Get a personal API key from Guardian and put it in the file:
 ```
 API_HOST=https://content.guardianapis.com
@@ -52,4 +52,5 @@ I can read the site comfortably on my phone
 
 
 ## Resources
+[Makers](https://github.com/makersacademy/news-summary-challenge)
 [Search Icon](https://www.flaticon.com/free-icon/loupe_1296902?related_id=751463&origin=search)
