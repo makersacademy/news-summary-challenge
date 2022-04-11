@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <title>News Summary</title>
+  </head>
+  <body>
+
+    <p><span id="datetime"></span></p>
+
+    <script>
+      const date = new Date();
+      const options = {  day: 'numeric', month: 'long', year: 'numeric' };
+      document.getElementById("datetime").innerHTML = date.toLocaleDateString('en-UK', options);
+    </script>
+
+    <div class="header">
+      <h1>Today's News Summary</h1>
+    </div>
+
+    <div class="search">
+      <ul>
+        <li><input type="text" id="search-input" placeholder="🔍"/><li>
+        <li><button id="search-button">Search</button></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div id="main-container">
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "* Feel free to use Google, your notes, books, etc. but work on your own. * If you refer to the solution of another coach or student, please put a link to that in   your README. * If you have a partial solution, **still check in a partial solution** and send in a pull   request. * You must submit a pull request to this repo with your code by 10am Monday morning.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valentina-maggio/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valentina-maggio/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/valentina-maggio/news-summary-challenge#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "esbuild": "^0.14.34",
+    "fs": "^0.0.1-security",
+    "jest": "^27.5.1",
+    "jest-fetch-mock": "^3.0.3"
+  },
+  "jest": {
+    "collectCoverage": true
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0"
+  }
+}
