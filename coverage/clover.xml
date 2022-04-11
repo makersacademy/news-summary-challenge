@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1649664527602" clover="3.2.0">
+  <project timestamp="1649664527602" name="All files">
+    <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4" elements="9" coveredelements="9" complexity="0" loc="5" ncloc="5" packages="1" files="1" classes="1"/>
+    <file name="newsModel.js" path="/Users/ruiined/Documents/Projects/news-summary-challenge/newsModel.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="7" count="7" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
