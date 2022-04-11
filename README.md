@@ -1,3 +1,15 @@
+# Re my commits
+
+Couldn't push to the forked repo all weekend, most commits therefore listed on a different repo - news-summary-chal, first few also missing as I ended up deleting the original alt repo that was made.
+
+## Progress
+
+App can show story headlines upon loading.
+
+Search button on page to search for specific stories.
+
+When you click on relevant story it will take you to the story on The Guardian's page.
+
 # News challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
