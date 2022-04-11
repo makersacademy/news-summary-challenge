@@ -3,20 +3,14 @@ class ArticlesView {
     this.model = model;
     this.api = api;
     this.mainContainerEl = document.querySelector('#main-container');
-
-    document.querySelector('#search-content-btn').addEventListener('click', () => {
-      this.model.reset();
-      
+  
+    this._loadArticles();
+    
+    document.querySelector('#search-content-btn').addEventListener('click', () => {      
       const query = document.querySelector('#search-content-input').value;
-      console.log('Query: ', query);
+      console.log('query: ', query);
 
-      this.api.loadArticles((articles) => {
-        let articlesList = articles.response.results;
-        console.log(articlesList);    // Log list of articles
-        this.model.setArticles(articlesList);
-        this.displayArticles();
-        // location.reload();
-      }, query);
+      this._loadArticles(query);
     });
   }
 
@@ -52,6 +46,19 @@ class ArticlesView {
       articleHeadlineEl.innerText = article.fields.headline;
       articleLinkEl.append(articleHeadlineEl);
     });
+  }
+
+  _prepareArticles(articles) {
+    let articlesList = articles.response.results;
+    console.log(articlesList);    // Log list of articles
+    this.model.setArticles(articlesList);
+  }
+
+  _loadArticles(query) {
+    this.api.loadArticles((articles) => {
+      this._prepareArticles(articles);
+      this.displayArticles();
+    }, query);
   }
 }
 

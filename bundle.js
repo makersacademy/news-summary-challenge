@@ -33,16 +33,11 @@
           this.model = model2;
           this.api = api2;
           this.mainContainerEl = document.querySelector("#main-container");
+          this._loadArticles();
           document.querySelector("#search-content-btn").addEventListener("click", () => {
-            this.model.reset();
             const query = document.querySelector("#search-content-input").value;
-            console.log("Query: ", query);
-            this.api.loadArticles((articles) => {
-              let articlesList = articles.response.results;
-              console.log(articlesList);
-              this.model.setArticles(articlesList);
-              this.displayArticles();
-            }, query);
+            console.log("query: ", query);
+            this._loadArticles(query);
           });
         }
         displayArticles() {
@@ -67,6 +62,17 @@
             articleLinkEl.append(articleHeadlineEl);
           });
         }
+        _prepareArticles(articles) {
+          let articlesList = articles.response.results;
+          console.log(articlesList);
+          this.model.setArticles(articlesList);
+        }
+        _loadArticles(query) {
+          this.api.loadArticles((articles) => {
+            this._prepareArticles(articles);
+            this.displayArticles();
+          }, query);
+        }
       };
       module.exports = ArticlesView2;
     }
@@ -86,15 +92,15 @@
       var API_KEY2 = require_apiKey();
       var ArticlesApi2 = class {
         loadArticles(callback, query) {
-          this.url = this.#formatUrl(query);
+          this.url = this._formatUrl(query);
           fetch(this.url).then((response) => response.json()).then((data) => {
             callback(data);
           });
         }
-        #formatUrl(query) {
-          let queryString = "";
-          query ? queryString = queryString.split(" ").join(",") : queryString;
-          const url = `https://content.guardianapis.com/search?q=${queryString}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${API_KEY2}`;
+        _formatUrl(query) {
+          let queryString = /\s/.test(query) ? query.split(" ").join(",") : query;
+          console.log("queryString: ", queryString);
+          let url = `https://content.guardianapis.com/search?q=${queryString}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${API_KEY2}`;
           return url;
         }
       };
@@ -110,11 +116,4 @@
   api = new ArticlesApi();
   view = new ArticlesView(model, api);
   console.log("Hello!");
-  api.loadArticles((articles) => {
-    let articlesList = articles.response.results;
-    console.log(articlesList);
-    model.setArticles(articlesList);
-    view.displayArticles();
-  });
-  model.reset();
 })();

@@ -35,7 +35,7 @@ let model = {
 }
 
 let api = {
-  loadArticles: () => view.displayArticles(),
+  loadArticles: () => null,
 }
 
 let view;
