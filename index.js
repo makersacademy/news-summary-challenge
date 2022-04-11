@@ -6,7 +6,7 @@ const model = new NewsModel()
 const api = new NewsApi()
 const view = new NewsView(model, api)
 
-api.loadNews((news) => {
+api.loadNews('', (news) => {
   model.setNews(news);
   view.displayNews();
 }, () => {

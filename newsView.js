@@ -13,7 +13,7 @@ class NewsView {
       document
         .querySelectorAll(".news-div")
         .forEach((article) => article.remove());
-      this.api.setCategory(
+      this.api.loadNews(
         searchInput.value,
         (news) => {
           this.model.setNews(news);
@@ -36,9 +36,9 @@ class NewsView {
       div.className = "news-div";
       webUrl.className = "news-url";
       title.innerText = article.webTitle;
-      webUrl.innerText = article.webUrl;
+      webUrl.append(title);
+      webUrl.href = article.webUrl;
       section.innerText = article.sectionName;
-      div.append(title);
       div.append(webUrl);
       div.append(section);
       this.mainDiv.append(div);

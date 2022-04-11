@@ -1,149 +1,105 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Garamond, 'Times New Roman', Times, serif;
   color: #4a4a4a;
   font-size: 1.5vw;
 }
-div.main {
-  position: absolute;
-  top: 2vw;
-  left: 20vw;
+h1 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  letter-spacing: 2vw;
+  text-align: center;
+}
+h2 {
+  font-size: 3.5vw;
+  text-align: justify;
+  padding: 0 1vw;
+}
+h3 {
+  background-color: #eeecec;
+  height: 3.5vw;
+  color: #b5b5b5;
+  text-transform: uppercase;
+  letter-spacing: 1vw;
+  padding-top: 1.3vw;
+  font-size: 2vw;
+}
+h4 {
+  font-size: 3.5vw;
+  text-align: center;
+  padding: 0 1vw;
+}
+h5 {
+  font-size: 3vw;
+  text-transform: uppercase;
+  text-align: center;
+  color: #878787;
+}
+div#header {
+  margin-left: 6.8vw;
+  width: 80vw;
+}
+div#main-div {
+  margin-left: 6.8vw;
   padding-bottom: 3vw;
-  width: 60vw;
-}
-div.listing {
-  background-color: #ededed;
-  margin-top: 3vw;
-  padding: 2vw 2vw;
-}
-div#center_it {
+  width: 80vw;
   text-align: center;
   padding: 4vw 0;
 }
-div.profile_listing {
-  background-color: #ededed;
-  margin-top: 3vw;
+div.news-div {
+  background-color: #f7f6f6;
+  margin-bottom: 3vw;
+  width: 80vw;
   padding: 2vw 2vw;
 }
-div.profile_left {
-  float: left;
-  width: 48%;
-}
-div.profile_right {
-  float: right;
-  width: 48%;
-}
-img.profile_listing {
-  float: top;
-  height: 15vw;
-  width: 100%;
-  object-fit: cover;
-}
-img.listing {
-  float: right;
-  height: 15vw;
-  width: 20vw;
-  object-fit: cover;
-}
-img.listing_details {
-  width: 60vw;
-  padding-bottom: 2vw;
+div#footer {
+  margin-left: 6.8vw;
+  width: 77vw;
+  text-align: center;
+  padding: 1vw 3vw;
+  background-color: #f7f6f6;
+  margin-bottom: 6vw;
 }
 p {
   text-align: justify;
 }
-h1 {
-  font-size: 4vw;
-  text-align: center;
-}
-h2 {
-  font-size: 2vw;
-  text-align: left;
-}
-h2#center {
-  text-align: center;
-}
-h3 {
-  font-size: 2vw;
-}
 a {
-  color: #4697b8;
-  text-decoration: none;
-}
-a:hover {
-  color: #115b78;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #f1f1f1;
-  overflow: hidden;
-}
-li.left {
-  float: left;
-}
-li.right {
-  float: right;
-}
-li a {
-  display: block;
-  color: black;
-  padding: 1vw;
-  text-decoration: none;
-  background-color: #f1f1f1;
-  transition: background-color 0.5s ease-out, color 0.5s ease-out;
-}
-
-li a:hover {
-  background-color: #9bcbde;
-  color: white;
-}
-input[type=text],[type=password],[type=email] {
-  width: 40vw;
-  height: 3vw;
-  margin: 2vw;
-  border: none;
-  background-color: #f1f1f1;
-  padding: 1vw;
-  text-align: center;
-  color: #ad80e0;
-  letter-spacing: 3px;
-}
-input[type=text]:focus,[type=password]:focus,[type=email]:focus {
-  outline: none;
-  border-bottom: double 0.2vw #4697b8;
-}
-input[type=submit] {
-  border: none;
+  color: #76b4ccdc;
   cursor: pointer;
-  text-align: center;
-  letter-spacing: 1.5px;
-  height: 3vw;
-  font-size: 1.5vw;
-  padding: 0vw 1.5vw;
-  border-bottom: #ad80e0 solid 1px;
-  background-color: white;
+  text-decoration: none;
   transition: color 0.5s ease-out;
 }
-input[type=submit]:hover {
-  color: #115b78;
+a:hover {
+  color: #0e6283;
 }
-textarea {
-  resize: none;
-  width: 60vw;
-  height: 10vw;
-  padding: 1vw;
+input[type="text"] {
+  width: 69.7vw;
+  height: 7vw;
+  font-size: 4vw;
+  margin-bottom: 4vw;
   border: none;
-  color: #7e7e7e;
+  font-family: Garamond, 'Times New Roman', Times, serif;
+  text-align: center;
   font-style: italic;
-  transition: background-color 0.5s ease-out;
-  text-align: justify;
+  color: #cecece;
+  background-color: #fff;
+  letter-spacing: 1.5vw;
+  padding-left: 5.5vw;
+  border-bottom: #fff 0vw solid;
+  transition: color 0.5s ease-in-out, border 0.5s ease-in-out;
 }
-textarea:focus {
-  outline: 0;
-  background-color: #f1f1f1;
-  border-left: double 0.2vw #4697b8;
+input[type="text"]:focus {
+  outline: none;
+  border-bottom: #efefef 1.6vw solid;
+  color: #4d8ca2;
 }
-i {
-  color: #7e7e7e;
+input[type="image"] {
+  height: 4vw;
+  width: 4vw;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.5s ease-out;
+}
+
+input[type="image"]:hover {
+  opacity: 1;
 }
