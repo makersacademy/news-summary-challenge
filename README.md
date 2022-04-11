@@ -23,6 +23,7 @@ API_KEY=your_key_goes_here
 1. `npm test` will have both jest & coverage included
 
 ## Screenshots
+![screenshot-1](https://github.com/ruiined/news-summary-challenge/blob/main/images/news-summary-screenshot-1.png)![screenshot-2](https://github.com/ruiined/news-summary-challenge/blob/main/images/news-summary-screenshot-2.png)
 
 ## User Stories
 
@@ -53,4 +54,5 @@ I can read the site comfortably on my phone
 
 ## Resources
 [Makers](https://github.com/makersacademy/news-summary-challenge)
+
 [Search Icon](https://www.flaticon.com/free-icon/loupe_1296902?related_id=751463&origin=search)
