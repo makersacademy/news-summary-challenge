@@ -9,10 +9,10 @@ class NewsView {
       this.createStory();
     });
 
-    const submitButtonEl = document.querySelector('#submit');
+    // const submitButtonEl = document.querySelector('#submit');
     const searchQuery = document.querySelector('#search-box');
 
-    submitButtonEl.addEventListener('click', () => {
+    searchQuery.addEventListener('input', () => {
       const searchName = searchQuery.value;
       document.querySelectorAll(".story-container").forEach(story => story.remove());
 
