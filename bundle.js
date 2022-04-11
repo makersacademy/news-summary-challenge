@@ -98,8 +98,7 @@
           });
         }
         _formatUrl(query) {
-          let queryString = /\s/.test(query) ? query.split(" ").join(",") : query;
-          console.log("queryString: ", queryString);
+          let queryString = typeof query !== "undefined" ? query.split(" ").join(",") : "";
           let url = `https://content.guardianapis.com/search?q=${queryString}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${API_KEY2}`;
           return url;
         }
