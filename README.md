@@ -1,6 +1,6 @@
-<h1 style="align:center">NEWS HEADLINES</h1>
+<h1 align="center">NEWS HEADLINES</h1>
 
-<div style="align:center">
+<div align="center">
 
    ![news headlines gif](./images/news-headlines-gif.gif)
 </div>
