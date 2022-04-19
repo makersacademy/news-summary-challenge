@@ -47,16 +47,15 @@ describe('NewsSummaryView', () => {
     const data = {
           "article_img": "http://image.jpeg",
           "article_title": "Test Title",
-          "summary": [{
-            "0": 'Hello World',
-            "1": 'I spent too much time on this'
-          }]
+          "summary": [
+            'Hello World',
+            'I spent too much time on this'
+          ]
         }
         
     view.displaySummary(data);
-    const articleTitle = document.querySelectorAll('.section.title is-3 mt-3 is-flex is-justify-content-center');
+    
     const allParagraphs = document.querySelectorAll('.mb-2').length;
-
     expect(allParagraphs).toEqual(2);
   })
 })

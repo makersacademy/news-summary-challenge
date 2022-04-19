@@ -56,7 +56,7 @@ class NewsSummaryView {
     const sFigureEl = document.createElement('figure');
     const sImgEl = document.createElement('img');
     const sH3El = document.createElement('h3');
-
+  
     sSectionEl.className = 'section';
     sSectionEl.id = 'summary-content';
     sFigureEl.className = 'image is-16by9';
@@ -64,12 +64,11 @@ class NewsSummaryView {
     sImgEl.style.borderRadius = '10px';
     sH3El.innerText = summaryData.article_title;
     sH3El.className = 'title is-3 mt-3 is-flex is-justify-content-center';
-    console.log(sH3El)
     sFigureEl.appendChild(sImgEl);
     sSectionEl.appendChild(sFigureEl);
     sSectionEl.appendChild(sH3El);
+    
     const summaryArray = summaryData.summary;
-    console.log(summaryArray)
     summaryArray.forEach(summaryP => {
       const sP = document.createElement('p');
       sP.innerText = summaryP
