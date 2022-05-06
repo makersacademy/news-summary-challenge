@@ -2,6 +2,7 @@ class newsModel {
 
   constructor() {
     this.news = []
+    this.newsImage = []
   }
 
   getNews() {
@@ -14,6 +15,10 @@ class newsModel {
 
   setNews(data) {
     this.news.push(data)
+  }
+
+  setImage(image) {
+    this.newsImage.push(image)
   }
 
 }
