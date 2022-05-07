@@ -1,8 +1,13 @@
 const NewsModel = require('./newsModel');
+const NewsApi = require('./newsApi');
 const NewsView = require('./newsView');
 
 const model = new NewsModel();
-const view = new NewsView(model);
+const api = new NewsApi();
+const view = new NewsView(model, api);
 
-model.addNews('test')
-view.displayNews();
+// api.fetchNews((data) => {
+//   console.log('Success', data);
+// });
+
+view.displayNewsFromApi();

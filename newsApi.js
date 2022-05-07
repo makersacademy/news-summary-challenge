@@ -7,7 +7,7 @@ class newsApi {
     .then(response => response.json())
     .then((data) => {
       console.log('Load', data);
-      callback(data);
+      callback(data.response.results);
     })
     .catch(() => {
       console.error('Error');

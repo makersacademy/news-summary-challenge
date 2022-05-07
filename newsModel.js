@@ -11,6 +11,10 @@ class newsModel {
     this.news.push(headline);
   }
 
+  setNews(array) {
+    this.news = array;
+  }
+
 }
 
 module.exports = newsModel;

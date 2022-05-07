@@ -6,13 +6,11 @@ describe('NewsAPI', () => {
     it('loads news article headlines by using The Guardian API', () => {
       const newsApi = new NewsApi();
       fetch.mockResponseOnce(JSON.stringify({
-        name: 'news',
-        headline: 'test'
+        response: { results: 'test' }
       }))
       newsApi.fetchNews((data) => {
-        expect(data.headline).toEqual('test')
+        expect(data).toEqual('test')
       })
     })
   })
 })
-
