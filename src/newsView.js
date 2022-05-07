@@ -10,11 +10,21 @@ class NewsView {
   }
 
   displayArticles() {
-    this.model.getArticles().forEach((article) => {
+    const articles = this.model.getArticles().response.results;
+
+    articles.forEach((article) => {
       const articleEl = document.createElement("div");
       articleEl.classList.add("article");
-      articleEl.innerText = article;
+      articleEl.innerText = article.fields.headline;
       this.mainContainerEl.append(articleEl);
+    });
+  }
+
+  displayArticlesFromApi() {
+    this.api.loadArticles((receivedArticles) => {
+      this.model.setArticles(receivedArticles);
+      this.displayArticles();
+      console.log(receivedArticles);
     });
   }
 }

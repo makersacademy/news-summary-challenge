@@ -10,8 +10,8 @@ describe(NewsModel, () => {
   it("adds a new article into an array", () => {
     const model = new NewsModel();
 
-    model.addArticle("News!");
+    model.setArticles(["News Flash!", "Break News!"]);
 
-    expect(model.getArticles()).toEqual(["News!"]);
+    expect(model.getArticles()).toEqual(["News Flash!", "Break News!"]);
   });
 });
