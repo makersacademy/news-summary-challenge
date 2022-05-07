@@ -61,11 +61,13 @@
           this.clearDuplicateNews();
           this.clearDuplicateImages();
           const currentNews = this.model.news[0];
-          console.log(currentNews);
           currentNews.forEach((article) => {
-            const newEL = document.createElement("h2");
+            const newEL = document.createElement("a");
             newEL.className = "headline";
-            newEL.innerText = article.webTitle;
+            var linkText = document.createTextNode(article.webTitle);
+            newEL.appendChild(linkText);
+            newEL.href = article.webUrl;
+            document.body.appendChild(newEL);
             const imageEL = document.createElement("img");
             imageEL.className = "image";
             imageEL.src = article.fields.thumbnail;

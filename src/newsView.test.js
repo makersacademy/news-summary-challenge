@@ -31,7 +31,7 @@ jest.mock('./newsApi');
 
     it("displayNews gets the list of headlines from the model", () => {
       model.getNews.mockImplementation(() => [
-        "Elon buys Twitter"
+        {"headline": "Elon buys Twitter"}
       ]);
       view.displayNews();
       expect(document.querySelectorAll("h2.headline").length).toEqual(1);

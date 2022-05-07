@@ -15,9 +15,13 @@ class newsView {
      
     currentNews.forEach((article) => {
         //headline iteration
-      const newEL = document.createElement("h2")
+      const newEL = document.createElement('a')
       newEL.className = "headline";
-      newEL.innerText = article.webTitle;
+      var linkText = document.createTextNode(article.webTitle)
+      newEL.appendChild(linkText)
+      newEL.href = article.webUrl;
+      document.body.appendChild(newEL)
+      // newEL.innerText = article.webTitle;
       // image iteration
       const imageEL = document.createElement("img")
       imageEL.className = "image";
