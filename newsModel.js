@@ -14,7 +14,6 @@ class newsModel {
   setNews(array) {
     this.news = array;
   }
-
 }
 
 module.exports = newsModel;
