@@ -20,5 +20,8 @@
   "homepage": "https://github.com/baljitrakhra/news-summary-challenge#readme",
   "dependencies": {
     "jest": "^28.1.0"
+  },
+  "devDependencies": {
+    "jest-environment-jsdom": "^28.1.0"
   }
 }
