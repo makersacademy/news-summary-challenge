@@ -31,7 +31,7 @@
   // viewNews.js
   var require_viewNews = __commonJS({
     "viewNews.js"(exports, module) {
-      var NewsModel2 = class {
+      var NewsModel = class {
         constructor(model2) {
           this.model = model2;
           this.maincontainerEl = document.querySelector("#main-container");
@@ -49,13 +49,12 @@
           });
         }
       };
-      module.exports = NewsModel2;
+      module.exports = NewsModel;
     }
   });
 
   // index.js
   var ModelNews = require_modelNews();
-  var NewsModel = require_viewNews();
   var ViewNews = require_viewNews();
   var model = new ModelNews();
   var view = new ViewNews(model);
