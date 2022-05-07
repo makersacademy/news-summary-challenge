@@ -16,7 +16,7 @@ describe('.fetchStories', () => {
   });
 });
 
-describe('.saveTitleUrl', () => {
+describe('.saveTitlesUrls', () => {
   it('selects headline titles and story urls from a full Guardian API response', () => {
     let data = {
       "response": "stuff",
@@ -35,7 +35,7 @@ describe('.saveTitleUrl', () => {
         }
       ]
     };
-    app.saveTitleUrl(data)
+    app.saveTitlesUrls(data)
     expect(app.currentHeadlines).toEqual([
       {
         webTitle: "First mocked headline",

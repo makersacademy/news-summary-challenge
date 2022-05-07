@@ -12,7 +12,7 @@ class App {
       });
   }
 
-  saveTitleUrl(data) {
+  saveTitlesUrls(data) {
     data['results'].forEach((result) => {
       this.currentHeadlines.push({
         "webTitle": result.webTitle,
