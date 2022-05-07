@@ -53,7 +53,10 @@ describe('ArticlesView', () => {
     expect(document.querySelector('img.pic').src).toBe(
       'http://localhost/madridpicture.jpg'
     );
-    expect(document.querySelector('div.title').innerText).toBe(
+    expect(document.querySelector('a.title').href).toBe(
+      'http://localhost/www.madridfinal.com'
+    );
+    expect(document.querySelector('a.title').innerText).toBe(
       'Real Madrid reach the Champions League final'
     );
   });

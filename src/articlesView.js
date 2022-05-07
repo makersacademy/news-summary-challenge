@@ -27,8 +27,9 @@ class ArticlesView {
       pictureEl.classList.add('pic');
       pictureEl.src = article.image;
 
-      const nameEl = document.createElement('div');
+      const nameEl = document.createElement('a');
       nameEl.classList.add('title');
+      nameEl.href = article.url;
       nameEl.innerText = article.headline;
 
       articleEl.append(pictureEl, nameEl);
