@@ -51,6 +51,14 @@ describe('.saveTitlesUrls', () => {
 
 describe('.display', () => {
   it('displays loaded stories into the HTML', () => {
-
+    // for each headline in the model
+    // it creates an HTML div element / url element
+    // adds it to the headline class
+    // gives it as text the title
+    // gives it as url the url
+    // appends it to a main container element
+    // testing:
+      // number of elements on the page
+      // check first element's attributes.
   })
 })
