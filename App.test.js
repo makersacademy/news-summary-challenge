@@ -33,23 +33,49 @@ let mockedData = {
   }
 };
 
+let bangersMockedData = {
+  "response": {
+    "header-stuff": "header-stuff",
+    "results": [
+      {
+        "stuff": "stuff",
+        "webTitle": "First mocked bangers",
+        "webUrl": "https://www.theguardian.com/first-headline/mocked",
+        "fields": {
+          "thumbnail": "https://media.guim.co.uk/first-headline/mocked/picture"
+        },
+        "more stuff": "more stuff"
+      },
+      {
+        "stuff": "stuff",
+        "webTitle": "Second bangers mock",
+        "webUrl": "https://www.theguardian.com/second-headline/mocked",
+        "fields": {
+          "thumbnail": "https://media.guim.co.uk/second-headline/mocked/picture"
+        },
+        "more stuff": "more stuff"
+      }
+    ]
+  }
+};
+
 document.body.innerHTML = fs.readFileSync('./index.html');
 let app = new App();
 
 describe('.fetchStories', () => {
   it('fetches top stories from the Guardian API', () => {
-    fetch.mockResponseOnce(JSON.stringify({
-      content: 'some content'
-    }));
+    fetch.mockResponseOnce(JSON.stringify(
+      mockedData
+    ));
 
     app.fetchStories((result) => {
-      expect(result.content).toBe('some content');
+      expect(result).toEqual(mockedData);
     });
   });
 });
 
 describe('.saveStories', () => {
-  it('selects headline titles and story urls from a full Guardian API response', () => {
+  it('selects headline titles, story urls and thumbnails from a full Guardian API response', () => {
     app.saveStories(mockedData)
     expect(app.stories).toEqual([
       {
@@ -108,34 +134,37 @@ describe('Search function', () => {
     const searchTextEl = document.querySelector('input#search-text');
     searchTextEl.value = 'bangers';
     const searchButtonEl = document.querySelector('button#search-button');
-    // searchButtonEl.click();
-    // expect(app.searchTerm).toBe('bangers');
+    fetch.mockResponseOnce(JSON.stringify(
+      mockedData
+    ));
+    searchButtonEl.click();
+    expect(app.searchTerm).toBe('bangers');
   })
 
-  // it('(.fetchSearchStories) fetches stories via the API with the search term', () => {
-  //   const searchTextEl = document.querySelector('input#search-text');
-  //   searchTextEl.value = 'bangers';
-  //   const searchButtonEl = document.querySelector('button#search-button');
-    // searchButtonEl.click();
+  it('(.fetchSearchStories) fetches stories via the API with the search term', () => {
+    let searchTerm = 'bangers';
+    fetch.mockResponseOnce(JSON.stringify(
+      mockedData
+    ));
+    app.fetchSearchStories(searchTerm, (result) => {
+      expect(result).toEqual(mockedData);
+    });
+  });
 
-    // fetch.mockResponseOnce(req =>
-    //   req.url === 'https://content.guardianapis.com/search?q=bangers&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=9f9c20e8-7f5a-4de8-9bd3-efe35ccbcbca'
-    //     ? app.fetchSearchStories('bangers', (result) => {
-    //       expect(result.content).toBe('some content');
-    //     })
-    //     .then(res => 'ok')
-    //     : Promise.reject(new Error('bad url'))
-    // );
-    // expect(app.fetchSearchStories).toBeCalled;
-  // })
-
-  // it('allows user to type text, search and have displayed stories containing the text', () => {
-  //   document.body.innerHTML = fs.readFileSync('./index.html');
-  //   const searchTextEl = document.querySelector('#search-text');
-  //   searchTextEl.value = 'search term';
-  //   const searchButtonEl = document.querySelector('#search-button');
-  //   searchButtonEl.click();
-  //   expect(fetchSearchStories('search term'))
-  // })
-
+  it('displays a set of stories with the search term in the title', () => {
+    const searchTextEl = document.querySelector('input#search-text');
+    searchTextEl.value = 'bangers';
+    const searchButtonEl = document.querySelector('button#search-button');
+    fetch.mockResponseOnce(JSON.stringify(
+      bangersMockedData
+    ));
+    searchButtonEl.click();
+    console.log('app.stories: ', app.stories);
+    document.querySelectorAll('a.headline').forEach((story) => {
+      console.log(story.text)
+    })
+    document.querySelectorAll('a.headline').forEach((story) => {
+      expect(story.text.includes('bangers')).toEqual(true);
+    })
+  })
 })

@@ -6,7 +6,9 @@ class App {
     document.querySelector('button#search-button').addEventListener('click', () => {
       this.searchTerm = document.querySelector('input#search-text').value;
       this.fetchSearchStories(this.searchTerm,(data) => {
+        console.log(data.response.results)
         this.saveStories(data);
+        console.log('this.stories: ', this.stories)
         this.displayStories();
       })
     })
