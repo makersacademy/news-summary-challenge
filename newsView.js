@@ -1,5 +1,8 @@
+const newsModel = require('./newsModel');
+const newsApi = require('./newsApi');
+
 class newsView {
-  constructor(model, api) {
+  constructor(model = new newsModel, api = new newsApi) {
     this.model = model;
     this.api = api;
 
@@ -35,6 +38,7 @@ class newsView {
       imgEl.src = article.fields.thumbnail
 
       const hrefEl = document.createElement('a');
+      hrefEl.className = 'hyperlink';
       hrefEl.innerText = article.webTitle;
       hrefEl.href = article.webUrl;
 
