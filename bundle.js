@@ -28,7 +28,34 @@
     }
   });
 
+  // viewNews.js
+  var require_viewNews = __commonJS({
+    "viewNews.js"(exports, module) {
+      var NewsModel2 = class {
+        constructor(model2) {
+          this.model = model2;
+          this.maincontainerEl = document.querySelector("#main-container");
+        }
+        displayNews() {
+          const news = this.model.getNews();
+          news.forEach((news2) => {
+            const newsEl = document.createElement("div");
+            newsEl.className = "news";
+            newsEl.innerText = news2;
+            this.maincontainerEl.append(newsEl);
+          });
+        }
+      };
+      module.exports = NewsModel2;
+    }
+  });
+
   // index.js
   var ModelNews = require_modelNews();
+  var NewsModel = require_viewNews();
+  var ViewNews = require_viewNews();
   var model = new ModelNews();
+  var view = new ViewNews(model);
+  model.addNews("this is news");
+  view.displayNews();
 })();

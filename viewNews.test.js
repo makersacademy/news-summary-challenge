@@ -18,5 +18,16 @@ describe('#Views', ()=> {
   it('displays the News on webpage', () =>{
     const mockModel = new ModelNews();
     
+    mockModel.addNews.mockImplementation( () => [
+      'this is a news'
+    ])
+    mockModel.getNews.mockImplementation( () => [
+      'this is a news'
+    ]);
+    mockModel.addNews('this is a news');
+    const viewNews = new NewsModel(mockModel);
+    viewNews.displayNews();
+    expect(document.querySelectorAll('.news').length).toBe(1);
+
   });
 });
