@@ -2,11 +2,14 @@ class newsModel {
 
   constructor() {
     this.news = []
-    this.newsImage = []
   }
 
   getNews() {
     return this.news
+  }
+
+  getImage() {
+    return this.newsImage
   }
 
   addNews(article) {
@@ -14,12 +17,12 @@ class newsModel {
   }
 
   setNews(data) {
-    this.news.push(data)
+    return this.news.push(data)
   }
 
-  setImage(image) {
-    this.newsImage.push(image)
-  }
+  // setImage(image) {
+  //   this.newsImage.push(image)
+  // }
 
 }
 

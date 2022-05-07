@@ -8,10 +8,13 @@
   var require_newsApi = __commonJS({
     "src/newsApi.js"(exports, module) {
       var newsApi2 = class {
+        constructor() {
+          this.url = "https://content.guardianapis.com/search?q=Spotlight&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=21831b4e-69fe-49f1-a75d-d24709168ad2";
+        }
         loadNews(callback) {
-          fetch("https://content.guardianapis.com/search?q=Spotlight&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=21831b4e-69fe-49f1-a75d-d24709168ad2").then((response) => response.json()).then((data) => {
+          fetch(this.url).then((response) => response.json()).then((data) => {
             console.log("Load", data);
-            callback(data);
+            callback(data.response.results);
           });
         }
       };
@@ -25,19 +28,18 @@
       var newsModel2 = class {
         constructor() {
           this.news = [];
-          this.newsImage = [];
         }
         getNews() {
           return this.news;
+        }
+        getImage() {
+          return this.newsImage;
         }
         addNews(article) {
           return this.news.push(article);
         }
         setNews(data) {
-          this.news.push(data);
-        }
-        setImage(image) {
-          this.newsImage.push(image);
+          return this.news.push(data);
         }
       };
       module.exports = newsModel2;
@@ -58,38 +60,30 @@
         displayNews() {
           this.clearDuplicateNews();
           this.clearDuplicateImages();
-          const currentNews = this.model.news;
-          const newsImages = this.model.newsImage;
+          const currentNews = this.model.news[0];
           console.log(currentNews);
-          currentNews.forEach((headline) => {
-            newsImages.forEach((imageUrl) => {
-              let newEL = document.createElement("div");
-              newEL.className = "headline";
-              newEL.innerText = headline;
-              this.mainContainerEL.append(newEL);
-              let imageEL = document.createElement("img");
-              imageEL.className = "image";
-              imageEL.src = imageUrl;
-              this.mainContainerEL.append(imageEL);
-            });
+          currentNews.forEach((article) => {
+            const newEL = document.createElement("h2");
+            newEL.className = "headline";
+            newEL.innerText = article.webTitle;
+            const imageEL = document.createElement("img");
+            imageEL.className = "image";
+            imageEL.src = article.fields.thumbnail;
+            newEL.append(imageEL);
+            this.mainContainerEL.append(newEL);
           });
         }
         clearDuplicateNews() {
-          document.querySelectorAll("div.headline").forEach((element) => element.remove());
+          document.querySelectorAll("h2.headline").forEach((element) => element.remove());
         }
         clearDuplicateImages() {
           document.querySelectorAll("img.image").forEach((element) => element.remove());
         }
         displayNewsFromApi() {
-          let arr = 10;
-          for (let i = 0; i < arr; i++) {
-            this.api.loadNews((receivedData) => {
-              console.log(receivedData);
-              this.model.setNews(receivedData.response.results[i].webTitle);
-              this.model.setImage(receivedData.response.results[i].fields.thumbnail);
-              this.displayNews();
-            });
-          }
+          this.api.loadNews((data) => {
+            this.model.setNews(data);
+            this.displayNews();
+          });
         }
       };
       module.exports = newsView2;

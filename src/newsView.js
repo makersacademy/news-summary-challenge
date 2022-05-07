@@ -11,29 +11,25 @@ class newsView {
   displayNews() {
     this.clearDuplicateNews();
     this.clearDuplicateImages();
-    const currentNews = this.model.news;
-    const newsImages = this.model.newsImage;
-
-    console.log(currentNews)
-    currentNews.forEach((headline) => {
-      newsImages.forEach((imageUrl) => {
+    const currentNews = this.model.news[0];
+     
+    currentNews.forEach((article) => {
         //headline iteration
-      let newEL = document.createElement("div")
+      const newEL = document.createElement("h2")
       newEL.className = "headline";
-      newEL.innerText = headline;
-      this.mainContainerEL.append(newEL)
+      newEL.innerText = article.webTitle;
       // image iteration
-      let imageEL = document.createElement("img")
+      const imageEL = document.createElement("img")
       imageEL.className = "image";
-      imageEL.src = imageUrl
-      this.mainContainerEL.append(imageEL)
+      imageEL.src = article.fields.thumbnail;
+      newEL.append(imageEL)
+      this.mainContainerEL.append(newEL)
     })
-  })
   }
 
   clearDuplicateNews() {
     document
-    .querySelectorAll("div.headline")
+    .querySelectorAll("h2.headline")
     .forEach((element) => element.remove());
   }
   clearDuplicateImages() {
@@ -44,15 +40,21 @@ class newsView {
 
 
   displayNewsFromApi() {
-    let arr = 10
-    for (let i = 0; i < arr; i++) {
-    this.api.loadNews((receivedData) => {
-      console.log(receivedData)
-      this.model.setNews(receivedData.response.results[i].webTitle);
-      this.model.setImage(receivedData.response.results[i].fields.thumbnail);
+    this.api.loadNews((data) => {
+      // console.log(data)
+      this.model.setNews(data)
       this.displayNews();
     })
-  }
+
+    // let arr = 10
+    // for (let i = 0; i < arr; i++) {
+    // this.api.loadNews((receivedData) => {
+    //   console.log(receivedData)
+    //   this.model.setNews(receivedData.response.results[i].webTitle);
+    //   this.model.setImage(receivedData.response.results[i].fields.thumbnail);
+    //   this.displayNews();
+    // })
+  // }
       
   }
 }
