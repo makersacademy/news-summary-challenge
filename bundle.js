@@ -68,11 +68,14 @@
           const news = this.model.getNews();
           news.forEach((article) => {
             const newsEl = document.createElement("div");
-            newsEl.innerText = article.webTitle;
             newsEl.className = "news";
             const imgEl = document.createElement("img");
             imgEl.className = "image";
             imgEl.src = article.fields.thumbnail;
+            const hrefEl = document.createElement("a");
+            hrefEl.innerText = article.webTitle;
+            hrefEl.href = article.webUrl;
+            newsEl.append(hrefEl);
             newsEl.append(imgEl);
             this.mainContainerEl.append(newsEl);
           });
