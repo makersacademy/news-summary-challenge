@@ -3,7 +3,7 @@
  */
 
 const fs = require('fs');
-const App = require('./index.js')
+const App = require('./App')
 
 require('jest-fetch-mock').enableMocks()
 
