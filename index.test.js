@@ -20,30 +20,30 @@ describe('.saveTitleUrl', () => {
   it('selects headline titles and story urls from a full Guardian API response', () => {
     let data = {
       "response": "stuff",
-      "results": {
-        "0": {
+      "results": [
+        {
           "stuff": "stuff",
           "webTitle": "First mocked headline",
-          "webURL": "https://www.theguardian.com/first-headline/mocked",
+          "webUrl": "https://www.theguardian.com/first-headline/mocked",
           "more stuff": "more stuff"
         },
-        "1": {
+        {
           "stuff": "stuff",
           "webTitle": "Second headline",
-          "webURL": "https://www.theguardian.com/second-headline/mocked",
+          "webUrl": "https://www.theguardian.com/second-headline/mocked",
           "more stuff": "more stuff"
         }
-      }
+      ]
     };
     app.saveTitleUrl(data)
-    expect(app.currentHeadlines).toBe([
+    expect(app.currentHeadlines).toEqual([
       {
-        "webTitle": "First mocked headline",
-        "webURL": "https://www.theguardian.com/first-headline/mocked"
+        webTitle: "First mocked headline",
+        webUrl: "https://www.theguardian.com/first-headline/mocked"
       },
       {
-        "webTitle": "Second headline",
-        "webURL": "https://www.theguardian.com/second-headline/mocked"
+        webTitle: "Second headline",
+        webUrl: "https://www.theguardian.com/second-headline/mocked"
       }
     ]);
   });
