@@ -70,16 +70,14 @@
           });
         }
         displayNews() {
-          const oldNews = document.querySelectorAll("div.news");
-          oldNews.forEach((article) => {
-            article.remove();
-          });
-          const oldErrors = document.querySelectorAll("div.error");
-          oldErrors.forEach((error) => {
-            error.remove();
-          });
+          this.#clearAll();
           const news = this.model.getNews();
-          console.log(news);
+          if (news.length == 0) {
+            const newsEl = document.createElement("div");
+            newsEl.className = "empty";
+            newsEl.innerText = "There were no results matching your search";
+            this.mainContainerEl.append(newsEl);
+          }
           news.forEach((article) => {
             const newsEl = document.createElement("div");
             newsEl.className = "news";
@@ -105,14 +103,25 @@
           });
         }
         displayError() {
-          const oldErrors = document.querySelectorAll("div.error");
-          oldErrors.forEach((error) => {
-            error.remove();
-          });
+          this.#clearAll();
           let errorElement = document.createElement("div");
           errorElement.className = "error";
           errorElement.innerText = "Oops, something went wrong";
           this.mainContainerEl.append(errorElement);
+        }
+        #clearAll() {
+          const oldNews = document.querySelectorAll("div.news");
+          oldNews.forEach((article) => {
+            article.remove();
+          });
+          const oldErrors = document.querySelectorAll("div.error");
+          oldErrors.forEach((error) => {
+            error.remove();
+          });
+          const oldEmpty = document.querySelectorAll("div.empty");
+          oldEmpty.forEach((empty) => {
+            empty.remove();
+          });
         }
       };
       module.exports = newsView;
