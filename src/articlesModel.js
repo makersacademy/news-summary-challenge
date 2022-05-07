@@ -18,7 +18,7 @@ class ArticlesModel {
 
     const article = {
       headline: title,
-      picture: pic,
+      image: pic,
       url: address
     };
     return article

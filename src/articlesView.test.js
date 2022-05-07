@@ -34,7 +34,7 @@ describe('ArticlesView', () => {
     };
     const article = {
       headline: 'Real Madrid reach the Champions League final',
-      picture: 'madridpicture.jpg',
+      image: 'madridpicture.jpg',
       url: 'www.madridfinal.com'
     }
     view.api.loadArticles.mockImplementation((callback) => 
@@ -50,7 +50,10 @@ describe('ArticlesView', () => {
     expect(view.model.convertData).toHaveBeenCalledTimes(1);
     expect(view.model.addArticle).toHaveBeenCalledTimes(1);
     expect(view.model.getArticles).toHaveBeenCalledTimes(1);
-    expect(document.querySelector('div.article').innerText).toBe(
+    expect(document.querySelector('img.pic').src).toBe(
+      'http://localhost/madridpicture.jpg'
+    );
+    expect(document.querySelector('div.title').innerText).toBe(
       'Real Madrid reach the Champions League final'
     );
   });

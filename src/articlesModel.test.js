@@ -27,7 +27,7 @@ describe('ArticlesModel', () => {
     };
     const article = {
       headline: 'Real Madrid reach the Champions League final',
-      picture: 'madridpicture.jpg',
+      image: 'madridpicture.jpg',
       url: 'www.madridfinal.com'
     }
     expect(model.convertData(data)).toEqual(article);

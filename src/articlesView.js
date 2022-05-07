@@ -22,7 +22,17 @@ class ArticlesView {
     this.model.getArticles().forEach(article => {
       const articleEl = document.createElement('div');
       articleEl.classList.add('article');
-      articleEl.innerText = article.headline;
+
+      const pictureEl = document.createElement('img');
+      pictureEl.classList.add('pic');
+      pictureEl.src = article.image;
+
+      const nameEl = document.createElement('div');
+      nameEl.classList.add('title');
+      nameEl.innerText = article.headline;
+
+      articleEl.append(pictureEl, nameEl);
+      
       this.mainContainerEl.append(articleEl);
     })
   }
