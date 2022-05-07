@@ -9,7 +9,9 @@
 ```
 
 ## Task
-I have been tasked to create a web app that will grab all the headlines using the Guardian API. Clicking these headlines will then redirect users towards the corresponding articles on the Guardian's website. I will be doing this by coding in frontend Javascript and will be using HTML and CSS to display the website. I will be writing my code with a TDD approach and will be using Jest for testing.
+I have been tasked to create a web app that will grab all the headlines using the Guardian API. Clicking these headlines will then redirect users towards the corresponding articles on the Guardian's website.\
+\
+I will be doing this by coding in frontend Javascript and will be using HTML and CSS to display the website. I will be writing my code with a TDD approach and will be using Jest for testing.
 
 ## Instructions
 Clone this repository to your desired location using `git clone https://github.com/mcsuGH/news-summary-challenge.git`.\
@@ -22,9 +24,9 @@ Once this is done, use `npm run build` and then while still inside the main dire
 \
 Here are a few screenshots of my web app in action to show that it can display the news, have a working search function and that it shows a error message when it fails to fetch:
 
-![Screenshot](https://imgur.com/Qq02ejX)
-![Screenshot](https://imgur.com/602PXh5)
-![Screenshot](https://imgur.com/O0cj7BM)
+![Screenshot](https://i.imgur.com/Qq02ejX.png)
+![Screenshot](https://i.imgur.com/602PXh5.png)
+![Screenshot](https://i.imgur.com/O0cj7BM.png)
 
 ## User Stories
 ```
