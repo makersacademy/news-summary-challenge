@@ -11,14 +11,10 @@ It's a single page web app, written in frontend JavaScript, CSS and HTML.
 
 ## Getting started
 
-`git clone https://github.com/almorcrette/news-summary-challenge.git`
-
-TBC
-`command_to_install_dependencies` (e.g. `bundle`)
+1. Clone the code: `git clone https://github.com/almorcrette/news-summary-challenge.git`
+2. Run `npm run build` to bundle the code.
 
 ## Usage
-
-TBC
 
 `command_to_start` (e.g. `rackup` or `rails s`)
 Navigate to `http://localhost:4567/`
@@ -26,8 +22,7 @@ Navigate to `http://localhost:4567/`
 
 ## Running tests
 
-TBC
-`test_command` (e.g. `rspec`)
+`jest`
 
 ## File manifest
 

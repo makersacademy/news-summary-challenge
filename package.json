@@ -1,0 +1,21 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "This is a small news summary app, built to demonstrate my JavaScript frontend web app skills. It is my solution to Makers Academy's week 7 weekend challenge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild index.js --bundle --outfile=bundle.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almorcrette/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/almorcrette/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/almorcrette/news-summary-challenge#readme"
+}
