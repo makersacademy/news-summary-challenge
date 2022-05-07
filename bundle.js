@@ -54,8 +54,10 @@
   // newsView.js
   var require_newsView = __commonJS({
     "newsView.js"(exports, module) {
+      var newsModel = require_newsModel();
+      var newsApi = require_newsApi();
       var newsView = class {
-        constructor(model2, api2) {
+        constructor(model2 = new newsModel(), api2 = new newsApi()) {
           this.model = model2;
           this.api = api2;
           this.mainContainerEl = document.querySelector("#main-container");
@@ -83,9 +85,11 @@
             imgEl.className = "image";
             imgEl.src = article.fields.thumbnail;
             const hrefEl = document.createElement("a");
+            hrefEl.className = "hyperlink";
             hrefEl.innerText = article.webTitle;
             hrefEl.href = article.webUrl;
             newsEl.append(hrefEl);
+            newsEl.append(document.createElement("br"));
             newsEl.append(imgEl);
             this.mainContainerEl.append(newsEl);
           });

@@ -5,7 +5,7 @@
     /                 |  Guardian       \                   
    /                  |                  \
   /__...--~~~~~~-._ _ _ _.-~~~~~~---....__\ 
- /__.....====~~~~._/   \_.~~~~=====.....___\              
+ /__.....=====~~~~._/   \_.~~~~=====.....__\              
 ```
 
 ## Task
@@ -16,7 +16,9 @@ Clone this repository to your desired location using `git clone https://github.c
 \
 You can then run `npm install` whilst in the main directory in your terminal to install any dependencies and then use the command `jest` to run the tests.\
 \
-Sign up for an API key from the Guardian.
+In order to use this app, please sign up for an API key from the Guardian and create a file named `apiKey.js` inside the main directory. Inside the `apiKey.js` file write `module.exports =  'write-your-api-key-here';` with your API key given from The Guardian. This will then allow the app to use your API key to fetch the articles from The Guardian's API, which will be used to populate the webpage with articles.\
+\
+Once this is done, use `npm run build` and then while in the main directory inside your terminal, you can use the command `open index.html` to open the web app.
 
 ## User Stories
 ```
@@ -35,19 +37,6 @@ I can click a news article title which links to the original article
 As a busy politician,
 So I can search what I want to read about,
 I can specify a search query on the page and get articles matching this search
-
-As a busy politician,
-So I can quickly read through the essential of today's stories,
-I can see a summarised version of of the article 
-
-As a busy politician,
-Just in case my laptop breaks,
-I can read the site comfortably on my phone
-
-As a busy politician,
-So I make my news reading more fun,
-I can see whizzy animations in the app
-
 ```
 
 ## References
@@ -59,3 +48,17 @@ used the above for ASCII art and then edited it.
 
 
 ## Functionality yet to be added
+```
+As a busy politician,
+So I can quickly read through the essential of today's stories,
+I can see a summarised version of of the article 
+
+As a busy politician,
+Just in case my laptop breaks,
+I can read the site comfortably on my phone
+
+As a busy politician,
+So I make my news reading more fun,
+I can see whizzy animations in the app
+```
+user stories not yet implemented

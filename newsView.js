@@ -43,6 +43,7 @@ class newsView {
       hrefEl.href = article.webUrl;
 
       newsEl.append(hrefEl);
+      newsEl.append(document.createElement('br'));
       newsEl.append(imgEl);
  
       this.mainContainerEl.append(newsEl);
