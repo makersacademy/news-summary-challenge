@@ -37,8 +37,8 @@
     "newsApi.js"(exports, module) {
       var apiKey = require_apiKey();
       var newsApi = class {
-        fetchNews(callback) {
-          fetch(`https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json()).then((data) => {
+        fetchNews(query, callback) {
+          fetch(`https://content.guardianapis.com/search?q=${query}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json()).then((data) => {
             console.log("Load", data);
             callback(data.response.results);
           }).catch(() => {
@@ -59,6 +59,15 @@
           this.model = model2;
           this.api = api2;
           this.mainContainerEl = document.querySelector("#main-container");
+          this.searchFieldEl = document.querySelector("#search-field");
+          this.searchButtonEl = document.querySelector("#search-button");
+          this.searchButtonEl.addEventListener("click", () => {
+            let query = this.searchFieldEl.value;
+            this.api.fetchNews(query, (data) => {
+              this.model.setNews(data);
+              this.displayNews();
+            });
+          });
         }
         displayNews() {
           const oldNews = document.querySelectorAll("div.news");
@@ -81,7 +90,7 @@
           });
         }
         displayNewsFromApi() {
-          this.api.fetchNews((data) => {
+          this.api.fetchNews("", (data) => {
             this.model.setNews(data);
             this.displayNews();
           });

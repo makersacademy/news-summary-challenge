@@ -2,7 +2,18 @@ class newsView {
   constructor(model, api) {
     this.model = model;
     this.api = api;
+
     this.mainContainerEl = document.querySelector('#main-container');
+    this.searchFieldEl = document.querySelector('#search-field');
+    this.searchButtonEl = document.querySelector('#search-button');
+
+    this.searchButtonEl.addEventListener('click', () => {
+      let query = this.searchFieldEl.value
+      this.api.fetchNews(query, (data) => {
+        this.model.setNews(data);
+        this.displayNews();
+      })
+    })
   }
 
   displayNews() {
@@ -33,7 +44,7 @@ class newsView {
   }
 
   displayNewsFromApi() {
-    this.api.fetchNews((data) => {
+    this.api.fetchNews('',(data) => {
       this.model.setNews(data);
       this.displayNews();
     })
