@@ -12,18 +12,23 @@ jest.mock('./newsApi');
 
 describe('NewsView', () => {
   beforeEach(() => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
     NewsModel.mockClear();
     NewsApi.mockClear();
-    document.body.innerHTML = fs.readFileSync('./index.html');
   })
 
-  let mockModel = new NewsModel();
-  let mockApi = new NewsApi();
-
   describe('./displayNews', () => {
-    it('displays the news article headlines', () => {
+    it('displays the news article headlines from model', () => {
+      const mockModel = new NewsModel();
+      const mockApi = new NewsApi();
       const view = new NewsView(mockModel, mockApi);
-      mockModel.getNews.mockImplementation(() => ['This is a news article'])
+      view.model.getNews.mockImplementation(() => {
+        [{
+          webTitle: 'test',
+          webUrl: 'http://test.com',
+          fields: { thumbnail: 'http://image.com' }
+        }]
+      })
       view.displayNews();
       expect(document.querySelectorAll('div.news').length).toEqual(1);
     })
@@ -31,10 +36,26 @@ describe('NewsView', () => {
 
   describe('./displayNewsFromApi', () => {
     it('fetches the headlines from Api', () => {
+      const mockModel = new NewsModel();
+      const mockApi = new NewsApi();
       const view = new NewsView(mockModel, mockApi);
 
-      mockApi.fetchNews.mockImplementation((callback) => {
-        callback(['This is a news article'])
+      view.model.getNews.mockImplementation(() => {
+        [{
+          webTitle: 'test',
+          webUrl: 'http://test.com',
+          fields: { thumbnail: 'http://image.com' }
+        }]
+      });
+
+      view.model.setNews.mockImplementation();
+
+      view.api.fetchNews.mockImplementation((callback) => {
+        callback([{
+          webTitle: 'test',
+          webUrl: 'http://test.com',
+          fields: { thumbnail: 'http://image.com' }
+        }])
       })
 
       view.displayNewsFromApi();
