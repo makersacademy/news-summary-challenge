@@ -2,13 +2,14 @@ class App {
   constructor() {
     this.stories = [];
     this.searchTerm = null;
-    
-    // this.searchButtonEl = document.querySelector('button#search-button');
 
     document.querySelector('button#search-button').addEventListener('click', () => {
       this.searchTerm = document.querySelector('input#search-text').value;
+      this.fetchSearchStories(this.searchTerm,(data) => {
+        this.saveStories(data);
+        this.displayStories();
+      })
     })
-
   }
 
 
@@ -38,11 +39,9 @@ class App {
         "thumbnail": result.fields.thumbnail
       });
     });
-    console.log(this.stories)
   };
 
   displayStories() {
-    console.log(this.stories)
     this.stories.forEach((headline) => {
       let headlineImageEl = document.createElement('img');
      headlineImageEl.classList.add('headline');
