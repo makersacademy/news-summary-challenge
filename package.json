@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/Josenewmano/news-summary-challenge/issues"
   },
-  "homepage": "https://github.com/Josenewmano/news-summary-challenge#readme"
+  "homepage": "https://github.com/Josenewmano/news-summary-challenge#readme",
+  "devDependencies": {
+    "jest-environment-jsdom": "^28.1.0"
+  }
 }

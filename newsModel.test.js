@@ -6,15 +6,15 @@ describe(NewsModel, () => {
     expect(model.getItems()).toEqual([]);
   });
 
-  it("adds to the items array with addItem()", () => {
+  it("set the items array with setItems()", () => {
     const model = new NewsModel();
-    model.addItem('Definitely a real piece of news');
-    expect(model.getItems()).toEqual(['Definitely a real piece of news'])
+    model.setItems(['Definitely a real piece of news', 'also real news']);
+    expect(model.getItems()).toEqual(['Definitely a real piece of news', 'also real news'])
   });
 
   it("clears the items array with resetItems()", () => {
     const model = new NewsModel();
-    model.addItem('Definitely a real piece of news');
+    model.setItems(['Definitely a real piece of news', 'also real news']);
     model.resetItems();
     expect(model.getItems()).toEqual([])
   });

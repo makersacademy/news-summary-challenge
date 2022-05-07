@@ -18,7 +18,7 @@ Fork this repo, then run `npm install`. My personal API key is not available, so
 key](https://open-platform.theguardian.com/access/) to use the Guardian API. Then, in a file named 'apiKey.js'
 in the main directory, write the following line:
 
-`module.exports = _(your API key)_`
+`module.exports = "_your API key_"`
 
 Run the app using `open index.html`
 

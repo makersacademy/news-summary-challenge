@@ -7,8 +7,8 @@ class NewsModel {
     return this.items;
   }
 
-  addItem(item) {
-    this.items.push(item);
+  setItems(array) {
+    this.items = array;
   }
 
   resetItems() {
