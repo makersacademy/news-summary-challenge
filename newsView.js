@@ -6,7 +6,7 @@ class NewsView {
   constructor(model = new NewsModel, api = new NewsApi) {
     this.model = model;
     this.api = api;
-    this.mainContainerEl = document.querySelector('#main-container');
+    this.listEl = document.querySelector('ul');
 
   }
 
@@ -19,11 +19,11 @@ class NewsView {
     news.forEach(item => {
       const imageEl = document.createElement('img');
       imageEl.src = item.fields.thumbnail;
-      const headlineEl = document.createElement('div');
+      const headlineEl = document.createElement('a');
       headlineEl.innerText = item.fields.headline;
-      headlineEl.className = 'news';
-      this.mainContainerEl.append(imageEl);
-      this.mainContainerEl.append(headlineEl);
+      headlineEl.href = item.webUrl;
+      this.listEl.append(imageEl);
+      this.listEl.append(headlineEl);
     })
   }
 
@@ -37,7 +37,7 @@ class NewsView {
   }
 
   #clear() {
-    let oldNews = document.querySelectorAll('div.news');
+    let oldNews = document.querySelectorAll('a');
     oldNews.forEach((article) => {
       article.remove()
     })
