@@ -20,6 +20,8 @@ in the main directory, write the following line:
 
 `module.exports = _(your API key)_`
 
+Run the app using `open index.html`
+
 
 ## User Stories
 
