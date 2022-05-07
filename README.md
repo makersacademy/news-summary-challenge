@@ -26,7 +26,7 @@ Open app locally in browser: `open index.html`
 
 1. Initially focused on a minimum viable product version of the app, as follows:
 
-![](/Users/assets/NewsSummaryApp_v1.excalidraw.png)
+![](/assets/NewsSummaryApp_v1.excalidraw.png)
 
 You can take a look at this version of the app at this commit:
 

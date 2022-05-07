@@ -1,11 +1,11 @@
 class App {
   constructor() {
-    this.currentHeadlines = [];
+    this.stories = [];
   }
 
 
   fetchStories(cb) {
-    fetch('https://content.guardianapis.com/search?api-key=9f9c20e8-7f5a-4de8-9bd3-efe35ccbcbca')
+    fetch('https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=9f9c20e8-7f5a-4de8-9bd3-efe35ccbcbca')
       .then(response => response.json())
       .then(data => {
         console.log("Success: ", data);
@@ -13,19 +13,24 @@ class App {
       });
   }
 
-  saveTitlesUrls(data) {
+  saveStories(data) {
     data.response.results.forEach((result) => {
-      this.currentHeadlines.push({
+      this.stories.push({
         "webTitle": result.webTitle,
-        "webUrl": result.webUrl
+        "webUrl": result.webUrl,
+        "thumbnail": result.fields.thumbnail
       });
     });
-    console.log(this.currentHeadlines)
+    console.log(this.stories)
   };
 
-  display() {
-    console.log(this.currentHeadlines)
-    this.currentHeadlines.forEach((headline) => {
+  displayStories() {
+    console.log(this.stories)
+    this.stories.forEach((headline) => {
+      let headlineImageEl = document.createElement('img');
+     headlineImageEl.classList.add('headline');
+     headlineImageEl.src = headline.thumbnail;
+      document.querySelector('#main-container').append(headlineImageEl);
       let headlineEl = document.createElement('a');
       headlineEl.classList.add('headline');
       headlineEl.text = `${headline.webTitle}`;
