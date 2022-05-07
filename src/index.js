@@ -1,15 +1,11 @@
 const ArticlesModel = require('./articlesModel');
+const ArticlesApi = require('./articlesApi');
 const ArticlesView = require('./articlesView');
 
 const model = new ArticlesModel();
-const view = new ArticlesView(model);
+const api = new ArticlesApi();
+const view = new ArticlesView(model, api);
 
-const article = {
-  headline: 'Real Madrid reach the Champions League final'
-}
-
-view.model.addArticle(article);
-
-view.displayArticles();
+view.displayArticlesFromApi();
 
 console.log("The news app is running");
