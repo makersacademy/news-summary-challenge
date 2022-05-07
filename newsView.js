@@ -22,6 +22,10 @@ class newsView {
     oldNews.forEach((article) => {
       article.remove();
     })
+    const oldErrors = document.querySelectorAll('div.error');
+    oldErrors.forEach((error) => {
+      error.remove();
+    })
 
     const news = this.model.getNews();
     console.log(news);
