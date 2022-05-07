@@ -33,7 +33,8 @@ let mockedData = {
   }
 };
 
-const app = new App();
+document.body.innerHTML = fs.readFileSync('./index.html');
+let app = new App();
 
 describe('.fetchStories', () => {
   it('fetches top stories from the Guardian API', () => {
@@ -67,7 +68,6 @@ describe('.saveStories', () => {
 
 describe('.displayStories', () => {
   it('displays loaded stories into the HTML', () => {
-    document.body.innerHTML = fs.readFileSync('./index.html');
     app.displayStories();
     expect(document.querySelectorAll('a.headline').length).toBe(2);
     expect(document.querySelector('a.headline').innerHTML).toBe("First mocked headline");
@@ -75,7 +75,6 @@ describe('.displayStories', () => {
   })
 
   it('displays a relevant picture to illustrate each story', () => {
-    document.body.innerHTML = fs.readFileSync('./index.html');
     app.displayStories();
     expect(document.querySelector('img.headline').src).toBe("https://media.guim.co.uk/first-headline/mocked/picture");
   })
@@ -100,20 +99,17 @@ describe('.displayStories', () => {
 
   describe('Search function', () => {
     it('has a free text box for entering a search term', () => {
-      document.body.innerHTML = fs.readFileSync('./index.html');
       expect(document.querySelector('#search-text').nodeName).toBe("INPUT");
       expect(document.querySelector('#search-text').type).toBe("text");
 
     })
 
     it('has a search button for submitting a search term', () => {
-      document.body.innerHTML = fs.readFileSync('./index.html');
       expect(document.querySelector('#search-button').nodeName).toBe("BUTTON");
       expect(document.querySelector('#search-button').innerHTML).toBe("Search");
     })
 
     it('records free text as the search term when button clicked', () => {
-      document.body.innerHTML = fs.readFileSync('./index.html');
       const searchTextEl = document.querySelector('input#search-text');
       searchTextEl.value = 'bangers';
       const searchButtonEl = document.querySelector('button#search-button');
