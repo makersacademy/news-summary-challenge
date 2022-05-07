@@ -25,10 +25,6 @@ class App {
   display() {
     console.log(this.currentHeadlines)
     this.currentHeadlines.forEach((headline) => {
-      console.log(headline)
-      console.log(headline.webTitle)
-      console.log(headline.webUrl)
-      console.log(`${headline.webTitle}`)
       let headlineEl = document.createElement('a');
       headlineEl.classList.add('headline');
       headlineEl.text = `${headline.webTitle}`;
@@ -36,15 +32,13 @@ class App {
       document.querySelector('#main-container').append(headlineEl);
     })
   };
-  // for each headline in the model
-    // it creates an HTML div element / url element
-    // adds it to the headline class
-    // gives it as text the title
-    // gives it as url the url
-    // appends it to a main container element
 }
 
 module.exports = App;
 
 app = new App();
 
+app.fetchStories((data) => {
+  app.saveTitlesUrls(data);
+  app.display();
+});
