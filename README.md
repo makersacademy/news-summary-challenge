@@ -16,26 +16,18 @@ It's a single page web app, written in frontend JavaScript, CSS and HTML.
 
 ## Usage
 
-`command_to_start` (e.g. `rackup` or `rails s`)
-Navigate to `http://localhost:4567/`
-
+Open app locally in browser: `open index.html`
 
 ## Running tests
 
 `jest`
 
-## File manifest
+## Approach to developing the project
 
-----------------------------------------------
+1. Initially focused on a minimum viable product version of the app, as follows:
 
-At the barest minimum, it should contain a description of what the code does, how to install it, how to use it and how to run its tests. In addition, READMEs often include other information such as:
+![](/Users/assets/NewsSummaryApp_v1.excalidraw.png)
 
-- Configuration instructions
-- A file manifest (list of files included)
-- Copyright and licensing information
-- Contact information for the distributor or programmer
-- Known bugs
-- Troubleshooting
-- Credits and acknowledgments
-- A changelog (usually for programmers)
-- A news section (usually for users)
+You can take a look at this version of the app at this commit:
+
+`TBC`
