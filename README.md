@@ -12,6 +12,15 @@ page. Clicking on a headline will link the user to the actual article page on th
 
 A single page web app. Code written in frontend JavaScript, CSS and HTML. Jest is used to write the tests. The [`jest-fetch-mock`](https://www.npmjs.com/package/jest-fetch-mock) module to mock `fetch` requests. `esbuild` to bundle files together.
 
+### Getting set up
+
+Fork this repo, then run `npm install`. My personal API key is not available, so in order to use this app, you'll need to [register and get an API
+key](https://open-platform.theguardian.com/access/) to use the Guardian API. Then, in a file named 'apiKey.js'
+in the main directory, write the following line:
+
+`module.exports = _(your API key)_`
+
+
 ## User Stories
 
 ```
@@ -76,13 +85,6 @@ I can see whizzy animations in the app
 ![Article page mockup](./images/news-summary-project-article-page-mockup.png)
 
 ## API
-
-### API authentication
-
-My perosnal API key is not available, so in order to use this app, you'll need to [register and get an API
-key](https://open-platform.theguardian.com/access/) to use the Guardian API. Then, in a file named 'apiKey.js'
-in the main directory, write the following line:
-module.exports = _(your API key)_
 
 ### API request rate limits and stubbing
 
