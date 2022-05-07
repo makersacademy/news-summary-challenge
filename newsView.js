@@ -17,10 +17,13 @@ class NewsView {
     let news = this.model.getItems();
 
     news.forEach(item => {
-      const outputEl = document.createElement('div');
-      outputEl.innerText = item.fields.headline;
-      outputEl.className = 'news';
-      this.mainContainerEl.append(outputEl);
+      const imageEl = document.createElement('img');
+      imageEl.src = item.fields.thumbnail;
+      const headlineEl = document.createElement('div');
+      headlineEl.innerText = item.fields.headline;
+      headlineEl.className = 'news';
+      this.mainContainerEl.append(imageEl);
+      this.mainContainerEl.append(headlineEl);
     })
   }
 
@@ -37,6 +40,10 @@ class NewsView {
     let oldNews = document.querySelectorAll('div.news');
     oldNews.forEach((article) => {
       article.remove()
+    })
+    let oldImages = document.querySelectorAll('img');
+    oldImages.forEach((image) => {
+      image.remove()
     })
   }
 

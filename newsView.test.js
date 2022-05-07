@@ -7,10 +7,10 @@
  
  const mockedModel = {
    getItems: () => [
-    {fields: {headline: 'first headline'}},
-    {fields: {headline: 'second headline'}}
+    {fields: {headline: 'first headline', thumbnail: 'a real image url'}},
+    {fields: {headline: 'second headline', thumbnail: 'even realer image url'}}
   ],
-   addItem: () => undefined,
+   setItems: () => undefined,
    reset: () => undefined
  };
  
@@ -18,8 +18,8 @@
    getNews: () => {
     response: {
       results: [
-        {fields: {headline: 'first headline'}},
-        {fields: {headline: 'second headline'}}
+        {fields: {headline: 'first headline', thumbnail: 'a real image url'}},
+        {fields: {headline: 'second headline', thumbnail: 'even realer image url'}}
       ]
     }
   }
@@ -32,6 +32,7 @@
       const view = new NewsView(mockedModel, mockedApi);
       view.display();
       expect(document.querySelectorAll('div.news').length).toBe(2);
+      expect(document.querySelectorAll('img').length).toBe(2);
 
     })
 
@@ -41,6 +42,7 @@
       view.display();
       view.display();
       expect(document.querySelectorAll('div.news').length).toBe(2);
+      expect(document.querySelectorAll('img').length).toBe(2);
     })
   })
 
@@ -50,6 +52,7 @@
       const view = new NewsView(mockedModel, mockedApi);
       view.fetch_then_display(() => {
         expect(document.querySelectorAll('div.news').length).toBe(2);
+        expect(document.querySelectorAll('img').length).toBe(2);
       });
     
     })
