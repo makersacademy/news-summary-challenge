@@ -78,6 +78,57 @@ describe('.displayStories', () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
     app.displayStories();
     expect(document.querySelector('img.headline').src).toBe("https://media.guim.co.uk/first-headline/mocked/picture");
+  })
 
+  // describe('.fetchSearchStories', () => {
+  //   it('fetches top stories from the Guardian API containing search term', () => {
+  //     let searchTerm = 'bangers'
+  //     fetch.mockResponseOnce(req =>
+  //       req.url === 'https://content.guardianapis.com/search?q=bangers&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=9f9c20e8-7f5a-4de8-9bd3-efe35ccbcbca'
+  //         ? app.fetchSearchStories('bangers', (result) => {
+  //           expect(result.content).toBe('some content');
+  //         })
+  //         .then(res => 'ok')
+  //         : Promise.reject(new Error('bad url'))
+  //     );
+  //     app.fetchSearchStories(('bangers', (result) => {
+  //       expect(result.content).toBe('some content');
+  //     }))
+  //   });
+  // });
+  
+
+  describe('Search function', () => {
+    it('has a free text box for entering a search term', () => {
+      document.body.innerHTML = fs.readFileSync('./index.html');
+      expect(document.querySelector('#search-text').nodeName).toBe("INPUT");
+      expect(document.querySelector('#search-text').type).toBe("text");
+
+    })
+
+    it('has a search button for submitting a search term', () => {
+      document.body.innerHTML = fs.readFileSync('./index.html');
+      expect(document.querySelector('#search-button').nodeName).toBe("BUTTON");
+      expect(document.querySelector('#search-button').innerHTML).toBe("Search");
+    })
+
+    it('records free text as the search term when button clicked', () => {
+      document.body.innerHTML = fs.readFileSync('./index.html');
+      const searchTextEl = document.querySelector('input#search-text');
+      searchTextEl.value = 'bangers';
+      const searchButtonEl = document.querySelector('button#search-button');
+      console.log(searchButtonEl);
+      searchButtonEl.click();
+      expect(app.searchTerm).toBe('bangers');
+    })
+
+    // it('allows user to type text, search and have displayed stories containing the text', () => {
+    //   document.body.innerHTML = fs.readFileSync('./index.html');
+    //   const searchTextEl = document.querySelector('#search-text');
+    //   searchTextEl.value = 'search term';
+    //   const searchButtonEl = document.querySelector('#search-button');
+    //   searchButtonEl.click();
+    //   expect(fetchSearchStories('search term'))
+    // })
   })
 })

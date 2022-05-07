@@ -1,11 +1,28 @@
 class App {
   constructor() {
     this.stories = [];
+    this.searchTerm = null;
+    
+    // this.searchButtonEl = document.querySelector('button#search-button');
+
+    document.querySelector('button#search-button').addEventListener('click', () => {
+      this.searchTerm = document.querySelector('input#search-text').value;
+    })
+
   }
 
 
   fetchStories(cb) {
     fetch('https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=9f9c20e8-7f5a-4de8-9bd3-efe35ccbcbca')
+      .then(response => response.json())
+      .then(data => {
+        console.log("Success: ", data);
+        cb(data)
+      });
+  }
+
+  fetchSearchStories(searchTerm, cb) {
+    fetch(`https://content.guardianapis.com/search?q=${searchTerm}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=9f9c20e8-7f5a-4de8-9bd3-efe35ccbcbca`)
       .then(response => response.json())
       .then(data => {
         console.log("Success: ", data);
