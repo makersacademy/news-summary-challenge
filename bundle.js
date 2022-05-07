@@ -62,14 +62,18 @@
         }
         displayNews() {
           const oldNews = document.querySelectorAll("div.news");
-          oldNews.forEach((headline) => {
-            headline.remove();
+          oldNews.forEach((article) => {
+            article.remove();
           });
-          let news = this.model.getNews();
-          news.forEach((headline) => {
+          const news = this.model.getNews();
+          news.forEach((article) => {
             const newsEl = document.createElement("div");
-            newsEl.innerText = headline.webTitle;
+            newsEl.innerText = article.webTitle;
             newsEl.className = "news";
+            const imgEl = document.createElement("img");
+            imgEl.className = "image";
+            imgEl.src = article.fields.thumbnail;
+            newsEl.append(imgEl);
             this.mainContainerEl.append(newsEl);
           });
         }
