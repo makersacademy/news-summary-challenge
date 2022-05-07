@@ -22,15 +22,16 @@ describe('NewsView', () => {
       const mockModel = new NewsModel();
       const mockApi = new NewsApi();
       const view = new NewsView(mockModel, mockApi);
-      view.model.getNews.mockImplementation(() => {
+      view.model.getNews.mockImplementation(() => 
         [{
           webTitle: 'test',
           webUrl: 'http://test.com',
           fields: { thumbnail: 'http://image.com' }
         }]
-      })
+      )
       view.displayNews();
       expect(document.querySelectorAll('div.news').length).toEqual(1);
+      expect(document.querySelectorAll('img.image').length).toEqual(1);
     })
   })
 
@@ -40,23 +41,23 @@ describe('NewsView', () => {
       const mockApi = new NewsApi();
       const view = new NewsView(mockModel, mockApi);
 
-      view.model.getNews.mockImplementation(() => {
+      view.model.getNews.mockImplementation(() => 
         [{
           webTitle: 'test',
           webUrl: 'http://test.com',
           fields: { thumbnail: 'http://image.com' }
         }]
-      });
+      );
 
       view.model.setNews.mockImplementation();
 
-      view.api.fetchNews.mockImplementation((callback) => {
+      view.api.fetchNews.mockImplementation((callback) => 
         callback([{
           webTitle: 'test',
           webUrl: 'http://test.com',
           fields: { thumbnail: 'http://image.com' }
         }])
-      })
+      )
 
       view.displayNewsFromApi();
 

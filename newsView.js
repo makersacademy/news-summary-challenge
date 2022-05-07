@@ -24,6 +24,7 @@ class newsView {
 
     const news = this.model.getNews();
     console.log(news);
+  
 
     news.forEach((article) => {
       const newsEl = document.createElement('div');
