@@ -37,6 +37,9 @@
           this.maincontainerEl = document.querySelector("#main-container");
         }
         displayNews() {
+          document.querySelectorAll(".news").forEach((news2) => {
+            news2.remove();
+          });
           const news = this.model.getNews();
           news.forEach((news2) => {
             const newsEl = document.createElement("div");
@@ -57,5 +60,6 @@
   var model = new ModelNews();
   var view = new ViewNews(model);
   model.addNews("this is news");
+  model.addNews("this is a news as well");
   view.displayNews();
 })();

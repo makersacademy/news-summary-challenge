@@ -19,15 +19,38 @@ describe('#Views', ()=> {
     const mockModel = new ModelNews();
     
     mockModel.addNews.mockImplementation( () => [
-      'this is a news'
+      'this is a news',
+      'this is a news as well'
     ])
     mockModel.getNews.mockImplementation( () => [
-      'this is a news'
+      'this is a news',
+      'this is a news as well'
     ]);
     mockModel.addNews('this is a news');
+    mockModel.addNews('this is a news as well');
     const viewNews = new NewsModel(mockModel);
     viewNews.displayNews();
-    expect(document.querySelectorAll('.news').length).toBe(1);
+    expect(mockModel.getNews).toHaveBeenCalledTimes(1);
+    expect(document.querySelectorAll('.news').length).toBe(2);
 
+  });
+
+  it('refreshes the News on webpage', () => {
+    const mockModel = new ModelNews();
+    
+    mockModel.addNews.mockImplementation( () => [
+      'this is a news',
+      'this is a news as well'
+    ])
+    mockModel.getNews.mockImplementation( () => [
+      'this is a news',
+      'this is a news as well'
+    ]);
+    mockModel.addNews('this is a news');
+    mockModel.addNews('this is a news as well');
+    const viewNews = new NewsModel(mockModel);
+    viewNews.displayNews();
+    viewNews.displayNews();
+    expect(document.querySelectorAll('.news').length).toBe(2);
   });
 });

@@ -5,6 +5,9 @@ class NewsModel {
   }
 
   displayNews() {
+    document.querySelectorAll('.news').forEach((news) => {
+      news.remove();
+    });
 
     const news = this.model.getNews();
 
