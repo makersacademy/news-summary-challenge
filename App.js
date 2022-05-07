@@ -32,6 +32,7 @@ class App {
   }
 
   saveStories(data) {
+    this.stories = []
     data.response.results.forEach((result) => {
       this.stories.push({
         "webTitle": result.webTitle,
@@ -42,6 +43,10 @@ class App {
   };
 
   displayStories() {
+    const oldStories = document.querySelectorAll('.headline')
+    oldStories.forEach((story) => {
+      story.remove();
+    });
     this.stories.forEach((headline) => {
       let headlineImageEl = document.createElement('img');
      headlineImageEl.classList.add('headline');

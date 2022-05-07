@@ -84,6 +84,12 @@ describe('.displayStories', () => {
     app.displayStories();
     expect(document.querySelector('img.headline').src).toBe("https://media.guim.co.uk/first-headline/mocked/picture");
   })
+
+  it('clears previously displayed stories when it is called again', () => {
+    app.displayStories();
+    app.displayStories();
+    expect(document.querySelectorAll('a.headline').length).toBe(2);
+  })
 });
 
 describe('Search function', () => {
