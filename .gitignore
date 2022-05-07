@@ -1,0 +1,11 @@
+news-summary.txt
+node_modules
+.DS_Store
+.env
+apiKey.js
+images/image1.jpeg
+images/image2.jpeg
+images/image3.jpeg
+README copy.md
+images/background-90pc.jpg
+images/news-headlines-gif-15mb.gif
