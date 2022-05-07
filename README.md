@@ -1,11 +1,11 @@
 # News Summary Challenge
 ```
-     __...--~~~~~-._   _.-~~~~~--...__
-    /  (not) The    `V'               \ 
-   /   Guardian      |                 \
-  /__...--~~~~~~-._  |  _.-~~~~~~--...__\ 
- /__.....====~~~~._\ | /_.~~~~====.....__\
-                    `-`
+      __...--~~~~~-._/ \_.-~~~~~--...__
+     /                |  (not) The     \ 
+    /                 |  Guardian       \                   
+   /                  |                  \
+  /__...--~~~~~~-._ _ _ _.-~~~~~~---....__\ 
+ /__.....====~~~~._/   \_.~~~~=====.....___\              
 ```
 
 ## Task
@@ -14,7 +14,9 @@ I have been tasked to create a web app that will grab all the headlines using th
 ## Instructions
 Clone this repository to your desired location using `git clone https://github.com/mcsuGH/news-summary-challenge.git`.\
 \
-You can then run `npm install` whilst in the main directory in your terminal to install any dependencies and then use the command `jest` to run the tests.
+You can then run `npm install` whilst in the main directory in your terminal to install any dependencies and then use the command `jest` to run the tests.\
+\
+Sign up for an API key from the Guardian.
 
 ## User Stories
 ```
