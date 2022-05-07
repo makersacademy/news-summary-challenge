@@ -1,10 +1,10 @@
 # News Summary Challenge
 ```
-      __...--~~~~~-._/ \_.-~~~~~--...__
-     /                |  (not) The     \ 
+      __...--~~~~~-._/|\_.-~~~~~--...__
+     /         sport  |  (not) The     \ 
     /                 |  Guardian       \                   
    /                  |                  \
-  /__...--~~~~~~-._ _ _ _.-~~~~~~---....__\ 
+  /__...--~~~~~~-._ _ | _.-~~~~~~---....__\ 
  /__.....=====~~~~._/   \_.~~~~=====.....__\              
 ```
 
@@ -18,7 +18,13 @@ You can then run `npm install` whilst in the main directory in your terminal to 
 \
 In order to use this app, please sign up for an API key from the Guardian and create a file named `apiKey.js` inside the main directory. Inside the `apiKey.js` file write `module.exports =  'write-your-api-key-here';` with your API key given from The Guardian. This will then allow the app to use your API key to fetch the articles from The Guardian's API, which will be used to populate the webpage with articles.\
 \
-Once this is done, use `npm run build` and then while in the main directory inside your terminal, you can use the command `open index.html` to open the web app.
+Once this is done, use `npm run build` and then while still inside the main directory in your terminal, you can use the command `open index.html` to open the web app.\
+\
+Here are a few screenshots of my web app in action to show that it can display the news, have a working search function and that it shows a error message when it fails to fetch:
+
+![Screenshot](https://imgur.com/Qq02ejX)
+![Screenshot](https://imgur.com/602PXh5)
+![Screenshot](https://imgur.com/O0cj7BM)
 
 ## User Stories
 ```
@@ -42,7 +48,6 @@ I can specify a search query on the page and get articles matching this search
 ## References
 ```
 https://www.asciiart.eu/books/books
-
 ```
 used the above for ASCII art and then edited it.
 
@@ -61,4 +66,4 @@ As a busy politician,
 So I make my news reading more fun,
 I can see whizzy animations in the app
 ```
-user stories not yet implemented
+user stories not yet implemented - in order to proceed would need to sign up for Aylien (or another similar news Api which offers summaries) but would need a business email just to have a free trial.

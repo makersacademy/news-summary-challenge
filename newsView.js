@@ -12,10 +12,8 @@ class newsView {
 
     this.searchButtonEl.addEventListener('click', () => {
       let query = this.searchFieldEl.value
-      this.api.fetchNews(query, (data) => {
-        this.model.setNews(data);
-        this.displayNews();
-      })
+      this.displayNewsFromApi(query);
+      this.searchFieldEl.value = '';
     })
   }
 
@@ -50,11 +48,24 @@ class newsView {
     })
   }
 
-  displayNewsFromApi() {
-    this.api.fetchNews('',(data) => {
+  displayNewsFromApi(query) {
+    this.api.fetchNews(query,(data) => {
       this.model.setNews(data);
       this.displayNews();
+    }, () => {
+      this.displayError();
     })
+  }
+
+  displayError() {
+    const oldErrors = document.querySelectorAll('div.error');
+    oldErrors.forEach((error) => {
+      error.remove();
+    })
+    let errorElement = document.createElement('div')
+    errorElement.className = 'error'
+    errorElement.innerText = "Oops, something went wrong"
+    this.mainContainerEl.append(errorElement);
   }
 
 }

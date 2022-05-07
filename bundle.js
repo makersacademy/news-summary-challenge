@@ -37,13 +37,13 @@
     "newsApi.js"(exports, module) {
       var apiKey = require_apiKey();
       var newsApi = class {
-        fetchNews(query, callback) {
+        fetchNews(query, callback, errorCallback) {
           fetch(`https://content.guardianapis.com/search?q=${query}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json()).then((data) => {
             console.log("Load", data);
             callback(data.response.results);
           }).catch(() => {
             console.error("Error");
-            callback();
+            errorCallback();
           });
         }
       };
@@ -65,10 +65,8 @@
           this.searchButtonEl = document.querySelector("#search-button");
           this.searchButtonEl.addEventListener("click", () => {
             let query = this.searchFieldEl.value;
-            this.api.fetchNews(query, (data) => {
-              this.model.setNews(data);
-              this.displayNews();
-            });
+            this.displayNewsFromApi(query);
+            this.searchFieldEl.value = "";
           });
         }
         displayNews() {
@@ -94,11 +92,23 @@
             this.mainContainerEl.append(newsEl);
           });
         }
-        displayNewsFromApi() {
-          this.api.fetchNews("", (data) => {
+        displayNewsFromApi(query) {
+          this.api.fetchNews(query, (data) => {
             this.model.setNews(data);
             this.displayNews();
+          }, () => {
+            this.displayError();
           });
+        }
+        displayError() {
+          const oldErrors = document.querySelectorAll("div.error");
+          oldErrors.forEach((error) => {
+            error.remove();
+          });
+          let errorElement = document.createElement("div");
+          errorElement.className = "error";
+          errorElement.innerText = "Oops, something went wrong";
+          this.mainContainerEl.append(errorElement);
         }
       };
       module.exports = newsView;
@@ -112,5 +122,5 @@
   var model = new NewsModel();
   var api = new NewsApi();
   var view = new NewsView(model, api);
-  view.displayNewsFromApi();
+  view.displayNewsFromApi("");
 })();

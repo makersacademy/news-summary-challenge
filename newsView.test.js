@@ -46,7 +46,6 @@ describe('NewsView', () => {
       view.api.fetchNews.mockImplementation(() => 
         view.displayNews()
       )
-
       view.model.getNews.mockImplementation(() => 
         [{
           webTitle: 'test',
@@ -54,10 +53,51 @@ describe('NewsView', () => {
           fields: { thumbnail: 'http://image.com' }
         }]
       );
-
       view.displayNewsFromApi();
+  
       expect(view.model.getNews).toHaveBeenCalled();
       expect(document.querySelectorAll('div.news').length).toEqual(1);
+    })
+
+    it('can search articles by using a keyword, search field clears after search', () => {
+      const view = new NewsView(mockModel, mockApi);
+
+      view.api.fetchNews.mockImplementation(() => 
+        view.displayNews()
+      )
+      view.model.getNews.mockImplementation(() => 
+        [{
+          webTitle: 'test',
+          webUrl: 'http://test.com',
+          fields: { thumbnail: 'http://image.com' }
+        }]
+      );
+      const searchFieldEl = document.querySelector('#search-field');
+      searchFieldEl.value = 'Sports'
+      const searchButtonEl = document.querySelector('#search-button');
+      searchButtonEl.click();
+      
+      expect(view.model.getNews).toHaveBeenCalled();
+      expect(document.querySelectorAll('div.news').length).toEqual(1);
+      expect(document.querySelector('#search-field').value).toEqual('');
+    })
+
+    it('displays an error when fetch fails to load', () => {
+      const view = new NewsView(mockModel, mockApi);
+
+      view.api.fetchNews.mockImplementation(() => 
+        view.displayNews()
+      )
+      view.model.getNews.mockImplementation(() => 
+        [{
+          webTitle: 'test',
+          webUrl: 'http://test.com',
+          fields: { thumbnail: 'http://image.com' }
+        }]
+      );
+      view.displayError();
+
+      expect(document.querySelectorAll('div.error').length).toEqual(1);
     })
   })
 
