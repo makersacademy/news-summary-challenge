@@ -1,0 +1,54 @@
+html {
+  background: #444444;
+}
+
+body {
+  font-family: tahoma;
+  text-align: center;
+  background: rgb(50, 60, 103);
+  width: 800px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+h1 {
+  color: white;
+  font-size: 40pt;
+}
+
+.border {
+  padding-top: 50px;
+  padding-bottom: 15px;
+}
+
+img {
+  height: 90%;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 10px;
+  outline-style: solid;
+}
+
+a {
+  display: inline-block;
+  width: 720px;
+  font-size: 17pt;
+  text-decoration: none;
+}
+
+a:link {
+  color: rgb(236, 155, 4)
+}
+
+a:visited {
+  color: rgb(174, 145, 89);
+}
+
+a:hover {
+  color: rgb(254, 193, 81);
+}
