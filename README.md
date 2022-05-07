@@ -1,39 +1,18 @@
 # News challenge
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in
-  your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull
-  request.
-* You must submit a pull request to this repo with your code by 10am Monday morning.
-
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that shows the latest news using the Guardian API. You'll find
+An app that shows the latest news using the Guardian API. You'll find
 instructions on how to setup and use the API down this page.
 
 ## Project overview
 
-Your app will grab all the headlines from the Guardian newspaper API and display them on a
+This app grabs all the headlines from the Guardian newspaper API and displays them on a
 page. Clicking on a headline will link the user to the actual article page on the Guardian's website.
 
 ### Technologies
 
-You'll write a single page web app. You'll write your code in frontend JavaScript, CSS and
-HTML. You won't use Ruby or backend JavaScript.
-
-You're strongly encouraged to use the same tools and libraries you've been learning this
-week:
- * Jest to write your tests
- * The [`jest-fetch-mock`](https://www.npmjs.com/package/jest-fetch-mock) module (or
-   similar) to mock `fetch` requests (so you don't request the API when running tests!)
- * A build tool such as `esbuild` to bundle files together
+A single page web app. Code written in frontend JavaScript, CSS and HTML. Jest is used to write the tests. The [`jest-fetch-mock`](https://www.npmjs.com/package/jest-fetch-mock) module to mock `fetch` requests. `esbuild` to bundle files together.
 
 ## User Stories
-
-Some of these stories will need decomposing if they seem too large.
 
 ```
 As a busy politician
@@ -100,8 +79,10 @@ I can see whizzy animations in the app
 
 ### API authentication
 
-You'll need to [register and get an API
-key](https://open-platform.theguardian.com/access/) to use the Guardian API. 
+My perosnal API key is not available, so in order to use this app, you'll need to [register and get an API
+key](https://open-platform.theguardian.com/access/) to use the Guardian API. Then, in a file named 'apiKey.js'
+in the main directory, write the following line:
+module.exports = _(your API key)_
 
 ### API request rate limits and stubbing
 
