@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/baljitrakhra/news-summary-challenge/issues"
   },
-  "homepage": "https://github.com/baljitrakhra/news-summary-challenge#readme"
+  "homepage": "https://github.com/baljitrakhra/news-summary-challenge#readme",
+  "dependencies": {
+    "jest": "^28.1.0"
+  }
 }
