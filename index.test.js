@@ -62,10 +62,5 @@ describe('.display', () => {
     expect(document.querySelectorAll('a.headline').length).toBe(2);
     expect(document.querySelector('a.headline').innerHTML).toBe("First mocked headline");
     expect(document.querySelector('a.headline').href).toBe("https://www.theguardian.com/first-headline/mocked");
-
-    
-    // testing:
-      // number of elements on the page
-      // check first element's attributes.
   })
 })

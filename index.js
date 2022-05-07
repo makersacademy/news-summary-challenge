@@ -1,6 +1,6 @@
 class App {
   constructor() {
-    this.currentHeadlines = []
+    this.currentHeadlines = [];
   }
 
 
@@ -21,6 +21,27 @@ class App {
     });
     console.log(this.currentHeadlines)
   };
+
+  display() {
+    console.log(this.currentHeadlines)
+    this.currentHeadlines.forEach((headline) => {
+      console.log(headline)
+      console.log(headline.webTitle)
+      console.log(headline.webUrl)
+      console.log(`${headline.webTitle}`)
+      let headlineEl = document.createElement('a');
+      headlineEl.classList.add('headline');
+      headlineEl.text = `${headline.webTitle}`;
+      headlineEl.href = headline.webUrl;
+      document.querySelector('#main-container').append(headlineEl);
+    })
+  };
+  // for each headline in the model
+    // it creates an HTML div element / url element
+    // adds it to the headline class
+    // gives it as text the title
+    // gives it as url the url
+    // appends it to a main container element
 }
 
 module.exports = App;
