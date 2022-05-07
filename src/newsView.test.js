@@ -29,7 +29,7 @@ describe(NewsView, () => {
     expect(document.querySelectorAll("div.article").length).toBe(1);
   });
 
-  it("displayArticlesFromApi loads notes from the server and displays them", () => {
+  it("displayArticlesFromApi loads headlines from the server and displays them", () => {
     view.model.getArticles.mockImplementation(() => ["News Flash!"]);
     view.model.setArticles.mockImplementation(() => undefined);
     view.api.loadArticles.mockImplementation((callback) =>

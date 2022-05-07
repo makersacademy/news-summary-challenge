@@ -17,7 +17,7 @@
       var apiKey = require_apiKey();
       var NewsApi = class {
         loadArticles(callback) {
-          fetch(`https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json()).then((articles) => {
+          fetch(`https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json(response)).then((articles) => {
             callback(articles);
           });
         }
@@ -30,14 +30,11 @@
   var require_newsModel = __commonJS({
     "src/newsModel.js"(exports, module) {
       var NewsModel = class {
-        constructor() {
-          this.articles = [];
-        }
         getArticles() {
           return this.articles;
         }
-        addArticle(article) {
-          this.articles.push(article);
+        setArticles(articles) {
+          this.articles = articles.response.results;
         }
       };
       module.exports = NewsModel;
@@ -56,11 +53,27 @@
           this.mainContainerEl = document.querySelector("#main-container");
         }
         displayArticles() {
-          this.model.getArticles().forEach((article) => {
+          const articles = this.model.getArticles();
+          articles.forEach((article) => {
             const articleEl = document.createElement("div");
             articleEl.classList.add("article");
-            articleEl.innerText = article;
+            const articleHeadlineEl = document.createElement("a");
+            articleHeadlineEl.classList.add("headline");
+            articleHeadlineEl.innerText = article.fields.headline;
+            articleHeadlineEl.href = article.webUrl;
+            const articleImage = document.createElement("img");
+            articleImage.classList.add("thumbnail");
+            articleImage.src = article.fields.thumbnail;
+            articleEl.append(articleImage);
+            articleEl.append(articleHeadlineEl);
             this.mainContainerEl.append(articleEl);
+          });
+        }
+        displayArticlesFromApi() {
+          this.api.loadArticles((receivedArticles) => {
+            this.model.setArticles(receivedArticles);
+            this.displayArticles();
+            console.log(receivedArticles);
           });
         }
       };
@@ -71,6 +84,6 @@
   // src/index.js
   var NewsView = require_newsView();
   var view = new NewsView();
-  view.model.addArticle("Hello World!");
-  view.displayArticles();
+  view.displayArticlesFromApi();
+  console.log(view.model.getArticles());
 })();

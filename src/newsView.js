@@ -10,12 +10,23 @@ class NewsView {
   }
 
   displayArticles() {
-    const articles = this.model.getArticles().response.results;
+    const articles = this.model.getArticles();
 
     articles.forEach((article) => {
       const articleEl = document.createElement("div");
       articleEl.classList.add("article");
-      articleEl.innerText = article.fields.headline;
+
+      const articleHeadlineEl = document.createElement("a");
+      articleHeadlineEl.classList.add("headline");
+      articleHeadlineEl.innerText = article.fields.headline;
+      articleHeadlineEl.href = article.webUrl;
+
+      const articleImage = document.createElement("img");
+      articleImage.classList.add("thumbnail");
+      articleImage.src = article.fields.thumbnail;
+
+      articleEl.append(articleImage);
+      articleEl.append(articleHeadlineEl);
       this.mainContainerEl.append(articleEl);
     });
   }

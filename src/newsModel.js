@@ -4,7 +4,7 @@ class NewsModel {
   }
 
   setArticles(articles) {
-    this.articles = articles;
+    this.articles = articles.response.results;
   }
 }
 
