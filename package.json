@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Conor-Developer/news-summary-challenge#readme",
   "dependencies": {
-    "jest": "^28.1.0"
+    "jest": "^28.1.0",
+    "jest-fetch-mock": "^3.0.3"
   }
 }
