@@ -19,6 +19,20 @@ h1 {
   font-size: 40pt;
 }
 
+input[type='text'] {
+  width: 50%;
+  font-size: 20px;
+}
+
+button {
+  font-size: 20px;
+}
+
+.message {
+  color: white;
+  padding: 10px;
+}
+
 .border {
   padding-top: 50px;
   padding-bottom: 15px;

@@ -32,4 +32,15 @@ describe('ArticlesModel', () => {
     }
     expect(model.convertData(data)).toEqual(article);
   })
+
+  it('reset empties the articles array', () => {
+    const article = {
+      headline: 'Real Madrid reach the Champions League final'
+    }
+    model.addArticle(article);
+    expect(model.getArticles()).toEqual([article]);
+
+    model.reset();
+    expect(model.getArticles()).toEqual([]);
+  });
 });

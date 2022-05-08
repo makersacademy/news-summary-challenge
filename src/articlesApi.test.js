@@ -2,10 +2,9 @@ const ArticlesApi = require('./articlesApi');
 require("jest-fetch-mock").enableMocks();
 
 describe('ArticlesApi', () => {
-  it('loadArticles fetches the news headlines from the server', () => {
-    const api = new ArticlesApi();
-
-    const apiResponse = {
+  beforeEach(() => {
+    api = new ArticlesApi();
+    apiResponse = {
       response: [{
         id: 9473648,
         webTitle: 'Real Madrid reach the Champions League final',
@@ -13,12 +12,19 @@ describe('ArticlesApi', () => {
         webURL: 'http://www.somelink.com',
         otherInfo: 'random info'
       }]
-    }
-
+    };
     fetch.mockResponseOnce(JSON.stringify(apiResponse));
+  });
 
+  it('loadArticles fetches the news headlines from the server', () => {
     api.loadArticles((response) => {
       expect(response).toEqual(apiResponse);
-    })
+    });
+  });
+
+  it('can take a search query as an argument', () => {
+    api.loadArticles((response, search) => {
+      expect(response).toEqual(apiResponse);
+    });
   });
 });

@@ -21,7 +21,11 @@ class ArticlesModel {
       image: pic,
       url: address
     };
-    return article
+    return article;
+  }
+
+  reset() {
+    this.articles = [];
   }
 }
 
