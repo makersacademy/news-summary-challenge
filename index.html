@@ -1,16 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+html {
+  background: #001628;
+  color: #777;
+  padding: 4em;
+  font-family: sans-serif;
+  line-height: 1.15;
+}
+
+body {
+  background: white;
+  width: 800px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.note {
+  border-bottom: 1px solid #aaa;
+  padding: 15px;
+}
+
+input[type=text] {
+  width: 80%;
+  background: #fefefe;
+  border-radius: 4px;
+  padding: 10px 8px;
+  border: 1px solid #444;
+  font-size: 20px;
+}
+
+hr { /*dummy content*/
+  height: 6px;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+} 
+
+hr:last-child {  /*dummy content*/
+  margin-right: 60%;
+}
+
+hr.image { /*dummy content*/
+  padding-bottom: 50%;
+} 
+
+.page {
+  padding: 2em;
+  background: #cecece;
+  max-width: 1100px;
+}
+
+.archive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-gap: 1em;
+}
+
+.article {
+  padding: 1em;
+  background: #fff;
+  box-shadow:
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    0 20px 20px rgba(0, 0, 0, 0.05);
+}
+  </style>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <script type="text/javascript" src="bundle.js" defer></script>
-  <title>News Summary</title>
+  <title>News Headlines</title>
 </head>
 <body>
-  <h1>News Summary</h1>
-    <div id="main-container">
+  <center><h1>THE GUARDIAN</h1>
+    <h2>Todays Headlines</h2>
+  <div id="main-container">
+    <input type="text" id="news-search" />
+    <button id="news-search-submit">search</button>
 
+      </center>
+    
+  <!-- <div class="container">
+    <div class="frontpage">
+      <div class="fp-cell fp-cell--1">
+        <div class="fp-item">1</div>
+      </div>
+      <div class="fp-cell fp-cell--2">
+        <div class="fp-item">2</div>
+      </div>
+      <div class="fp-cell fp-cell--3">
+        <div class="fp-item">3</div>
+      </div>
+      <div class="fp-cell fp-cell--4">
+        <div class="fp-item">4</div>
+      </div> -->
+    </div>
   </div>
+</div>
 </body>
 </html>

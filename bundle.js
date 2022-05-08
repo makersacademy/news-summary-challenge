@@ -11,8 +11,8 @@
         constructor() {
           this.url = "https://content.guardianapis.com/search?q=Spotlight&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=21831b4e-69fe-49f1-a75d-d24709168ad2";
         }
-        loadNews(callback) {
-          fetch(this.url).then((response) => response.json()).then((data) => {
+        loadNews(search, callback) {
+          fetch(`https://content.guardianapis.com/search?q=${search}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=21831b4e-69fe-49f1-a75d-d24709168ad2`).then((response) => response.json()).then((data) => {
             console.log("Load", data);
             callback(data.response.results);
           });
@@ -28,18 +28,19 @@
       var newsModel2 = class {
         constructor() {
           this.news = [];
+          this.searchResults = [];
         }
         getNews() {
           return this.news;
         }
-        getImage() {
-          return this.newsImage;
+        getResults() {
+          return this.searchResults;
         }
         addNews(article) {
           return this.news.push(article);
         }
         setNews(data) {
-          return this.news.push(data);
+          this.news = data;
         }
       };
       module.exports = newsModel2;
@@ -55,16 +56,26 @@
         constructor(model2 = new newsModel2(), api2 = new newsApi2()) {
           this.model = model2;
           this.api = api2;
-          this.mainContainerEL = document.querySelector("#main-container");
+          this.mainContainerEL = document.querySelector("#container");
+          this.newsSearchEL = document.querySelector("#news-search");
+          this.newsSearchSubmitEL = document.querySelector("#news-search-submit");
+          this.newsSearchSubmitEL.addEventListener("click", () => {
+            this.api.loadNews(this.newsSearchEL.value, (data) => {
+              this.model.setNews(data);
+              console.log(this.model.getNews());
+              this.clearDuplicateNews;
+              this.displayNews();
+            });
+          });
         }
         displayNews() {
           this.clearDuplicateNews();
           this.clearDuplicateImages();
-          const currentNews = this.model.news[0];
+          const currentNews = this.model.getNews();
           currentNews.forEach((article) => {
             const newEL = document.createElement("a");
             newEL.className = "headline";
-            var linkText = document.createTextNode(article.webTitle);
+            var linkText = document.createTextNode(article.fields.headline);
             newEL.appendChild(linkText);
             newEL.href = article.webUrl;
             document.body.appendChild(newEL);
@@ -72,17 +83,17 @@
             imageEL.className = "image";
             imageEL.src = article.fields.thumbnail;
             newEL.append(imageEL);
-            this.mainContainerEL.append(newEL);
+            document.querySelector("#main-container").append(newEL);
           });
         }
         clearDuplicateNews() {
-          document.querySelectorAll("h2.headline").forEach((element) => element.remove());
+          document.querySelectorAll("a.headline").forEach((element) => element.remove());
         }
         clearDuplicateImages() {
           document.querySelectorAll("img.image").forEach((element) => element.remove());
         }
         displayNewsFromApi() {
-          this.api.loadNews((data) => {
+          this.api.loadNews("", (data) => {
             this.model.setNews(data);
             this.displayNews();
           });
