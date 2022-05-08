@@ -15,6 +15,9 @@
           fetch(`https://content.guardianapis.com/search?q=${search}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=21831b4e-69fe-49f1-a75d-d24709168ad2`).then((response) => response.json()).then((data) => {
             console.log("Load", data);
             callback(data.response.results);
+          }).catch(() => {
+            console.error("Error");
+            errorCallback();
           });
         }
       };
@@ -65,6 +68,7 @@
               console.log(this.model.getNews());
               this.clearDuplicateNews;
               this.displayNews();
+              this.newsSearchEL.value = "";
             });
           });
         }
@@ -101,6 +105,17 @@
             this.model.setNews(data);
             this.displayNews();
           });
+          this.displayError();
+        }
+        displayError() {
+          const oldErrors = document.querySelectorAll("div.error");
+          oldErrors.forEach((error) => {
+            error.remove();
+          });
+          let errorElement = document.createElement("div");
+          errorElement.className = "error";
+          errorElement.innerText = "Oops, something went wrong";
+          this.mainContainerEl.append(errorElement);
         }
       };
       module.exports = newsView2;

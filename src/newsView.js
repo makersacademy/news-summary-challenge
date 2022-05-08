@@ -15,6 +15,7 @@ class newsView {
         console.log(this.model.getNews());
         this.clearDuplicateNews;
         this.displayNews();
+        this.newsSearchEL.value = "";
       });
     });
   }
