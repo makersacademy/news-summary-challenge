@@ -21,7 +21,9 @@ class ArticlesView {
         this.model.addArticle(article);
       });
       this.#displayArticles();
-    }), search);
+      }), search, (() => {
+        this.#displayError();
+    }));
   }
 
   // private methods
@@ -66,9 +68,16 @@ class ArticlesView {
 
   #noResults() {
     const messageEl = document.createElement('div');
-      messageEl.classList.add('message');
-      messageEl.innerText = 'No results matching your search';
-      this.mainContainerEl.append(messageEl);
+    messageEl.classList.add('message');
+    messageEl.innerText = 'No results matching your search';
+    this.mainContainerEl.append(messageEl);
+  }
+
+  #displayError() {
+    const errorMessageEl = document.createElement('div');
+    errorMessageEl.classList.add('message');
+    errorMessageEl.innerText = 'Oops, Something went wrong!';
+    this.mainContainerEl.append(errorMessageEl);
   }
 }
 
