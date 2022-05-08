@@ -12,6 +12,12 @@ class ArticlesView {
       this.#emptyDisplay();
       this.displayArticlesFromApi(this.searchFieldEl.value);
     });
+
+    this.searchFieldEl.addEventListener('keypress', event => {
+      if (event.key === 'Enter') {
+        this.searchButtonEl.click();
+      }
+    });
   }
 
   displayArticlesFromApi(search) {

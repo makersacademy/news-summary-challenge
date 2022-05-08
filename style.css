@@ -20,8 +20,13 @@ h1 {
 }
 
 input[type='text'] {
-  width: 50%;
+  width: 10%;
   font-size: 20px;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type='text']:focus {
+  width: 80%;
 }
 
 button {
