@@ -11,7 +11,7 @@ describe('Api', () => {
       })
     )
 
-    api.loadHeadlines((callback) => {
+    api.loadHeadlines("",(callback) => {
       expect(callback.headline).toStrictEqual('this is news');
     })
   });

@@ -62,19 +62,17 @@ describe('#Views', ()=> {
     const mockModel = new ModelNews();
     const mockApi = new GuardianApi();
     const view = new ViewNews(mockModel, mockApi);
-
     mockModel.setNews.mockImplementation( () => [
       {"fields":{"headline":'this is a news' }}
     ])
     mockModel.getNews.mockImplementation( () => [
       {"fields":{"headline":'this is a news' }}
     ]);
-
-    mockApi.loadHeadlines.mockImplementation((callback) => callback ({
+    let searchText= view.inputEl.value;
+    mockApi.loadHeadlines.mockImplementation(searchText,(callback) => callback ({
       "response":{ "results":[{"webUrl":'www.something'},{"fields":{"headline":'this is a news' }}] }
-    } 
+    }
     ));
-
     view.displayNewsFromApi();
     expect(document.querySelectorAll('.headline').length).toBe(1)
     expect(mockModel.setNews).toHaveBeenCalledTimes(1);
@@ -93,7 +91,7 @@ describe('#Views', ()=> {
       {"fields":{"headline":'this is a news' }}
     ]);
 
-    mockApi.loadHeadlines.mockImplementation((callback) => callback ({
+    mockApi.loadHeadlines.mockImplementation("",(callback) => callback ({
       "response":{ "results":[{"webUrl":'www.something.com'},{"fields":{"headline":'this is a news', "thumbnail":'image.jpg'}}] }
     } 
     ));
@@ -101,5 +99,33 @@ describe('#Views', ()=> {
     view.displayNewsFromApi();
     expect(document.querySelectorAll('.photo').length).toBe(1)
     expect(mockModel.setNews).toHaveBeenCalledTimes(1);
+  });
+
+  it('lets user search a topic for newws', () => {
+    const mockModel = new ModelNews();
+    const mockApi = new GuardianApi();
+    const view = new ViewNews(mockModel, mockApi);
+
+    mockModel.setNews.mockImplementation( () => [
+      {"fields":{"headline":'this is a news' }}
+    ])
+    mockModel.getNews.mockImplementation( () => [
+      {"fields":{"headline":'this is a news' }}
+    ]);
+    mockApi.loadHeadlines.mockImplementation("",(callback) => callback ({
+      "response":{ "results":[{"webUrl":'www.something.com'},{"fields":{"headline":'this is a news', "thumbnail":'image.jpg'}}] }
+    } 
+    ));
+    
+    const inputEl = document.querySelector('#input-search');
+    inputEl.value = 'AnyText';
+    const searchButtonEl = document.querySelector('#search-button');
+    
+    searchButtonEl.click();
+    
+    
+
+    expect(document.querySelectorAll('.headline').length).toBe(1)
+
   });
 });
