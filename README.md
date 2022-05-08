@@ -6,7 +6,7 @@ This is an app that grabs all the headlines from the Guardian newspaper API and 
 
 Initially, a Miro board was used in order to plan out this app's functionality. This board can be found [here](https://miro.com/app/board/uXjVO3dkjVs=/?share_link_id=472309087518).
 
-*I wanted to also use the Aylien API in order to display summaries for each article but unfortunately Aylien is not allowing new users to sign up for an API key.*
+> *Note: I wanted to also use the Aylien API in order to display summaries for each article but unfortunately Aylien is not allowing new users to sign up for an API key.*
 
 ## Getting Started
 
@@ -79,7 +79,7 @@ to start the server. The port that your computer is using should be printed in t
 
 In your phone's browser, in the address bar, enter `http://<IP-address>:<Port>` and enjoy using the app!
 
-*Note: Your phone and computer must be connected to the same network for this to work.*
+> *Note: Your phone and computer must be connected to the same network for this to work.*
 
 ## Testing
 
