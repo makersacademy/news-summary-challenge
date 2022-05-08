@@ -73,16 +73,20 @@
           this.clearDuplicateImages();
           const currentNews = this.model.getNews();
           currentNews.forEach((article) => {
+            const br = document.createElement("br");
             const newEL = document.createElement("a");
             newEL.className = "headline";
-            var linkText = document.createTextNode(article.fields.headline);
+            var linkText = document.createTextNode(article.webTitle);
             newEL.appendChild(linkText);
             newEL.href = article.webUrl;
             document.body.appendChild(newEL);
+            newEL.append(br);
             const imageEL = document.createElement("img");
             imageEL.className = "image";
             imageEL.src = article.fields.thumbnail;
+            newEL.append(br);
             newEL.append(imageEL);
+            newEL.append(br);
             document.querySelector("#main-container").append(newEL);
           });
         }

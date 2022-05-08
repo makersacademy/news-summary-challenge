@@ -12,6 +12,10 @@ class newsApi {
       .then((data) => {
         console.log("Load", data);
         callback(data.response.results);
+      })
+      .catch(() => {
+        console.error("Error");
+        errorCallback();
       });
   }
 }

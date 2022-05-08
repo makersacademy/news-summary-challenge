@@ -30,15 +30,18 @@ class newsView {
       const newEL = document.createElement("a");
       newEL.className = "headline";
       var linkText = document.createTextNode(article.webTitle);
-      newEL.appendChild(br);
       newEL.appendChild(linkText);
       newEL.href = article.webUrl;
       document.body.appendChild(newEL);
+      newEL.append(br);
       // image iteration
       const imageEL = document.createElement("img");
       imageEL.className = "image";
       imageEL.src = article.fields.thumbnail;
+
+      newEL.append(br);
       newEL.append(imageEL);
+      newEL.append(br);
       document.querySelector("#main-container").append(newEL);
     });
   }
@@ -59,6 +62,18 @@ class newsView {
       this.model.setNews(data);
       this.displayNews();
     });
+    this.displayError();
+  }
+
+  displayError() {
+    const oldErrors = document.querySelectorAll("div.error");
+    oldErrors.forEach((error) => {
+      error.remove();
+    });
+    let errorElement = document.createElement("div");
+    errorElement.className = "error";
+    errorElement.innerText = "Oops, something went wrong";
+    this.mainContainerEl.append(errorElement);
   }
 }
 
