@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+html {
+  background: #001628;
+  color: #777;
+  padding: 4em;
+  font-family: sans-serif;
+  line-height: 1.15;
+}
+
+body {
+  background: white;
+  width: 800px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.note {
+  border-bottom: 1px solid #aaa;
+  padding: 15px;
+}
+
+input[type=text] {
+  width: 70%;
+  background: #fefefe;
+  border-radius: 4px;
+  padding: 10px 8px;
+  border: 1px solid #444;
+  font-size: 20px;
+}
+
+a.headline {
+  padding: 20px;
+  text-align: center;
+  font-family: "Times New Roman";
+  /* background: #1abc9c; */
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+
+hr { /*dummy content*/
+  height: 6px;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+} 
+
+hr:last-child {  /*dummy content*/
+  margin-right: 60%;
+}
+
+hr.image { /*dummy content*/
+  padding-bottom: 50%;
+} 
+
+.page {
+  padding: 2em;
+  background: #cecece;
+  max-width: 1100px;
+}
+
+.archive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-gap: 1em;
+}
+
+.article {
+  padding: 3em;
+  background: #fff;
+  box-shadow:
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    0 20px 20px rgba(0, 0, 0, 0.05);
+}
+  </style>
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script type="text/javascript" src="bundle.js" defer></script>
+  <title>Jordan's News Page - Headlines</title>
+</head>
+
+<body>
+  <center><h1>Jordan's News Page</h1>
+    <h2>Todays Headlines</h2>
+  <div id="main-container">
+    <input type="text" placeholder="Search for news" id="news-search" />
+    <button id="news-search-submit">search</button>
+  <div id="headline">
+    <br>
+    <br>
+  </div>  
+  <img id="image">
+  <br>
+  </img>
+
+      </center>
+    </div>
+  </div>
+</div>
+</body>
+</html>
