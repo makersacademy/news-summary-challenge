@@ -16,10 +16,10 @@
     "src/newsApi.js"(exports, module) {
       var apiKey = require_apiKey();
       var NewsApi = class {
-        loadArticles(search = "", callback) {
+        loadArticles(search, callbackOne, callbackTwo) {
           fetch(`https://content.guardianapis.com/search?q=${search}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json(response)).then((articles) => {
-            callback(articles);
-          });
+            callbackOne(articles);
+          }).catch(callbackTwo);
         }
       };
       module.exports = NewsApi;
@@ -79,10 +79,18 @@
           this.api.loadArticles(search, (receivedArticles) => {
             this.model.setArticles(receivedArticles);
             this.displayArticles();
+          }, () => {
+            this.displayError();
           });
         }
         clearArticles() {
           document.querySelectorAll("div.article").forEach((article) => article.remove());
+        }
+        displayError() {
+          const errorEl = document.createElement("div");
+          errorEl.classList.add("error");
+          errorEl.innerText = "Oops, something went wrong!";
+          this.mainContainerEl.append(errorEl);
         }
       };
       module.exports = NewsView2;

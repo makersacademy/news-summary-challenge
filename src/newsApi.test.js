@@ -27,7 +27,7 @@ describe(NewsApi, () => {
     // to assert the values we get back contain
     // what we expect.
 
-    api.loadArticles((returnedDataFromApi) => {
+    api.loadArticles((search = ""), (returnedDataFromApi) => {
       expect(returnedDataFromApi.type).toBe("article");
       expect(returnedDataFromApi.sectionName).toBe("Sport");
     });

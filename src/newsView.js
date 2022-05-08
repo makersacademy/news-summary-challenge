@@ -41,16 +41,29 @@ class NewsView {
   }
 
   displayArticlesFromApi(search = "") {
-    this.api.loadArticles(search, (receivedArticles) => {
-      this.model.setArticles(receivedArticles);
-      this.displayArticles();
-    });
+    this.api.loadArticles(
+      search,
+      (receivedArticles) => {
+        this.model.setArticles(receivedArticles);
+        this.displayArticles();
+      },
+      () => {
+        this.displayError();
+      }
+    );
   }
 
   clearArticles() {
     document
       .querySelectorAll("div.article")
       .forEach((article) => article.remove());
+  }
+
+  displayError() {
+    const errorEl = document.createElement("div");
+    errorEl.classList.add("error");
+    errorEl.innerText = "Oops, something went wrong!";
+    this.mainContainerEl.append(errorEl);
   }
 }
 
