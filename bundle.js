@@ -73,7 +73,6 @@
           this.api.loadArticles((receivedArticles) => {
             this.model.setArticles(receivedArticles);
             this.displayArticles();
-            console.log(receivedArticles);
           });
         }
       };
@@ -85,5 +84,4 @@
   var NewsView = require_newsView();
   var view = new NewsView();
   view.displayArticlesFromApi();
-  console.log(view.model.getArticles());
 })();

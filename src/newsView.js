@@ -35,7 +35,7 @@ class NewsView {
     this.api.loadArticles((receivedArticles) => {
       this.model.setArticles(receivedArticles);
       this.displayArticles();
-      console.log(receivedArticles);
+      // console.log(receivedArticles);
     });
   }
 }

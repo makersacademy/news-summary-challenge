@@ -22,7 +22,15 @@ describe(NewsView, () => {
   });
 
   it("gets notes from the model and displays it as a new div element with class 'article'", () => {
-    view.model.getArticles.mockImplementation(() => ["News Flash!"]);
+    view.model.getArticles.mockImplementation(() => [
+      {
+        fields: {
+          headline: "News Flash!",
+          thumbnail:
+            "https://media.guim.co.uk/1f5a49b8c3621abad6be2b626928bff446eeb70b/65_152_2434_1460/500.jpg",
+        },
+      },
+    ]);
 
     view.displayArticles();
 
@@ -30,16 +38,144 @@ describe(NewsView, () => {
   });
 
   it("displayArticlesFromApi loads headlines from the server and displays them", () => {
-    view.model.getArticles.mockImplementation(() => ["News Flash!"]);
-    view.model.setArticles.mockImplementation(() => undefined);
+    view.model.getArticles.mockImplementation(() => [
+      {
+        fields: {
+          headline: "News Flash!",
+          thumbnail:
+            "https://media.guim.co.uk/1f5a49b8c3621abad6be2b626928bff446eeb70b/65_152_2434_1460/500.jpg",
+        },
+      },
+    ]);
+
+    view.model.setArticles.mockImplementation(() => [
+      {
+        fields: {
+          headline: "News Flash!",
+          thumbnail:
+            "https://media.guim.co.uk/1f5a49b8c3621abad6be2b626928bff446eeb70b/65_152_2434_1460/500.jpg",
+        },
+      },
+    ]);
+
     view.api.loadArticles.mockImplementation((callback) =>
-      callback(["News Flash!"])
+      callback({
+        response: {
+          results: [
+            {
+              fields: {
+                headline: "News Flash!",
+                thumbnail:
+                  "https://media.guim.co.uk/1f5a49b8c3621abad6be2b626928bff446eeb70b/65_152_2434_1460/500.jpg",
+              },
+            },
+          ],
+        },
+      })
     );
 
     view.displayArticlesFromApi();
     expect(view.api.loadArticles).toHaveBeenCalledTimes(1);
     expect(view.model.setArticles).toHaveBeenCalledTimes(1);
     expect(view.model.getArticles).toHaveBeenCalledTimes(1);
-    expect(document.querySelector("div.article").innerText).toBe("News Flash!");
+    expect(document.querySelector("a.headline").innerText).toBe("News Flash!");
+  });
+
+  it("adds an image to the page", () => {
+    view.model.getArticles.mockImplementation(() => [
+      {
+        fields: {
+          headline: "News Flash!",
+          thumbnail:
+            "https://media.guim.co.uk/1f5a49b8c3621abad6be2b626928bff446eeb70b/65_152_2434_1460/500.jpg",
+        },
+      },
+    ]);
+
+    view.model.setArticles.mockImplementation(() => [
+      {
+        fields: {
+          headline: "News Flash!",
+          thumbnail:
+            "https://media.guim.co.uk/1f5a49b8c3621abad6be2b626928bff446eeb70b/65_152_2434_1460/500.jpg",
+        },
+      },
+    ]);
+
+    view.api.loadArticles.mockImplementation((callback) =>
+      callback({
+        response: {
+          results: [
+            {
+              fields: {
+                headline: "News Flash!",
+                thumbnail:
+                  "https://media.guim.co.uk/1f5a49b8c3621abad6be2b626928bff446eeb70b/65_152_2434_1460/500.jpg",
+              },
+            },
+          ],
+        },
+      })
+    );
+
+    view.displayArticlesFromApi();
+    expect(view.api.loadArticles).toHaveBeenCalledTimes(1);
+    expect(view.model.setArticles).toHaveBeenCalledTimes(1);
+    expect(view.model.getArticles).toHaveBeenCalledTimes(1);
+    expect(document.querySelector("img.thumbnail").src).toBe(
+      "https://media.guim.co.uk/1f5a49b8c3621abad6be2b626928bff446eeb70b/65_152_2434_1460/500.jpg"
+    );
+  });
+
+  it("adds a url to an article headline", () => {
+    view.model.getArticles.mockImplementation(() => [
+      {
+        fields: {
+          headline: "News Flash!",
+          thumbnail:
+            "https://media.guim.co.uk/1f5a49b8c3621abad6be2b626928bff446eeb70b/65_152_2434_1460/500.jpg",
+        },
+        webUrl:
+          "https://www.theguardian.com/football/live/2022/may/08/manchester-city-v-newcastle-united-premier-league-live",
+      },
+    ]);
+
+    view.model.setArticles.mockImplementation(() => [
+      {
+        fields: {
+          headline: "News Flash!",
+          thumbnail:
+            "https://media.guim.co.uk/1f5a49b8c3621abad6be2b626928bff446eeb70b/65_152_2434_1460/500.jpg",
+        },
+        webUrl:
+          "https://www.theguardian.com/football/live/2022/may/08/manchester-city-v-newcastle-united-premier-league-live",
+      },
+    ]);
+
+    view.api.loadArticles.mockImplementation((callback) =>
+      callback({
+        response: {
+          results: [
+            {
+              fields: {
+                headline: "News Flash!",
+                thumbnail:
+                  "https://media.guim.co.uk/1f5a49b8c3621abad6be2b626928bff446eeb70b/65_152_2434_1460/500.jpg",
+              },
+              webUrl:
+                "https://www.theguardian.com/football/live/2022/may/08/manchester-city-v-newcastle-united-premier-league-live",
+            },
+          ],
+        },
+      })
+    );
+
+    view.displayArticlesFromApi();
+    expect(view.api.loadArticles).toHaveBeenCalledTimes(1);
+    expect(view.model.setArticles).toHaveBeenCalledTimes(1);
+    expect(view.model.getArticles).toHaveBeenCalledTimes(1);
+    expect(document.querySelector("a.headline").href).toBe(
+      "https://www.theguardian.com/football/live/2022/may/08/manchester-city-v-newcastle-united-premier-league-live"
+    );
   });
 });
