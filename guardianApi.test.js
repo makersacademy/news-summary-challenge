@@ -1,5 +1,4 @@
 const GuardianApi = require('./guardianApi');
-// const apiKey = require('./apiKey');
 require('jest-fetch-mock').enableFetchMocks();
 
 describe('Api', () => {

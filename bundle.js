@@ -58,20 +58,40 @@
   var require_viewNews = __commonJS({
     "viewNews.js"(exports, module) {
       var NewsModel = class {
-        constructor(model2) {
+        constructor(model2, api2) {
           this.model = model2;
+          this.api = api2;
+          this.newsArray = [];
           this.maincontainerEl = document.querySelector("#main-container");
         }
         displayNews() {
-          document.querySelectorAll(".news").forEach((news2) => {
+          document.querySelectorAll(".headline").forEach((news2) => {
             news2.remove();
+          });
+          document.querySelectorAll(".photo").forEach((image) => {
+            image.remove();
           });
           const news = this.model.getNews();
           news.forEach((news2) => {
-            const newsEl = document.createElement("div");
-            newsEl.className = "news";
-            newsEl.innerText = news2;
+            const newsEl = document.createElement("a");
+            newsEl.className = "headline";
+            let linkText = document.createTextNode(news2.fields.headline);
+            newsEl.appendChild(linkText);
+            newsEl.href = news2.webUrl;
+            document.body.appendChild(newsEl);
+            const imageEl = document.createElement("img");
+            imageEl.className = "photo";
+            imageEl.src = news2.fields.thumbnail;
+            newsEl.append(imageEl);
             this.maincontainerEl.append(newsEl);
+          });
+        }
+        displayNewsFromApi() {
+          this.api.loadHeadlines((recievedData) => {
+            const data = recievedData.response.results;
+            data.forEach((news) => this.newsArray.push(news));
+            this.model.setNews(this.newsArray);
+            this.displayNews();
           });
         }
       };
@@ -84,9 +104,7 @@
   var ModelNews = require_modelNews();
   var ViewNews = require_viewNews();
   var model = new ModelNews();
-  var view = new ViewNews(model);
   var api = new GuardianApi();
-  model.addNews("this is news");
-  model.addNews("this is a news as well");
-  view.displayNews();
+  var view = new ViewNews(model, api);
+  view.displayNewsFromApi();
 })();
