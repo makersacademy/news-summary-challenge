@@ -16,8 +16,8 @@
     "src/newsApi.js"(exports, module) {
       var apiKey = require_apiKey();
       var NewsApi = class {
-        loadArticles(callback) {
-          fetch(`https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json(response)).then((articles) => {
+        loadArticles(search = "", callback) {
+          fetch(`https://content.guardianapis.com/search?q=${search}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json(response)).then((articles) => {
             callback(articles);
           });
         }
@@ -51,6 +51,12 @@
           this.model = model;
           this.api = api;
           this.mainContainerEl = document.querySelector("#main-container");
+          this.searchArticleTextEl = document.querySelector("#search-box");
+          this.searchArticleButtonEl = document.querySelector("#search-button");
+          this.searchArticleButtonEl.addEventListener("click", () => {
+            this.clearArticles();
+            this.displayArticlesFromApi(this.searchArticleTextEl.value);
+          });
         }
         displayArticles() {
           const articles = this.model.getArticles();
@@ -69,11 +75,14 @@
             this.mainContainerEl.append(articleEl);
           });
         }
-        displayArticlesFromApi() {
-          this.api.loadArticles((receivedArticles) => {
+        displayArticlesFromApi(search = "") {
+          this.api.loadArticles(search, (receivedArticles) => {
             this.model.setArticles(receivedArticles);
             this.displayArticles();
           });
+        }
+        clearArticles() {
+          document.querySelectorAll("div.article").forEach((article) => article.remove());
         }
       };
       module.exports = NewsView2;

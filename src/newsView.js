@@ -7,6 +7,15 @@ class NewsView {
     this.api = api;
 
     this.mainContainerEl = document.querySelector("#main-container");
+
+    this.searchArticleTextEl = document.querySelector("#search-box");
+
+    this.searchArticleButtonEl = document.querySelector("#search-button");
+
+    this.searchArticleButtonEl.addEventListener("click", () => {
+      this.clearArticles();
+      this.displayArticlesFromApi(this.searchArticleTextEl.value);
+    });
   }
 
   displayArticles() {
@@ -31,12 +40,17 @@ class NewsView {
     });
   }
 
-  displayArticlesFromApi() {
-    this.api.loadArticles((receivedArticles) => {
+  displayArticlesFromApi(search = "") {
+    this.api.loadArticles(search, (receivedArticles) => {
       this.model.setArticles(receivedArticles);
       this.displayArticles();
-      // console.log(receivedArticles);
     });
+  }
+
+  clearArticles() {
+    document
+      .querySelectorAll("div.article")
+      .forEach((article) => article.remove());
   }
 }
 
