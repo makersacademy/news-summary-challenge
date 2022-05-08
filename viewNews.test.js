@@ -58,23 +58,22 @@ describe('#Views', ()=> {
     expect(document.querySelectorAll('.headline').length).toBe(2);
   });
 
-  it('displays notes from API', () => {
+  it('displays news from API', () => {
     const mockModel = new ModelNews();
     const mockApi = new GuardianApi();
     const view = new ViewNews(mockModel, mockApi);
     mockModel.setNews.mockImplementation( () => [
-      {"fields":{"headline":'this is a news' }}
+      {"webUrl":'www.something.com'},{"fields":{"headline":'this is a news', "thumbnail":'image.jpg'}}
     ])
     mockModel.getNews.mockImplementation( () => [
-      {"fields":{"headline":'this is a news' }}
+      {"webUrl":'www.something.com'},{"fields":{"headline":'this is a news', "thumbnail":'image.jpg'}}
     ]);
-    let searchText= view.inputEl.value;
-    mockApi.loadHeadlines.mockImplementation(searchText,(callback) => callback ({
+    mockApi.loadHeadlines.mockImplementation("",(callback) => callback ({
       "response":{ "results":[{"webUrl":'www.something'},{"fields":{"headline":'this is a news' }}] }
     }
     ));
     view.displayNewsFromApi();
-    expect(document.querySelectorAll('.headline').length).toBe(1)
+    expect(document.querySelectorAll('a.headline').length).toEqual(1)
     expect(mockModel.setNews).toHaveBeenCalledTimes(1);
 
   });
@@ -85,10 +84,10 @@ describe('#Views', ()=> {
     const view = new ViewNews(mockModel, mockApi);
 
     mockModel.setNews.mockImplementation( () => [
-      {"fields":{"headline":'this is a news' }}
+      {"webUrl":'www.something.com'},{"fields":{"headline":'this is a news', "thumbnail":'image.jpg'}}
     ])
     mockModel.getNews.mockImplementation( () => [
-      {"fields":{"headline":'this is a news' }}
+      {"webUrl":'www.something.com'},{"fields":{"headline":'this is a news', "thumbnail":'image.jpg'}}
     ]);
 
     mockApi.loadHeadlines.mockImplementation("",(callback) => callback ({
