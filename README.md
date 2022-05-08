@@ -14,15 +14,15 @@ git clone https://github.com/jmcnally17/news-summary-challenge.git
 npm install
 ```
 
-In order to access the Guardian API and therefore in order for this program to work, you must have your own API key that is sent with every request. If you haven't already got one, you can sign up for one here [https://open-platform.theguardian.com/access/]. Once you have obtained your API key, you must create a JS file with a function that returns the key so that it can be used by the ArticlesApi class:
+In order to access the Guardian API and therefore in order for this program to work, you must have your own API key that is sent with every request. If you haven't already got one, you can sign up for one here https://open-platform.theguardian.com/access/. Once you have obtained your API key, you must create a JS file with a function that returns the key so that it can be used by the ArticlesApi class:
 
-```
-touch src/apiKey.js
+```js
+touch src/apiKey.js  // in the main directory
 ```
 
 Then create the key function and export it:
 
-```
+```js
 key = () => {
   return '<Insert-your-API-key>';
 }
@@ -46,7 +46,7 @@ Each article comes with a thumbnail and a title which is also a hyperlink to the
 
 ### Mobile Version
 
-In order to run this app on the browser in your smartphone, the live server package is needed first:
+In order to run this app in the browser on your smartphone, the live server package is needed first:
 
 ```
 npm install -g live-server
