@@ -1,39 +1,86 @@
 # News challenge
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in
-  your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull
-  request.
-* You must submit a pull request to this repo with your code by 10am Monday morning.
-
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that shows the latest news using the Guardian API. You'll find
-instructions on how to setup and use the API down this page.
-
 ## Project overview
 
 Your app will grab all the headlines from the Guardian newspaper API and display them on a
 page. Clicking on a headline will link the user to the actual article page on the Guardian's website.
 
-### Technologies
+## Getting Started
 
-You'll write a single page web app. You'll write your code in frontend JavaScript, CSS and
-HTML. You won't use Ruby or backend JavaScript.
+Start by cloning this repository and run npm install:
 
-You're strongly encouraged to use the same tools and libraries you've been learning this
-week:
- * Jest to write your tests
- * The [`jest-fetch-mock`](https://www.npmjs.com/package/jest-fetch-mock) module (or
-   similar) to mock `fetch` requests (so you don't request the API when running tests!)
- * A build tool such as `esbuild` to bundle files together
+```
+git clone https://github.com/jmcnally17/news-summary-challenge.git
+npm install
+```
+
+In order to access the Guardian API and therefore in order for this program to work, you must have your own API key that is sent with every request. If you haven't already got one, you can sign up for one here [https://open-platform.theguardian.com/access/]. Once you have obtained your API key, you must create a JS file with a function that returns the key so that it can be used by the ArticlesApi class:
+
+```
+touch src/apiKey.js
+```
+
+Then create the key function and export it:
+
+```
+key = () => {
+  return '<Insert-your-API-key>';
+}
+
+module.exports = key;
+```
+
+Now run build and you should be good to go:
+
+```
+npm run build
+```
+
+## How To Use
+
+While build is running, you can either double click the index.html file or enter `open index.html` in the terminal while in the main directory. This will open the app in your browser. Upon loading the page, the top ten current stories from the Guardian will be displayed on the page with a title that reads "Guardian Top Stories", as well as an input field and corresponding button the user can use to find articles that contain specific keywords when entered (the user can also press the enter key on their keyboard in order to click the search button).
+
+Entering a search will then empty the list of articles on the page and will now display the top ten most relevant stories that contain any of the words the user entered in the search field. When the user enters a word that is not contained in any article headline, a corresponding message appears on the page notifying the user that their search has no matches. Similarly, when the API fails a request to retrieve the necessary data, an error message appears on the screen instead.
+
+Each article comes with a thumbnail and a title which is also a hyperlink to the Guardian's website for that specific article.
+
+### Mobile Version
+
+In order to run this app on the browser in your smartphone, the live server package is needed first:
+
+```
+npm install -g live-server
+```
+
+This allows the user to run a local server for this app. Then, in the terminal while in the main directory, run:
+
+```
+live-server
+```
+
+to start the server. The port that your computer is using should be printed in the terminal (e.g. :8080). In order to open the app on your phone, your private IP address is needed. For Mac:
+
+1. Open the Apple menu and select System Preferances.
+2. Select Network.
+3. Choose your network connection from the menu on the left.
+4. Your IP address will be just under where it says "Status: Connected".
+
+In your phone's browser, in the address bar, enter the url `http://<IP-address>:<Port>` and enjoy using the app!
+
+Note: Your phone and computer must be connected to the same network for this to work.
+
+## Testing
+
+Jest was used to test drive this app. To run these tests, in the terminal simple enter:
+```
+jest
+```
+There may be an error when running jest which could fail a few of the tests. If this comes up just run:
+```
+npm install --save-dev jest-environment-jsdom
+```
 
 ## User Stories
-
-Some of these stories will need decomposing if they seem too large.
 
 ```
 As a busy politician
@@ -186,16 +233,3 @@ The above request will return a response similar to this one:
 ## Resources
 
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Postman](https://www.postman.com/downloads/?utm_source=postman-home), a program to send and test HTTP requests
-
-
-<!-- BEGIN GENERATED SECTION DO NOT EDIT -->
-
----
-
-**How was this resource?**  
-[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😀)  
-Click an emoji to tell us.
-
-<!-- END GENERATED SECTION DO NOT EDIT -->
