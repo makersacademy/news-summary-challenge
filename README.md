@@ -16,7 +16,7 @@ I approached this challenge by using a test driven approach and created the unit
 3. Develop code to result in a passing test (green)
 4. Refactor the code and re-test (orange)
 
-### Technologies
+## Technologies
 
 JavaScript (with esbuild, jest and jest-fetch-mock module)
 CSS
@@ -52,7 +52,7 @@ I can specify a search query on the page and get articles matching this search
 
 git clone the repo
 
-# API authentication
+### API authentication
 
 You'll need to [register and get an API
 key](https://open-platform.theguardian.com/access/) to use the Guardian API.
@@ -61,7 +61,7 @@ Once you have the API key, please create and save a file in ./src directory name
 
 Enter the following within the file: module.exports = 'YOUR KEY HERE';
 
-# Setup
+### Setup
 
 Whilst in the root directory:
 
@@ -71,6 +71,6 @@ Whilst in the root directory:
 
 3. Open the HTMl page via the terminal. Mac: 'open index.html' or Linux: 'google-chome index.html'
 
-# Test Code
+### Test Code
 
 Run Jest in the terminal with the 'jest' command from the root directory to test the code.
