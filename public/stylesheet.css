@@ -1,0 +1,21 @@
+#news {
+    float: left;
+    width: 50%;
+    height: 55em;
+    text-align: center;
+    background-color: rgba(110, 58, 58, 0.518);
+    overflow-y: scroll;
+}
+
+#summary {
+    float: right;
+    width: 50%;
+    height: 55em;
+    text-align: center;
+    background-color: rgba(35, 79, 36, 0.381);
+    overflow-y: scroll;
+}
+
+#title {
+    cursor: pointer;
+}
