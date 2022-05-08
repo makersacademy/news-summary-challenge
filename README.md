@@ -2,10 +2,20 @@
 
 ## Project overview
 
-Your app will grab all the headlines from the Guardian newspaper API and display them on a
-page. Clicking on a headline will link the user to the actual article page on the Guardian's website.
+This is an app that grabs all the headlines from the Guardian newspaper API and displays them on a page. This project uses code written in Javascript, HTML and CSS while using Node.js. The Test Driven Development (TDD) process was used when writing the code.
+
+Initially, a Miro board was used in order to plan out this app's functionality. This board can be found [here](https://miro.com/app/board/uXjVO3dkjVs=/?share_link_id=472309087518).
 
 ## Getting Started
+
+If you haven't already got node installed, run the following commands to setup:
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.zshrc
+nvm install node
+nvm use node
+```
 
 Start by cloning this repository and run npm install:
 
@@ -16,11 +26,11 @@ npm install
 
 In order to access the Guardian API and therefore in order for this program to work, you must have your own API key that is sent with every request. If you haven't already got one, you can sign up for one here https://open-platform.theguardian.com/access/. Once you have obtained your API key, you must create a JS file with a function that returns the key so that it can be used by the ArticlesApi class:
 
-```console
-touch src/apiKey.js  # in the main directory
+```
+touch src/apiKey.js
 ```
 
-Then create the key function and export it:
+while in the main directory. Then create the key function and export it:
 
 ```js
 key = () => {
@@ -67,15 +77,18 @@ to start the server. The port that your computer is using should be printed in t
 
 In your phone's browser, in the address bar, enter the url `http://<IP-address>:<Port>` and enjoy using the app!
 
-Note: Your phone and computer must be connected to the same network for this to work.
+*Note: Your phone and computer must be connected to the same network for this to work.*
 
 ## Testing
 
-Jest was used to test drive this app. To run these tests, in the terminal simple enter:
+Jest was used as a test suite to test drive this app. To run these tests, in the terminal simply enter:
+
 ```
 jest
 ```
+
 There may be an error when running jest which could fail a few of the tests. If this comes up just run:
+
 ```
 npm install --save-dev jest-environment-jsdom
 ```
@@ -118,8 +131,7 @@ To get a summary of an article's content, you'll need to use the [Aylien API
 endpoint](https://docs.aylien.com/textapi/endpoints/#summarization), which means
 integrating and calling another HTTP endpoint from a different API. This mean you'll need
 to first fetch articles from the Guardian API, **then** use the Aylien API to summarise
-the content — you'll need to use promises or callbacks to call both APIs and to handle the flow of
-control.
+the content.
 
 ```
 As a busy politician
@@ -143,23 +155,7 @@ I can see whizzy animations in the app
 
 ![Article page mockup](./images/news-summary-project-article-page-mockup.png)
 
-## API
-
-### API authentication
-
-You'll need to [register and get an API
-key](https://open-platform.theguardian.com/access/) to use the Guardian API. 
-
-### API request rate limits and stubbing
-
-The Guardian API is severely rate-limited.
-
-**Please stub your tests so we don't exceed the daily limit.  Otherwise, all requests will
-be rejected and everyone's apps will stop working!**
-
 ## Guardian API Overview
-
-**Remember to mock `fetch` in your tests to avoid exceeding the API rate limit**
 
 If you wanted to get the latest articles from the Guardian API, this is the cURL request
 you might make. Notice how it has a query parameter for `api-key`.
@@ -229,7 +225,3 @@ The above request will return a response similar to this one:
    }
 }
 ```
-
-## Resources
-
-* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
