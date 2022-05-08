@@ -6,6 +6,8 @@ This is an app that grabs all the headlines from the Guardian newspaper API and 
 
 Initially, a Miro board was used in order to plan out this app's functionality. This board can be found [here](https://miro.com/app/board/uXjVO3dkjVs=/?share_link_id=472309087518).
 
+*I wanted to also use the Aylien API in order to display summaries for each article but unfortunately Aylien is not allowing new users to sign up for an API key.*
+
 ## Getting Started
 
 If you haven't already got node installed, run the following commands to setup:
@@ -24,7 +26,7 @@ git clone https://github.com/jmcnally17/news-summary-challenge.git
 npm install
 ```
 
-In order to access the Guardian API and therefore in order for this program to work, you must have your own API key that is sent with every request. If you haven't already got one, you can sign up for one here https://open-platform.theguardian.com/access/. Once you have obtained your API key, you must create a JS file with a function that returns the key so that it can be used by the ArticlesApi class:
+In order to access the Guardian API and therefore in order for this program to work, you must have your own API key that is sent with every request. If you haven't already got one, you can sign up for one [here](https://open-platform.theguardian.com/access/). Once you have obtained your API key, you must create a JS file with a function that returns the key so that it can be used by the ArticlesApi class:
 
 ```
 touch src/apiKey.js
@@ -70,12 +72,12 @@ live-server
 
 to start the server. The port that your computer is using should be printed in the terminal (e.g. :8080). In order to open the app on your phone, your private IP address is needed. For Mac:
 
-1. Open the Apple menu and select System Preferances.
+1. Open the Apple menu and select System Preferences.
 2. Select Network.
 3. Choose your network connection from the menu on the left.
 4. Your IP address will be just under where it says "Status: Connected".
 
-In your phone's browser, in the address bar, enter the url `http://<IP-address>:<Port>` and enjoy using the app!
+In your phone's browser, in the address bar, enter `http://<IP-address>:<Port>` and enjoy using the app!
 
 *Note: Your phone and computer must be connected to the same network for this to work.*
 
