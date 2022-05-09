@@ -7,9 +7,14 @@ class NewsView {
     this.model = model;
     this.api = api;
     this.listEl = document.querySelector('ul');
+    this.searchButtonEl = document.querySelector('#search-button');
+    this.searchFieldEl = document.querySelector('#search-field');
 
+    this.searchButtonEl.addEventListener('click', () => {
+      this.api.setUrl(this.searchFieldEl.value);
+      this.fetch_then_display();
+    })
   }
-
 
   display() {
     this.#clear();
@@ -46,7 +51,6 @@ class NewsView {
       image.remove()
     })
   }
-
 }
 
 module.exports = NewsView

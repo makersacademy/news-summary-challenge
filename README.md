@@ -42,13 +42,13 @@ So I can get a few more details about an important story
 I can click a news article title which links to the original article
 ```
 
-### Aspirational user stories
-
 ```
 As a busy politician
 So I can search what I want to read about
 I can specify a search query on the page and get articles matching this search
 ```
+
+### Aspirational user stories
 
 ```
 As a busy politician

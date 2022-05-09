@@ -9,7 +9,7 @@
         background-color: rgb(227, 229, 230);
         text-align: center;
         margin: 0 auto;
-        max-width: 650px;
+        max-width: 700px;
       }
 
       h1 {
@@ -42,12 +42,20 @@
       }
 
       a:link { text-decoration: none; }
-      a:visited { text-decoration: none; }
-      a:hover { text-decoration: none; }
-      a:active { text-decoration: none; }
+      a:visited { color: rgb(124, 39, 39) }
+      a:hover { text-decoration: underline; }
 
       img {
         border-bottom: 2px solid rgb(239, 239, 29);
+      }
+
+      div.a {
+        float: right;
+      }
+
+      button {
+        background-color: rgb(239, 239, 116);
+        color: rgb(14, 18, 146);
       }
 
     </style>
@@ -55,7 +63,12 @@
     <title>Guardian News Summary</title>
   </head>
   <body>
-    <h1>The latest news updates</h1>
+    <h1>The latest news updates   
+    <div class="a">
+    <input type="text" id="search-field" placeholder="What interests you?"/>
+    <button id="search-button">Find your news</button>
+    </div>
+    </h1>
     <br>
     <ul></ul>
   </body>

@@ -17,4 +17,10 @@ describe(NewsApi, () => {
       expect(dataFromApi.response.results[0].fields.headline).toBe('first headline');
     });
   });
+
+  it('edits the URL with setUrl()', () => {
+    const api = new NewsApi();
+    api.setUrl('football');
+    expect(api.url).toMatch(/football/)
+  })
 });
