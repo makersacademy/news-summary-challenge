@@ -1,31 +1,60 @@
-# News challenge
+# News Summary App
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in
-  your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull
-  request.
-* You must submit a pull request to this repo with your code by 10am Monday morning.
-
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that shows the latest news using the Guardian API. You'll find
+I have created an app that shows the latest news using the Guardian API. You'll find
 instructions on how to setup and use the API down this page.
 
-## Project overview
+This app grabs all the headlines from the Guardian newspaper API and display them on a
+page. Clicking on a headline links the user to the actual article page on the Guardian's website.
 
-Your app will grab all the headlines from the Guardian newspaper API and display them on a
-page. Clicking on a headline will link the user to the actual article page on the Guardian's website.
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Installing
+
+You will need to clone the repo. 
+
+The step will be
+
+```
+git clone https://github.com/baljitrakhra/news-summary-challenge.git
+```
+You will need to use you own Guardian news API key.
+
+Save it in the file called apiKey.js
+There is only one line of code in this file 
+
+```
+module.exports = API key;
+```
+
+Please make sure to add apiKey.js file to your .gitignore
+
+```
+npm install 
+npm run build
+open index.html
+```
+You will be able to see the following page in your web browser
+
+<img width="1614" alt="Screenshot 2022-05-09 at 07 19 17" src="https://user-images.githubusercontent.com/99490100/167351589-b863d316-4028-406b-92d2-e9ffb99135fb.png">
+
+
+
+## Running the tests
+
+To run the automated tests for this system
+
+Run the following command from terminal in the parent directory 
+
+```
+jest
+```
+
 
 ### Technologies
 
-You'll write a single page web app. You'll write your code in frontend JavaScript, CSS and
-HTML. You won't use Ruby or backend JavaScript.
-
-You're strongly encouraged to use the same tools and libraries you've been learning this
-week:
+This app is built with following technologies, tools and libraries:
  * Jest to write your tests
  * The [`jest-fetch-mock`](https://www.npmjs.com/package/jest-fetch-mock) module (or
    similar) to mock `fetch` requests (so you don't request the API when running tests!)
@@ -59,32 +88,6 @@ So I can search what I want to read about
 I can specify a search query on the page and get articles matching this search
 ```
 
-### Stretch user stories
-
-```
-As a busy politician
-So I can quickly read through the essential of today's stories
-I can see a summarised version of of the article 
-```
-
-To get a summary of an article's content, you'll need to use the [Aylien API
-endpoint](https://docs.aylien.com/textapi/endpoints/#summarization), which means
-integrating and calling another HTTP endpoint from a different API. This mean you'll need
-to first fetch articles from the Guardian API, **then** use the Aylien API to summarise
-the content — you'll need to use promises or callbacks to call both APIs and to handle the flow of
-control.
-
-```
-As a busy politician
-Just in case my laptop breaks
-I can read the site comfortably on my phone
-```
-
-```
-As a busy politician
-So I make my news reading more fun
-I can see whizzy animations in the app
-```
 
 ## Mockups
 
