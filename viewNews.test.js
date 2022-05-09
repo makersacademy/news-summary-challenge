@@ -63,13 +63,18 @@ describe('#Views', ()=> {
     const mockApi = new GuardianApi();
     const view = new ViewNews(mockModel, mockApi);
     mockModel.setNews.mockImplementation( () => [
-      {"webUrl":'www.something.com'},{"fields":{"headline":'this is a news', "thumbnail":'image.jpg'}}
+      {"fields":{"headline":'this is a news', "thumbnail":'image.jpg'}}
     ])
+
+    mockModel.addNews.mockImplementation( () => [
+      {"fields":{"headline":'this is a news', "thumbnail":'image.jpg'}}
+    ])
+
     mockModel.getNews.mockImplementation( () => [
-      {"webUrl":'www.something.com'},{"fields":{"headline":'this is a news', "thumbnail":'image.jpg'}}
+        {"fields":{"headline":'this is a news', "thumbnail":'image.jpg'}}
     ]);
     mockApi.loadHeadlines.mockImplementation("",(callback) => callback ({
-      "response":{ "results":[{"webUrl":'www.something'},{"fields":{"headline":'this is a news' }}] }
+      "response":{ "results":[{"fields":{"headline":'this is a news', "thumbnail":'image.jpg' }}] }
     }
     ));
     view.displayNewsFromApi();
