@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "esbuild": "^0.14.38",
+    "jest": "^28.1.0",
+    "jest-fetch-mock": "^3.0.3"
+  },
+  "name": "news-summary-challenge",
+  "description": "An app using the Guardian open source API to show news articles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Josenewmano/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Josenewmano/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/Josenewmano/news-summary-challenge#readme",
+  "devDependencies": {
+    "jest-environment-jsdom": "^28.1.0"
+  }
+}
