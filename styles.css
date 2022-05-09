@@ -1,0 +1,22 @@
+h1, p, a, * {
+  font-family: sans-serif;
+}
+
+html {
+  background:#EEF0EF;
+}
+
+body {
+  background: #73952B;
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.headline {
+  display: block;
+  border-bottom: 1px solid #3F5341;
+  padding: 15px;
+}
