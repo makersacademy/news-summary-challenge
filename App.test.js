@@ -159,12 +159,12 @@ describe('Search function', () => {
       bangersMockedData
     ));
     searchButtonEl.click();
-    console.log('app.stories: ', app.stories);
+    console.log('app.stories: ', app.stories); // not displaying
     document.querySelectorAll('a.headline').forEach((story) => {
       console.log(story.text)
     })
     document.querySelectorAll('a.headline').forEach((story) => {
-      expect(story.text.includes('bangers')).toEqual(true);
+      expect(story.text.includes('bangers')).toBe(true);
     })
   })
 })

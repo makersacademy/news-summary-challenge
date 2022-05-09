@@ -31,3 +31,31 @@ Open app locally in browser: `open index.html`
 You can take a look at this version of the app at this commit:
 
 `TBC`
+
+2. Next I extended the features to include pictures for each story, and a basis search function (working with single words)
+
+![](/assets/NewsSummaryApp_v2.excalidraw.png)
+
+3. Next steps, not yet implemented, will be as follows:
+
+* Implement a reset button to recover the top stories after completing a search
+* Implement multi-word search
+* Deliver the following user stories:
+
+```
+As a busy politician
+So I can quickly read through the essential of today's stories
+I can see a summarised version of of the article 
+```
+
+```
+As a busy politician
+Just in case my laptop breaks
+I can read the site comfortably on my phone
+```
+
+```
+As a busy politician
+So I make my news reading more fun
+I can see whizzy animations in the app
+```
