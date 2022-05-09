@@ -1,5 +1,7 @@
 # News Summary App
 
+<img width="378" alt="Screenshot 2022-05-09 at 07 28 54" src="https://user-images.githubusercontent.com/99490100/167352660-d41ae831-cfe0-42ea-a3d8-649062d878ae.png">
+
 I have created an app that shows the latest news using the Guardian API. You'll find
 instructions on how to setup and use the API down this page.
 
