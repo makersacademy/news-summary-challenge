@@ -1,4 +1,22 @@
-# News challenge
+# News Challenge
+<!-- ## link  --> [news--challenge]() <-- link -->
+
+---
+
+- This web app gives the user the ability to see a relevant picture to illustrate each news article when they browse headlines
+- The user can click a news article title which links to the original article
+- The user can specify a search query on the page and get articles matching this search
+<!-- - The user can see a summarised version of of the article
+- The user can read the site comfortably on my phone
+- The user can see whizzy animations in the app -->
+
+---
+
+## How to install the program
+
+- Clone this repository `git clone https://github.com/amfibiya17/notes-app.git`
+
+---
 
 - Feel free to use Google, your notes, books, etc. but work on your own.
 - If you refer to the solution of another coach or student, please put a link to that in
