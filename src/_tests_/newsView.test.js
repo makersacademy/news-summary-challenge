@@ -29,27 +29,4 @@ describe('News view', () => {
 
     expect(document.querySelectorAll('div.headline').length).toEqual(2);
   });
-
-  // it('clicks the button and adds message', () => {
-  //   const input = document.querySelector('#message-input');
-  //   input.value = 'Hello!';
-
-  //   const button = document.querySelector('#add-note-button');
-  //   button.click();
-
-  //   expect(document.querySelectorAll('div.note').length).toEqual(1);
-  //   expect(document.querySelectorAll('div.note')[0].innerText).toEqual(
-  //     'Hello!'
-  //   );
-  // });
-
-  // it('clears the list of previous notes before displaying', () => {
-  //   model.addNote('First note');
-  //   model.addNote('Second note');
-
-  //   view.displayNotes();
-  //   view.displayNotes();
-
-  //   expect(document.querySelectorAll('div.note').length).toEqual(2);
-  // });
 });

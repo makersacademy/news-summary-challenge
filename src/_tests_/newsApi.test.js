@@ -2,16 +2,13 @@ const NewsApi = require('../models/newsApi');
 
 require('jest-fetch-mock').enableMocks();
 
-// results: ["webTitle"] = headline
-// results: ["webUrl"] = url
-// results => fields => thumbnail = img
-
 describe('NewsApi', () => {
   describe('loadNews', () => {
     it('returns headlines from the Guardian back end server', (done) => {
       const api = new NewsApi();
 
-      fetch.mockResponseOnce(JSON.stringify({
+      fetch.mockResponseOnce(
+        JSON.stringify({
           response: {
             results: [
               {

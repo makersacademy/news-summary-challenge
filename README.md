@@ -1,12 +1,11 @@
 # News Challenge
-<!-- ## link  --> [news--challenge]() <-- link -->
+## link --> [news app](http://news-app-challenge.s3-website.eu-west-2.amazonaws.com/) <-- link
 
 ---
 
 - This web app gives the user the ability to see a relevant picture to illustrate each news article when they browse headlines
 - The user can click a news article title which links to the original article
-<!-- - The user can specify a search query on the page and get articles matching this search
-- The user can read the site comfortably on my phone -->
+- The user can specify a search query on the page and get articles matching this search
 - The user can see whizzy animations in the app
 
 ---
@@ -41,12 +40,6 @@ I can click a news article title which links to the original article
 As a busy politician
 So I can search what I want to read about
 I can specify a search query on the page and get articles matching this search
-```
-
-```
-As a busy politician
-Just in case my laptop breaks
-I can read the site comfortably on my phone
 ```
 
 ```

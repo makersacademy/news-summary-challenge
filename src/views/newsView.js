@@ -6,11 +6,6 @@ class NewsView {
     this.searchInputEl = document.querySelector('#search-input');
     this.searchButtonEl = document.querySelector('#search-button');
 
-    // this.api.loadNews('latest', (headlines) => {
-    //   this.model.addNews(headlines);
-    //   this.view.displayNews();
-    // });
-
     this.searchButtonEl.addEventListener('click', () => {
       this.api.loadNews(this.searchInputEl.value, (headlines) => {
         this.model.addNews(headlines);
