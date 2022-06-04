@@ -11,19 +11,16 @@ describe('NewsModel', () => {
     expect(model.getNews()).toEqual([]);
   });
 
-  it('adds a headline to the News list', () => {
-    model.addNews('Platinum Jubilee: How have we celebrated in the past?');
-
-    expect(model.getNews()).toEqual([
-      'Platinum Jubilee: How have we celebrated in the past?',
-    ]);
-  });
-
   it('clears all the articles on the News list', () => {
-    model.addNews('Platinum Jubilee: How have we celebrated in the past?');
-    model.addNews('The surprising history of gun laws in America');
+    model.addNews(['Headline 1', 'Headline 2']);
     model.reset();
 
     expect(model.getNews()).toEqual([]);
+  });
+
+  it('adds the headlines to the News list', () => {
+    model.addNews(['Headline 1', 'Headline 2']);
+
+    expect(model.getNews()).toEqual(['Headline 1', 'Headline 2']);
   });
 });

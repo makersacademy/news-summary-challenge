@@ -3,12 +3,12 @@ class NewsModel {
     this.headlines = [];
   }
 
-  getNews() {
-    return this.headlines;
+  addNews(headlines) {
+    this.headlines = headlines;
   }
 
-  addNews(headline) {
-    this.headlines.push(headline);
+  getNews() {
+    return this.headlines;
   }
 
   reset() {
