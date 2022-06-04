@@ -3,12 +3,31 @@ class NewsView {
     this.model = model;
     this.api = api;
     this.mainContainerEl = document.querySelector('#main-container');
+    this.searchInputEl = document.querySelector('#search-input');
+    this.searchButtonEl = document.querySelector('#search-button');
+
+    // this.api.loadNews('latest', (headlines) => {
+    //   this.model.addNews(headlines);
+    //   this.view.displayNews();
+    // });
+
+    this.searchButtonEl.addEventListener('click', () => {
+      this.api.loadNews(this.searchInputEl.value, (headlines) => {
+        this.model.addNews(headlines);
+        this.searchInputEl.value = '';
+        this.displayNews();
+      });
+    });
   }
 
   displayNews() {
+    document.querySelectorAll('.headline').forEach((element) => {
+      element.remove();
+    });
+
     const headlines = this.model.getNews();
 
-    console.log(headlines);
+    console.log(headlines); // <- for dev tools
 
     headlines.forEach((headline) => {
       const headlineEl = document.createElement('a');

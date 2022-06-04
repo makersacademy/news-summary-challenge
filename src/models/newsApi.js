@@ -5,9 +5,9 @@ class NewsApi {
     this.apiKey = apiKey;
   }
 
-  loadNews(callback) {
+  loadNews(search, callback) {
     fetch(
-      `https://content.guardianapis.com/search?q=latest&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${this.apiKey}`
+      `https://content.guardianapis.com/search?q=${search}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${this.apiKey}`
     )
       .then((info) => info.json())
       .then((responseJson) => {
