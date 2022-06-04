@@ -9,10 +9,25 @@
     <link rel="stylesheet" href="./assets/styles.css">
   </head>
 
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+
   <body>
 
-    <h1>Headlines</h1>
+    <input type="text" id="search-input" />
+    <button id="search-button" type="button">Search</button>
     
+    <h1>Today's News Headlines</h1>
+
+    <span id='date-display'></span>
+    <script>
+      setInterval(() => {
+        const dt = new Date();
+        document.getElementById('date-display').innerHTML = dt;
+      }, 500);
+    </script>
+
     <div id="main-container">
     </div>
 
