@@ -26,7 +26,7 @@ describe('NewsApi', () => {
         })
       );
 
-      api.loadNews((headlines) => {
+      api.loadNews('search', (headlines) => {
         expect(headlines).toEqual([
           {
             webTitle:

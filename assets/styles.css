@@ -184,28 +184,3 @@ a:hover { text-decoration: none;
 
 a:active { text-decoration: none;
 }
-
-/* @media only screen and (max-device-width: 480px) {
-  div#wrapper {
-    width: 400px;
-  }
-
-  div#header {
-      height: 93px;
-      position: relative;
-  }
-
-  div#header h1 {
-      font-size: 140%;
-  }
-
-  #content {
-      float: none;
-      width: 100%;
-  }
-
-  #navigation {
-      float:none;
-      width: auto;
-  }
-} */

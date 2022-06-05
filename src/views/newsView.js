@@ -16,13 +16,7 @@ class NewsView {
   }
 
   displayNews() {
-    document.querySelectorAll('.headline').forEach((element) => {
-      element.remove();
-    });
-
     const headlines = this.model.getNews();
-
-    console.log(headlines); // <- for dev tools
 
     headlines.forEach((headline) => {
       const headlineEl = document.createElement('a');
