@@ -15,11 +15,12 @@ class ArticlesModel {
     const title = data.webTitle;
     const pic = data.fields.thumbnail;
     const address = data.webUrl;
-
+    const summary = data.fields.bodyText;
     const article = {
       headline: title,
       image: pic,
-      url: address
+      url: address,
+      summary: summary
     };
     return article;
   }

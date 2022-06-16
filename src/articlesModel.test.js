@@ -22,13 +22,15 @@ describe('ArticlesModel', () => {
       webTitle: 'Real Madrid reach the Champions League final',
       webUrl: 'www.madridfinal.com',
       fields: {
-        thumbnail: 'madridpicture.jpg'
+        thumbnail: 'madridpicture.jpg',
+        bodyText: 'summary here'
       }
     };
     const article = {
       headline: 'Real Madrid reach the Champions League final',
       image: 'madridpicture.jpg',
-      url: 'www.madridfinal.com'
+      url: 'www.madridfinal.com',
+      summary: 'summary here'
     }
     expect(model.convertData(data)).toEqual(article);
   })
