@@ -3,7 +3,7 @@ class ArticlesView {
     this.model = model;
     this.api = api;
 
-    this.mainContainerEl = document.querySelector('#main-container');
+    this.firstColumnEl = document.querySelector('#first-column');
     this.searchFieldEl = document.querySelector('#search-field');
     this.searchButtonEl = document.querySelector('#search-button');
 
@@ -58,7 +58,7 @@ class ArticlesView {
 
         articleEl.append(imgBorderEl, nameEl);
         
-        this.mainContainerEl.append(articleEl);
+        this.firstColumnEl.append(articleEl);
       });
     }
   }
@@ -76,14 +76,14 @@ class ArticlesView {
     const messageEl = document.createElement('div');
     messageEl.classList.add('message');
     messageEl.innerText = 'No results matching your search';
-    this.mainContainerEl.append(messageEl);
+    this.firstColumnEl.append(messageEl);
   }
 
   #displayError() {
     const errorMessageEl = document.createElement('div');
     errorMessageEl.classList.add('message');
     errorMessageEl.innerText = 'Oops, Something went wrong!';
-    this.mainContainerEl.append(errorMessageEl);
+    this.firstColumnEl.append(errorMessageEl);
   }
 }
 

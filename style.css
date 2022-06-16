@@ -6,7 +6,7 @@ body {
   font-family: tahoma;
   text-align: center;
   background: rgb(50, 60, 103);
-  width: 800px;
+  width: 95%;
   margin: auto;
   margin-top: 20px;
   border-radius: 10px;
@@ -25,6 +25,10 @@ input[type='text'] {
   transition: width 0.4s ease-in-out;
 }
 
+.search {
+  padding-bottom: 30px;
+}
+
 input[type='text']:focus {
   width: 80%;
 }
@@ -33,13 +37,36 @@ button {
   font-size: 20px;
 }
 
+.block {
+  display: inline-block;
+  width: 100%;
+}
+
+.first-column {
+  height: 70em;
+  overflow-y: scroll;
+  float: left;
+  width: 50%;
+}
+
+.second-column {
+  height: 70em;
+  overflow-y: scroll;
+  float: right;
+  width: 50%;
+}
+
 .message {
   color: white;
   padding: 10px;
 }
 
+.article {
+  padding-bottom: 40px;
+}
+
 .border {
-  padding-top: 50px;
+  padding-top: 10px;
   padding-bottom: 15px;
 }
 
@@ -55,8 +82,10 @@ img {
 
 a {
   display: inline-block;
-  width: 720px;
-  font-size: 17pt;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  font-size: 14pt;
   text-decoration: none;
 }
 
