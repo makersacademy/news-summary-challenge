@@ -4,6 +4,7 @@ class ArticlesView {
 		this.api = api;
 
 		this.firstColumnEl = document.querySelector("#first-column");
+		this.secondColumnEl = document.querySelector("#second-column");
 		this.searchFieldEl = document.querySelector("#search-field");
 		this.searchButtonEl = document.querySelector("#search-button");
 
@@ -54,6 +55,18 @@ class ArticlesView {
 				pictureEl.classList.add("pic");
 				pictureEl.src = article.image;
 				imgBorderEl.append(pictureEl);
+
+				pictureEl.addEventListener("click", () => {
+					const headlineEl = document.createElement("h2");
+					headlineEl.classList.add("headline");
+					headlineEl.innerText = article.headline;
+
+					const summaryEl = document.createElement("p");
+					summaryEl.classList.add("summary");
+					summaryEl.innerText = article.summary;
+
+					this.secondColumnEl.append(headlineEl, summaryEl);
+				});
 
 				const nameEl = document.createElement("a");
 				nameEl.classList.add("title");

@@ -78,6 +78,7 @@ img {
   margin-right: auto;
   outline: 10px;
   outline-style: solid;
+  cursor: pointer;
 }
 
 a {

@@ -119,4 +119,24 @@ describe("ArticlesView", () => {
 			"No results matching your search"
 		);
 	});
+
+	it("displays an article summary after clicking the thumbnail", () => {
+		view.api.loadArticles.mockImplementation((callback) =>
+			callback(articleData)
+		);
+		view.model.convertData.mockImplementation(() => article);
+		view.model.addArticle.mockImplementation(() => undefined);
+		view.model.getArticles.mockImplementation(() => [article]);
+
+		view.displayArticlesFromApi();
+
+		const thumbnailEl = document.querySelector("img.pic");
+		thumbnailEl.click();
+		expect(document.querySelector("h2.headline").innerText).toBe(
+			"Real Madrid reach the Champions League final"
+		);
+		expect(document.querySelector("p.summary").innerText).toBe(
+			"article summary here"
+		);
+	});
 });
