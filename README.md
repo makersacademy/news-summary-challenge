@@ -6,7 +6,7 @@ This is an app that grabs all the headlines from the Guardian newspaper API and 
 
 Initially, a Miro board was used in order to plan out this app's functionality. This board can be found [here](https://miro.com/app/board/uXjVO3dkjVs=/?share_link_id=472309087518).
 
-> *Note: I wanted to also use the Aylien API in order to display summaries for each article but unfortunately Aylien is not allowing new users to sign up for an API key.*
+> _Note: I wanted to also use the Aylien API in order to display summaries for each article but unfortunately Aylien is not allowing new users to sign up for an API key._
 
 ## Getting Started
 
@@ -36,8 +36,8 @@ while in the main directory. Then create the key function and export it:
 
 ```js
 key = () => {
-  return '<Insert-your-API-key>';
-}
+  return "<Insert-your-API-key>";
+};
 
 module.exports = key;
 ```
@@ -54,7 +54,7 @@ While build is running, you can either double click the index.html file or enter
 
 Entering a search will then empty the list of articles on the page and will now display the top ten most relevant stories that contain any of the words the user entered in the search field. When the user enters a word that is not contained in any article headline, a corresponding message appears on the page notifying the user that their search has no matches. Similarly, when the API fails a request to retrieve the necessary data, an error message appears on the screen instead.
 
-Each article comes with a thumbnail and a title which is also a hyperlink to the Guardian's website for that specific article.
+Each article comes with a thumbnail and a title. Clicking the thumbnail of an article makes the article body text appear on the right hand column of the page whereas clicking the title sends the user to the guardian website for that specific article.
 
 ### Mobile Version
 
@@ -79,17 +79,23 @@ to start the server. The port that your computer is using should be printed in t
 
 In your phone's browser, in the address bar, enter `http://<IP-address>:<Port>` and enjoy using the app!
 
-> *Note: Your phone and computer must be connected to the same network for this to work.*
+> _Note: Your phone and computer must be connected to the same network for this to work._
 
 ## Testing
 
 Jest was used as a test suite to test drive this app. To run these tests, in the terminal simply enter:
 
 ```
-jest
+npm run test
 ```
 
-There may be an error when running jest which could fail a few of the tests. If this comes up just run:
+To see the code coverage stats made by Jest, run:
+
+```
+npm run test:coverage
+```
+
+There may be an error that will fail a few of the tests. If this comes up just run:
 
 ```
 npm install --save-dev jest-environment-jsdom
@@ -126,7 +132,7 @@ I can specify a search query on the page and get articles matching this search
 ```
 As a busy politician
 So I can quickly read through the essential of today's stories
-I can see a summarised version of of the article 
+I can see a summarised version of of the article
 ```
 
 To get a summary of an article's content, you'll need to use the [Aylien API
@@ -147,16 +153,6 @@ So I make my news reading more fun
 I can see whizzy animations in the app
 ```
 
-## Mockups
-
-### Headlines page
-
-![Headlines page mockup](./images/news-summary-project-headlines-page-mockup.png)
-
-### Article summary page
-
-![Article page mockup](./images/news-summary-project-article-page-mockup.png)
-
 ## Guardian API Overview
 
 If you wanted to get the latest articles from the Guardian API, this is the cURL request
@@ -174,56 +170,57 @@ curl "https://content.guardianapis.com/search?q=America&query-fields=headline&sh
 ```
 
 The above request will return a response similar to this one:
+
 ```json
 {
-   "response":{
-      "status":"ok",
-      "userTier":"developer",
-      "total":2324223,
-      "startIndex":1,
-      "pageSize":10,
-      "currentPage":1,
-      "pages":232423,
-      "orderBy":"newest",
-      "results":[
-         {
-            "id":"sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
-            "type":"article",
-            "sectionId":"sport",
-            "sectionName":"Sport",
-            "webPublicationDate":"2022-02-02T14:42:43Z",
-            "webTitle":"At last, the inventors of modern skiing have something to cheer: Dave Ryding | Andy Bull",
-            "webUrl":"https://www.theguardian.com/sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
-            "apiUrl":"https://content.guardianapis.com/sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
-            "fields":{
-               "headline":"At last, the inventors of modern skiing have something to cheer: Dave Ryding ",
-               "byline":"Andy Bull",
-               "thumbnail":"https://media.guim.co.uk/1e2ab1ced5da6ecf8d7fcca9f87d5398c1d22336/0_119_6480_3888/500.jpg"
-            },
-            "isHosted":false,
-            "pillarId":"pillar/sport",
-            "pillarName":"Sport"
-         },
-         {
-            "id":"business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
-            "type":"liveblog",
-            "sectionId":"business",
-            "sectionName":"Business",
-            "webPublicationDate":"2022-02-02T14:41:49Z",
-            "webTitle":"Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
-            "webUrl":"https://www.theguardian.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
-            "apiUrl":"https://content.guardianapis.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
-            "fields":{
-               "headline":"Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
-               "byline":"Julia Kollewe",
-               "thumbnail":"https://media.guim.co.uk/aee3b3b05ea2a37acdadc91095c163fd381eba4a/0_24_3500_2100/500.jpg"
-            },
-            "isHosted":false,
-            "pillarId":"pillar/news",
-            "pillarName":"News"
-         },
-         // ...
-      ]
-   }
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 2324223,
+    "startIndex": 1,
+    "pageSize": 10,
+    "currentPage": 1,
+    "pages": 232423,
+    "orderBy": "newest",
+    "results": [
+      {
+        "id": "sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
+        "type": "article",
+        "sectionId": "sport",
+        "sectionName": "Sport",
+        "webPublicationDate": "2022-02-02T14:42:43Z",
+        "webTitle": "At last, the inventors of modern skiing have something to cheer: Dave Ryding | Andy Bull",
+        "webUrl": "https://www.theguardian.com/sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
+        "apiUrl": "https://content.guardianapis.com/sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
+        "fields": {
+          "headline": "At last, the inventors of modern skiing have something to cheer: Dave Ryding ",
+          "byline": "Andy Bull",
+          "thumbnail": "https://media.guim.co.uk/1e2ab1ced5da6ecf8d7fcca9f87d5398c1d22336/0_119_6480_3888/500.jpg"
+        },
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
+        "type": "liveblog",
+        "sectionId": "business",
+        "sectionName": "Business",
+        "webPublicationDate": "2022-02-02T14:41:49Z",
+        "webTitle": "Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
+        "webUrl": "https://www.theguardian.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
+        "apiUrl": "https://content.guardianapis.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
+        "fields": {
+          "headline": "Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
+          "byline": "Julia Kollewe",
+          "thumbnail": "https://media.guim.co.uk/aee3b3b05ea2a37acdadc91095c163fd381eba4a/0_24_3500_2100/500.jpg"
+        },
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+      // ...
+    ]
+  }
 }
 ```
