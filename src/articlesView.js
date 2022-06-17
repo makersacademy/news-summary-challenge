@@ -11,6 +11,7 @@ class ArticlesView {
 		this.searchButtonEl.addEventListener("click", () => {
 			this.model.reset();
 			this.#emptyDisplay();
+			this.#emptySummaries();
 			this.displayArticlesFromApi(this.searchFieldEl.value);
 		});
 
