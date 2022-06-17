@@ -56,17 +56,7 @@ class ArticlesView {
 				pictureEl.src = article.image;
 				imgBorderEl.append(pictureEl);
 
-				pictureEl.addEventListener("click", () => {
-					const headlineEl = document.createElement("h2");
-					headlineEl.classList.add("headline");
-					headlineEl.innerText = article.headline;
-
-					const summaryEl = document.createElement("p");
-					summaryEl.classList.add("summary");
-					summaryEl.innerText = article.summary;
-
-					this.secondColumnEl.append(headlineEl, summaryEl);
-				});
+				this.#addImageClick(pictureEl, article);
 
 				const nameEl = document.createElement("a");
 				nameEl.classList.add("title");
@@ -86,6 +76,30 @@ class ArticlesView {
 		});
 		document.querySelectorAll("div.message").forEach((message) => {
 			message.remove();
+		});
+	}
+
+	#addImageClick(picture, article) {
+		picture.addEventListener("click", () => {
+			this.#emptySummaries();
+			const headlineEl = document.createElement("h2");
+			headlineEl.classList.add("headline");
+			headlineEl.innerText = article.headline;
+
+			const summaryEl = document.createElement("p");
+			summaryEl.classList.add("summary");
+			summaryEl.innerText = article.summary;
+
+			this.secondColumnEl.append(headlineEl, summaryEl);
+		});
+	}
+
+	#emptySummaries() {
+		document.querySelectorAll("h2.headline").forEach((headline) => {
+			headline.remove();
+		});
+		document.querySelectorAll("p.summary").forEach((summary) => {
+			summary.remove();
 		});
 	}
 
