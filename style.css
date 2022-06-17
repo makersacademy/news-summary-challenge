@@ -19,7 +19,7 @@ h1 {
   font-size: 40pt;
 }
 
-input[type='text'] {
+input[type="text"] {
   width: 10%;
   font-size: 20px;
   transition: width 0.4s ease-in-out;
@@ -29,7 +29,7 @@ input[type='text'] {
   padding-bottom: 30px;
 }
 
-input[type='text']:focus {
+input[type="text"]:focus {
   width: 80%;
 }
 
@@ -91,7 +91,7 @@ a {
 }
 
 a:link {
-  color: rgb(236, 155, 4)
+  color: rgb(236, 155, 4);
 }
 
 a:visited {
@@ -100,4 +100,14 @@ a:visited {
 
 a:hover {
   color: rgb(254, 193, 81);
+}
+
+h2 {
+  color: white;
+  width: 95%;
+}
+
+p {
+  color:white;
+  width: 95%;
 }
