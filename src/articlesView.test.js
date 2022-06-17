@@ -1,111 +1,122 @@
 /**
  * @jest-environment jsdom
  */
+/* eslint-disable no-undef */
 
-const fs = require('fs');
-const ArticlesView = require('./articlesView');
-const ArticlesModel = require('./articlesModel');
-const ArticlesApi = require('./articlesApi');
+const fs = require("fs");
+const ArticlesView = require("./articlesView");
+const ArticlesModel = require("./articlesModel");
+const ArticlesApi = require("./articlesApi");
 
-jest.mock('./articlesModel');
-jest.mock('./articlesApi');
+jest.mock("./articlesModel");
+jest.mock("./articlesApi");
 
-describe('ArticlesView', () => {
-  beforeEach(() => {
-    ArticlesModel.mockClear();
-    ArticlesApi.mockClear();
-    document.body.innerHTML = fs.readFileSync('./index.html')
-    mockModel = new ArticlesModel();
-    mockApi = new ArticlesApi();
-    view = new ArticlesView(mockModel, mockApi);
-    articleData = {
-      response: {
-        results: [{
-          webTitle: 'Real Madrid reach the Champions League final',
-          webUrl: 'www.madridfinal.com',
-          fields: {
-            thumbnail: 'madridpicture.jpg'
-          }
-        }]
-      }
-    };
-    article = {
-      headline: 'Real Madrid reach the Champions League final',
-      image: 'madridpicture.jpg',
-      url: 'www.madridfinal.com'
-    };
-  });
+describe("ArticlesView", () => {
+	beforeEach(() => {
+		ArticlesModel.mockClear();
+		ArticlesApi.mockClear();
+		document.body.innerHTML = fs.readFileSync("./index.html");
+		mockModel = new ArticlesModel();
+		mockApi = new ArticlesApi();
+		view = new ArticlesView(mockModel, mockApi);
+		articleData = {
+			response: {
+				results: [
+					{
+						webTitle: "Real Madrid reach the Champions League final",
+						webUrl: "www.madridfinal.com",
+						fields: {
+							thumbnail: "madridpicture.jpg",
+							bodyText: "article summary here",
+						},
+					},
+				],
+			},
+		};
+		article = {
+			headline: "Real Madrid reach the Champions League final",
+			image: "madridpicture.jpg",
+			url: "www.madridfinal.com",
+			summary: "article summary here",
+		};
+	});
 
-  it('displayArticlesFromApi fetches the data and display it on the page', () => {
-    view.api.loadArticles.mockImplementation((callback) => 
-      callback(articleData)
-    );
-    view.model.convertData.mockImplementation(() => article);
-    view.model.addArticle.mockImplementation(() => undefined);
-    view.model.getArticles.mockImplementation(() => [article]);
+	it("displayArticlesFromApi fetches the data and display it on the page", () => {
+		view.api.loadArticles.mockImplementation((callback) =>
+			callback(articleData)
+		);
+		view.model.convertData.mockImplementation(() => article);
+		view.model.addArticle.mockImplementation(() => undefined);
+		view.model.getArticles.mockImplementation(() => [article]);
 
-    view.displayArticlesFromApi();
+		view.displayArticlesFromApi();
 
-    expect(view.api.loadArticles).toHaveBeenCalledTimes(1);
-    expect(view.model.convertData).toHaveBeenCalledTimes(1);
-    expect(view.model.addArticle).toHaveBeenCalledTimes(1);
-    expect(view.model.getArticles).toHaveBeenCalledTimes(1);
-    expect(document.querySelector('img.pic').src).toBe(
-      'http://localhost/madridpicture.jpg'
-    );
-    expect(document.querySelector('a.title').href).toBe(
-      'http://localhost/www.madridfinal.com'
-    );
-    expect(document.querySelector('a.title').innerText).toBe(
-      'Real Madrid reach the Champions League final'
-    );
-  });
+		expect(view.api.loadArticles).toHaveBeenCalledTimes(1);
+		expect(view.model.convertData).toHaveBeenCalledTimes(1);
+		expect(view.model.addArticle).toHaveBeenCalledTimes(1);
+		expect(view.model.getArticles).toHaveBeenCalledTimes(1);
+		expect(document.querySelector("img.pic").src).toBe(
+			"http://localhost/madridpicture.jpg"
+		);
+		expect(document.querySelector("a.title").href).toBe(
+			"http://localhost/www.madridfinal.com"
+		);
+		expect(document.querySelector("a.title").innerText).toBe(
+			"Real Madrid reach the Champions League final"
+		);
+	});
 
-  it('returns a list of articles matching the users search query', () => {
-    view.model.reset.mockImplementation(() => undefined);
-    view.api.loadArticles.mockImplementation((callback, search) => callback(articleData));
-    view.model.convertData.mockImplementation(() => article);
-    view.model.addArticle.mockImplementation(() => undefined);
-    view.model.getArticles.mockImplementation(() => [article]);
-    
-    const searchEl = document.querySelector('#search-field');
-    searchEl.value = 'madrid';
-    const searchButtonEl = document.querySelector('#search-button');
-    searchButtonEl.click();
+	it("returns a list of articles matching the users search query", () => {
+		view.model.reset.mockImplementation(() => undefined);
+		view.api.loadArticles.mockImplementation((callback) =>
+			callback(articleData)
+		);
+		view.model.convertData.mockImplementation(() => article);
+		view.model.addArticle.mockImplementation(() => undefined);
+		view.model.getArticles.mockImplementation(() => [article]);
 
-    expect(view.api.loadArticles).toHaveBeenCalledTimes(1);
-    expect(view.model.reset).toHaveBeenCalledTimes(1);
-    expect(view.model.convertData).toHaveBeenCalledTimes(1);
-    expect(view.model.addArticle).toHaveBeenCalledTimes(1);
-    expect(view.model.getArticles).toHaveBeenCalledTimes(1);
-    expect(document.querySelector('img.pic').src).toBe(
-      'http://localhost/madridpicture.jpg'
-    );
-    expect(document.querySelector('a.title').href).toBe(
-      'http://localhost/www.madridfinal.com'
-    );
-    expect(document.querySelector('a.title').innerText).toBe(
-      'Real Madrid reach the Champions League final'
-    );
-  });
+		const searchEl = document.querySelector("#search-field");
+		searchEl.value = "madrid";
+		const searchButtonEl = document.querySelector("#search-button");
+		searchButtonEl.click();
 
-  it('displays a message when the user search matches no articles', () => {
-    view.model.reset.mockImplementation(() => undefined);
-    view.api.loadArticles.mockImplementation((callback, search) => callback({
-      response: {
-        results: []
-      }
-    }));
-    view.model.convertData.mockImplementation(() => undefined);
-    view.model.addArticle.mockImplementation(() => undefined);
-    view.model.getArticles.mockImplementation(() => []);
-    
-    const searchEl = document.querySelector('#search-field');
-    searchEl.value = 'ijrnfewndew';
-    const searchButtonEl = document.querySelector('#search-button');
-    searchButtonEl.click();
+		expect(view.api.loadArticles).toHaveBeenCalledTimes(1);
+		expect(view.model.reset).toHaveBeenCalledTimes(1);
+		expect(view.model.convertData).toHaveBeenCalledTimes(1);
+		expect(view.model.addArticle).toHaveBeenCalledTimes(1);
+		expect(view.model.getArticles).toHaveBeenCalledTimes(1);
+		expect(document.querySelector("img.pic").src).toBe(
+			"http://localhost/madridpicture.jpg"
+		);
+		expect(document.querySelector("a.title").href).toBe(
+			"http://localhost/www.madridfinal.com"
+		);
+		expect(document.querySelector("a.title").innerText).toBe(
+			"Real Madrid reach the Champions League final"
+		);
+	});
 
-    expect(document.querySelectorAll('div.article').length).toBe(0);
-    expect(document.querySelector('div.message').innerText).toBe('No results matching your search');
-  });
+	it("displays a message when the user search matches no articles", () => {
+		view.model.reset.mockImplementation(() => undefined);
+		view.api.loadArticles.mockImplementation((callback) =>
+			callback({
+				response: {
+					results: [],
+				},
+			})
+		);
+		view.model.convertData.mockImplementation(() => undefined);
+		view.model.addArticle.mockImplementation(() => undefined);
+		view.model.getArticles.mockImplementation(() => []);
+
+		const searchEl = document.querySelector("#search-field");
+		searchEl.value = "ijrnfewndew";
+		const searchButtonEl = document.querySelector("#search-button");
+		searchButtonEl.click();
+
+		expect(document.querySelectorAll("div.article").length).toBe(0);
+		expect(document.querySelector("div.message").innerText).toBe(
+			"No results matching your search"
+		);
+	});
 });
