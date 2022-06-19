@@ -63,6 +63,7 @@ class ArticlesView {
         nameEl.classList.add("title");
         nameEl.href = article.url;
         nameEl.innerText = article.headline;
+        nameEl.setAttribute("target", "_blank");
 
         articleEl.append(imgBorderEl, nameEl);
 
