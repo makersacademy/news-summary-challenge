@@ -35,7 +35,7 @@ touch src/apiKey.js
 while in the main directory. Then create the key function and export it:
 
 ```js
-key = () => {
+const key = () => {
   return "<Insert-your-API-key>";
 };
 
