@@ -29,7 +29,7 @@ npm install
 In order to access the Guardian API and therefore in order for this program to work, you must have your own API key that is sent with every request. If you haven't already got one, you can sign up for one [here](https://open-platform.theguardian.com/access/). Once you have obtained your API key, you must create a JS file with a function that returns the key so that it can be used by the ArticlesApi class:
 
 ```
-touch src/apiKey.js
+touch src/guardianApiKey.js
 ```
 
 while in the main directory. Then create the key function and export it:
