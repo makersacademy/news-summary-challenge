@@ -1,4 +1,4 @@
-const key = require("./apiKey");
+const key = require("./guardianApiKey");
 
 class ArticlesApi {
   loadArticles(callbackOne, search = "", callbackTwo) {
