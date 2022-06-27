@@ -1,0 +1,6 @@
+node_modules
+bundle.js
+guardianApiKey.js
+coverage
+package-lock.json
+.DS_Store

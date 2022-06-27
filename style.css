@@ -1,0 +1,121 @@
+html {
+  background: #444444;
+}
+
+body {
+  font-family: tahoma;
+  text-align: center;
+  background: rgb(50, 60, 103);
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+h1 {
+  color: white;
+  font-size: 40pt;
+}
+
+input[type="text"] {
+  width: 10%;
+  font-size: 20px;
+  transition: width 0.4s ease-in-out;
+}
+
+.search {
+  padding-bottom: 30px;
+}
+
+input[type="text"]:focus {
+  width: 80%;
+}
+
+button {
+  font-size: 20px;
+}
+
+.block {
+  display: inline-block;
+  width: 100%;
+}
+
+.first-column {
+  height: 70em;
+  overflow-y: scroll;
+  float: left;
+  width: 50%;
+}
+
+.second-column {
+  height: 70em;
+  overflow-y: scroll;
+  float: right;
+  width: 50%;
+}
+
+.message {
+  color: white;
+  padding: 10px;
+}
+
+.article {
+  padding-bottom: 40px;
+  animation: fadeIn 2s;
+}
+
+.border {
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+img {
+  height: 90%;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 10px;
+  outline-style: solid;
+  cursor: pointer;
+}
+
+a {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  font-size: 14pt;
+  text-decoration: none;
+}
+
+a:link {
+  color: rgb(236, 155, 4);
+}
+
+a:visited {
+  color: rgb(174, 145, 89);
+}
+
+a:hover {
+  color: rgb(254, 193, 81);
+}
+
+h2 {
+  color: white;
+  width: 95%;
+  animation: fadeIn 2s;
+}
+
+p {
+  color:white;
+  width: 95%;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
