@@ -19,4 +19,4 @@ describe('NewsModel', () => {
     model.setArticles(["Bulbosaur", "Charmander"]);
     expect(model.getNews()).toEqual(["Pikachu", "Bulbosaur", "Charmander"]);
   });
-})
+});

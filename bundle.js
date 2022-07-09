@@ -18,7 +18,7 @@
           this.news.push(article);
         }
         setArticles(articles) {
-          articles.forEach((article) => this.addArticle(article));
+          articles.forEach((article) => this.addArticle(article.webTitle));
         }
       };
       module.exports = NewsModel2;
@@ -45,7 +45,7 @@
         }
         displayNewsFromApi() {
           this.api.loadData((data) => {
-            this.model.setArticles(data);
+            this.model.setArticles(data.response.results);
             this.displayNews();
           });
         }

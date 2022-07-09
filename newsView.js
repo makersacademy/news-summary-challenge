@@ -18,10 +18,10 @@ class NewsView {
 
   displayNewsFromApi() {
     this.api.loadData(data => {
-      this.model.setArticles(data);
+      this.model.setArticles(data.response.results);
       this.displayNews();
-    });
-  }
+    })
+    };
 }
 
 module.exports = NewsView;

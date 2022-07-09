@@ -13,7 +13,7 @@ class NewsModel {
   }
 
   setArticles(articles) {
-    articles.forEach((article) => this.addArticle(article));
+    articles.forEach((article) => this.addArticle(article.webTitle));
   }
 }
 
