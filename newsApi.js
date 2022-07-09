@@ -4,9 +4,9 @@ class NewsApi {
       .then(response => response.json())
       .then(data => {
         callback(data)
-      })
-      .catch(() => {
-        errorCallback();
+      // })
+      // .catch(() => {
+      //   errorCallback();
       });
   }
 }

@@ -4,7 +4,9 @@ class NewsModel {
   }
 
   add(news) {
-    this.news.push(news);
+    news.forEach(item => {
+      this.news.push(item);
+    })
   }
 
   getNews(){
