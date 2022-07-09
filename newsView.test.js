@@ -33,7 +33,7 @@
       const view = new NewsView(model, mockedApi);
       view.displayNewsFromApi();
       expect(document.querySelectorAll('div.news').length).toEqual(1);
-      expect(document.querySelectorAll('div.notes').innerText).toEqual("Is this working");
+      expect(document.querySelectorAll('div.news')[0].innerText).toEqual("Is this working");
     })
   })
  })

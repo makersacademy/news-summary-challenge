@@ -1,6 +1,7 @@
 class NewsView {
-  constructor(model) {
+  constructor(model, api) {
     this.model = model;
+    this.api = api;
     this.mainContainerEl = document.querySelector('#main-container');
   }
 
@@ -12,6 +13,13 @@ class NewsView {
       newsEl.innerText = article;
       newsEl.className = 'news';
       this.mainContainerEl.append(newsEl);
+    });
+  }
+
+  displayNewsFromApi() {
+    this.api.loadData(data => {
+      this.model.setArticles(data);
+      this.displayNews();
     });
   }
 }

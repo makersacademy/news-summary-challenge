@@ -29,8 +29,9 @@
   var require_newsView = __commonJS({
     "newsView.js"(exports, module) {
       var NewsView2 = class {
-        constructor(model2) {
+        constructor(model2, api2) {
           this.model = model2;
+          this.api = api2;
           this.mainContainerEl = document.querySelector("#main-container");
         }
         displayNews() {
@@ -42,16 +43,37 @@
             this.mainContainerEl.append(newsEl);
           });
         }
+        displayNewsFromApi() {
+          this.api.loadData((data) => {
+            this.model.setArticles(data);
+            this.displayNews();
+          });
+        }
       };
       module.exports = NewsView2;
+    }
+  });
+
+  // newsApi.js
+  var require_newsApi = __commonJS({
+    "newsApi.js"(exports, module) {
+      var NewsApi2 = class {
+        loadData(callback) {
+          fetch("http://localhost:3000/news").then((response) => response.json()).then((data) => {
+            callback(data);
+          });
+        }
+      };
+      module.exports = NewsApi2;
     }
   });
 
   // index.js
   var NewsModel = require_newsModel();
   var NewsView = require_newsView();
+  var NewsApi = require_newsApi();
   var model = new NewsModel();
-  var view = new NewsView(model);
-  model.addArticle("Fuck this for a game of soldiers");
-  view.displayNews();
+  var api = new NewsApi();
+  var view = new NewsView(model, api);
+  view.displayNewsFromApi();
 })();
