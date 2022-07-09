@@ -12,4 +12,11 @@ describe('NewsModel', () => {
     model.addArticle("JavaScript hates Joe");
     expect(model.getNews()).toEqual(["Joe hates JavaScript", "JavaScript hates Joe"]);
   })
+
+  it('should set an array of articles', () => {
+    const model = new NewsModel();
+    model.addArticle("Pikachu");
+    model.setArticles(["Bulbosaur", "Charmander"]);
+    expect(model.getNews()).toEqual(["Pikachu", "Bulbosaur", "Charmander"]);
+  });
 })

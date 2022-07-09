@@ -11,6 +11,10 @@ class NewsModel {
   addArticle(article) {
     this.news.push(article);
   }
+
+  setArticles(articles) {
+    articles.forEach((article) => this.addArticle(article));
+  }
 }
 
 module.exports = NewsModel;

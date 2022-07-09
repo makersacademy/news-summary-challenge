@@ -20,4 +20,20 @@
     expect(document.querySelectorAll('div.news').length).toEqual(1);
     expect(document.querySelectorAll('div.news')[0].innerText).toEqual("G'day cunt");
   })
+
+  describe('displayNewsFromApi', () => {
+    it('displays news from the api', () => {
+      const mockedApi = {
+        loadData: () => {
+          model.setArticles(["Is this working"]);
+          view.displayNews();
+        }
+      }
+      const model = new NewsModel();
+      const view = new NewsView(model, mockedApi);
+      view.displayNewsFromApi();
+      expect(document.querySelectorAll('div.news').length).toEqual(1);
+      expect(document.querySelectorAll('div.notes').innerText).toEqual("Is this working");
+    })
+  })
  })
