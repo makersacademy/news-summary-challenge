@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Hafizalimi7/news-summary-challenge#readme",
   "devDependencies": {
-    "jest-environment-jsdom": "^28.1.2"
+    "jest-environment-jsdom": "^28.1.2",
+    "jest-fetch-mock": "^3.0.3"
   }
 }
