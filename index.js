@@ -10,4 +10,4 @@ const model = new GuardianModel();
 const view = new NewsView(model, api);
 
 
-view.showGuardianNews();
+view.showGuardianNewsFromApi();
