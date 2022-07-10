@@ -12,6 +12,19 @@ class NewsModel {
   getNews(){
     return this.news;
   }
+
+  filter(wordOrPhrase) {
+    const lowerCaseWords = wordOrPhrase.toLowerCase().split(" ")
+    let result = []
+    this.news.map(item => {
+      lowerCaseWords.forEach(word => {
+        if (item.webTitle.toLowerCase().includes(word)) {
+          result.push(item)
+        }
+      })
+    })
+    return result;
+  }  
 }
 
 module.exports = NewsModel;
