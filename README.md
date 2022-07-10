@@ -1,4 +1,22 @@
-# News challenge
+News challenge
+==============
+
+# About
+
+This is a front-end app & API to show top Guardian news stories from their server. You can also search by single or multiple search terms (with spaces or commas as delimeters) to filter the news stories.
+
+I have so far achieved the four primary User Stories and added some styling.
+
+[CRC cards for planning](https://echeung.me/crcmaker/?share=W3sibmFtZSI6ImluZGV4Iiwic3VwZXJjbGFzc2VzIjoiIiwic3ViY2xhc3NlcyI6IiIsInR5cGUiOjEsInJlc3BvbnNpYmlsaXRpZXMiOlsicnVucyB0aGUgY29kZSJdLCJjb2xsYWJvcmF0b3JzIjpbIk1vZGVsIiwiVmlldyIsIkFQSSJdfSx7Im5hbWUiOiJNb2RlbCIsInN1cGVyY2xhc3NlcyI6IiIsInN1YmNsYXNzZXMiOiIiLCJ0eXBlIjoxLCJyZXNwb25zaWJpbGl0aWVzIjpbIi0ga25vd3MgdG9wIHN0b3JpZXMiLCItIGNhbiByZXR1cm4gdG9wIHN0b3JpZXMiLCItIGNhbiB1cGRhdGUgbmV3cyBzdG9yaWVzIChmcm9tIEFQSSkiLCItIGNhbiByZXR1cm4gbmV3cyBzdG9yaWVzIGJhc2VkIG9uIHNlYXJjaCBmdW5jdGlvbiJdLCJjb2xsYWJvcmF0b3JzIjpbIiJdfSx7Im5hbWUiOiJWaWV3Iiwic3VwZXJjbGFzc2VzIjoiIiwic3ViY2xhc3NlcyI6IiIsInR5cGUiOjEsInJlc3BvbnNpYmlsaXRpZXMiOlsiLSBrbm93cyByZWxldmFudCBwYWdlIGFzc2V0cyAoYnV0dG9ucywgdGV4dCBib3hlcyBldGMpIiwiLSBkaXNwbGF5cyBuZXdzIHN0b3JpZXMgKGZyb20gQVBJKSIsIi0gcmVhZCBzdG9yeSIsIi0gc2VhcmNoIGZpbHRlciJdLCJjb2xsYWJvcmF0b3JzIjpbIkFQSSIsIk1vZGVsIl19LHsibmFtZSI6IkFQSSIsInN1cGVyY2xhc3NlcyI6IiIsInN1YmNsYXNzZXMiOiIiLCJ0eXBlIjoxLCJyZXNwb25zaWJpbGl0aWVzIjpbIi0gbG9hZCBuZXdzIl0sImNvbGxhYm9yYXRvcnMiOlsiIl19XQ==)
+
+# To run the program
+
+````console
+npm install
+node index.js
+````
+
+# Original instructions from Makers
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in
