@@ -31,15 +31,22 @@ class NewsView {
 
     // adding new news summary
     this.model.guardianNewsShow().forEach((newsItem) => {
+      
+      // Image
       let imgImage = document.createElement("img");
       imgImage.setAttribute("src", newsItem.image);
-      imgImage.setAttribute("class", "news-image")
+      imgImage.setAttribute("class", "news-image");
+
+      //Title
       let divTitle = document.createElement('div');
       divTitle.setAttribute("class", "news-title");
-      divTitle.innerText = newsItem.title;
+      divTitle.innerHTML = '<a href="' + newsItem.articleUrl + '">' + newsItem.title + '</a>'
+      
+      // Publication Date
       let divDate = document.createElement('div');
       divDate.setAttribute("class", 'publication-date');
       divDate.innerText = newsItem.pubDate;
+
       this.mainContainerEl.append(imgImage);
       this.mainContainerEl.append(divTitle);
       this.mainContainerEl.append(divDate);

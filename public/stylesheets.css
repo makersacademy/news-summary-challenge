@@ -1,0 +1,17 @@
+* {
+  font-family: sans-serif;
+}
+
+body {
+  background: cornsilk;
+  width: 600px;
+  padding: 20px;
+}
+
+a {
+  color: darkslategrey;
+}
+
+a:hover {
+  background-color: goldenrod;
+}

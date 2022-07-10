@@ -10,7 +10,8 @@ class GuardianModel {
       const newsItem = {
         title: news.webTitle,
         image: news.fields.thumbnail,
-        pubDate: news.webPublicationDate.substring(0,10)
+        pubDate: news.webPublicationDate.substring(0,10),
+        articleUrl: news.webUrl
       }
       this.guardianNewsList.push(newsItem);
     })
