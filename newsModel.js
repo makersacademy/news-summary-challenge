@@ -11,7 +11,7 @@ class NewsModel {
   }
 
   setHeadlines(headlines) {
-    headlines.forEach(headline => this.headlines.push(headline.fields.headline));
+    headlines.forEach(headline => this.headlines.push(headline.fields));
   }
 }
 

@@ -39,3 +39,6 @@ I can see all of today's headlines in one place -> API returns JSON object with 
 fetch function that returns Guardian API - called on loading of page
 display headlines function - create div element for each headline - called on loading of page
 
+viewing picture of article with headlines
+pass headline and thumbnail to array so they can be called when adding element to page
+

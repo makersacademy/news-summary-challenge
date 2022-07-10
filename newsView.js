@@ -18,9 +18,13 @@ class NewsView {
 
   _addHeadlinesToPage(headlines) {
     headlines.forEach((headline) => {
+    const imageEl = document.createElement('img');
+    imageEl.className = 'thumbnail';
+    imageEl.src = headline.thumbnail;
     const headlineEl = document.createElement('div');
-    headlineEl.innerText = headline;
+    headlineEl.innerText = headline.headline;
     headlineEl.className = 'headline'
+    this.mainContainerEl.append(imageEl)
     this.mainContainerEl.append(headlineEl)
   })
   }
