@@ -9,6 +9,10 @@ class NewsModel {
   getHeadlines() {
     return this.headlines
   }
+
+  setHeadlines(headlines) {
+    headlines.forEach(headline => this.headlines.push(headline.fields.headline));
+  }
 }
 
 module.exports = NewsModel
