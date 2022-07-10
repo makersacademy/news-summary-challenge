@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <script type="text/javascript" src="bundle.js" defer></script>
-
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+    </style>
     <title>Guardian headlines</title>
   </head>
+  
   <body>
-    <h1>Headlines</h1>
-    <input type="text" id="search-input" />
-    <button id="search-button">Search</button>
-    <button id="reset-button">Reset</button>
-    <div id="news-feed">
-      
+    <div class="heading">
+      <img src="images/1280px-The_Guardian.svg.png" width="300">
+    </div>
+    <div class="main-container">
+      <h1>Today's top stories</h1>
+      <input type="text" id="search-input" />
+      <button id="search-button">Search</button>
+      <button id="reset-button">Reset</button>
+      <div id="news-feed"></div>
     </div>
   </body>
 </html>

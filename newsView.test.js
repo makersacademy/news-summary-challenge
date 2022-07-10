@@ -86,6 +86,10 @@ describe('NewsView', () => {
     })
   })
 
+  // I couldn't get this test to work without mocking the window
+  // so I will return to it one day!
+  //
+  //
   // it('redirects to full artcile on click', () => {
   //   const model = new NewsModel();
   //   const api = {

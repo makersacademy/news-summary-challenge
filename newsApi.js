@@ -5,7 +5,7 @@ class NewsApi {
     this.url = `https://content.guardianapis.com/search?api-key=${apiKey}&show-fields=thumbnail`;
   }
   loadData(callback, errorCallback) {
-    fetch('http://localhost:3000/news')
+    fetch(this.url)
       .then(response => response.json())
       .then(data => {
         callback(data)
