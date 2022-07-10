@@ -10,8 +10,8 @@ class NewsView {
     console.log(news)
     news.forEach(item => {
       let div = document.createElement('div')
-      div.className = 'news-item';
-      div.innerText = item.id;
+      div.className = 'news-title';
+      div.innerText = item.webTitle;
       this.newsFeedEl.append(div)
     })
   }
