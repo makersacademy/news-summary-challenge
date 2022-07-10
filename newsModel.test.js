@@ -11,12 +11,21 @@ describe("NewsModel", () => {
   it("only shows news items that contain a single search term", () => {
     const model = new NewsModel();
     model.add(fakeJson.response.results);
-    expect(model.filter('covid')).toEqual([fakeJson.response.results[0]])
+    model.filter('covid')
+    expect(model.getNews()).toEqual([fakeJson.response.results[0]])
   });
 
-  it("only shows news items that contain a single search term", () => {
+  it("only shows news items that contain multiple search terms", () => {
     const model = new NewsModel();
     model.add(fakeJson.response.results);
-    expect(model.filter('covid robot')).toEqual([fakeJson.response.results[0], fakeJson.response.results[8]])
+    model.filter('covid robot');
+    expect(model.getNews()).toEqual([fakeJson.response.results[0], fakeJson.response.results[8]])
+  });
+
+  it("only shows news items that contain multiples search terms & delimeters", () => {
+    const model = new NewsModel();
+    model.add(fakeJson.response.results);
+    model.filter('covid, robot cartoon');
+    expect(model.getNews()).toEqual([fakeJson.response.results[0], fakeJson.response.results[3], fakeJson.response.results[8]])
   });
 });

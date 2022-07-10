@@ -1,4 +1,5 @@
 const apiKey = require('./apiKey')
+
 class NewsApi {
   constructor() {
     this.url = `https://content.guardianapis.com/search?api-key=${apiKey}&show-fields=thumbnail`;
@@ -8,9 +9,9 @@ class NewsApi {
       .then(response => response.json())
       .then(data => {
         callback(data)
-      // })
-      // .catch(() => {
-      //   errorCallback();
+      })
+      .catch(() => {
+        errorCallback();
       });
   }
 }
