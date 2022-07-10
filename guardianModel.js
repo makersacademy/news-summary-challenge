@@ -9,9 +9,9 @@ class GuardianModel {
     newsResult.forEach((news) => {
       const newsItem = {
         title: news.webTitle,
-        image: news.fields.thumbnail
+        image: news.fields.thumbnail,
+        pubDate: news.webPublicationDate.substring(0,10)
       }
-      console.log(news.webTitle)
       this.guardianNewsList.push(newsItem);
     })
   }
