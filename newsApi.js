@@ -6,13 +6,18 @@ class NewsApi {
     this.apiKey = `${ApiKey}`;
   }
 
-  getNews(newsCallback){
+  fetchStories(newsCallback){
     const fullUrl = this.url + this.apiKey
     fetch(fullUrl)
       .then(response => response.json())
       .then((data) => {
         newsCallback(data);
       })
+  }
+
+  setUrl(keyWord){
+    const fullUrl = this.url + keyWord + this.apiKey
+    fullUrl
   }
 }
 
