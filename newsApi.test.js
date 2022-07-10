@@ -11,7 +11,7 @@ describe('NewsApi', () => {
     ));
 
     api.loadData((returnedDataFromApi) => {
-      expect(returnedDataFromApi.response.results[0].id).toBe("football/live/2022/jul/08/spain-v-finland-womens-euro-2022-live");
+      expect(returnedDataFromApi.response.results[0].webTitle).toBe("Australia news live: Queenslanders urged to wear masks as nation records 13 Covid deaths; NSW flood clean-up under way");
     });
   });
 });
