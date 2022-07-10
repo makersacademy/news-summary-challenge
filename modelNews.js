@@ -15,4 +15,8 @@ class ModelNews{
   }
 }
 
+// const model = new ModelNews;
+// model.addNews("hello")
+// console.log(model.getNews())
+
 module.exports = ModelNews;
