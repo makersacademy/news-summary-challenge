@@ -1,0 +1,28 @@
+#headline {
+    float: left;
+    width: 50%;
+    height: 55em;
+    text-align: center;
+    background-color: rgba(4, 115, 82, 0.518);
+    overflow-y: scroll;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white
+}
+
+#overview {
+    float: right;
+    width: 50%;
+    height: 55em;
+    text-align: center;
+    background-color: rgba(4, 115, 82, 0.518);
+    overflow-y: scroll;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white
+}
+
+#title {
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
