@@ -32,13 +32,18 @@ I can see whizzy animations in the app
 
 # Design
 
-As a busy politician
+- As a busy politician
 So I know what the big stories of the day are -> returned from Guardian API
 I can see all of today's headlines in one place -> API returns JSON object with multiple keys
 
 fetch function that returns Guardian API - called on loading of page
 display headlines function - create div element for each headline - called on loading of page
 
-viewing picture of article with headlines
+- viewing picture of article with headlines
 pass headline and thumbnail to array so they can be called when adding element to page
 
+- As a busy politician
+So I can get a few more details about an important story
+I can click a news article title which links to the original article
+
+create an event listener for each div where clicking on the article title takes you to the url for the article

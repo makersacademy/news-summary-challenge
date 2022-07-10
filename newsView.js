@@ -12,7 +12,8 @@ class NewsView {
   displayHeadlinesfromAPI() {
     this.api.loadHeadlines((headlines) => {
       this.model.setHeadlines(headlines)
-      this.displayHeadlines()
+      this.displayHeadlines();
+      // this._createEventListeners();
     })
   }
 
@@ -20,14 +21,24 @@ class NewsView {
     headlines.forEach((headline) => {
     const imageEl = document.createElement('img');
     imageEl.className = 'thumbnail';
-    imageEl.src = headline.thumbnail;
+    imageEl.src = headline.fields.thumbnail;
     const headlineEl = document.createElement('div');
-    headlineEl.innerText = headline.headline;
-    headlineEl.className = 'headline'
+    headlineEl.innerText = headline.fields.headline;
+    headlineEl.className = 'headline';
+    headlineEl.setAttribute('href', headline.webUrl);
     this.mainContainerEl.append(imageEl)
     this.mainContainerEl.append(headlineEl)
   })
   }
+  // createEventListeners() {
+  //   const headlines = document.querySelectorAll('div.headline');
+  //   console.log(headlines);
+  //   headlines.forEach((headline) => {
+  //     headline.addEventListener('click', () => {
+  //       window.location.replace(headline.href);
+  //     })
+  //   })
+  // }
 }
 
 module.exports = NewsView

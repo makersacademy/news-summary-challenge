@@ -1,0 +1,24 @@
+h1, p, * {
+  font-family: sans-serif;
+}
+
+html {
+  background:#4e9feb;
+  
+}
+
+body {
+  background-image: url("paper.gif");
+  background: white;
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.headline {
+  border-bottom: 1px solid #aaa;
+  padding: 15px;
+}
+

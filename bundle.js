@@ -32,7 +32,7 @@
           return this.headlines;
         }
         setHeadlines(headlines) {
-          headlines.forEach((headline) => this.headlines.push(headline.fields));
+          headlines.forEach((headline) => this.headlines.push(headline));
         }
       };
       module.exports = NewsModel2;
@@ -62,10 +62,11 @@
           headlines.forEach((headline) => {
             const imageEl = document.createElement("img");
             imageEl.className = "thumbnail";
-            imageEl.src = headline.thumbnail;
+            imageEl.src = headline.fields.thumbnail;
             const headlineEl = document.createElement("div");
-            headlineEl.innerText = headline.headline;
+            headlineEl.innerText = headline.fields.headline;
             headlineEl.className = "headline";
+            headlineEl.setAttribute("href", headline.webUrl);
             this.mainContainerEl.append(imageEl);
             this.mainContainerEl.append(headlineEl);
           });
