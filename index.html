@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css" /> 
+  <title>News</title>
+</head>
+<body>
+  
+  <form class="search" action=""> 
+   <label for="">News</label>
+   <input class="input" type="text" />
+   <input type="submit" />
+  </form>
+
+  <div class="container">
+    <ul class="news-list"></ul>
+  </div>
+  <script src="bundle.js"></script>
+
+  <script>
+    /**
+    function retrieve(e){
+
+      e.preventDefault()
+
+      const apiKey = 'c56ade02-1dfc-40b9-979d-edf2e8c11027'
+      let topic = input.value;
+
+      let url = `https://content.guardianapis.com/search?q=${topic}&api-key=${apiKey}`
+
+      fetch(url).then((res) => {
+        return res.json()
+      }).then((data) =>{
+        console.log(data);
+        data.response.results.forEach(article =>{
+          let li =  document.createElement('li');
+          let a = document.createElement('a');
+          a.setAttribute('href', article.webUrl);
+          a.setAttribute('target', '_blank');
+          a.textContent = article.webTitle;
+          li.appendChild(a);
+          newsList.appendChild(li);
+        });
+      });
+
+      console.log(topic)
+    }
+    **/
+  </script>
+   </body>
+</body>
+</html>
