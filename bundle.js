@@ -54,13 +54,25 @@
     }
   });
 
+  // apikey.js
+  var require_apikey = __commonJS({
+    "apikey.js"(exports, module) {
+      var apiKey = "11ea4976-aa56-4081-85fd-ec4e4f8";
+      module.exports = apiKey;
+    }
+  });
+
   // newsApi.js
   var require_newsApi = __commonJS({
     "newsApi.js"(exports, module) {
+      var apiKey = require_apikey();
+      var baseUrl = "https://content.guardianapis.com/search?format=json&api-key=";
       var NewsApi2 = class {
         loadData(callback) {
-          fetch("http://localhost:3000/news").then((response) => response.json()).then((data) => {
+          fetch(`${baseUrl}${apiKey}`, { mode: "no-cors" }).then((response) => response.json()).then((data) => {
             callback(data);
+          }).catch(function(error) {
+            console.log("Request failed", error);
           });
         }
       };
