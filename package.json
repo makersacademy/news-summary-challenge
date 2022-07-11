@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild ./index.js --bundle  --outfile=bundle.js --watch"
+  },
+  "dependencies": {
+    "esbuild": "^0.14.48",
+    "jest": "^28.1.2",
+    "jest-environment-jsdom": "^28.1.2",
+    "jest-fetch-mock": "^3.0.3"
+  }
+}
