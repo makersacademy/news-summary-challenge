@@ -1,15 +1,15 @@
 const apiKey = require('./apikey');
-const baseUrl = "https://content.guardianapis.com/search?format=json&api-key=";
+const baseUrl = "http://localhost:3000/news";
 
 class NewsApi {
   loadData(callback) {
-    fetch(`${baseUrl}${apiKey}`, {mode: 'no-cors'})
+    fetch(baseUrl)
       .then(response => response.json())
       .then(data => { 
         callback(data)
-      }).catch((error) {
-        console.log('Request failed', error)
-      });
+      })//.catch((error) {
+      //   console.log('Request failed', error)
+      // });
   }
 }
 

@@ -14,11 +14,11 @@
   it('displays the headlines from the model', () => {
     const model = new NewsModel();
     const view = new NewsView(model);
-    model.addArticle("G'day cunt");
+    model.addArticle("Hello there");
 
     view.displayNews();
     expect(document.querySelectorAll('div.news').length).toEqual(1);
-    expect(document.querySelectorAll('div.news')[0].innerText).toEqual("G'day cunt");
+    expect(document.querySelectorAll('div.news')[0].innerText).toEqual("Hello there");
   })
 
   describe('displayNewsFromApi', () => {

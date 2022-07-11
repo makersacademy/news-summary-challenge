@@ -66,13 +66,11 @@
   var require_newsApi = __commonJS({
     "newsApi.js"(exports, module) {
       var apiKey = require_apikey();
-      var baseUrl = "https://content.guardianapis.com/search?format=json&api-key=";
+      var baseUrl = "http://localhost:3000/news";
       var NewsApi2 = class {
         loadData(callback) {
-          fetch(`${baseUrl}${apiKey}`, { mode: "no-cors" }).then((response) => response.json()).then((data) => {
+          fetch(baseUrl).then((response) => response.json()).then((data) => {
             callback(data);
-          }).catch(function(error) {
-            console.log("Request failed", error);
           });
         }
       };
