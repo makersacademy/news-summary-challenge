@@ -1,8 +1,13 @@
-# News challenge
+# News Summary Application Weekend Challenge
 
-This is a Weekend challenge in Makers Bootcamp. This exercise aims to learn how to use external APIs and write tests mocking the API responses.  
+This is a Weekend challenge in Makers Bootcamp. This exercise aims to learn how to use external APIs and write tests mocking the API responses. The time for finishing this weekend challenge is one weekend. The exercise was announced on Friday evening and it had to be submitted before 10am on the coming Monday.   
 
 This simple web application fetches data from the Guardian and display the information. 
+
+# Screenshots
+![Screenshot](/images/News-summary-screenshot.png)
+![Keyword Search](/images/News-summary-keyword-search.png)
+![Next button](/images/News-summary-next-button.png)
 
 ## Installation
 You would need your own API key to use the Guardian API, visit [The Guardian Open Platform](https://open-platform.theguardian.com/access/) to register.  
@@ -19,11 +24,6 @@ In a separate terminal, run:
 ```
 open index.html
 ```
-
-# Screenshots
-![Screenshot](/images/News-summary-screenshot.png)
-![Keyword Search](/images/News-summary-keyword-search.png)
-![Next button](/images/News-summary-next-button.png)
 
 ## Challenge Statement
 
