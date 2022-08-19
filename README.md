@@ -1,5 +1,32 @@
 # News challenge
 
+This is a Weekend challenge in Makers Bootcamp. This exercise aims to learn how to use external APIs and write tests mocking the API responses.  
+
+This simple web application fetches data from the Guardian and display the information. 
+
+## Installation
+You would need your own API key to use the Guardian API, visit [The Guardian Open Platform](https://open-platform.theguardian.com/access/) to register.  
+
+Create ```guardianApiKey.js``` by copying ```guardianApiKey.sample.js``` and insert your API key.
+
+To install and run:  
+```
+npm install
+npm run build
+```
+
+In a separate terminal, run:
+```
+open index.html
+```
+
+# Screenshots
+![Screenshot](/images/News-summary-screenshot.png)
+![Keyword Search](/images/News-summary-keyword-search.png)
+![Next button](/images/News-summary-next-button.png)
+
+## Challenge Statement
+
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in
   your README.
@@ -188,14 +215,3 @@ The above request will return a response similar to this one:
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Postman](https://www.postman.com/downloads/?utm_source=postman-home), a program to send and test HTTP requests
-
-
-<!-- BEGIN GENERATED SECTION DO NOT EDIT -->
-
----
-
-**How was this resource?**  
-[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😀)  
-Click an emoji to tell us.
-
-<!-- END GENERATED SECTION DO NOT EDIT -->
