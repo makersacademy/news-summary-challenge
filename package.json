@@ -20,5 +20,8 @@
   "homepage": "https://github.com/SophLewDev/news-summary-challenge#readme",
   "dependencies": {
     "jest": "^29.0.2"
+  },
+  "devDependencies": {
+    "jest-fetch-mock": "^3.0.3"
   }
 }
