@@ -1,16 +1,17 @@
+require('dotenv').config()
+
 class NewsApi {
-  loadSummaries(callback, errorCb) {
-    fetch("https://content.guardianapis.com/search?api-key=e3a72dc4-399d-43f2-a749-2637ab119442")
+  loadSummaries(callback) {
+    fetch(`https://content.guardianapis.com/search?api-key=${process.env.API_KEY}`)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+      // console.log(data)
       callback(data)
     })
-    .catch((error) => {
-      console.log(error)
-      errorCb(error)
-    })
+    // .catch((error) => {
+    //   console.log(error)
+    //   errorCb(error)
+    // })
   }
 }
-
 module.exports = NewsApi;
