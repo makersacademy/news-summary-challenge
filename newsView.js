@@ -1,25 +1,27 @@
-const FeedModel = require("./model/feedModel")
-
-class NotesView {
+class NewsView {
   constructor(feed) {
     this.feed = feed
     this.articlesButtonEl = document.querySelector("#get-articles")
-
     this.articlesButtonEl.addEventListener("click", () => {
       this.displayArticles()
     })
   }
 
   displayArticles() {
-    this.feed.getFeed().forEach(article => {
+    console.log(this.feed.getFeed())
+    this.feed.getFeed().forEach((article) => {
       const body = document.querySelector("body")
-      const newArticle = document.createElement("div")
-      newArticle.classList.add("article")
-      newArticle.textContent = article.headline
-      body.append(newArticle)
+      const imageEl = document.createElement("img");
+      const headlineEl = document.createElement('div');
+      imageEl.setAttribute("id", "image");
+      headlineEl.setAttribute("id", "article");
+      imageEl.src = article.imageUrl;
+      headlineEl.innerText = article.headline;
+      body.append(headlineEl);
+      body.append(imageEl);
     })
     document.querySelectorAll('div')
   }
 }
 
-module.exports = NotesView
+module.exports = NewsView

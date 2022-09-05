@@ -4,6 +4,7 @@ class FeedModel {
   constructor() {
     this.feed = []
   }
+  
   getFeed() {
     return this.feed
   }
@@ -13,6 +14,12 @@ class FeedModel {
       this.feed.push(new ArticleModel(article))
     })
   }
+
+  // setImages(articleSummaries) {
+  //   articleSummaries.response.results.forEach((article) => {
+  //     article.imageUrl
+  //   })
+  // }
 }
 
 module.exports = FeedModel
