@@ -13,8 +13,10 @@ class NewYorkTimesApi {
   getArticlesHome(resolve, reject) {
     const path = "home.json";
     const url = this.url + path + this.apiKey;
-    fetch("url")
-      .then((response) => resolve(response))
+    console.log(url);
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => resolve(data.results))
       .catch((error) => reject(error));
   }
 }

@@ -6,7 +6,19 @@
 
   // src/articlesModel.js
   var require_articlesModel = __commonJS({
-    "src/articlesModel.js"() {
+    "src/articlesModel.js"(exports, module) {
+      var ArticlesModel2 = class {
+        constructor() {
+          this.articles = [];
+        }
+        setArticles(data) {
+          data.forEach((article) => {
+            this.articles.push(article);
+          });
+          return this.articles;
+        }
+      };
+      module.exports = ArticlesModel2;
     }
   });
 
@@ -14,19 +26,60 @@
   var require_articlesView = __commonJS({
     "src/articlesView.js"(exports, module) {
       var ArticlesView2 = class {
-        constructor(api2) {
-          this.api = api2;
+        constructor() {
+          this.mainContainerEl = document.querySelector("#main-container");
+          this.articlesContainerEl = document.querySelector("#articles-container");
         }
-        loadArticles = () => {
-          this.api.getArticles(
-            (response) => {
-              console.log(response);
-            },
-            (error) => {
-              console.log(error);
-            }
-          );
+        displayArticles = (articles) => {
+          if (articles.length % 2 != 0)
+            articles.pop();
+          for (let i = 0; i < articles.length; i += 2) {
+            const rowEl = document.createElement("div");
+            rowEl.className = "row";
+            rowEl.append(this.getArticleColumnDiv(articles[i]));
+            rowEl.append(this.getArticleColumnDiv(articles[i + 1]));
+            this.articlesContainerEl.append(rowEl);
+          }
         };
+        getArticleColumnDiv = (article) => {
+          const columnEl = document.createElement("div");
+          columnEl.className = "col-sm-6";
+          columnEl.append(this.getTitleElWithLink(article.title, article.url));
+          columnEl.append(this.getDateEl(article.published_date));
+          columnEl.append(this.getBylineEl(article.byline));
+          columnEl.append(this.getImageEl(article.multimedia[0].url));
+          columnEl.append(this.getAbstractEl(article.abstract));
+          return columnEl;
+        };
+        getTitleElWithLink(title, url) {
+          const titleEl = document.createElement("h3");
+          const linkEl = document.createElement("a");
+          linkEl.textContent = title;
+          linkEl.href = url;
+          titleEl.append(linkEl);
+          return titleEl;
+        }
+        getImageEl(url) {
+          const imageEl = document.createElement("img");
+          imageEl.src = url;
+          imageEl.style.width = "200px";
+          return imageEl;
+        }
+        getBylineEl(byline) {
+          const bylineEl = document.createElement("p");
+          bylineEl.textContent = byline;
+          return bylineEl;
+        }
+        getDateEl(date) {
+          const dateEl = document.createElement("p");
+          dateEl.textContent = date;
+          return dateEl;
+        }
+        getAbstractEl(abstract) {
+          const abstractEl = document.createElement("p");
+          abstractEl.textContent = abstract;
+          return abstractEl;
+        }
       };
       module.exports = ArticlesView2;
     }
@@ -55,10 +108,36 @@
         getArticlesHome(resolve, reject) {
           const path = "home.json";
           const url = this.url + path + this.apiKey;
-          fetch("url").then((response) => resolve(response)).catch((error) => reject(error));
+          console.log(url);
+          fetch(url).then((response) => response.json()).then((data) => resolve(data.results)).catch((error) => reject(error));
         }
       };
       module.exports = NewYorkTimesApi2;
+    }
+  });
+
+  // src/articlesController.js
+  var require_articlesController = __commonJS({
+    "src/articlesController.js"(exports, module) {
+      var ArticlesController2 = class {
+        constructor(model2, view2, api2) {
+          this.model = model2;
+          this.view = view2;
+          this.api = api2;
+        }
+        loadArticles = () => {
+          this.api.getArticles(
+            (data) => {
+              const articles = this.model.setArticles(data);
+              this.view.displayArticles(articles);
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
+        };
+      };
+      module.exports = ArticlesController2;
     }
   });
 
@@ -66,7 +145,10 @@
   var ArticlesModel = require_articlesModel();
   var ArticlesView = require_articlesView();
   var NewYorkTimesApi = require_newYorkTimesApi();
+  var ArticlesController = require_articlesController();
   var api = new NewYorkTimesApi();
-  var view = new ArticlesView(api);
-  view.loadArticles();
+  var view = new ArticlesView();
+  var model = new ArticlesModel();
+  var controller = new ArticlesController(model, view, api);
+  controller.loadArticles();
 })();
