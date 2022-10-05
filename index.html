@@ -14,7 +14,17 @@
   </head>
   <body>
     <div id="main-container" class="container">
-      <h1 class="mt-5 mb-5">News from the New York Times</h1>
+      <div id="title-container" class="mt-5 mb-5">
+        <h1>News from the New York Times</h1>
+      </div>
+      <div id="search-bar" class="row mt-0 mb-5">
+        <div class="col">
+          <input id="search-query" class="form-control" type="text" />
+        </div>
+        <div class="col">
+          <button id="search-button" class="btn btn-light">search</button>
+        </div>
+      </div>
       <div id="articles-container"></div>
     </div>
     <script src="bundle.js"></script>
