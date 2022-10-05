@@ -5,8 +5,6 @@ class ArticlesView {
   }
 
   displayArticles = (articles) => {
-    // if array is not even length
-    // the last i+1 can be out of range
     if (articles.length % 2 != 0) articles.pop();
     for (let i = 0; i < articles.length; i += 2) {
       const rowEl = document.createElement("div");
