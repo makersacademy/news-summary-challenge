@@ -5,16 +5,14 @@ class ArticlesController {
     this.api = api;
   }
 
-  loadArticles = () => {
-    this.api.getArticles(
-      (data) => {
-        const articles = this.model.setArticles(data);
-        this.view.displayArticles(articles);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+  loadArticles = async () => {
+    try {
+      const data = await this.api.getArticles();
+      const articles = this.model.setArticles(data);
+      this.view.displayArticles(articles);
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
 

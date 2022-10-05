@@ -6,18 +6,16 @@ class NewYorkTimesApi {
     this.apiKey = `?api-key=${API_KEY}`;
   }
 
-  getArticles(resolve, reject) {
-    this.getArticlesHome(resolve, reject);
+  async getArticles() {
+    const articles = await this.getArticlesHome();
+    return articles;
   }
 
-  getArticlesHome(resolve, reject) {
+  async getArticlesHome() {
     const path = "home.json";
     const url = this.url + path + this.apiKey;
-    console.log(url);
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => resolve(data.results))
-      .catch((error) => reject(error));
+    const articles = await fetch(url).then((res) => res.json());
+    return articles.results;
   }
 }
 

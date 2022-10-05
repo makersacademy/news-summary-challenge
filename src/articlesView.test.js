@@ -4,7 +4,7 @@
 
 const ArticlesView = require("./articlesView");
 const fs = require("fs");
-const mockArticles = require("../mockData");
+const mockArticles = require("../mockArticleObjects");
 
 beforeEach(() => {
   document.body.innerHTML = fs.readFileSync("./index.html");

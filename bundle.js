@@ -12,10 +12,7 @@
           this.articles = [];
         }
         setArticles(data) {
-          data.forEach((article) => {
-            console.log(article);
-            this.articles.push(article);
-          });
+          this.articles = data;
           return this.articles;
         }
       };
@@ -148,14 +145,15 @@
           this.url = "https://api.nytimes.com/svc/topstories/v2/";
           this.apiKey = `?api-key=${API_KEY}`;
         }
-        getArticles(resolve, reject) {
-          this.getArticlesHome(resolve, reject);
+        async getArticles() {
+          const articles = await this.getArticlesHome();
+          return articles;
         }
-        getArticlesHome(resolve, reject) {
+        async getArticlesHome() {
           const path = "home.json";
           const url = this.url + path + this.apiKey;
-          console.log(url);
-          fetch(url).then((response) => response.json()).then((data) => resolve(data.results)).catch((error) => reject(error));
+          const articles = await fetch(url).then((res) => res.json());
+          return articles.results;
         }
       };
       module.exports = NewYorkTimesApi2;
@@ -171,16 +169,14 @@
           this.view = view2;
           this.api = api2;
         }
-        loadArticles = () => {
-          this.api.getArticles(
-            (data) => {
-              const articles = this.model.setArticles(data);
-              this.view.displayArticles(articles);
-            },
-            (error) => {
-              console.log(error);
-            }
-          );
+        loadArticles = async () => {
+          try {
+            const data = await this.api.getArticles();
+            const articles = this.model.setArticles(data);
+            this.view.displayArticles(articles);
+          } catch (error) {
+            console.log(error);
+          }
         };
       };
       module.exports = ArticlesController2;
