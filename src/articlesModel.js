@@ -12,9 +12,10 @@ class ArticlesModel {
   }
 
   getSearchArticles(searchInput) {
-    const filteredArticles = this.articles.filter((article) =>
-      article.title.includes(searchInput)
-    );
+    const filteredArticles = this.articles.filter((article) => {
+      const titleAndAbstract = article.title + " " + article.abstract;
+      return titleAndAbstract.toLowerCase().includes(searchInput.toLowerCase());
+    });
     return filteredArticles;
   }
 }

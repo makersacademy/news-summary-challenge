@@ -5,6 +5,7 @@ class ArticlesController {
     this.api = api;
 
     this.#addSearchEventHandler();
+    this.#addResetEventHandler();
   }
 
   loadArticles = async () => {
@@ -32,6 +33,10 @@ class ArticlesController {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  #addResetEventHandler = () => {
+    this.view.addResetEventHandler(this.loadArticles);
   };
 }
 

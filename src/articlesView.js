@@ -1,6 +1,7 @@
 class ArticlesView {
   constructor() {
     this.articlesContainerEl = document.querySelector("#articles-container");
+    this.resetButton = document.querySelector("#reset-button");
     this.searchButton = document.querySelector("#search-button");
     this.searchInput = document.querySelector("#search-query");
   }
@@ -11,7 +12,9 @@ class ArticlesView {
       const rowEl = document.createElement("div");
       rowEl.className = "row";
       rowEl.append(this.#getArticleColumnDiv(articles[i], i));
-      rowEl.append(this.#getArticleColumnDiv(articles[i + 1], i + 1));
+      if (articles[i + 1]) {
+        rowEl.append(this.#getArticleColumnDiv(articles[i + 1], i + 1));
+      }
       this.articlesContainerEl.append(rowEl);
     }
   };
@@ -19,6 +22,13 @@ class ArticlesView {
   addSearchEventHandler = (callback) => {
     this.searchButton.addEventListener("click", () => {
       callback(this.searchInput.value);
+    });
+  };
+
+  addResetEventHandler = (callback) => {
+    this.resetButton.addEventListener("click", () => {
+      this.searchInput.value = "";
+      callback();
     });
   };
 

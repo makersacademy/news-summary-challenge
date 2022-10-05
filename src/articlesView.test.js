@@ -41,4 +41,11 @@ describe("ArticlesView", () => {
     const articles = document.querySelectorAll(".card");
     expect(articles.length).toEqual(4);
   });
+
+  it("displays uneven number of articels", () => {
+    const view = new ArticlesView();
+    view.displayArticles(mockArticles.slice(0, 3));
+    const articles = document.querySelectorAll(".card");
+    expect(articles.length).toEqual(3);
+  });
 });

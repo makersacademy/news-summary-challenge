@@ -12,13 +12,13 @@
 > So I can get a few more details about an important story
 > I can click a news article title which links to the original article
 
-As a busy politician
-So I can search what I want to read about
-I can specify a search query on the page and get articles matching this search
+> As a busy politician
+> So I can search what I want to read about
+> I can specify a search query on the page and get articles matching this search
 
-As a busy politician
-So I can quickly read through the essential of today's stories
-I can see a summarised version of of the article
+> As a busy politician
+> So I can quickly read through the essential of today's stories
+> I can see a summarised version of of the article
 
 > As a busy politician
 > Just in case my laptop breaks

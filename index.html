@@ -17,14 +17,37 @@
       <div id="title-container" class="mt-5 mb-5">
         <h1>News from the New York Times</h1>
       </div>
-      <div id="search-bar" class="row mt-0 mb-5">
-        <div class="col">
-          <input id="search-query" class="form-control" type="text" />
-        </div>
-        <div class="col">
-          <button id="search-button" class="btn btn-light">search</button>
+      <div id="search-bar" class="input-group mb-4">
+        <input
+          id="search-query"
+          type="text"
+          class="form-control"
+          placeholder="Enter keyword"
+        />
+        <div class="input-group-append">
+          <button
+            id="search-button"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            Search
+          </button>
+          <button
+            id="reset-button"
+            class="btn btn-outline-secondary"
+            type="button"
+          >
+            Reset
+          </button>
         </div>
       </div>
+
+      <!-- <div id="search-bar">
+        <input id="search-query" class="form-control" type="text" />
+        <button id="search-button" class="btn btn-light">search</button>
+        <button id="reset-button" class="btn btn-light">reset</button>
+      </div> -->
+
       <div id="articles-container"></div>
     </div>
     <script src="bundle.js"></script>

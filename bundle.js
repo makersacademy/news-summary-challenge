@@ -18,9 +18,10 @@
           return this.articles;
         }
         getSearchArticles(searchInput) {
-          const filteredArticles = this.articles.filter(
-            (article) => article.title.includes(searchInput)
-          );
+          const filteredArticles = this.articles.filter((article) => {
+            const titleAndAbstract = article.title + " " + article.abstract;
+            return titleAndAbstract.toLowerCase().includes(searchInput.toLowerCase());
+          });
           return filteredArticles;
         }
       };
@@ -34,6 +35,7 @@
       var ArticlesView2 = class {
         constructor() {
           this.articlesContainerEl = document.querySelector("#articles-container");
+          this.resetButton = document.querySelector("#reset-button");
           this.searchButton = document.querySelector("#search-button");
           this.searchInput = document.querySelector("#search-query");
         }
@@ -43,13 +45,21 @@
             const rowEl = document.createElement("div");
             rowEl.className = "row";
             rowEl.append(this.#getArticleColumnDiv(articles[i], i));
-            rowEl.append(this.#getArticleColumnDiv(articles[i + 1], i + 1));
+            if (articles[i + 1]) {
+              rowEl.append(this.#getArticleColumnDiv(articles[i + 1], i + 1));
+            }
             this.articlesContainerEl.append(rowEl);
           }
         };
         addSearchEventHandler = (callback) => {
           this.searchButton.addEventListener("click", () => {
             callback(this.searchInput.value);
+          });
+        };
+        addResetEventHandler = (callback) => {
+          this.resetButton.addEventListener("click", () => {
+            this.searchInput.value = "";
+            callback();
           });
         };
         #clearArticles = () => {
@@ -190,6 +200,7 @@
           this.view = view2;
           this.api = api2;
           this.#addSearchEventHandler();
+          this.#addResetEventHandler();
         }
         loadArticles = async () => {
           try {
@@ -214,6 +225,9 @@
           } catch (error) {
             console.log(error);
           }
+        };
+        #addResetEventHandler = () => {
+          this.view.addResetEventHandler(this.loadArticles);
         };
       };
       module.exports = ArticlesController2;
