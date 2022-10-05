@@ -8,26 +8,27 @@ class ArticlesView {
     for (let i = 0; i < articles.length; i += 2) {
       const rowEl = document.createElement("div");
       rowEl.className = "row";
-      rowEl.append(this.#getArticleColumnDiv(articles[i]));
-      rowEl.append(this.#getArticleColumnDiv(articles[i + 1]));
+      rowEl.append(this.#getArticleColumnDiv(articles[i], i));
+      rowEl.append(this.#getArticleColumnDiv(articles[i + 1], i + 1));
       this.articlesContainerEl.append(rowEl);
     }
   };
 
-  #getArticleColumnDiv = (article) => {
+  #getArticleColumnDiv = (article, index) => {
     const columnEl = document.createElement("div");
     columnEl.className = "col-sm-6";
     const cardEl = document.createElement("div");
     cardEl.className = "card mb-3";
     cardEl.append(this.#getImageEl(article.multimedia[0]));
-    cardEl.append(this.#getBodyEl(article));
+    cardEl.append(this.#getBodyEl(article, index));
     columnEl.append(cardEl);
     return columnEl;
   };
 
-  #getBodyEl(article) {
+  #getBodyEl(article, index) {
     const bodyEl = document.createElement("div");
     bodyEl.className = "card-body";
+    bodyEl.id = "article-" + (index + 1);
     bodyEl.append(this.#getTitleEl(article.title));
     bodyEl.append(this.#getSectionEl(article.section));
     bodyEl.append(this.#getDateEl(article.published_date));

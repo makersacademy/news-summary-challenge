@@ -5,6 +5,7 @@ class ArticlesModel {
 
   setArticles(data) {
     data.forEach((article) => {
+      console.log(article);
       this.articles.push(article);
     });
     return this.articles;
