@@ -4,7 +4,8 @@ const mockArticles = require("../mockArticleObjects");
 describe("ArticlesModel", () => {
   it("stores article data", () => {
     const model = new ArticlesModel();
-    const articles = model.setArticles(mockArticles);
+    model.setArticles(mockArticles);
+    const articles = model.getArticles();
     expect(articles).toEqual(mockArticles);
   });
 });

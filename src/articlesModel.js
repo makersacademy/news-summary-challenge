@@ -5,7 +5,17 @@ class ArticlesModel {
 
   setArticles(data) {
     this.articles = data;
+  }
+
+  getArticles() {
     return this.articles;
+  }
+
+  getSearchArticles(searchInput) {
+    const filteredArticles = this.articles.filter((article) =>
+      article.title.includes(searchInput)
+    );
+    return filteredArticles;
   }
 }
 

@@ -1,16 +1,32 @@
 class ArticlesView {
   constructor() {
     this.articlesContainerEl = document.querySelector("#articles-container");
+    this.searchButton = document.querySelector("#search-button");
+    this.searchInput = document.querySelector("#search-query");
   }
 
   displayArticles = (articles) => {
-    if (articles.length % 2 != 0) articles.pop();
+    this.#clearArticles();
     for (let i = 0; i < articles.length; i += 2) {
       const rowEl = document.createElement("div");
       rowEl.className = "row";
       rowEl.append(this.#getArticleColumnDiv(articles[i], i));
       rowEl.append(this.#getArticleColumnDiv(articles[i + 1], i + 1));
       this.articlesContainerEl.append(rowEl);
+    }
+  };
+
+  addSearchEventHandler = (callback) => {
+    this.searchButton.addEventListener("click", () => {
+      callback(this.searchInput.value);
+    });
+  };
+
+  #clearArticles = () => {
+    var first = this.articlesContainerEl.firstElementChild;
+    while (first) {
+      first.remove();
+      first = this.articlesContainerEl.firstElementChild;
     }
   };
 

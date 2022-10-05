@@ -13,7 +13,15 @@
         }
         setArticles(data) {
           this.articles = data;
+        }
+        getArticles() {
           return this.articles;
+        }
+        getSearchArticles(searchInput) {
+          const filteredArticles = this.articles.filter(
+            (article) => article.title.includes(searchInput)
+          );
+          return filteredArticles;
         }
       };
       module.exports = ArticlesModel2;
@@ -26,16 +34,29 @@
       var ArticlesView2 = class {
         constructor() {
           this.articlesContainerEl = document.querySelector("#articles-container");
+          this.searchButton = document.querySelector("#search-button");
+          this.searchInput = document.querySelector("#search-query");
         }
         displayArticles = (articles) => {
-          if (articles.length % 2 != 0)
-            articles.pop();
+          this.#clearArticles();
           for (let i = 0; i < articles.length; i += 2) {
             const rowEl = document.createElement("div");
             rowEl.className = "row";
             rowEl.append(this.#getArticleColumnDiv(articles[i], i));
             rowEl.append(this.#getArticleColumnDiv(articles[i + 1], i + 1));
             this.articlesContainerEl.append(rowEl);
+          }
+        };
+        addSearchEventHandler = (callback) => {
+          this.searchButton.addEventListener("click", () => {
+            callback(this.searchInput.value);
+          });
+        };
+        #clearArticles = () => {
+          var first = this.articlesContainerEl.firstElementChild;
+          while (first) {
+            first.remove();
+            first = this.articlesContainerEl.firstElementChild;
           }
         };
         #getArticleColumnDiv = (article, index) => {
@@ -168,11 +189,27 @@
           this.model = model2;
           this.view = view2;
           this.api = api2;
+          this.#addSearchEventHandler();
         }
         loadArticles = async () => {
           try {
             const data = await this.api.getArticles();
-            const articles = this.model.setArticles(data);
+            this.model.setArticles(data);
+            const articles = this.model.getArticles();
+            this.view.displayArticles(articles);
+          } catch (error) {
+            console.log(error);
+          }
+        };
+        #addSearchEventHandler = () => {
+          this.view.addSearchEventHandler(this.#loadSearchArticles);
+        };
+        #loadSearchArticles = async (searchInput) => {
+          try {
+            const data = await this.api.getArticles();
+            this.model.setArticles(data);
+            const articles = this.model.getSearchArticles(searchInput);
+            console.log(articles);
             this.view.displayArticles(articles);
           } catch (error) {
             console.log(error);

@@ -33,4 +33,12 @@ describe("ArticlesView", () => {
       `<h6 class=\"card-title\">With His 62nd Home Run, Aaron Judge Makes His Case</h6><p class=\"card-text mb-0\"><small class=\"text-muted\">SPORTS</small></p><p class=\"card-text mb-0\"><small class=\"text-muted\">2022-10-04 20:08</small></p><p class=\"card-text mb-0\"><small class=\"text-muted\">By David Waldstein</small></p><p class=\"card-text\"><small><a href=\"https://static01.nyt.com/images/2022/10/04/multimedia/04mlb-judge-62-staffjubo-1-7f68/04mlb-judge-62-staffjubo-1-7f68-superJumbo.jpg\">LINK</a></small></p><p class=\"card-text\">A blast against Texas vaulted Judge past Roger Maris for the American League’s single-season record, rekindling enthusiasm for a milestone spoiled by the steroid era.</p>`
     );
   });
+
+  it("clears articles before display", () => {
+    const view = new ArticlesView();
+    view.displayArticles(mockArticles);
+    view.displayArticles(mockArticles);
+    const articles = document.querySelectorAll(".card");
+    expect(articles.length).toEqual(4);
+  });
 });
