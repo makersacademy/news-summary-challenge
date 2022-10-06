@@ -1,9 +1,7 @@
-const API_KEY = require("../apiKey");
-
 class NewYorkTimesApi {
   constructor() {
     this.url = "https://api.nytimes.com/svc/topstories/v2/";
-    this.apiKey = `?api-key=${API_KEY}`;
+    this.apiKey = `?api-key=${process.env.API_KEY}`;
   }
 
   async getArticles() {
