@@ -1,15 +1,15 @@
-#### News from the New York Times
+## News from the New York Times
 
 A single page web-app showing latest news from the New York Times.
 
-#### Technologies
+## Technologies
 
 - It is written in Javascript
 - It uses the [New York Times Top Stories API](https://developer.nytimes.com/docs/top-stories-product/1/overview)
 - It uses the `http-server` npm package to run the server
 - It uses Bootstrap for CSS
 
-#### Use
+## Use
 
 - Clone this repo
 - Run `npm install`
@@ -19,4 +19,20 @@ A single page web-app showing latest news from the New York Times.
 - To run tests with coverage `jest --coverage`
 - If you want to make any changes to the code run `npm run build`. This uses `esbuild` to recompile `bundle.js` so your updated script is in the html link tag.
 
-#### Images
+## Test Coverage
+
+![Homepage](./images/test-coverage.png)
+
+## Images
+
+#### Homepage
+
+![Homepage](./images/homepage.png)
+
+#### Search for 'Musk'
+
+![Search page](./images/search.png)
+
+#### Mobile view
+
+![Mobile view](./images/mobile.png)
