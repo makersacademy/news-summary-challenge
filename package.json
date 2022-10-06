@@ -4,8 +4,8 @@
   "description": "* Feel free to use Google, your notes, books, etc. but work on your own. * If you refer to the solution of another coach or student, please put a link to that in   your README. * If you have a partial solution, **still check in a partial solution** and send in a pull   request. * You must submit a pull request to this repo with your code by 10am Monday morning.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile" : "tsc",
+    "test": "jest --coverage",
+    "compile": "tsc",
     "build": "esbuild build/index.js --bundle --outfile=bundle.js --watch",
     "start": "http-server -c-1"
   },
@@ -21,11 +21,13 @@
   },
   "homepage": "https://github.com/ritaaktay/news-summary-challenge#readme",
   "dependencies": {
+    "@types/jest": "^29.1.2",
     "esbuild": "^0.15.10",
     "http-server": "^14.1.1",
     "install": "^0.13.0",
     "jest": "^29.1.2",
     "npm": "^8.19.2",
+    "ts-jest": "^29.0.3",
     "typescript": "^4.8.4"
   },
   "devDependencies": {

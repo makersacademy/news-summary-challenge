@@ -1,5 +1,5 @@
-const NewYorkTimesApi = require("../newYorkTimesApi");
-const mockArticles = require("../mockArticles");
+const { NewYorkTimesApi } = require("../src/newYorkTimesApi");
+const { mockArticles } = require("../src/mockArticles");
 
 require("jest-fetch-mock").enableMocks();
 

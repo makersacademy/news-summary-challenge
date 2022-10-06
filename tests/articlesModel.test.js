@@ -1,5 +1,5 @@
-const ArticlesModel = require("../articlesModel");
-const mockArticles = require("../mockArticles");
+const { ArticlesModel } = require("../src/articlesModel");
+const { mockArticles } = require("../src/mockArticles");
 
 describe("ArticlesModel", () => {
   it("stores article data", () => {
@@ -9,18 +9,25 @@ describe("ArticlesModel", () => {
     expect(articles).toEqual(mockArticles);
   });
 
-  it("returns articles matching search input", () => {
+  it("returns one articles matching search input", () => {
     const model = new ArticlesModel();
     model.setArticles(mockArticles);
     const articles = model.getSearchArticles("Haven");
     expect(articles).toEqual([mockArticles[0]]);
   });
 
-  it("returns articles matching search input", () => {
+  it("returns three articles matching search input", () => {
     const model = new ArticlesModel();
     model.setArticles(mockArticles);
     const articles = model.getSearchArticles("Russia");
     expect(articles.length).toEqual(3);
+  });
+
+  it("sets input string to empty string if searchInput is null", () => {
+    const model = new ArticlesModel();
+    model.setArticles(mockArticles);
+    const articles = model.getSearchArticles(null);
+    expect(articles.length).toEqual(4);
   });
 
   it("is case insnesitive for search input", () => {

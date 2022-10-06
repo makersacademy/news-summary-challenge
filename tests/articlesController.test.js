@@ -2,10 +2,10 @@
  * @jest-environment jsdom
  */
 
-const ArticlesController = require("../articlesController");
-const ArticlesModel = require("../articlesModel");
-const ArticlesView = require("../articlesView");
-const mockArticles = require("../mockArticles");
+const { ArticlesController } = require("../src/articlesController");
+const { ArticlesModel } = require("../src/articlesModel");
+const { ArticlesView } = require("../src/articlesView");
+const { mockArticles } = require("../src/mockArticles");
 const fs = require("fs");
 
 beforeEach(() => {

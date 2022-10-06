@@ -20,8 +20,7 @@ A single page web-app showing latest news from the New York Times.
 
 #### Run tests
 
-- To run tests `jest`
-- To run tests with coverage `jest --coverage`
+- To run tests with coverage `npm t`
 
 #### Make changes
 
@@ -29,7 +28,7 @@ A single page web-app showing latest news from the New York Times.
 
 ## Test Coverage
 
-![Homepage](./images/test-coverage.png)
+![%100 test coverage](./images/test-coverage.png)
 
 ## Images
 
