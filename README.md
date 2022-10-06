@@ -4,20 +4,28 @@ A single page web-app showing latest news from the New York Times.
 
 ## Technologies
 
-- It is written in Javascript
+- The app is written in Typescript
 - It uses the [New York Times Top Stories API](https://developer.nytimes.com/docs/top-stories-product/1/overview)
-- It uses the `http-server` npm package to run the server
+- It uses the `http-server` npm package to run the server on localhost:8080
 - It uses Bootstrap for CSS
 
-## Use
+## How to use
+
+#### Download and Run
 
 - Clone this repo
 - Run `npm install`
-- In the directory, run `http-server -c-1`
+- Run `npm run start` to start the server.
 - Go to `http://localhost:8080`
+
+#### Run tests
+
 - To run tests `jest`
 - To run tests with coverage `jest --coverage`
-- If you want to make any changes to the code run `npm run build`. This uses `esbuild` to recompile `bundle.js` so your updated script is in the html link tag.
+
+#### Make changes
+
+- If you want to make any changes to the code run `npm run compile && npm run build`. This will type-check and transpile the TypeScript into Javascript and use `esbuild` to recompile `bundle.js` so the script in `index.html` is updated
 
 ## Test Coverage
 
