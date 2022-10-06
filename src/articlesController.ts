@@ -1,5 +1,13 @@
-class ArticlesController {
-  constructor(model, view, api) {
+import { ArticlesModel } from "./articlesModel";
+import { ArticlesView } from "./articlesView";
+import { NewYorkTimesApi } from "./newYorkTimesApi";
+
+export class ArticlesController {
+  api: NewYorkTimesApi;
+  view: ArticlesView;
+  model: ArticlesModel;
+
+  constructor(model: ArticlesModel, view: ArticlesView, api: NewYorkTimesApi) {
     this.model = model;
     this.view = view;
     this.api = api;
@@ -23,7 +31,7 @@ class ArticlesController {
     this.view.addSearchEventHandler(this.#loadSearchArticles);
   };
 
-  #loadSearchArticles = async (searchInput) => {
+  #loadSearchArticles = async (searchInput: string) => {
     try {
       const data = await this.api.getArticles();
       this.model.setArticles(data);
@@ -38,5 +46,3 @@ class ArticlesController {
     this.view.addResetEventHandler(this.loadArticles);
   };
 }
-
-module.exports = ArticlesController;

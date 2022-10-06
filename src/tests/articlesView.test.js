@@ -2,9 +2,9 @@
  * @jest-environment jsdom
  */
 
-const ArticlesView = require("./articlesView");
+const ArticlesView = require("../articlesView");
 const fs = require("fs");
-const mockArticles = require("../mockArticleObjects");
+const mockArticles = require("../mockArticles");
 
 beforeEach(() => {
   document.body.innerHTML = fs.readFileSync("./index.html");

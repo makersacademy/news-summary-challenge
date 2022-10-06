@@ -1,12 +1,17 @@
-class ArticlesView {
+export class ArticlesView {
+  articlesContainerEl: HTMLDivElement;
+  resetButton: HTMLButtonElement;
+  searchButton: HTMLButtonElement;
+  searchInput: HTMLInputElement;
+
   constructor() {
-    this.articlesContainerEl = document.querySelector("#articles-container");
-    this.resetButton = document.querySelector("#reset-button");
-    this.searchButton = document.querySelector("#search-button");
-    this.searchInput = document.querySelector("#search-query");
+    this.articlesContainerEl = document.querySelector("#articles-container")!;
+    this.resetButton = document.querySelector("#reset-button")!;
+    this.searchButton = document.querySelector("#search-button")!;
+    this.searchInput = document.querySelector("#search-query")!;
   }
 
-  displayArticles = (articles) => {
+  displayArticles = (articles: Article[]) => {
     this.#clearArticles();
     for (let i = 0; i < articles.length; i += 2) {
       const rowEl = document.createElement("div");
@@ -19,20 +24,22 @@ class ArticlesView {
     }
   };
 
-  addSearchEventHandler = (callback) => {
+  addSearchEventHandler = (
+    callback: (searchInput: string) => Promise<void>
+  ): void => {
     this.searchButton.addEventListener("click", () => {
       callback(this.searchInput.value);
     });
   };
 
-  addResetEventHandler = (callback) => {
+  addResetEventHandler = (callback: () => Promise<void>): void => {
     this.resetButton.addEventListener("click", () => {
       this.searchInput.value = "";
       callback();
     });
   };
 
-  #clearArticles = () => {
+  #clearArticles = (): void => {
     var first = this.articlesContainerEl.firstElementChild;
     while (first) {
       first.remove();
@@ -40,7 +47,7 @@ class ArticlesView {
     }
   };
 
-  #getArticleColumnDiv = (article, index) => {
+  #getArticleColumnDiv = (article: Article, index: number): HTMLDivElement => {
     const columnEl = document.createElement("div");
     columnEl.className = "col-sm-6";
     const cardEl = document.createElement("div");
@@ -51,7 +58,7 @@ class ArticlesView {
     return columnEl;
   };
 
-  #getBodyEl(article, index) {
+  #getBodyEl = (article: Article, index: number): HTMLDivElement => {
     const bodyEl = document.createElement("div");
     bodyEl.className = "card-body";
     bodyEl.id = "article-" + (index + 1);
@@ -62,23 +69,23 @@ class ArticlesView {
     bodyEl.append(this.#getLinkEl(article.url));
     bodyEl.append(this.#getAbstractEl(article.abstract));
     return bodyEl;
-  }
+  };
 
-  #getTitleEl(title) {
+  #getTitleEl = (title: string): HTMLDivElement => {
     const titleEl = document.createElement("h6");
     titleEl.className = "card-title";
     titleEl.textContent = title;
     return titleEl;
-  }
+  };
 
-  #getAbstractEl(abstract) {
+  #getAbstractEl = (abstract: string): HTMLParagraphElement => {
     const abstractEl = document.createElement("p");
     abstractEl.className = "card-text";
     abstractEl.textContent = abstract;
     return abstractEl;
-  }
+  };
 
-  #getSectionEl(section) {
+  #getSectionEl = (section: string): HTMLParagraphElement => {
     const sectionEl = document.createElement("p");
     sectionEl.className = "card-text mb-0";
     const sectionSmall = document.createElement("small");
@@ -86,9 +93,9 @@ class ArticlesView {
     sectionSmall.textContent = section.toUpperCase();
     sectionEl.append(sectionSmall);
     return sectionEl;
-  }
+  };
 
-  #getDateEl(date) {
+  #getDateEl = (date: string): HTMLParagraphElement => {
     const dateEl = document.createElement("p");
     dateEl.className = "card-text mb-0";
     const dateSmall = document.createElement("small");
@@ -96,15 +103,15 @@ class ArticlesView {
     dateSmall.textContent = this.#formatDate(date);
     dateEl.append(dateSmall);
     return dateEl;
-  }
+  };
 
-  #formatDate(date) {
+  #formatDate = (date: string): string => {
     const day = date.split("T")[0];
     const time = date.split("T")[1].split("-")[0].slice(0, 5);
     return day + " " + time;
-  }
+  };
 
-  #getBylineEl(byline) {
+  #getBylineEl = (byline: string): HTMLParagraphElement => {
     const bylineEl = document.createElement("p");
     bylineEl.className = "card-text mb-0";
     const bylineSmall = document.createElement("small");
@@ -112,9 +119,9 @@ class ArticlesView {
     bylineSmall.textContent = byline;
     bylineEl.append(bylineSmall);
     return bylineEl;
-  }
+  };
 
-  #getLinkEl(url) {
+  #getLinkEl = (url: string): HTMLParagraphElement => {
     const wrapperEl = document.createElement("p");
     wrapperEl.className = "card-text";
     const smallEl = document.createElement("small");
@@ -124,16 +131,14 @@ class ArticlesView {
     smallEl.append(linkEl);
     wrapperEl.append(smallEl);
     return wrapperEl;
-  }
+  };
 
-  #getImageEl(imageObj) {
+  #getImageEl = (imageObj: Multimedia): HTMLImageElement => {
     const imageEl = document.createElement("img");
     imageEl.className = "card-img-top mt-4 mx-auto";
     imageEl.src = imageObj.url;
     imageEl.alt = imageObj.caption;
     imageEl.style.width = "200px";
     return imageEl;
-  }
+  };
 }
-
-module.exports = ArticlesView;

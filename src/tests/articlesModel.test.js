@@ -1,5 +1,5 @@
-const ArticlesModel = require("./articlesModel");
-const mockArticles = require("../mockArticleObjects");
+const ArticlesModel = require("../articlesModel");
+const mockArticles = require("../mockArticles");
 
 describe("ArticlesModel", () => {
   it("stores article data", () => {

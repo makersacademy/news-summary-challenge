@@ -1,4 +1,4 @@
-const mockArticles = [
+export const mockArticles = [
   {
     abstract:
       "Tens of thousands of men have ended up in places like Kyrgyzstan, a former Soviet territory, that normally see few refugees but are willing to take them.",
@@ -66,4 +66,3 @@ const mockArticles = [
     url: "https://static01.nyt.com/images/2022/10/04/multimedia/04mlb-judge-62-staffjubo-1-7f68/04mlb-judge-62-staffjubo-1-7f68-superJumbo.jpg",
   },
 ];
-module.exports = mockArticles;
