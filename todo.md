@@ -1,0 +1,4 @@
+- ask John setTiemout() test
+- add images to readme
+- push
+- add summary page (?)

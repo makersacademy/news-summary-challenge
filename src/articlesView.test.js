@@ -48,4 +48,22 @@ describe("ArticlesView", () => {
     const articles = document.querySelectorAll(".card");
     expect(articles.length).toEqual(3);
   });
+
+  it("adds callback to search button", () => {
+    const view = new ArticlesView();
+    const mockCallback = jest.fn();
+    view.addSearchEventHandler(mockCallback);
+    const searchButton = document.querySelector("#search-button");
+    searchButton.click();
+    expect(mockCallback.mock.calls.length).toBe(1);
+  });
+
+  it("adds callback to reset button", () => {
+    const view = new ArticlesView();
+    const mockCallback = jest.fn();
+    view.addResetEventHandler(mockCallback);
+    const resetButton = document.querySelector("#reset-button");
+    resetButton.click();
+    expect(mockCallback.mock.calls.length).toBe(1);
+  });
 });

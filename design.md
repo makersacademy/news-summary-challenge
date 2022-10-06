@@ -17,12 +17,12 @@
 > I can specify a search query on the page and get articles matching this search
 
 > As a busy politician
-> So I can quickly read through the essential of today's stories
-> I can see a summarised version of of the article
-
-> As a busy politician
 > Just in case my laptop breaks
 > I can read the site comfortably on my phone
+
+> As a busy politician
+> So I can quickly read through the essential of today's stories
+> I can see a summarised version of of the article
 
 ## Pages
 

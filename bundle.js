@@ -220,7 +220,6 @@
             const data = await this.api.getArticles();
             this.model.setArticles(data);
             const articles = this.model.getSearchArticles(searchInput);
-            console.log(articles);
             this.view.displayArticles(articles);
           } catch (error) {
             console.log(error);
