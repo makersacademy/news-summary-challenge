@@ -52,7 +52,9 @@ export class ArticlesView {
     columnEl.className = "col-sm-6";
     const cardEl = document.createElement("div");
     cardEl.className = "card mb-3";
-    cardEl.append(this.#getImageEl(article.multimedia[0]));
+    if (article.multimedia) {
+      cardEl.append(this.#getImageEl(article.multimedia[0]));
+    }
     cardEl.append(this.#getBodyEl(article, index));
     columnEl.append(cardEl);
     return columnEl;

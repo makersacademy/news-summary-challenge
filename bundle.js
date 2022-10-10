@@ -78,7 +78,9 @@
         columnEl.className = "col-sm-6";
         const cardEl = document.createElement("div");
         cardEl.className = "card mb-3";
-        cardEl.append(__classPrivateFieldGet(this, _ArticlesView_getImageEl, "f").call(this, article.multimedia[0]));
+        if (article.multimedia) {
+          cardEl.append(__classPrivateFieldGet(this, _ArticlesView_getImageEl, "f").call(this, article.multimedia[0]));
+        }
         cardEl.append(__classPrivateFieldGet(this, _ArticlesView_getBodyEl, "f").call(this, article, index));
         columnEl.append(cardEl);
         return columnEl;
