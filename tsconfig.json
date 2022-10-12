@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "build",
+    "target": "es6",
+    "types": []
+    // https://www.typescriptlang.org/tsconfig#types
+    // By default all visible ”@types” packages are included in your compilation.
+    // Packages in node_modules/@types of any enclosing folder are considered visible.
+    // If types is specified, only packages listed will be included in the global scope.
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
