@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+  background-image: linear-gradient(to right, #9ed7eb, rgb(122, 167, 224)); */
+  font-family: "Courier new";
+  color: white;
+  text-align: center;
+}
+
+header {
+  background-image: linear-gradient(to bottom, lightblue, white); */
+  background-color: white;
+  padding: 30px;
+  margin: -20px;
+  margin-bottom: 50px;
+  color: pink;
+  position: fixed;
+  width:100%;
+}
+
+
+
+a:hover{
+  cursor:pointer;
+}
+
+.none {
+  /* border: 3px solid #73AD21; */
+  display: inline-grid !important;
+  grid-template-columns: auto auto auto !important;
+}
+.headlineHide {
+  display: none !important;
+}
+
+#buttonId {
+  justify-content: center !important;
+  padding-top:150px;
+}
+
+
