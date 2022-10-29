@@ -7,7 +7,6 @@ class NewsClient {
     fetch(this._fetchUrl)
       .then((response) => response.json())
       .then((data) => {
-        console.log('data: ', data);
         callback(data);
       });
   }

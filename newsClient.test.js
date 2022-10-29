@@ -9,8 +9,6 @@ describe('Client class', () => {
     fetch.mockResponse(JSON.stringify(mockJsonGuardian));
 
     newsClient.loadNews((returnedDataFromApi) => {
-      console.log('JO');
-      console.log('returned data', returnedDataFromApi);
       expect(returnedDataFromApi).toEqual(mockJsonGuardian); // Asessing deep equality
       done();
     });
