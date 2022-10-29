@@ -20,5 +20,8 @@
   "homepage": "https://github.com/PatriciaGN/news-summary-challenge#readme",
   "dependencies": {
     "jest-environment-jsdom": "^29.2.2"
+  },
+  "devDependencies": {
+    "jest-fetch-mock": "^3.0.3"
   }
 }
