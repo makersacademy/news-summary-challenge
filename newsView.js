@@ -1,14 +1,12 @@
 class NewsView {
-  constructor(view) {
-    this.view = view;
+  constructor(client, container) {
+    this.client = client;
+    this.container = container;
   }
 
   displayNews() {
-    this.view.loadNews((news) => {
-      console.log('news', news);
+    this.client.loadNews((news) => {
       news.response.results.forEach((individualNews) => {
-        console.log('individualNews: ', individualNews);
-        console.log('individual news title', individualNews.webTitle);
         var newsEl = document.createElement('div');
         newsEl.className = 'news';
 
@@ -16,7 +14,7 @@ class NewsView {
         title.textContent = individualNews.webTitle;
 
         newsEl.appendChild(title);
-        document.body.append(newsEl);
+        this.container.appendChild(newsEl);
       });
     });
   }
