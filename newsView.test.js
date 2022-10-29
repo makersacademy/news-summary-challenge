@@ -9,22 +9,20 @@ var NewsView = require('./newsView');
 require('jest-fetch-mock').enableMocks();
 
 describe('NewsViews class', () => {
-  it('displays the titles', (done) => {
+  it('displays the title of one piece of news', (done) => {
     document.body.innerHTML = fs.readFileSync('./index.html');
 
     const mockClient = {
       loadNews: (callback) => {
-        callback(
-          JSON.stringify({
-            response: {
-              results: [
-                {
-                  webTitle: 'Carrots',
-                },
-              ],
-            },
-          })
-        );
+        callback({
+          response: {
+            results: [
+              {
+                webTitle: 'Carrots',
+              },
+            ],
+          },
+        });
       },
     };
 
@@ -32,7 +30,8 @@ describe('NewsViews class', () => {
 
     newsView.displayNews();
 
-    expect(document.querySelector('h1.title').textContent).toEqual('Carrots');
+    expect(document.querySelectorAll('div.news').length).toBe(1);
+    expect(document.querySelector('h1').textContent).toEqual('Carrots');
     done();
   });
 });
