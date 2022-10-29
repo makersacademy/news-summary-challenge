@@ -7,11 +7,13 @@ describe('Client class', () => {
     const newsClient = new NewsClient();
 
     fetch.mockResponseOnce(mockJsonGuardian);
+    console.log('mock: ', mockJsonGuardian);
 
     newsClient.loadNews((returnedDataFromApi) => {
+      console.log('JO');
+      console.log('returned data', returnedDataFromApi);
       expect(returnedDataFromApi.response.status).toBe('ok');
       expect(returnedDataFromApi.response.results).not.toBeNull();
-
       done();
     });
   });
