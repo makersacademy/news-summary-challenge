@@ -1,10 +1,8 @@
 class NewsView {
-  constructor(client, container) {
+  constructor(client) {
     this.client = client;
     this.container = document.getElementById('container');
-    // this.newsFromDOM = document.querySelectorAll('.news');
     this.buttonEl = document.querySelector('#search-button');
-    // this.searchInput = searchInput;
 
     this.buttonEl.addEventListener('click', () => {
       let searchInput = document.querySelector('#search-input').value;
@@ -14,12 +12,12 @@ class NewsView {
       document.querySelectorAll('.news').forEach((news) => {
         news.remove();
       });
-      this.displayIndividualNews(searchInput);
+      this.displayWithSearch(searchInput);
       searchInput = '';
     });
   }
 
-  displayIndividualNews(searchInput) {
+  displayWithSearch(searchInput) {
     this.client.loadNews((news) => {
       news.response.results.forEach((individualNews) => {
         console.log('webtitle', individualNews.webTitle.toLowerCase());
@@ -29,48 +27,37 @@ class NewsView {
             .toLowerCase()
             .includes(searchInput.toLowerCase())
         ) {
-          var newsEl = document.createElement('div');
-          newsEl.className = 'news';
-
-          var image = document.createElement('img');
-          image.src = individualNews.fields.thumbnail;
-
-          var title = document.createElement('h1');
-
-          var link = document.createElement('a');
-          link.href = individualNews.webUrl;
-          link.textContent = individualNews.webTitle;
-
-          title.appendChild(link);
-          newsEl.appendChild(image);
-          newsEl.appendChild(title);
-          this.container.appendChild(newsEl);
+          this.displayOneNews(individualNews);
         }
       });
     });
   }
 
-  displayNews() {
+  displayAllNews() {
     this.client.loadNews((news) => {
       news.response.results.forEach((individualNews) => {
-        var newsEl = document.createElement('div');
-        newsEl.className = 'news';
-
-        var image = document.createElement('img');
-        image.src = individualNews.fields.thumbnail;
-
-        var title = document.createElement('h1');
-
-        var link = document.createElement('a');
-        link.href = individualNews.webUrl;
-        link.textContent = individualNews.webTitle;
-
-        title.appendChild(link);
-        newsEl.appendChild(image);
-        newsEl.appendChild(title);
-        this.container.appendChild(newsEl);
+        this.displayOneNews(individualNews);
       });
     });
+  }
+
+  displayOneNews(individualNews) {
+    var newsEl = document.createElement('div');
+    newsEl.className = 'news';
+
+    var image = document.createElement('img');
+    image.src = individualNews.fields.thumbnail;
+
+    var title = document.createElement('h1');
+
+    var link = document.createElement('a');
+    link.href = individualNews.webUrl;
+    link.textContent = individualNews.webTitle;
+
+    title.appendChild(link);
+    newsEl.appendChild(image);
+    newsEl.appendChild(title);
+    this.container.appendChild(newsEl);
   }
 }
 

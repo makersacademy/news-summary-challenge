@@ -46,7 +46,7 @@ describe('NewsViews class', () => {
 
     const newsView = new NewsView(mockClient);
 
-    newsView.displayNews();
+    newsView.displayAllNews();
 
     expect(document.body.querySelectorAll('div.news').length).toBe(1);
     expect(document.body.querySelector('h1').textContent).toEqual('Carrots');
@@ -87,7 +87,7 @@ describe('NewsViews class', () => {
 
     const newsView = new NewsView(mockClient);
 
-    newsView.displayNews();
+    newsView.displayAllNews();
 
     const newsItems = document.body.querySelectorAll('div.news');
     expect(newsItems.length).toBe(2);
@@ -125,7 +125,7 @@ describe('NewsViews class', () => {
 
     const newsView = new NewsView(mockClient);
 
-    newsView.displayNews();
+    newsView.displayAllNews();
 
     expect(document.body.querySelectorAll('div.news').length).toBe(1);
     expect(document.body.querySelectorAll('h1')[0].textContent).toEqual(
@@ -171,7 +171,7 @@ describe('NewsViews class', () => {
 
     const newsView = new NewsView(mockClient);
 
-    newsView.displayNews();
+    newsView.displayAllNews();
 
     expect(document.body.querySelectorAll('div.news').length).toBe(2);
     expect(document.body.querySelectorAll('h1')[1].textContent).toEqual(
@@ -208,7 +208,7 @@ describe('NewsViews class', () => {
 
     const newsView = new NewsView(mockClient);
 
-    newsView.displayNews();
+    newsView.displayAllNews();
 
     expect(document.body.querySelectorAll('a')[0].href).toEqual(
       'https://www.theguardian.com/sport/live/2022/oct/29/new-zealand-v-wales-womens-rugby-world-cup-quarter-final-live'
@@ -250,7 +250,7 @@ describe('NewsViews class', () => {
 
     const newsView = new NewsView(mockClient);
 
-    newsView.displayNews();
+    newsView.displayAllNews();
 
     let buttonEl = document.querySelector('#search-button');
     let inputEl = document.querySelector('#search-input');

@@ -7,4 +7,4 @@ console.log(guardianAPIJson);
 const newsClient = new NewsClient();
 const newsView = new NewsView(newsClient, document.body);
 
-newsView.displayNews();
+newsView.displayAllNews();
