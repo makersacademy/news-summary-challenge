@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <title>My web page</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>News Page</title>
   </head>
   <body>
+    <input
+      id="searchbar"
+      onkeyup="search_news()"
+      type="text"
+      name="search"
+      placeholder="Find news by keyword"
+    />
     <script type="text/javascript" src="bundle.js"></script>
   </body>
 </html>
