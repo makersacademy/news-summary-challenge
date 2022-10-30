@@ -1,11 +1,12 @@
-const NewsModel = require('./newsModel');
-const NewsView = require('./newsView');
-const model = new NotesModel();
-const view = new NotesView(model);
+const ArticleModel = require('./articleModel');
+const ArticleView = require('./articleView');
+const GuardianApi = require('./guardianApi');
+const model = new ArticleModel();
+const view = new ArticleView(model, api);
+const api = new GuardianApi();
+
 
 
 console.log('hello, world')
-// console.log(model.getNotes())
-
-// model.addNote('This is an example note')
-// view.displayNotes()
+console.log(view.display())
+// console.log(model.getArticleInfo())

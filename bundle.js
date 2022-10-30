@@ -4,41 +4,89 @@
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
 
-  // newsModel.js
-  var require_newsModel = __commonJS({
-    "newsModel.js"(exports, module) {
-      var NewsModel2 = class {
+  // articleModel.js
+  var require_articleModel = __commonJS({
+    "articleModel.js"(exports, module) {
+      var ArticleModel2 = class {
         constructor() {
-          this.repoInfo = null;
+          this.articles = null;
+          this.headlines = [];
         }
-        setRepoInfo(repoInfo2) {
-          this.repoInfo = repoInfo2;
+        setArticleInfo(articles) {
+          this.articles = articles;
         }
-        getRepoInfo() {
-          this.repoInfo = repoInfo;
+        getArticleInfo() {
+          return this.articles;
+        }
+        getArticleHeadlines() {
+          const articleData = this.articles.response.results;
+          let headlines = articleData.map((article) => {
+            return article.webTitle;
+          });
+          return headlines;
         }
       };
-      module.exports = NewsModel2;
+      module.exports = ArticleModel2;
     }
   });
 
-  // newsView.js
-  var require_newsView = __commonJS({
-    "newsView.js"(exports, module) {
-      var NewsView2 = class {
-        constructor(model2) {
+  // articleView.js
+  var require_articleView = __commonJS({
+    "articleView.js"(exports, module) {
+      var ArticleView2 = class {
+        constructor(model2, api2) {
           this.model = model2;
-          this.mainContainerEl = document.querySelector("#main-container");
+          this.api = api2;
+          const newsButtonEl = document.querySelector("#pull-news");
+          newsButtonEl.addEventListener("click", () => {
+            this.api.getArticleInfo((articleData) => {
+              console.log(articleData);
+              this.display(articleData);
+            });
+          });
+        }
+        display() {
+          const headlines = this.model.getArticleHeadlines();
+          const headlineEl = document.querySelector("#headline");
+          headlines.forEach((headline) => {
+            headlineEl.textContent = headline;
+          });
         }
       };
-      module.exports = NewsView2;
+      module.exports = ArticleView2;
+    }
+  });
+
+  // apiKey.js
+  var require_apiKey = __commonJS({
+    "apiKey.js"(exports, module) {
+      module.exports = "49ec9cbf-9de4-4b3d-bc78-243db3e3a237";
+    }
+  });
+
+  // guardianApi.js
+  var require_guardianApi = __commonJS({
+    "guardianApi.js"(exports, module) {
+      var apiKey = require_apiKey();
+      var apiUrl = `https://content.guardianapis.com/search?api-key=${apiKey}`;
+      var GuardianApi2 = class {
+        getArticleInfo(callback) {
+          fetch(apiUrl).then((response) => response.json()).then((data) => {
+            callback(data);
+          });
+        }
+      };
+      module.exports = GuardianApi2;
     }
   });
 
   // index.js
-  var NewsModel = require_newsModel();
-  var NewsView = require_newsView();
-  var model = new NotesModel();
-  var view = new NotesView(model);
+  var ArticleModel = require_articleModel();
+  var ArticleView = require_articleView();
+  var GuardianApi = require_guardianApi();
+  var model = new ArticleModel();
+  var view = new ArticleView(model, api);
+  var api = new GuardianApi();
   console.log("hello, world");
+  console.log(view.display());
 })();
