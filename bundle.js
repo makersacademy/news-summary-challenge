@@ -37,19 +37,26 @@
         constructor(model2, api2) {
           this.model = model2;
           this.api = api2;
+          this.mainContainerEl = document.querySelector("#main-container");
           const newsButtonEl = document.querySelector("#pull-news");
           newsButtonEl.addEventListener("click", () => {
-            this.api.getArticleInfo((articleData) => {
-              console.log(articleData);
-              this.display(articleData);
-            });
+            this.display();
           });
         }
         display() {
-          const headlines = this.model.getArticleHeadlines();
+          let headlines = this.model.getArticleHeadlines();
           const headlineEl = document.querySelector("#headline");
           headlines.forEach((headline) => {
-            headlineEl.textContent = headline;
+            const headlineEl2 = document.createElement("h3");
+            headlineEl2.textContent = headline;
+            headlineEl2.id = "headline";
+            this.mainContainerEl.append(headlineEl2);
+          });
+        }
+        displayArticlesFromApi() {
+          this.api.getArticleInfo((articles) => {
+            this.model.setArticleInfo(articles);
+            this.display();
           });
         }
       };
@@ -85,8 +92,8 @@
   var ArticleView = require_articleView();
   var GuardianApi = require_guardianApi();
   var model = new ArticleModel();
-  var view = new ArticleView(model, api);
   var api = new GuardianApi();
+  var view = new ArticleView(model, api);
   console.log("hello, world");
-  console.log(view.display());
+  view.displayArticlesFromApi();
 })();

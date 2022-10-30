@@ -18,21 +18,8 @@ class ArticleModel {
     let headlines = articleData.map(article => {
       return article.webTitle
     })
+    // console.log(`headlines: ${headlines}`)
     return headlines
   }
 }
-
-  // addNote(note) {
-  //   this.model.push(note)
-  // }
-
-  // reset() {
-  //   this.model = []
-  //   return this.model
-  // }
-  
-  // setNotes(notes) {
-  //   this.model = notes
-  // }
-
 module.exports = ArticleModel;

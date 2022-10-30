@@ -1,5 +1,4 @@
 const apiKey = require('./apiKey');
-// let city = 'London';
 const apiUrl = `https://content.guardianapis.com/search?api-key=${apiKey}`;
 
 class GuardianApi {
