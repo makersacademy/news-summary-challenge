@@ -1,26 +1,44 @@
-#searchbar {
-  margin-left: 15%;
-  padding: 15px;
-  border-radius: 10px;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
-input[type='text'] {
-  width: 30%;
-  -webkit-transition: width 0.15s ease-in-out;
-  transition: width 0.15s ease-in-out;
+#container {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: rgb(225, 164, 65);
 }
 
-/* When the input field gets focus,
-       change its width to 100% */
-input[type='text']:focus {
-  width: 70%;
+#search {
+  display: flex;
+  padding: 20px;
+  background-color: rgb(100, 237, 225);
 }
 
-#list {
-  font-size: 1.5em;
-  margin-left: 90px;
+#search label {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 15px;
 }
 
-.index {
-  display: list-item;
+#searchInput {
+  display: inherit;
+  width: 200%;
+  padding: 1em 1em;
+}
+
+#results {
+  display: block;
+  padding: 10px;
+}
+
+#results .news {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: white;
+  margin-bottom: 10px;
+  list-style-type: none;
 }
