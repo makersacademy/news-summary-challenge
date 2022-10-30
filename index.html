@@ -8,13 +8,13 @@
     <title>News Page</title>
   </head>
   <body>
-    <input
-      id="searchbar"
-      onkeyup="search_news()"
-      type="text"
-      name="search"
-      placeholder="Find news by keyword"
-    />
+    <div id="container">
+      <div id="search">
+        <label for="searchInput">Find News</label>
+        <input id="searchInput" type="text" placeholder="Search by keyword" />
+        <button id="search">Search</button>
+      </div>
+    </div>
     <script type="text/javascript" src="bundle.js"></script>
   </body>
 </html>
