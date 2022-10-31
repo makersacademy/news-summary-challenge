@@ -39,24 +39,32 @@ Some of these stories will need decomposing if they seem too large.
 As a busy politician
 So I know what the big stories of the day are
 I can see all of today's headlines in one place
+
+// pull headlines from Guardian API
 ```
 
 ```
 As a busy politician
 So that I have something nice to look at
 I can see a relevant picture to illustrate each news article when I browse headlines
+
+// pull pictures from Guardian API
 ```
 
 ```
 As a busy politician
 So I can get a few more details about an important story
 I can click a news article title which links to the original article
+
+// add link to article page
 ```
 
 ```
 As a busy politician
 So I can search what I want to read about
 I can specify a search query on the page and get articles matching this search
+
+// add search bar
 ```
 
 ### Stretch user stories
@@ -65,6 +73,8 @@ I can specify a search query on the page and get articles matching this search
 As a busy politician
 So I can quickly read through the essential of today's stories
 I can see a summarised version of of the article 
+
+// Set-up push 
 ```
 
 To get a summary of an article's content, you'll need to use the [Aylien API
@@ -78,12 +88,16 @@ control.
 As a busy politician
 Just in case my laptop breaks
 I can read the site comfortably on my phone
+
+// add CSS mobile phone formatting
 ```
 
 ```
 As a busy politician
 So I make my news reading more fun
 I can see whizzy animations in the app
+
+// look for gifs
 ```
 
 ## Mockups
@@ -188,14 +202,3 @@ The above request will return a response similar to this one:
 * [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
 * cURL [man page](https://curl.haxx.se/docs/manpage.html)
 * [Postman](https://www.postman.com/downloads/?utm_source=postman-home), a program to send and test HTTP requests
-
-
-<!-- BEGIN GENERATED SECTION DO NOT EDIT -->
-
----
-
-**How was this resource?**  
-[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😀)  
-Click an emoji to tell us.
-
-<!-- END GENERATED SECTION DO NOT EDIT -->
