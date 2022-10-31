@@ -8,13 +8,13 @@ body {
   width: 100%;
   margin: 0 auto;
   margin-top: 20px;
-  background-color: rgb(225, 164, 65);
+  background-color: rgb(236, 197, 134);
 }
 
 #search {
   display: flex;
   padding: 20px;
-  background-color: rgb(100, 237, 225);
+  background-color: rgb(159, 234, 227);
 }
 
 #search label {
