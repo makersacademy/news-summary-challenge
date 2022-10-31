@@ -1,0 +1,44 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: rgb(236, 197, 134);
+}
+
+#search {
+  display: flex;
+  padding: 20px;
+  background-color: rgb(159, 234, 227);
+}
+
+#search label {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+#searchInput {
+  display: inherit;
+  width: 200%;
+  padding: 1em 1em;
+}
+
+#results {
+  display: block;
+  padding: 10px;
+}
+
+#results .news {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: white;
+  margin-bottom: 10px;
+  list-style-type: none;
+}
