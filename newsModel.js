@@ -2,15 +2,12 @@ class newsModel {
     constructor() {
         this.headlines = []
         this.url = []
+        this.search = null
     }
 
     getHeadlines() {
         return this.headlines;
 
-    }
-
-    getUrl() {
-        return this.url
     }
 
     addUrl(url) {

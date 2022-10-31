@@ -6,6 +6,7 @@ const model = new NewsModel();
 const client = new NewsClient();
 const view = new NewsView(model, client);
 
-view.displayHeadlinesFromApi()
-// view.displayHeadlines();
+view.displayFilterHeadlinesFromApi()
+
+// view.displayHeadlinesFromApi()
 
