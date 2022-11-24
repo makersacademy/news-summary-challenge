@@ -12,7 +12,7 @@ class NewsView {
       const articleEl = document.createElement('div');
       articleEl.textContent = article;
       articleEl.className = 'article';
-      this.mainEl.append(article);
+      this.mainEl.append(articleEl);
     });
   }
 }

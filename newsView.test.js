@@ -14,6 +14,16 @@ describe('News View', () => {
     const view = new NewsView(model);
     view.displayArticles();
     expect(document.querySelectorAll('div.article').length).toEqual(0);
-  })
+  });
+
+  it('displays list of articles added', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const model = new NewsModel();
+    const view = new NewsView(model);
+    model.addArticle("General election called");
+    model.addArticle("Climate challenge is serious");
+    view.displayArticles();
+    expect(document.querySelectorAll('div.article').length).toEqual(2);
+  });
 
 });
