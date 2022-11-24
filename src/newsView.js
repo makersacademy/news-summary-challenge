@@ -5,7 +5,9 @@ class NewsView {
   }
 
   displayArticles() {
-    
+    document.querySelectorAll('.article').forEach(article => 
+      article.remove());
+      
     const articles = this.model.getArticles();
 
     articles.forEach(article => {
