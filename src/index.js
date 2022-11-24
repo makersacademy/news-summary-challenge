@@ -6,5 +6,4 @@ const model = new NewsModel;
 const client = new NewsClient;
 const view = new NewsView(model, client);
 
-model.addArticle('test article');
-view.displayArticles();
+view.displayArticlesFromApi();
