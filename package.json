@@ -20,5 +20,8 @@
   "homepage": "https://github.com/lwly-jpg/news-summary-challenge#readme",
   "dependencies": {
     "jest-environment-jsdom": "^29.3.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.2.3"
   }
 }
