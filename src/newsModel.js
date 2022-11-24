@@ -10,6 +10,10 @@ class NewsModel {
   addArticle(article) {
     this.articles.push(article);
   }
+
+  setArticles(articles) {
+    this.articles = articles;
+  }
 }
 
 module.exports = NewsModel;
