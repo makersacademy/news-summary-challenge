@@ -20,10 +20,13 @@ class NewsView {
       articleEl.className = 'article';
       const articleTitle = document.createElement('h2');
       articleTitle.textContent = article.webTitle;
-      articleEl.append(articleTitle);
-      const articleURL = document.createElement('a');
-      articleURL.textContent = article.webUrl;
-      articleEl.append(articleURL);
+      const linkEl = document.createElement('a');
+      linkEl.href = article.webUrl;
+      linkEl.appendChild(articleTitle);
+
+
+      articleEl.append(linkEl);
+
     
       this.mainEl.append(articleEl);
     });
