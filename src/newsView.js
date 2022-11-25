@@ -10,9 +10,7 @@ class NewsView {
       article.remove());
       
     const articles = this.model.getArticles();
-
-    console.log(articles.response.results);
-
+    console.log(articles)
     const articlesFromAPI = articles.response.results;
 
     articlesFromAPI.forEach(article => {
@@ -24,21 +22,10 @@ class NewsView {
       linkEl.href = article.webUrl;
       linkEl.appendChild(articleTitle);
 
-
       articleEl.append(linkEl);
 
-    
       this.mainEl.append(articleEl);
     });
-
-
-
-    // articles.forEach(article => {
-    //   const articleEl = document.createElement('div');
-    //   articleEl.textContent = article;
-    //   articleEl.className = 'article';
-    //   this.mainEl.append(articleEl);
-    // });
   }
 
   displayArticlesFromApi() {

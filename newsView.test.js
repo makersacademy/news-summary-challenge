@@ -17,35 +17,39 @@ describe('News View', () => {
     view = new NewsView(model);
   });
 
-  it('constructs with an empty list of articles', () => {
-    view.displayArticles();
-    expect(document.querySelectorAll('div.article').length).toEqual(0);
-  });
-
-  it('displays list of articles added', () => {
-    model.addArticle("General election called");
-    model.addArticle("Climate challenge is serious");
-    view.displayArticles();
-    expect(document.querySelectorAll('div.article').length).toEqual(2);
-  });
-
-  it('displays list of articles correctly when displayArticles is caleld twice', () => {
-    model.addArticle("Test article");
-    view.displayArticles();
-    view.displayArticles();
-    expect(document.querySelectorAll('div.article').length).toEqual(1);
-  });
-
   it('calls articles from API and displays them', () => {
     const clientMock = {
       loadArticles: (callback) => {
-        callback(['This is an article from the API', 'This is another article from the API'])
+        callback(
+          {
+            "response": {
+                "results": [
+                    {
+                        "webTitle": "Woman wearing suffragette-coloured scarf removed from Holyrood debate",
+                        "webUrl": "https://www.theguardian.com/society/2022/nov/15/woman-wearing-suffragette-coloured-scarf-removed-from-holyrood-debate",
+                    },
+                    {
+                        "webTitle": "No winners in the Tory leadership debate | Brief letters",
+                        "webUrl": "https://www.theguardian.com/politics/2022/jul/26/no-winners-in-the-tory-leadership-debate",
+                    },
+                    {
+                        "webTitle": "Sunak interruptions ignite debate over mansplaining in politics ",
+                        "webUrl": "https://www.theguardian.com/politics/2022/jul/26/sunaks-interruptions-ignite-debate-over-mansplaining-in-politics",
+                    }
+                ]
+            }
+          }
+        )
       }
     }
 
     const view = new NewsView(model, clientMock);
     view.displayArticlesFromApi();
-    expect(document.querySelectorAll('div.article').length).toEqual(2);
+    expect(document.querySelectorAll('div.article').length).toEqual(3);
   })
 
 });
+
+
+
+

@@ -1,14 +1,10 @@
 class NewsModel {
   constructor() {
-    this.articles = [];
+    this.articles = null;
   }
 
   getArticles() {
     return this.articles;
-  }
-
-  addArticle(article) {
-    this.articles.push(article);
   }
 
   setArticles(articles) {
