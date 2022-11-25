@@ -10,20 +10,22 @@ class NewsView {
       article.remove());
       
     const articles = this.model.getArticles();
-    console.log(articles)
     const articlesFromAPI = articles.response.results;
+
+    const topStoriesEl = document.createElement('h2');
+    topStoriesEl.textContent = 'Top Stories'
+    this.mainEl.append(topStoriesEl);
 
     articlesFromAPI.forEach(article => {
       const articleEl = document.createElement('div');
       articleEl.className = 'article';
-      const articleTitle = document.createElement('h2');
+
+      const articleTitle = document.createElement('h3');
       articleTitle.textContent = article.webTitle;
       const linkEl = document.createElement('a');
       linkEl.href = article.webUrl;
       linkEl.appendChild(articleTitle);
-
       articleEl.append(linkEl);
-
       this.mainEl.append(articleEl);
     });
   }
