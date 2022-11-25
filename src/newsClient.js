@@ -3,7 +3,15 @@ const apiKey = require('../apiKey');
 class NewsClient {
 
   loadArticles(callback) {
-    fetch('https://content.guardianapis.com/search?show-elements=image&api-key=' + apiKey + '&show-fields=thumbnail')
+    fetch('https://content.guardianapis.com/search?&api-key=' + apiKey + '&show-fields=thumbnail')
+      .then(response => response.json())
+        .then(articleData => {
+          callback(articleData)
+        });
+  }
+
+  searchArticles(callback, searchQuery) {
+    fetch('https://content.guardianapis.com/search?q=' + searchQuery + '&api-key=' + apiKey + '&show-fields=thumbnail')
       .then(response => response.json())
         .then(articleData => {
           callback(articleData)

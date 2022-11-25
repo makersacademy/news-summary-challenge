@@ -12,7 +12,25 @@ describe('NewsClient', () => {
     client.loadArticles((returnedDataFromApi) => {
       expect(returnedDataFromApi.article).toBe("something");
       done();
-    })
+    });
   });
+
+  it('calls fetch and loads article data relevant to search query', (done) => {
+    const client = new NewsClient();
+
+    fetch.mockResponseOnce(JSON.stringify ({
+      article: "article about dogs"
+    }));
+
+    client.searchArticles((returnedDataFromApi) => {
+      expect(returnedDataFromApi.article).toBe("article about dogs");
+      done();
+    }, "dogs");
+  });
+
+  
+
+
+
 
 });

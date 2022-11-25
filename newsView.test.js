@@ -27,14 +27,19 @@ describe('News View', () => {
                     {
                         "webTitle": "Woman wearing suffragette-coloured scarf removed from Holyrood debate",
                         "webUrl": "https://www.theguardian.com/society/2022/nov/15/woman-wearing-suffragette-coloured-scarf-removed-from-holyrood-debate",
+                        "fields": {thumbnail: 'https://media.guim.co.uk/cbd0793b222d4cb26683418cfac4e1d3a9c59bfa/0_389_5867_3522/500.jpg'}
+
                     },
                     {
                         "webTitle": "No winners in the Tory leadership debate | Brief letters",
                         "webUrl": "https://www.theguardian.com/politics/2022/jul/26/no-winners-in-the-tory-leadership-debate",
+                        "fields": {thumbnail: 'https://media.guim.co.uk/cbd0793b222d4cb26683418cfac4e1d3a9c59bfa/0_389_5867_3522/500.jpg'}
                     },
                     {
                         "webTitle": "Sunak interruptions ignite debate over mansplaining in politics ",
                         "webUrl": "https://www.theguardian.com/politics/2022/jul/26/sunaks-interruptions-ignite-debate-over-mansplaining-in-politics",
+                        "fields": {thumbnail: 'https://media.guim.co.uk/cbd0793b222d4cb26683418cfac4e1d3a9c59bfa/0_389_5867_3522/500.jpg'}
+
                     }
                 ]
             }
