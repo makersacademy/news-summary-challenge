@@ -8,7 +8,7 @@ class NewsModel {
     this.news = [];
   }
 
-  getData() {
+  getNews() {
     return this.news;
   }
 
