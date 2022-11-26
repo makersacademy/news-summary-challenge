@@ -3,6 +3,18 @@ class NewsView {
     this.model = model;
     this.client = client;
     this.mainEl = document.querySelector('#main');
+
+    const submitButtonEl = document.querySelector('#news-search-submit');
+    const searchBarEl = document.querySelector('#news-search')
+
+    submitButtonEl.addEventListener('click', () => {
+      const searchQuery = searchBarEl.value;
+
+      this.client.searchArticles(searchQuery, articleData => {
+        this.model.setQueryArticles(articleData);
+        this.displaySearchArticles();
+      });
+    });
   }
 
   displayArticles() {
@@ -11,7 +23,6 @@ class NewsView {
       
     const articles = this.model.getArticles();
 
-    console.log(articles)
     const articlesFromAPI = articles.response.results;
 
     const topStoriesEl = document.createElement('h2');

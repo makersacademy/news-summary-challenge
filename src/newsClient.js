@@ -10,7 +10,7 @@ class NewsClient {
         });
   }
 
-  searchArticles(callback, searchQuery) {
+  searchArticles(searchQuery, callback) {
     fetch('https://content.guardianapis.com/search?q=' + searchQuery + '&api-key=' + apiKey + '&show-fields=thumbnail')
       .then(response => response.json())
         .then(articleData => {
