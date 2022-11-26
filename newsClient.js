@@ -2,7 +2,7 @@
 const API_KEY = require('./key.js');
 
 class NewsClient {
-  loadNews(searchTerm = 'uk', callback) {
+  loadNews(searchTerm = 'politics', callback) {
     fetch(
       `https://content.guardianapis.com/search?q=${searchTerm}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${API_KEY}`
     )
