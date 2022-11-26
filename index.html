@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>News Headlines: from the Guardian</title>
+    <title>Politician Headlines: from the Guardian</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
   <body>
     <header class="header">
-      <h1>NEWS APP: <em>from the Guardian</em></h1>
+      <h1>Politician NEWS APP</h1>
+      <h3><em>from the Guardian</em></h3>
     </header>
+    <div id="searchbar" class="searchbar">
+      <input
+        type="text"
+        id="text-input"
+        class="text-input"
+        placeholder="search e.g. uk news"
+      />
+      <button id="text-submit" class="text-submit">Search</button>
+    </div>
     <main class="main">
       <ul id="list"></ul>
     </main>
