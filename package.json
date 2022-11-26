@@ -1,0 +1,31 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "news summary app to display api data from the Guardian newspaper.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch",
+    "build": "esbuild index.js --bundle --outfile=bundle.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephclander/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "Joseph Lander",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josephclander/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/josephclander/news-summary-challenge#readme",
+  "devDependencies": {
+    "esbuild": "^0.15.15",
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "jest-fetch-mock": "^3.0.3"
+  }
+}
