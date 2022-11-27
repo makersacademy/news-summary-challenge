@@ -1,0 +1,40 @@
+* {
+  font-family: 'Montserrat';
+}
+
+h1 {
+  color: #2F52E0;
+}
+
+h2 {
+  color: #FF715B;
+}
+
+a {
+  color: #2F52E0;
+}
+
+p {
+  color: #4C5B5C;
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+
+.feed {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 300px;
+}
+
+img {
+  margin: auto;
+  width: 90%;
+}
+
+.article {
+  border: #4C5B5C solid;
+  padding: 5%;
+}

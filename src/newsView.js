@@ -37,6 +37,11 @@ class NewsView {
     storiesEl.className = 'stories-header'
     this.mainEl.append(storiesEl);
 
+    const feedEl = document.createElement('div');
+    feedEl.className = 'feed';
+    this.mainEl.append(feedEl);
+
+
     articlesFromAPI.forEach(article => {
       const articleEl = document.createElement('div');
       articleEl.className = 'article';
@@ -50,8 +55,9 @@ class NewsView {
       linkEl.appendChild(articleTitle);
       articleEl.appendChild(articleThumbnail);
       articleEl.append(linkEl);
-      this.mainEl.append(articleEl);
+      feedEl.append(articleEl);
     });
+
   }
 
   displayArticlesFromApi() {
