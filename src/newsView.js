@@ -45,15 +45,18 @@ class NewsView {
     articlesFromAPI.forEach(article => {
       const articleEl = document.createElement('div');
       articleEl.className = 'article';
-      const articleThumbnail = document.createElement('img');
-      articleThumbnail.src = article.fields.thumbnail;
-      const articleTitle = document.createElement('h3');
-      articleTitle.textContent = article.webTitle;
+
       const linkEl = document.createElement('a');
       linkEl.href = article.webUrl;
+
+      const articleThumbnail = document.createElement('img');
+      articleThumbnail.src = article.fields.thumbnail;
       
+      const articleTitle = document.createElement('h3');
+      articleTitle.textContent = article.webTitle;
+      
+      linkEl.appendChild(articleThumbnail);
       linkEl.appendChild(articleTitle);
-      articleEl.appendChild(articleThumbnail);
       articleEl.append(linkEl);
       feedEl.append(articleEl);
     });
