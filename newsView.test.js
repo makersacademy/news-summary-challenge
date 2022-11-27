@@ -51,35 +51,6 @@ describe('News View', () => {
     expect(document.querySelectorAll('div.article').length).toEqual(3);
   });
 
-  it('calls articles from API based on search query and displays them', () => {
-    const clientMock = {
-      searchArticles: (callback => {
-        callback (
-          {
-            "response": {
-                "results": [
-                    {
-                        "webTitle": "CDC coding error led to overcount of 72,000 Covid deaths",
-                        "webUrl": "https://www.theguardian.com/world/2022/mar/24/cdc-coding-error-overcount-covid-deaths",
-                        "fields": {thumbnail: 'https://media.guim.co.uk/e1a9939deec6f0012d21b477817a3ae0b97d2d93/0_314_5472_3283/500.jpg'}
-                    },
-                    {
-                        "webTitle": "Climate groups say a change in coding can reduce bitcoin energy consumption by 99%",
-                        "webUrl": "https://www.theguardian.com/technology/2022/mar/29/bitcoin-reduce-energy-consumption-climate-groups",
-                        "fields": {thumbnail: 'https://media.guim.co.uk/e9c20a7f60c0b77aee57097e8c79d3294fd907e1/0_249_7360_4414/500.jpg'}
-                    }
-                ]
-            }
-          }
-        )
-      })
-    }
-
-    const view = new NewsView(model, clientMock);
-    view.displayArticlesFromApiSearch();
-    expect(document.querySelectorAll('div.article').length).toEqual(2);
-  });
-
 });
 
 

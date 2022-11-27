@@ -22,10 +22,10 @@ describe('NewsClient', () => {
       article: "article about dogs"
     }));
 
-    client.searchArticles((returnedDataFromApi) => {
+    client.searchArticles("dogs", (returnedDataFromApi) => {
       expect(returnedDataFromApi.article).toBe("article about dogs");
       done();
-    }, "dogs");
+    });
   });
 
   

@@ -8,17 +8,10 @@ class NewsModel {
     return this.articles;
   }
 
-  getSearchArticles() {
-    return this.queryArticles;
-  }
-
   setArticles(articles) {
     this.articles = articles;
   }
 
-  setQueryArticles(articles) {
-    this.queryArticles = articles;
-  }
 }
 
 module.exports = NewsModel;
