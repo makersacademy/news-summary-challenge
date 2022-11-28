@@ -9,12 +9,13 @@ h1 {
   background-color: #2F52E0;
   padding: 3%;
   margin: 0;
-  text-align: right;
+  text-align: center;
 }
 
 h2 {
   color: #FF715B;
   font-weight: 600;
+  margin: 20px;
 }
 
 a {

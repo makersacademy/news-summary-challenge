@@ -24,7 +24,6 @@ class NewsView {
 
     const articles = this.model.getArticles();
 
-    console.log(articles)
     const articlesFromAPI = articles.response.results;
 
     const storiesEl = document.createElement('h2');
