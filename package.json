@@ -1,0 +1,22 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild index.js --bundle"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.16.4",
+    "jest": "^29.2.2",
+    "jest-fetch-mock": "^3.0.3",
+    "jsdom": "^20.0.1"
+  },
+  "devDependencies": {
+    "jest-environment-jsdom": "^29.2.2"
+  }
+}

@@ -1,3 +1,9 @@
+# SETUP
+- clone repo
+- npm install
+- npm install -g esbuild
+- npm run build
+
 # News challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
