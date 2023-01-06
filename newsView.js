@@ -1,9 +1,10 @@
 class NewsView {
-  constructor(model) {
+  constructor(model, client) {
     this.model = model;
+    this.client = client;
     this.mainContainerEl = document.querySelector("#main-container");
   }
-  displayNewsItems(model) {
+  displayNewsItems() {
     document.querySelectorAll(".news-item").forEach((item) => {
       item.remove();
     });
@@ -13,8 +14,15 @@ class NewsView {
     notes.forEach((item) => {
       const newNewsItem = document.createElement("div");
       newNewsItem.className = "news-item";
-      newNewsItem.textContent = item;
+      newNewsItem.textContent = item.webTitle;
       this.mainContainerEl.append(newNewsItem);
+    });
+  }
+
+  displayNewsFromApi() {
+    this.client.loadHeadlines((callback) => {
+      this.model.setNews(callback);
+      this.displayNewsItems();
     });
   }
 }

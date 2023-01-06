@@ -13,6 +13,13 @@ class NewsModel {
   reset() {
     this.list = [];
   }
+
+  setNews(news) {
+    this.reset();
+    news.forEach((item) => {
+      this.addNewsItem(item);
+    });
+  }
 }
 
 module.exports = NewsModel;

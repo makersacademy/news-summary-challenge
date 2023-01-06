@@ -3,8 +3,11 @@
  */
 
 const fs = require("fs");
+const NewsClient = require("./newsClient");
 const NewsModel = require("./newsModel");
 const NewsView = require("./newsView");
+
+jest.mock("./NewsClient");
 
 describe("A test for my web page", () => {
   // We can use the beforeEach() hook
@@ -16,9 +19,11 @@ describe("A test for my web page", () => {
 
   let model, view;
   beforeEach(() => {
+    NewsClient.mockClear();
     document.body.innerHTML = fs.readFileSync("./index.html");
+    client = new NewsClient();
     model = new NewsModel();
-    view = new NewsView(model);
+    view = new NewsView(model, client);
   });
 
   it("displays a news items", () => {
@@ -36,5 +41,16 @@ describe("A test for my web page", () => {
     view.displayNewsItems();
 
     expect(document.querySelectorAll(".news-item").length).toBe(2);
+  });
+
+  it("display news from Api", () => {
+    client.loadHeadlines.mockImplementation((callback) => {
+      callback([newsItemOne, newsItemTwo]);
+    });
+
+    view.displayNewsFromApi();
+
+    expect(client.loadHeadlines).toHaveBeenCalled();
+    expect(model.getNews()).toEqual([newsItemOne, newsItemTwo]);
   });
 });
