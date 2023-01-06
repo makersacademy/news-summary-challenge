@@ -1,14 +1,15 @@
 const NewsModel = require("./newsModel");
 
 describe("NewsModel", () => {
-  it("returns an empy array", () => {
-    const model = new NewsModel();
+  let model;
+  beforeEach(() => {
+    model = new NewsModel();
+  });
 
+  it("returns an empy array", () => {
     expect(model.getNews()).toEqual([]);
   });
   it("returns an correct list", () => {
-    const model = new NewsModel();
-
     const newsItemOne =
       "Egypt says wreckage from flight found in Mediterranean";
     const newsItemTwo =
@@ -19,7 +20,6 @@ describe("NewsModel", () => {
     expect(model.getNews()).toEqual([newsItemOne, newsItemTwo]);
   });
   it("resets the array", () => {
-    const model = new NewsModel();
     const newsItemOne =
       "Egypt says wreckage from flight found in Mediterranean";
 
