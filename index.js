@@ -8,4 +8,9 @@ const newsClient = new NewsClient;
 const newsModel = new NewsModel;
 const newsView = new NewsView(newsModel, newsClient);
 
+newsClient.loadNews((news) => {
+  console.log(news.response.results[3].webTitle)
+})
+
+newsView.addNewsFromApi();
 

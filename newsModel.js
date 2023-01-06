@@ -5,6 +5,7 @@ class NewsModel {
   }
 
   addNews(newsFromApi) {
+    console.log(newsFromApi)
     this.news = newsFromApi.response.results;
   }
 
