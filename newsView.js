@@ -4,6 +4,10 @@ class NewsView {
     this.mainContainerEl = document.querySelector("#main-container");
   }
   displayNewsItems(model) {
+    document.querySelectorAll(".news-item").forEach((item) => {
+      item.remove();
+    });
+
     const notes = this.model.getNews();
 
     notes.forEach((item) => {

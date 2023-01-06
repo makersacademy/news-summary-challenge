@@ -12,3 +12,4 @@ const newsItemTwo =
 model.addNewsItem(newsItemOne);
 model.addNewsItem(newsItemTwo);
 view.displayNewsItems();
+view.displayNewsItems();
