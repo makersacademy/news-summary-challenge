@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1"
   },
   "name": "news-summary-challenge",
