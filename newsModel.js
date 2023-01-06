@@ -5,7 +5,7 @@ class NewsModel {
   }
 
   addNews(newsFromApi) {
-    this.news = newsFromApi;
+    this.news = newsFromApi.response.results;
   }
 
   getNews() {

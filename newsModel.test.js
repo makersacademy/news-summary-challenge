@@ -10,9 +10,11 @@ describe('NotesModel', () => {
   it('adds news', () => {
     const model = new NewsModel();
 
-    model.addNews({ response: 'Here is some news form the API'} );
+    model.addNews({ response: {
+      results:  'Here is some news from the API'
+    }});
 
-    expect(model.getNews().response).toEqual('Here is some news form the API');
+    expect(model.getNews()).toEqual('Here is some news from the API');
   })
 
 })
