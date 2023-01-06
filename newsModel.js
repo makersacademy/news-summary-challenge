@@ -9,6 +9,10 @@ class NewsModel {
   addNewsItem(item) {
     this.list.push(item);
   }
+
+  reset() {
+    this.list = [];
+  }
 }
 
 module.exports = NewsModel;

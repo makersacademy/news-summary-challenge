@@ -18,7 +18,7 @@ describe("NewsModel", () => {
 
     expect(model.getNews()).toEqual([newsItemOne, newsItemTwo]);
   });
-  xit("resets the array", () => {
+  it("resets the array", () => {
     const model = new NewsModel();
     const newsItemOne =
       "Egypt says wreckage from flight found in Mediterranean";
