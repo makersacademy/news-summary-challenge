@@ -12,6 +12,11 @@ class NewsView {
     const notes = this.model.getNews();
 
     notes.forEach((item) => {
+      const newNewsImage = document.createElement("img");
+      newNewsImage.className = "news-thumbnail";
+      newNewsImage.src = item.fields.thumbnail;
+      this.mainContainerEl.append(newNewsImage);
+
       const newNewsItem = document.createElement("div");
       newNewsItem.className = "news-item";
       newNewsItem.textContent = item.webTitle;

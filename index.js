@@ -6,7 +6,7 @@ const client = new NewsClient();
 const model = new NewsModel();
 const view = new NewsView(model, client);
 
-console.log(model.getNews());
+// console.log(model.getNews());
 
 // const newsItemOne = "Egypt says wreckage from flight found in Mediterranean";
 // const newsItemTwo =
@@ -15,7 +15,7 @@ console.log(model.getNews());
 // model.addNewsItem(newsItemTwo);
 // view.displayNewsItems();
 
-// view.displayNewsFromApi();
+view.displayNewsFromApi();
 
 // const getRepoInfo = (callback) => {
 //   fetch(
