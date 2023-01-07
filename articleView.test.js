@@ -82,8 +82,9 @@ describe(ArticleView, () => {
 
     view.fetchArticlesFromApi('2023-01-06');
 
-    expect(client.fetchArticles)
-      .toHaveBeenCalledWith('2023-01-06', expect.any(Function));
+    expect(client.fetchArticles).toHaveBeenCalledWith(
+      '2023-01-06', expect.any(Function), expect.any(Function)
+    );
 
     expect(model.setArticles).toHaveBeenCalledWith([exampleArticles[0]]);
 
@@ -93,5 +94,27 @@ describe(ArticleView, () => {
       .toBe(exampleArticles[0].headline);
     expect(document.querySelector('.article .headline a').href)
       .toBe(exampleArticles[0].webUrl);
+  });
+
+  it('displays error to page', () => {
+    view.displayError(new Error('Oops, something went wrong'));
+    
+    expect(document.querySelector('.main-container').children.length).toBe(2);
+    expect(document.querySelector('.error').textContent).toBe('Error');
+    expect(document.querySelector('.error-message').textContent)
+      .toBe('Oops, something went wrong');
+  });
+
+  it('catches fetch error', (done) => {
+    client.fetchArticles.mockImplementationOnce((date, callback, errorCallback) => {
+      errorCallback(new Error('Oops, something went wrong'))
+    });
+    
+    view.fetchArticlesFromApi('2023-01-06', (error) => {
+      expect(document.querySelector('.error').textContent).toBe('Error');
+      expect(document.querySelector('.error-message').textContent)
+        .toBe('Oops, something went wrong');
+      done();
+    });
   });
 });

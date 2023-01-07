@@ -15,12 +15,30 @@ class ArticleView {
     });
   }
 
-  fetchArticlesFromApi(date) {
+  fetchArticlesFromApi(date, errorCallback = () => {}) {
     this.client.fetchArticles(date, (data) => {
       const articles = this.#parseApiData(data);
       this.model.setArticles(articles);
       this.displayArticles();
+    }, (error) => {
+      this.displayError(error);
+      errorCallback(error);
     });
+  }
+
+  displayError(error) {
+    const mainContainerEl = document.querySelector('.main-container');
+    mainContainerEl.replaceChildren('');
+
+    const errorEl = document.createElement('div');
+    errorEl.className = 'error'
+    errorEl.textContent = error.name;
+    mainContainerEl.append(errorEl);
+
+    const errorMessageEl = document.createElement('div');
+    errorMessageEl.className = 'error-message';
+    errorMessageEl.textContent = error.message;
+    mainContainerEl.append(errorMessageEl);
   }
 
   #createArticleEl(article) {
