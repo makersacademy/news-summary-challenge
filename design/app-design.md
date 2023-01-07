@@ -39,16 +39,6 @@ to first fetch articles from the Guardian API, **then** use the Aylien API to su
 the content — you'll need to use promises or callbacks to call both APIs and to handle the flow of
 control.
 
-### Required MVP features:
-
-* A page that makes GET requests to the guardian API for the Images and Headlines and article URL for each of the days article
-
-* Each article headline must be clickable to view the original article 
-
-* A search function that gets articles matching it 
-
-
-
 
 ```
 As a busy politician
@@ -62,40 +52,37 @@ So I make my news reading more fun
 I can see whizzy animations in the app
 ```
 
+### Required MVP features:
+
+* A page that makes GET requests to the guardian API for the Images and Headlines and article URL for each of the days article
+
+* Each article headline must be clickable to view the original article 
+
+* A search function that gets articles matching it 
+
+
+
 ## 2. Design the Data Model Class
 This class should store and manage the data the server will hold.
 Include the initializer and public methods with all parameters and return values.
 
 ```Javascript
-class Task {
-  constructor() {
-    // Initialize task properties
-  }
-}
 
-class TaskRepository {
+class NewsModel{
   constructor() {
-    // Initialize tasks array
+    // Initialize the stories array
   }
 
   all() {
-    // Return list of all tasks
+    // Return list of all storries
   }
 
   add(task) {
-    // Add task to tasks array
+    // Adds a story to the story array
   }
 
-  get(index) {
-    // Return task at given index
-  }
-
-  update(index, task) {
-    // Update task at given index
-  }
-
-  remove(index) {
-    // Remove task at given index
+  get(searchTerm) {
+    // Return storys that match the search term
   }
 }
 
