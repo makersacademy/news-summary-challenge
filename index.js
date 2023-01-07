@@ -3,4 +3,6 @@ const NewsModel = require("./newsModel");
 const NewsView = require("./newsView");
 
 const model = new NewsModel();
-const view = new NewsView();
+model.add('test')
+const view = new NewsView(model);
+view.displayStories();

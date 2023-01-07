@@ -4,6 +4,7 @@
 
 const fs = require('fs');
 const NewsView = require('./newsView');
+const NewsModel = require('./newsModel');
 
 describe ('NewsView', () => {
   it ('it displays a single story on page', () => {
@@ -14,24 +15,29 @@ describe ('NewsView', () => {
 
     // mock the model class
 
-    const mockModel = jest.mock('./newsModel', () => {
-      return jest.fn().mockImplementation(() => {
-        return {
-          allStories: jest.fn().mockReturnValue(['mock story']),
-          add: jest.fn(),
-        };
-      });
-    });
+    // const mockModel = jest.mock('./newsModel', () => {
+    //   return jest.fn().mockImplementation(() => {
+    //     return {
+    //       allStories: jest.fn().mockReturnValue(['mock story']),
+    //       add: jest.fn(),
+    //     };
+    //   });
+    // });
+
+    const model = new NewsModel()
+    model.add('test story')
+   
 
     // instantize the view 
 
-    view = new NewsView(mockModel)
+    view = new NewsView(model)
 
     // Display the story Headline on the page
     view.displayStories()
 
     // There should now be a div.story on the page 
-    expect(document.querySelectorAll('#div.story').length).toEqual(1)
+    expect(document.querySelectorAll('.headline').length).toEqual(1)
+    expect(document.querySelectorAll('.headline')[0].innerText).toEqual('test story')
 
   
   })
