@@ -1,7 +1,7 @@
 class NewsModel {
 
   constructor() {
-    this.news = [];
+    this.news = null;
   }
 
   addNews(newsFromApi) {

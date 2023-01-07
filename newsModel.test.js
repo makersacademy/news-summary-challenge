@@ -4,7 +4,7 @@ describe('NotesModel', () => {
   it('returns empty array', () => {
     const model = new NewsModel();
 
-    expect(model.getNews()).toEqual([]);
+    expect(model.getNews()).toEqual(null);
   })
 
   it('adds news', () => {
