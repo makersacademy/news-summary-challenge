@@ -34,7 +34,15 @@ describe('NewsView', () => {
   it('displays headlines and thunbnails from the API', () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
 
-    const model = new NewsModel();
+    const modelMock = {
+      addNews() {
+        jest.fn();
+      },
+
+      getNews() {
+        return object.response.results;
+      }
+    }
 
     const object = {response: {results: [{webTitle: "response", fields:{thumbnail: "image"}}]}};
 
@@ -44,7 +52,7 @@ describe('NewsView', () => {
       }
     }
 
-    const newsView = new NewsView(model, clientMock);
+    const newsView = new NewsView(modelMock, clientMock);
 
     newsView.addNewsFromApi();
 
