@@ -75,3 +75,29 @@ class NewsView {
   // 1 - Calls the client class method + dispplay stories method  
 
 ```
+
+## 4. Client Class Methods 
+
+```Javascript
+
+class TaskClient {
+  constructor() {
+    // Initialize client
+  }
+
+fetchStories() {
+    // Fetch the days stories from Guardian API
+    // Headline + image + story URL
+    // Has callback for us to interact
+  }
+
+}
+```
+
+## 4. Test for Client Class Method
+
+```Javascript
+
+// Fetches all Headlines for the current date
+
+```
