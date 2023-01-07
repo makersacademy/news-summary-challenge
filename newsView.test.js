@@ -14,17 +14,21 @@ describe('NewsView', () => {
   it('will display headlines and thumbnails', () => {
     document.body.innerHTML = fs.readFileSync('../notes-app/index.html');
 
-    const newsModel = new NewsModel();
-
     const object = {response: {results: [{webTitle: "response", fields:{thumbnail: "image"}}]}};
 
-    newsModel.addNews(object);
+    mockModel ={
+      getNews() {
+        return object.response.results;
+      }
+    }
 
-    const newsView = new NewsView(newsModel);
+    const newsView = new NewsView(mockModel);
 
     newsView.displayFrontPage();
 
     expect(document.querySelector('div.headline').textContent).toEqual("response");
 
   })
+
+  
 })
