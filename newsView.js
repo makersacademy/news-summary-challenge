@@ -26,6 +26,13 @@ class NewsView {
       this.displayNewsItems();
     });
   }
+
+  displayError() {
+    const errorMessage = document.createElement("div");
+    errorMessage.id = "error";
+    errorMessage.textContent = "Oops, something went wrong!";
+    this.mainContainerEl.append(errorMessage);
+  }
 }
 
 module.exports = NewsView;

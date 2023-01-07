@@ -55,4 +55,11 @@ describe("A test for my web page", () => {
     expect(client.loadHeadlines).toHaveBeenCalled();
     expect(model.getNews()).toEqual([{ test }, { test }]);
   });
+
+  it("displays error message on page", () => {
+    view.displayError();
+    expect(document.querySelector("#error").textContent).toBe(
+      "Oops, something went wrong!"
+    );
+  });
 });
