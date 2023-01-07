@@ -12,15 +12,18 @@ jest.mock('./articleModel');
 
 describe(ArticleView, () => {
 
+  let client, model, view;
   beforeEach(() => {
+    jest.resetAllMocks();
+    
     document.body.innerHTML = fs.readFileSync('./index.html');
+
+    client = new ArticleClient();
+    model = new ArticleModel();
+    view = new ArticleView(client, model);
   });
 
   it('displays articles from the model', () => {
-    const client = new ArticleClient();
-    const model = new ArticleModel();
-    const view = new ArticleView(client, model);
-
     model.getArticles.mockImplementationOnce(() => [
       {
         headline: ' Quarter of ambulance patients in England wait an hour to get into A&E after arrival',
@@ -42,5 +45,20 @@ describe(ArticleView, () => {
       .toBe(' Quarter of ambulance patients in England wait an hour to get into A&E after arrival');
     expect(document.querySelector('.article .headline a').href)
       .toBe('https://www.theguardian.com/society/2023/jan/06/quarter-of-ambulance-patients-in-england-faced-hours-wait-for-a-and-e');
+  });
+
+  it('does not add duplicates when calling displayArticles twice', () => {
+    model.getArticles.mockImplementation(() => [
+      {
+        headline: ' Quarter of ambulance patients in England wait an hour to get into A&E after arrival',
+        thumbnail: 'https://media.guim.co.uk/329d3c8ff5861ef968efbc4e320dac5b332b3d35/0_185_5554_3333/500.jpg',
+        webUrl: 'https://www.theguardian.com/society/2023/jan/06/quarter-of-ambulance-patients-in-england-faced-hours-wait-for-a-and-e'
+      }
+    ]);
+
+    view.displayArticles();
+    view.displayArticles();
+
+    expect(document.querySelectorAll('.headlines .article').length).toBe(1);
   });
 });

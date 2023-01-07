@@ -2,14 +2,16 @@ class ArticleView {
   constructor(client, model) {
     this.client = client;
     this.model = model;
+
+    this.headlinesEl = document.querySelector('.headlines');
   }
 
   displayArticles() {
-    const headlinesEl = document.querySelector('.headlines');
+    this.#removeArticles();
 
     this.model.getArticles().forEach((article) => {
       const articleEl = this.#createArticleEl(article);
-      headlinesEl.append(articleEl);
+      this.headlinesEl.append(articleEl);
     });
   }
 
@@ -27,6 +29,12 @@ class ArticleView {
     articleEl.append(articleHeadlineEl);
 
     return articleEl;
+  }
+
+  #removeArticles() {
+    this.headlinesEl.querySelectorAll('.article').forEach((article) => {
+      article.remove();
+    });
   }
 }
 
