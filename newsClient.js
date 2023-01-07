@@ -14,7 +14,7 @@ class NewsClient {
   fetchStories(callback){
 
     // Form APIURL
-    const apiUrl = `https://content.guardianapis.com/search?from-date=${this.date}&show-fields=headline&api-key=${apiKey}`
+    const apiUrl = `https://content.guardianapis.com/search?from-date=${this.date}&show-fields=headline%2Cthumbnail&api-key=${apiKey}`
     
     // Make a get request to the Guardian API Endpoint
     fetch(apiUrl)
