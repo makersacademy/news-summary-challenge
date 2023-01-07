@@ -101,7 +101,7 @@ describe ('NewsView', () => {
     const mockModel = {
       setStories: (data) => {
         expect(data).toEqual(
-         "Atom Valley: Andy Burnham’s vision for regenerating Great Manchester"
+         ["Atom Valley: Andy Burnham’s vision for regenerating Great Manchester"]
         );
       },
       allStories: () => {

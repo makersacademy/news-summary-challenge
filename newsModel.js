@@ -18,7 +18,7 @@ class NewsModel {
   }
 
   setStories(stories) {
-    this.stories = [stories]
+    this.stories = stories
   }
 }
 
