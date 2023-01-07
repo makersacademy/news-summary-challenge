@@ -26,7 +26,7 @@ class NewsView {
     });
   }
 
-  addNewsFromApi() {
+  displayNewsFromApi() {
     this.client.loadNews((newsFromApi) => {
       this.model.addNews(newsFromApi);
       this.displayFrontPage();

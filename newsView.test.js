@@ -17,18 +17,17 @@ describe('NewsView', () => {
 
     const object = {response: {results: [{webTitle: "response", fields:{thumbnail: "image"}}]}};
 
-    mockModel ={
+    modelMock ={
       getNews() {
         return object.response.results;
       }
     }
 
-    const newsView = new NewsView(mockModel);
+    const newsView = new NewsView(modelMock);
 
     newsView.displayFrontPage();
 
     expect(document.querySelector('div.headline').textContent).toEqual("response");
-
   })
 
   it('displays headlines and thunbnails from the API', () => {
@@ -54,7 +53,7 @@ describe('NewsView', () => {
 
     const newsView = new NewsView(modelMock, clientMock);
 
-    newsView.addNewsFromApi();
+    newsView.displayNewsFromApi();
 
     expect(document.querySelector('div.headline').textContent).toEqual("response");
   })

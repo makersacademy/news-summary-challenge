@@ -12,5 +12,5 @@ newsClient.loadNews((news) => {
   console.log(news.response.results[3].webTitle)
 })
 
-newsView.addNewsFromApi();
+newsView.displayNewsFromApi();
 
