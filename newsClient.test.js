@@ -10,7 +10,7 @@ describe('NewsModel', () => {
       fetch.resetMocks();
     });
 
-    it (' Makes an API request for the current date', () => {
+    it (' Makes an API request for the current date', (done) => {
 
       //Instantiate client
       const client = new NewsClient()
