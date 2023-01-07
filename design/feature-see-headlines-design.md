@@ -101,3 +101,5 @@ fetchStories() {
 // Fetches all Headlines for the current date
 
 ```
+
+Image url: https://media.guim.co.uk/719def13ababf941b2306dad409edda787e1c1ba/0_384_5760_3456/500.jpg
