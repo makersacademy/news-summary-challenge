@@ -22,7 +22,7 @@ class NewsClient {
       .then((data) => {
         callback(data);
       });
-  
+      
   }
 
 }

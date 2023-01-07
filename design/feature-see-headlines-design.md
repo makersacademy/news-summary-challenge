@@ -72,7 +72,7 @@ class NewsView {
 
 // Using Client Class
 
-  // 1 - Calls the client class method + dispplay stories method  
+  // 1 - Calls the client class method + display stories method  
 
 ```
 

@@ -63,4 +63,47 @@ describe ('NewsView', () => {
 
   
   })
+
+  it ('it adds API response data to the model', () => {
+
+    // set the HTML content of the test
+    const html = fs.readFileSync("./index.html");
+    document.body.innerHTML = html;
+   
+    // mock the client
+
+    const mockClient = {
+      fetchStories: (callback) => {
+        const mockData = {response: {
+          results: [
+            {fields: {
+                headline: "Atom Valley: Andy Burnham’s vision for regenerating Great Manchester",    
+              }
+            }]}
+        }
+        callback(mockData);
+      },
+    };
+
+    // mock the model 
+
+    const mockModel = {
+      add: (data) => {
+        expect(data).toEqual({
+          headline: "Atom Valley: Andy Burnham’s vision for regenerating Great Manchester"
+        });
+      },
+      getParty: () => {
+        return [];
+      },
+    };
+    // instantize the view
+    const model = new NewsModel(mockClient, mockModel)
+
+    // There should now be a headline from the API on the page 
+    view.displayStoriesFromApi();
+    
+
+  
+  })
 })
