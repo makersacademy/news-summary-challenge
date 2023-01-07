@@ -7,8 +7,13 @@ class NewsModel {
     return this.stories;
   }
 
+
   add(story) {
-    this.stories.push(story);
+    if (typeof story === ('string') || typeof story === ('object') ) {
+      this.stories.push(story);
+    } else  { 
+      throw new Error('Oops! Something went wrong');
+    }
   }
 }
 

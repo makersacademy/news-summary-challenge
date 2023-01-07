@@ -11,4 +11,14 @@ describe ('NewsModel',() => {
     model.add('new story')
     expect(model.allStories()).toEqual(['new story'])
   })
+
+  it ('returns an error if the add is called with something that isnt a string or object ', () => {
+    const model = new NewsModel();
+    try {
+      model.add(3);
+    } catch (error) {
+      expect(error.message).toBe('Oops! Something went wrong');
+    }
+    expect(model.allStories()).toEqual([])
+  })
 })
