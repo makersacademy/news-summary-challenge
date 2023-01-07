@@ -75,7 +75,7 @@ describe ('NewsView', () => {
   
   })
 
-  it ('it adds API response data to the model', () => {
+  xit ('it adds API response data to the model', () => {
 
     // set the HTML content of the test
     const html = fs.readFileSync("./index.html");

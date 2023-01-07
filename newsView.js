@@ -30,9 +30,12 @@ class NewsView {
     //Call the fetchStories method on the client
     this.client.fetchStories((data) => {
 
-    // Add the headline of each story to the model
+    // Create an object containing headline and image and add to each story to the model
     data.response.results.forEach((story) => {
-      todaysStories.push(story.fields.headline)
+      const storyObject = {}
+      storyObject.headline = (story.fields.headline)
+      storyObject.thumbnail = (story.fields.thumbnail)
+      todaysStories.push(storyObject)
     });
 
     this.model.setStories(todaysStories);
