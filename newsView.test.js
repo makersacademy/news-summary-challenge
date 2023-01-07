@@ -92,10 +92,10 @@ describe("A test for my web page", () => {
     view.displayNewsFromApi();
 
     expect(document.querySelectorAll(".news-item").length).toBe(2);
-    expect(document.querySelectorAll(".news-item")[0].textContent).toEqual(
+    expect(document.querySelectorAll(".news-link")[0].innerHTML).toEqual(
       "At last, the inventors of modern skiing have something to cheer: Dave Ryding | Andy Bull"
     );
-    expect(document.querySelectorAll(".news-item")[1].textContent).toEqual(
+    expect(document.querySelectorAll(".news-link")[1].innerHTML).toEqual(
       "Ofgem to unveil new household energy bill price cap on Thursday morning – business live"
     );
   });
@@ -143,5 +143,14 @@ describe("A test for my web page", () => {
     expect(document.querySelectorAll(".news-link")[1].href).toEqual(
       "https://www.theguardian.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation"
     );
+  });
+
+  it("add id to each .news-item element", () => {
+    model.addNewsItem(newsItemOne);
+    model.addNewsItem(newsItemTwo);
+    view.displayNewsItems();
+
+    expect(document.querySelectorAll(".news-item").length).toBe(2);
+    expect(document.querySelectorAll(".news-item")[0].id).toEqual("index-0");
   });
 });
