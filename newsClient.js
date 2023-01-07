@@ -11,6 +11,17 @@ class NotesClient {
         callback(data)
       })
   }
+
+  searchQueryResults(keyWord, callback) {
+    
+    const url = `https://content.guardianapis.com/search?q=${keyWord}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`
+
+    fetch(url)
+    .then(response => response.json())
+      .then(data => {
+        callback(data)
+      })
+  }
   
 }
 

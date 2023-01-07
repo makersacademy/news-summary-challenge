@@ -14,3 +14,7 @@ const newsView = new NewsView(newsModel, newsClient);
 
 newsView.displayNewsFromApi();
 
+// newsClient.searchQueryResults('food', (data) => {
+//   console.log(data)
+// })
+

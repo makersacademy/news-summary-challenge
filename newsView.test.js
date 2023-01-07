@@ -11,7 +11,7 @@ require('jest-fetch-mock').enableMocks()
 
 describe('NewsView', () => {
 
-  it('will display headlines with link to article and thumbnails', () => {
+  it('displays data from the model class', () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
 
     const object = {response: {results: [{webTitle: "The Headline", fields:{thumbnail: "image"}}]}};
@@ -29,7 +29,7 @@ describe('NewsView', () => {
     expect(document.querySelector('.link').innerText).toEqual("The Headline");
   })
 
-  it('displays headlines and thunbnails from the API', () => {
+  it('displays data from the API', () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
 
     const modelMock = {
@@ -53,6 +53,34 @@ describe('NewsView', () => {
     const newsView = new NewsView(modelMock, clientMock);
 
     newsView.displayNewsFromApi();
+
+    expect(document.querySelector('.link').innerText).toEqual("The Headline");
+  })
+
+  it('displays data from the API based on search query', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const modelMock = {
+      addNews() {
+        jest.fn();
+      },
+
+      getNews() {
+        return object.response.results;
+      }
+    }
+
+    const object = {response: {results: [{webTitle: "The Headline", fields:{thumbnail: "image"}}]}};
+
+    const clientMock = {
+      searchQueryResults(keyWord, callback) {
+        callback(object);
+      }
+    }
+
+    const newsView = new NewsView(modelMock, clientMock);
+
+    newsView.displayNewsFromSearch("keyword");
 
     expect(document.querySelector('.link').innerText).toEqual("The Headline");
   })

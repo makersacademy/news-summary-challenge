@@ -5,6 +5,19 @@ class NewsView {
     this.client = client;
 
     this.mainContainerEl = document.querySelector('#main-container');
+
+    document.querySelector('#search-button').addEventListener('click', () => {
+      const keyWord = document.querySelector('#keyword-input').value;
+
+      document.querySelectorAll('.thumbnail').forEach(img => {
+        img.remove();
+      })
+      
+      this.displayNewsFromSearch(keyWord);
+
+      document.querySelector('#keyword-input').value = "";
+    })
+
   }
 
   displayFrontPage() {
@@ -36,6 +49,14 @@ class NewsView {
 
   displayNewsFromApi() {
     this.client.loadNews((newsFromApi) => {
+      this.model.addNews(newsFromApi);
+      this.displayFrontPage();
+      console.log(this.model.getNews())
+    });
+  }
+
+  displayNewsFromSearch(keyWord) {
+    this.client.searchQueryResults(keyWord, (newsFromApi) => {
       this.model.addNews(newsFromApi);
       this.displayFrontPage();
       console.log(this.model.getNews())
