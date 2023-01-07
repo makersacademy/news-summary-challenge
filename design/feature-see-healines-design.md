@@ -15,11 +15,11 @@ class NewsModel{
     // Initialize the stories array
   }
 
-  all() {
+  allStories() {
     // Return list of all storries
   }
 
-add(story) {
+  add(story) {
     // Adds a story to the story array
   }
 }
