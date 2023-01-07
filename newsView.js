@@ -21,8 +21,36 @@ class NewsView {
       // headlineEl.innerText = story
       // headlineEl.className = 'headline'
     })
-  
+
   }
+
+  buildStoryElement(story) {
+    const headlineEL = this.buildHeadlineEl(story);
+    const imageEl = this.buildImageEl(story);
+    const storyElement = this.createStoryElement(headlineEl);
+    storyElement.append(headlineEl,imageEl);
+    return storyElement();
+  }
+
+  buildHeadlineEl(story) {
+    const headlineEl = document.createElement("h2")
+    headlineEl.classList.add("headline");
+    headlineEl.innerText = story.headline;
+    return headlineEl
+  }
+
+  buildImageEl(story) {
+    const imageEl = document.createElement("img")
+    imageEl.classList.add("thumbnail");
+    imageEl.src = story.thumbnail;
+    return imageEl;
+  };
+
+  createStoryElement = () => {
+    const storyEl = document.createElement("div");
+    storyEl.classList.add("story");
+    return storyEl;
+  };
   
   displayStoriesFromApi() {
 
