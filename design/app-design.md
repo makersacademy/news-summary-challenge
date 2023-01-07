@@ -77,7 +77,7 @@ class NewsModel{
     // Return list of all storries
   }
 
-  add(task) {
+  add(story) {
     // Adds a story to the story array
   }
 
