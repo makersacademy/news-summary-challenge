@@ -105,13 +105,25 @@ This class should manage the presentation of data to the user.
 Include the initializer and public methods with all parameters and return values.
 
 ```Javascript
-class TaskView {
+class NewsView {
   constructor() {
     // Initialize view
   }
 
-  static renderTasks(tasks) {
-    // Render tasks to the DOM
+  displayStoriesFromApi() {
+
+    // calls a client class method to make a GET request, then calls displayStories 
+  }
+
+  displayStories(model) {
+    // Renders stories stored in model class to the DOM
+    // Will likely need to be split into seperate models
+    // Clears page before displaying
+  }
+
+  findStories(searchTerm) {
+    // calls a client class method to make the GET request for search term, then calls displayStories
+    
   }
 }
 
