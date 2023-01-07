@@ -123,7 +123,7 @@ class NewsView {
 
   findStories(searchTerm) {
     // calls a client class method to make the GET request for search term, then calls displayStories
-    
+
   }
 }
 
@@ -150,20 +150,16 @@ class TaskClient {
     // Initialize client
   }
 
-  static async fetchTasks() {
-    // Fetch tasks from server
+  fetchStories() {
+    // Fetch the days stories from Guardian API
+    // Headline + image + story URL
+    // Has callback for us to interact
   }
 
-  static async createTask(task) {
-    // Send request to create task on server
-  }
-
-  static async updateTask(task) {
-    // Send request to update task on server
-  }
-
-  static async deleteTask(taskId) {
-    // Send request to delete task on server
+  SearchStories() {
+    // Fetch the days stories from Guardian API matching a search term
+    // Headline + image + story URL
+    // Has callback for us to interact
   }
 }
 
