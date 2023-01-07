@@ -12,18 +12,21 @@ class NewsView {
     const notes = this.model.getNews();
 
     notes.forEach((item, index) => {
+      const newline = document.createElement("br");
+      const newNewsImage = document.createElement("img");
+
+      newNewsImage.className = "news-thumbnail";
+      newNewsImage.src = item.fields.thumbnail;
+
       const newNewsItem = document.createElement("div");
       newNewsItem.className = "news-item";
       newNewsItem.id = `index-${index}`;
-      newNewsItem.textContent = item.webTitle;
       this.mainContainerEl.append(newNewsItem);
 
       const divContainerEl = document.querySelector(`#index-${index}`);
 
-      const newNewsImage = document.createElement("img");
-      newNewsImage.className = "news-thumbnail";
-      newNewsImage.src = item.fields.thumbnail;
       divContainerEl.append(newNewsImage);
+      divContainerEl.append(newline);
 
       const link = item.webUrl;
       const newLink = document.createElement("a");
@@ -31,8 +34,10 @@ class NewsView {
       newLink.setAttribute("href", link);
       newLink.innerHTML = item.webTitle;
 
-      // and append it to where you'd like it to go:
       divContainerEl.appendChild(newLink);
+      divContainerEl.append(newline);
+
+      this.mainContainerEl.append(newline);
     });
   }
 
