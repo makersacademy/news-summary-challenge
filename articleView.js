@@ -15,6 +15,14 @@ class ArticleView {
     });
   }
 
+  fetchArticlesFromApi(date) {
+    this.client.fetchArticles(date, (data) => {
+      const articles = this.#parseApiData(data);
+      this.model.setArticles(articles);
+      this.displayArticles();
+    });
+  }
+
   #createArticleEl(article) {
     const articleEl = document.createElement('div');
     articleEl.className = 'article';
@@ -34,6 +42,16 @@ class ArticleView {
   #removeArticles() {
     this.headlinesEl.querySelectorAll('.article').forEach((article) => {
       article.remove();
+    });
+  }
+
+  #parseApiData(data) {
+    return data.response.results.map((result) => {
+      return {
+        headline: result.fields.headline,
+        thumbnail: result.fields.thumbnail,
+        webUrl: result.webUrl
+      };
     });
   }
 }
