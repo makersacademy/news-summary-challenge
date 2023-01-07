@@ -21,7 +21,8 @@ class NewsView {
 
   displayNewsFromApi() {
     this.client.loadHeadlines((callback) => {
-      this.model.setNews(callback);
+      const headlines = callback.response.results;
+      this.model.setNews(headlines);
       this.displayNewsItems();
     });
   }

@@ -45,12 +45,14 @@ describe("A test for my web page", () => {
 
   it("display news from Api", () => {
     client.loadHeadlines.mockImplementation((callback) => {
-      callback([newsItemOne, newsItemTwo]);
+      callback({
+        response: { results: [{ test }, { test }] },
+      });
     });
 
     view.displayNewsFromApi();
 
     expect(client.loadHeadlines).toHaveBeenCalled();
-    expect(model.getNews()).toEqual([newsItemOne, newsItemTwo]);
+    expect(model.getNews()).toEqual([{ test }, { test }]);
   });
 });
