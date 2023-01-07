@@ -37,3 +37,41 @@ class NewsModel{
 // 3 - returns error if story is not a string or JS object 
 
 ```
+
+## 4. View Class Methods 
+
+```Javascript
+
+class NewsView {
+  constructor() {
+    // Initialize view
+  }
+
+  displayStoriesFromApi() {
+
+    // calls a client class method to make a GET request, then calls displayStories 
+  }
+
+  displayStories(model) {
+    // Renders stories stored in model class to the DOM
+    // Will likely need to be split into seperate models
+    // Clears page before displaying
+  }
+}
+
+```
+## 3. Tests for the View Class methods 
+
+```Javascript
+
+// Using only Model class
+
+  // 1 - it displays a single story on page 
+
+  // 2 - it displays multiple stories on page 
+
+// Using Client Class
+
+  // 1 - Calls the client class method + dispplay stories method  
+
+```
