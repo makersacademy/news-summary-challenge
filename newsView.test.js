@@ -62,4 +62,33 @@ describe("A test for my web page", () => {
       "Oops, something went wrong!"
     );
   });
+
+  it("display webTitle from Api on page", () => {
+    client.loadHeadlines.mockImplementation((callback) => {
+      callback({
+        response: {
+          results: [
+            {
+              webTitle:
+                "At last, the inventors of modern skiing have something to cheer: Dave Ryding | Andy Bull",
+            },
+            {
+              webTitle:
+                "Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
+            },
+          ],
+        },
+      });
+    });
+
+    view.displayNewsFromApi();
+
+    expect(document.querySelectorAll(".news-item").length).toBe(2);
+    expect(document.querySelectorAll(".news-item")[0].textContent).toEqual(
+      "At last, the inventors of modern skiing have something to cheer: Dave Ryding | Andy Bull"
+    );
+    expect(document.querySelectorAll(".news-item")[1].textContent).toEqual(
+      "Ofgem to unveil new household energy bill price cap on Thursday morning – business live"
+    );
+  });
 });

@@ -20,11 +20,17 @@ class NewsView {
   }
 
   displayNewsFromApi() {
-    this.client.loadHeadlines((callback) => {
-      const headlines = callback.response.results;
-      this.model.setNews(headlines);
-      this.displayNewsItems();
-    });
+    this.client.loadHeadlines(
+      (callback) => {
+        const headlines = callback.response.results;
+        this.model.setNews(headlines);
+        this.displayNewsItems();
+      },
+      () => {
+        // This will be executed if there's an error
+        view.displayError();
+      }
+    );
   }
 
   displayError() {
