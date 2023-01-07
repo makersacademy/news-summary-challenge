@@ -1,8 +1,9 @@
 class NewsView {
 
-  constructor(model) {
+  constructor(client, model) {
     this.model = model
     this.mainContainerEl = document.querySelector('#main-container')
+    this.client = client
   }
 
   displayStories() {
@@ -18,7 +19,23 @@ class NewsView {
       headlineEl.className = 'headline'
       this.mainContainerEl.append(headlineEl);
     })
-    console.log(this.mainContainerEl);
+  
+  }
+  
+  displayStoriesFromApi() {
+
+    //Call the fetchStories method on the client
+    this.client.fetchStories((data) => {
+
+    
+    // Add the headline of each story to the model
+    const headlines = data.response.results.forEach((story) => {
+      this.model.setStories(story.fields.headline)
+    });
+    
+    this.displayStories();
+    } );
+
   }
   
 }

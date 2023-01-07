@@ -5,12 +5,21 @@
 const fs = require('fs');
 const NewsView = require('./newsView');
 const NewsModel = require('./newsModel');
+const NewsClient = require('./newsClient');
 
 jest.mock('./newsModel', () => {
   return jest.fn().mockImplementation(() => {
     return {
       allStories: jest.fn(),
       add: jest.fn(),
+    };
+  });
+});
+
+jest.mock('./newsClient', () => {
+  return jest.fn().mockImplementation(() => {
+    return {
+      fetchStories: jest.fn(),
     };
   });
 });
@@ -25,10 +34,11 @@ describe ('NewsView', () => {
 
     // instantize the view and model
     const model = new NewsModel()
+    const client = new NewsClient()
 
     // Mock the model implementaton
     model.allStories.mockImplementationOnce(() => ['test story']);
-    view = new NewsView(model)
+    view = new NewsView(client, model)
 
     // Display the story Headline on the page
     view.displayStories()
@@ -49,10 +59,11 @@ describe ('NewsView', () => {
 
     // instantize the view and model
     const model = new NewsModel()
+    const client = new NewsClient()
 
     // Mock the model implementaton
     model.allStories.mockImplementationOnce(() => ['Headline One', 'Headline Two']);
-    view = new NewsView(model)
+    view = new NewsView(client,model)
 
     // Display the story Headline on the page
     view.displayStories()
@@ -88,20 +99,23 @@ describe ('NewsView', () => {
     // mock the model 
 
     const mockModel = {
-      add: (data) => {
-        expect(data).toEqual({
-          headline: "Atom Valley: Andy Burnham’s vision for regenerating Great Manchester"
-        });
+      setStories: (data) => {
+        expect(data).toEqual(
+         "Atom Valley: Andy Burnham’s vision for regenerating Great Manchester"
+        );
       },
-      getParty: () => {
-        return [];
+      allStories: () => {
+        return ["Atom Valley: Andy Burnham’s vision for regenerating Great Manchester"];
       },
     };
     // instantize the view
-    const model = new NewsModel(mockClient, mockModel)
+    const view = new NewsView(mockClient, mockModel)
 
-    // There should now be a headline from the API on the page 
     view.displayStoriesFromApi();
+
+     // There should now be a headline from the API on the page 
+    expect(document.querySelectorAll('.headline').length).toEqual(1)
+    expect(document.querySelectorAll('.headline')[0].innerText).toEqual("Atom Valley: Andy Burnham’s vision for regenerating Great Manchester")
     
 
   

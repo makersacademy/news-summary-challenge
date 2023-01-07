@@ -16,6 +16,10 @@ class NewsModel {
       throw new Error('Oops! Something went wrong');
     }
   }
+
+  setStories(stories) {
+    this.stories = [stories]
+  }
 }
 
 module.exports = NewsModel;
