@@ -21,6 +21,15 @@ class NewsView {
       newNewsItem.className = "news-item";
       newNewsItem.textContent = item.webTitle;
       this.mainContainerEl.append(newNewsItem);
+
+      const link = item.webUrl;
+      const newLink = document.createElement("a");
+      newLink.className = "news-link";
+      newLink.setAttribute("href", link);
+      newLink.innerHTML = item.webTitle;
+
+      // and append it to where you'd like it to go:
+      this.mainContainerEl.appendChild(newLink);
     });
   }
 
