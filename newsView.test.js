@@ -180,8 +180,31 @@ describe ('NewsView', () => {
     expect(document.querySelectorAll('.thumbnail').length).toEqual(1)
     // expect(document.querySelectorAll('.thumbnail')[0].innerText).toEqual("Two years on from the Capitol riot: the toxic legacy of Trump’s big lie")
     
-    
-
-  
   })
+
+  it("Passes user input to the client class", () => {
+    const html = fs.readFileSync("./index.html");
+    document.body.innerHTML = html;
+
+    const mockClient = {
+      fetchStories: (searchTerm, callback) => {
+        expect(searchTerm).toEqual('politics');
+      },
+    };
+
+    const mockModel = {
+      add: () => {},
+      allStories: () => {
+        return [];
+      },
+    };
+
+    new NewsView(mockClient, mockModel);
+
+    const inputEl = document.querySelector("#search-input");
+    inputEl.value = "politics";
+
+    const buttonEl = document.querySelector("#submit");
+    buttonEl.click();
+  });
 })

@@ -18,7 +18,7 @@ describe('NewsModel', () => {
       fetch.mockResponseOnce(JSON.stringify({ status: "okay", total: 33 }));
 
       // Call the fetch method and expect the mock response
-      client.fetchStories((data) => {
+      client.fetchStories((searchTerm = '', data) => {
         expect(data.status).toEqual("okay");
         expect(data.total).toEqual(33);
         done();
