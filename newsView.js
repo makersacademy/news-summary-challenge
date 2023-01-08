@@ -14,7 +14,6 @@ class NewsView {
 
       document.querySelector('#keyword-input').value = "";
     })
-
   }
 
   displayFrontPage() {
@@ -27,26 +26,20 @@ class NewsView {
     allNews.forEach((item, i) => {
       const headline = document.createElement('div');
       this.headline = headline;
-
       headline.className = 'headline';
 
-      const image = document.createElement('img');
-      const a = document.createElement('a');
-
-      this.displayThumbnail(image, item);
+      this.displayThumbnail(item);
 
       this.createNewLine();
 
-      a.setAttribute('href', allNews[i].webUrl);
-      a.innerText = allNews[i].webTitle;
-      a.className = 'link';
-      headline.append(a);
+      this.displayLink(allNews, i);
 
       this.mainContainerEl.append(headline);
     });
   }
 
-  displayThumbnail(image, item) {
+  displayThumbnail(item) {
+    const image = document.createElement('img');
     image.src = item.fields.thumbnail;
     this.headline.append(image);
     image.className = 'thumbnail';
@@ -56,6 +49,14 @@ class NewsView {
     const space = document.createElement('div');
     space.className = 'space';
     this.headline.append(space);
+  }
+
+  displayLink(allNews, i) {
+    const a = document.createElement('a');
+    a.setAttribute('href', allNews[i].webUrl);
+    a.innerText = allNews[i].webTitle;
+    a.className = 'link';
+    this.headline.append(a);
   }
 
   displayNewsFromApi() {
