@@ -66,6 +66,7 @@ class NewsView {
       const storyObject = {}
       storyObject.headline = (story.fields.headline)
       storyObject.thumbnail = (story.fields.thumbnail)
+      storyObject.thumbnail = (story.webUrl)
       todaysStories.push(storyObject)
     });
 
