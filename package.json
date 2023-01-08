@@ -11,7 +11,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx jest",
-    "build": "esbuild index.js --bundle --outfile=bundle.js --watch"
+    "build": "npx esbuild index.js --bundle --outfile=bundle.js --watch",
+    "buildOnce": "npx esbuild index.js --bundle --outfile=bundle.js"
   },
   "repository": {
     "type": "git",
