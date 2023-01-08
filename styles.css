@@ -6,19 +6,29 @@ p,
 }
 
 h1 {
+  /* position: absolute; */
   color: #e4d2b1;
   font-size: 50px;
+  border-top: 30px solid #f2e8d7;
+  border-bottom: 10px dashed #f2e8d7;
+  /* 
+  width: 530px;
+  height: 60px;
+  object-fit: none;
+  object-position: 5px 10%; */
+  /* padding: 10px; */
 }
 
 h2 {
   color: rgb(72, 71, 71);
+  /* padding: 10px; */
 }
 
 html {
   background: #f2e8d7;
 }
 
-body {
+#main-body {
   background: white;
   width: 550px;
   margin: auto;
@@ -35,6 +45,7 @@ a {
   color: rgb(72, 71, 71);
   text-decoration: none;
   font-weight: bold;
+  font-style: italic;
 }
 
 .news-item {
