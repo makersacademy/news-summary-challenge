@@ -8,10 +8,6 @@ class NewsView {
 
     document.querySelector('#search-button').addEventListener('click', () => {
       const keyWord = document.querySelector('#keyword-input').value;
-
-      document.querySelectorAll('.thumbnail').forEach(img => {
-        img.remove();
-      })
       
       this.displayNewsFromSearch(keyWord);
 
@@ -29,20 +25,24 @@ class NewsView {
 
     allNews.forEach((item, i) => {
       const headline = document.createElement('div');
+      headline.className = 'headline';
+
       const image = document.createElement('img');
       const a = document.createElement('a');
 
-      a.setAttribute('href', allNews[i].webUrl);
-      a.innerText = allNews[i].webTitle
-      a.className = 'link'
-
-      headline.append(a);
-      headline.className = 'headline';
-
       image.src = item.fields.thumbnail;
+      headline.append(image);
       image.className = 'thumbnail';
 
-      this.mainContainerEl.append(image);
+      const space = document.createElement('div');
+      space.className = 'space';
+      headline.append(space);
+
+      a.setAttribute('href', allNews[i].webUrl);
+      a.innerText = allNews[i].webTitle;
+      a.className = 'link';
+      headline.append(a);
+
       this.mainContainerEl.append(headline);
     });
   }

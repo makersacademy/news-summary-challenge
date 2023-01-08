@@ -12,27 +12,34 @@ body {
   width: 600px;
   margin: auto;
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
 }
 
 .headline {
-  border-bottom: 1px solid #aaa;
-  padding-bottom: 40px;
+  /* border-bottom: 1px solid #aaa; */
+  padding-bottom: 25px;
+}
+
+.thumbnail {
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.space {
+  padding: 5px;
 }
 
 .link {
   color: #36AE7C;
   font-size: 20px;
+  text-decoration: none;
 }
 
 .link:hover {
   color: #0bc7c4;
-}
-
-img {
-  padding: 15px;
-  margin-top: 20px;
+  text-decoration: none;
 }
 
 input[type=text] {
