@@ -86,7 +86,7 @@ describe ('NewsView', () => {
   
   })
 
-  xit ('it adds API response data to the model', () => {
+  it ('it adds API response data to the model', () => {
 
     // set the HTML content of the test
     const html = fs.readFileSync("./index.html");
@@ -99,8 +99,12 @@ describe ('NewsView', () => {
         const mockData = {response: {
           results: [
             {fields: {
-                headline: "Atom Valley: Andy Burnham’s vision for regenerating Great Manchester",    
-              }
+                headline: "Atom Valley: Andy Burnham’s vision for regenerating Great Manchester", 
+                thumbnail: "http://url.to/image2", 
+                standfirst: "Story standfirst",    
+              
+              },
+              webUrl: "https://www.theguardian.com/us-news/2023/jan/07/two-years-on-from-the-capitol-riot-the-toxic-legacy-of-trumps-big-lie"
             }]}
         }
         callback(mockData);
@@ -112,11 +116,11 @@ describe ('NewsView', () => {
     const mockModel = {
       setStories: (data) => {
         expect(data).toEqual(
-         ["Atom Valley: Andy Burnham’s vision for regenerating Great Manchester"]
+         [{headline: "Atom Valley: Andy Burnham’s vision for regenerating Great Manchester", thumbnail: "http://url.to/image2", standfirst: "Story standfirst",webUrl: "https://www.theguardian.com/us-news/2023/jan/07/two-years-on-from-the-capitol-riot-the-toxic-legacy-of-trumps-big-lie" }]
         );
       },
       allStories: () => {
-        return ["Atom Valley: Andy Burnham’s vision for regenerating Great Manchester"];
+        return [{headline: "Atom Valley: Andy Burnham’s vision for regenerating Great Manchester", thumbnail: "http://url.to/image2", standfirst: "Story standfirst",webUrl: "https://www.theguardian.com/us-news/2023/jan/07/two-years-on-from-the-capitol-riot-the-toxic-legacy-of-trumps-big-lie" }];
       },
     };
     // instantize the view
@@ -126,7 +130,7 @@ describe ('NewsView', () => {
 
      // There should now be a headline from the API on the page 
     expect(document.querySelectorAll('.headline').length).toEqual(1)
-    expect(document.querySelectorAll('.headline')[0].innerText).toEqual("Atom Valley: Andy Burnham’s vision for regenerating Great Manchester")
+    expect(document.querySelectorAll('.headline')[0].innerHTML).toEqual("<a href=\"https://www.theguardian.com/us-news/2023/jan/07/two-years-on-from-the-capitol-riot-the-toxic-legacy-of-trumps-big-lie\">Atom Valley: Andy Burnham’s vision for regenerating Great Manchester</a>")
     
 
   
