@@ -11,11 +11,11 @@ class NewsClient {
   }
 
   // Make a GET request for today's stories 
-  fetchStories(callback){
+  fetchStories(searchTerm = '', callback){
 
     // // Form APIURL
     // const apiUrl = `https://content.guardianapis.com/search?from-date=2023-01-06&show-fields=headline%2Cthumbnail&api-key=${apiKey}`
-    const apiUrl = `https://content.guardianapis.com/search?from-date=${this.date}&show-fields=headline%2Cthumbnail&api-key=${apiKey}`
+    const apiUrl = `https://content.guardianapis.com/search?from-date=${this.date}&show-fields=headline%2Cthumbnail&q=${searchTerm}&api-key=${apiKey}`
     // Make a get request to the Guardian API Endpoint
     fetch(apiUrl)
       .then((response) => response.json())

@@ -71,6 +71,7 @@ class NewsView {
     });
 
     this.model.setStories(todaysStories);
+    console.log(this.model.allStories())
     
     this.displayStories();
     } );

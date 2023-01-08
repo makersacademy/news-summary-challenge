@@ -19,6 +19,7 @@ class NewsModel {
 
   setStories(stories) {
     this.stories = stories
+    console.log(this.stories);
   }
 }
 
