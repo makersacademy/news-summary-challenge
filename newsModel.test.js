@@ -21,4 +21,11 @@ describe ('NewsModel',() => {
     }
     expect(model.allStories()).toEqual([])
   })
+  it ('correctly sets the stories array ', () => {
+    const model = new NewsModel();
+    model.add('story1')
+    model.add('story2')
+    model.setStories('story3')
+    expect(model.allStories()).toEqual('story3')
+  })
 })
