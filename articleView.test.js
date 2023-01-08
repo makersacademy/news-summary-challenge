@@ -142,7 +142,7 @@ describe(ArticleView, () => {
   });
 
   it('clicking search button fetches new articles', () => {
-    const searchInputEl = document.querySelector('#search-bar');
+    const searchInputEl = document.querySelector('#search-bar-input');
     const searchButtonEl = document.querySelector('#search-button');
 
     jest.spyOn(view, 'fetchArticlesFromApi');
@@ -154,7 +154,7 @@ describe(ArticleView, () => {
   });
 
   it('clicking search button with an empty input fetches today\'s articles', () => {
-    const searchInputEl = document.querySelector('#search-bar');
+    const searchInputEl = document.querySelector('#search-bar-input');
     const searchButtonEl = document.querySelector('#search-button');
 
     jest.spyOn(view, 'fetchArticlesFromApi');
@@ -167,7 +167,7 @@ describe(ArticleView, () => {
   });
 
   it('pressing enter in the input field fetches articles', () => {
-    const searchInputEl = document.querySelector('#search-bar');
+    const searchInputEl = document.querySelector('#search-bar-input');
 
     jest.spyOn(view, 'fetchArticlesFromApi');
 

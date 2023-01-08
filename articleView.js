@@ -4,7 +4,7 @@ class ArticleView {
     this.model = model;
     this.headlinesEl = document.querySelector('.headlines');
 
-    this.searchInputEl = document.querySelector('#search-bar');
+    this.searchInputEl = document.querySelector('#search-bar-input');
     this.searchButtonEl = document.querySelector('#search-button');
 
     this.searchButtonEl.addEventListener('click', () => this.#onSearchButtonClick());
