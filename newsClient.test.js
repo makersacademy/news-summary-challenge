@@ -1,8 +1,5 @@
 const NewsClient = require("./NewsClient");
 
-// This makes `fetch` available to our test
-// (it is not by default, as normally `fetch` is only
-// available within the browser)
 require("jest-fetch-mock").enableMocks();
 
 describe("Client class", () => {

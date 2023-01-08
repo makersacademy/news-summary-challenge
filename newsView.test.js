@@ -10,9 +10,6 @@ const NewsView = require("./newsView");
 jest.mock("./NewsClient");
 
 describe("A test for my web page", () => {
-  // We can use the beforeEach() hook
-  // to set the jest `document` HTML before each test
-
   const newsItemOne = {
     webTitle:
       "At last, the inventors of modern skiing have something to cheer: Dave Ryding | Andy Bull",
