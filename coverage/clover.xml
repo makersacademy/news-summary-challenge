@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1673217528859" clover="3.2.0">
-  <project timestamp="1673217528859" name="All files">
-    <metrics statements="90" coveredstatements="65" conditionals="4" coveredconditionals="4" methods="31" coveredmethods="20" elements="125" coveredelements="89" complexity="0" loc="90" ncloc="90" packages="1" files="4" classes="4"/>
+<coverage generated="1673218885265" clover="3.2.0">
+  <project timestamp="1673218885265" name="All files">
+    <metrics statements="90" coveredstatements="70" conditionals="4" coveredconditionals="4" methods="31" coveredmethods="24" elements="125" coveredelements="98" complexity="0" loc="90" ncloc="90" packages="1" files="4" classes="4"/>
     <file name="apiKey.js" path="/Users/josh/projects/Makers-Week-Seven/news-summary-challenge/apiKey.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <line num="1" count="1" type="stmt"/>
     </file>
     <file name="newsClient.js" path="/Users/josh/projects/Makers-Week-Seven/news-summary-challenge/newsClient.js">
-      <metrics statements="14" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="4"/>
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="15" count="0" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
       <line num="22" count="1" type="stmt"/>
       <line num="24" count="1" type="stmt"/>
       <line num="25" count="1" type="stmt"/>
       <line num="27" count="1" type="stmt"/>
-      <line num="36" count="0" type="stmt"/>
-      <line num="38" count="0" type="stmt"/>
-      <line num="39" count="0" type="stmt"/>
-      <line num="41" count="0" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
       <line num="48" count="1" type="stmt"/>
     </file>
     <file name="newsModel.js" path="/Users/josh/projects/Makers-Week-Seven/news-summary-challenge/newsModel.js">
