@@ -61,6 +61,14 @@ $ touch apiKey.js
 
 3. Copy the below code into the apiKey.js file and replace "test" with your Guardian API:
 
+```bash
+# apiKey.js
+
+const apiKey = "test";
+
+module.exports = apiKey;
+```
+
 4. Open the HTML file in your browser
 
 ```bash
@@ -69,14 +77,6 @@ $ touch apiKey.js
 # from the file explorer (Finder, on mac).
 
 $ open index.html
-```
-
-```bash
-# apiKey.js
-
-const apiKey = "test";
-
-module.exports = apiKey;
 ```
 
 ### Technologies
