@@ -3,6 +3,14 @@ class NewsView {
     this.model = model;
     this.client = client;
     this.mainContainerEl = document.querySelector("#main-container");
+
+    this.buttonEl = document.querySelector("#filter-button");
+
+    this.buttonEl.addEventListener("click", () => {
+      let filter = document.querySelector("#filter-input").value;
+      this.filterNewsFromApi(filter);
+      filter = "";
+    });
   }
   displayNewsItems() {
     document.querySelectorAll(".news-item").forEach((item) => {
@@ -36,8 +44,6 @@ class NewsView {
 
       divContainerEl.appendChild(newLink);
       divContainerEl.append(newline);
-
-      this.mainContainerEl.append(newline);
     });
   }
 

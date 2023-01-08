@@ -6,7 +6,7 @@ const client = new NewsClient();
 const model = new NewsModel();
 const view = new NewsView(model, client);
 
-// view.displayNewsFromApi();
+view.displayNewsFromApi();
 
 // const getRepoInfo = (callback) => {
 //   fetch(
@@ -22,7 +22,7 @@ const view = new NewsView(model, client);
 //   console.log(repoData.response.results);
 // });
 
-view.filterNewsFromApi("America");
+// view.filterNewsFromApi("America");
 
 // const newsItemOne = {
 //   webTitle:
