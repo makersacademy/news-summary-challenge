@@ -46,7 +46,8 @@ class NewsView {
     const headlineEl = this.buildHeadlineEl(story);
     const imageEl = this.buildImageEl(story);
     const storyElement = this.createStoryElement(headlineEl);
-    storyElement.append(headlineEl,imageEl);
+    const standfirstEl = this.buildStandfirstEl(story);
+    storyElement.append(headlineEl,imageEl, standfirstEl);
     return storyElement;
   }
 
@@ -55,6 +56,13 @@ class NewsView {
     headlineEl.classList.add("headline");
     headlineEl.innerHTML = `<a href=${story.webUrl}>${story.headline}</a>`; 
     return headlineEl
+  }
+
+  buildStandfirstEl(story) {
+    const standfirstEl = document.createElement("div")
+    standfirstEl.classList.add("standfirst");
+    standfirstEl.innerHTML = story.standfirst;
+    return standfirstEl
   }
 
   buildImageEl(story) {
@@ -84,6 +92,7 @@ class NewsView {
       storyObject.headline = (story.fields.headline)
       storyObject.thumbnail = (story.fields.thumbnail)
       storyObject.webUrl = (story.webUrl)
+      storyObject.standfirst = (story.fields.standfirst)
       todaysStories.push(storyObject)
     });
 
@@ -107,6 +116,7 @@ class NewsView {
       storyObject.headline = (story.fields.headline)
       storyObject.thumbnail = (story.fields.thumbnail)
       storyObject.webUrl = (story.webUrl)
+      storyObject.standfirst = (story.fields.standfirst)
       foundStories.push(storyObject)
     });
 
