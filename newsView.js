@@ -5,6 +5,7 @@ class NewsView {
     this.client = client;
 
     this.mainContainerEl = document.querySelector('#main-container');
+    this.headline = null;
 
     document.querySelector('#search-button').addEventListener('click', () => {
       const keyWord = document.querySelector('#keyword-input').value;
@@ -25,14 +26,14 @@ class NewsView {
 
     allNews.forEach((item, i) => {
       const headline = document.createElement('div');
+      this.headline = headline;
+
       headline.className = 'headline';
 
       const image = document.createElement('img');
       const a = document.createElement('a');
 
-      image.src = item.fields.thumbnail;
-      headline.append(image);
-      image.className = 'thumbnail';
+      this.displayThumbnail(image, item);
 
       const space = document.createElement('div');
       space.className = 'space';
@@ -45,6 +46,12 @@ class NewsView {
 
       this.mainContainerEl.append(headline);
     });
+  }
+
+  displayThumbnail(image, item) {
+    image.src = item.fields.thumbnail;
+    this.headline.append(image);
+    image.className = 'thumbnail';
   }
 
   displayNewsFromApi() {
