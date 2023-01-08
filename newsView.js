@@ -4,8 +4,13 @@ class NewsView {
     this.model = model
     this.mainContainerEl = document.querySelector('#main-container')
     this.client = client
+    const buttonEl = document.querySelector('#submitt')
+    // Add event listener
+    buttonEl.addEventListener("click", () => {
+      
+    });
   }
-
+ 
   displayStories() {
 
     // Get stories from model
