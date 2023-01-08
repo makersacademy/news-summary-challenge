@@ -50,6 +50,7 @@ body {
 #search-button {
   height: 26px;
   margin: auto;
+  cursor: pointer;
 }
 
 
