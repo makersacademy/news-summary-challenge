@@ -29,11 +29,8 @@ class NewsView {
       headline.className = 'headline';
 
       this.displayThumbnail(item);
-
       this.createNewLine();
-
       this.displayLink(allNews, i);
-
       this.mainContainerEl.append(headline);
     });
   }
