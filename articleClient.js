@@ -23,7 +23,6 @@ class ArticleClient {
     searchParams.append('show-fields', 'thumbnail,headline,byline');
     searchParams.append('order-by', 'newest');
     if (params.hasOwnProperty('date') && params['date'] !== '') {
-      searchParams.append('from-date', params['date']);
       searchParams.append('to-date', params['date']);
     }
     searchParams.append('api-key', apiKeys.GUARDIAN_API_KEY);
