@@ -35,9 +35,7 @@ class NewsView {
 
       this.displayThumbnail(image, item);
 
-      const space = document.createElement('div');
-      space.className = 'space';
-      headline.append(space);
+      this.createNewLine();
 
       a.setAttribute('href', allNews[i].webUrl);
       a.innerText = allNews[i].webTitle;
@@ -52,6 +50,12 @@ class NewsView {
     image.src = item.fields.thumbnail;
     this.headline.append(image);
     image.className = 'thumbnail';
+  }
+
+  createNewLine() {
+    const space = document.createElement('div');
+    space.className = 'space';
+    this.headline.append(space);
   }
 
   displayNewsFromApi() {
