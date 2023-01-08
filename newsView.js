@@ -36,7 +36,7 @@ class NewsView {
   buildHeadlineEl(story) {
     const headlineEl = document.createElement("h2")
     headlineEl.classList.add("headline");
-    headlineEl.innerText = story.headline;
+    headlineEl.innerHTML = `<a href=${story.webUrl}>${story.headline}</a>`; 
     return headlineEl
   }
 
@@ -66,7 +66,7 @@ class NewsView {
       const storyObject = {}
       storyObject.headline = (story.fields.headline)
       storyObject.thumbnail = (story.fields.thumbnail)
-      storyObject.thumbnail = (story.webUrl)
+      storyObject.webUrl = (story.webUrl)
       todaysStories.push(storyObject)
     });
 
