@@ -27,7 +27,7 @@ class ArticleView {
   }
 
   displayError(error) {
-    const mainContainerEl = document.querySelector('.main-container');
+    const mainContainerEl = document.querySelector('#main-container');
     mainContainerEl.replaceChildren('');
 
     const errorEl = document.createElement('div');
@@ -46,11 +46,12 @@ class ArticleView {
     articleEl.className = 'article';
 
     const articleImgEl = document.createElement('img');
+    articleImgEl.className = 'center';
     articleImgEl.src = article.thumbnail;
     articleEl.append(articleImgEl);
 
     const articleHeadlineEl = document.createElement('p');
-    articleHeadlineEl.className = 'headline';
+    articleHeadlineEl.className = 'headline center';
     articleHeadlineEl.innerHTML = `<a href="${article.webUrl}">${article.headline}</a>`;
     articleEl.append(articleHeadlineEl);
 

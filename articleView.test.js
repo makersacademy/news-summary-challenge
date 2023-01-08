@@ -99,7 +99,7 @@ describe(ArticleView, () => {
   it('displays error to page', () => {
     view.displayError(new Error('Oops, something went wrong'));
     
-    expect(document.querySelector('.main-container').children.length).toBe(2);
+    expect(document.querySelector('#main-container').children.length).toBe(2);
     expect(document.querySelector('.error').textContent).toBe('Error');
     expect(document.querySelector('.error-message').textContent)
       .toBe('Oops, something went wrong');
