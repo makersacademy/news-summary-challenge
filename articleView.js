@@ -2,8 +2,18 @@ class ArticleView {
   constructor(client, model) {
     this.client = client;
     this.model = model;
-
     this.headlinesEl = document.querySelector('.headlines');
+
+    this.searchInputEl = document.querySelector('#search-bar');
+    this.searchButtonEl = document.querySelector('#search-button');
+
+    this.searchButtonEl.addEventListener('click', () => this.#onSearchButtonClick());
+    this.searchInputEl.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        this.#onSearchButtonClick();
+      }
+    });
   }
 
   displayArticles() {
@@ -15,8 +25,8 @@ class ArticleView {
     });
   }
 
-  fetchArticlesFromApi(date, errorCallback = () => {}) {
-    this.client.fetchArticles(date, (data) => {
+  fetchArticlesFromApi(date, query, errorCallback = () => {}) {
+    this.client.fetchArticles(date, query, (data) => {
       const articles = this.#parseApiData(data);
       this.model.setArticles(articles);
       this.displayArticles();
@@ -72,6 +82,12 @@ class ArticleView {
         webUrl: result.webUrl
       };
     });
+  }
+
+  #onSearchButtonClick() {
+    const query = this.searchInputEl.value;
+    const date = query === '' ? new Date().toJSON().slice(0, 10) : '';
+    this.fetchArticlesFromApi(date, query);
   }
 }
 

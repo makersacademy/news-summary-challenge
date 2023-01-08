@@ -74,16 +74,16 @@ describe(ArticleView, () => {
   });
 
   it('fetches articles, gives them to the model and displays them', () => {
-    client.fetchArticles.mockImplementationOnce((date, callback) => {
+    client.fetchArticles.mockImplementationOnce((date, query, callback) => {
       callback(exampleResponse);
     });
 
     model.getArticles.mockImplementationOnce(() => [exampleArticles[0]]);
 
-    view.fetchArticlesFromApi('2023-01-06');
+    view.fetchArticlesFromApi('2023-01-06', '');
 
     expect(client.fetchArticles).toHaveBeenCalledWith(
-      '2023-01-06', expect.any(Function), expect.any(Function)
+      '2023-01-06', '', expect.any(Function), expect.any(Function)
     );
 
     expect(model.setArticles).toHaveBeenCalledWith([exampleArticles[0]]);
@@ -106,15 +106,79 @@ describe(ArticleView, () => {
   });
 
   it('catches fetch error', (done) => {
-    client.fetchArticles.mockImplementationOnce((date, callback, errorCallback) => {
+    client.fetchArticles.mockImplementationOnce((date, query, callback, errorCallback) => {
       errorCallback(new Error('Oops, something went wrong'))
     });
     
-    view.fetchArticlesFromApi('2023-01-06', (error) => {
+    view.fetchArticlesFromApi('2023-01-06', '', (error) => {
       expect(document.querySelector('.error').textContent).toBe('Error');
       expect(document.querySelector('.error-message').textContent)
         .toBe('Oops, something went wrong');
       done();
     });
+  });
+
+  it('fetches articles with a query term, adds them to the model and displays them', () => {
+    client.fetchArticles.mockImplementationOnce((date, query, callback) => {
+      callback(exampleResponse);
+    });
+
+    model.getArticles.mockImplementationOnce(() => [exampleArticles[0]]);
+
+    view.fetchArticlesFromApi('', 'query');
+
+    expect(client.fetchArticles).toHaveBeenCalledWith(
+      '', 'query', expect.any(Function), expect.any(Function)
+    );
+
+    expect(model.setArticles).toHaveBeenCalledWith([exampleArticles[0]]);
+
+    expect(document.querySelector('.article img').src)
+      .toBe(exampleArticles[0].thumbnail);
+    expect(document.querySelector('.article .headline').textContent)
+      .toBe(exampleArticles[0].headline);
+    expect(document.querySelector('.article .headline a').href)
+      .toBe(exampleArticles[0].webUrl);
+  });
+
+  it('clicking search button fetches new articles', () => {
+    const searchInputEl = document.querySelector('#search-bar');
+    const searchButtonEl = document.querySelector('#search-button');
+
+    jest.spyOn(view, 'fetchArticlesFromApi');
+
+    searchInputEl.value = 'query';
+    searchButtonEl.click();
+
+    expect(view.fetchArticlesFromApi).toHaveBeenCalledWith('', 'query');
+  });
+
+  it('clicking search button with an empty input fetches today\'s articles', () => {
+    const searchInputEl = document.querySelector('#search-bar');
+    const searchButtonEl = document.querySelector('#search-button');
+
+    jest.spyOn(view, 'fetchArticlesFromApi');
+    jest.useFakeTimers().setSystemTime(new Date('2023-01-06'));
+
+    searchInputEl.value = '';
+    searchButtonEl.click();
+
+    expect(view.fetchArticlesFromApi).toHaveBeenCalledWith('2023-01-06', '');
+  });
+
+  it('pressing enter in the input field fetches articles', () => {
+    const searchInputEl = document.querySelector('#search-bar');
+
+    jest.spyOn(view, 'fetchArticlesFromApi');
+
+    const pressSpaceEvent = new KeyboardEvent('keydown', { key: 'Space' });
+    searchInputEl.dispatchEvent(pressSpaceEvent);
+    expect(view.fetchArticlesFromApi).not.toHaveBeenCalled();
+
+    const pressEnterEvent = new KeyboardEvent('keydown', { key: 'Enter' });
+    searchInputEl.value = 'query';
+    searchInputEl.dispatchEvent(pressEnterEvent);
+
+    expect(view.fetchArticlesFromApi).toHaveBeenCalledWith('', 'query');
   });
 });
