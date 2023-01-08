@@ -22,7 +22,7 @@ describe(ArticleClient, () => {
       ]}}
     ));
 
-    client.fetchArticles('2023-01-05', (data) => {
+    client.fetchArticles('2023-01-05', '', (data) => {
       expect(data.response.results[0].fields).toMatchObject(
         { headline: 'fake headline', thumbnail: 'fake thumbnail url' }
       );
@@ -38,8 +38,31 @@ describe(ArticleClient, () => {
   it('catches fetch error', (done) => {
     fetch.mockRejectOnce('Oops, something went wrong');
 
-    client.fetchArticles('2023-01-06', (data) => fail(), (error) => {
+    client.fetchArticles('2023-01-06', '', (data) => fail(), (error) => {
       expect(error).toEqual('Oops, something went wrong');
+      done();
+    });
+  });
+
+  it('fetches articles with a search term', (done) => {
+    fetch.mockResponseOnce(JSON.stringify(
+      { response: { results: [
+        {
+          fields: { headline: 'fake headline', thumbnail: 'fake thumbnail url' },
+          webUrl: "fake url"
+        }
+      ]}}
+    ));
+
+    client.fetchArticles('', 'query', (data) => {
+      expect(data.response.results[0].fields).toMatchObject(
+        { headline: 'fake headline', thumbnail: 'fake thumbnail url' }
+      );
+      expect(data.response.results[0].webUrl).toEqual("fake url");
+
+      expect(fetch).toHaveBeenCalledWith(expect.stringContaining('q=query'));
+      expect(fetch).not.toHaveBeenCalledWith(expect.stringContaining('from-date'));
+      expect(fetch).not.toHaveBeenCalledWith(expect.stringContaining('to-date'));
       done();
     });
   });

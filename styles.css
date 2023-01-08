@@ -10,7 +10,8 @@ body {
 
 .center {
   display: block;
-  margin-inline: auto; }
+  margin-inline: auto;
+}
 
 .title {
   position: fixed;
@@ -20,7 +21,38 @@ body {
   background-color: white;
   border-bottom: 2px solid black;
   font-size: 20px;
+  display: flex;
+  justify-content: space-between;
 }
+
+.title h1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  margin-left: 20px;
+}
+
+#search-bar {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-right: 10px;
+}
+
+#search-bar-input {
+  height: 20px;
+  width: 184px;
+  font-size: 15px;
+  margin: auto;
+}
+
+#search-button {
+  height: 26px;
+  margin: auto;
+  cursor: pointer;
+}
+
 
 #main-container {
   margin-top: 140px;
@@ -28,11 +60,13 @@ body {
 
 .headlines {
   width: 800px;
-  margin-inline: auto; }
+  margin-inline: auto;
+}
 
 .headlines * {
   width: 500px;
-  margin-inline: auto; }
+  margin-inline: auto;
+}
 
 .article {
   margin-bottom: 20px;

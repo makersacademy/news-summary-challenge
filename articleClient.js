@@ -1,11 +1,11 @@
 const apiKeys = require('./apiKeys');
 
 class ArticleClient {
-  fetchArticles(date, callback, errorCallback = (error) => console.error(error)) {
+  fetchArticles(date, query, callback, errorCallback = (error) => console.error(error)) {
     const apiUrl = 'https://content.guardianapis.com/search';
     const paramsString = this.#createParamsString({ 
       'date': date,
-      'searchTerm': ''
+      'query': query
     });
 
     fetch(apiUrl + '?' + paramsString)
@@ -14,14 +14,18 @@ class ArticleClient {
       .catch((error) => errorCallback(error));
   }
 
-  #createParamsString(object) {
+  #createParamsString(params) {
     const searchParams = new URLSearchParams();
-    searchParams.append('q', object['searchTerm']);
+    if (params.hasOwnProperty('query')) {
+      searchParams.append('q', params['query']);
+    }
     searchParams.append('query-fields', 'headline');
     searchParams.append('show-fields', 'thumbnail,headline,byline');
     searchParams.append('order-by', 'newest');
-    searchParams.append('from-date', object['date']);
-    searchParams.append('to-date', object['date']);
+    if (params.hasOwnProperty('date') && params['date'] !== '') {
+      searchParams.append('from-date', params['date']);
+      searchParams.append('to-date', params['date']);
+    }
     searchParams.append('api-key', apiKeys.GUARDIAN_API_KEY);
 
     return searchParams.toString();
