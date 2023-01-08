@@ -66,4 +66,19 @@ describe("Client class", () => {
       done();
     });
   });
+
+  it("loadHeadlines catched fetch error", (done) => {
+    const client = new NewsClient();
+
+    fetch.mockRejectedValue("Oops, something went wrong!");
+
+    client.filterHeadlines(
+      "America",
+      () => {},
+      (error) => {
+        expect(error).toBe("Oops, something went wrong!");
+        done();
+      }
+    );
+  });
 });
