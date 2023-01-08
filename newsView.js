@@ -26,6 +26,8 @@ class NewsView {
   }
 
   displayStories() {
+    // Clear any exisiting stories 
+    this.clearStories();
     // Get stories from model
     const stories = this.model.allStories();
     // For each story, create an append a new element on the main container
@@ -34,7 +36,12 @@ class NewsView {
       this.mainContainerEl.append(storyElement);
     })
   }
+  
+  clearStories() { 
+    const stories = document.querySelectorAll('.story');
+    stories.forEach(story => story.remove())
 
+  }
   buildStoryElement(story) {
     const headlineEl = this.buildHeadlineEl(story);
     const imageEl = this.buildImageEl(story);
