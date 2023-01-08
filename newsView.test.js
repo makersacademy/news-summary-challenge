@@ -153,4 +153,17 @@ describe("A test for my web page", () => {
     expect(document.querySelectorAll(".news-item").length).toBe(2);
     expect(document.querySelectorAll(".news-item")[0].id).toEqual("index-0");
   });
+
+  it("filters news from Api", () => {
+    client.filterHeadlines.mockImplementation((filter, callback) => {
+      callback({
+        response: { results: [newsItemOne, newsItemTwo] },
+      });
+    });
+
+    view.filterNewsFromApi("America");
+
+    expect(client.filterHeadlines).toHaveBeenCalled();
+    expect(model.getNews()).toEqual([newsItemOne, newsItemTwo]);
+  });
 });

@@ -55,6 +55,21 @@ class NewsView {
     );
   }
 
+  filterNewsFromApi(filter) {
+    this.client.filterHeadlines(
+      filter,
+      (callback) => {
+        const headlines = callback.response.results;
+        this.model.setNews(headlines);
+        this.displayNewsItems();
+      },
+      () => {
+        // This will be executed if there's an error
+        view.displayError();
+      }
+    );
+  }
+
   displayError() {
     const errorMessage = document.createElement("div");
     errorMessage.id = "error";
