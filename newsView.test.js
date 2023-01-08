@@ -37,7 +37,7 @@ describe ('NewsView', () => {
     // Mock the Model
     const mockModel = {
       allStories: () => {
-        return [{ headline: "test story", id: 25, thumbnail: "http://url.to/image" }];
+        return [{ headline: "test story", thumbnail: "http://url.to/image" }];
       },
     };
    
@@ -60,13 +60,17 @@ describe ('NewsView', () => {
     document.body.innerHTML = html;
    
 
-    // instantize the view and model
-    const model = new NewsModel()
-    const client = new NewsClient()
+    // Mock the Client
+    const mockClient = {};
 
-    // Mock the model implementaton
-    model.allStories.mockImplementationOnce(() => ['Headline One', 'Headline Two']);
-    const view = new NewsView(client,model)
+    // Mock the Model
+    const mockModel = {
+      allStories: () => {
+        return [{ headline: "Headline One", thumbnail: "http://url.to/image" },{ headline: "Headline Two",  thumbnail: "http://url.to/image2" } ];
+      },
+    };
+   
+    const view = new NewsView(mockClient, mockModel)
 
     // Display the story Headline on the page
     view.displayStories()
@@ -74,6 +78,9 @@ describe ('NewsView', () => {
     // There should now be a div.story on the page 
     expect(document.querySelectorAll('.headline').length).toEqual(2)
     expect(document.querySelectorAll('.headline')[0].innerText).toEqual('Headline One')
+    expect(document.querySelectorAll('.thumbnail')[0].src).toEqual('http://url.to/image')
+    expect(document.querySelectorAll('.headline')[1].innerText).toEqual('Headline Two')
+    expect(document.querySelectorAll('.thumbnail')[1].src).toEqual('http://url.to/image2')
 
   
   })
