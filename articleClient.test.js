@@ -43,4 +43,36 @@ describe(ArticleClient, () => {
       done();
     });
   });
+
+  it('fetches articles with a search term', (done) => {
+    fetch.mockResponseOnce(JSON.stringify(
+      { response: { results: [
+        {
+          fields: { headline: 'fake headline', thumbnail: 'fake thumbnail url' },
+          webUrl: "fake url"
+        }
+      ]}}
+    ));
+
+    client.fetchArticlesWithQuery('query', (data) => {
+      expect(data.response.results[0].fields).toMatchObject(
+        { headline: 'fake headline', thumbnail: 'fake thumbnail url' }
+      );
+      expect(data.response.results[0].webUrl).toEqual("fake url");
+
+      expect(fetch).toHaveBeenCalledWith(
+        expect.stringContaining('q=query')
+      );
+      done();
+    });
+  });
+
+  it('catches fetch error', (done) => {
+    fetch.mockRejectOnce('Oops, something went wrong');
+
+    client.fetchArticlesWithQuery('query', (data) => fail(), (error) => {
+      expect(error).toEqual('Oops, something went wrong');
+      done();
+    });
+  });
 });
