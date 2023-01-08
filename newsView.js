@@ -3,31 +3,36 @@ class NewsView {
   constructor(client, model) {
     this.model = model
     this.mainContainerEl = document.querySelector('#main-container')
+    this.searchInputEL = document.querySelector('#search-input')
     this.client = client
-    const buttonEl = document.querySelector('#submitt')
+    const buttonEl = document.querySelector('#submit');
     // Add event listener
-    buttonEl.addEventListener("click", () => {
-      
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchForm = document.querySelector('#search-form');
+      document.getElementById("search-form").addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log('Form submitted!');
+        const search = document.querySelector('#search-input').value
+        console.log(search)
+        this.submitSearch(search);
+      });
     });
+    
   }
  
-  displayStories() {
+  submitSearch(searchTerm) {
+    this.client.setSearchTerm()
+    this.displayUserSearch();
+  }
 
+  displayStories() {
     // Get stories from model
     const stories = this.model.allStories();
-
-    // For each story:
-    
     // For each story, create an append a new element on the main container
     stories.forEach(story => {
       const storyElement = this.buildStoryElement(story);
       this.mainContainerEl.append(storyElement);
-      // const headlineEl = document.createElement('div')
-      // headlineEl.innerText = story
-      // headlineEl.className = 'headline'
     })
-
-
   }
 
   buildStoryElement(story) {
@@ -75,9 +80,30 @@ class NewsView {
       todaysStories.push(storyObject)
     });
 
-    this.model.setStories(todaysStories);
-    console.log(this.model.allStories())
-    
+    this.model.setStories(todaysStories); 
+    this.displayStories();
+    } );
+
+  }
+
+  displayUserSearch() {
+
+    // Create an array for all the new stories
+    const foundStories = []
+
+    //Call the fetchStories method on the client
+    this.client.searchStories((data) => {
+
+    // Create an object containing headline and image and add to each story to the model
+    data.response.results.forEach((story) => {
+      const storyObject = {}
+      storyObject.headline = (story.fields.headline)
+      storyObject.thumbnail = (story.fields.thumbnail)
+      storyObject.webUrl = (story.webUrl)
+      foundStories.push(storyObject)
+    });
+
+    this.model.setStories(foundStories); 
     this.displayStories();
     } );
 

@@ -6,16 +6,34 @@ class NewsClient {
   constructor(){
     // Get the date in the format needed for the APIURL
     this.date = moment().format('YYYY-MM-DD');
+    this.searchTerm = ''
     
     //
   }
 
-  // Make a GET request for today's stories 
-  fetchStories(searchTerm = '', callback){
+  setSearchTerm(searchTerm) {
+    this.searchTerm = searchTerm;
+  }
 
-    // // Form APIURL
-    // const apiUrl = `https://content.guardianapis.com/search?from-date=2023-01-06&show-fields=headline%2Cthumbnail&api-key=${apiKey}`
-    const apiUrl = `https://content.guardianapis.com/search?from-date=${this.date}&show-fields=headline%2Cthumbnail&q=${searchTerm}&api-key=${apiKey}`
+  // Make a GET request for today's stories 
+  fetchStories( callback){
+
+    // // set APIURL
+    const apiUrl = `https://content.guardianapis.com/search?from-date=${this.date}&show-fields=headline%2Cthumbnail&api-key=${apiKey}`
+    // Make a get request to the Guardian API Endpoint
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        callback(data);
+      });
+      
+  }
+
+  // Make a GET request for today's stories 
+  searchStories(callback){
+
+    // // set APIURL
+    const apiUrl = `https://content.guardianapis.com/search?order-by=newest&show-fields=headline%2Cthumbnail&q=${this.searchTerm}&api-key=${apiKey}`
     // Make a get request to the Guardian API Endpoint
     fetch(apiUrl)
       .then((response) => response.json())

@@ -187,8 +187,13 @@ describe ('NewsView', () => {
     document.body.innerHTML = html;
 
     const mockClient = {
-      fetchStories: (searchTerm, callback) => {
-        expect(searchTerm).toEqual('politics');
+
+      constructor(){
+        expect(this.searchTerm).toEqual('politics');
+      },
+      
+      fetchStories: (callback) => {
+
       },
     };
 
