@@ -1,0 +1,131 @@
+/* Set the font and font size for the entire document */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 0; /* Added to remove default margin */
+}
+
+/* Style the header */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+header img {
+  height: 40px;
+}
+
+/* Style the search form */
+#search-form {
+  background-color: #052962;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10 px;
+}
+
+#search-form label {
+  flex: 0 0 80px;
+}
+
+#search-form input[type="search"] {
+  
+  padding: 10px;
+  border: none;
+  background-color: #ffffff57;
+  color: #FFE500;
+}
+
+#search-form input[type="search"]::placeholder {
+  color: #FFE500;
+  }
+
+#search-form button[type="submit"] {
+  flex: 0 0 80px;
+  padding: 10px;
+  background-color: #FFE500;
+  color: #0061A6;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style the stories container */
+#main-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Style the individual stories */
+.story {
+  width: 33%;
+  padding: 20px;
+  padding-top: 20px;
+  background-color: #ededed;
+  
+  
+}
+
+.story h2 {
+  margin: 0 0 0px 0;
+  font-size: 20px;
+  padding-top: 10px;
+  background-color: #efecec;
+  border-color: #0061A6;
+  border-top-style: solid;
+  border-top-width: 2px;
+}
+
+.story h2.headline {
+  padding: 10px 10px 10px 0;
+}
+
+.story a {
+  color: black;
+  text-decoration: none;
+  
+}
+
+.story img.thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.story .standfirst {
+  font-size: 14px;
+  background-color: #ededed;
+  
+}
+.story .standfirst p {
+  font-size: 14px;
+  background-color: #ededed;
+  border-color: #0061A6;
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding-top: 10px
+  
+}
+
+/* Style the pagination links */
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#pagination a {
+  display: block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#pagination a:hover,
+#pagination a.active {
+  background-color: #3e8e41;
+}

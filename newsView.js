@@ -21,7 +21,7 @@ class NewsView {
   }
  
   submitSearch(searchTerm) {
-    this.client.setSearchTerm()
+    this.client.setSearchTerm(searchTerm)
     this.displayUserSearch();
   }
 
