@@ -63,7 +63,8 @@ class NewsView {
     this.client.loadNews((newsFromApi) => {
       this.model.addNews(newsFromApi);
       this.displayFrontPage();
-      console.log(this.model.getNews())
+    }, (error) => {
+      console.error('error: ', error);
     });
   }
 
@@ -72,6 +73,8 @@ class NewsView {
       this.model.addNews(newsFromApi);
       this.displayFrontPage();
       console.log(this.model.getNews())
+    }, (error) => {
+      console.error(error);
     });
   }
 }

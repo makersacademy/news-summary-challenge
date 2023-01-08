@@ -9,7 +9,8 @@ html {
 
 body {
   background: white;
-  width: 600px;
+  max-width: 50%;
+  min-width: 300px;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -24,7 +25,11 @@ body {
 
 .thumbnail {
   padding: 15px;
-  margin-top: 20px;
+  margin-top: 20px; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 .space {
