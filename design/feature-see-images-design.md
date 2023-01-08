@@ -53,6 +53,8 @@ class NewsView {
     // append the new story element on the main container
     
   }
+
+  
   buildHeadlineElement(story) {
     // Create a H2 element, not a div
     // Set the class to Headline

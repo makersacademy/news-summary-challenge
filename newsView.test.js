@@ -31,14 +31,17 @@ describe ('NewsView', () => {
     const html = fs.readFileSync("./index.html");
     document.body.innerHTML = html;
    
+    // Mock the Client
+    const mockClient = {};
 
-    // instantize the view and model
-    const model = new NewsModel()
-    const client = new NewsClient()
-
-    // Mock the model implementaton
-    model.allStories.mockImplementationOnce(() => ['test story']);
-    view = new NewsView(client, model)
+    // Mock the Model
+    const mockModel = {
+      allStories: () => {
+        return [{ headline: "test story", id: 25, thumbnail: "http://url.to/image" }];
+      },
+    };
+   
+    const view = new NewsView(mockClient, mockModel)
 
     // Display the story Headline on the page
     view.displayStories()
@@ -63,7 +66,7 @@ describe ('NewsView', () => {
 
     // Mock the model implementaton
     model.allStories.mockImplementationOnce(() => ['Headline One', 'Headline Two']);
-    view = new NewsView(client,model)
+    const view = new NewsView(client,model)
 
     // Display the story Headline on the page
     view.displayStories()

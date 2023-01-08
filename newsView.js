@@ -16,20 +16,21 @@ class NewsView {
     // For each story, create an append a new element on the main container
     stories.forEach(story => {
       const storyElement = this.buildStoryElement(story);
-       this.mainContainerEl.append(storyElement);
+      this.mainContainerEl.append(storyElement);
       // const headlineEl = document.createElement('div')
       // headlineEl.innerText = story
       // headlineEl.className = 'headline'
     })
 
+
   }
 
   buildStoryElement(story) {
-    const headlineEL = this.buildHeadlineEl(story);
+    const headlineEl = this.buildHeadlineEl(story);
     const imageEl = this.buildImageEl(story);
     const storyElement = this.createStoryElement(headlineEl);
     storyElement.append(headlineEl,imageEl);
-    return storyElement();
+    return storyElement;
   }
 
   buildHeadlineEl(story) {
