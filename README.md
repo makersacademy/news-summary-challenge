@@ -31,15 +31,13 @@ I was able to TDD a working single page web app with the following functionality
   - [ ] Added search input and button which displays articles matching this search
   - [ ] Added CSS
 
-- Screenshot
-
-### Headline page
+#### Headline page
 
 ![Headlines page screenshot](./images/news-summary-project-headlines-page-screenshot-one.png)
 
 ## Installation/Usage Instructions in README
 
-See instructions for how to download the project and run the tests:
+To download the project and run the tests:
 
 ```sh
 $ git clone https://github.com/ChrisHutchinson1982/news-summary-challenge.git
@@ -48,10 +46,12 @@ $ npm install
 $ jest
 ```
 
-To view the webpage, you'll need to [register and get an API
-key](https://open-platform.theguardian.com/access/) to use the Guardian API.
+To view the webpage:
 
-Create an apiKey.js file to store this:
+1. [Register and get an API
+   key](https://open-platform.theguardian.com/access/) to use the Guardian API.
+
+2. Create an apiKey.js file to store this:
 
 ```bash
 # You can run this from your terminal,
@@ -59,17 +59,9 @@ Create an apiKey.js file to store this:
 $ touch apiKey.js
 ```
 
-Copy this code into the file and replace test with your Guardian API.
+3. Copy the below code into the apiKey.js file and replace "test" with your Guardian API:
 
-```bash
-# apiKey.js
-
-const apiKey = "test";
-
-module.exports = apiKey;
-```
-
-To open the HTML file in your browser:
+4. Open the HTML file in your browser
 
 ```bash
 # You can run this from your terminal,
@@ -77,6 +69,14 @@ To open the HTML file in your browser:
 # from the file explorer (Finder, on mac).
 
 $ open index.html
+```
+
+```bash
+# apiKey.js
+
+const apiKey = "test";
+
+module.exports = apiKey;
 ```
 
 ### Technologies
