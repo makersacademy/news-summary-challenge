@@ -30,7 +30,8 @@ class ArticleView {
       const articles = this.#parseApiData(data);
       this.model.setArticles(articles);
       this.displayArticles();
-    }, (error) => {
+      window.scrollTo(0, 0);
+  }, (error) => {
       this.displayError(error);
       errorCallback(error);
     });
