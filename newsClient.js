@@ -19,7 +19,7 @@ class NewsClient {
   fetchStories( callback){
 
     // // set APIURL
-    const apiUrl = `https://content.guardianapis.com/search?from-date=${this.date}&show-fields=headline%2Cthumbnail&api-key=${apiKey}`
+    const apiUrl = `https://content.guardianapis.com/search?from-date=${this.date}&show-fields=headline%2Cthumbnail%2Cstandfirst&api-key=${apiKey}`
     // Make a get request to the Guardian API Endpoint
     fetch(apiUrl)
       .then((response) => response.json())
@@ -33,7 +33,7 @@ class NewsClient {
   searchStories(callback){
 
     // // set APIURL
-    const apiUrl = `https://content.guardianapis.com/search?order-by=newest&show-fields=headline%2Cthumbnail&q=${this.searchTerm}&api-key=${apiKey}`
+    const apiUrl = `https://content.guardianapis.com/search?order-by=newest&show-fields=headline%2Cthumbnail%2Cstandfirst&q=${this.searchTerm}&api-key=${apiKey}`
     // Make a get request to the Guardian API Endpoint
     fetch(apiUrl)
       .then((response) => response.json())
