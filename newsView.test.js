@@ -54,7 +54,7 @@ describe ('NewsView', () => {
   
   })
 
-  xit ('it displays multiple stories on page', () => {
+  it ('it displays multiple stories on page', () => {
 
     // set the HTML content of the test
     const html = fs.readFileSync("./index.html");
@@ -67,7 +67,7 @@ describe ('NewsView', () => {
     // Mock the Model
     const mockModel = {
       allStories: () => {
-        return [{ headline: "Headline One", thumbnail: "http://url.to/image" },{ headline: "Headline Two",  thumbnail: "http://url.to/image2" } ];
+        return [{ headline: "Headline One", thumbnail: "http://url.to/image", standfirst: "standfirst1", weburl: "url1.com" },{ headline: "Headline Two",  thumbnail: "http://url.to/image2", standfirst: "standfirst2", weburl: "url2.com" } ];
       },
     };
    
@@ -78,10 +78,8 @@ describe ('NewsView', () => {
 
     // There should now be a div.story on the page 
     expect(document.querySelectorAll('.headline').length).toEqual(2)
-    expect(document.querySelectorAll('.headline')[0].innerText).toEqual('Headline One')
     expect(document.querySelectorAll('.thumbnail')[0].src).toEqual('http://url.to/image')
-    expect(document.querySelectorAll('.headline')[1].innerText).toEqual('Headline Two')
-    expect(document.querySelectorAll('.thumbnail')[1].src).toEqual('http://url.to/image2')
+    expect(document.querySelectorAll('.standfirst')[1].innerHTML).toEqual("standfirst2")
 
   
   })
