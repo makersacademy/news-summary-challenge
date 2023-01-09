@@ -1,6 +1,7 @@
 const NewsClient = require("./NewsClient");
 const NewsModel = require("./newsModel");
 const NewsView = require("./newsView");
+const apiKey = require("./apiKey");
 
 const client = new NewsClient();
 const model = new NewsModel();
@@ -10,7 +11,7 @@ view.displayNewsFromApi();
 
 // const getRepoInfo = (callback) => {
 //   fetch(
-//     "https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=d894a708-39c5-403d-a0f6-8790495e4851"
+//     `https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`;
 //   )
 //     .then((response) => response.json())
 //     .then((data) => {
