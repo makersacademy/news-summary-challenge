@@ -89,38 +89,53 @@ class NewsView {
     return storyEl;
   };
   
-  // This method retrieves stories from the API using the NewsClient and displays them on the page
   displayStoriesFromApi() {
-    this.fetchAndDisplayStories(this.client.fetchStories);
+
+    // Create an array for all the new stories
+    const todaysStories = []
+
+    //Call the fetchStories method on the client
+    this.client.fetchStories((data) => {
+
+    // Create an object containing headline and image and add to each story to the model
+    data.response.results.forEach((story) => {
+      const storyObject = {}
+      storyObject.headline = (story.fields.headline)
+      storyObject.thumbnail = (story.fields.thumbnail)
+      storyObject.webUrl = (story.webUrl)
+      storyObject.standfirst = (story.fields.standfirst)
+      todaysStories.push(storyObject)
+    });
+
+    this.model.setStories(todaysStories); 
+    this.displayStories();
+    } );
+
   }
-  // This method retrieves stories from the API using the client and the user's search term,
-  // and displays them on the page
+
   displayUserSearch() {
-    this.fetchAndDisplayStories(this.client.searchStories);
-  }
-  
-  // This method executes the fetch functions from the client class
-  fetchAndDisplayStories(fetchFunction) {
+
     // Create an array for all the new stories
     const foundStories = []
-  
-    // Call the fetchFunction
-    fetchFunction((data) => {
-      // Create an object containing headline and image and add to each story to the model
-      data.response.results.forEach((story) => {
-        const storyObject = {}
-        storyObject.headline = (story.fields.headline)
-        storyObject.thumbnail = (story.fields.thumbnail)
-        storyObject.webUrl = (story.webUrl)
-        storyObject.standfirst = (story.fields.standfirst)
-        foundStories.push(storyObject)
-      });
-  
-      this.model.setStories(foundStories); 
-      this.displayStories();
+
+    //Call the fetchStories method on the client
+    this.client.searchStories((data) => {
+
+    // Create an object containing headline and image and add to each story to the model
+    data.response.results.forEach((story) => {
+      const storyObject = {}
+      storyObject.headline = (story.fields.headline)
+      storyObject.thumbnail = (story.fields.thumbnail)
+      storyObject.webUrl = (story.webUrl)
+      storyObject.standfirst = (story.fields.standfirst)
+      foundStories.push(storyObject)
     });
+
+    this.model.setStories(foundStories); 
+    this.displayStories();
+    } );
+
   }
-  
   
 }
 

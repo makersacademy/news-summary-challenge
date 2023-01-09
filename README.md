@@ -9,10 +9,7 @@
 
 ## Challenge
 
-As usual please start by forking this repo.
-
-You'll create an app that shows the latest news using the Guardian API. You'll find
-instructions on how to setup and use the API down this page.
+Create an app that shows the latest news using the Guardian API.
 
 ## Project overview
 
@@ -26,10 +23,16 @@ HTML. You won't use Ruby or backend JavaScript.
 
 You're strongly encouraged to use the same tools and libraries you've been learning this
 week:
- * Jest to write your tests
- * The [`jest-fetch-mock`](https://www.npmjs.com/package/jest-fetch-mock) module (or
-   similar) to mock `fetch` requests (so you don't request the API when running tests!)
- * A build tool such as `esbuild` to bundle files together
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- `Node.js`
+- `Momenent.js`
+- `Jest`
+- `esbuild`
+
 
 ## User Stories
 
