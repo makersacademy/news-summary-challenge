@@ -182,7 +182,6 @@ describe("A test for my web page", () => {
     const buttonEl = document.querySelector("#filter-button");
     const inputEl = document.querySelector("#filter-input");
     inputEl.value = "America";
-    buttonEl.click();
 
     client.filterHeadlines.mockImplementation((filter, callback) => {
       callback({
@@ -190,6 +189,22 @@ describe("A test for my web page", () => {
       });
     });
 
+    buttonEl.click();
+
     expect(client.filterHeadlines).toHaveBeenCalled();
+
+    expect(document.querySelectorAll(".news-link").length).toBe(2);
+    expect(document.querySelectorAll(".news-link")[0].innerHTML).toEqual(
+      "At last, the inventors of modern skiing have something to cheer: Dave Ryding | Andy Bull"
+    );
+    expect(document.querySelectorAll(".news-link")[0].href).toEqual(
+      "https://www.theguardian.com/sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding"
+    );
+    expect(document.querySelectorAll(".news-link")[1].innerHTML).toEqual(
+      "Ofgem to unveil new household energy bill price cap on Thursday morning – business live"
+    );
+    expect(document.querySelectorAll(".news-link")[1].href).toEqual(
+      "https://www.theguardian.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation"
+    );
   });
 });
