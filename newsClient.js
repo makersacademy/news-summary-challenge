@@ -15,7 +15,7 @@ class NewsClient {
     this.searchTerm = searchTerm;
   }
 
-  // Make a GET request for today's stories 
+  // This methods Make a GET request for today's stories 
   fetchStories( callback){
 
     // // set APIURL
@@ -29,7 +29,7 @@ class NewsClient {
       
   }
 
-  // Make a GET request for today's stories 
+  // This method make a GET request using the searchterm constant in the URL 
   searchStories(callback){
 
     // // set APIURL
