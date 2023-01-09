@@ -19,7 +19,6 @@ class NewsClient {
   fetchStories( callback){
 
     // // set APIURL
-    this.date = '2023-01-08'
     const apiUrl = `https://content.guardianapis.com/search?from-date=${this.date}&show-fields=headline%2Cthumbnail%2Cstandfirst&api-key=${apiKey}`
     // Make a get request to the Guardian API Endpoint
     fetch(apiUrl)

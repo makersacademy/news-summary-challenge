@@ -26,7 +26,7 @@ page. Clicking on a headline will link the user to the actual article page on th
 - `Jest`
 - `esbuild`
 
-## Instillation Instructions
+## Installation Instructions
 
 1. Clone this repo
 2. Install dependencies with `npm install`
