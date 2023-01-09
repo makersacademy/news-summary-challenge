@@ -16,13 +16,6 @@ Create an app that shows the latest news using the Guardian API.
 Your app will grab all the headlines from the Guardian newspaper API and display them on a
 page. Clicking on a headline will link the user to the actual article page on the Guardian's website.
 
-### Technologies
-
-You'll write a single page web app. You'll write your code in frontend JavaScript, CSS and
-HTML. You won't use Ruby or backend JavaScript.
-
-You're strongly encouraged to use the same tools and libraries you've been learning this
-week:
 ## Technologies Used
 
 - HTML
@@ -33,10 +26,18 @@ week:
 - `Jest`
 - `esbuild`
 
+## Instillation Instructions
+
+1. Clone this repo
+2. Install dependencies with `npm install`
+3. Create an `apiKey.js`file which exports your API Key
+3. Use `npm build` to run the bundler in watch mode.
+4. Open the index.html file in your browser
+5. Run tests with Tests can be run with `npx jest`.
+
 
 ## User Stories
 
-Some of these stories will need decomposing if they seem too large.
 
 ```
 As a busy politician
@@ -69,13 +70,6 @@ As a busy politician
 So I can quickly read through the essential of today's stories
 I can see a summarised version of of the article 
 ```
-
-To get a summary of an article's content, you'll need to use the [Aylien API
-endpoint](https://docs.aylien.com/textapi/endpoints/#summarization), which means
-integrating and calling another HTTP endpoint from a different API. This mean you'll need
-to first fetch articles from the Guardian API, **then** use the Aylien API to summarise
-the content — you'll need to use promises or callbacks to call both APIs and to handle the flow of
-control.
 
 ```
 As a busy politician
