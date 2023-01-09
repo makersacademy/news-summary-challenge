@@ -1,0 +1,87 @@
+h1,
+h2,
+p,
+* {
+  font-family: sans-serif;
+}
+
+h1 {
+  /* position: absolute; */
+  color: #e4d2b1;
+  font-size: 60px;
+  border-top: 30px solid #f2e8d7;
+  border-bottom: 10px dashed #f2e8d7;
+  /* 
+  width: 530px;
+  height: 60px;
+  object-fit: none;
+  object-position: 5px 10%; */
+  /* padding: 10px; */
+}
+
+h2 {
+  color: rgb(72, 71, 71);
+  /* padding: 10px; */
+}
+
+html {
+  background: #f2e8d7;
+}
+
+#main-body {
+  background: white;
+  width: 550px;
+  margin: auto;
+  margin-top: 10px;
+  padding-top: 1px;
+  padding-left: 35px;
+  padding-right: 35px;
+  border-radius: 5px;
+}
+
+#filter-container {
+  padding: 20px;
+}
+
+img {
+  border-radius: 2px;
+}
+
+a {
+  color: rgb(72, 71, 71);
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+}
+
+a:hover {
+  color: blue;
+}
+
+.news-item {
+  background: white;
+  width: 500px;
+  margin: auto;
+  /* margin-top: 20px; */
+  padding: 20px;
+  border-radius: 2px;
+  border-top: 5px solid #f2e8d7;
+}
+
+input[type="text"] {
+  width: 80%;
+  background: #fefefe;
+  border-radius: 4px;
+  padding: 10px 8px;
+  border: 1px solid rgb(72, 71, 71);
+  font-size: 18px;
+}
+
+button {
+  background: #f2e8d7;
+  border-radius: 4px;
+  padding: 10px 8px;
+  border: 2px solid #e4d2b1;
+  font-size: 18px;
+  cursor: pointer;
+}
