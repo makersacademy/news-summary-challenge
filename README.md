@@ -6,10 +6,9 @@
 * Searching for a topic allows the user to see a feed of the latest news based on that topic.
 * Clicking on a headline will link the user to the actual article page on the Guardian's website.
 
-## Project overview
-
-Your app will grab all the headlines from the Guardian newspaper API and display them on a
-page. 
+### Screenshots
+![Your News Desktop Screenshot](/screenshots/your-news-desktop.png)
+![Your News Mobile Screenshot](/screenshots/your-news-mobile.png)
 
 ### Technologies
 
