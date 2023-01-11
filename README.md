@@ -7,8 +7,8 @@
 * Clicking on a headline will link the user to the actual article page on the Guardian's website.
 
 ### Screenshots
-![Your News Desktop Screenshot](/screenshots/your-news-desktop.png)
-![Your News Mobile Screenshot](/screenshots/your-news-mobile.png)
+<img src="/screenshots/your-news-desktop.png" width="350">
+<img src="/screenshots/your-news-mobile.png" width="150">
 
 ### Technologies
 
