@@ -11,7 +11,7 @@ describe(NewsClient, () => {
 
   it('calls fetch and loads data', (done) => {
     fetch.mockResponseOnce(JSON.stringify(apiData));
-    newsClient.loadNews('uk', (data) => {
+    newsClient.loadNews((data) => {
       const results = data.response.results;
       const stories = results.map((article) => {
         const { webUrl } = article;
