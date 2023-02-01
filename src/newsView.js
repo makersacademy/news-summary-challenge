@@ -3,9 +3,11 @@ class NewsView {
     this.newsModel = newsModel;
     this.newsClient = newsClient;
     this.mainContainer = document.querySelector('#main-container');
+    this.addEventListeners();
   }
 
   displayNews() {
+    this.#clearStories();
     const news = this.newsModel.getNews();
 
     news.forEach((article) => {
@@ -20,15 +22,48 @@ class NewsView {
 
   displayNewsFromApi() {
     this.newsClient.loadNews((data) => {
-      const results = data.response.results;
-      const stories = results.map((article) => {
-        const { webUrl } = article;
-        const { headline, thumbnail, standfirst } = article.fields;
-        return { webUrl, headline, thumbnail, standfirst };
-      });
+      const stories = this.mapNewsData(data);
       this.newsModel.setNews(stories);
       this.displayNews();
     });
+  }
+
+  displayNewsFromSearch(searchTerm) {
+    this.newsClient.searchNews(searchTerm, (data) => {
+      const stories = this.mapNewsData(data);
+      this.newsModel.setNews(stories);
+      this.displayNews();
+    });
+  }
+
+  mapNewsData(data) {
+    const results = data.response.results;
+    return results.map(
+      ({ webUrl, fields: { headline, thumbnail, standfirst } }) => ({
+        webUrl,
+        headline,
+        thumbnail,
+        standfirst,
+      })
+    );
+  }
+
+  addEventListeners() {
+    document.addEventListener('DOMContentLoaded', () => {
+      this.displayNewsFromApi();
+      document
+        .getElementById('searchbar')
+        .addEventListener('submit', (event) => {
+          event.preventDefault();
+          const search = document.querySelector('#search-input').value;
+          this.displayNewsFromSearch(search);
+        });
+    });
+  }
+
+  #clearStories() {
+    const stories = document.querySelectorAll('.news');
+    stories.forEach((story) => story.remove());
   }
 }
 

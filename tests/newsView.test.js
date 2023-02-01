@@ -73,4 +73,48 @@ describe(NewsView, () => {
       'UK house price growth slows to lowest rate since mid-2020; all eyes on Fed decision – business live'
     );
   });
+
+  describe('displayNewsFromSearch', () => {
+    it('should search news using the provided search term', () => {
+      newsView.displayNewsFromSearch('some search term');
+      expect(newsClient.searchNews).toHaveBeenCalledWith(
+        'some search term',
+        expect.any(Function)
+      );
+    });
+  });
+
+  it('should update API data when searching', async () => {
+    const news = [mockNews[0], mockNews[1]];
+    newsClient.searchNews.mockImplementation((searchTerm, callback) => {
+      callback(apiData);
+    });
+    newsModel.getNews = jest.fn().mockReturnValue(news);
+
+    await newsView.displayNewsFromSearch();
+
+    expect(document.querySelectorAll('.news').length).toEqual(2);
+    expect(document.querySelectorAll('.news')[0].textContent).toEqual(
+      'UK house price growth slows to lowest rate since mid-2020; all eyes on Fed decision – business live'
+    );
+  });
+
+  describe('addEventListeners', () => {
+    it('should call displayNewsFromApi on DOMContentLoaded', () => {
+      newsView.displayNewsFromApi = jest.fn();
+      document.dispatchEvent(new Event('DOMContentLoaded'));
+      expect(newsView.displayNewsFromApi).toHaveBeenCalled();
+    });
+
+    it('should allow the user to search, with the input clearing each time', () => {
+      document.dispatchEvent(new Event('DOMContentLoaded'));
+      newsView.displayNewsFromSearch = jest.fn();
+      const searchForm = document.querySelector('.searchbar');
+      const searchInput = document.querySelector('#search-input');
+      searchInput.value = 'sport';
+      searchForm.submit();
+
+      expect(newsView.displayNewsFromSearch).toHaveBeenCalledWith('sport');
+    });
+  });
 });

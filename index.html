@@ -9,15 +9,24 @@
   
       <title>Guardian News App</title>
     </head>
-    <div class="header">
-      <a href="#default" class="logo">Guardian News Aggregator</a>
-      <div class="header-right">
-        <a class="active" href="#headlines">UK Headlines</a>
-        <a href="#politics">Politics</a>
-        <a href="#sport">Sport</a>
-      </div>
-    </div> 
-   <body>
+    <body>
+      <div class="header">
+        <a href="#default" class="logo">Guardian News Aggregator</a>
+        <!-- <div class="header-right">
+          <a class="active" href="#headlines">UK Headlines</a>
+          <a href="#politics">Politics</a>
+          <a href="#sport">Sport</a>
+        </div> -->
+      </div> 
+      <form id="searchbar" class="searchbar">
+         <input
+           type="text"
+           id="search-input"
+           class="search-input"
+           placeholder="Search for news topics..."
+         />
+         <button id="search-submit" class="search-submit">Search</button>
+      </form>
       <div id="main-container">
         <!-- <input type="text" id="search-input" /> -->
         <!-- <button id="search-button">Search!</button> -->
