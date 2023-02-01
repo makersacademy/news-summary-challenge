@@ -49,13 +49,12 @@ describe(NewsView, () => {
 
     newsView.displayNews();
 
-    const images = document.querySelectorAll('.news-thumbnail');
+    const images = document.querySelectorAll('.thumbnail');
     expect(images.length).toBe(2);
 
-    const links = document.querySelectorAll('.news');
+    const links = document.querySelectorAll('.news_link');
     expect(links.length).toBe(2);
     for (let i = 0; i < links.length; i++) {
-      expect(links[i].textContent).toBe(news[i].headline);
       expect(links[i].getAttribute('href')).toBe(news[i].webUrl);
     }
   });
@@ -70,7 +69,7 @@ describe(NewsView, () => {
     newsView.displayNewsFromApi();
 
     expect(document.querySelectorAll('.news').length).toEqual(2);
-    expect(document.querySelectorAll('.news')[0].innerHTML).toEqual(
+    expect(document.querySelectorAll('.news')[0].textContent).toEqual(
       'UK house price growth slows to lowest rate since mid-2020; all eyes on Fed decision – business live'
     );
   });
