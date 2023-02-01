@@ -6,7 +6,7 @@ const fs = require('fs');
 const NewsModel = require('../src/NewsModel');
 const NewsView = require('../src/NewsView');
 const NewsClient = require('../src/NewsClient');
-const mockNews = require('../mockNews');
+const mockNews = require('../src/mockNews');
 jest.mock('../src/NewsClient.js');
 
 describe(NewsView, () => {
