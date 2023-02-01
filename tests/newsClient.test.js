@@ -1,5 +1,6 @@
 const NewsClient = require('../src/NewsClient');
 require('jest-fetch-mock').enableMocks();
+const apiData = require('../mockApiData.js');
 
 describe(NewsClient, () => {
   let newsClient;
@@ -9,28 +10,20 @@ describe(NewsClient, () => {
   });
 
   it('calls fetch and loads data', (done) => {
-    fetch.mockResponseOnce(
-      JSON.stringify([
-        {
-          thumbnail:
-            'https://media.guim.co.uk/fa7d5a5a0d6c0b13c9db83f4cd51721d655832dc/0_72_3500_2101/500.jpg',
-          headline:
-            'Three Russians under sanctions own UK property via overseas entities',
-          webUrl:
-            'https://www.theguardian.com/uk-news/2023/jan/31/three-russians-under-sanctions-own-uk-property-via-overseas-entities',
-        },
-      ])
-    );
+    fetch.mockResponseOnce(JSON.stringify(apiData));
     newsClient.loadNews('uk', (data) => {
-      const { thumbnail, headline, webUrl } = data[0];
+      const results = data.response.results;
+      const thumbnail = results[0].fields.thumbnail;
+      const headline = results[0].fields.headline;
+      const webUrl = results[0].webUrl;
       expect(thumbnail).toBe(
-        'https://media.guim.co.uk/fa7d5a5a0d6c0b13c9db83f4cd51721d655832dc/0_72_3500_2101/500.jpg'
+        'https://media.guim.co.uk/4eb07f2f4bbd086197aa76ca2de731ad7fefc9fd/0_228_4500_2700/500.jpg'
       );
       expect(headline).toBe(
-        'Three Russians under sanctions own UK property via overseas entities'
+        'UK house price growth slows to lowest rate since mid-2020; all eyes on Fed decision – business live'
       );
       expect(webUrl).toBe(
-        'https://www.theguardian.com/uk-news/2023/jan/31/three-russians-under-sanctions-own-uk-property-via-overseas-entities'
+        'https://www.theguardian.com/business/live/2023/feb/01/uk-annual-house-price-growth-slows-lowest-rate-since-mid-2020-chinas-factories-slump-us-federal-reserve-rate-decision'
       );
       done();
     });
