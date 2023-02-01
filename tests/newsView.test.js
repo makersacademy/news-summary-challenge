@@ -7,6 +7,7 @@ const NewsModel = require('../src/NewsModel');
 const NewsView = require('../src/NewsView');
 const NewsClient = require('../src/NewsClient');
 const mockNews = require('../src/mockNews');
+const apiData = require('../mockApiData');
 jest.mock('../src/NewsClient.js');
 
 describe(NewsView, () => {
@@ -57,5 +58,20 @@ describe(NewsView, () => {
       expect(links[i].textContent).toBe(news[i].headline);
       expect(links[i].getAttribute('href')).toBe(news[i].webUrl);
     }
+  });
+
+  it('should add API data to the model', () => {
+    const news = [mockNews[0], mockNews[1]];
+    newsClient.loadNews.mockImplementation((callback) => {
+      callback(apiData);
+    });
+    newsModel.getNews = jest.fn().mockReturnValue(news);
+
+    newsView.displayNewsFromApi();
+
+    expect(document.querySelectorAll('.news').length).toEqual(2);
+    expect(document.querySelectorAll('.news')[0].innerHTML).toEqual(
+      'Three Russians under sanctions own UK property via overseas entities'
+    );
   });
 });

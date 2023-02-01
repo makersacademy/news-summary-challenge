@@ -19,6 +19,19 @@ class NewsView {
       this.mainContainer.append(newsThumbnail, newsElement);
     });
   }
+
+  displayNewsFromApi() {
+    this.newsClient.loadNews((data) => {
+      const results = data.response.results;
+      const stories = results.map((article) => {
+        const { webUrl } = article;
+        const { headline, thumbnail, standfirst } = article.fields;
+        return { webUrl, headline, thumbnail, standfirst };
+      });
+      this.newsModel.setNews(stories);
+      this.displayNews();
+    });
+  }
 }
 
 module.exports = NewsView;
