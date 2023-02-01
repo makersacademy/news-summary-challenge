@@ -1,6 +1,6 @@
 const NewsClient = require('../src/NewsClient');
 require('jest-fetch-mock').enableMocks();
-const apiData = require('../mockApiData.js');
+const apiData = require('../mock/mockApiData.js');
 
 describe(NewsClient, () => {
   let newsClient;
@@ -13,17 +13,22 @@ describe(NewsClient, () => {
     fetch.mockResponseOnce(JSON.stringify(apiData));
     newsClient.loadNews('uk', (data) => {
       const results = data.response.results;
-      const thumbnail = results[0].fields.thumbnail;
-      const headline = results[0].fields.headline;
-      const webUrl = results[0].webUrl;
-      expect(thumbnail).toBe(
+      const stories = results.map((article) => {
+        const { webUrl } = article;
+        const { headline, thumbnail, standfirst } = article.fields;
+        return { webUrl, headline, thumbnail, standfirst };
+      });
+      expect(stories[0].thumbnail).toBe(
         'https://media.guim.co.uk/4eb07f2f4bbd086197aa76ca2de731ad7fefc9fd/0_228_4500_2700/500.jpg'
       );
-      expect(headline).toBe(
+      expect(stories[0].headline).toBe(
         'UK house price growth slows to lowest rate since mid-2020; all eyes on Fed decision – business live'
       );
-      expect(webUrl).toBe(
+      expect(stories[0].webUrl).toBe(
         'https://www.theguardian.com/business/live/2023/feb/01/uk-annual-house-price-growth-slows-lowest-rate-since-mid-2020-chinas-factories-slump-us-federal-reserve-rate-decision'
+      );
+      expect(stories[0].standfirst).toBe(
+        '<p>UK annual house price growth slows to 1.1%; investors await US Federal Reserve message on whether it will tighten monetary policy further</p>'
       );
       done();
     });
