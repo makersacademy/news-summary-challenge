@@ -71,7 +71,7 @@ describe(NewsView, () => {
 
     expect(document.querySelectorAll('.news').length).toEqual(2);
     expect(document.querySelectorAll('.news')[0].innerHTML).toEqual(
-      'Three Russians under sanctions own UK property via overseas entities'
+      'UK house price growth slows to lowest rate since mid-2020; all eyes on Fed decision – business live'
     );
   });
 });
