@@ -9,10 +9,14 @@ class NewsView {
     const news = this.newsModel.getNews();
 
     news.forEach((article) => {
-      const newsElement = document.createElement('div');
+      const newsThumbnail = document.createElement('img');
+      newsThumbnail.className = 'news-thumbnail';
+      newsThumbnail.src = article.thumbnail;
+      const newsElement = document.createElement('a');
       newsElement.className = 'news';
-      newsElement.textContent = article;
-      this.mainContainer.append(newsElement);
+      newsElement.textContent = article.headline;
+      newsElement.setAttribute('href', article.webUrl);
+      this.mainContainer.append(newsThumbnail, newsElement);
     });
   }
 }
