@@ -1,43 +1,82 @@
-h1, p, * {
-  font-family: sans-serif;
-}
-
-html {
-  background:#8ae2ff;
-}
-
 body {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
   background: white;
   max-width: 500px;
   margin: auto;
   margin-top: 20px;
   padding: 20px;
   border-radius: 10px;
-}
-ul {
-  list-style-type: none;
-}
-li {
-  list-style-type: none;
+  font-family: sans-serif;
+  font-size: 14px
 }
 
+
+html {
+  background:#8ae2ff;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+
+
+#searchbar {
+  background-color: #3b505f;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10 px;
+  width: 600px
+}
+
+#searchbar input[type="search"] {
+  
+  padding: 8px;
+  border: none;
+  background-color: #ffffff57;
+  color: #FFE500;
+  width: 250px
+}
+
+#searchbar input[type="search"]::placeholder {
+  color: #ffffff;
+  }
+
+#searchbar button[type="submit"] {
+  background-color: white;
+  border: 4px solid var(--green);
+  padding: 8px;
+  transition: 0.5s;
+}
+
+#searchbar button[type="submit"]:hover {
+  color: var(--white);
+  border: 4px solid var(--red);
+  background-color: var(--green);
+}
 .main-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin: 40px auto;
   max-width: 400px;
   padding: var(--padding);
 }
 
-/* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: #3b505f;
   padding: 20px 10px;
 }
 
-/* Style the header links */
 .header a {
   float: left;
-  color: black;
+  color: rgb(255, 255, 255);
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -46,40 +85,30 @@ li {
   border-radius: 4px;
 }
 
-/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
   font-size: 25px;
   font-weight: bold;
 }
 
-/* Change the background color on mouse-over */
 .header a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Style the active/current link*/
-.header a.active {
-  background-color: dodgerblue;
-  color: white;
-}
-
-/* Float the link section to the right */
 .header-right {
   float: right;
 }
 
-
 .list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .news {
   padding: var(--padding);
 }
 
-.news_link {
+.image_link {
   border: 4px solid var(--red);
   display: block;
   overflow: hidden;
@@ -88,43 +117,43 @@ li {
   transition: 0.5s;
 }
 
-.news_link:active {
+.image_link:active {
   box-shadow: 0 0 0 0 black;
 }
 
-.thumbnail {
+.news_thumbnail {
   max-width: 100%;
   scale: 1.05;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
-.thumbnail:hover {
-  scale: 1.2;
+.news_thumbnail:hover {
+  scale: 1.3;
 }
 
 .news_headline {
   font-weight: bold;
-}
-
-input[type=text] {
-  width: 80%;
-  background: #fefefe;
-  border-radius: 4px;
-  padding: 10px 8px;
-  border: 1px solid #444;
+  margin: 0 0 0px 0;
   font-size: 20px;
+  padding-top: 10px;
+  background-color: #efecec;
+  border-color: #0061A6;
+  border-top-style: solid;
+  border-top-width: 2px;
 }
 
-button {
-  background: #9efa82;
-  border-radius: 4px;
-  padding: 10px 8px;
-  border: 1px solid #444;
-  font-size: 18px;
-  cursor: pointer;
+.news p.headline {
+  padding: 10px 10px 10px 0;
 }
 
-/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+.news a {
+  color: black;
+  text-decoration: none;
+  
+}
+
+
+
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
@@ -136,11 +165,6 @@ button {
   }
 }
 
-@media screen and (min-width: 425px) {
-  .main-container {
-    border: 4px solid var(--red);
-  }
-}
 
 @media screen and (min-width: 600px) {
   .main-container {
@@ -155,11 +179,5 @@ button {
 
   .list__item {
     max-width: 235px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .main-container {
-    max-width: 840px;
   }
 }
