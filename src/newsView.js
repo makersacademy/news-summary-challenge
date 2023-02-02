@@ -12,10 +12,10 @@ class NewsView {
 
     news.forEach((article) => {
       const { thumbnail, headline, webUrl, standfirst } = article;
-      const newsItem = document.createElement('div');
       const html = `<a class="image_link" href="${webUrl}" ><img class="news_thumbnail" src=${thumbnail}></a>
                     <a class="headline_link" href="${webUrl}" ><p class="news_headline">${headline}</p></a>
                     <div class="standfirst">${standfirst}</div>`;
+      const newsItem = document.createElement('div');
       newsItem.className = 'news';
       newsItem.innerHTML = html;
       this.mainContainer.append(newsItem);
