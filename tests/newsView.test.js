@@ -150,6 +150,10 @@ describe('NewsView', () => {
       expect(newsView.displayNewsFromApi).toHaveBeenCalled();
     });
 
+    test('UK headlines section is clicked', () => {
+      document.querySelector('#header-button-uk').click();
+      expect(newsView.displayNewsBySection).toHaveBeenCalledWith('uk-news');
+    });
     test('Business section is clicked', () => {
       document.querySelector('#header-button-business').click();
       expect(newsView.displayNewsBySection).toHaveBeenCalledWith('business');

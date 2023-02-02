@@ -3,7 +3,7 @@ const API_KEY = require('./apiKey.js');
 class NewsClient {
   loadNews(callback) {
     fetch(
-      `https://content.guardianapis.com/search?section=uk-news&order-by=newest&page-size=40&show-fields=thumbnail,headline,byline,standfirst&api-key=${API_KEY}`
+      `https://content.guardianapis.com/search?show-fields=thumbnail%2Cheadline%2Cbyline%2Cstandfirst&page-size=40&section=world&api-key=${API_KEY}`
     )
       .then((response) => response.json())
       .then((data) => {

@@ -162,7 +162,8 @@ transition: 0.5s;
 @media screen and (max-width: 900px) {
   .news {
     width: calc(50% - 40px);
-    transform: scale(1.1);
+    padding-top:50px;
+    padding-bottom: 50px;
   }
   .news_headline {
     font-size: 1.0em;
@@ -172,7 +173,6 @@ transition: 0.5s;
 @media screen and (max-width: 600px) {
   .news {
     width: 100%;
-    transform: scale(1.3);
     padding-top:50px;
     padding-bottom: 50px;
   }
