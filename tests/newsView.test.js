@@ -44,9 +44,9 @@ describe('NewsView', () => {
       const news = [mockNews[0], mockNews[1]];
       newsModel.getNews = jest.fn().mockReturnValue(news);
       newsView.displayNews();
-      const images = document.querySelectorAll('.thumbnail');
+      const images = document.querySelectorAll('.news_thumbnail');
       expect(images.length).toBe(2);
-      const links = document.querySelectorAll('.news_link');
+      const links = document.querySelectorAll('.headline_link');
       expect(links.length).toBe(2);
       links.forEach((link, index) => {
         expect(link.getAttribute('href')).toBe(news[index].webUrl);
@@ -71,9 +71,9 @@ describe('NewsView', () => {
 
   describe('displayNewsFromSearch', () => {
     it('searches news using the search term', () => {
-      newsView.displayNewsFromSearch('search term');
+      newsView.displayNewsFromSearch('UK news');
       expect(newsClient.searchNews).toHaveBeenCalledWith(
-        'search term',
+        'UK news',
         expect.any(Function)
       );
     });
@@ -92,22 +92,75 @@ describe('NewsView', () => {
     });
   });
 
-  describe('addEventListeners', () => {
-    it('calls displayNewsFromApi on DOMContentLoaded', () => {
+  describe('displayNewsBySection', () => {
+    it('searches news by specific sections', () => {
+      newsView.displayNewsBySection('commentisfree');
+      expect(newsClient.filterNews).toHaveBeenCalledWith(
+        'commentisfree',
+        expect.any(Function)
+      );
+    });
+
+    it('updates news data on filter', () => {
+      newsClient.filterNews.mockImplementation((section, callback) => {
+        callback(apiData);
+      });
+      newsModel.getNews = jest.fn().mockReturnValue([mockNews[0], mockNews[1]]);
+      newsView.displayNewsBySection();
+
+      expect(document.querySelectorAll('.news').length).toEqual(2);
+      expect(document.querySelector('.news').textContent).toContain(
+        'UK house price growth slows'
+      );
+    });
+  });
+
+  describe('eventListeners', () => {
+    beforeEach(() => {
+      document.body.innerHTML = fs.readFileSync('./index.html');
+      document.dispatchEvent(new Event('DOMContentLoaded'));
       newsView.displayNewsFromApi = jest.fn();
+      newsView.displayNewsBySection = jest.fn();
+      newsView.displayNewsFromSearch = jest.fn();
+    });
+
+    it('calls displayNewsFromApi on DOMContentLoaded', () => {
       document.dispatchEvent(new Event('DOMContentLoaded'));
       expect(newsView.displayNewsFromApi).toHaveBeenCalled();
     });
 
     it('allows user to submit a search using the searchbar', () => {
-      document.dispatchEvent(new Event('DOMContentLoaded'));
-      newsView.displayNewsFromSearch = jest.fn();
       const searchForm = document.querySelector('.searchbar');
       const searchInput = document.querySelector('#search-input');
       searchInput.value = 'sport';
       searchForm.submit();
-
       expect(newsView.displayNewsFromSearch).toHaveBeenCalledWith('sport');
+    });
+    test('Header logo is clicked', () => {
+      document.querySelector('#header-button-logo').click();
+      expect(newsView.displayNewsFromApi).toHaveBeenCalled();
+    });
+
+    test('Business section is clicked', () => {
+      document.querySelector('#header-button-business').click();
+      expect(newsView.displayNewsBySection).toHaveBeenCalledWith('business');
+    });
+
+    test('Opinion section is clicked', () => {
+      document.querySelector('#header-button-opinion').click();
+      expect(newsView.displayNewsBySection).toHaveBeenCalledWith(
+        'commentisfree'
+      );
+    });
+
+    test('Sport section is clicked', () => {
+      document.querySelector('#header-button-sport').click();
+      expect(newsView.displayNewsBySection).toHaveBeenCalledWith('sport');
+    });
+
+    test('Culture section is clicked', () => {
+      document.querySelector('#header-button-culture').click();
+      expect(newsView.displayNewsBySection).toHaveBeenCalledWith('culture');
     });
   });
 });

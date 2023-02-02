@@ -11,9 +11,11 @@ class NewsView {
     const news = this.newsModel.getNews();
 
     news.forEach((article) => {
-      const { thumbnail, headline, webUrl } = article;
-      const newsItem = document.createElement('LI');
-      const html = `<a class="news_link" href="${webUrl}" ><img class="thumbnail" src=${thumbnail}></a><a href="${webUrl}" ><p class="news_headline">${headline}</p></a>`;
+      const { thumbnail, headline, webUrl, standfirst } = article;
+      const newsItem = document.createElement('div');
+      const html = `<a class="image_link" href="${webUrl}" ><img class="news_thumbnail" src=${thumbnail}></a>
+                    <a class="headline_link" href="${webUrl}" ><p class="news_headline">${headline}</p></a>
+                    <div class="standfirst">${standfirst}</div>`;
       newsItem.className = 'news';
       newsItem.innerHTML = html;
       this.mainContainer.append(newsItem);
@@ -36,6 +38,14 @@ class NewsView {
     });
   }
 
+  displayNewsBySection(section) {
+    this.newsClient.filterNews(section, (data) => {
+      const stories = this.mapNewsData(data);
+      this.newsModel.setNews(stories);
+      this.displayNews();
+    });
+  }
+
   mapNewsData(data) {
     const results = data.response.results;
     return results.map(
@@ -51,14 +61,45 @@ class NewsView {
   addEventListeners() {
     document.addEventListener('DOMContentLoaded', () => {
       this.displayNewsFromApi();
-      document
-        .getElementById('searchbar')
-        .addEventListener('submit', (event) => {
-          event.preventDefault();
-          const search = document.querySelector('#search-input').value;
-          this.displayNewsFromSearch(search);
-        });
+      this.addSearchbarListeners();
+      this.addHeaderListeners();
     });
+  }
+
+  addSearchbarListeners() {
+    document.getElementById('searchbar').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const search = document.querySelector('#search-input').value;
+      this.displayNewsFromSearch(search);
+    });
+  }
+
+  addHeaderListeners() {
+    document
+      .getElementById('header-button-logo')
+      .addEventListener('click', () => {
+        this.displayNewsFromApi();
+      });
+    document
+      .getElementById('header-button-business')
+      .addEventListener('click', () => {
+        this.displayNewsBySection('business');
+      });
+    document
+      .getElementById('header-button-opinion')
+      .addEventListener('click', () => {
+        this.displayNewsBySection('commentisfree');
+      });
+    document
+      .getElementById('header-button-sport')
+      .addEventListener('click', () => {
+        this.displayNewsBySection('sport');
+      });
+    document
+      .getElementById('header-button-culture')
+      .addEventListener('click', () => {
+        this.displayNewsBySection('culture');
+      });
   }
 
   #clearStories() {
