@@ -52,6 +52,15 @@ describe('NewsView', () => {
         expect(link.getAttribute('href')).toBe(news[index].webUrl);
       });
     });
+
+    test("#clearStories should remove all elements with class 'news'", () => {
+      const newsItem = document.createElement('div');
+      newsItem.className = 'news';
+      newsView.mainContainer.append(newsItem);
+      newsView.displayNews();
+      const stories = document.querySelectorAll('.news');
+      expect(stories.length).toBe(0);
+    });
   });
 
   describe('displayNewsFromApi', () => {
