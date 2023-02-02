@@ -86,6 +86,11 @@ class NewsView {
         this.displayNewsBySection('business');
       });
     document
+      .getElementById('header-button-politics')
+      .addEventListener('click', () => {
+        this.displayNewsBySection('politics');
+      });
+    document
       .getElementById('header-button-opinion')
       .addEventListener('click', () => {
         this.displayNewsBySection('commentisfree');

@@ -154,6 +154,10 @@ describe('NewsView', () => {
       document.querySelector('#header-button-business').click();
       expect(newsView.displayNewsBySection).toHaveBeenCalledWith('business');
     });
+    test('Politics section is clicked', () => {
+      document.querySelector('#header-button-politics').click();
+      expect(newsView.displayNewsBySection).toHaveBeenCalledWith('politics');
+    });
 
     test('Opinion section is clicked', () => {
       document.querySelector('#header-button-opinion').click();
