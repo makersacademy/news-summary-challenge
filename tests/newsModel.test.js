@@ -7,6 +7,12 @@ describe('NewsModel', () => {
     newsModel = new NewsModel();
   });
 
+  describe('constructor', () => {
+    it('should construct with an empty array for news', () => {
+      expect(newsModel.news).toEqual([]);
+    });
+  });
+
   describe('getNews', () => {
     it('should return an empty array by default', () => {
       expect(newsModel.getNews()).toEqual([]);
