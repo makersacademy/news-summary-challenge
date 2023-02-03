@@ -28,13 +28,19 @@ class NewsView {
       .then((allStories) => {
         allStories.forEach((story) => {
           const storyImage = document.createElement("img");
-          storyImage.src = story.fields.thumbnail;
-          this.mainContainerEl.append(storyImage);
-
           const newStoryEl = document.createElement("div");
+          const storyLink = document.createElement("a");
+
           newStoryEl.className = "story";
-          newStoryEl.textContent = story.webTitle;
-          this.mainContainerEl.append(newStoryEl);
+          storyImage.src = story.fields.thumbnail;
+          storyLink.href = story.webUrl;
+          storyLink.target = 'target="_blank"';
+          storyLink.textContent = story.webTitle;
+          newStoryEl.appendChild(storyImage);
+          newStoryEl.appendChild(document.createElement("br"));
+          newStoryEl.appendChild(storyLink);
+
+          this.mainContainerEl.appendChild(newStoryEl);
 
           const lineBreakEl = document.createElement("br");
           this.mainContainerEl.append(lineBreakEl);
