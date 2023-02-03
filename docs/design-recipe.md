@@ -67,7 +67,7 @@ class View
 end
 
 class Client
-  constructor() P{
+  constructor() {
 
   }
 
@@ -87,8 +87,8 @@ class Model
   setArticles(content) 
     //Set articles in the model 
   
-  setArticlesWithSummaries(content)
-    //This will add in the summaries? 
+  getArticles()
+    //Gets the articles from the model 
 
 end
 ```
