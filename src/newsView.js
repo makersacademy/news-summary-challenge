@@ -70,6 +70,7 @@ class NewsView {
     errorMessage.textContent = error;
     this.mainContainer.append(errorMessage);
   }
+
   mapNewsData(data) {
     const results = data.response.results;
     return results.map(
