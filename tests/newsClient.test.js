@@ -34,6 +34,18 @@ describe(NewsClient, () => {
         done();
       });
     });
+
+    it('catches errors', (done) => {
+      fetch.mockRejectedValue('Oops, something went wrong!');
+
+      newsClient.loadNews(
+        () => {},
+        (error) => {
+          expect(error).toBe('Oops, something went wrong!');
+          done();
+        }
+      );
+    });
   });
   describe('searchNews', () => {
     it('calls fetch on the API with searchdata', (done) => {
@@ -61,6 +73,20 @@ describe(NewsClient, () => {
       });
     });
   });
+
+  it('catches errors', (done) => {
+    fetch.mockRejectedValue('Oops, something went wrong!');
+
+    newsClient.searchNews(
+      'testsearch',
+      () => {},
+      (error) => {
+        expect(error).toBe('Oops, something went wrong!');
+        done();
+      }
+    );
+  });
+
   describe('filterNews', () => {
     it('calls fetch on the API with filtertag', (done) => {
       fetch.mockResponseOnce(JSON.stringify(apiData));
@@ -85,6 +111,18 @@ describe(NewsClient, () => {
         );
         done();
       });
+    });
+    it('catches errors', (done) => {
+      fetch.mockRejectedValue('Oops, something went wrong!');
+
+      newsClient.filterNews(
+        'testfilter',
+        () => {},
+        (error) => {
+          expect(error).toBe('Oops, something went wrong!');
+          done();
+        }
+      );
     });
   });
 });

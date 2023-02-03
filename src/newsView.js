@@ -24,29 +24,52 @@ class NewsView {
   }
 
   displayNewsFromApi() {
-    this.newsClient.loadNews((data) => {
-      const stories = this.mapNewsData(data);
-      this.newsModel.setNews(stories);
-      this.displayNews();
-    });
+    this.newsClient.loadNews(
+      (data) => {
+        const stories = this.mapNewsData(data);
+        this.newsModel.setNews(stories);
+        this.displayNews();
+      },
+      () => {
+        this.displayError('Oops - API appears to be down!');
+      }
+    );
   }
 
   displayNewsFromSearch(searchTerm) {
-    this.newsClient.searchNews(searchTerm, (data) => {
-      const stories = this.mapNewsData(data);
-      this.newsModel.setNews(stories);
-      this.displayNews();
-    });
+    this.newsClient.searchNews(
+      searchTerm,
+      (data) => {
+        const stories = this.mapNewsData(data);
+        this.newsModel.setNews(stories);
+        this.displayNews();
+      },
+      () => {
+        this.displayError('Oops - API appears to be down!');
+      }
+    );
   }
 
   displayNewsBySection(section) {
-    this.newsClient.filterNews(section, (data) => {
-      const stories = this.mapNewsData(data);
-      this.newsModel.setNews(stories);
-      this.displayNews();
-    });
+    this.newsClient.filterNews(
+      section,
+      (data) => {
+        const stories = this.mapNewsData(data);
+        this.newsModel.setNews(stories);
+        this.displayNews();
+      },
+      () => {
+        this.displayError('Oops - API appears to be down!');
+      }
+    );
   }
 
+  displayError(error) {
+    const errorMessage = document.createElement('h2');
+    errorMessage.className = 'error';
+    errorMessage.textContent = error;
+    this.mainContainer.append(errorMessage);
+  }
   mapNewsData(data) {
     const results = data.response.results;
     return results.map(

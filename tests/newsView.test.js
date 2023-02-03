@@ -22,6 +22,10 @@ describe('NewsView', () => {
     newsView = new NewsView(newsModel, newsClient);
   });
 
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
   describe('displayNews', () => {
     it('displays no news if empty', () => {
       newsView.displayNews();
@@ -69,10 +73,24 @@ describe('NewsView', () => {
         callback(apiData);
       });
       newsView.displayNewsFromApi();
-      expect(newsClient.loadNews).toHaveBeenCalledWith(expect.any(Function));
+      expect(newsClient.loadNews).toHaveBeenCalledWith(
+        expect.any(Function),
+        expect.any(Function)
+      );
       expect(document.querySelectorAll('.news').length).toEqual(11);
       expect(document.querySelectorAll('.news')[0].textContent).toContain(
         'UK house price growth slows'
+      );
+    });
+
+    it('calls displayError when error callback is triggered', () => {
+      jest.spyOn(newsView, 'displayError');
+      newsView.newsClient.loadNews = jest.fn((_, errorCallback) => {
+        errorCallback();
+      });
+      newsView.displayNewsFromApi();
+      expect(newsView.displayError).toHaveBeenCalledWith(
+        'Oops - API appears to be down!'
       );
     });
   });
@@ -82,6 +100,7 @@ describe('NewsView', () => {
       newsView.displayNewsFromSearch('UK news');
       expect(newsClient.searchNews).toHaveBeenCalledWith(
         'UK news',
+        expect.any(Function),
         expect.any(Function)
       );
     });
@@ -93,11 +112,23 @@ describe('NewsView', () => {
       newsView.displayNewsFromSearch('UK news');
       expect(newsClient.searchNews).toHaveBeenCalledWith(
         'UK news',
+        expect.any(Function),
         expect.any(Function)
       );
       expect(document.querySelectorAll('.news').length).toEqual(11);
       expect(document.querySelector('.news').textContent).toContain(
         'UK house price growth slows'
+      );
+    });
+
+    it('calls displayError when error callback is triggered by search', () => {
+      jest.spyOn(newsView, 'displayError');
+      newsView.newsClient.searchNews = jest.fn((_, __, errorCallback) => {
+        errorCallback();
+      });
+      newsView.displayNewsFromSearch('search term');
+      expect(newsView.displayError).toHaveBeenCalledWith(
+        'Oops - API appears to be down!'
       );
     });
   });
@@ -107,6 +138,7 @@ describe('NewsView', () => {
       newsView.displayNewsBySection('commentisfree');
       expect(newsClient.filterNews).toHaveBeenCalledWith(
         'commentisfree',
+        expect.any(Function),
         expect.any(Function)
       );
     });
@@ -121,6 +153,27 @@ describe('NewsView', () => {
       expect(document.querySelectorAll('.news').length).toEqual(2);
       expect(document.querySelector('.news').textContent).toContain(
         'UK house price growth slows'
+      );
+    });
+
+    it('calls displayError when error callback is triggered by filter', () => {
+      jest.spyOn(newsView, 'displayError');
+      newsView.newsClient.filterNews = jest.fn((_, __, errorCallback) => {
+        errorCallback();
+      });
+      newsView.displayNewsBySection('section');
+      expect(newsView.displayError).toHaveBeenCalledWith(
+        'Oops - API appears to be down!'
+      );
+    });
+  });
+
+  describe('displayErrors', () => {
+    it('should display an error when displayError is triggered', () => {
+      newsView.displayError('Oops! Looks like something went wrong...');
+      const errorElement = document.querySelector('h2.error');
+      expect(errorElement.textContent).toBe(
+        'Oops! Looks like something went wrong...'
       );
     });
   });

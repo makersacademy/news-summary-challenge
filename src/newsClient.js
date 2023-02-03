@@ -2,7 +2,7 @@ require('dotenv').config();
 const API_KEY = process.env.API_KEY;
 
 class NewsClient {
-  loadNews(callback) {
+  loadNews(callback, errorCallback) {
     fetch(
       `https://content.guardianapis.com/search?show-fields=thumbnail%2Cheadline%2Cbyline%2Cstandfirst&page-size=40&section=world&api-key=${API_KEY}`
     )
@@ -13,7 +13,7 @@ class NewsClient {
       });
   }
 
-  searchNews(searchTerm, callback) {
+  searchNews(searchTerm, callback, errorCallback) {
     fetch(
       `https://content.guardianapis.com/search?q=${searchTerm}&page-size=40&query-fields=headline&show-fields=thumbnail,headline,byline,standfirst&order-by=newest&api-key=${API_KEY}`
     )
@@ -24,7 +24,7 @@ class NewsClient {
       });
   }
 
-  filterNews(section, callback) {
+  filterNews(section, callback, errorCallback) {
     fetch(
       `https://content.guardianapis.com/search?section=${section}&page-size=40&show-fields=thumbnail,headline,byline,standfirst&order-by=newest&api-key=${API_KEY}`
     )
