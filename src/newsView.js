@@ -1,8 +1,22 @@
+const NewsModel = require("./newsModel");
+const NewsClient = require("./newsClient");
+
 class NewsView {
   constructor(model, client) {
     this.model = model;
     this.client = client;
     this.mainContainerEl = document.querySelector("#main-container");
+
+    window.onload = () => {
+      this.searchInput = document.querySelector("#search-input");
+      this.searchButton = document.querySelector("#search-button");
+
+      this.searchButton.addEventListener("click", () => {
+        const searchCriteria = this.searchInput.value;
+        this.model.getSearchedNews(searchCriteria);
+        this.displaySearchedStories();
+      });
+    };
   }
 
   loadNewsFromApi() {
@@ -23,7 +37,7 @@ class NewsView {
   displayNewsStories() {
     this.loadNewsFromApi()
       .then(() => {
-        return this.model.getAllNews();
+        return this.model.getNews();
       })
       .then((allStories) => {
         allStories.forEach((story) => {
@@ -40,7 +54,6 @@ class NewsView {
 
           storyLink.textContent = story.webTitle;
           newStoryEl.appendChild(storyImage);
-          newStoryEl.appendChild(document.createElement("br"));
           newStoryEl.appendChild(storyLink);
 
           this.mainContainerEl.appendChild(newStoryEl);
@@ -49,6 +62,10 @@ class NewsView {
           this.mainContainerEl.append(lineBreakEl);
         });
       });
+  }
+
+  displaySearchedStories() {
+    this.model.getNews();
   }
 }
 

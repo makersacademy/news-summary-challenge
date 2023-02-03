@@ -32,7 +32,7 @@ describe("NewsView", () => {
   it("should display news stories", async () => {
     view.loadNewsFromApi = jest.fn().mockResolvedValue(undefined);
 
-    model.getAllNews = jest.fn().mockResolvedValue([
+    model.getNews = jest.fn().mockResolvedValue([
       {
         fields: {
           thumbnail: "image1.jpg",
@@ -55,6 +55,6 @@ describe("NewsView", () => {
 
     await view.displayNewsStories();
     expect(view.loadNewsFromApi).toHaveBeenCalled();
-    expect(model.getAllNews).toHaveBeenCalled();
+    expect(model.getNews).toHaveBeenCalled();
   });
 });
