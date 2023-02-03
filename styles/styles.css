@@ -61,9 +61,12 @@ max-width: 300px;
 position: relative;
 max-height: 500px;
 overflow: hidden;
-background-color: #efecec;
 }
 
+.content_background {
+background-color: #efecec;
+  
+}
 .news_thumbnail {
   width: 100%;
   height: auto;
@@ -175,6 +178,7 @@ transition: 0.5s;
     width: 100%;
     padding-top:50px;
     padding-bottom: 50px;
+    scale:1.2;
   }
     .news_headline {
     font-size: 1.0em;
