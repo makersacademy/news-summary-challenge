@@ -42,19 +42,22 @@ body {
 .topnav input[type="text"] {
   padding: 6px;
   margin-top: 8px;
+  margin-right: 10px;
   font-size: 17px;
   border: none;
+  border-radius: 14px;
 }
 
 .topnav .search-container button {
   float: right;
   padding: 6px 10px;
   margin-top: 8px;
-  margin-right: 16px;
+  margin-right: 20px;
   background: #ddd;
   font-size: 17px;
   border: none;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .topnav .search-container button:hover {

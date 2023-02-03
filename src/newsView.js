@@ -46,33 +46,17 @@ class NewsView {
         return this.model.getNews();
       })
       .then((allStories) => {
-        allStories.forEach((story) => {
-          const storyImage = document.createElement("img");
-          const newStoryEl = document.createElement("div");
-          const storyLink = document.createElement("a");
-
-          newStoryEl.className = "story";
-          storyImage.src = story.fields.thumbnail;
-          storyLink.href = story.webUrl;
-          // next two lines handle opening link in new tab. Second line is a security thing
-          storyLink.target = 'target="_blank"';
-          storyLink.rel = "noopener noreferrer";
-
-          storyLink.textContent = story.webTitle;
-          newStoryEl.appendChild(storyImage);
-          newStoryEl.appendChild(storyLink);
-
-          this.mainContainerEl.appendChild(newStoryEl);
-
-          const lineBreakEl = document.createElement("br");
-          this.mainContainerEl.append(lineBreakEl);
-        });
+        this.createStoryElements(allStories);
       });
   }
 
   displaySearchedStories(searchedNews) {
+    this.createStoryElements(searchedNews);
+  }
+
+  createStoryElements(stories) {
     this.mainContainerEl.innerHTML = "";
-    searchedNews.forEach((story) => {
+    stories.forEach((story) => {
       const storyImage = document.createElement("img");
       const newStoryEl = document.createElement("div");
       const storyLink = document.createElement("a");
