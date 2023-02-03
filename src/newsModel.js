@@ -8,7 +8,7 @@ class NewsModel {
   }
 
   setNews(news) {
-    this.allNews = news;
+    this.allNews = news.response.results;
   }
 }
 
