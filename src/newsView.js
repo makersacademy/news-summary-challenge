@@ -11,6 +11,12 @@ class NewsView {
       this.searchInput = document.querySelector("#search-input");
       this.searchButton = document.querySelector("#search-button");
 
+      this.searchInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          document.querySelector("#search-button").click();
+        }
+      });
+
       this.searchButton.addEventListener("click", () => {
         this.model.searchedNews = [];
         const searchCriteria = this.searchInput.value;

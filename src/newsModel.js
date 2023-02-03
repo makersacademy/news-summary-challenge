@@ -10,7 +10,7 @@ class NewsModel {
 
   getSearchedNews(searchCriteria) {
     this.allNews.forEach((story) => {
-      if (story.webTitle.includes(searchCriteria)) {
+      if (story.webTitle.toLowerCase().includes(searchCriteria.toLowerCase())) {
         this.searchedNews.push(story);
       }
     });
