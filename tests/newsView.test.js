@@ -68,10 +68,9 @@ describe('NewsView', () => {
       newsClient.loadNews.mockImplementation((callback) => {
         callback(apiData);
       });
-      const news = [mockNews[0], mockNews[1]];
-      newsModel.getNews = jest.fn().mockReturnValue(news);
       newsView.displayNewsFromApi();
-      expect(document.querySelectorAll('.news').length).toEqual(2);
+      expect(newsClient.loadNews).toHaveBeenCalledWith(expect.any(Function));
+      expect(document.querySelectorAll('.news').length).toEqual(11);
       expect(document.querySelectorAll('.news')[0].textContent).toContain(
         'UK house price growth slows'
       );
@@ -91,10 +90,12 @@ describe('NewsView', () => {
       newsClient.searchNews.mockImplementation((searchTerm, callback) => {
         callback(apiData);
       });
-      newsModel.getNews = jest.fn().mockReturnValue([mockNews[0], mockNews[1]]);
-      newsView.displayNewsFromSearch();
-
-      expect(document.querySelectorAll('.news').length).toEqual(2);
+      newsView.displayNewsFromSearch('UK news');
+      expect(newsClient.searchNews).toHaveBeenCalledWith(
+        'UK news',
+        expect.any(Function)
+      );
+      expect(document.querySelectorAll('.news').length).toEqual(11);
       expect(document.querySelector('.news').textContent).toContain(
         'UK house price growth slows'
       );
