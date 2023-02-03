@@ -12,9 +12,9 @@ class NewsView {
       this.searchButton = document.querySelector("#search-button");
 
       this.searchButton.addEventListener("click", () => {
+        this.model.searchedNews = [];
         const searchCriteria = this.searchInput.value;
-        this.model.getSearchedNews(searchCriteria);
-        this.displaySearchedStories();
+        this.displaySearchedStories(this.model.getSearchedNews(searchCriteria));
       });
     };
   }
@@ -64,8 +64,29 @@ class NewsView {
       });
   }
 
-  displaySearchedStories() {
-    this.model.getNews();
+  displaySearchedStories(searchedNews) {
+    this.mainContainerEl.innerHTML = "";
+    searchedNews.forEach((story) => {
+      const storyImage = document.createElement("img");
+      const newStoryEl = document.createElement("div");
+      const storyLink = document.createElement("a");
+
+      newStoryEl.className = "story";
+      storyImage.src = story.fields.thumbnail;
+      storyLink.href = story.webUrl;
+
+      storyLink.target = 'target="_blank"';
+      storyLink.rel = "noopener noreferrer";
+
+      storyLink.textContent = story.webTitle;
+      newStoryEl.appendChild(storyImage);
+      newStoryEl.appendChild(storyLink);
+
+      this.mainContainerEl.appendChild(newStoryEl);
+
+      const lineBreakEl = document.createElement("br");
+      this.mainContainerEl.append(lineBreakEl);
+    });
   }
 }
 
