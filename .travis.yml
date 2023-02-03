@@ -1,9 +1,12 @@
 language: node_js
 node_js:
-  - 17
+- 17
 install:
-  - npm install
+- npm install
 script:
-  - npm test
+- npm test
 os:
-  - osx
+- osx
+env:
+  global:
+    secure: 1DphP66zp01n5kU55qy6IxXgnxXd/P62ePSwLMJNvidfVXtbjS8zHBAel1dr5GqivTzqjsbinEQV3bBeeSpF0cUFZqxHzys/mdXOMHhFXlSnW+PxFZuz9igsMX/0kzhEiIwTzrzJL1cNrnOgRgGQeeVRoSlLnrli9wdzhTyeYdxHfjmDW5/jPivJkd6/gPjd3ftwApX1AvlraHhdaachrtfnAv9viNM+fK9aleE7cp7WrvUKN5wPvM4TXKMofdC5z+/mTisN+CbrIPcNYIyqf4n0uWsg9Qf+etSo2zfDqOtxasJXH0j3XPqX4Tw14ZTcfXRVlVg/IlJcbeynDlH6qVJPfL3+1/0zjFZgpa/N3uaTMbFPJrMfGlAQBT+vyVWIudfYpTlmDMbCp6BFlWVB1oQINY+bBf/FyE75AMRJz10u7NlcrsNHpLyWLb6ooq4xDVaKkiFZoqRegm4kMU56wLpycTWWu5XQhH2DZPEwDVLWYqiGDYjv5P/PGGcnrsndQKSC+MC1McKhvB5LjUKc9Ecb0rZ2DVfwP7SS680yqIFy41wMLHTBQ9A573qNb/aSCC7zWD3Z1WzoWuIrQ9G7J3FIJa6kXGNjT7KiuQwvxRpX64cwYIogOsnoxsUEGAHNm5yFaZtciKG5yw8gT1pMXi1IcSyIvidh45O/6+c3QhE=
