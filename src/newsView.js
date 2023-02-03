@@ -34,7 +34,10 @@ class NewsView {
           newStoryEl.className = "story";
           storyImage.src = story.fields.thumbnail;
           storyLink.href = story.webUrl;
+          // next two lines handle opening link in new tab. Second line is a security thing
           storyLink.target = 'target="_blank"';
+          storyLink.rel = "noopener noreferrer";
+
           storyLink.textContent = story.webTitle;
           newStoryEl.appendChild(storyImage);
           newStoryEl.appendChild(document.createElement("br"));
