@@ -4,6 +4,7 @@ class NewsModel {
   }
 
   getArticles() {
+    console.log(this.articles)
     return this.articles;
   }
 

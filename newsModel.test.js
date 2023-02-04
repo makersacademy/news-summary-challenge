@@ -8,9 +8,15 @@ describe("NewsModel", () => {
 
   it("sets news articles into the model", () => {
     const model = new Model;
-    const articles = ['This is a test story', 'This is a test story too'];
+    const articles = { 
+      response: { 
+        results: [
+          { headline: "Story 1" },
+          { headline: "Story 2" }
+        ]
+      }}
     model.setArticles(articles);
     expect(model.getArticles().length).toBe(2)
-    expect(model.getArticles()[0]).toBe('This is a test story')
+    expect(model.getArticles()[0].headline).toBe('Story 1')
   });
 });

@@ -41,6 +41,7 @@
           this.articles = [];
         }
         getArticles() {
+          console.log(this.articles);
           return this.articles;
         }
         setArticles(articles) {
