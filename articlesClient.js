@@ -6,7 +6,12 @@ class ArticlesClient{
       .then((response) => response.json())
       .then((articles) => {return articles})
   }
-
+  
+  searchArticles(word, fromDate, toDate){
+    return fetch(`https://content.guardianapis.com/search?from-date=${fromDate}&to-date=${toDate}&q=${word}&api-key=test`)
+    .then((response) => response.json())
+    .then((articles) => {return articles})
+  }
 }
 
 module.exports = ArticlesClient;

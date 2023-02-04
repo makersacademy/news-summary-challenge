@@ -62,4 +62,15 @@ describe('Articles Client', () => {
       expect(articles).toEqual(mockResponse)
     })
   })
+
+  it('returns selected articles based on phrase, from date, to date', () => {
+    const client = new ArticlesClient();
+    mockResponse = {article1 : 'Sports Article'}
+
+    fetch.mockResponseOnce(JSON.stringify(mockResponse))
+
+    client.searchArticles('Sports', '2020/01/01', '2023/02/04').then((articles) => {
+      expect(articles).toEqual(mockResponse)
+    })
+  })
 })
