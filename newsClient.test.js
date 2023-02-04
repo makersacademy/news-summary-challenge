@@ -2,8 +2,13 @@ const NewsClient = require("./newsClient");
 require("jest-fetch-mock").enableMocks();
 
 describe("NewsClient", () => {
+  let newsClient;
+
+  beforeEach(() => {
+    newsClient = new NewsClient();
+  });
+
   it("fetches the data from the Gueardian's server", async () => {
-    const newsClient = new NewsClient();
     fetch.mockResponseOnce(
       JSON.stringify({
         sectionId: "sport",
