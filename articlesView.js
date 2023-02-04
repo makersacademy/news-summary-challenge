@@ -5,10 +5,20 @@ class ArticlesView{
     // Select main container, search button
     this.mainContainerEl = document.querySelector('#main-container');
     this.searchButtonEl = document.querySelector('#search-button');
+    
     // Search params
     this.searchParam = document.querySelector('#search-param')
     this.fromDateSearch = document.querySelector('#fromDate-input')
     this.toDateSearch = document.querySelector('#toDate-input')
+
+    this.searchButtonEl.addEventListener('click', () => {
+      // Get the search parameters from the input fields in the html
+      const searchTerm = document.querySelector('#search-term').value
+      const fromDate = document.querySelector('#fromDate-input').value
+      const toDate = document.querySelector('toDate-input').value
+
+      this.searchArticles(searchTerm, fromDate, toDate)
+    })
   }
 
   displayArticles(){
@@ -24,6 +34,7 @@ class ArticlesView{
 
       // Sets article headline as link
       // Sets image as image url from JSON response
+      articleElement.className = 'article-div'
       linkElement.innerHTML = article[1]
       linkElement.setAttribute('href', article[0])
       img.src = article[2];
@@ -46,6 +57,8 @@ class ArticlesView{
         this.displayArticles();
       })
   }
+
+  
 }
 
 module.exports = ArticlesView;
