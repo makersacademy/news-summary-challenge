@@ -12,23 +12,37 @@ class ArticlesView{
   }
 
   displayArticles(){
+    // Get all articles loaded into the model
     const articles = this.model.getArticles();
 
     articles.forEach(article => {
+
+      // Create elements for the article div, link offsite and image
       const articleElement = document.createElement('div');
-      articleElement.innerText = article[1];
+      const linkElement = document.createElement('a')
       const img = document.createElement('img');
+
+      // Sets article headline as link
+      // Sets image as image url from JSON response
+      linkElement.innerHTML = article[1]
+      linkElement.setAttribute('href', article[0])
       img.src = article[2];
-      this.mainContainerEl.appendChild(img);
+    
+      // Adds each element to the main page
       this.mainContainerEl.append(articleElement);
+      articleElement.appendChild(img);
+      articleElement.appendChild(linkElement);
     })
   }
 
   getArticlesFromApi(){
+    // Calls method from Client to get most recent articles
     return this.client.loadArticles()
       .then((articles) => {
-        console.log(articles)
+        // When promise is resolved the needed elements are extracted
+        // by setArticles and stored in the model
         this.model.setArticles(articles);
+        // Display articles is then called to publish on site
         this.displayArticles();
       })
   }
