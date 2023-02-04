@@ -13,13 +13,32 @@ jest.mock('./newsClient');
 
 const newsModel = new Model();
 const mockClient = {
-  loadArticles: jest.fn().mockResolvedValue(['Man Bites Dog', 'Dog Bites Man'])
+  loadArticles: jest.fn().mockResolvedValue(
+    { 
+      response: { 
+        results: [
+          { id: 1,
+            fields: { headline: "Story 1", thumbnail: "link", webUrl: "link" }},
+          { id: 2,
+            fields: { headline: "Story 2", thumbnail: "link", webUrl: "link" }}
+        ]
+      }}
+  )
 }
 
 describe("NewsClient", () => {
   it("Creates a new div for an article when from model class", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
-    newsModel.setArticles(['Story 1', 'Story 2']);
+    const articles = { 
+      response: { 
+        results: [
+          { id: 1,
+            fields: { headline: "Story 1", thumbnail: "link", webUrl: "link" }},
+          { id: 2,
+            fields: { headline: "Story 2", thumbnail: "link", webUrl: "link" }}
+        ]
+      }}
+    newsModel.setArticles(articles);
     const newsView = new View(newsModel, mockClient);
     newsView.displayArticles();
     expect(document.querySelectorAll("div").length).toBe(3)
@@ -32,11 +51,34 @@ describe("NewsClient", () => {
     newsView.displayArticlesFromApi().then(() => {
       const articles = document.querySelectorAll(".article");
       expect(articles.length).toBe(2);
-      expect(articles[0].textContent).toBe("Man Bites Dog")
+      expect(articles[0].textContent).toContain("Story 1")
       done();
-    })
+    });
+  });
 
-  })
+  it("Resets and displays only the articles relative to a search when button clicked", (done) => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const mockClient = {
+      loadTopicArticles: jest.fn().mockResolvedValue(
+        { 
+          response: { 
+            results: [
+              { id: 1,
+                fields: { headline: "Tech story 1", thumbnail: "link", webUrl: "link" }},
+              { id: 2,
+                fields: { headline: "Tech story 2", thumbnail: "link", webUrl: "link" }}
+            ]
+          }}
+      )
+    }
+    const newsView = new View(newsModel, mockClient);
+    newsView.displayTopicArticles("topic").then(() => {
+      const articles = document.querySelectorAll(".article");
+      expect(articles.length).toBe(2);
+      expect(articles[0].textContent).toContain("Tech story 1")
+      done();
+    });
+  });
 })
 
 

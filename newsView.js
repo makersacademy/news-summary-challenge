@@ -4,9 +4,19 @@ class NewsView {
     this.client = client;
 
     this.mainContainerEl = document.querySelector("#main-container");
+    this.searchButton = document.querySelector("#news-search-button");
+
+    this.searchButton.addEventListener("click", () => {
+      const searchTerm = document.querySelector("#news-search-input").value;
+      document.querySelector("#news-search-input").value = "";
+      this.displayTopicArticles(searchTerm);
+    })
   }
 
   displayArticles() {
+    const existingArticles = document.querySelectorAll(".article");
+    existingArticles.forEach(story => story.remove());
+
     const articles = this.model.getArticles();
     articles.forEach((article) => {
       const divEl = document.createElement("div");
@@ -19,6 +29,10 @@ class NewsView {
       linkEl.innerHTML = "Read more";
       linkEl.href = article.webUrl;
       divEl.append(linkEl);
+      const standfirstEl = document.createElement("p");
+      standfirstEl.className = "standfirst";
+      standfirstEl.textContent = article.fields.standfirst;
+      divEl.append(standfirstEl);
       this.mainContainerEl.append(divEl);
     })
   }
@@ -26,6 +40,16 @@ class NewsView {
   displayArticlesFromApi() {
     return this.client.loadArticles()
       .then((articles) => {
+        this.model.reset();
+        this.model.setArticles(articles);
+        this.displayArticles();
+      })
+  }
+
+  displayTopicArticles(topic) {
+    return this.client.loadTopicArticles(topic)
+      .then((articles) => {
+        this.model.reset();
         this.model.setArticles(articles);
         this.displayArticles();
       })

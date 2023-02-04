@@ -15,15 +15,14 @@ describe("NewsClient", () => {
     })
   }); 
 
-  // it("Calls fetch and loads data on a topic", (done) => {
-  //   const client = new Client();
-  //   fetch.mockResponseOnce(JSON.stringify({
-  //     headline: "Dogs are great"
-  //   }))
-  //   let topic = 'Dogs';
-  //   client.loadTopicArticles(topic).then((data) => {
-  //     expect(data.headline).toEqual("Dogs are great");
-  //     done();
-  //   })
-  // }); 
+  it("Calls fetch and loads data on a topic", (done) => {
+    const client = new Client();
+    fetch.mockResponseOnce(JSON.stringify({
+      headline: "Dogs are great"
+    }))
+    client.loadTopicArticles("topic").then((data) => {
+      expect(data.headline).toEqual("Dogs are great");
+      done();
+    })
+  }); 
 });

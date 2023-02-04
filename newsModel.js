@@ -4,12 +4,15 @@ class NewsModel {
   }
 
   getArticles() {
-    console.log(this.articles)
     return this.articles;
   }
 
   setArticles(articles) {
     this.articles = articles.response.results;
+  }
+  
+  reset() {
+    this.articles = [];
   }
 }
 
