@@ -1,8 +1,11 @@
 class ArticlesModel{
+  // Stores URL to link to, Headline and Image URL in array of arrays
   constructor(){
     this.articles = []
   }
 
+  // Takes api response and extracts required 3 criteria and stores
+  // in this.articles
   setArticles(articles){
   let numberOfArticles = articles.response.results.length
   let counter = 0
@@ -14,11 +17,11 @@ class ArticlesModel{
       article.push(articles.response.results[counter].fields.thumbnail)
       this.articles.push(article)
       counter++
-      console.log(this.articles)
     }
   return this.articles
   }
 
+  // Returns all articles stored in this.articles
   getArticles(){
     return this.articles;
   }

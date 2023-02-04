@@ -4,6 +4,7 @@ const ArticlesView = require('./articlesView')
 
 const model = new ArticlesModel();
 const client = new ArticlesClient();
-const view = new ArticlesView(model, client)
+const view = new ArticlesView(model, client);
 
-console.log('Testing')
+console.log('Testing');
+view.getArticlesFromApi();

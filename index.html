@@ -4,10 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
+    <link rel="stylesheet" href="styles.css" />
     <title>My web page</title>
   </head>
   <body>
+    <h1>Guardian API</h1>
+
+    <input type="text" id="search-param" value="Enter a search phrase" />
+    <input type="date" id="fromDate-input" value="From Date" />
+    <input type="date" id="toDate-input" value="To Date" />
+
+    <button id="search-button">Search Guardian</button>
+    <div id="main-container"></div>
     <script type="text/javascript" src="bundle.js"></script>
   </body>
 </html>
