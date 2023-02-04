@@ -20,5 +20,8 @@
   "homepage": "https://github.com/amh4/newsapi-summary-project#readme",
   "dependencies": {
     "jest-environment-jsdom": "^29.4.1"
+  },
+  "devDependencies": {
+    "jest-fetch-mock": "^3.0.3"
   }
 }
