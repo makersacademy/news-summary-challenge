@@ -29,10 +29,6 @@ class NewsView {
       linkEl.innerHTML = "Read more";
       linkEl.href = article.webUrl;
       divEl.append(linkEl);
-      const standfirstEl = document.createElement("p");
-      standfirstEl.className = "standfirst";
-      standfirstEl.textContent = article.fields.standfirst;
-      divEl.append(standfirstEl);
       this.mainContainerEl.append(divEl);
     })
   }
