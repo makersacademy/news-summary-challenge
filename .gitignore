@@ -1,6 +1,7 @@
 node_modules
 bundle.js
 apiKey.js
+apiToken.js
 apiKey.env
 jsconfig.json
 coverage

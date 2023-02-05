@@ -1,6 +1,7 @@
 const NewsClient = require('../src/newsClient');
 require('jest-fetch-mock').enableMocks();
 const apiData = require('../mock/mockApiData.js');
+const API_TOKEN = require('../apiToken.js');
 
 describe(NewsClient, () => {
   let newsClient;
@@ -121,6 +122,36 @@ describe(NewsClient, () => {
         (error) => {
           expect(error).toBe('Oops, something went wrong!');
           done();
+        }
+      );
+    });
+  });
+
+  describe('summariseNews', (done) => {
+    it('should provide a summary of an article handed to it', () => {
+      fetch.mockResponseOnce(
+        JSON.stringify({
+          summary_text:
+            'Scottish trio Young Fathers have spent the past decade fusing industrial bass with rap, soaring gospel choruses and thundering drums. Theirs is heavy music worn with a melodic lightness, a potent combination that won them the 2014 Mercury prize for their debut album, Dead. After 2018’s Cocoa Sugar, which produced some of the group’s most accessible work in the yearning single In My View, their fourth album is a joyful career highlight. Over 10 tracks, Heavy Heavy retains the band’s urgent energy – the yelps and driving drums of I Saw and sub-bass breakbeats of Shoot Me Down – but that vitality works in service',
+        })
+      );
+
+      newsClient.summariseText(
+        'Scottish trio Young Fathers have spent the past decade fusing industrial bass with rap, soaring gospel choruses and thundering drums. Theirs is heavy music worn with a melodic lightness, a potent combination that won them the 2014 Mercury prize for their debut album, Dead. After 2018’s Cocoa Sugar, which produced some of the group’s most accessible work in the yearning single In My View, their fourth album is a joyful career highlight. Over 10 tracks, Heavy Heavy retains the band’s urgent energy – the yelps and driving drums of I Saw and sub-bass breakbeats of Shoot Me Down – but that vitality works in service to an overall, infectious optimism. The high-speed hand claps of Drum bolster a refrain of “hear the beat of the drums and go numb/ have fun”, while Tell Somebody and Ululation explode into a collective show of free vocal power. Rather than inspire a moshpit, the album’s liveliness provokes a different kind of movement: dance. Although the brief runtime of songs such as Rice and Sink Or Swim might feel sketch-like, every second is packed with an invitation to stomp feet, clap hands and lose yourself in the cacophony.',
+        (data) => {
+          expect(data.summary_text).toBe(
+            'Scottish trio Young Fathers have spent the past decade fusing industrial bass with rap, soaring gospel choruses and thundering drums. Theirs is heavy music worn with a melodic lightness, a potent combination that won them the 2014 Mercury prize for their debut album, Dead. After 2018’s Cocoa Sugar, which produced some of the group’s most accessible work in the yearning single In My View, their fourth album is a joyful career highlight. Over 10 tracks, Heavy Heavy retains the band’s urgent energy – the yelps and driving drums of I Saw and sub-bass breakbeats of Shoot Me Down – but that vitality works in service'
+          );
+          expect(fetch).toHaveBeenCalledWith(
+            'https://api-inference.huggingface.co/models/google/pegasus-newsroom',
+            {
+              method: 'POST',
+              headers: { Authorization: `Bearer ${API_TOKEN}` },
+              body: JSON.stringify({
+                text: 'Scottish trio Young Fathers have spent the past decade fusing industrial bass with rap, soaring gospel choruses and thundering drums. Theirs is heavy music worn with a melodic lightness, a potent combination that won them the 2014 Mercury prize for their debut album, Dead. After 2018’s Cocoa Sugar, which produced some of the group’s most accessible work in the yearning single In My View, their fourth album is a joyful career highlight. Over 10 tracks, Heavy Heavy retains the band’s urgent energy – the yelps and driving drums of I Saw and sub-bass breakbeats of Shoot Me Down – but that vitality works in service to an overall, infectious optimism. The high-speed hand claps of Drum bolster a refrain of “hear the beat of the drums and go numb/ have fun”, while Tell Somebody and Ululation explode into a collective show of free vocal power. Rather than inspire a moshpit, the album’s liveliness provokes a different kind of movement: dance. Although the brief runtime of songs such as Rice and Sink Or Swim might feel sketch-like, every second is packed with an invitation to stomp feet, clap hands and lose yourself in the cacophony.',
+              }),
+            }
+          );
         }
       );
     });

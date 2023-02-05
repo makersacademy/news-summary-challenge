@@ -3,6 +3,7 @@ class NewsView {
     this.newsModel = newsModel;
     this.newsClient = newsClient;
     this.mainContainer = document.querySelector('#main-container');
+    this.overlay = document.querySelector('#overlay');
     this.addEventListeners();
   }
 
@@ -10,9 +11,9 @@ class NewsView {
     this.#clearStories();
     const news = this.newsModel.getNews();
 
-    news.forEach((article) => {
-      const { thumbnail, headline, webUrl, standfirst } = article;
-      const html = `<a class="image_link" href="${webUrl}" ><img class="news_thumbnail" src=${thumbnail}></a>
+    news.forEach((article, index) => {
+      const { thumbnail, headline, webUrl, standfirst, bodyText } = article;
+      const html = `<a class="image_link" id="img-link-${index}" href="#summary"><img class="news_thumbnail" src=${thumbnail} /></a>
       <div class="content_background">
       <a class="headline_link" href="${webUrl}" ><p class="news_headline">${headline}</p></a>
       <div class="standfirst">${standfirst}</div></div>`;
@@ -20,6 +21,31 @@ class NewsView {
       newsItem.className = 'news';
       newsItem.innerHTML = html;
       this.mainContainer.append(newsItem);
+      const imgLink = document.querySelector(`#img-link-${index}`);
+      imgLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        this.showOverlay(article);
+      });
+    });
+  }
+
+  async showOverlay(article) {
+    this.overlay.style.display = 'block';
+    this.overlay.style.visibility = 'visible';
+    this.overlay.style.opacity = '1';
+    const summaryText = await this.generateNewsSummary(article.bodyText);
+    this.overlay.innerHTML = `
+    <div class="popup">
+    <img src="${article.thumbnail}" alt="Article Image" class="article-img">
+    <p class="article-summary">${summaryText[0].summary_text}</p>
+    <a href="${article.webUrl}" id="full-article-link">Read Full Article</a>
+    <a href="#" id="close-button">Close</a>
+    </div>`;
+
+    const closeButton = this.overlay.querySelector('#close-button');
+    closeButton.addEventListener('click', () => {
+      this.overlay.style.visibility = 'hidden';
+      this.overlay.style.opacity = '0';
     });
   }
 
@@ -36,14 +62,20 @@ class NewsView {
     );
   }
 
+  async generateNewsSummary(bodyText) {
+    const summaryText = await this.newsClient.summariseText(bodyText);
+    return summaryText;
+  }
+
   mapNewsData(data) {
     const results = data.response.results;
     return results.map(
-      ({ webUrl, fields: { headline, thumbnail, standfirst } }) => ({
+      ({ webUrl, fields: { headline, thumbnail, standfirst, bodyText } }) => ({
         webUrl,
         headline,
         thumbnail,
         standfirst,
+        bodyText,
       })
     );
   }

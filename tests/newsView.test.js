@@ -67,6 +67,79 @@ describe('NewsView', () => {
     });
   });
 
+  describe('showOverlay', () => {
+    let article;
+    let overlay;
+    let generateNewsSummarySpy;
+    let closeButton;
+
+    beforeEach(() => {
+      overlay = {
+        style: {
+          display: 'none',
+          visibility: 'hidden',
+          opacity: '0',
+        },
+        innerHTML: '',
+        querySelector: jest.fn().mockReturnValue({
+          addEventListener: jest.fn(),
+        }),
+      };
+      article = {
+        thumbnail: 'image.jpg',
+        headline: 'Article Headline',
+        webUrl: 'https://article.com',
+        standfirst: 'Article Standfirst',
+        bodyText: 'Article Body Text',
+      };
+      generateNewsSummarySpy = jest.spyOn(
+        NewsView.prototype,
+        'generateNewsSummary'
+      );
+
+      generateNewsSummarySpy.mockImplementation(() =>
+        Promise.resolve([{ summary_text: 'Summary Text' }])
+      );
+      newsView.overlay = overlay;
+      closeButton = { addEventListener: jest.fn() };
+      overlay.querySelector.mockReturnValue(closeButton);
+
+      newsView.showOverlay(article);
+    });
+    afterEach(() => {
+      generateNewsSummarySpy.mockReset();
+    });
+
+    it('should display the overlay', () => {
+      expect(overlay.style.display).toBe('block');
+      expect(overlay.style.visibility).toBe('visible');
+      expect(overlay.style.opacity).toBe('1');
+    });
+
+    it('should set the innerHTML of the overlay', () => {
+      expect(overlay.innerHTML).toContain(`<img src="${article.thumbnail}"`);
+      expect(overlay.innerHTML).toContain(
+        `<p class="article-summary">Summary Text</p>`
+      );
+      expect(overlay.innerHTML).toContain(
+        `<a href="${article.webUrl}" id="full-article-link">Read Full Article</a>`
+      );
+      expect(overlay.innerHTML).toContain(
+        `<a href="#" id="close-button">Close</a>`
+      );
+    });
+
+    it('should call generateNewsSummary with the bodyText of the article', () => {
+      expect(generateNewsSummarySpy).toHaveBeenCalledWith(article.bodyText);
+    });
+
+    it('should add a click event listener to the close button', () => {
+      expect(closeButton.addEventListener).toHaveBeenCalledWith(
+        'click',
+        expect.any(Function)
+      );
+    });
+  });
   describe('displayNewsFromApi', () => {
     it('adds API data to the model', () => {
       newsClient.loadNews.mockImplementation((callback) => {
@@ -130,6 +203,14 @@ describe('NewsView', () => {
       expect(newsView.displayError).toHaveBeenCalledWith(
         'Oops - API appears to be down!'
       );
+    });
+  });
+
+  describe('generateNewsSummary', () => {
+    it('should call summariseText method of the newsClient', async () => {
+      newsClient.summariseText = jest.fn();
+      await newsView.generateNewsSummary('Summary Text');
+      expect(newsClient.summariseText).toHaveBeenCalledWith('Summary Text');
     });
   });
 
