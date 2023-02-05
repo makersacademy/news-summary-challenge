@@ -83,6 +83,17 @@
   border-radius: 8px;
 }
 
+.error-message {
+  background-color: #e50da8;
+  color: #10035b;
+  padding: 50px;
+  margin: 20px;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 8px;
+  width: 80%;
+}
+
 .article {
   background-color: #f7d990;
   border-radius: 8px;

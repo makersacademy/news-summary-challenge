@@ -21,11 +21,15 @@
         loadArticles() {
           return fetch(`https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json()).then((data) => {
             return data;
+          }).catch((error) => {
+            return error;
           });
         }
         loadTopicArticles(topic) {
           return fetch(`https://content.guardianapis.com/search?q=${topic}&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`).then((response) => response.json()).then((data) => {
             return data;
+          }).catch((error) => {
+            return error;
           });
         }
       };
@@ -94,14 +98,24 @@
             this.model.reset();
             this.model.setArticles(articles);
             this.displayArticles();
-          });
+          }).catch(() => this.displayError());
         }
         displayTopicArticles(topic) {
           return this.client.loadTopicArticles(topic).then((articles) => {
             this.model.reset();
             this.model.setArticles(articles);
             this.displayArticles();
-          });
+          }).catch(() => this.displayError());
+        }
+        displayError() {
+          const existingArticles = document.querySelectorAll(".article");
+          existingArticles.forEach((story) => story.remove());
+          const existingErrorMessages = document.querySelectorAll(".error-message");
+          existingErrorMessages.forEach((message) => message.remove());
+          const errorEl = document.createElement("div");
+          errorEl.textContent = "Oopsy daisy, something's gone amiss!";
+          errorEl.className = "error-message";
+          this.mainContainerEl.append(errorEl);
         }
       };
       module.exports = NewsView;

@@ -41,7 +41,7 @@ class NewsView {
         this.model.reset();
         this.model.setArticles(articles);
         this.displayArticles();
-      })
+      }).catch(() => this.displayError())
   }
 
   displayTopicArticles(topic) {
@@ -50,7 +50,18 @@ class NewsView {
         this.model.reset();
         this.model.setArticles(articles);
         this.displayArticles();
-      })
+      }).catch(() => this.displayError())
+  }
+
+  displayError() {
+    const existingArticles = document.querySelectorAll(".article");
+    existingArticles.forEach(story => story.remove());
+    const existingErrorMessages = document.querySelectorAll(".error-message");
+    existingErrorMessages.forEach(message => message.remove())
+    const errorEl = document.createElement("div");
+    errorEl.textContent = "Oopsy daisy, something's gone amiss!";
+    errorEl.className = "error-message";
+    this.mainContainerEl.append(errorEl)
   }
 }
 
