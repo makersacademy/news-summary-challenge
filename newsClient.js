@@ -1,5 +1,5 @@
 const apiKey = require("./apiKey");
-const apiUrl = `https://content.guardianapis.com/search?api-key=${apiKey}`;
+const apiUrl = `https://content.guardianapis.com/search?q=America&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`;
 
 class NewsClient {
   fetchNews(onSuccess, onError) {
