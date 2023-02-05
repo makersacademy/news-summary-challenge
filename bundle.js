@@ -76,7 +76,9 @@
           articles.forEach((article) => {
             const divEl = document.createElement("div");
             divEl.className = "article";
-            divEl.textContent = article.fields.headline;
+            const paraEl = document.createElement("p");
+            paraEl.textContent = article.fields.headline;
+            divEl.append(paraEl);
             const imageEl = document.createElement("img");
             imageEl.src = article.fields.thumbnail;
             divEl.append(imageEl);
@@ -84,10 +86,6 @@
             linkEl.innerHTML = "Read more";
             linkEl.href = article.webUrl;
             divEl.append(linkEl);
-            const standfirstEl = document.createElement("p");
-            standfirstEl.className = "standfirst";
-            standfirstEl.textContent = article.fields.standfirst;
-            divEl.append(standfirstEl);
             this.mainContainerEl.append(divEl);
           });
         }

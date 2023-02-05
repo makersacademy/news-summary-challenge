@@ -21,7 +21,9 @@ class NewsView {
     articles.forEach((article) => {
       const divEl = document.createElement("div");
       divEl.className = "article";
-      divEl.textContent = article.fields.headline;
+      const paraEl = document.createElement("p");
+      paraEl.textContent = article.fields.headline;
+      divEl.append(paraEl);
       const imageEl = document.createElement("img")
       imageEl.src = article.fields.thumbnail;
       divEl.append(imageEl);
