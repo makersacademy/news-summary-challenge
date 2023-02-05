@@ -1,4 +1,4 @@
-const NewsClient = require('../src/NewsClient');
+const NewsClient = require('../src/newsClient');
 require('jest-fetch-mock').enableMocks();
 const apiData = require('../mock/mockApiData.js');
 

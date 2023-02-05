@@ -1,5 +1,4 @@
-require('dotenv').config();
-const API_KEY = process.env.API_KEY;
+const API_KEY = require('../apiKey.js');
 
 class NewsClient {
   loadNews(callback, errorCallback) {

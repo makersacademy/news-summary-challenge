@@ -13,9 +13,9 @@ class NewsView {
     news.forEach((article) => {
       const { thumbnail, headline, webUrl, standfirst } = article;
       const html = `<a class="image_link" href="${webUrl}" ><img class="news_thumbnail" src=${thumbnail}></a>
-                    <div class="content_background">
-                    <a class="headline_link" href="${webUrl}" ><p class="news_headline">${headline}</p></a>
-                    <div class="standfirst">${standfirst}</div></div>`;
+      <div class="content_background">
+      <a class="headline_link" href="${webUrl}" ><p class="news_headline">${headline}</p></a>
+      <div class="standfirst">${standfirst}</div></div>`;
       const newsItem = document.createElement('div');
       newsItem.className = 'news';
       newsItem.innerHTML = html;
@@ -33,6 +33,18 @@ class NewsView {
       () => {
         this.displayError('Oops - API appears to be down!');
       }
+    );
+  }
+
+  mapNewsData(data) {
+    const results = data.response.results;
+    return results.map(
+      ({ webUrl, fields: { headline, thumbnail, standfirst } }) => ({
+        webUrl,
+        headline,
+        thumbnail,
+        standfirst,
+      })
     );
   }
 
@@ -69,18 +81,6 @@ class NewsView {
     errorMessage.className = 'error';
     errorMessage.textContent = error;
     this.mainContainer.append(errorMessage);
-  }
-
-  mapNewsData(data) {
-    const results = data.response.results;
-    return results.map(
-      ({ webUrl, fields: { headline, thumbnail, standfirst } }) => ({
-        webUrl,
-        headline,
-        thumbnail,
-        standfirst,
-      })
-    );
   }
 
   addEventListeners() {
