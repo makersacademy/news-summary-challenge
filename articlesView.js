@@ -6,27 +6,22 @@ class ArticlesView{
     this.mainContainerEl = document.querySelector('#main-container');
     this.searchButtonEl = document.querySelector('#search-button');
     
-    // Search params
-    this.searchParam = document.querySelector('#search-param')
-    this.fromDateSearch = document.querySelector('#fromDate-input')
-    this.toDateSearch = document.querySelector('#toDate-input')
-
     this.searchButtonEl.addEventListener('click', () => {
       // Get the search parameters from the input fields in the html
-      const searchTerm = document.querySelector('#search-term').value
-      const fromDate = document.querySelector('#fromDate-input').value
-      const toDate = document.querySelector('toDate-input').value
+      this.searchTerm = document.querySelector('#search-term').value
+      // this.fromDate = document.querySelector('#fromDate-input').value
+      // this.toDate = document.querySelector('#toDate-input').value
 
-      this.searchArticles(searchTerm, fromDate, toDate)
+      console.log(this.searchTerm)
+      this.searchArticles(this.searchTerm)
+      this.displayArticles()
     })
   }
 
   displayArticles(){
     // Get all articles loaded into the model
     const articles = this.model.getArticles();
-
     articles.forEach(article => {
-
       // Create elements for the article div, link offsite and image
       const articleElement = document.createElement('div');
       const linkElement = document.createElement('a')
@@ -38,7 +33,7 @@ class ArticlesView{
       linkElement.innerHTML = article[1]
       linkElement.setAttribute('href', article[0])
       img.src = article[2];
-    
+
       // Adds each element to the main page
       this.mainContainerEl.append(articleElement);
       articleElement.appendChild(img);
@@ -53,12 +48,22 @@ class ArticlesView{
         // When promise is resolved the needed elements are extracted
         // by setArticles and stored in the model
         this.model.setArticles(articles);
+
         // Display articles is then called to publish on site
         this.displayArticles();
       })
   }
 
-  
+  searchArticles(searchTerm){
+    console.log('search Articles called')
+    return this.client.searchArticles(searchTerm)
+      .then((articles) => {
+        console.log(articles)
+        this.model.setArticles(articles);
+        this.displayArticles();
+        console.log(this.model.getArticles())
+      })
+    }
 }
 
 module.exports = ArticlesView;
