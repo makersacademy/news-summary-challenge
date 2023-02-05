@@ -29,7 +29,17 @@ class NewsView {
     news.forEach((singleNews) => {
       const newsEl = document.createElement("div");
       newsEl.className = "news";
-      newsEl.textContent = singleNews.webTitle;
+
+      const newsImg = document.createElement("img");
+      newsImg.src = singleNews.fields.thumbnail;
+
+      const newsTitle = document.createElement("h2");
+      newsTitle.textContent = singleNews.webTitle;
+
+      const newsSection = document.createElement("h3");
+      newsSection.textContent = singleNews.sectionName;
+
+      newsEl.append(newsImg, newsTitle, newsSection);
       this.mainContainerEl.append(newsEl);
     });
   }

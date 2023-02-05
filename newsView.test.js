@@ -28,10 +28,18 @@ describe("NewsView", () => {
           results: [
             {
               webTitle: "Wales v Ireland: Six Nations 2023 – live",
+              fields: {
+                thumbnail:
+                  "https://media.guim.co.uk/cde7e745cf818ac1b08ad1006a9a5d4b8e3e91ce/0_201_3000_1800/500.jpg",
+              },
             },
             {
               webTitle:
                 "US shoots down suspected Chinese spy balloon over east coast",
+              fields: {
+                thumbnail:
+                  "https://media.guim.co.uk/f2e10a5f40f1fa3b9e0d633aaab601fef6932300/230_0_7592_4557/500.jpg",
+              },
             },
           ],
         },
@@ -42,9 +50,9 @@ describe("NewsView", () => {
 
     expect(document.querySelectorAll("div").length).toBe(3);
     expect(document.querySelectorAll("div.news").length).toEqual(2);
-    expect(document.querySelectorAll("div.news")[0].textContent).toEqual(
-      "Wales v Ireland: Six Nations 2023 – live"
-    );
+    const news = document.querySelectorAll("div.news")[0];
+    const title = news.querySelector("h2");
+    expect(title.innerHTML).toEqual("Wales v Ireland: Six Nations 2023 – live");
   });
 
   it("Append an error message to the main container", () => {
