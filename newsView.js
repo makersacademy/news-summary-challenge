@@ -7,6 +7,12 @@ class NewsView {
     this.newsClient = newsClient;
 
     this.mainContainerEl = document.querySelector("#main-container");
+
+    this.refreshButton = document.querySelector("#refresh-button");
+
+    this.refreshButton.addEventListener("click", () => {
+      this.displayNewsFromApi();
+    });
   }
 
   displayNewsFromApi() {
@@ -27,8 +33,11 @@ class NewsView {
     const news = this.newsModel.get();
 
     news.forEach((singleNews) => {
-      const newsEl = document.createElement("div");
+      const newsEl = document.createElement("a");
       newsEl.className = "news";
+      newsEl.href = singleNews.webUrl;
+
+      const newsDiv = document.createElement("div");
 
       const newsImg = document.createElement("img");
       newsImg.src = singleNews.fields.thumbnail;
@@ -39,7 +48,8 @@ class NewsView {
       const newsSection = document.createElement("h3");
       newsSection.textContent = singleNews.sectionName;
 
-      newsEl.append(newsImg, newsTitle, newsSection);
+      newsDiv.append(newsImg, newsTitle, newsSection);
+      newsEl.append(newsDiv);
       this.mainContainerEl.append(newsEl);
     });
   }
@@ -53,14 +63,3 @@ class NewsView {
 }
 
 module.exports = NewsView;
-
-// display() {
-//   const data = this.model.getRepoInfo();
-
-//   const repoName = document.querySelector('#repo-name');
-//   repoName.textContent = data.full_name;
-//   const repoDescription = document.querySelector('#repo-description');
-//   repoDescription.textContent = data.description;
-//   const repoImg = document.querySelector('#repo-image');
-//   repoImg.src = data.organization.avatar_url;
-// }
