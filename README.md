@@ -16,6 +16,7 @@ This app grabs all the headlines from the [Guardian's Open Platform API](https:/
 - [x] User can filter by sections using links at the top of the page
 - [x] User can see a relevant picture to illustrate each news article
 - [x] A 'standfirst' summary of each article is shown alongside each story
+- [x] Rolling over a story with the mouse cursor will trigger a zoom animation
 - [x] Clicking on an image will provide an AI generated news summary in an overlay
 - [x] Clicking a news article title links to the original article
 - [x] Users can specify a search query on the page and get articles matching this search
