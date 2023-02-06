@@ -38,7 +38,7 @@ This app grabs all the headlines from the [Guardian's Open Platform API](https:/
 2. Install dependencies with `npm install`
 3. Sign up for a [Guardian Open Platform](https://huggingface.co/google/pegasus-newsroom) account to obtain an API key
 4. Sign up for a [HuggingFace](https://huggingface.co/) account and obtain an API key
-5. Create an `apiKey.env`file in the root directory to export your API keys
+5. Add your API keys to the .env file in the repository and uncomment the lines
 6. Use `npm run build` to run the bundler in watch mode.
 7. Open the index.html file in your browser
 8. Run tests with `npm test`.
