@@ -1,7 +1,7 @@
 const NewsClient = require('../src/newsClient');
 require('jest-fetch-mock').enableMocks();
 const apiData = require('../mock/mockApiData.js');
-const API_TOKEN = require('../apiToken.js');
+const API_TOKEN = process.env.API_TOKEN;
 
 describe(NewsClient, () => {
   let newsClient;
