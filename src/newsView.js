@@ -21,11 +21,13 @@ class NewsView {
       newsItem.className = 'news';
       newsItem.innerHTML = html;
       this.mainContainer.append(newsItem);
-      const imgLink = document.querySelector(`#img-link-${index}`);
-      imgLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        this.showOverlay(article);
-      });
+
+      document
+        .querySelector(`#img-link-${index}`)
+        .addEventListener('click', (event) => {
+          event.preventDefault();
+          this.showOverlay(article);
+        });
     });
   }
 
