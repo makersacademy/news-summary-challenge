@@ -41,7 +41,7 @@ describe("NewsClient", () => {
     newsModel.setArticles(articles);
     const newsView = new View(newsModel, mockClient);
     newsView.displayArticles();
-    expect(document.querySelectorAll("div").length).toBe(3)
+    expect(document.querySelectorAll("div").length).toBe(4)
     expect(document.querySelectorAll(".article").length).toBe(2)
   });
 
