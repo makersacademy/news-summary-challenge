@@ -1,3 +1,4 @@
+[![Build Status](https://app.travis-ci.com/josephburgess/news-summary-challenge.svg?branch=main)](https://app.travis-ci.com/josephburgess/news-summary-challenge) [![Wallaby.js](https://img.shields.io/badge/wallaby.js-configured-green.svg)]
 # News challenge
 
 ## Introduction
