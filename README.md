@@ -10,15 +10,6 @@ This app grabs all the headlines from the [Guardian's Open Platform API](https:/
 
 ![Demo Gif](./images/Demo-gif.gif)
 
-## Technologies Used
-
-- HTML
-- CSS
-- JavaScript
-- `Node.js`
-- `Jest`
-- `esbuild`
-
 ## Features
 
 - [x] User can see all of today's headlines in one place
@@ -30,14 +21,25 @@ This app grabs all the headlines from the [Guardian's Open Platform API](https:/
 - [x] Users can specify a search query on the page and get articles matching this search
 - [x] Webpage is fully responsive and scales to screen size
 
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- `Node.js`
+- `Jest`
+- `esbuild`
+
 ## Installation Instructions
 
 1. Clone this repo
 2. Install dependencies with `npm install`
-3. Create an `apiKey.js`file which exports your API Key
-3. Use `npm run build` to run the bundler in watch mode.
-4. Open the index.html file in your browser
-5. Run tests with `npm test`.
+3. Sign up for a [Guardian Open Platform](https://huggingface.co/google/pegasus-newsroom) account to obtain an API key
+4. Sign up for a [HuggingFace](https://huggingface.co/) account and obtain an API key
+5. Create an `apiKey.env`file in the root directory to export your API keys
+6. Use `npm run build` to run the bundler in watch mode.
+7. Open the index.html file in your browser
+8. Run tests with `npm test`.
 
 ## Test Coverage
 
