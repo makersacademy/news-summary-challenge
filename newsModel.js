@@ -7,10 +7,10 @@ class NewsModel {
 
 
   getStoryData() {
-    if (!this.storyData.response) {
-      return [];
-    }
-    return this.storyData.response.results;
+    // if (!this.storyData.response) {
+    //   return [];
+    // }
+    return this.storyData
     // return this.storyData.response.results;
   }
 
@@ -19,25 +19,5 @@ class NewsModel {
   }
 
 }
-
-// // notesModel.js
-
-// class NotesModel {
-//   constructor() {
-//      this.notes = [];
-//   }
-
-//   getNotes() {
-//      return this.notes;
-//   }
-
-//   addNote(note) {
-//      this.notes.push(note);
-//   }
-
-//   reset() {
-//      this.notes = [];
-//   }
-// }
 
 module.exports = NewsModel;

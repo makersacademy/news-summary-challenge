@@ -1,14 +1,16 @@
-////TEMPLATE/////
 
-
-**
+/**
  * @jest-environment jsdom
  */
 
 const fs = require('fs');
-const View = require('./view');
+const NewsView = require('./newsView');
+const NewsModel = require('./newsModel');
+require('jest-fetch-mock').enableMocks()
+// jest.mock('./newsClient');
 
-describe('A test for my web page', () => {
+
+describe('tests NotesView', () => {
 
   // We can use the beforeEach() hook 
   // to set the jest `document` HTML before each test
@@ -16,19 +18,20 @@ describe('A test for my web page', () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
   });
 
-  it('displays a title', () => {
+  it('displays the news stories', () => {
     // 1. Arrange - instantiate our View class
-    const view = new View();
-
-    // 2. Act - call any method that modifies the page
-    // this method `displayTitle` would dynamically
-    // set a <h1> title on the page with the given content
-    view.displayTitle('My amazing website');
-
-    // 3. Assert - we assert the page contains what it should.
-    // Usually, you will use `.querySelector` (and friends)
-    // here, and assert the text content, the number of elements,
-    // or other things that make sense for your test.
-    expect(document.querySelectorAll('h1').textContent).toBe('My amazing website');
+    const myModel = new NewsModel();
+    const myView = new NewsView(myModel);
+ 
+    myModel.setStoryData({ 
+      webUrl: 'https://www.theguardian.com/australia-news/live/2023/feb/06/australia-politics-live-parliament-voice-anthony-albanese-peter-dutton-question-time-budget-cost-of-living-power-gas-prices-vic-nsw-qld', 
+      fields: { 
+        headline: 'Australia politics live: Penny Wong says government would ensure "sovereignty is protected" if spy balloon spotted', 
+        thumbnail: 'https://media.guim.co.uk/627c7c7b33e63f6c18488bf04f9bc728d1284e3a/0_256_3840_2304/500.jpg',  
+      }
+    })
+    myView.displayNews();
+    console.log(myModel.getStoryData()[0].fields.headline);
+    expect(document.querySelector('#story').textContent).toBe('Australia politics live: Penny Wong says government would ensure "sovereignty is protected" if spy balloon spotted');
   });
 });
