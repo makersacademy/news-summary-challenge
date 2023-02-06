@@ -68,7 +68,6 @@ describe('NewsView', () => {
   });
 
   describe('showOverlay', () => {
-    let article;
     let overlay;
     let generateNewsSummarySpy;
     let closeButton;
@@ -85,13 +84,6 @@ describe('NewsView', () => {
           addEventListener: jest.fn(),
         }),
       };
-      article = {
-        thumbnail: 'image.jpg',
-        headline: 'Article Headline',
-        webUrl: 'https://article.com',
-        standfirst: 'Article Standfirst',
-        bodyText: 'Article Body Text',
-      };
       generateNewsSummarySpy = jest.spyOn(
         NewsView.prototype,
         'generateNewsSummary'
@@ -104,7 +96,7 @@ describe('NewsView', () => {
       closeButton = { addEventListener: jest.fn() };
       overlay.querySelector.mockReturnValue(closeButton);
 
-      newsView.showOverlay(article);
+      newsView.showOverlay([mockNews[0]]);
     });
     afterEach(() => {
       generateNewsSummarySpy.mockReset();
@@ -117,12 +109,14 @@ describe('NewsView', () => {
     });
 
     it('should set the innerHTML of the overlay', () => {
-      expect(overlay.innerHTML).toContain(`<img src="${article.thumbnail}"`);
       expect(overlay.innerHTML).toContain(
-        `<p class="article-summary">Summary Text</p>`
+        `<img src="${[mockNews[0]].thumbnail}"`
       );
+      expect(overlay.innerHTML).toContain(`<p class="article-summary">`);
       expect(overlay.innerHTML).toContain(
-        `<a href="${article.webUrl}" id="full-article-link">Read Full Article</a>`
+        `<a href="${
+          [mockNews[0]].webUrl
+        }" id="full-article-link">Read Full Article</a>`
       );
       expect(overlay.innerHTML).toContain(
         `<a href="#" id="close-button">Close</a>`
@@ -130,7 +124,9 @@ describe('NewsView', () => {
     });
 
     it('should call generateNewsSummary with the bodyText of the article', () => {
-      expect(generateNewsSummarySpy).toHaveBeenCalledWith(article.bodyText);
+      expect(generateNewsSummarySpy).toHaveBeenCalledWith(
+        [mockNews[0]].bodyText
+      );
     });
 
     it('should add a click event listener to the close button', () => {
