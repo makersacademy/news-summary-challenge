@@ -57,7 +57,7 @@ describe('NewsView', () => {
       });
     });
 
-    test("#clearStories should remove all elements with class 'news'", () => {
+    it('should remove all news elements with #clearStories', () => {
       const newsItem = document.createElement('div');
       newsItem.className = 'news';
       newsView.mainContainer.append(newsItem);
