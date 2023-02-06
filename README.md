@@ -1,11 +1,13 @@
-# News challenge
+# Rachel Newby's News challenge
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in
-  your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull
-  request.
-* You must submit a pull request to this repo with your code by 10am Monday morning.
+* Web application which links to The Guardian's API and pulls the latest stories, including headline, link and image. 
+* Fully responsive design, to work across desktop, mobile and tablet devices. 
+* Search functionality incldued, allowing the user to search for stories on a topic of their choice; those stories will load and replace the latest stories. 
+
+## Yet to do:
+* Add animation, or design which is appealing!
+* Testing the catches and display error function.
+* Adding a home button to return the user to the latest stories of the day. 
 
 ## Challenge
 
