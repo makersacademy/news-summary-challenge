@@ -14,17 +14,22 @@ class ArticlesView{
 
       console.log(this.searchTerm)
       this.searchArticles(this.searchTerm)
-      this.displayArticles()
+      document.getElementById('search-term').value = ""
     })
   }
 
   displayArticles(){
+    const existingArticles = document.querySelectorAll('.article-div')
+    existingArticles.forEach((element) => {
+      element.remove();
+    })
+
     // Get all articles loaded into the model
     const articles = this.model.getArticles();
     articles.forEach(article => {
       // Create elements for the article div, link offsite and image
       const articleElement = document.createElement('div');
-      const linkElement = document.createElement('a')
+      const linkElement = document.createElement('a');
       const img = document.createElement('img');
 
       // Sets article headline as link
@@ -48,7 +53,6 @@ class ArticlesView{
         // When promise is resolved the needed elements are extracted
         // by setArticles and stored in the model
         this.model.setArticles(articles);
-
         // Display articles is then called to publish on site
         this.displayArticles();
       })
@@ -58,7 +62,7 @@ class ArticlesView{
     console.log('search Articles called')
     return this.client.searchArticles(searchTerm)
       .then((articles) => {
-        console.log(articles)
+        this.model.resetArticles()
         this.model.setArticles(articles);
         this.displayArticles();
         console.log(this.model.getArticles())

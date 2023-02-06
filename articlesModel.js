@@ -25,6 +25,10 @@ class ArticlesModel{
   getArticles(){
     return this.articles;
   }
+
+  resetArticles(){
+    this.articles = [];
+  }
 }
 
 module.exports = ArticlesModel;
