@@ -1,4 +1,4 @@
-# News challenge
+# News Challenge
 
 ## Brief
 
