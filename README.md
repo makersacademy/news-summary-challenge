@@ -1,5 +1,44 @@
 # News challenge
 
+## Brief
+
+This is a collection of the latest articles from The Gaurdian, with a search bar enabling the user to find articles more relevent to their interests. Each headline includes a link to the original article and is accompanied by a thumbnail. 
+
+## Running the App
+
+Run the commands:
+
+```
+git clone https://github.com/marinapapap/news-summary-challenge.git
+cd news-summary-challenge
+open index.html
+```
+This will open the app in your browser, where you will now be able to use it.
+
+## Testing the App
+
+Run this command in the main directory:
+
+```
+jest
+```
+
+## Technology
+
+- plain Javascript, HTML and CSS    
+- Jest to write the tests 
+- [`jest-fetch-mock`](https://www.npmjs.com/package/jest-fetch-mock) module to mock `fetch` requests (so I don't request the API when running tests!)
+- `esbuild` to bundle files together
+
+## Api
+
+[Guardian News](https://open-platform.theguardian.com/documentation/) Search The Guardian database for the latest news articles. Given a search keyword/phrase, this can be accepted as a query parameter to fetch articles relating to that keyword/phrase.
+
+
+------------------------------
+
+# ORIGNAL CHALLENGE README
+
 * Feel free to use Google, your notes, books, etc. but work on your own.
 * If you refer to the solution of another coach or student, please put a link to that in
   your README.
