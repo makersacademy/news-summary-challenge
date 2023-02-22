@@ -50,20 +50,20 @@ Through creating this application, I improved my ability to:
 4. Open the index.html file in your browser
 5. Run tests with Tests can be run with `npx jest`.
 
-
-## Mockups
-
-### Headlines page
-
-![Headlines page mockup](./images/news-summary-project-headlines-page-mockup.png)
-
-### Article summary page
-
-![Article page mockup](./images/news-summary-project-article-page-mockup.png)
-
-## API
-
 ### API authentication
 
 You'll need to [register and get an API
 key](https://open-platform.theguardian.com/access/) to use the Guardian API. 
+
+## Screenshots 
+
+### Viewing the latest Headlines
+
+![Latest Headlines](/images/latest-headlines.png)
+
+### Searching by topic
+
+![Searching by topic](/images/cricket-search.png)
+
+
+
