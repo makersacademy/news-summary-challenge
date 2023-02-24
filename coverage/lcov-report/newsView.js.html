@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.95% </span>
+                <span class="strong">87.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/47</span>
+                <span class='fraction'>41/47</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/14</span>
+                <span class='fraction'>10/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.45% </span>
+                <span class="strong">93.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/44</span>
+                <span class='fraction'>41/44</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -132,13 +132,13 @@
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -168,32 +168,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -240,7 +240,7 @@
         this.model.reset();
         this.model.setArticles(articles);
         this.displayArticles();
-      }).catch(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.displayError())</span>
+      }).catch(() =&gt; this.displayError())
   }
 &nbsp;
   displayTopicArticles(topic) {
@@ -249,18 +249,18 @@
         this.model.reset();
         this.model.setArticles(articles);
         this.displayArticles();
-      }).catch(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.displayError())</span>
+      }).catch(() =&gt; this.displayError())
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  di</span>splayError() {
-    const existingArticles = <span class="cstat-no" title="statement not covered" >document.querySelectorAll(".article");</span>
-<span class="cstat-no" title="statement not covered" >    existingArticles.forEach(<span class="fstat-no" title="function not covered" >st</span>ory =&gt; <span class="cstat-no" title="statement not covered" >story.remove())</span>;</span>
-    const existingErrorMessages = <span class="cstat-no" title="statement not covered" >document.querySelectorAll(".error-message");</span>
-<span class="cstat-no" title="statement not covered" >    existingErrorMessages.forEach(<span class="fstat-no" title="function not covered" >me</span>ssage =&gt; <span class="cstat-no" title="statement not covered" >message.remove())</span></span>
-    const errorEl = <span class="cstat-no" title="statement not covered" >document.createElement("div");</span>
-<span class="cstat-no" title="statement not covered" >    errorEl.textContent = "Oopsy daisy, something's gone amiss!";</span>
-<span class="cstat-no" title="statement not covered" >    errorEl.className = "error-message";</span>
-<span class="cstat-no" title="statement not covered" >    this.mainContainerEl.append(errorEl)</span>
+  displayError() {
+    const existingArticles = document.querySelectorAll(".article");
+    existingArticles.forEach(<span class="fstat-no" title="function not covered" >st</span>ory =&gt; <span class="cstat-no" title="statement not covered" >story.remove())</span>;
+    const existingErrorMessages = document.querySelectorAll(".error-message");
+    existingErrorMessages.forEach(<span class="fstat-no" title="function not covered" >me</span>ssage =&gt; <span class="cstat-no" title="statement not covered" >message.remove())</span>
+    const errorEl = document.createElement("div");
+    errorEl.textContent = "Oopsy daisy, something's gone amiss!";
+    errorEl.className = "error-message";
+    this.mainContainerEl.append(errorEl)
   }
 }
 &nbsp;
@@ -271,7 +271,7 @@ module.exports = NewsView;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-24T19:07:53.288Z
+                at 2023-02-24T19:26:42.207Z
             </div>
         <script src="prettify.js"></script>
         <script>

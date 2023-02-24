@@ -79,6 +79,32 @@ describe("NewsClient", () => {
       done();
     });
   });
+
+  it("Displays an error message when api call fails", (done) => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const mockClient = {
+      loadArticles: jest.fn().mockRejectedValue('error message')
+    }
+    const newsView = new View(newsModel, mockClient);
+    newsView.displayArticlesFromApi().then(() => {
+      const errorMessage = document.querySelector(".error-message")
+      expect(errorMessage.textContent).toContain("Oopsy daisy")
+      done();
+    })
+  });
+
+  it("Displays an error message when topic api call fails", (done) => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const mockClient = {
+      loadTopicArticles: jest.fn().mockRejectedValue('error message')
+    }
+    const newsView = new View(newsModel, mockClient);
+    newsView.displayTopicArticles("topic").then(() => {
+      const errorMessage = document.querySelector(".error-message")
+      expect(errorMessage.textContent).toContain("Oopsy daisy")
+      done();
+    })
+  });
 })
 
 
