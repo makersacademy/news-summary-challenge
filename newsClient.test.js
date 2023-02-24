@@ -25,4 +25,24 @@ describe("NewsClient", () => {
       done();
     })
   }); 
+
+  it("Returns an error when fetch fails", (done) => {
+    const client = new Client();
+    fetch.mockReject("fake error message")
+
+    client.loadArticles().then((error) => {
+      expect(error).toEqual("fake error message")
+      done();
+    })
+  })
+
+  it("Returns an error when fetch fails", (done) => {
+    const client = new Client();
+    fetch.mockReject("fake error message")
+
+    client.loadTopicArticles("topic").then((error) => {
+      expect(error).toEqual("fake error message")
+      done();
+    })
+  })
 });
