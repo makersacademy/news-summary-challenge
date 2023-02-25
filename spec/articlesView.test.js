@@ -11,27 +11,24 @@ require('jest-fetch-mock').enableMocks();
 
 jest.mock('../lib/articlesClient')
 
-beforeEach(() => {
-  model = new ArticlesModel()
-  client = {
-    loadArticles: jest.fn().mockResolvedValue(
-      { 
-        response: { 
-          results: [
-            { id: 1,
-              fields: { headline: "Story 1", thumbnail: "link", webUrl: "link" }},
-            { id: 2,
-              fields: { headline: "Story 2", thumbnail: "link", webUrl: "link" }}
-          ]
-        }}
-    )
-  }
-  view = new ArticlesView(model, client)
-})
+const newsModel = new ArticlesModel();
+const mockClient = {
+  loadArticles: jest.fn().mockResolvedValue(
+    { 
+      response: { 
+        results: [
+          { id: 1,
+            fields: { headline: "Story 1", thumbnail: "link", webUrl: "link" }},
+          { id: 2,
+            fields: { headline: "Story 2", thumbnail: "link", webUrl: "link" }}
+        ]
+      }}
+  )
+}
 
-describe('articlesView', () => {
-  it('adds a new div for an article', () => {
-  document.body.innerHTML = fs.readFileSync('./index.html');
+describe("NewsClient", () => {
+  it("Creates a new div for an article when from model class", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
     const articles = { 
       response: { 
         results: [
@@ -41,10 +38,10 @@ describe('articlesView', () => {
             fields: { headline: "Story 2", thumbnail: "link", webUrl: "link" }}
         ]
       }}
-    model.setArticles(articles);
-    const view = new View(model, mockClient);
-    view.displayArticles();
-    expect(document.querySelectorAll("div").length).toBe(4)
+    newsModel.setArticles(articles);
+    const newsView = new ArticlesView(newsModel, mockClient);
+    newsView.displayArticles();
+    expect(document.querySelectorAll("div").length).toBe(5)
     expect(document.querySelectorAll(".article-div").length).toBe(2)
-  })
+  });
 })
