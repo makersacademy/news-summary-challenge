@@ -1,11 +1,11 @@
-const ArticlesClient = require('./articlesClient');
+const ArticlesClient = require('../lib/articlesClient');
 
 require('jest-fetch-mock').enableMocks();
 
 describe('Articles Client', () => {
-  it('returns the latest articles from the guardian api', () => {
-    const client = new ArticlesClient();
-    mockResponse = {
+   it('returns the latest articles from the guardian api', () => {
+      const client = new ArticlesClient();
+      mockResponse = {
       "response":{
          "status":"ok",
          "userTier":"developer",
@@ -56,21 +56,21 @@ describe('Articles Client', () => {
          ]
       }
    }
-    fetch.mockResponseOnce(JSON.stringify(mockResponse))
+   fetch.mockResponseOnce(JSON.stringify(mockResponse))
       
-    client.loadArticles().then((articles) => {
+   client.loadArticles().then((articles) => {
       expect(articles).toEqual(mockResponse)
-    })
-  })
+      })
+   })
 
-  it('returns selected articles based on phrase', () => {
-    const client = new ArticlesClient();
-    mockResponse = {article1 : 'Sports Article'}
+   it('returns selected articles based on phrase', () => {
+      const client = new ArticlesClient();
+      mockResponse = {article1 : 'Sports Article'}
 
-    fetch.mockResponseOnce(JSON.stringify(mockResponse))
+      fetch.mockResponseOnce(JSON.stringify(mockResponse))
 
-    client.searchArticles('Sports').then((articles) => {
+      client.searchArticles('Sports').then((articles) => {
       expect(articles).toEqual(mockResponse)
-    })
-  })
+      })
+   })
 })

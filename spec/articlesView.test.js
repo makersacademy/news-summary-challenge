@@ -3,9 +3,9 @@
  */ 
 
 const fs = require('fs')
-const ArticlesModel = require('./articlesModel')
-const ArticlesView = require('./articlesView')
-const ArticlesClient = require('./articlesClient')
+const ArticlesModel = require('../lib/articlesModel')
+const ArticlesView = require('../lib/articlesView')
+const ArticlesClient = require('../lib/articlesClient')
 
 describe('View Class', () => {
   // it('displays the 10 most recent articles from the api', () => {
