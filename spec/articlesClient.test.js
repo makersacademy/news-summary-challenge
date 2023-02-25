@@ -3,7 +3,7 @@ const ArticlesClient = require('../lib/articlesClient');
 require('jest-fetch-mock').enableMocks();
 
 describe('Articles Client', () => {
-   it('returns the latest articles from the guardian api', () => {
+   it('calls fetch and returns articles from the guardian api', () => {
       const client = new ArticlesClient();
       mockResponse = {
       "response":{
@@ -73,4 +73,24 @@ describe('Articles Client', () => {
       expect(articles).toEqual(mockResponse)
       })
    })
+
+   it('returns an error if fetch in loadArticles() not successful', () => {
+      const client = new ArticlesClient()
+      fetch.mockReject('mock error message')
+
+      client.loadArticles().then((error) => {
+         expect(error).toEqual('mock error message')
+      })
+   })
+
+   it('returns an error if searchArticles() not successful', () => {
+      const client = new ArticlesClient()
+      fetch.mockReject('mock error message')
+
+      client.searchArticles('sport').then((error) => {
+         expect(error).toEqual('mock error message')
+      })
+   })
+
+
 })

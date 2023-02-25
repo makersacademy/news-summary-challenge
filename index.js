@@ -6,5 +6,4 @@ const model = new ArticlesModel();
 const client = new ArticlesClient();
 const view = new ArticlesView(model, client);
 
-console.log('Testing');
 view.getArticlesFromApi();
