@@ -1,5 +1,16 @@
 # News challenge
 
+- [Introduction](#introduction)
+- [Technologies Used](#technologies-used)
+- [Project Overview](#project-overview)
+- [Planning](#planning)
+- [Features](#features)
+- [Installation Instructions](#installation-instructions)
+- [Test Coverage](#test-coverage)
+- [Future Actions](#future-actions)
+- [User Stories](#user-stories)
+- [Stretch User Stories](#stretch-user-stories)
+
 ## Introduction
 
 Weekend challenge to create a single page web app that makes API calls to the Guardian News API and displays the results.
