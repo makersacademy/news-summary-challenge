@@ -27,7 +27,7 @@ const mockClient = {
 }
 
 describe("NewsClient", () => {
-  it("Creates a new div for an article when from model class", () => {
+  it("Creates a new div for an article when loaded from model class", () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
     const articles = { 
       response: { 
@@ -45,7 +45,7 @@ describe("NewsClient", () => {
     expect(document.querySelectorAll(".article-div").length).toBe(2)
   });
 
-  it('displays article content returned from the api', (done) => {
+  it('displays articles returned from the api', (done) => {
     document.body.innerHTML = fs.readFileSync('./index.html');
     const newsView = new ArticlesView(newsModel, mockClient)
     newsView.getArticlesFromApi().then(() => {
@@ -78,5 +78,28 @@ describe("NewsClient", () => {
       expect(articles[0].textContent).toContain("Sports Headline 1")
       done();
     });
+  })
+
+  it('checks the search button has been clicked and value is cleared', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const mockClient = {
+      searchArticles: jest.fn().mockResolvedValue(
+        { 
+          response: { 
+            results: [
+              { id: 1,
+                fields: { headline: "Sports Headline 1", thumbnail: "link", webUrl: "link" }},
+              { id: 2,
+                fields: { headline: "Sports Headline 2", thumbnail: "link", webUrl: "link" }}
+            ]
+          }}
+      )
+    }
+    const newsView = new ArticlesView(newsModel, mockClient);
+    const searchButton = document.querySelector('#search-button')
+    const searchTerm = document.querySelector('#search-term')
+    searchTerm.value = "Sports"
+    searchButton.click()
+    expect(searchTerm.value).toBe("")
   })
 })
