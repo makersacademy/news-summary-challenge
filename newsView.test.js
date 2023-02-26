@@ -105,6 +105,87 @@ describe("NewsClient", () => {
       done();
     })
   });
+
+  it("The search button has no value", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const mockClient = {
+      loadTopicArticles: jest.fn().mockRejectedValue('error message')
+    }
+    const newsView = new View(newsModel, mockClient);
+    const searchButton = document.querySelector('#news-search-input')
+    expect(searchButton.value).toBe("")
+  })
+
+  it("The search button is triggered and the value is emptied after the click", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const mockClient = {
+      loadTopicArticles: jest.fn().mockResolvedValue(
+        { 
+          response: { 
+            results: [
+              { id: 1,
+                fields: { headline: "Tech story 1", thumbnail: "link", webUrl: "link" }},
+              { id: 2,
+                fields: { headline: "Tech story 2", thumbnail: "link", webUrl: "link" }}
+            ]
+          }}
+      )
+    }
+    const newsView = new View(newsModel, mockClient);
+    const searchButton = document.querySelector('#news-search-button');
+    const searchTerm = document.querySelector("#news-search-input")
+    searchTerm.value = "technology"
+    searchButton.click()
+    expect(searchTerm.value).toBe("")
+  })
+
+  it("The search button is triggered and the value is emptied after the click", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const mockClient = {
+      loadTopicArticles: jest.fn().mockResolvedValue(
+        { 
+          response: { 
+            results: [
+              { id: 1,
+                fields: { headline: "Tech story 1", thumbnail: "link", webUrl: "link" }},
+              { id: 2,
+                fields: { headline: "Tech story 2", thumbnail: "link", webUrl: "link" }}
+            ]
+          }}
+      )
+    }
+    const newsView = new View(newsModel, mockClient);
+    const searchButton = document.querySelector('#news-search-button');
+    const searchTerm = document.querySelector("#news-search-input")
+    const articles = document.querySelectorAll(".article");
+    searchTerm.value = "technology"
+    searchButton.click();
+    setTimeout(() => {
+      expect(articles[0].textContent).toContain("Tech story 1");
+      expect(searchTerm.value).toBe("");
+    }, 6000)
+  })
+
+  it("Display error replaces articles with error message", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const mockClient = {
+      loadTopicArticles: jest.fn().mockResolvedValue(
+        { 
+          response: { 
+            results: [
+              { id: 1,
+                fields: { headline: "Tech story 1", thumbnail: "link", webUrl: "link" }},
+              { id: 2,
+                fields: { headline: "Tech story 2", thumbnail: "link", webUrl: "link" }}
+            ]
+          }}
+      )
+    }
+    const newsView = new View(newsModel, mockClient);
+    newsView.displayError()
+    const errorMessage = document.querySelector(".error-message")
+    expect(errorMessage.textContent).toContain("Oopsy daisy")
+  })
 })
 
 

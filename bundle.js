@@ -50,6 +50,9 @@
         setArticles(articles) {
           this.articles = articles.response.results;
         }
+        reset() {
+          this.articles = [];
+        }
       };
       module.exports = NewsModel;
     }
@@ -92,12 +95,14 @@
         }
         displayArticlesFromApi() {
           return this.client.loadArticles().then((articles) => {
+            this.model.reset();
             this.model.setArticles(articles);
             this.displayArticles();
           }).catch(() => this.displayError());
         }
         displayTopicArticles(topic) {
           return this.client.loadTopicArticles(topic).then((articles) => {
+            this.model.reset();
             this.model.setArticles(articles);
             this.displayArticles();
           }).catch(() => this.displayError());
