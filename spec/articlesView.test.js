@@ -44,4 +44,39 @@ describe("NewsClient", () => {
     expect(document.querySelectorAll("div").length).toBe(5)
     expect(document.querySelectorAll(".article-div").length).toBe(2)
   });
+
+  it('displays article content returned from the api', (done) => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const newsView = new ArticlesView(newsModel, mockClient)
+    newsView.getArticlesFromApi().then(() => {
+      const articles = document.querySelectorAll(".article-div")
+      expect(articles.length).toBe(4)
+      expect(articles[0].innerHTML).toContain('Story 1')
+      done()
+    })
+  })
+
+  it('resets the page and then displays articles returned from search', (done) => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+    const mockClient = {
+      searchArticles: jest.fn().mockResolvedValue(
+        { 
+          response: { 
+            results: [
+              { id: 1,
+                fields: { headline: "Sports Headline 1", thumbnail: "link", webUrl: "link" }},
+              { id: 2,
+                fields: { headline: "Sports Headline 2", thumbnail: "link", webUrl: "link" }}
+            ]
+          }}
+      )
+    }
+    const newsView = new ArticlesView(newsModel, mockClient);
+    newsView.searchArticles("sports").then(() => {
+      const articles = document.querySelectorAll(".article-div");
+      expect(articles.length).toBe(2);
+      expect(articles[0].textContent).toContain("Sports Headline 1")
+      done();
+    });
+  })
 })
