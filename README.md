@@ -24,7 +24,7 @@ Includes search functionality, allowing the user to search for stories on a topi
 6. ```open index.html```
 
 ## In Action
-[Gif of app in action](./docs/News%20Summary%20Challenge.gif)
+![Gif of app in action](./docs/News%20Summary%20Challenge.gif)
 
 ## Yet to do
 * Appealing design!
@@ -32,4 +32,4 @@ Includes search functionality, allowing the user to search for stories on a topi
 * Improving test coverage
 
 ## > 95% Test Coverage
-[Test coverage screenshot](./docs/Screenshot%202023-02-26%20at%2013.09.10.png)
+![Test coverage screenshot](./docs/Screenshot%202023-02-26%20at%2013.09.10.png)
