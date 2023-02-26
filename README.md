@@ -1,49 +1,35 @@
 # News Summary Project
 
-* Web application which links to The Guardian's API and pulls the latest stories, including headline, link and image. 
-* Fully responsive design, to work across desktop, mobile and tablet devices. 
-* Search functionality incldued, allowing the user to search for stories on a topic of their choice; those stories will load and replace the latest stories. 
+A mobile-responsive web application pulls the latest stories from The Guardian's API, including headline, link and image. <br>
 
-## Yet to do:
-* Add animation, or design which is appealing!
-* Testing the catches and display error function.
-* Adding a home button to return the user to the latest stories of the day. 
+Includes search functionality, allowing the user to search for stories on a topic of their choice; those stories will load and replace the latest stories. 
 
-### Technologies
+[Read the design plan for this program.](./docs/design-recipe.md)
 
-* Built in frontend JavaScript, CSS, and HTML.
-* Jest tests
-* The [`jest-fetch-mock`](https://www.npmjs.com/package/jest-fetch-mock) module to mock `fetch` requests
+## Technologies
+<div align="center">
+	<code><img height="50" src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" alt="HTML" title="HTML" /></code>
+	<code><img height="50" src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" alt="CSS" title="CSS" /></code>
+	<code><img height="50" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript" /></code>
+	<code><img height="50" src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" alt="Node.js" title="Node.js" /></code>
+	<code><img height="50" src="https://user-images.githubusercontent.com/25181517/187955005-f4ca6f1a-e727-497b-b81b-93fb9726268e.png" alt="Jest" title="Jest" /></code>
+</div>
 
-## User Stories
+## How to Run
+1. Clone this repo
+2. ```npm run install```
+3. Generate an API key at [The Guardian News API](https://open-platform.theguardian.com/)
+4. Save your api key in file named apiKey.js and module export. Add apiKey.js to your .gitignore file
+5. ```npm run build```
+6. ```open index.html```
 
-```
-As a busy politician
-So I know what the big stories of the day are
-I can see all of today's headlines in one place
-```
+## In Action
+[Gif of app in action](./docs/News%20Summary%20Challenge.gif)
 
-```
-As a busy politician
-So that I have something nice to look at
-I can see a relevant picture to illustrate each news article when I browse headlines
-```
+## Yet to do
+* Appealing design!
+* Adding a home button to return the user to the latest stories of the day
+* Improving test coverage
 
-```
-As a busy politician
-So I can get a few more details about an important story
-I can click a news article title which links to the original article
-```
-
-```
-As a busy politician
-So I can search what I want to read about
-I can specify a search query on the page and get articles matching this search
-```
-
-```
-As a busy politician
-Just in case my laptop breaks
-I can read the site comfortably on my phone
-```
-
+## > 95% Test Coverage
+[Test coverage screenshot](./docs/Screenshot%202023-02-26%20at%2013.09.10.png)
