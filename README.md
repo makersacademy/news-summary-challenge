@@ -37,7 +37,7 @@ Addtionally, the page is responsive to the screensize or window resizing.
 
 ## Planning
 
-When given the project brief for this project my approach was to breakdown the user stories into their Nouns and Verbs, relate those into Classes or Functions/Features and from there create a mock up of what I was aiming for.
+When given the project brief my approach was to breakdown the user stories into their Nouns and Verbs, relate those into Classes or Functions/Features and from there create a mock up of what I was aiming for.
 
 This helped me to think through the process, look ahead for any potential issues and gave me a high leve of plan of how to begin the TDD process.
 
