@@ -1,5 +1,6 @@
 class NewsView {
-    constructor(client) {
+    constructor(model, client) {
+        this.model = model
         this.client = client
         this.mainContainerEl = document.querySelector('#main-container')
         document.querySelector("#search-button").addEventListener('click', () =>{
@@ -13,6 +14,14 @@ class NewsView {
         //this will generate a new div for each
         // article object that comes back from the 
         // API call, append to main container
+    this.client.loadArticles((response) => {
+        this.model.setArticles(response)
+    })
+    for (let index = 0; index < this.model.getArticles().length; index++) {
+        const divElement = document.createElement('div')
+        divElement.className = "article";
+        divElement.innerText = this.model.getArticles()[index];
+        this.mainContainerEl.append(divElement);}
     }
 
     displayArticlesByTopic(searchQuery) {
@@ -21,5 +30,5 @@ class NewsView {
         // matching the topic inputted
     }
 }
-s
+
 module.exports = NewsView;

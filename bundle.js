@@ -1,2 +1,4 @@
 (() => {
+  // index.js
+  console.log();
 })();
