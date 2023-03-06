@@ -16,7 +16,7 @@ describe('Client class', () => {
      },
     }));
 
-    // 3. We call the method, giving a callback function.
+    // 3. We call the method, giving an anon callback function.
     // When the HTTP response is received, the callback will be called.
     // We then use `expect` to assert the data from the server contain
     // what it should.

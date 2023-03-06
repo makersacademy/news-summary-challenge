@@ -32,12 +32,16 @@
         constructor() {
           this.articlesArray = [];
         }
+        formatArticles(article) {
+          return {
+            title: article.webTitle,
+            url: article.webUrl
+          };
+        }
         setArticles(response) {
-          response.results.forEach((article) => {
+          response.forEach((article) => {
             this.articlesArray.push(article.webTitle);
           });
-        }
-        formatArticles(article) {
         }
         getArticles() {
           return this.articlesArray;
@@ -74,7 +78,21 @@
           });
         }
         displayArticlesByTopic(searchQuery) {
+          let searchTerms = `q=${searchQuery}`;
+          this.client.loadArticlesByTopic(searchTerms, (response) => {
+            this.model.setArticles(response);
+            console.log(response);
+            for (let index = 0; index < this.model.getArticles().length; index++) {
+              const divElement = document.createElement("div");
+              divElement.className = "article";
+              divElement.innerText = this.model.getArticles()[index];
+              this.mainContainerEl.append(divElement);
+            }
+          });
         }
+        //this will take searchInput as its argument and use
+        // the client loadArticles API call to display articles
+        // matching the topic inputted
       };
       module.exports = NewsView2;
     }
@@ -184,7 +202,7 @@
         loadArticles(callback) {
           console.log("LOADING ARTICLES");
           const api = new import_guardian_js.default("883024d4-b7ae-40f2-a680-9684ed4072fe", true);
-          api.content.search("uk").then((response) => callback(response));
+          api.content.search("uk").then((response) => callback(response.results));
         }
         loadArticlesByTopic(searchQuery, callback) {
           fetch(`https://content.guardianapis.com/search?${searchQuery}`).then((response) => response.json()).then((response) => {

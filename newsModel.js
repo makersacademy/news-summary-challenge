@@ -3,14 +3,22 @@ class NewsModel {
         this.articlesArray = []
     }
 
-    setArticles(response) {
-        response.results.forEach((article) => {
-            this.articlesArray.push(article.webTitle)
-        })
+    formatArticles(article) {
+        return {
+            title: article.webTitle,
+            url: article.webUrl
+        }
     }
 
-    formatArticles(article) {
-        
+    setArticles(response) {
+        response.forEach((article) => {
+            // this.articlesArray.push(this.formatArticles(article))
+            // This line should reduce the array of objects returned in 
+            // 'response' to the title and URL and put that into the articlesArray;
+            // presently it doesn't work, so the below line is a stand-in that
+            // just pushes the title for presentation on the client
+            this.articlesArray.push(article.webTitle)
+        })
     }
 
     getArticles() {

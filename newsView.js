@@ -23,10 +23,21 @@ class NewsView {
     }
 
     displayArticlesByTopic(searchQuery) {
+        let searchTerms = `q=${searchQuery}`
+        this.client.loadArticlesByTopic(searchTerms, (response) => {
+            this.model.setArticles(response)
+            console.log(response)
+            for (let index = 0; index < this.model.getArticles().length; index++) {
+                const divElement = document.createElement('div')
+                divElement.className = "article";
+                divElement.innerText = this.model.getArticles()[index];
+                this.mainContainerEl.append(divElement);}
+            })
+        }
         //this will take searchInput as its argument and use
         // the client loadArticles API call to display articles
         // matching the topic inputted
     }
-}
+
 
 module.exports = NewsView;

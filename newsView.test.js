@@ -19,6 +19,4 @@ describe('NewsView', () => {
 
         expect(document.body.querySelector('h1').innerHTML).toBe("Guardian Digest");
     })
-
-    it('')
 })
