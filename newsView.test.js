@@ -3,7 +3,6 @@
  */
 
 const fs = require('fs');
-const { beforeEach } = require('node:test');
 const NewsView = require('./newsView')
 const NewsModel = require('./newsModel')
 const NewsClient = require('./newsClient')
@@ -20,4 +19,6 @@ describe('NewsView', () => {
 
         expect(document.body.querySelector('h1').innerHTML).toBe("Guardian Digest");
     })
+
+    it('')
 })

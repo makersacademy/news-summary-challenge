@@ -4,20 +4,18 @@ class NewsModel {
     }
 
     setArticles(response) {
-        this.notesArray.push(response)
+        response.results.forEach((article) => {
+            this.articlesArray.push(article.webTitle)
+        })
+    }
+
+    formatArticles(article) {
+        
     }
 
     getArticles() {
         return this.articlesArray
     }
-
-//     formatArticles() {
-//         let formattedArticles = []
-//         for (let index = 0; index < this.articlesArray.length; index++) {
-            
-//     }
-// }
-
 }
 
 module.exports = NewsModel;

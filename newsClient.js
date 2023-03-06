@@ -1,10 +1,13 @@
+import Guardian from './node_modules/guardian-js';
+
 class NewsClient {
-   loadArticles(callback) {
-    fetch('https://content.guardianapis.com/search?page=1')
-          .then(response => response.json())
-          .then(response => {callback(response)})
-          .catch((error) => {displayError(error)})
-      }
+
+  loadArticles(callback) {
+    console.log("LOADING ARTICLES")
+    const api = new Guardian('883024d4-b7ae-40f2-a680-9684ed4072fe', true)
+    api.content.search('uk')
+    .then(response => callback(response))
+  }
 
     loadArticlesByTopic(searchQuery, callback) {
         fetch(`https://content.guardianapis.com/search?${searchQuery}`)
@@ -17,6 +20,7 @@ class NewsClient {
         // properly, before it's passed as an argument to this function
         // from the view (another method in view?)
     }
-}
+  }
+
 
 module.exports = NewsClient;

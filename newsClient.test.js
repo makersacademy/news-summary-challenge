@@ -1,8 +1,5 @@
 const NewsClient = require('./newsClient');
 
-// This makes `fetch` available to our test
-// (it is not by default, as normally `fetch` is only
-// available within the browser)
 require('jest-fetch-mock').enableMocks()
 
 describe('Client class', () => {
@@ -10,11 +7,7 @@ describe('Client class', () => {
     // 1. Instantiate the class
     const client = new NewsClient();
 
-    // 2. We mock the response from `fetch`
-    // The mocked result will depend on what your API
-    // normally returns — you want your mocked response
-    // to "look like" as the real response as closely as
-    // possible (it should have the same fields).
+    // 2. Mock the response from `fetch`
     fetch.mockResponseOnce(JSON.stringify({
       fields:{
         headline:"TEST HEADLINE",
@@ -29,8 +22,7 @@ describe('Client class', () => {
     // what it should.
     client.loadArticles((returnedDataFromApi) => {
       expect(returnedDataFromApi.fields.headline).toBe("TEST HEADLINE");
-
-      // 4. Tell Jest our test can now end.
+      expect(returnedDataFromApi.fields.byline).toBe("by TEST JOURNALIST");
       done();
     });
 });

@@ -11,17 +11,15 @@ class NewsView {
     }
 
     displayArticles() {
-        //this will generate a new div for each
-        // article object that comes back from the 
-        // API call, append to main container
     this.client.loadArticles((response) => {
         this.model.setArticles(response)
-    })
-    for (let index = 0; index < this.model.getArticles().length; index++) {
-        const divElement = document.createElement('div')
-        divElement.className = "article";
-        divElement.innerText = this.model.getArticles()[index];
-        this.mainContainerEl.append(divElement);}
+        console.log(response)
+        for (let index = 0; index < this.model.getArticles().length; index++) {
+            const divElement = document.createElement('div')
+            divElement.className = "article";
+            divElement.innerText = this.model.getArticles()[index];
+            this.mainContainerEl.append(divElement);}
+        })
     }
 
     displayArticlesByTopic(searchQuery) {
