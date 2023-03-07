@@ -25,6 +25,7 @@ This app grabs all the headlines from the [Guardian's Open Platform API](https:/
 
 ## Technologies Used
 
+
 - HTML
 - CSS
 - JavaScript
