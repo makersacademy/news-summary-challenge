@@ -48,7 +48,7 @@ Through creating this application, I improved my ability to:
 3. Create an `apiKey.js`file which exports your API Key
 3. Use `npm build` to run the bundler in watch mode.
 4. Open the index.html file in your browser
-5. Run tests with Tests can be run with `npx jest`.
+5. Run tests with `npx jest`.
 
 ### API authentication
 
