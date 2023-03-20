@@ -4,9 +4,9 @@
 
 const fs = require("fs");
 
-const NewsView = require("./newsView");
-const NewsModel = require("./newsModel");
-const NewsClient = require("./newsClient");
+const NewsView = require("../src/newsView");
+const NewsModel = require("../src/newsModel");
+const NewsClient = require("../src/newsClient");
 
 require("jest-fetch-mock").enableMocks();
 

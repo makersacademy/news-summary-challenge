@@ -1,4 +1,4 @@
-const NewsClient = require("./newsClient");
+const NewsClient = require("../src/newsClient");
 require("jest-fetch-mock").enableMocks();
 
 describe("NewsClient", () => {

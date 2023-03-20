@@ -1,4 +1,4 @@
-const apiKey = require("./apiKey");
+const apiKey = require("../apiKey");
 const apiUrl = `https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`;
 
 class NewsClient {
