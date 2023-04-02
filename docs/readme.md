@@ -25,5 +25,7 @@ To get a summary of an article's content, you'll need to use the Aylien API endp
 As a busy politician
 Just in case my laptop breaks
 I can read the site comfortably on my phone
+
 As a busy politician
 So I make my news reading more fun
+I can see whizzy animations in the app
