@@ -1,0 +1,41 @@
+h1, p, * {
+  font-family: sans-serif;
+  color: #223843;
+}
+
+html {
+  background:#D8B4A0;
+}
+
+body {
+  background: #EFF1F3;
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.news {
+  display: block;
+  border-bottom: 1px solid #aaa;
+  padding: 15px;
+}
+
+input[type=text] {
+  width: 80%;
+  background: #fefefe;
+  border-radius: 4px;
+  padding: 10px 8px;
+  border: 1px solid #444;
+  font-size: 20px;
+}
+
+button {
+  background: #D77A61;
+  border-radius: 4px;
+  padding: 10px 8px;
+  border: 1px solid #444;
+  font-size: 18px;
+  cursor: pointer;
+}
