@@ -12,9 +12,12 @@ class NewsView {
     console.log(news)
     news.forEach(news => {
       console.log(news)
+
       const newsElement = document.createElement('div');
-      newsElement.textContent = news.webTitle;
       newsElement.className = 'news';
+      const newsTitleLink = document.createElement('a');
+      newsTitleLink.href = news.webUrl;
+      newsTitleLink.textContent = news.webTitle;
       const imgWrapper = document.createElement('div')
       const imageElement = document.createElement('img');
       imageElement.setAttribute(
@@ -22,7 +25,10 @@ class NewsView {
         news.fields.thumbnail
       );
       imgWrapper.append(imageElement)
+
+      newsElement.appendChild(newsTitleLink);
       newsElement.appendChild(imgWrapper);
+      
       this.mainContainerEl.append(newsElement);
     })
   }
