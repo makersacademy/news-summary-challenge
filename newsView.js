@@ -14,19 +14,21 @@ class NewsView {
   }
 
   displayNews() {
-    const news = this.model.allNews();
+    const news = this.model.allNews().response.results;
+    console.log(news)
     news.forEach((news) => {
       // console.log(news)
-      this.news = news.response.results;
 
       const newsElement = document.createElement("div");
-      newsElement.className = "news";
+      newsElement.className += "col-lg-6 news";
       const newsTitleLink = document.createElement("a");
-      newsTitleLink.href = this.news.webUrl;
-      newsTitleLink.textContent = this.news.webTitle;
+      newsTitleLink.href = news.webUrl;
+      newsTitleLink.className += "article-title";
+      newsTitleLink.textContent = news.webTitle;
       const imgWrapper = document.createElement("div");
       const imageElement = document.createElement("img");
-      imageElement.setAttribute("src", this.news.fields.thumbnail);
+      imageElement.setAttribute("src", news.fields.thumbnail);
+      imageElement.className = "thumbnail-img"
       imgWrapper.append(imageElement);
 
       newsElement.appendChild(newsTitleLink);
@@ -38,6 +40,7 @@ class NewsView {
 
   displayNewsFromApi() {
     this.client.loadData((data) => {
+      // console.log(data)
       this.model.addNews(data);
       this.model.allNews();
       this.displayNews();
@@ -47,7 +50,7 @@ class NewsView {
   displayNewsFromSearch() {
     this.client.loadSearchData(this.searchValue, (data) => {
       console.log(this.searchValue)
-      console.log(data)
+      // console.log(data)
       this.model.addNews(data);
       this.model.allNews();
       this.mainContainerEl.innerHTML = ""; // Clear previous results
