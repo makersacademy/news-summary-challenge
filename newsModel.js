@@ -8,7 +8,7 @@ class NewsModel {
   }
 
   allNews() {
-    return this.news.response.results;
+    return this.news;
   }
 }
 

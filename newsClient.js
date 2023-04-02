@@ -6,7 +6,7 @@ class NewsClient {
     axios
         .get(`https://content.guardianapis.com/search?api-key=${apiKey}&show-fields=thumbnail`)
       .then((resp) => {
-        // console.log(resp.data)
+        console.log(resp.data)
         callback(resp.data);
       });
   }

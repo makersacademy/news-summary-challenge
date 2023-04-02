@@ -15,18 +15,18 @@ class NewsView {
 
   displayNews() {
     const news = this.model.allNews();
-    // console.log(news)
     news.forEach((news) => {
       // console.log(news)
+      this.news = news.response.results;
 
       const newsElement = document.createElement("div");
       newsElement.className = "news";
       const newsTitleLink = document.createElement("a");
-      newsTitleLink.href = news.webUrl;
-      newsTitleLink.textContent = news.webTitle;
+      newsTitleLink.href = this.news.webUrl;
+      newsTitleLink.textContent = this.news.webTitle;
       const imgWrapper = document.createElement("div");
       const imageElement = document.createElement("img");
-      imageElement.setAttribute("src", news.fields.thumbnail);
+      imageElement.setAttribute("src", this.news.fields.thumbnail);
       imgWrapper.append(imageElement);
 
       newsElement.appendChild(newsTitleLink);
