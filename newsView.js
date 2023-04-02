@@ -21,19 +21,23 @@ class NewsView {
 
       const newsElement = document.createElement("div");
       newsElement.className += "col-lg-6 news";
+
+      const cardElement = document.createElement("div");
+      cardElement.className = "card"
+
       const newsTitleLink = document.createElement("a");
       newsTitleLink.href = news.webUrl;
       newsTitleLink.className += "article-title";
       newsTitleLink.textContent = news.webTitle;
-      const imgWrapper = document.createElement("div");
+
       const imageElement = document.createElement("img");
       imageElement.setAttribute("src", news.fields.thumbnail);
       imageElement.className = "thumbnail-img"
-      imgWrapper.append(imageElement);
 
-      newsElement.appendChild(newsTitleLink);
-      newsElement.appendChild(imgWrapper);
-
+      cardElement.appendChild(imageElement);
+      cardElement.appendChild(newsTitleLink);
+      
+      newsElement.append(cardElement);
       this.mainContainerEl.append(newsElement);
     });
   }

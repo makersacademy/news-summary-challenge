@@ -58,12 +58,13 @@ h3 {
   font-size: 20px;
 }
 
-/* .thumbnail-img {
-  padding: 20px 0;
-} */
-
 .news {
-  padding: 35px 0;
+  padding: 35px 40px;
+}
+
+.card {
+  background-color: #f6f4ef;
+  border: none;
 }
 
 .search {
