@@ -4,11 +4,11 @@ class NewsModel {
   }
 
   addNews(news) {
-    this.news.push(news)
+    this.news = news;
   }
 
   allNews() {
-    return this.news;
+    return this.news.response.results;
   }
 }
 

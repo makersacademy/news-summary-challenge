@@ -2,11 +2,11 @@ const axios = require("axios");
 const apiKey = require("./apiKey");
 
 class NewsClient {
-  loadData() {
+  loadData(callback) {
     axios
       .get(`https://content.guardianapis.com/search?api-key=${apiKey}`)
       .then((resp) => {
-        console.log(resp.data);
+        callback(resp.data);
       });
   }
 }
