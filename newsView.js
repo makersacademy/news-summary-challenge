@@ -15,6 +15,14 @@ class NewsView {
       const newsElement = document.createElement('div');
       newsElement.textContent = news.webTitle;
       newsElement.className = 'news';
+      const imgWrapper = document.createElement('div')
+      const imageElement = document.createElement('img');
+      imageElement.setAttribute(
+        "src",
+        news.fields.thumbnail
+      );
+      imgWrapper.append(imageElement)
+      newsElement.appendChild(imgWrapper);
       this.mainContainerEl.append(newsElement);
     })
   }
