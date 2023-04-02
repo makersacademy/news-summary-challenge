@@ -8,3 +8,6 @@ view = new NewsView(model, client);
 
 view.displayNewsFromApi();
 
+
+// client.loadSearchData();
+
