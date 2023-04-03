@@ -1,0 +1,127 @@
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2b2d42;
+  color: white;
+  padding: 10px;
+}
+
+#search-area {
+  display: flex;
+  align-items: center;
+}
+
+#search-term {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+}
+
+#search-button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+#main-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+  background-color: #edf2f7;
+}
+
+.article-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.article-div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.article-div:hover h2 {
+  color: #2b2d42;
+}
+
+.article-div:hover p {
+  color: #4a5568;
+}
+
+.article-div img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.article-div h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1a202c;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.article-div p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #718096;
+  text-align: center;
+  margin: 0;
+}
+
+.article-div a {
+  color: #1a202c;
+  text-decoration: none;
+}
+
+.article-div a:hover {
+  text-decoration: underline;
+  color: orange;
+}
+
+.article-div a:visited {
+  color: #1a202c;
+}
+
+.article-div a:active {
+  color: #1a202c;
+}
+
+#header h1 {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+#header a {
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+#header a:hover {
+  text-decoration: underline;
+}
