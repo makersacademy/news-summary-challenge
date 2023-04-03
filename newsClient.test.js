@@ -3,21 +3,34 @@ const { NewsClient } = require('./newsClient')
 
 describe('class NewsClient', () => {
 
+  const mockData = {
+    response: {
+      results: [{
+        webUrl: 'test',
+        webTitle: 'test',
+        fields: {
+          thumbnail: 'test',
+          bodyText: 'test'
+        }
+      }]
+    }
+  }
+
+  let client;
+  beforeEach(() => {
+    fetchMock.mockClear()
+    fetchMock.doMock()
+    client = new NewsClient()
+  })
+
   describe('loadArticles() method', () => {
 
-    let client;
-    beforeEach(() => {
-      fetchMock.mockClear()
-      fetchMock.doMock()
-      client = new NewsClient()
-    })
-  
-    it('should call fetch and return a resolved promise', (done) => {
-      fetchMock.mockResponseOnce(JSON.stringify({}));
+    it('should call fetch and return a resolved promise', () => {
+      fetchMock.mockResponseOnce(JSON.stringify(mockData));
       client.loadArticles((response) => {
         expect(fetchMock).toHaveBeenCalled()
         expect(response).toBeDefined();
-        done();
+        expect(response).toEqual(mockData);
       })
     })
 
@@ -30,6 +43,18 @@ describe('class NewsClient', () => {
         expect(error.message).toBe('An error has occured')
       })
       client.loadArticles(callback, errorHandler)
+    })
+  })
+
+  describe('searchArticles() method', () => {
+
+    it('should accept a user input to load new articles', () => {
+      fetchMock.mockResponseOnce(JSON.stringify(mockData))
+      client.searchArticles('video games', (data) => {
+        expect(fetchMock).toHaveBeenCalled()
+        expect(data).toBeDefined()
+        expect(data).toEqual(mockData)
+      })
     })
   })
 })

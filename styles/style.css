@@ -66,17 +66,13 @@ body {
 
 #header-search-bar {
   width: 60%;
- 
-  /* border: blue solid 4px; */
-}
-#header-search-bar form{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly ;
-  width: 100%;
   padding: 1rem 0 2rem;
-  /* border: yellow solid 4px; */
+ 
+  /* border: blue solid 4px; */
 }
 
 #header-search-bar .search-bar{
@@ -117,7 +113,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-    border: red solid 4px;
+    /* border: red solid 4px; */
 }
 #article-main-container .article-container {
   width: 100%;
@@ -125,7 +121,7 @@ body {
   padding: 1rem;
   border-bottom: #252525 solid 1px;
   overflow: hidden;
-  border: violet solid 2px;
+  /* border: violet solid 2px; */
 }
 #article-main-container .article-container a {
   width: 100%;
@@ -141,14 +137,14 @@ body {
   color: #0f0f0f;
   font-size: 2rem;
 
-  border: blue solid 2px;
+  /* border: blue solid 2px; */
 }
 
 #article-main-container .article-container a .article-img {
   height: 20vh;
   display: block;
   background: no-repeat center center/cover;
-  border: yellow solid 1px;
+  /* border: yellow solid 1px; */
 }
 
 #article-main-container .article-container a .article-text-container {
@@ -158,16 +154,16 @@ body {
   justify-content: center;
   flex-grow: 0;
   gap: 1rem;
-  border: violet solid 2px;
+  /* border: violet solid 2px; */
 
 }
 #article-main-container .article-container a .article-text-container .article-title {
-  border: yellow solid 1px;
+  /* border: yellow solid 1px; */
 }
 #article-main-container .article-container a .article-text-container .article-description {
   font-weight: 300;
   font-size: 2rem;
   text-overflow: ellipsis;
 
-  border: yellow solid 1px;
+  /* border: yellow solid 1px; */
 }

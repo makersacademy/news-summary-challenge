@@ -12,4 +12,4 @@ const errorHandler = (error) => {
 }
 
 // client.loadArticles(callback, errorHandler)
-// view.displayArticles()
+view.displayArticles()
