@@ -1,5 +1,5 @@
 require('jest-fetch-mock').enableMocks()
-const NewsClient = require('./newsClient')
+const { NewsClient } = require('./newsClient')
 
 describe('class NewsClient', () => {
 

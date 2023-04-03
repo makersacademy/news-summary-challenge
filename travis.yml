@@ -2,9 +2,10 @@ language: node_js
 node_js:
   - "19.8.1"
 
-# Install any dependencies required by your project
+# Install any dependencies required by your project, including jsdom
 install:
   - npm install
+  - npm install --save-dev jsdom
 
 # Run your tests using Jest
 script:

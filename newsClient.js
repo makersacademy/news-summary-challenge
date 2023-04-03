@@ -8,4 +8,4 @@ class NewsClient {
       .catch(error => errorHanlder(error))
   }
 }
-module.exports = NewsClient
+module.exports = { NewsClient }
