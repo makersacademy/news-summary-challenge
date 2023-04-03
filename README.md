@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/ChangWynn/news-summary-challenge.svg?branch=main)](https://app.travis-ci.com/ChangWynn/news-summary-challenge)
+
 # News challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.
