@@ -3,8 +3,8 @@ class NewsClient{
     this.API_KEY = process.env.GUARDIAN_KEY
   }
 
-  loadArticles = () => {
-    return fetch(`https://content.guardianapis.com/search?api-key=${this.API_KEY}`)
+  loadArticles = (search_terms=null) => {
+    return fetch(`https://content.guardianapis.com/search?${"q=" + search_terms + "&"}api-key=${this.API_KEY}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error (`HTTP error! Status: ${response.status}`)} 
