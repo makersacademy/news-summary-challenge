@@ -6,7 +6,12 @@ class NewsClient{
   }
 
   loadArticles = (search_terms=null) => {
-    return fetch(`https://content.guardianapis.com/search?${"q=" + search_terms + "&"}api-key=${this.API_KEY}`)
+    let parsed;
+    if (search_terms !== null) {
+      parsed = `q=${search_terms}&`
+    } else {parsed = ""};
+
+    return fetch(`https://content.guardianapis.com/search?${parsed}api-key=${this.API_KEY}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error (`HTTP error! Status: ${response.status}`)} 

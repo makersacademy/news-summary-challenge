@@ -35,7 +35,13 @@ describe('NewsClient class', () => {
       expect(client.loadArticles()).rejects.toThrow(`HTTP error! Status: 400`)
     })
 
-    test('it sends the query request in correct format to the API', async() => {
+    test('it sends the general query request in correct format to the API', async() => {
+      fetch.mockResponseOnce(JSON.stringify(specificResponse), {status:200})
+      await client.loadArticles()
+      expect(fetchMock.mock.calls[0][0]).toEqual(`https://content.guardianapis.com/search?api-key=${API_KEY}`);
+    })
+
+    test('it sends the specific query request in correct format to the API', async() => {
       fetch.mockResponseOnce(JSON.stringify(specificResponse), {status:200})
       await client.loadArticles('football')
       expect(fetchMock.mock.calls[0][0]).toEqual(`https://content.guardianapis.com/search?q=football&api-key=${API_KEY}`);
