@@ -2,11 +2,12 @@ const jestFetchMock = require("jest-fetch-mock");
 jestFetchMock.enableMocks();
 const NewsClient = require('./newsClient')
 const Responses = require('./serverResponses')
+const Keys = require('./keys')
 
 describe('NewsClient class', () => {
 
   let client;
-  const API_KEY = process.env.GUARDIAN_KEY
+  const API_KEY = Keys.reveal()
 
   beforeEach(() => {
     fetch.resetMocks();

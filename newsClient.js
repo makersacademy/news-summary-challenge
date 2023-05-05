@@ -1,6 +1,8 @@
+const Key = require('./keys')
+
 class NewsClient{
   constructor() {
-    this.API_KEY = process.env.GUARDIAN_KEY
+    this.API_KEY = Key.reveal()
   }
 
   loadArticles = (search_terms=null) => {
