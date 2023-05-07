@@ -1,0 +1,25 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "* Feel free to use Google, your notes, books, etc. but work on your own.\r * If you refer to the solution of another coach or student, please put a link to that in\r   your README.\r * If you have a partial solution, **still check in a partial solution** and send in a pull\r   request.\r * You must submit a pull request to this repo with your code by 10am Monday morning.",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-json": "^1.0.0",
+    "express-session": "^1.17.3",
+    "express-static": "^1.2.6"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22"
+  }
+}
