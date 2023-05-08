@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: 'Helvetica', serif;
+}
+#main-container {
+  max-width: 1080px;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  background-color: #fdfdfd;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  display: inline-block;
+}
+
+.article-image {
+  display: inline-block;
+  width: 200px;
+}
+
+.error {
+  color: red
+}
