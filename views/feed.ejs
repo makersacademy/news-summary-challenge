@@ -11,22 +11,65 @@
     <div class="container">
       <div class="frame">
         <div class="title-container">
-          <h1>The Embattled </h1>
+          <h1>Bunker Feed.</h1>
         </div>
         <div class="body-container-feed">
-          <div>
+          <div class="introvert-feed-control">
             <% if (session.name) { %>
               <h1><%= session.name %></h1>
             <% } else { %>
               <h1>Welcome Stranger</h1>
             <% } %>
           </div>
-          <div>
-
+          <div class="category-menu">
+            <div class="button-container">
+              <button class="category-button">News</button>
+            </div>
+            <div class="button-container">
+              <button class="category-button">Sport</button>
+            </div>
+            <div class="button-container">
+              <button class="category-button">Culture</button>
+            </div>
+          </div>
+          <div class="search-container">
+            <form>
+              <input type="text">
+              <input type="button" value="Search A Topic">
+            </form>
+          </div>
+          <div class="feed-container">
+            <ul class="article-list">
+              <li>
+                <div class="article-container">
+                  <div class="article-header">
+                    <div>
+                      Title
+                    </div>
+                    <div class="article-details">
+                      <div class="article-author">
+                        Author
+                      </div>
+                      <div class="article-pub-date">
+                        Pub Date
+                      </div>
+                    </div>
+                  </div>
+                  <div class="article-body">
+                    <div class="image-container">
+                      Image
+                    </div>
+                    <div class="description-container">
+                      Description
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-	<script src="index.js"></script>
+	<script type="text/javascript" href="feed.js"></script>
   </body>
 </html>

@@ -9,7 +9,7 @@
 
 .frame {
   display: grid;
-  grid-template-rows: 15% 85%;
+  grid-template-rows: 10% 90%;
   height: 800px;
   width: 450px;
   border: solid black;
@@ -21,13 +21,7 @@
 }
 
 .body-container {
-  background-color: blue;
-  display: grid;
-  grid-template-rows: 50% 50%;
-}
-
-.body-container {
-  background-color: blue;
+  background-color: lightgoldenrodyellow;
   display: grid;
   grid-template-rows: 50% 50%;
 }
@@ -57,4 +51,93 @@
 
 .title {
   text-align: center;
+}
+
+.body-container-feed {
+  display: grid;
+  grid-template-rows: 10% 10% 10% 70%;
+}
+
+.introvert-feed-control {
+  background-color: red;
+}
+
+.category-menu {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  background-color: blue;
+}
+
+.category-button {
+ color: aquamarine;
+}
+
+.search-container {
+  margin: auto;
+  background-color: green;
+}
+
+.button-container {
+  margin: auto;
+}
+
+.feed-container {
+  background-color: yellow;
+  margin: 0px;
+}
+
+.article-list {
+  list-style: none;
+  padding-left: 0px;
+}
+
+/* Article Box */
+
+.article-container {
+  display: grid;
+  grid-template-rows: 28% 72%;
+  background-color: green;
+  height: 170px;
+  border: dotted black;
+}
+
+.article-header {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  border: dotted black;
+}
+
+.article-title {
+  margin: auto;
+  border: dotted black;
+}
+
+.article-details {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  border: dotted black;
+}
+
+.article-author {
+  margin: auto;
+  border: dotted black;
+}
+
+.article-pub-date {
+  margin: auto;
+  border: dotted black;
+}
+
+.article-body {
+  display: grid;
+  grid-template-columns: 23% 77%;
+  border: dotted black;
+}
+
+.image-container {
+  background-color: lightblue;
+}
+
+.description-container {
+  background-color: blueviolet;
 }
