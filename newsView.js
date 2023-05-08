@@ -4,9 +4,18 @@ class NewsView{
     this.client = client
     this.mainContainerEl = document.querySelector('#main-container');
     this.inputEl = document.querySelector('#search-form')
+    
     this.searchButtonEl = document.querySelector('#search-button')
     this.searchButtonEl.addEventListener('click', async () => {
-
+      const user_input = this.inputEl.value
+      try {
+        if (user_input === "") {throw new Error("You need to search for something")}
+        this.resetPageContents()
+        await this.retrieveArticlesFromApi(user_input)
+        this.displayPage()
+      } catch (err){
+        this.displayError(err)
+      }
     })
     
     this.homeButtonEl = document.querySelector('#home-button')
