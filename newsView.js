@@ -5,12 +5,19 @@ class NewsView{
     this.mainContainerEl = document.querySelector('#main-container');
     this.inputEl = document.querySelector('#search-form')
     this.searchButtonEl = document.querySelector('#search-button')
+    this.searchButtonEl.addEventListener('click', async () => {
+
+    })
     
     this.homeButtonEl = document.querySelector('#home-button')
     this.homeButtonEl.addEventListener('click', async () => {
+      try {
       this.resetPageContents()
       await this.retrieveArticlesFromApi()
       this.displayPage()
+      } catch (err) {
+      this.displayError(err)
+      }
     })
   }
 
@@ -19,10 +26,17 @@ class NewsView{
     this.model.setArticles(result.response.results)
   }
   
-
   resetPageContents = () => {
     const all_articles = document.querySelectorAll('div.article, div.error')
     all_articles.forEach(article => article.remove())
+  }
+
+  displayError = (error) => {
+    this.resetPageContents()
+    const new_row = document.createElement('div')
+    new_row.className = 'error'
+    new_row.textContent = error
+    this.mainContainerEl.append(new_row)
   }
 
   displayPage = () => {
@@ -31,7 +45,14 @@ class NewsView{
     all_article_data.forEach(article => {
       const new_div = document.createElement('div')
       new_div.className = 'article'
-      new_div.textContent = article.webTitle
+      const new_link = document.createElement('a')
+      new_link.textContent = article.webTitle
+      new_link.href = article.webUrl
+      const new_img = document.createElement('img')
+      // Guardian API does not work properly
+      // new_img.src = article.fields.thumbnail
+      new_img.src = 'https://picsum.photos/200/300'
+      new_div.append(new_link, new_img)
       this.mainContainerEl.append(new_div)
     })
   }

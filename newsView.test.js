@@ -55,12 +55,25 @@ describe('NewsView class', () => {
       const all_notes_on_page = document.querySelectorAll('div.article')
       expect(all_notes_on_page.length).toEqual(10)
       expect(all_notes_on_page[0].textContent).toEqual("Top 10 books about being poor in America")
+      expect(all_notes_on_page[0].querySelector('img').src).toEqual('https://media.guim.co.uk/111ce78e653584f39dc414c752768a4e90ce2504/0_317_3260_1955/500.jpg')
     })
 
     test('throws an error if there are no articles in the model', () => {
       model.setArticles(emptyResponse.response.results)
       const view = new NewsView(model, mockClient);
       expect(view.displayPage).toThrowError("No articles found.");
+    })
+  })
+
+  describe('displayError method', () => {
+    test('it resets all the views on page and creates a new error element', () =>{
+      model.setArticles(okResponse.response.results)
+      const view = new NewsView(model, mockClient);
+      view.displayPage()
+      view.displayError('Something went wrong.')
+      const all_notes_on_page = document.querySelectorAll('div.error')
+      expect(all_notes_on_page.length).toEqual(1)
+      expect(all_notes_on_page[0].textContent).toEqual("Something went wrong.")
     })
   })
 
