@@ -61,6 +61,7 @@ class NewsView{
       // Guardian API does not work properly
       // new_img.src = article.fields.thumbnail
       new_img.src = 'https://picsum.photos/200/300'
+      new_img.className = 'article-image'
       new_div.append(new_link, new_img)
       this.mainContainerEl.append(new_div)
     })
