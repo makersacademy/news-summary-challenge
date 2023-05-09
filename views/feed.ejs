@@ -16,7 +16,16 @@
         <div class="body-container-feed">
           <div class="introvert-feed-control">
             <% if (session.name) { %>
-              <h1><%= session.name %></h1>
+            <div class="introvert-feed-form-container">
+              <div class="introvert-feed-form">
+                <form>
+                  <input type="button" id="introvert-button" value="ARE THEY TALKING ABOUT YOU?">
+                </form>
+              </div>
+              <div class="introvert-feed-name">
+                <h6 id="introvert-name"><%= session.name %></h6>
+              </div>
+            </div>
             <% } else { %>
               <h1>Welcome Stranger</h1>
             <% } %>
@@ -34,20 +43,20 @@
           </div>
           <div class="search-container">
             <form>
-              <input type="text">
-              <input type="button" value="Search A Topic">
+              <input type="text" id="search-box">
+              <input type="button" value="Search A Topic" id="search-button">
             </form>
           </div>
           <div class="feed-container">
-            <ul class="article-list">
+            <ul id="article-list">
               <li>
                 <div class="article-container">
                   <div class="article-header">
-                    <div>
+                    <div class="article-title">
                       Title
                     </div>
                     <div class="article-details">
-                      <div class="article-author">
+                      <div class="article-section">
                         Author
                       </div>
                       <div class="article-pub-date">
@@ -59,7 +68,7 @@
                     <div class="image-container">
                       Image
                     </div>
-                    <div class="description-container">
+                    <div class="summary-container">
                       Description
                     </div>
                   </div>
@@ -70,6 +79,6 @@
         </div>
       </div>
     </div>
-	<script type="text/javascript" href="feed.js"></script>
+	<script type="text/javascript" src="feed.js"></script>
   </body>
 </html>
