@@ -1,0 +1,168 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.frame {
+  display: grid;
+  grid-template-rows: 10% 90%;
+  height: 800px;
+  width: 450px;
+  border: solid black;
+}
+
+.title-container {
+  margin: auto;
+  background-color: red;
+}
+
+.body-container {
+  background-color: lightgoldenrodyellow;
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+
+.name-form-container {
+  background-color: aqua;
+  margin: auto;
+}
+
+.anon-container {
+  display: grid;
+  grid-template-rows: 40% 60%;
+  background-color: bisque;
+}
+
+.anon-title-container {
+  margin: auto;
+}
+
+.anon-button-container {
+  margin: auto;
+}
+
+.button {
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.body-container-feed {
+  display: grid;
+  grid-template-rows: 10% 10% 10% 70%;
+}
+
+.introvert-feed-control {
+  background-color: red;
+}
+
+.introvert-feed-form-container {
+  display: grid;
+  grid-template-rows: 99% 1%;
+}
+
+.introvert-feed-form {
+  background-color: aliceblue;
+}
+
+.introvert-feed-name {
+  display: hidden;
+}
+
+.category-menu {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  background-color: blue;
+}
+
+.category-button {
+ color: red;
+}
+
+.search-container {
+  margin: auto;
+  background-color: green;
+}
+
+.button-container {
+  margin: auto;
+}
+
+.feed-container {
+  background-color: yellow;
+  margin: 0px;
+  overflow-y: auto;
+}
+
+#article-list {
+  list-style: none;
+  padding-left: 0px;
+}
+
+/* Article Box */
+
+.article-container {
+  display: grid;
+  grid-template-rows: 28% 72%;
+  background-color: green;
+  height: 170px;
+  border: dotted black;
+}
+
+.article-header {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  border: dotted black;
+}
+
+.article-title {
+  margin: auto;
+  font-weight: bold;
+  border: dotted black;
+  font-size: 15px;
+}
+
+.article-details {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  border: dotted black;
+}
+
+.article-section {
+  margin: auto;
+  background-color: aquamarine;
+  font-size: 13px;
+}
+
+.article-author {
+  margin: auto;
+  border: dotted black;
+}
+
+.article-pub-date {
+  margin: auto;
+  border: dotted black;
+}
+
+.article-body {
+  display: grid;
+  grid-template-columns: 23% 77%;
+  border: dotted black;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+  }
+
+.summary-container {
+  background-color: blueviolet;
+}

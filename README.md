@@ -1,3 +1,48 @@
+# 'Bunker Feed' Implementation
+
+## Learning and Notes
+
+* This is a partial implementation of the Newsfeed Challenge. It Covers pretty much all of the User Spec (summary integration hindered by CORS, but working to fix).
+
+* The main part missing is a test suite. This is due to two connected factors.
+
+* For this project I wanted to work with APIs and DOM manipulation and how that connects to a framework like Express JS. 'Doing' is the way I learn. I had minimal idea of how the program was going to function (or more importantly, work) before starting, and so writing tests at the start seemed impossible.
+
+* It was also only throuh the process of wokring with Express and JavaScript together that I started to understand the proccess... and so could start writing tests for it.
+
+# 'Bunker Feed' Introduction
+
+* You are a Member of the UK Parliament. More importantly, someone from the press has got wind (and possibly a photo) of your little 'post party that never happened' nap in the Rose garden at downing street.
+
+* All systems are on lockdown, as are you. Your team of interns has ushered you into the bunker to keep you out of the public eye in the hope that this will all blow over and everyone will forget about you. You've also had your Guardian website access taken away from you so you can't cause any "tomfoolery" in the comments section.
+
+* 'Bunker Feed' to the rescue! This lightweight app will get you through it. You can access all the days news quickly in one place without having to go to the Guardian Website. Best of all, after entering your name, in one click you can fetch all the days news about yourself into your feed asnd check if you've been caught!
+
+## Know issues
+
+* Very much a work in progress.
+* Section buttons not connected
+* Small changes need to be made to the fetch call to get last hours instead of latest
+* Aylien intergration not working, having CORS issues, but nothing have tried is working,
+* have a feeling NodeMon might be causing the issue, will investigate further.
+* CSS is only layout, proper styling needs to be applied and there are issues with rendering.
+* I have taken the Aylien API key out as not working in this version, the Guardian API key is running on 'test' at the moment, but please replace with your own if needed.
+
+## Instructions
+
+```JavaScript
+
+// clone repository
+
+// Command line
+
+npm install
+
+// start server
+
+npm run devStart
+```
+
 # News challenge
 
 * Feel free to use Google, your notes, books, etc. but work on your own.

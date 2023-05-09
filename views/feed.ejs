@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bunker Feed</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="frame">
+        <div class="title-container">
+          <h1>Bunker Feed.</h1>
+        </div>
+        <div class="body-container-feed">
+          <div class="introvert-feed-control">
+            <% if (session.name) { %>
+            <div class="introvert-feed-form-container">
+              <div class="introvert-feed-form">
+                <form>
+                  <input type="button" id="introvert-button" value="ARE THEY TALKING ABOUT YOU?">
+                </form>
+              </div>
+              <div class="introvert-feed-name">
+                <h6 id="introvert-name"><%= session.name %></h6>
+              </div>
+            </div>
+            <% } else { %>
+              <h1>Welcome Stranger</h1>
+            <% } %>
+          </div>
+          <div class="category-menu">
+            <div class="button-container">
+              <button class="category-button">News</button>
+            </div>
+            <div class="button-container">
+              <button class="category-button">Sport</button>
+            </div>
+            <div class="button-container">
+              <button class="category-button">Culture</button>
+            </div>
+          </div>
+          <div class="search-container">
+            <form>
+              <input type="text" id="search-box">
+              <input type="button" value="Search A Topic" id="search-button">
+            </form>
+          </div>
+          <div class="feed-container">
+            <ul id="article-list">
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+	<script type="text/javascript" src="feed.js"></script>
+  </body>
+</html>
