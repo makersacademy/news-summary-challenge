@@ -7,7 +7,12 @@ page. Clicking on a headline will link the user to the actual article page on th
 
 ### Technologies
 
-Code is written in frontend JavaScript, CSS and HTML. I have also used Axios and Bootstrap, and tested with Jest.  
+- JavaScript
+- CSS 
+- HTML
+- Axios
+- Bootstrap
+- Jest.  
 
 ## User Stories
 
