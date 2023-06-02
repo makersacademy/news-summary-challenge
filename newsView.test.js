@@ -31,7 +31,57 @@ describe('NewsView class', () => {
     expect(view).toHaveProperty('client', client)
   })
 
-  xit('creates new page elements for each story in the model when displayNews is called', () => {
-    // placeholder
+  it('creates new page elements for each story in the model when displayNews is called', () => {
+    // mock functions
+    model.getStories.mockImplementationOnce(() => [
+        {
+          webUrl: 'fake url',
+          headline: 'fake headline ',
+          byline: 'nobody',
+          thumbnailUrl: 'an even more fake url'
+        },
+        {
+          webUrl: 'a very fake url',
+          headline: 'fake headline: the return',
+          byline: 'who?',
+          thumbnailUrl: 'the fakest url'
+        }
+      ],
+    );
+    
+    view.displayNews()
+    const storyPageEls = document.querySelectorAll('div.story')
+    // checks to story elements have been created
+    expect(storyPageEls.length).toBe(2);
+
+    const firstStory = storyPageEls.item(0);
+    // checks that the first story element has to child elements: image and headline
+    expect(firstStory.childNodes.length).toBe(2);
   });
+
+  it('removes old story page elements when displayNews is called twice', () => {
+    model.getStories.mockImplementation(() => [
+      {
+        webUrl: 'fake url',
+        headline: 'fake headline ',
+        byline: 'nobody',
+        thumbnailUrl: 'an even more fake url'
+      },
+      {
+        webUrl: 'a very fake url',
+        headline: 'fake headline: the return',
+        byline: 'who?',
+        thumbnailUrl: 'the fakest url'
+      }
+    ],
+  );
+  // first call
+  view.displayNews()
+
+  expect(document.querySelectorAll('div.story').length).toBe(2);
+  // second call 
+  view.displayNews()
+  // length should still be two
+  expect(document.querySelectorAll('div.story').length).toBe(2);
+  })
 })

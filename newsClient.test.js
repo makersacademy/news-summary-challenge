@@ -54,7 +54,7 @@ describe('NewsClient class', () => {
             {
               webUrl: "https://www.theguardian.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
               fields: {
-                headline: "Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
+                headline: "Ofgem to unveil new household energy bill price cap on Thursday morning",
                 byline: "Julia Kollewe",
                 thumbnail: "https://media.guim.co.uk/aee3b3b05ea2a37acdadc91095c163fd381eba4a/0_24_3500_2100/500.jpg"
               },
