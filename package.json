@@ -1,0 +1,16 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "* Feel free to use Google, your notes, books, etc. but work on your own. * If you refer to the solution of another coach or student, please put a link to that in   your README. * If you have a partial solution, **still check in a partial solution** and send in a pull   request. * You must submit a pull request to this repo with your code by 10am Monday morning.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest-environment-jsdom": "^29.5.0"
+  }
+}
