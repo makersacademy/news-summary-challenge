@@ -38,6 +38,13 @@ class NewsView {
       document.querySelector('#main-container').append(newStory);
     });
   }
+
+  displayNewsFromApi() {
+    return this.client.fetchNewsStories((storiesArray) => {
+      this.model.setStories(storiesArray);
+      this.displayNews();
+    });
+  }
 }
 
 module.exports = NewsView;
