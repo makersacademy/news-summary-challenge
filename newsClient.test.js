@@ -73,9 +73,23 @@ describe('NewsClient class', () => {
     })
   })
 
-  // xit('takes an optional query string', () => {
-  //   // placeholder
-  // })
+  it('takes an optional query string', (done) => {
+    // sets query string
+    const query = 'football';
+    // mock fetch response
+    fetch.mockResponseOnce(JSON.stringify({
+      response: {results: []}
+    },
+    ));
+    // checks query has been interpolated into endpoint URL
+    client.fetchNewsStories((stories) => {
+      expect(stories).toBeTruthy();
+      expect(fetch.mock.calls[0][0]).toBe(
+        `https://content.guardianapis.com/search?q=football&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=${apiKey}`
+      );
+      done()
+    }, query);
+  })
 
   // xit('catches errors', () => {
   //   // placeholder
