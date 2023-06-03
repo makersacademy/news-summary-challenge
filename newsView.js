@@ -34,13 +34,14 @@ class NewsView {
       newStoryImage.src = story.thumbnailUrl;
 
       newStory.appendChild(newStoryImage);
-      // adds a line break
-      newStory.append(document.createElement('br'));
       // sets headline and link subelement
-      const newStoryHeadline = document.createElement('a')
+      const newStoryHeadline = document.createElement('p')
+      const linkToStory = document.createElement('a')
       newStoryHeadline.className = 'story_headline'
-      newStoryHeadline.textContent = story.headline;
-      newStoryHeadline.href = story.webUrl;
+      linkToStory.className = 'story_link'
+      linkToStory.textContent = story.headline;
+      linkToStory.href = story.webUrl;
+      newStoryHeadline.appendChild(linkToStory)
 
       newStory.appendChild(newStoryHeadline);
       // appends story to main container

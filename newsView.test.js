@@ -56,8 +56,8 @@ describe('NewsView class', () => {
     expect(storyPageEls.length).toBe(2);
 
     const firstStory = storyPageEls.item(0);
-    // checks that the first story element has two child elements: image, page break, and headline
-    expect(firstStory.childNodes.length).toBe(3);
+    // checks that the first story element has two child elements: image and headline
+    expect(firstStory.childNodes.length).toBe(2);
   });
 
   it('removes old story page elements when displayNews is called twice', () => {
