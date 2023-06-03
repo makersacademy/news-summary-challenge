@@ -91,4 +91,28 @@ describe('NewsView class', () => {
     // this checks that created elements are being added to page
     expect(document.querySelectorAll('div.story').length).toBe(2); 
   });
+
+  it('has a form to submit an optional search query', () => {
+    expect(document.querySelector('#search-button')).toBeTruthy();
+    expect(document.querySelector('#search-input')).toBeTruthy();
+  });
+
+  it('filters latest stories then displays them with searchNews is called with a query string', () => {
+    const query = 'fake query'
+    // mock functions
+    // this mock skips the fetch request. but mimics its result
+    client.fetchNewsStories.mockImplementation((callback) => {
+      return Promise.resolve(callback(mockData));
+    })
+    // this mock skips the setStories call in searchNews
+    model.getStories.mockImplementation(() => mockData);
+
+    view.searchNews(query)
+    // checks that searchNews has passed on the query to the fetch
+    expect(client.fetchNewsStories).toHaveBeenCalledWith(expect.any(Function), query);
+    // checks that the display is still happening
+    expect(model.setStories).toHaveBeenCalledWith(mockData);
+    expect(model.getStories).toHaveBeenCalled();
+    expect(document.querySelectorAll('div.story').length).toBe(2); 
+  });
 })

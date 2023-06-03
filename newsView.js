@@ -5,6 +5,14 @@ class NewsView {
   constructor(model = new NewsModel, client = new NewsClient) {
     this.model = model;
     this.client = client;
+    const searchButtonEl = document.querySelector('#search-button');
+    const searchInputEl = document.querySelector('#search-input');
+
+    searchButtonEl.addEventListener('click', () => {
+      let query = searchInputEl.value
+      this.searchNews(query);
+      searchInputEl.value = null
+    });
   }
 
   displayNews() {
@@ -13,6 +21,7 @@ class NewsView {
     oldStoryDisplay.forEach((oldStory) => {
       oldStory.remove();
     })
+
     // gets stories in model
     const storyArray = this.model.getStories();
     // creates elements for each story
@@ -44,6 +53,13 @@ class NewsView {
       this.model.setStories(storiesArray);
       this.displayNews();
     });
+  }
+
+  searchNews(query) {
+    return this.client.fetchNewsStories((storiesArray) => {
+      this.model.setStories(storiesArray);
+      this.displayNews();
+    }, query);
   }
 }
 
