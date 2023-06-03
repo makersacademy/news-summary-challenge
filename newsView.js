@@ -2,6 +2,7 @@ class NewsView {
   constructor(model) {
     this.model = model;
     this.mainContainerEl = document.querySelector("#main-container");
+    document.querySelector("#header").innerHTML = "Headlines"
   }
 
   showArticles() {
@@ -13,6 +14,10 @@ class NewsView {
         div.className = "article";
         const p = document.createElement("p");
         p.textContent = article.title;
+        // a = document.createElement("a");
+        // a.href = article.url;
+        // a.innerHTML = article.title;
+        // div.append(a);
         div.append(p);
         this.mainContainerEl.append(div);
       });
@@ -21,11 +26,3 @@ class NewsView {
 }
 
 module.exports = NewsView;
-
-// articles.forEach((object) => {
-//   const div = document.createElement("div");
-//   div.className = "article";
-//   div.textContent = object.webTitle;
-//   this.mainContainerEl.append(div);
-//   console.log(object.webTitle);
-// })

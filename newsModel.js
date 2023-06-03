@@ -11,6 +11,7 @@ class NewsModel {
       .then((data) => {
         const processedData = data.response.results.map((article) => ({
           title: article.webTitle,
+          url: article.webUrl,
         }));
         this.articles = processedData;
       });
