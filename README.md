@@ -14,6 +14,18 @@ For this challenge I will create a single page web app.
 - Jest (including jest-fetch-mock and jest-environment-jsdom)
 - esbuild
 
+### Installation
+
+To install this application locally you'll need to [register and get an API key](https://open-platform.theguardian.com/access/) to use the Guardian API.'
+
+```plain
+git clone https://github.com/sarahc-dev/news-summary-challenge.git
+cd news-summary-challenge
+npm install
+echo "module.exports = '<YOUR API KEY>'" >> apiKey.js
+npm run build
+```
+
 ## User Stories
 
 ```plain
