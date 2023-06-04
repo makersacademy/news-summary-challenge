@@ -20,6 +20,6 @@ jobs:
           npm run-script build
 
       - name: Deploy 🚀
-        uses: sarahc-dev/github-pages-deploy-action@v4
+        uses: sarahc-dev/actions-gh-pages@v3
         with:
           folder: . # The folder the action should deploy.
