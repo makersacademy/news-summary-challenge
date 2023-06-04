@@ -1,9 +1,9 @@
 const NewsModel = require("./newsModel");
 
 describe("NewsModel", () => {
-  it("getNews initially returns null", () => {
+  it("getNews initially returns an empty array", () => {
     const newsModel = new NewsModel();
-    expect(newsModel.getNews()).toEqual(null);
+    expect(newsModel.getNews()).toEqual([]);
   });
 
   it("sets the news items when setNews is called", () => {

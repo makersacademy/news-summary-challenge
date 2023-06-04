@@ -1,5 +1,5 @@
 class NewsModel {
-  #news = null;
+  #news = [];
 
   getNews() {
     return this.#news;
