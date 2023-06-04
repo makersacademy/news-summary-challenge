@@ -68,8 +68,8 @@ class NewsView {
     newThumbnail.src = item.thumbnail;
     newThumbnail.alt = "thumbnail image for article";
     newLink.append(newHeading);
-    newItem.append(newLink);
     newItem.append(newThumbnail);
+    newItem.append(newLink);
 
     return newItem;
   }

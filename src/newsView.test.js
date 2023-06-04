@@ -25,7 +25,7 @@ describe("NewsView", () => {
       const view = new NewsView(fakeModel, fakeClient);
       view.loadTodaysNews();
       expect(document.querySelectorAll(".headline").length).toEqual(1);
-      expect(document.querySelectorAll(".headline")[0].firstChild.textContent).toEqual("A headline");
+      expect(document.querySelectorAll(".headline")[0].childNodes[1].textContent).toEqual("A headline");
     });
 
     it("displays a relevant picture next to each news article", () => {
@@ -34,15 +34,15 @@ describe("NewsView", () => {
       const firstHeadline = document.querySelectorAll(".headline")[0];
 
       expect(firstHeadline.childNodes.length).toBe(2);
-      expect(firstHeadline.childNodes[1].getAttribute("src")).toEqual("image.png");
+      expect(firstHeadline.firstChild.getAttribute("src")).toEqual("image.png");
     });
 
     it("links to the original article when you click the headline", () => {
       const view = new NewsView(fakeModel, fakeClient);
       view.loadTodaysNews();
       const firstHeadline = document.querySelectorAll(".headline")[0];
-      expect(firstHeadline.firstChild.tagName).toEqual("A");
-      expect(firstHeadline.firstChild.getAttribute("href")).toEqual("url");
+      expect(firstHeadline.childNodes[1].tagName).toEqual("A");
+      expect(firstHeadline.childNodes[1].getAttribute("href")).toEqual("url");
     });
   });
 
@@ -60,7 +60,7 @@ describe("NewsView", () => {
       const buttonEl = document.querySelector("#search-button");
       input.value = "headline";
       buttonEl.click();
-      expect(document.querySelectorAll(".headline")[0].firstChild.textContent).toEqual("A headline");
+      expect(document.querySelectorAll(".headline")[0].childNodes[1].textContent).toEqual("A headline");
     });
 
     it("removes existing news stories from display before displaying searched ones", () => {
