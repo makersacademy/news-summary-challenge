@@ -19,11 +19,11 @@ For this challenge I will create a single page web app.
 To install this application locally you'll need to [register and get an API key](https://open-platform.theguardian.com/access/) to use the Guardian API.'
 
 ```plain
-git clone https://github.com/sarahc-dev/news-summary-challenge.git
-cd news-summary-challenge
-npm install
-echo "module.exports = '<YOUR API KEY>'" >> apiKey.js
-npm run build
+$ git clone https://github.com/sarahc-dev/news-summary-challenge.git
+$ cd news-summary-challenge
+$ npm install
+$ echo "module.exports = '<YOUR API KEY>'" >> apiKey.js
+$ npm run build
 ```
 
 ## User Stories
@@ -78,6 +78,12 @@ As a busy politician
 So I make my news reading more fun
 I can see whizzy animations in the app
 ```
+
+## Diagram
+
+This is my original diagram. During development, I changed the NewsModel to contain an array of news items, instead of it being a single news item.
+
+![Initial diagram](./images/diagram.png)
 
 ## Mockups
 
