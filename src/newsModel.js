@@ -1,32 +1,30 @@
 class NewsModel {
-  constructor() {
-    this.headline = "";
-    this.thumbnail = "";
-    this.url = "";
-  }
+  #headline = null;
+  #thumbnail = null;
+  #url = null;
 
   getHeadline() {
-    return this.headline;
+    return this.#headline;
   }
 
   setHeadline(headline) {
-    this.headline = headline;
+    this.#headline = headline;
   }
 
   getThumbnail() {
-    return this.thumbnail;
+    return this.#thumbnail;
   }
 
   setThumbnail(thumbnail) {
-    this.thumbnail = thumbnail;
+    this.#thumbnail = thumbnail;
   }
 
   getUrl() {
-    return this.url;
+    return this.#url;
   }
 
   setUrl(url) {
-    this.url = url;
+    this.#url = url;
   }
 }
 
