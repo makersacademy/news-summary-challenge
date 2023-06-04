@@ -1,7 +1,15 @@
-// console.log doesn't print anything on the page
-// it is not meant to be visible to the user, but for you
-// to help in debugging and getting visibility in your JS code.
-//
-// on Mac (using Chrome), use Option+Command+J to open the console and see this message.
+const NewsClient = require('./newsClient');
+const NewsModel = require('./newsModel');
+const NewsView = require('./newsView');
 
-console.log('Hello from the developer console!');
+console.log('Running the news app');
+
+const client = new NewsClient ();
+const model = new NewsModel ();
+const view = new NewsView (client, model);
+
+
+client.loadNews((news) => {
+    console.log(news.response.results.webTitle)
+})
+view.addNewsFromApi();
