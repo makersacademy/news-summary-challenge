@@ -20,4 +20,4 @@ jobs:
         uses: sarahc-dev/github-pages-deploy-action@v4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          folder: build # The folder the action should deploy.
+          folder: / # The folder the action should deploy.
