@@ -6,6 +6,16 @@ class NewsClient {
 
     const url = `https://content.guardianapis.com/search?api-key=${apiKey}&show-fields=headline,thumbnail&from-date=${formattedDate}&page-size=20`;
 
+    return this.fetch(url, callback, errorCallback);
+  }
+
+  fetchNewsBySearchQuery(query, callback, errorCallback) {
+    const url = `https://content.guardianapis.com/search?q=${query}&query-fields=headline&show-fields=headline,thumbnail&api-key=${apiKey}`;
+
+    return this.fetch(url, callback, errorCallback);
+  }
+
+  fetch(url, callback, errorCallback) {
     return fetch(url)
       .then(response => response.json())
       .then(data => {

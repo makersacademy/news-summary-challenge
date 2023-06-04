@@ -2,16 +2,38 @@ class NewsView {
   constructor(model, client) {
     this.model = model;
     this.client = client;
+    this.inputEl = document.querySelector("#search-input");
+    this.buttonEl = document.querySelector("#search-button");
+
+    this.buttonEl.addEventListener("click", () => {
+      let query = this.inputEl.value;
+      this.loadNewsFromSearch(query);
+      this.inputEl.value = "";
+    });
   }
 
   loadTodaysNews() {
     this.client.fetchTodaysNews(news => {
       this.model.setNews(news);
-      this.displayTodaysNews();
+      this.displayNews();
     }, this.displayLoadError);
   }
 
-  displayTodaysNews() {
+  loadNewsFromSearch(query) {
+    this.client.fetchNewsBySearchQuery(
+      query,
+      news => {
+        const heading = document.querySelector("#news-heading");
+        heading.textContent = `News about: ${query}`;
+        this.model.setNews(news);
+        this.displayNews();
+      },
+      this.displayLoadError
+    );
+  }
+
+  displayNews() {
+    this.resetView();
     const news = this.model.getNews();
     const newsContainer = document.querySelector("#news-container");
 
@@ -22,7 +44,9 @@ class NewsView {
   }
 
   displayLoadError() {
-    console.log("handle error");
+    const error = document.createElement("p");
+    error.textContent = "There was an error loading the news";
+    document.querySelector("#news-container").append(error);
   }
 
   createNewsItem(item) {
@@ -41,6 +65,13 @@ class NewsView {
     newItem.append(newThumbnail);
 
     return newItem;
+  }
+
+  resetView() {
+    const existingNews = document.querySelectorAll(".headline");
+    existingNews.forEach(item => {
+      item.remove();
+    });
   }
 }
 

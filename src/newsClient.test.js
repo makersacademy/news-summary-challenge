@@ -35,6 +35,20 @@ describe("NewsClient", () => {
     const newsClient = new NewsClient();
 
     return newsClient.fetchTodaysNews(returnedDataFromApi => {
+      expect(fetch).toHaveBeenCalledTimes(1);
+      expect(returnedDataFromApi.length).toBe(1);
+      expect(returnedDataFromApi[0].headline).toBe("A headline");
+      expect(returnedDataFromApi[0].thumbnail).toBe("image.png");
+      expect(returnedDataFromApi[0].url).toBe("url");
+    });
+  });
+
+  it("when a fetch request is made with a search query it returns the correct results", () => {
+    const newsClient = new NewsClient();
+    const query = "headline";
+
+    return newsClient.fetchNewsBySearchQuery(query, returnedDataFromApi => {
+      expect(fetch).toHaveBeenCalledTimes(1);
       expect(returnedDataFromApi.length).toBe(1);
       expect(returnedDataFromApi[0].headline).toBe("A headline");
       expect(returnedDataFromApi[0].thumbnail).toBe("image.png");
