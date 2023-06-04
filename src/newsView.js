@@ -14,6 +14,12 @@ class NewsView {
 
   loadTodaysNews() {
     this.client.fetchTodaysNews(news => {
+      const heading = document.querySelector("#news-heading");
+      heading.textContent = "Today's News Summary";
+      const backButton = document.querySelector("#back-button");
+      if (backButton) {
+        backButton.remove();
+      }
       this.model.setNews(news);
       this.displayNews();
     }, this.displayLoadError);
@@ -25,6 +31,7 @@ class NewsView {
       news => {
         const heading = document.querySelector("#news-heading");
         heading.textContent = `News about: ${query}`;
+        this.createBackButton();
         this.model.setNews(news);
         this.displayNews();
       },
@@ -65,6 +72,18 @@ class NewsView {
     newItem.append(newThumbnail);
 
     return newItem;
+  }
+
+  createBackButton() {
+    const button = document.createElement("button");
+    button.textContent = "Back to today's headlines";
+    button.id = "back-button";
+    const searchContainer = document.querySelector("#search-container");
+    searchContainer.append(button);
+
+    button.addEventListener("click", () => {
+      this.loadTodaysNews();
+    });
   }
 
   resetView() {

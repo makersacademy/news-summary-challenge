@@ -71,5 +71,14 @@ describe("NewsView", () => {
       buttonEl.click();
       expect(document.querySelectorAll(".headline").length).toEqual(1);
     });
+
+    it("adds a back button to go back to today's news", () => {
+      const view = new NewsView(fakeModel, fakeClient);
+      const input = document.querySelector("#search-input");
+      const buttonEl = document.querySelector("#search-button");
+      input.value = "headline";
+      buttonEl.click();
+      expect(document.querySelector("#back-button").textContent).toEqual("Back to today's headlines");
+    });
   });
 });

@@ -79,6 +79,10 @@ So I make my news reading more fun
 I can see whizzy animations in the app
 ```
 
+## To do next
+
+With some more time I would like to implement the stretch user stories. I would also like to add 'load more' functionality to get more results so the news app can return all of the days headlines if it is more than 20.
+
 ## Diagram
 
 This is my original diagram. During development, I changed the NewsModel to contain an array of news items, instead of it being a single news item.
