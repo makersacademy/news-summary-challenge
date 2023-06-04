@@ -1,30 +1,12 @@
 class NewsModel {
-  #headline = null;
-  #thumbnail = null;
-  #url = null;
+  #news = null;
 
-  getHeadline() {
-    return this.#headline;
+  getNews() {
+    return this.#news;
   }
 
-  setHeadline(headline) {
-    this.#headline = headline;
-  }
-
-  getThumbnail() {
-    return this.#thumbnail;
-  }
-
-  setThumbnail(thumbnail) {
-    this.#thumbnail = thumbnail;
-  }
-
-  getUrl() {
-    return this.#url;
-  }
-
-  setUrl(url) {
-    this.#url = url;
+  setNews(news) {
+    this.#news = news;
   }
 }
 
