@@ -26,7 +26,7 @@ describe("NewsClient", () => {
   it("when a fetch request is made to the api it sends back a 200 status and some data", () => {
     const newsClient = new NewsClient();
 
-    return newsClient.fetchAllHeadlines(returnedDataFromApi => {
+    return newsClient.fetchTodaysNews(returnedDataFromApi => {
       expect(returnedDataFromApi).toBeTruthy();
     });
   });
@@ -34,7 +34,7 @@ describe("NewsClient", () => {
   it("when a fetch request is made to fetchHeadlines it returns data in the correct format", () => {
     const newsClient = new NewsClient();
 
-    return newsClient.fetchAllHeadlines(returnedDataFromApi => {
+    return newsClient.fetchTodaysNews(returnedDataFromApi => {
       expect(returnedDataFromApi.length).toBe(1);
       expect(returnedDataFromApi[0].headline).toBe("A headline");
       expect(returnedDataFromApi[0].thumbnail).toBe("image.png");

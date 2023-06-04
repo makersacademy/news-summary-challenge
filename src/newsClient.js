@@ -1,8 +1,10 @@
 const apiKey = require("../apiKey");
 
 class NewsClient {
-  fetchAllHeadlines(callback, errorCallback) {
-    const url = `https://content.guardianapis.com/search?api-key=${apiKey}&show-fields=headline,thumbnail`;
+  fetchTodaysNews(callback, errorCallback) {
+    const formattedDate = this.formatTodaysDate();
+
+    const url = `https://content.guardianapis.com/search?api-key=${apiKey}&show-fields=headline,thumbnail&from-date=${formattedDate}&page-size=20`;
 
     return fetch(url)
       .then(response => response.json())
@@ -20,6 +22,15 @@ class NewsClient {
         console.log("Error: ", error);
         errorCallback();
       });
+  }
+
+  formatTodaysDate() {
+    // Need date in 2014-02-16 format for API
+    const today = new Date();
+    const formattedMonth = `${today.getMonth()}`.padStart(2, "0");
+    const formattedDay = `${today.getDate()}`.padStart(2, "0");
+
+    return `${today.getFullYear()}-${formattedMonth}-${formattedDay}`;
   }
 }
 
