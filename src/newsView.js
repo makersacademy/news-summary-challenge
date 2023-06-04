@@ -16,17 +16,31 @@ class NewsView {
     const newsContainer = document.querySelector("#news-container");
 
     news.forEach(item => {
-      const newItem = document.createElement("div");
-      newItem.className = "headline";
-      const newHeadline = document.createElement("h2");
-      newHeadline.textContent = item.headline;
-      newItem.append(newHeadline);
+      const newItem = this.createNewsItem(item);
       newsContainer.append(newItem);
     });
   }
 
   displayLoadError() {
     console.log("handle error");
+  }
+
+  createNewsItem(item) {
+    const newItem = document.createElement("div");
+    const newLink = document.createElement("a");
+    const newHeading = document.createElement("h2");
+    const newThumbnail = document.createElement("img");
+    newItem.className = "headline";
+    newHeading.textContent = item.headline;
+    newLink.href = item.url;
+    newLink.target = "_blank";
+    newThumbnail.src = item.thumbnail;
+    newThumbnail.alt = "thumbnail image for article";
+    newLink.append(newHeading);
+    newItem.append(newLink);
+    newItem.append(newThumbnail);
+
+    return newItem;
   }
 }
 
