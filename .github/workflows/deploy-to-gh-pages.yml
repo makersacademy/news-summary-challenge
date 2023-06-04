@@ -12,7 +12,7 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          npm run-script build
+          npm run build
         env:
           API_KEY: ${{ secrets.API_KEY }}
 
