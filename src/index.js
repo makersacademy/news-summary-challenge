@@ -8,3 +8,4 @@ const client = new NewsClient();
 const view = new NewsView(model, client);
 
 view.loadTodaysNews();
+console.log(process.env.API_KEY);

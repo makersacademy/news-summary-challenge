@@ -1,0 +1,23 @@
+name: Build and Deploy
+on: [push] # defaults to master
+permissions:
+  contents: write
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install and Build 🔧
+        run: |
+          npm install
+          npm run-script build
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+
+      - name: Deploy 🚀
+        uses: sarahc-dev/github-pages-deploy-action@v4
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          folder: build # The folder the action should deploy.
