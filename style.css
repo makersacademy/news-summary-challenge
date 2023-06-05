@@ -1,0 +1,39 @@
+h1, p, * {
+    font-family: sans-serif;
+  }
+  
+  html {
+    background:#8ae2ff;
+  }
+  
+  body {
+    background: white;
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .note {
+    border-bottom: 1px solid #aaa;
+    padding: 15px;
+  }
+  
+  input[type=text] {
+    width: 80%;
+    background: #fefefe;
+    border-radius: 4px;
+    padding: 10px 8px;
+    border: 1px solid #444;
+    font-size: 20px;
+  }
+  
+  button {
+    background: #9efa82;
+    border-radius: 4px;
+    padding: 10px 8px;
+    border: 1px solid #444;
+    font-size: 18px;
+    cursor: pointer;
+  }

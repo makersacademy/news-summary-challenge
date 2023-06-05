@@ -12,4 +12,8 @@ const view = new NewsView (client, model);
 client.loadNews((news) => {
     console.log(news.response.results.webTitle)
 })
-view.addNewsFromApi();
+view.displayNewsFromApi();
+
+newsClient.searchQueryResults('food', (data) => {
+  console.log(data)
+})
