@@ -33,6 +33,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -51,23 +52,36 @@ button:hover {
   padding: 10px;
   background-color: #f2f2f2;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .article:hover {
   background-color: #e0e0e0;
+  transform: translateY(-5px) scale(1.02);
 }
 
 .article img {
   width: 100%;
   height: auto;
   border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.article:hover img {
+  transform: scale(1.05);
 }
 
 .article h2 {
   margin-top: 10px;
   font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.article:hover h2 {
+  color: #007bff;
 }
 
 .article p {
@@ -87,6 +101,7 @@ button:hover {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s ease;
 }
 
 .modal-content {
@@ -96,19 +111,33 @@ button:hover {
   border: 1px solid #888;
   width: 70%;
   text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 }
 
 .modal-content img {
   width: 100%;
   height: auto;
+  border-radius: 5px;
 }
 
 .modal-content h2 {
   margin-top: 20px;
+  font-size: 24px;
 }
 
 .modal-content p {
   margin: 20px 0;
+  font-size: 16px;
+  color: #555;
 }
 
 .modal-content a {
@@ -130,6 +159,7 @@ button:hover {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .close:hover,
@@ -137,4 +167,21 @@ button:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal-summary.loading::after {
+  content: " .";
+  animation: loading 1s infinite;
+}
+
+@keyframes loading {
+  0% {
+    content: " .";
+  }
+  33% {
+    content: " ..";
+  }
+  66% {
+    content: " ...";
+  }
 }

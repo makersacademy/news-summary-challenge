@@ -54,11 +54,13 @@ class newsView {
   displayModal(article) {
     this.modalImage.src = article.fields.thumbnail;
     this.modalImage.onerror = () => {
-      this.modalImage.src = "./images/image_1.jpg"; // Replace with your placeholder image URL
+      this.modalImage.src = "./images/image_1.jpg";
     };
     this.modalTitle.innerText = article.fields.headline;
     this.modalSummary.innerText = "Loading summary...";
     this.modalLink.href = article.webUrl;
+
+    this.modal.querySelector(".modal-content").classList.add("show");
     //show the modal
     this.modal.style.display = "block";
 
@@ -68,11 +70,13 @@ class newsView {
 
     const closeButton = this.modal.querySelector(".close");
     closeButton.onclick = () => {
+      this.modal.querySelector(".modal-content").classList.remove("show");
       this.modal.style.display = "none";
     };
 
     const closeModal = (event) => {
       if (event.target == this.modal) {
+        this.modal.querySelector(".modal-content").classList.remove("show");
         this.modal.style.display = "none";
         window.removeEventListener("click", closeModal);
       }
