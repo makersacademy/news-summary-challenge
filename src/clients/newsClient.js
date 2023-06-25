@@ -9,7 +9,7 @@ class newsClient {
 
   fetchNews(callback) {
     return fetch(
-      `${this.apiUrl}?order-by=newest&show-fields=thumbnail,headline,byline&api-key=${this.apiKey}`
+      `${this.apiUrl}?order-by=newest&show-fields=thumbnail,headline,byline&page-size=30&api-key=${this.apiKey}`
     )
       .then((response) => response.json())
       .then((data) => callback(data.response.results))

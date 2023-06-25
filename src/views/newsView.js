@@ -76,7 +76,7 @@ class newsView {
   }
 
   handleSearch() {
-    const searchQuery = this.searchInput.value.trim();
+    let earchQuery = this.searchInput.value.trim();
 
     // Sanitize the search query to remove any potentially harmful characters
     searchQuery = searchQuery.replace(/</g, "&lt;").replace(/>/g, "&gt;");
