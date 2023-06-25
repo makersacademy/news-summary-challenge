@@ -5,6 +5,10 @@ class newsView {
 
     this.newsContainer = document.querySelector("#newsContainer");
 
+    this.searchInput = document.querySelector("#searchInput");
+    this.searchButton = document.querySelector("#searchButton");
+    this.searchButton.addEventListener("click", this.handleSearch.bind(this));
+
     this.modal = document.querySelector("#news-modal");
     this.modalImage = document.querySelector("#modalImage");
     this.modalTitle = document.querySelector("#modalTitle");
@@ -13,6 +17,8 @@ class newsView {
   }
 
   displayNews() {
+    this.clearNewsContainer();
+
     this.model.getNews().forEach((article) => {
       const articleContainer = document.createElement("div");
       articleContainer.classList.add("article");
@@ -67,6 +73,20 @@ class newsView {
     };
 
     window.addEventListener("click", closeModal);
+  }
+
+  handleSearch() {
+    const searchQuery = this.searchInput.value.trim();
+
+    // Fetch news with search query
+    this.client.searchNews(searchQuery, (data) => {
+      this.model.setNews(data);
+      this.displayNews();
+    });
+  }
+
+  clearNewsContainer() {
+    this.newsContainer.innerHTML = "";
   }
 }
 

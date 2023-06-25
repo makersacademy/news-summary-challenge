@@ -26,6 +26,19 @@ class newsClient {
       .then((data) => callback(data.sm_api_content))
       .catch((error) => console.error(`Error: ${error}`));
   }
+
+  searchNews(searchQuery, callback) {
+    const url = `${
+      this.apiUrl
+    }?order-by=newest&show-fields=thumbnail,headline,byline&q=${encodeURIComponent(
+      searchQuery
+    )}&api-key=${this.apiKey}`;
+
+    return fetch(url)
+      .then((response) => response.json())
+      .then((data) => callback(data.response.results))
+      .catch((error) => console.error(`Error: ${error}`));
+  }
 }
 
 module.exports = newsClient;

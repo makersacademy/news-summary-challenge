@@ -90,4 +90,73 @@ describe("newsView", () => {
     expect(view.modalSummary.innerText).toEqual(mockSummary);
     expect(view.modalLink.href).toEqual(mockArticle.webUrl);
   });
+
+  it("handles search", () => {
+    // Create a mock client instance
+    const mockClient = {
+      searchNews: jest.fn(),
+    };
+
+    // Create a mock model instance
+    const mockModel = {
+      getNews: jest.fn(),
+      setNews: jest.fn(),
+    };
+
+    // Create a new newsView instance with the mock model and client
+    const view = new newsView(mockModel, mockClient);
+
+    // Set up mock data
+    const searchQuery = "politics";
+    const mockSearchResults = [
+      {
+        id: "article1",
+        fields: {
+          headline: "Politics article 1",
+          thumbnail: "https://example.com/thumbnail1.jpg",
+        },
+        webUrl: "https://example.com/article1",
+      },
+      {
+        id: "article2",
+        fields: {
+          headline: "Politics article 2",
+          thumbnail: "https://example.com/thumbnail2.jpg",
+        },
+        webUrl: "https://example.com/article2",
+      },
+    ];
+
+    // Mock the getNews method of the model to return an empty array
+    mockModel.getNews.mockImplementationOnce(() => []);
+
+    // Mock the searchNews method of the client to return the mock search results
+    mockClient.searchNews.mockImplementationOnce((query, callback) => {
+      callback(mockSearchResults);
+    });
+
+    // Mock the displayNews method
+    const displayNewsMock = jest.spyOn(view, "displayNews");
+
+    // Set the value of the search input
+    view.searchInput.value = searchQuery;
+
+    // Call the handleSearch method
+    view.handleSearch();
+
+    // Assert that the searchNews method was called with the correct arguments
+    expect(mockClient.searchNews).toHaveBeenCalledWith(
+      searchQuery,
+      expect.any(Function)
+    );
+
+    // Assert that the setNews method of the model was called with the search results
+    expect(mockModel.setNews).toHaveBeenCalledWith(mockSearchResults);
+
+    // Assert that the displayNews method was called after the search
+    expect(displayNewsMock).toHaveBeenCalled();
+
+    // Restore the original implementation of displayNews
+    displayNewsMock.mockRestore();
+  });
 });
