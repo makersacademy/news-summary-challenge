@@ -26,6 +26,9 @@ class newsView {
 
       const thumbnail = document.createElement("img");
       thumbnail.src = article.fields.thumbnail;
+      thumbnail.onerror = () => {
+        thumbnail.src = "./images/image_1.jpg";
+      };
       articleContainer.appendChild(thumbnail);
 
       const headline = document.createElement("h2");
@@ -50,6 +53,9 @@ class newsView {
 
   displayModal(article) {
     this.modalImage.src = article.fields.thumbnail;
+    this.modalImage.onerror = () => {
+      this.modalImage.src = "./images/image_1.jpg"; // Replace with your placeholder image URL
+    };
     this.modalTitle.innerText = article.fields.headline;
     this.modalSummary.innerText = "Loading summary...";
     this.modalLink.href = article.webUrl;
