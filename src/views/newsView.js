@@ -4,6 +4,12 @@ class newsView {
     this.client = client;
 
     this.newsContainer = document.querySelector("#newsContainer");
+
+    this.modal = document.querySelector("#news-modal");
+    this.modalImage = document.querySelector("#modalImage");
+    this.modalTitle = document.querySelector("#modalTitle");
+    this.modalSummary = document.querySelector("#modalSummary");
+    this.modalLink = document.querySelector("#modalLink");
   }
 
   displayNews() {
@@ -21,6 +27,10 @@ class newsView {
       articleContainer.appendChild(headline);
 
       this.newsContainer.appendChild(articleContainer);
+
+      articleContainer.addEventListener("click", () => {
+        this.displayModal(article);
+      });
     });
   }
 
@@ -30,6 +40,30 @@ class newsView {
       this.displayNews();
     };
     this.client.fetchNews(callback);
+  }
+
+  displayModal(article) {
+    this.modalImage.src = article.fields.thumbnail;
+    this.modalTitle.innerText = article.fields.headline;
+    this.modalSummary.innerText = "Loading summary...";
+    this.modalLink.href = article.webUrl;
+    //show the modal
+    this.modal.style.display = "block";
+
+    this.client.fetchSummary(article.webUrl, (summary) => {
+      this.modalSummary.innerText = summary;
+    });
+
+    const closeButton = this.modal.querySelector(".close");
+    closeButton.onclick = () => {
+      this.modal.style.display = "none";
+    };
+
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        this.modal.style.display = "none";
+      }
+    };
   }
 }
 

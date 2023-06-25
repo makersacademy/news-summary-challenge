@@ -58,4 +58,36 @@ describe("newsView", () => {
       );
     });
   });
+
+  it("displays the modal", () => {
+    document.body.innerHTML = fs.readFileSync("./index.html");
+    // mock the client class
+    const mockClient = {
+      fetchSummary: jest.fn(),
+    };
+    // mock the model class
+    const mockModel = {};
+
+    const view = new newsView(mockModel, mockClient);
+    const mockArticle = {
+      fields: {
+        thumbnail: "https://example.com/thumbnail.jpg",
+        headline: "Test Article",
+      },
+      webUrl: "https://example.com/article",
+    };
+    const mockSummary = "Mock summary";
+    // mock the fetchSummary method from client class
+    mockClient.fetchSummary.mockImplementationOnce((url, callback) => {
+      callback(mockSummary);
+    });
+
+    view.displayModal(mockArticle);
+
+    // Assert that modal elements are correctly updated
+    expect(view.modalImage.src).toEqual(mockArticle.fields.thumbnail);
+    expect(view.modalTitle.innerText).toEqual(mockArticle.fields.headline);
+    expect(view.modalSummary.innerText).toEqual(mockSummary);
+    expect(view.modalLink.href).toEqual(mockArticle.webUrl);
+  });
 });
