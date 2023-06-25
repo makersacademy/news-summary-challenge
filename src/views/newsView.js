@@ -59,11 +59,14 @@ class newsView {
       this.modal.style.display = "none";
     };
 
-    window.onclick = (event) => {
-      if (event.target == modal) {
+    const closeModal = (event) => {
+      if (event.target == this.modal) {
         this.modal.style.display = "none";
+        window.removeEventListener("click", closeModal);
       }
     };
+
+    window.addEventListener("click", closeModal);
   }
 }
 
