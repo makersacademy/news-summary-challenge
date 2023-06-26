@@ -2,6 +2,8 @@
 
 This is a simple web application that displays news articles from The Guardian API and summarizes them using the SMMRY API. It follows the Model-View-Client architecture and uses vanilla JavaScript, CSS, and HTML.
 
+You can check the deployed version on [News Feed](https://stately-melomakarona-6c9936.netlify.app)
+
 ## Features
 
 1. Fetch and display news articles from The Guardian API.
