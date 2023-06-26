@@ -1,9 +1,10 @@
-const apiKey = require("./apiKey");
-const summaryKey = require("./summaryKey");
+// const apiKey = require("./apiKey");
+// const summaryKey = require("./summaryKey");
 
 class newsClient {
   constructor() {
-    this.apiKey = apiKey;
+    this.apiKey = process.env.guardianApi;
+    this.summaryKey = process.env.smmryApi;
     this.apiUrl = "https://content.guardianapis.com/search";
   }
 
