@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
+    "build": "esbuild index.js --bundle --outfile=bundle.js"
   },
   "keywords": [],
   "author": "",
