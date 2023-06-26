@@ -12,5 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "jest-environment-jsdom": "^29.5.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.18.9"
   }
 }
