@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "esbuild index.js --bundle --outfile=bundle.js"
+    "build": "esbuild index.js --bundle --outfile=bundle.js --define:process.env.guardianApi=\\\"$guardianApi\\\" --define:process.env.smmryApi=\\\"$smmryApi\\\""
   },
   "keywords": [],
   "author": "",
