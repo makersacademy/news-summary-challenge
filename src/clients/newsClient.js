@@ -19,7 +19,7 @@ class newsClient {
 
   fetchSummary(url, callback) {
     return fetch(
-      `http://api.smmry.com?SM_API_KEY=${
+      `https://api.smmry.com?SM_API_KEY=${
         this.summaryKey
       }&SM_URL=${encodeURIComponent(url)}`
     )
