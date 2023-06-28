@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./src/styles/newsStyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>News Feed</title>
+  </head>
+  <body>
+    <h1>News</h1>
+    <input type="text" id="searchInput" placeholder="Enter search query" />
+    <button id="searchButton">Search</button>
+    <div id="newsContainer"></div>
+
+    <!-- The Modal -->
+    <div id="news-modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="Article Image" />
+        <h2 id="modalTitle"></h2>
+        <p id="modalSummary"></p>
+        <a id="modalLink" href="" target="_blank">Read full article</a>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="bundle.js"></script>
+  </body>
+</html>
