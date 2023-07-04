@@ -1,0 +1,26 @@
+{
+  "name": "news-summary-challenge",
+  "version": "1.0.0",
+  "description": "## Project overview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild src/index.js --bundle --outfile=bundle.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarahc-dev/news-summary-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarahc-dev/news-summary-challenge/issues"
+  },
+  "homepage": "https://github.com/sarahc-dev/news-summary-challenge#readme",
+  "dependencies": {
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-fetch-mock": "^3.0.3"
+  }
+}

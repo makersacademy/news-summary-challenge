@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0 1.5rem 2rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: blue;
+}
+
+button {
+  font: inherit;
+  border: 1px solid black;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  color: white;
+  background-color: black;
+}
+
+#search-input {
+  font: inherit;
+  border: 1px solid black;
+  padding: 0.5rem;
+  width: 200px;
+}
+
+#back-button {
+  display: block;
+  margin-top: 1rem;
+}
+
+.headline {
+  max-width: 548px;
+  border: 1px solid black;
+  padding: 1.5rem;
+}
+
+#news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}

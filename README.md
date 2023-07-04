@@ -1,70 +1,73 @@
 # News challenge
 
-* Feel free to use Google, your notes, books, etc. but work on your own.
-* If you refer to the solution of another coach or student, please put a link to that in
-  your README.
-* If you have a partial solution, **still check in a partial solution** and send in a pull
-  request.
-* You must submit a pull request to this repo with your code by 10am Monday morning.
-
-## Challenge
-
-As usual please start by forking this repo.
-
-You'll create an app that shows the latest news using the Guardian API. You'll find
-instructions on how to setup and use the API down this page.
-
 ## Project overview
 
-Your app will grab all the headlines from the Guardian newspaper API and display them on a
-page. Clicking on a headline will link the user to the actual article page on the Guardian's website.
+Your app will grab all the headlines from the Guardian newspaper API and display them on a page. Clicking on a headline will link the user to the actual article page on the Guardian's website.
 
 ### Technologies
 
-You'll write a single page web app. You'll write your code in frontend JavaScript, CSS and
-HTML. You won't use Ruby or backend JavaScript.
+For this challenge I will create a single page web app.
 
-You're strongly encouraged to use the same tools and libraries you've been learning this
-week:
- * Jest to write your tests
- * The [`jest-fetch-mock`](https://www.npmjs.com/package/jest-fetch-mock) module (or
-   similar) to mock `fetch` requests (so you don't request the API when running tests!)
- * A build tool such as `esbuild` to bundle files together
+- HTML
+- CSS
+- JavaScript
+- Jest (including jest-fetch-mock and jest-environment-jsdom)
+- esbuild
+
+### Installation
+
+To install this application locally you'll need to [register and get an API key](https://open-platform.theguardian.com/access/) to use the Guardian API.' Alternatively, you can use 'test'.
+
+```plain
+$ git clone https://github.com/sarahc-dev/news-summary-challenge.git
+$ cd news-summary-challenge
+$ npm install
+$ echo "module.exports = 'test || <YOUR API KEY>'" >> apiKey.js
+$ npm run build
+```
+
+Open index.js file in the browser to use the app.
 
 ## User Stories
 
-Some of these stories will need decomposing if they seem too large.
-
-```
+```plain
 As a busy politician
 So I know what the big stories of the day are
 I can see all of today's headlines in one place
 ```
 
-```
+```plain
 As a busy politician
 So that I have something nice to look at
 I can see a relevant picture to illustrate each news article when I browse headlines
 ```
 
-```
+```plain
 As a busy politician
 So I can get a few more details about an important story
 I can click a news article title which links to the original article
 ```
 
-```
+```plain
 As a busy politician
 So I can search what I want to read about
 I can specify a search query on the page and get articles matching this search
 ```
 
-### Stretch user stories
-
+```plain
+As a busy politician
+Just in case my laptop breaks
+I can read the site comfortably on my phone
 ```
+
+### Additional user stories
+
+With some more time I would like to implement the stretch user stories below. I would also like to add 'load more' functionality to get more results so the news app can return all of the days headlines if it is more than 20.
+
+```plain
 As a busy politician
 So I can quickly read through the essential of today's stories
-I can see a summarised version of of the article 
+I can see a summarised version of of the article
 ```
 
 To get a summary of an article's content, you'll need to use the [Aylien API
@@ -74,17 +77,17 @@ to first fetch articles from the Guardian API, **then** use the Aylien API to su
 the content — you'll need to use promises or callbacks to call both APIs and to handle the flow of
 control.
 
-```
-As a busy politician
-Just in case my laptop breaks
-I can read the site comfortably on my phone
-```
-
-```
+```plain
 As a busy politician
 So I make my news reading more fun
 I can see whizzy animations in the app
 ```
+
+## Diagram
+
+This is my original diagram. During development, I changed the NewsModel to contain an array of news items, instead of it being a single news item.
+
+![Initial diagram](./images/diagram.png)
 
 ## Mockups
 
@@ -101,13 +104,13 @@ I can see whizzy animations in the app
 ### API authentication
 
 You'll need to [register and get an API
-key](https://open-platform.theguardian.com/access/) to use the Guardian API. 
+key](https://open-platform.theguardian.com/access/) to use the Guardian API.
 
 ### API request rate limits and stubbing
 
 The Guardian API is severely rate-limited.
 
-**Please stub your tests so we don't exceed the daily limit.  Otherwise, all requests will
+**Please stub your tests so we don't exceed the daily limit. Otherwise, all requests will
 be rejected and everyone's apps will stop working!**
 
 ## Guardian API Overview
@@ -117,85 +120,75 @@ be rejected and everyone's apps will stop working!**
 If you wanted to get the latest articles from the Guardian API, this is the cURL request
 you might make. Notice how it has a query parameter for `api-key`.
 
-```
+```plain
 curl "https://content.guardianapis.com/search?q=&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=test"
 ```
 
 Also notice that the URL parameter `q` is empty — we can pass in a search string to filter
 the returned articles, for example to search articles containing "America" in the title:
 
-```
+```plain
 curl "https://content.guardianapis.com/search?q=America&query-fields=headline&show-fields=thumbnail,headline,byline&order-by=newest&api-key=test"
 ```
 
 The above request will return a response similar to this one:
+
 ```json
 {
-   "response":{
-      "status":"ok",
-      "userTier":"developer",
-      "total":2324223,
-      "startIndex":1,
-      "pageSize":10,
-      "currentPage":1,
-      "pages":232423,
-      "orderBy":"newest",
-      "results":[
-         {
-            "id":"sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
-            "type":"article",
-            "sectionId":"sport",
-            "sectionName":"Sport",
-            "webPublicationDate":"2022-02-02T14:42:43Z",
-            "webTitle":"At last, the inventors of modern skiing have something to cheer: Dave Ryding | Andy Bull",
-            "webUrl":"https://www.theguardian.com/sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
-            "apiUrl":"https://content.guardianapis.com/sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
-            "fields":{
-               "headline":"At last, the inventors of modern skiing have something to cheer: Dave Ryding ",
-               "byline":"Andy Bull",
-               "thumbnail":"https://media.guim.co.uk/1e2ab1ced5da6ecf8d7fcca9f87d5398c1d22336/0_119_6480_3888/500.jpg"
-            },
-            "isHosted":false,
-            "pillarId":"pillar/sport",
-            "pillarName":"Sport"
-         },
-         {
-            "id":"business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
-            "type":"liveblog",
-            "sectionId":"business",
-            "sectionName":"Business",
-            "webPublicationDate":"2022-02-02T14:41:49Z",
-            "webTitle":"Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
-            "webUrl":"https://www.theguardian.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
-            "apiUrl":"https://content.guardianapis.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
-            "fields":{
-               "headline":"Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
-               "byline":"Julia Kollewe",
-               "thumbnail":"https://media.guim.co.uk/aee3b3b05ea2a37acdadc91095c163fd381eba4a/0_24_3500_2100/500.jpg"
-            },
-            "isHosted":false,
-            "pillarId":"pillar/news",
-            "pillarName":"News"
-         },
-         // ...
-      ]
-   }
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 2324223,
+    "startIndex": 1,
+    "pageSize": 10,
+    "currentPage": 1,
+    "pages": 232423,
+    "orderBy": "newest",
+    "results": [
+      {
+        "id": "sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
+        "type": "article",
+        "sectionId": "sport",
+        "sectionName": "Sport",
+        "webPublicationDate": "2022-02-02T14:42:43Z",
+        "webTitle": "At last, the inventors of modern skiing have something to cheer: Dave Ryding | Andy Bull",
+        "webUrl": "https://www.theguardian.com/sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
+        "apiUrl": "https://content.guardianapis.com/sport/blog/2022/feb/02/at-last-the-inventors-of-modern-skiing-have-something-to-cheer-dave-ryding",
+        "fields": {
+          "headline": "At last, the inventors of modern skiing have something to cheer: Dave Ryding ",
+          "byline": "Andy Bull",
+          "thumbnail": "https://media.guim.co.uk/1e2ab1ced5da6ecf8d7fcca9f87d5398c1d22336/0_119_6480_3888/500.jpg"
+        },
+        "isHosted": false,
+        "pillarId": "pillar/sport",
+        "pillarName": "Sport"
+      },
+      {
+        "id": "business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
+        "type": "liveblog",
+        "sectionId": "business",
+        "sectionName": "Business",
+        "webPublicationDate": "2022-02-02T14:41:49Z",
+        "webTitle": "Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
+        "webUrl": "https://www.theguardian.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
+        "apiUrl": "https://content.guardianapis.com/business/live/2022/feb/02/oil-prices-climb-seven-year-highs-opec-meeting-markets-await-eurozone-inflation",
+        "fields": {
+          "headline": "Ofgem to unveil new household energy bill price cap on Thursday morning – business live",
+          "byline": "Julia Kollewe",
+          "thumbnail": "https://media.guim.co.uk/aee3b3b05ea2a37acdadc91095c163fd381eba4a/0_24_3500_2100/500.jpg"
+        },
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+      // ...
+    ]
+  }
 }
 ```
 
 ## Resources
 
-* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Postman](https://www.postman.com/downloads/?utm_source=postman-home), a program to send and test HTTP requests
-
-
-<!-- BEGIN GENERATED SECTION DO NOT EDIT -->
-
----
-
-**How was this resource?**  
-[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/news-summary-challenge&prefill_File=README.md&prefill_Sentiment=😀)  
-Click an emoji to tell us.
-
-<!-- END GENERATED SECTION DO NOT EDIT -->
+- [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
+- cURL [man page](https://curl.haxx.se/docs/manpage.html)
+- [Postman](https://www.postman.com/downloads/?utm_source=postman-home), a program to send and test HTTP requests
