@@ -1,10 +1,13 @@
 class newsModel {
     constructor () {
-        this.stories = []
+        this.newsInfo = null
     }
 
+    getNewsInfo(newsInfo) {
+        this.newsInfo = newsInfo;
+    }
     getNews() {
-        return this.stories
+        return this.newsInfo;
     }
 }
 
